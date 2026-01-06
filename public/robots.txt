@@ -1,7 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /dev/
-Disallow: /ui-lab/
-
-# Respect sitemap for crawl discovery
-Sitemap: https://www.velo-bar.com/sitemap.xml
+Sitemap: https://www.velobar.de/sitemap.xml
