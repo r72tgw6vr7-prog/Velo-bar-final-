@@ -5,7 +5,7 @@
   "main": "src/main.tsx",
   "type": "module",
   "engines": {
-    "node": "20.19.2"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "dev": "vite",
@@ -74,7 +74,7 @@
     "env:check": "node scripts/check-env.mjs",
     "setup:env": "cp .env.example .env.local && echo 'Please configure .env.local with your API keys'",
     "health-check": "curl -f http://localhost:4173/api/health || exit 1",
-    "prepare": "husky",
+    "prepare": "husky install || true",
     "prepare-deploy": "npm run optimize-images && npm run build",
     "deploy:preview": "npm run prepare-deploy && vercel",
     "deploy:production": "npm run prepare-deploy && vercel --prod",
