@@ -1,0 +1,150 @@
+/**
+ * Stacking Cards Animation Styles
+ * Mobile-first premium card stacking with scroll animation
+ */
+
+.stacking-cards-section {
+  position: relative;
+  width: 100%;
+}
+
+.stacking-cards-grid {
+  position: relative;
+  padding: 0 24px;
+  grid-auto-rows: minmax(0, 1fr);
+  align-items: stretch;
+}
+
+/* Why card - straight, stacked, pop-in animation */
+.why-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: clamp(260px, 34vh, 320px);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out,
+    box-shadow 0.6s ease-out;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  margin-top: -12px;
+  border: 3px solid red !important; /* DEBUG: Obvious border */
+  background: yellow !important; /* DEBUG: Obvious background */
+}
+
+.why-card:first-child {
+  margin-top: 0;
+}
+
+.why-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.stacking-card {
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure smooth animations */
+.stacking-card * {
+  backface-visibility: hidden;
+}
+
+/* Icon refinements - smaller and tighter */
+.stacking-card-icon {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.stacking-card:hover .stacking-card-icon {
+  transform: scale(1.1);
+  border-color: #ee7868;
+  background-color: rgba(238, 120, 104, 0.1);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .stacking-cards-grid {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .why-card {
+    margin: 0 auto;
+    max-width: 92%;
+    margin-top: 0;
+  }
+
+  .why-card:first-child {
+    margin-top: 0;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stacking-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stacking-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop - 3 columns */
+@media (min-width: 1024px) {
+  .stacking-cards-grid {
+    gap: 2rem;
+  }
+
+  .why-card {
+    margin-top: 0;
+  }
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .why-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .stacking-card {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .stacking-card:hover {
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .stacking-card {
+    border-width: 3px;
+  }
+}
+
+/* Print styles - no animations */
+@media print {
+  .stacking-card {
+    transform: none !important;
+    opacity: 1 !important;
+    break-inside: avoid;
+  }
+}

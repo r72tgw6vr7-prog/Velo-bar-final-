@@ -1,0 +1,206 @@
+/* HomePage_NEW_Warm scoped overrides */
+
+/* IMPORTANT: Preserve language switcher styling */
+header.cosmic-nav-solid button[aria-label*='Switch'],
+header.cosmic-nav-solid .LanguageSwitcher,
+header.cosmic-nav-solid button.bg-accent-primary {
+  background-color: var(--orange-primary) !important;
+  color: var(--navy-primary) !important;
+}
+/* Navigation overrides - IMPORTANT */
+header.cosmic-nav-solid,
+header.cosmic-nav-solid nav,
+.cosmic-nav-solid {
+  background-color: var(--offwhite-primary) !important;
+}
+
+/* Fix navigation links but NOT language switcher */
+header.cosmic-nav-solid a:not(.bg-accent-primary):not([class*='LanguageSwitcher']),
+header.cosmic-nav-solid .text-navy-dark:not([class*='LanguageSwitcher']) {
+  color: var(--navy-primary) !important;
+}
+
+header.cosmic-nav-solid a.bg-accent-primary,
+header.cosmic-nav-solid .bg-accent-primary {
+  background-color: var(--orange-primary) !important;
+  color: var(--offwhite-primary) !important;
+}
+
+.home-new-warm {
+  /* Override all background color variables to use coral */
+  --surface-page: var(--orange-primary);
+  --surface-nav: var(--offwhite-primary);
+  --surface-footer: var(--orange-primary);
+  --color-bg-page: var(--orange-primary);
+  --color-bg-dark: var(--orange-primary);
+  --color-bg-surface: var(--offwhite-primary);
+  --color-bg-section-dark: var(--orange-primary);
+  --color-bg-section-light: var(--orange-primary);
+  --color-bg-deep: var(--orange-primary);
+  --color-bg-navy-light: var(--orange-primary);
+  --brand-background: var(--orange-primary);
+
+  /* Keep card colors as cream */
+  --surface-card: var(--offwhite-primary);
+  --surface-card-subtle: var(--offwhite-primary);
+  --color-bg-light: var(--offwhite-primary);
+  --color-bg-surface-muted: var(--offwhite-primary);
+  --color-bg-surface-tinted: var(--offwhite-primary);
+
+  /* Text colors */
+  --text-on-dark: var(--offwhite-primary);
+  --text-on-dark-secondary: var(--offwhite-primary);
+  --text-on-dark-tertiary: var(--offwhite-primary);
+  --text-on-light: var(--navy-primary);
+  --text-on-light-secondary: var(--navy-primary);
+  --text-on-light-tertiary: var(--navy-primary);
+  --text-primary: var(--offwhite-primary);
+  --text-secondary: var(--offwhite-primary);
+  --text-tertiary: var(--offwhite-primary);
+  --text-inverse: var(--navy-primary);
+  --color-text-primary: var(--offwhite-primary);
+  --color-text-secondary: var(--offwhite-primary);
+  --color-text-tertiary: var(--offwhite-primary);
+  --color-text-inverse: var(--navy-primary);
+  --color-text-on-dark: var(--offwhite-primary);
+  --color-text-on-dark-secondary: var(--offwhite-primary);
+  --color-text-on-light: var(--navy-primary);
+  --color-text-on-light-secondary: var(--navy-primary);
+
+  /* Brand colors */
+  --color-accent-primary: var(--orange-primary);
+  --color-accent-primary-hover: var(--orange-hover);
+  --color-accent-primary-light: var(--orange-light);
+  --brand-primary: var(--orange-primary);
+  --brand-primary-hover: var(--orange-hover);
+  --brand-accessible: var(--navy-primary);
+  --brand-linkText: var(--orange-primary);
+  --brand-linkHover: var(--orange-hover);
+
+  /* CTA colors */
+  --cta-bg: var(--navy-primary);
+  --cta-bg-hover: var(--navy-dark);
+  --cta-bg-active: var(--navy-dark);
+
+  /* Border colors */
+  --border-color: rgba(0, 49, 65, 0.2);
+  --color-border-on-dark: rgba(0, 49, 65, 0.3);
+  --color-border-on-light: rgba(0, 49, 65, 0.1);
+}
+
+.home-new-warm .cosmic-nav-solid,
+.home-new-warm .cosmic-nav-solid.bg-white,
+.home-new-warm .cosmic-nav-solid + .cosmic-nav-solid {
+  background-color: var(--offwhite-primary) !important;
+}
+
+.home-new-warm .cosmic-nav-solid .border-color-border-on-light {
+  border-color: rgba(0, 49, 65, 0.12);
+}
+
+.home-new-warm .home-new-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.home-new-warm .home-hero-badge .text-accent {
+  color: var(--orange-primary);
+}
+
+.home-new-warm .home-new-eyebrow-scope .bg-accent-primary\/10 {
+  background-color: var(--offwhite-primary) !important;
+  color: var(--navy-primary) !important;
+  border: 1px solid rgba(0, 49, 65, 0.3) !important;
+  border-radius: 9999px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+}
+
+.home-new-warm .home-new-eyebrow-scope .bg-accent-primary\/10.text-accent-primary {
+  color: var(--navy-primary) !important;
+}
+
+.home-new-warm .home-new-eyebrow-scope .bg-accent-primary {
+  background-color: var(--navy-primary) !important;
+  color: var(--offwhite-primary) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.25rem 0.75rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+
+.home-new-warm .home-new-eyebrow-scope .bg-accent-primary.text-white {
+  color: var(--offwhite-primary) !important;
+}
+
+/* Badge styles for warm theme */
+.home-new-warm .badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--offwhite-primary);
+  color: var(--navy-primary);
+  border: 1px solid rgba(0, 49, 65, 0.3);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.home-new-warm .badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background-color: var(--navy-primary);
+  color: var(--offwhite-primary);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Override any remaining blue backgrounds */
+.home-new-warm .hero-surface,
+.home-new-warm .hero-section,
+.home-new-warm section,
+.home-new-warm .section {
+  background-color: var(--orange-primary) !important;
+}
+
+/* Ensure text on coral backgrounds is cream */
+.home-new-warm h1,
+.home-new-warm h2,
+.home-new-warm h3,
+.home-new-warm .title,
+.home-new-warm .heading {
+  color: var(--offwhite-primary) !important;
+}
+
+/* But text on cards should be dark */
+.home-new-warm .home-new-card h1,
+.home-new-warm .home-new-card h2,
+.home-new-warm .home-new-card h3,
+.home-new-warm .home-new-card .title,
+.home-new-warm .home-new-card .heading {
+  color: var(--orange-primary) !important;
+}
+
+.home-new-warm .home-new-card p,
+.home-new-warm .home-new-card .text,
+.home-new-warm .home-new-card .body {
+  color: var(--navy-primary) !important;
+}
+
+/* Button styles */
+.home-new-warm button,
+.home-new-warm .btn {
+  background-color: var(--navy-primary) !important;
+  color: var(--offwhite-primary) !important;
+}
+
+.home-new-warm button:hover,
+.home-new-warm .btn:hover {
+  background-color: var(--navy-dark) !important;
+}

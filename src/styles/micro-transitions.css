@@ -1,0 +1,273 @@
+/**
+ * Micro-transitions CSS
+ * 
+ * This file provides CSS classes for standardized micro-transitions
+ * that can be used directly in HTML/JSX without JavaScript.
+ * 
+ * Usage:
+ * <button class="hover-scale active-scale focus-ring-orange">Button</button>
+ */
+
+/* Duration Variables */
+:root {
+  --transition-duration-instant: 100ms;
+  --transition-duration-fast: 200ms;
+  --transition-duration-normal: 300ms;
+  --transition-duration-slow: 500ms;
+
+  /* Easing functions */
+  --transition-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-easing-linear: linear;
+  --transition-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --transition-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Base transitions */
+.transition-base {
+  transition-property: all;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+/* Hover Transitions */
+.hover-scale {
+  transition-property: transform;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-scale-subtle {
+  transition-property: transform;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.hover-scale-subtle:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow-brand {
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.hover-glow-brand:hover {
+  box-shadow: var(--shadow-brand-sm);
+}
+
+.hover-glow-brand-medium:hover {
+  box-shadow: var(--shadow-brand-md);
+}
+
+.hover-glow-brand-strong:hover {
+  box-shadow: var(--shadow-brand-lg);
+}
+
+/* Legacy classes for backwards compatibility */
+
+.hover-glow-chrome {
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.hover-glow-chrome:hover {
+  box-shadow: var(--shadow-silver-sm);
+}
+
+.hover-brightness {
+  transition-property: filter;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.hover-brightness:hover {
+  filter: brightness(1.1);
+}
+
+/* Focus Transitions */
+.focus-ring-orange {
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.focus-ring-orange:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.focus-ring-chrome {
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.focus-ring-chrome:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Active/Tap Transitions */
+.active-scale {
+  transition-property: transform;
+  transition-duration: var(--transition-duration-instant);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.active-scale:active {
+  transform: scale(0.95);
+}
+
+.active-scale-subtle:active {
+  transform: scale(0.98);
+}
+
+.active-opacity {
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-instant);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.active-opacity:active {
+  opacity: 0.8;
+}
+
+/* Color Transitions */
+.color-orange-to-chrome {
+  background: linear-gradient(135deg, var(--color-coral), var(--cta-bg-hover));
+  transition-property: background;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.color-orange-to-chrome:hover {
+  background: linear-gradient(135deg, var(--color-accent-silver), var(--cta-bg-hover));
+}
+
+.color-chrome-to-orange {
+  background: linear-gradient(135deg, var(--color-accent-silver), var(--cta-bg-hover));
+  transition-property: background;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.color-chrome-to-orange:hover {
+  background: linear-gradient(135deg, var(--color-coral), var(--cta-bg-hover));
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .transition-base,
+  .hover-scale,
+  .hover-scale-subtle,
+  .hover-glow-brand,
+  .hover-glow-chrome,
+  .hover-brightness,
+  .focus-ring-orange,
+  .focus-ring-chrome,
+  .active-scale,
+  .active-scale-subtle,
+  .active-opacity,
+  .color-orange-to-chrome,
+  .color-chrome-to-orange,
+  .preset-button,
+  .preset-button-orange,
+  .preset-card,
+  .preset-link,
+  .preset-image {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Preset combinations */
+.preset-button {
+  transition-property: transform, box-shadow;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.preset-button:hover {
+  transform: scale(1.02);
+}
+
+.preset-button:active {
+  transform: scale(0.95);
+}
+
+.preset-button:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.preset-button-orange {
+  background: var(--color-coral);
+  color: var(--text-on-accent);
+  transition-property: transform, box-shadow;
+  transition-duration: var(--transition-duration-fast);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.preset-button-orange:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(var(--orange-rgb), 0.3);
+}
+
+.preset-button-orange:active {
+  transform: scale(0.95);
+}
+
+.preset-button-orange:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.preset-card {
+  transition-property: transform, box-shadow;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.preset-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(var(--orange-rgb), 0.3);
+}
+
+.preset-link {
+  transition-property: color, filter;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+  color: var(--color-accent-silver);
+}
+
+.preset-link:hover {
+  color: var(--color-coral);
+  filter: brightness(1.1);
+}
+
+.preset-image {
+  transition-property: transform, filter;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--transition-easing-smooth);
+}
+
+.preset-image:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}

@@ -1,0 +1,610 @@
+/* Micro-interactions CSS - Premium Feel */
+/* Updated for cream→teal gradient background */
+
+/* ===========================================
+   BUTTON INTERACTIONS
+   Primary CTA: coral background, cream text
+   =========================================== */
+
+.btn-primary {
+  background-color: var(--cta-bg);
+  color: var(--cta-text);
+  border: none;
+  border-radius: var(--radius-button);
+  padding: var(--button-padding-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition:
+    background-color 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    transform 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.btn-primary:hover {
+  background-color: var(--cta-bg-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-button-hover);
+}
+
+.btn-primary:active {
+  background-color: var(--cta-bg-active);
+  transform: translateY(0);
+  box-shadow: var(--shadow-button-active);
+}
+
+/* ===========================================
+   LINK INTERACTIONS
+   Default: medium teal | Hover: coral + underline
+   =========================================== */
+
+.link,
+a:not([class]) {
+  color: var(--link-color);
+  text-decoration: none;
+  transition:
+    color 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    text-decoration 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.link:hover,
+a:not([class]):hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+
+/* ===========================================
+   CARD INTERACTIONS
+   Translucent cream bg, soft shadows, coral accent on hover
+   =========================================== */
+
+.card-interactive {
+  background-color: var(--surface-card-translucent);
+  border: 1px solid var(--surface-card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    outline 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-card-hover);
+  outline: 1px solid rgba(238, 120, 104, 0.35);
+}
+
+/* ===========================================
+   FOCUS STATES (ACCESSIBILITY)
+   High-contrast coral ring visible on both cream and teal
+   =========================================== */
+
+.focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Remove default outline for elements with custom focus */
+.focus-ring:focus,
+button:focus,
+a:focus {
+  outline: none;
+}
+
+/* ===========================================
+   LEGACY HOVER LIFT (keep for compatibility)
+   =========================================== */
+
+/* Hover Transitions */
+.hover-lift {
+  transition:
+    transform 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-md);
+}
+
+/* Focus States */
+.focus-orange {
+  transition:
+    box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    border-color 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.focus-orange:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--brand-background),
+    0 0 0 4px var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--brand-background) 0%,
+    var(--brand-hover) 50%,
+    var(--brand-background) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Smooth Fades */
+.fade-in {
+  animation: fadeIn 500ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-up {
+  animation: fadeUp 500ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Orange Glow Effects */
+.orange-glow {
+  transition: box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.orange-glow:hover {
+  box-shadow: 0 0 32px rgba(var(--brand-primary-rgb), 0.2);
+}
+
+.orange-glow-subtle {
+  transition: box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.orange-glow-subtle:hover {
+  box-shadow: 0 0 16px rgba(var(--brand-primary-rgb), 0.1);
+}
+
+.orange-glow-intense {
+  transition: box-shadow 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.orange-glow-intense:hover {
+  box-shadow: 0 0 48px rgba(var(--brand-primary-rgb), 0.3);
+}
+
+/* Smooth Gradients */
+.gradient-orange {
+  background: linear-gradient(135deg, var(--brand-primary), var(--color-accent-primary-hover));
+  transition: opacity 200ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.gradient-orange:hover {
+  opacity: 0.9;
+}
+
+/* Touch Feedback */
+@media (hover: none) {
+  .touch-feedback:active {
+    transform: scale(0.98);
+    transition: transform 100ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: var(--spacing-3);
+  height: var(--spacing-3);
+  border: 2px solid var(--brand-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Premium Button States - legacy .btn-* removed */
+
+/* Smooth Page Transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 500ms cubic-bezier(0.4, 0.2, 0.2, 1),
+    transform 500ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Responsive Touch Targets */
+@media (hover: none) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--spacing-1-5);
+  }
+}
+
+/* Premium Card Hover */
+.card-premium {
+  transition: all 300ms cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 8px 32px rgba(var(--brand-primary-rgb), 0.15);
+}
+
+/* Text Selection */
+::selection {
+  background: rgba(var(--brand-primary-rgb), 0.2);
+  color: var(--brand-primary);
+}
+
+/* ============================================
+   ENHANCED MICRO-INTERACTIONS - POLISH UPDATE
+   ============================================ */
+
+/* Staggered Fade-in for Lists */
+.stagger-fade-in > * {
+  opacity: 0;
+  animation: staggerFadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.stagger-fade-in > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-fade-in > *:nth-child(2) {
+  animation-delay: 50ms;
+}
+.stagger-fade-in > *:nth-child(3) {
+  animation-delay: 100ms;
+}
+.stagger-fade-in > *:nth-child(4) {
+  animation-delay: 150ms;
+}
+.stagger-fade-in > *:nth-child(5) {
+  animation-delay: 200ms;
+}
+.stagger-fade-in > *:nth-child(6) {
+  animation-delay: 250ms;
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Skeleton Loading */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-surface) 0%,
+    var(--color-bg-surface-muted) 50%,
+    var(--color-bg-surface) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes skeletonPulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Button Press Effect - moved to component variants */
+
+/* Ripple Effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    width 400ms ease-out,
+    height 400ms ease-out,
+    opacity 400ms ease-out;
+  opacity: 0;
+}
+
+.ripple:active::after {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Smooth Icon Rotation */
+.icon-rotate {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-rotate:hover {
+  transform: rotate(15deg);
+}
+
+/* Pulse Animation for CTAs */
+.pulse-cta {
+  animation: pulseCta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseCta {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--orange-rgb), 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(var(--orange-rgb), 0);
+  }
+}
+
+/* Smooth Border Glow */
+.border-glow {
+  position: relative;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-primary),
+    transparent,
+    var(--color-accent-primary)
+  );
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  z-index: -1;
+}
+
+.border-glow:hover::before {
+  opacity: 0.5;
+}
+
+/* Smooth Underline Animation */
+.underline-animate {
+  position: relative;
+}
+
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent-primary);
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.underline-animate:hover::after {
+  width: 100%;
+}
+
+/* Mobile Touch Feedback */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-tap {
+    -webkit-tap-highlight-color: rgba(var(--orange-rgb), 0.1);
+  }
+
+  .mobile-tap:active {
+    background-color: rgba(var(--orange-rgb), 0.05);
+    transition: background-color 50ms ease-out;
+  }
+}
+
+/* Smooth Accordion/Collapse */
+.collapse-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapse-content.open {
+  grid-template-rows: 1fr;
+}
+
+.collapse-content > * {
+  overflow: hidden;
+}
+
+/* Loading Dots */
+.loading-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent-primary);
+  border-radius: 50%;
+  animation: loadingDot 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0ms;
+}
+.loading-dots span:nth-child(2) {
+  animation-delay: 160ms;
+}
+.loading-dots span:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+@keyframes loadingDot {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Success Checkmark Animation */
+.success-check {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: drawCheck 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Error Shake */
+.error-shake {
+  animation: errorShake 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes errorShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+/* Smooth Number Counter */
+.counter-animate {
+  display: inline-block;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card Tilt on Hover (subtle 3D effect) */
+.card-tilt {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+}
+
+/* Smooth Image Zoom */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Focus Visible Enhancement */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+  transition: outline-offset 100ms ease-out;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-up,
+  .stagger-fade-in > *,
+  .skeleton,
+  .loading-spinner,
+  .pulse-cta,
+  .border-glow::before,
+  .underline-animate::after,
+  .loading-dots span,
+  .error-shake,
+  .card-tilt,
+  .img-zoom img {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

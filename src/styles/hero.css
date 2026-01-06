@@ -1,0 +1,548 @@
+/**
+ * HERO STYLES - CONSOLIDATED
+ * ==========================
+ * Single source of truth for all hero section styles.
+ * Components: HeroBike (bicycle), HeroParallax (photo carousel)
+ * 
+ * DO NOT create additional hero CSS files.
+ * All hero-related styles belong here.
+ */
+
+:root {
+  --hero-top-padding: 80px;
+  --hero-badge-margin: 32px;
+  --hero-heading-margin: 24px;
+  --hero-paragraph-margin: 48px;
+  --hero-visual-margin: 48px;
+}
+
+.home-hero {
+  padding-top: var(--hero-top-padding);
+}
+
+.home-hero-badge {
+  margin-bottom: var(--hero-badge-margin);
+}
+
+.home-hero-title {
+  margin-bottom: var(--hero-heading-margin);
+  max-width: 1000px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.home-hero-subtitle {
+  margin-bottom: var(--hero-paragraph-margin);
+  max-width: 700px;
+}
+
+/* Hero section container - positioning context for parallax + bike */
+.hero-surface {
+  background: var(--color-bg-page);
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  /* Changed: single clamp for smooth scaling across breakpoints */
+  height: clamp(520px, calc(50vw + 200px), 780px);
+  background: var(--color-bg-page);
+  overflow: hidden;
+}
+
+.hero-frame {
+  /* Changed: positioning parent for parallax + bike */
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  transform-origin: center bottom;
+}
+
+.hero-section--new::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Bike container - sits above parallax */
+.bike-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  max-width: 1120px;
+  /* Changed: smooth width scaling without breakpoint jumps; centers around 90vw on small screens */
+  width: clamp(320px, 90vw, 1120px);
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  /* Ensure proper alignment with ground line */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* ============================================
+   HERO BIKE - Animated bicycle SVG
+   ============================================ */
+.hero-bike {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Ground line - responsive width control (keep thickness constant) */
+#ground {
+  opacity: 0.6;
+  filter: drop-shadow(0 0 8px rgba(255, 68, 68, 0.6));
+  transform: translateY(3px);
+}
+
+/* Front wheel spokes - rotating animation */
+#front-wheel-spokes {
+  transform-box: view-box;
+  transform-origin: 6019px 4537px;
+}
+
+/* Back wheel spokes - rotating animation */
+#back-wheel-spokes {
+  transform-box: view-box;
+  transform-origin: 4919px 4537px;
+}
+
+@keyframes hero-wheel-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 769px) {
+  #ground {
+    transform-box: fill-box;
+    transform-origin: top center;
+    transform: translateY(4px) translateX(-1.5%) scaleX(0.5) scaleY(0.325);
+  }
+
+  #front-wheel {
+    transform-box: view-box;
+    transform-origin: 6019px 4537px;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: hero-wheel-rotate 6s linear infinite;
+  }
+
+  #back-wheel {
+    transform-box: view-box;
+    transform-origin: 4919px 4537px;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: hero-wheel-rotate 6s linear infinite;
+  }
+}
+
+/* ============================================
+   HERO PARALLAX - Tunnel Wall Photo Carousel
+   Full-width scrolling poster wall behind bike
+   ============================================ */
+
+/* Tunnel wall container - positions the photo rows */
+.hero-parallax {
+  /* Changed: absolutely position to hero-frame */
+  position: absolute;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(10px, 1.5vw, 20px);
+  z-index: 1;
+  padding: 10px 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Scrolling poster track - each row of photos */
+.hero-parallax-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: max-content;
+  animation: hero-scroll-left 25s linear infinite;
+  will-change: transform;
+}
+
+/* Performance hints: ensure GPU acceleration during transforms */
+.hero-parallax,
+.hero-parallax-track,
+.hero-parallax-group {
+  will-change: transform;
+}
+
+.hero-parallax-poster img {
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.hero-parallax-group {
+  display: flex;
+  flex-wrap: nowrap;
+  /* Changed: smooth spacing via clamp */
+  gap: clamp(12px, 1.2vw, 25px);
+  align-items: center;
+  padding-right: clamp(12px, 1.2vw, 25px);
+}
+
+.hero-parallax-track:hover {
+  animation-play-state: paused;
+}
+
+/* Extra rows are enabled only on tablet/desktop */
+.hero-parallax-row--extra {
+  display: none;
+}
+
+/* Different speeds per row */
+.hero-parallax-row:nth-child(2) .hero-parallax-track {
+  animation-duration: 25s;
+}
+
+.hero-parallax-row:nth-child(3) .hero-parallax-track {
+  animation-duration: 25s;
+}
+
+@keyframes hero-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Individual poster frame */
+.hero-parallax-poster {
+  flex-shrink: 0;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #333;
+}
+
+/* Poster size variants */
+.hero-parallax-poster.square-sm {
+  /* 48 → 80 */
+  width: clamp(48px, 6vw, 80px);
+  height: clamp(48px, 6vw, 80px);
+}
+
+.hero-parallax-poster.square-md {
+  /* 66 → 110 */
+  width: clamp(66px, 8vw, 110px);
+  height: clamp(66px, 8vw, 110px);
+}
+
+.hero-parallax-poster.landscape {
+  /* 84×54 → 140×90 */
+  width: clamp(84px, 10vw, 140px);
+  height: clamp(54px, 6.5vw, 90px);
+}
+
+.hero-parallax-poster.portrait {
+  /* 54×78 → 90×130 */
+  width: clamp(54px, 6.5vw, 90px);
+  height: clamp(78px, 9.5vw, 130px);
+}
+
+.hero-parallax-poster.panorama {
+  /* 96×48 → 160×80 */
+  width: clamp(96px, 11.5vw, 160px);
+  height: clamp(48px, 5.8vw, 80px);
+}
+
+.hero-parallax-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  display: block;
+}
+
+@media (min-width: 641px) {
+  .hero-parallax {
+    display: flex;
+  }
+
+  .hero-parallax-row--extra {
+    display: block;
+  }
+
+  .hero-parallax-track {
+    animation-duration: 35s;
+  }
+
+  .hero-parallax-row:nth-child(2) .hero-parallax-track {
+    animation-name: hero-scroll-right;
+    animation-duration: 40s;
+  }
+
+  .hero-parallax-row:nth-child(3) .hero-parallax-track {
+    animation-name: hero-scroll-left;
+    animation-duration: 32s;
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 1024px) {
+  /* Tablet */
+}
+
+@media (min-width: 769px) {
+  /* Desktop/Tablet: remove extra top padding */
+  .home-hero {
+    --hero-top-padding: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero-title {
+    white-space: normal;
+  }
+
+  /* Mobile: compact hero text section */
+  .home-hero-title {
+    font-size: clamp(32px, 8vw, 42px);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle,
+  .home-hero-subtitle {
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  /* Reduce padding above hero section */
+  .home-hero .hero-surface {
+    padding-top: clamp(16px, 4vw, 24px);
+    padding-bottom: clamp(12px, 3vw, 20px);
+  }
+
+  /* Mobile: tighten hero copy spacing so heading + subtext + hero fit on one screen */
+  .home-hero {
+    --hero-top-padding: 16px;
+    --hero-heading-margin: 16px;
+    --hero-paragraph-margin: 24px;
+  }
+
+  /* Mobile hero height: compact so heading + subtext + hero fit on one screen */
+  .hero-section {
+    height: clamp(380px, 58vh, 480px);
+    overflow: hidden;
+  }
+
+  /* Parallax is phone-only; keep it hidden for 641-768px */
+  .hero-parallax {
+    display: none;
+  }
+
+  #front-wheel,
+  #back-wheel {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  #front-wheel-spokes,
+  #back-wheel-spokes {
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: hero-wheel-rotate 6s linear infinite;
+  }
+
+  /* Bike container - proportional offset and width so bike overlaps parallax slightly */
+  .bike-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    max-width: 1120px;
+    /* Slightly narrower to reduce overall hero footprint */
+    width: clamp(330px, 80vw, 410px);
+    /* Ensure proper alignment with ground line on mobile */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* Removed: #bike transform scaling to unify coordinate system */
+  /* Ensure hero top padding tight */
+  .home-hero {
+    --hero-top-padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    overflow: hidden;
+  }
+
+  .hero-bike {
+    contain: layout style paint;
+    transform: translateZ(0);
+    will-change: contents;
+    isolation: isolate;
+  }
+
+  .hero-bike #bike {
+    transform-box: view-box;
+    transform-origin: 5469px 4938px;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0) scale(3);
+  }
+
+  /* Isolate wheel animations to their own compositor layers */
+  #front-wheel,
+  #back-wheel {
+    isolation: isolate;
+  }
+
+  #front-wheel-spokes,
+  #back-wheel-spokes {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Phone-only two-row photo wall above the bicycle */
+  .hero-parallax {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    padding: 14px 0 0;
+    gap: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    contain: layout paint;
+    isolation: isolate;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .hero-parallax-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 28px; /* Increased gap to prevent frame overlap */
+    padding: 0;
+    margin: 0;
+  }
+
+  .hero-parallax-row {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Hide third row on phone - only show 2 rows */
+  .hero-parallax > .hero-parallax-track:nth-child(3) {
+    display: none !important;
+  }
+
+  .hero-parallax-track {
+    animation: hero-scroll-left 28s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .hero-parallax > .hero-parallax-track:nth-child(2) {
+    animation-name: hero-scroll-right;
+    animation-duration: 32s;
+  }
+
+  .hero-parallax-group {
+    gap: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-parallax-poster {
+    border-width: 3px;
+  }
+
+  .hero-parallax-poster.square-sm {
+    width: auto;
+    height: calc(clamp(100px, 15vh, 140px) * 0.66);
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-parallax-poster.square-md {
+    width: auto;
+    height: calc(clamp(120px, 18vh, 160px) * 0.66);
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero-parallax-poster.landscape {
+    width: auto;
+    height: calc(clamp(110px, 17vh, 150px) * 0.66);
+    aspect-ratio: 14 / 9;
+  }
+
+  .hero-parallax-poster.portrait {
+    width: auto;
+    height: calc(clamp(130px, 20vh, 170px) * 0.66);
+    aspect-ratio: 9 / 13;
+  }
+
+  .hero-parallax-poster.panorama {
+    width: auto;
+    height: calc(clamp(90px, 14vh, 120px) * 0.66);
+    aspect-ratio: 2 / 1;
+  }
+
+  .bike-container {
+    bottom: 0;
+    overflow: hidden;
+    width: clamp(320px, 88vw, 420px);
+    /* Remove drop-shadow on phone to eliminate repaint-induced jitter */
+    filter: none;
+    contain: layout paint;
+    isolation: isolate;
+  }
+
+  /* Remove ground glow filter on phone to prevent jitter during animation */
+  #ground {
+    filter: none;
+  }
+}

@@ -1,0 +1,3018 @@
+{
+  "phase": "PHASE 1 - AUDIT (no deletions)",
+  "scope": {
+    "requested_folders": ["public/images", "public/gallery", "src/assets"],
+    "also_scanned": [
+      "public/Velo Gallery",
+      "public/icons",
+      "public/logosa",
+      "public/* (top-level)"
+    ],
+    "code_scanned": ["src/** (excluding __tests__)", "index.html", "api/**"]
+  },
+  "summary": {
+    "TOTAL_images_found": 1479,
+    "Referenced_in_code_unique_files": 160,
+    "Unused_delete_candidates": 1332,
+    "Duplicates_exact_groups_md5": 83,
+    "Duplicates_exact_files_total": 185,
+    "Broken_or_missing_reference_instances": 166,
+    "Broken_or_missing_reference_unique": 134
+  },
+  "breakdown": {
+    "by_extension": {
+      ".webp": 726,
+      ".jpg": 705,
+      ".svg": 40,
+      ".jpeg": 7,
+      ".png": 1
+    },
+    "top_folders_by_count": {
+      "images/clients": 12,
+      "Velo Gallery/hochzeit": 10,
+      "Velo Gallery/private-feiern": 10,
+      "Velo Gallery/team events": 10,
+      "Velo Gallery/teamevent-und-workshops": 10,
+      "Velo Gallery/firemnfeier": 9,
+      "Velo Gallery/messen": 9,
+      "Velo Gallery/tastingmunich": 8,
+      "images/partners": 4,
+      "Background.svg": 1,
+      "Velo Gallery/20210813-_DSC2657-1024w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2657-1024w.webp": 1,
+      "Velo Gallery/20210813-_DSC2657-1920w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2657-1920w.webp": 1,
+      "Velo Gallery/20210813-_DSC2657-320w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2657-320w.webp": 1,
+      "Velo Gallery/20210813-_DSC2657-640w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2657-640w.webp": 1,
+      "Velo Gallery/20210813-_DSC2657.JPG": 1,
+      "Velo Gallery/20210813-_DSC2657.webp": 1,
+      "Velo Gallery/20210813-_DSC2659-1024w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2659-1024w.webp": 1,
+      "Velo Gallery/20210813-_DSC2659-1920w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2659-1920w.webp": 1,
+      "Velo Gallery/20210813-_DSC2659-320w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2659-320w.webp": 1,
+      "Velo Gallery/20210813-_DSC2659-640w.jpg": 1,
+      "Velo Gallery/20210813-_DSC2659-640w.webp": 1,
+      "Velo Gallery/20210813-_DSC2659.JPG": 1,
+      "Velo Gallery/20210813-_DSC2659.webp": 1
+    }
+  },
+  "lists": {
+    "unused_paths": [
+      "public/Background.svg",
+      "public/Velo Gallery/20210813-_DSC2657-1024w.jpg",
+      "public/Velo Gallery/20210813-_DSC2657-1920w.jpg",
+      "public/Velo Gallery/20210813-_DSC2657-1920w.webp",
+      "public/Velo Gallery/20210813-_DSC2657-320w.jpg",
+      "public/Velo Gallery/20210813-_DSC2657-320w.webp",
+      "public/Velo Gallery/20210813-_DSC2657-640w.jpg",
+      "public/Velo Gallery/20210813-_DSC2657-640w.webp",
+      "public/Velo Gallery/20210813-_DSC2657.JPG",
+      "public/Velo Gallery/20210813-_DSC2657.webp",
+      "public/Velo Gallery/20210813-_DSC2659-1024w.jpg",
+      "public/Velo Gallery/20210813-_DSC2659-1920w.jpg",
+      "public/Velo Gallery/20210813-_DSC2659-1920w.webp",
+      "public/Velo Gallery/20210813-_DSC2659-320w.jpg",
+      "public/Velo Gallery/20210813-_DSC2659-320w.webp",
+      "public/Velo Gallery/20210813-_DSC2659-640w.jpg",
+      "public/Velo Gallery/20210813-_DSC2659-640w.webp",
+      "public/Velo Gallery/20210813-_DSC2659.JPG",
+      "public/Velo Gallery/20210813-_DSC2659.webp",
+      "public/Velo Gallery/20210814-DSC06342.JPG",
+      "public/Velo Gallery/20210814-DSC06359.JPG",
+      "public/Velo Gallery/20210814-DSC06498-1024w.jpg",
+      "public/Velo Gallery/20210814-DSC06498-1920w.jpg",
+      "public/Velo Gallery/20210814-DSC06498-1920w.webp",
+      "public/Velo Gallery/20210814-DSC06498-320w.jpg",
+      "public/Velo Gallery/20210814-DSC06498-320w.webp",
+      "public/Velo Gallery/20210814-DSC06498-640w.jpg",
+      "public/Velo Gallery/20210814-DSC06498-640w.webp",
+      "public/Velo Gallery/20210814-DSC06498.JPG",
+      "public/Velo Gallery/20210814-DSC06498.webp",
+      "public/Velo Gallery/20210814-DSC06501.JPG",
+      "public/Velo Gallery/20210814-DSC06538-1024w.jpg",
+      "public/Velo Gallery/20210814-DSC06538-1920w.jpg",
+      "public/Velo Gallery/20210814-DSC06538-1920w.webp",
+      "public/Velo Gallery/20210814-DSC06538-320w.jpg",
+      "public/Velo Gallery/20210814-DSC06538-320w.webp",
+      "public/Velo Gallery/20210814-DSC06538-640w.jpg",
+      "public/Velo Gallery/20210814-DSC06538-640w.webp",
+      "public/Velo Gallery/20210814-DSC06538.JPG",
+      "public/Velo Gallery/20210814-DSC06538.webp",
+      "public/Velo Gallery/20210814-DSC06541-1024w.jpg",
+      "public/Velo Gallery/20210814-DSC06541-1920w.jpg",
+      "public/Velo Gallery/20210814-DSC06541-1920w.webp",
+      "public/Velo Gallery/20210814-DSC06541-320w.jpg",
+      "public/Velo Gallery/20210814-DSC06541-320w.webp",
+      "public/Velo Gallery/20210814-DSC06541-640w.jpg",
+      "public/Velo Gallery/20210814-DSC06541-640w.webp",
+      "public/Velo Gallery/20210814-DSC06541.JPG",
+      "public/Velo Gallery/20210814-DSC06541.webp",
+      "public/Velo Gallery/20210814-dsc06342-1024w.jpg",
+      "public/Velo Gallery/20210814-dsc06342-1024w.webp",
+      "public/Velo Gallery/20210814-dsc06342-1920w.jpg",
+      "public/Velo Gallery/20210814-dsc06342-1920w.webp",
+      "public/Velo Gallery/20210814-dsc06342-320w.jpg",
+      "public/Velo Gallery/20210814-dsc06342-320w.webp",
+      "public/Velo Gallery/20210814-dsc06342-640w.webp",
+      "public/Velo Gallery/20210814-dsc06342.webp",
+      "public/Velo Gallery/20210814-dsc06359-1024w.jpg",
+      "public/Velo Gallery/20210814-dsc06359-1024w.webp",
+      "public/Velo Gallery/20210814-dsc06359-1920w.jpg",
+      "public/Velo Gallery/20210814-dsc06359-1920w.webp",
+      "public/Velo Gallery/20210814-dsc06359-320w.jpg",
+      "public/Velo Gallery/20210814-dsc06359-320w.webp",
+      "public/Velo Gallery/20210814-dsc06359-640w.jpg",
+      "public/Velo Gallery/20210814-dsc06359-640w.webp",
+      "public/Velo Gallery/20210814-dsc06359.webp",
+      "public/Velo Gallery/20210814-dsc06501-1024w.jpg",
+      "public/Velo Gallery/20210814-dsc06501-1024w.webp",
+      "public/Velo Gallery/20210814-dsc06501-1920w.jpg",
+      "public/Velo Gallery/20210814-dsc06501-1920w.webp",
+      "public/Velo Gallery/20210814-dsc06501-320w.jpg",
+      "public/Velo Gallery/20210814-dsc06501-320w.webp",
+      "public/Velo Gallery/20210814-dsc06501-640w.jpg",
+      "public/Velo Gallery/20210814-dsc06501-640w.webp",
+      "public/Velo Gallery/20210814-dsc06501.webp",
+      "public/Velo Gallery/20210828-DSC04132-320w.jpg",
+      "public/Velo Gallery/20210910-DSC04622.JPG",
+      "public/Velo Gallery/20210910-DSC04626-1024w.jpg",
+      "public/Velo Gallery/20210910-DSC04626-1920w.jpg",
+      "public/Velo Gallery/20210910-DSC04626-1920w.webp",
+      "public/Velo Gallery/20210910-DSC04626-320w.jpg",
+      "public/Velo Gallery/20210910-DSC04626-320w.webp",
+      "public/Velo Gallery/20210910-DSC04626-640w.jpg",
+      "public/Velo Gallery/20210910-DSC04626-640w.webp",
+      "public/Velo Gallery/20210910-DSC04626.JPG",
+      "public/Velo Gallery/20210910-DSC04626.webp",
+      "public/Velo Gallery/20210910-dsc04622-1024w.jpg",
+      "public/Velo Gallery/20210910-dsc04622-1024w.webp",
+      "public/Velo Gallery/20210910-dsc04622-1920w.jpg",
+      "public/Velo Gallery/20210910-dsc04622-1920w.webp",
+      "public/Velo Gallery/20210910-dsc04622-320w.jpg",
+      "public/Velo Gallery/20210910-dsc04622-320w.webp",
+      "public/Velo Gallery/20210910-dsc04622-640w.jpg",
+      "public/Velo Gallery/20210910-dsc04622-640w.webp",
+      "public/Velo Gallery/20210910-dsc04622.webp",
+      "public/Velo Gallery/20220317-DSC01962-1024w.jpg",
+      "public/Velo Gallery/20220317-DSC01962-1920w.jpg",
+      "public/Velo Gallery/20220317-DSC01962-1920w.webp",
+      "public/Velo Gallery/20220317-DSC01962-320w.jpg",
+      "public/Velo Gallery/20220317-DSC01962-320w.webp",
+      "public/Velo Gallery/20220317-DSC01962-640w.jpg",
+      "public/Velo Gallery/20220317-DSC01962-640w.webp",
+      "public/Velo Gallery/20220317-DSC01962.JPG",
+      "public/Velo Gallery/20220317-DSC01962.webp",
+      "public/Velo Gallery/20220317-_W147453-1024w.jpg",
+      "public/Velo Gallery/20220317-_W147453-1920w.jpg",
+      "public/Velo Gallery/20220317-_W147453-320w.jpg",
+      "public/Velo Gallery/20220317-_W147453-320w.webp",
+      "public/Velo Gallery/20220317-_W147453-640w.jpg",
+      "public/Velo Gallery/20220317-_W147453-640w.webp",
+      "public/Velo Gallery/20220317-_W147453.JPG",
+      "public/Velo Gallery/20220317-_W147453.webp",
+      "public/Velo Gallery/20220317-_W147477-1024w.jpg",
+      "public/Velo Gallery/20220317-_W147477-1920w.jpg",
+      "public/Velo Gallery/20220317-_W147477-1920w.webp",
+      "public/Velo Gallery/20220317-_W147477-320w.jpg",
+      "public/Velo Gallery/20220317-_W147477-320w.webp",
+      "public/Velo Gallery/20220317-_W147477-640w.jpg",
+      "public/Velo Gallery/20220317-_W147477-640w.webp",
+      "public/Velo Gallery/20220317-_W147477.JPG",
+      "public/Velo Gallery/20220317-_W147477.webp",
+      "public/Velo Gallery/20230326-DSC05298.jpg",
+      "public/Velo Gallery/20230326-dsc05298-1024w.jpg",
+      "public/Velo Gallery/20230326-dsc05298-1024w.webp",
+      "public/Velo Gallery/20230326-dsc05298-1920w.jpg",
+      "public/Velo Gallery/20230326-dsc05298-1920w.webp",
+      "public/Velo Gallery/20230326-dsc05298-320w.jpg",
+      "public/Velo Gallery/20230326-dsc05298-320w.webp",
+      "public/Velo Gallery/20230326-dsc05298-640w.jpg",
+      "public/Velo Gallery/20230326-dsc05298-640w.webp",
+      "public/Velo Gallery/20230326-dsc05298.webp",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988-1024w.jpg",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988-1024w.webp",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988-320w.jpg",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988-320w.webp",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988-640w.jpg",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988-640w.webp",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988.JPG",
+      "public/Velo Gallery/2120d94a-01b1-4d15-8904-81955542d988.webp",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-1024w.jpg",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-1024w.webp",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-320w.jpg",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-320w.webp",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-640w.jpg",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-640w.webp",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c.JPG",
+      "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c.webp",
+      "public/Velo Gallery/53D8BEA9-DC8B-4A1C-BBF0-7776EAE2FAA7.JPG",
+      "public/Velo Gallery/53d8bea9-dc8b-4a1c-bbf0-7776eae2faa7-320w.jpg",
+      "public/Velo Gallery/53d8bea9-dc8b-4a1c-bbf0-7776eae2faa7-320w.webp",
+      "public/Velo Gallery/53d8bea9-dc8b-4a1c-bbf0-7776eae2faa7-640w.jpg",
+      "public/Velo Gallery/53d8bea9-dc8b-4a1c-bbf0-7776eae2faa7-640w.webp",
+      "public/Velo Gallery/53d8bea9-dc8b-4a1c-bbf0-7776eae2faa7.webp",
+      "public/Velo Gallery/5635c176-c3f9-4c04-880a-a5824c44b6e7-320w.jpg",
+      "public/Velo Gallery/5635c176-c3f9-4c04-880a-a5824c44b6e7-320w.webp",
+      "public/Velo Gallery/5635c176-c3f9-4c04-880a-a5824c44b6e7-640w.jpg",
+      "public/Velo Gallery/5635c176-c3f9-4c04-880a-a5824c44b6e7-640w.webp",
+      "public/Velo Gallery/5635c176-c3f9-4c04-880a-a5824c44b6e7.JPG",
+      "public/Velo Gallery/5635c176-c3f9-4c04-880a-a5824c44b6e7.webp",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd-1024w.jpg",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd-1024w.webp",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd-320w.jpg",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd-320w.webp",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd-640w.jpg",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd-640w.webp",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd.JPG",
+      "public/Velo Gallery/6353f60f-e06b-4a82-9faf-afec2a55a9fd.webp",
+      "public/Velo Gallery/9127B453-BD48-4C38-AE31-8963BB99F72D.JPG",
+      "public/Velo Gallery/9127b453-bd48-4c38-ae31-8963bb99f72d.webp",
+      "public/Velo Gallery/9524cdce-648f-47e1-aac2-dda4fa56b5ec-320w.jpg",
+      "public/Velo Gallery/9524cdce-648f-47e1-aac2-dda4fa56b5ec-320w.webp",
+      "public/Velo Gallery/A7401220-1024w.jpg",
+      "public/Velo Gallery/A7401220-1024w.webp",
+      "public/Velo Gallery/A7401220-1920w.webp",
+      "public/Velo Gallery/A7401220-320w.webp",
+      "public/Velo Gallery/A7401220-640w.jpg",
+      "public/Velo Gallery/A7401220-640w.webp",
+      "public/Velo Gallery/A7401220.jpg",
+      "public/Velo Gallery/A7401228-1024w.jpg",
+      "public/Velo Gallery/A7401228-320w.jpg",
+      "public/Velo Gallery/A7401228-320w.webp",
+      "public/Velo Gallery/A7401228-640w.jpg",
+      "public/Velo Gallery/A7401228-640w.webp",
+      "public/Velo Gallery/A7401228.jpg",
+      "public/Velo Gallery/A7401228.webp",
+      "public/Velo Gallery/A7401316-1024w.jpg",
+      "public/Velo Gallery/A7401316-320w.jpg",
+      "public/Velo Gallery/A7401316-320w.webp",
+      "public/Velo Gallery/A7401316-640w.jpg",
+      "public/Velo Gallery/A7401316-640w.webp",
+      "public/Velo Gallery/A7401316.jpg",
+      "public/Velo Gallery/A7401316.webp",
+      "public/Velo Gallery/A7401318.jpg",
+      "public/Velo Gallery/A7401328-1024w.jpg",
+      "public/Velo Gallery/A7401328-320w.webp",
+      "public/Velo Gallery/A7401328-640w.jpg",
+      "public/Velo Gallery/A7401328-640w.webp",
+      "public/Velo Gallery/A7401328.jpg",
+      "public/Velo Gallery/A7401328.webp",
+      "public/Velo Gallery/A7401333-1024w.jpg",
+      "public/Velo Gallery/A7401333-320w.jpg",
+      "public/Velo Gallery/A7401333-320w.webp",
+      "public/Velo Gallery/A7401333-640w.jpg",
+      "public/Velo Gallery/A7401333-640w.webp",
+      "public/Velo Gallery/A7401333.jpg",
+      "public/Velo Gallery/A7401333.webp",
+      "public/Velo Gallery/A7401359-1024w.jpg",
+      "public/Velo Gallery/A7401359-320w.jpg",
+      "public/Velo Gallery/A7401359-320w.webp",
+      "public/Velo Gallery/A7401359-640w.jpg",
+      "public/Velo Gallery/A7401359-640w.webp",
+      "public/Velo Gallery/A7401359.jpg",
+      "public/Velo Gallery/A7401359.webp",
+      "public/Velo Gallery/A7401361-1024w.jpg",
+      "public/Velo Gallery/A7401361-320w.jpg",
+      "public/Velo Gallery/A7401361-320w.webp",
+      "public/Velo Gallery/A7401361-640w.jpg",
+      "public/Velo Gallery/A7401361-640w.webp",
+      "public/Velo Gallery/A7401361.jpg",
+      "public/Velo Gallery/A7401361.webp",
+      "public/Velo Gallery/A7401365-1024w.jpg",
+      "public/Velo Gallery/A7401365-320w.jpg",
+      "public/Velo Gallery/A7401365-320w.webp",
+      "public/Velo Gallery/A7401365-640w.jpg",
+      "public/Velo Gallery/A7401365-640w.webp",
+      "public/Velo Gallery/A7401365.jpg",
+      "public/Velo Gallery/A7401365.webp",
+      "public/Velo Gallery/A7401382-320w.jpg",
+      "public/Velo Gallery/A7401382-320w.webp",
+      "public/Velo Gallery/A7401382-640w.jpg",
+      "public/Velo Gallery/A7401412-1024w.jpg",
+      "public/Velo Gallery/A7401412-320w.webp",
+      "public/Velo Gallery/A7401412-640w.jpg",
+      "public/Velo Gallery/A7401412-640w.webp",
+      "public/Velo Gallery/A7401412.jpg",
+      "public/Velo Gallery/A7401412.webp",
+      "public/Velo Gallery/A7401419.jpg",
+      "public/Velo Gallery/Basil smash.jpg",
+      "public/Velo Gallery/CD2A9D8A-EC59-4ACB-87BE-F348982277BD.JPG",
+      "public/Velo Gallery/Coburg-1024w.jpg",
+      "public/Velo Gallery/Coburg-320w.jpg",
+      "public/Velo Gallery/Coburg-320w.webp",
+      "public/Velo Gallery/Coburg-640w.jpg",
+      "public/Velo Gallery/Coburg-640w.webp",
+      "public/Velo Gallery/Coburg.webp",
+      "public/Velo Gallery/DSC00059-1024w.jpg",
+      "public/Velo Gallery/DSC00059-1920w.jpg",
+      "public/Velo Gallery/DSC00059-1920w.webp",
+      "public/Velo Gallery/DSC00059-320w.jpg",
+      "public/Velo Gallery/DSC00059-320w.webp",
+      "public/Velo Gallery/DSC00059-640w.jpg",
+      "public/Velo Gallery/DSC00059-640w.webp",
+      "public/Velo Gallery/DSC00059.jpg",
+      "public/Velo Gallery/DSC00059.webp",
+      "public/Velo Gallery/DSC00139-1024w.jpg",
+      "public/Velo Gallery/DSC00139-1920w.jpg",
+      "public/Velo Gallery/DSC00139-1920w.webp",
+      "public/Velo Gallery/DSC00139-320w.webp",
+      "public/Velo Gallery/DSC00139-640w.jpg",
+      "public/Velo Gallery/DSC00139-640w.webp",
+      "public/Velo Gallery/DSC00139.jpg",
+      "public/Velo Gallery/DSC00139.webp",
+      "public/Velo Gallery/DSC00141-1024w.jpg",
+      "public/Velo Gallery/DSC00141-1920w.jpg",
+      "public/Velo Gallery/DSC00141-1920w.webp",
+      "public/Velo Gallery/DSC00141-320w.jpg",
+      "public/Velo Gallery/DSC00141-320w.webp",
+      "public/Velo Gallery/DSC00141-640w.jpg",
+      "public/Velo Gallery/DSC00141-640w.webp",
+      "public/Velo Gallery/DSC00141.jpg",
+      "public/Velo Gallery/DSC00141.webp",
+      "public/Velo Gallery/DSC00144-1024w.jpg",
+      "public/Velo Gallery/DSC00144-1920w.jpg",
+      "public/Velo Gallery/DSC00144-1920w.webp",
+      "public/Velo Gallery/DSC00144-320w.webp",
+      "public/Velo Gallery/DSC00144-640w.jpg",
+      "public/Velo Gallery/DSC00144-640w.webp",
+      "public/Velo Gallery/DSC00144.jpg",
+      "public/Velo Gallery/DSC00144.webp",
+      "public/Velo Gallery/DSC00155-1024w.jpg",
+      "public/Velo Gallery/DSC00155-1920w.jpg",
+      "public/Velo Gallery/DSC00155-1920w.webp",
+      "public/Velo Gallery/DSC00155-320w.jpg",
+      "public/Velo Gallery/DSC00155-320w.webp",
+      "public/Velo Gallery/DSC00155-640w.jpg",
+      "public/Velo Gallery/DSC00155-640w.webp",
+      "public/Velo Gallery/DSC00155.jpg",
+      "public/Velo Gallery/DSC00155.webp",
+      "public/Velo Gallery/DSC00157-1024w.jpg",
+      "public/Velo Gallery/DSC00157-1920w.jpg",
+      "public/Velo Gallery/DSC00157-1920w.webp",
+      "public/Velo Gallery/DSC00157-320w.jpg",
+      "public/Velo Gallery/DSC00157-320w.webp",
+      "public/Velo Gallery/DSC00157-640w.jpg",
+      "public/Velo Gallery/DSC00157-640w.webp",
+      "public/Velo Gallery/DSC00157.jpg",
+      "public/Velo Gallery/DSC00157.webp",
+      "public/Velo Gallery/DSC00159-1024w.jpg",
+      "public/Velo Gallery/DSC00159-1920w.jpg",
+      "public/Velo Gallery/DSC00159-1920w.webp",
+      "public/Velo Gallery/DSC00159-320w.jpg",
+      "public/Velo Gallery/DSC00159-320w.webp",
+      "public/Velo Gallery/DSC00159-640w.jpg",
+      "public/Velo Gallery/DSC00159-640w.webp",
+      "public/Velo Gallery/DSC00159.jpg",
+      "public/Velo Gallery/DSC00159.webp",
+      "public/Velo Gallery/DSC00160-1024w.jpg",
+      "public/Velo Gallery/DSC00160-1920w.jpg",
+      "public/Velo Gallery/DSC00160-1920w.webp",
+      "public/Velo Gallery/DSC00160-320w.jpg",
+      "public/Velo Gallery/DSC00160-320w.webp",
+      "public/Velo Gallery/DSC00160-640w.jpg",
+      "public/Velo Gallery/DSC00160-640w.webp",
+      "public/Velo Gallery/DSC00160.jpg",
+      "public/Velo Gallery/DSC00160.webp",
+      "public/Velo Gallery/DSC00174.jpg",
+      "public/Velo Gallery/DSC00183-1024w.jpg",
+      "public/Velo Gallery/DSC00183-320w.jpg",
+      "public/Velo Gallery/DSC00183-320w.webp",
+      "public/Velo Gallery/DSC00183-640w.jpg",
+      "public/Velo Gallery/DSC00183-640w.webp",
+      "public/Velo Gallery/DSC00185.jpg",
+      "public/Velo Gallery/DSC00192-1920w.jpg",
+      "public/Velo Gallery/DSC00192-1920w.webp",
+      "public/Velo Gallery/DSC00192.jpg",
+      "public/Velo Gallery/DSC00192.webp",
+      "public/Velo Gallery/DSC00202-1024w.jpg",
+      "public/Velo Gallery/DSC00202-1920w.jpg",
+      "public/Velo Gallery/DSC00202-1920w.webp",
+      "public/Velo Gallery/DSC00202-320w.jpg",
+      "public/Velo Gallery/DSC00202-320w.webp",
+      "public/Velo Gallery/DSC00202-640w.jpg",
+      "public/Velo Gallery/DSC00202-640w.webp",
+      "public/Velo Gallery/DSC00202.jpg",
+      "public/Velo Gallery/DSC00202.webp",
+      "public/Velo Gallery/DSC00204-1024w.jpg",
+      "public/Velo Gallery/DSC00204-1920w.jpg",
+      "public/Velo Gallery/DSC00204-1920w.webp",
+      "public/Velo Gallery/DSC00204-320w.jpg",
+      "public/Velo Gallery/DSC00204-320w.webp",
+      "public/Velo Gallery/DSC00204-640w.jpg",
+      "public/Velo Gallery/DSC00204-640w.webp",
+      "public/Velo Gallery/DSC00204.jpg",
+      "public/Velo Gallery/DSC00209.jpg",
+      "public/Velo Gallery/DSC00215-1024w.jpg",
+      "public/Velo Gallery/DSC00215-1920w.jpg",
+      "public/Velo Gallery/DSC00215-1920w.webp",
+      "public/Velo Gallery/DSC00215-320w.jpg",
+      "public/Velo Gallery/DSC00215-320w.webp",
+      "public/Velo Gallery/DSC00215-640w.jpg",
+      "public/Velo Gallery/DSC00215-640w.webp",
+      "public/Velo Gallery/DSC00215.jpg",
+      "public/Velo Gallery/DSC00215.webp",
+      "public/Velo Gallery/DSC00237-1920w.webp",
+      "public/Velo Gallery/DSC00237.webp",
+      "public/Velo Gallery/DSC00250-320w.jpg",
+      "public/Velo Gallery/DSC00250-320w.webp",
+      "public/Velo Gallery/DSC00250-640w.jpg",
+      "public/Velo Gallery/DSC00254.jpg",
+      "public/Velo Gallery/DSC00271-1920w.jpg",
+      "public/Velo Gallery/DSC00271-1920w.webp",
+      "public/Velo Gallery/DSC00271.jpg",
+      "public/Velo Gallery/DSC00271.webp",
+      "public/Velo Gallery/DSC00291-1024w.jpg",
+      "public/Velo Gallery/DSC00291-1920w.jpg",
+      "public/Velo Gallery/DSC00291-1920w.webp",
+      "public/Velo Gallery/DSC00291-320w.webp",
+      "public/Velo Gallery/DSC00291-640w.jpg",
+      "public/Velo Gallery/DSC00291-640w.webp",
+      "public/Velo Gallery/DSC00291.jpg",
+      "public/Velo Gallery/DSC00291.webp",
+      "public/Velo Gallery/DSC00297-1024w.jpg",
+      "public/Velo Gallery/DSC00297-320w.jpg",
+      "public/Velo Gallery/DSC00297-320w.webp",
+      "public/Velo Gallery/DSC00297-640w.jpg",
+      "public/Velo Gallery/DSC00297-640w.webp",
+      "public/Velo Gallery/DSC00317-1024w.jpg",
+      "public/Velo Gallery/DSC00317-1920w.jpg",
+      "public/Velo Gallery/DSC00317-1920w.webp",
+      "public/Velo Gallery/DSC00317-320w.webp",
+      "public/Velo Gallery/DSC00317-640w.jpg",
+      "public/Velo Gallery/DSC00317-640w.webp",
+      "public/Velo Gallery/DSC00317.jpg",
+      "public/Velo Gallery/DSC00317.webp",
+      "public/Velo Gallery/DSC00335.jpg",
+      "public/Velo Gallery/DSC00337.jpg",
+      "public/Velo Gallery/DSC00346.jpg",
+      "public/Velo Gallery/DSC00365-1024w.jpg",
+      "public/Velo Gallery/DSC00365-1920w.jpg",
+      "public/Velo Gallery/DSC00365-1920w.webp",
+      "public/Velo Gallery/DSC00365-320w.jpg",
+      "public/Velo Gallery/DSC00365-320w.webp",
+      "public/Velo Gallery/DSC00365-640w.jpg",
+      "public/Velo Gallery/DSC00365-640w.webp",
+      "public/Velo Gallery/DSC00365.jpg",
+      "public/Velo Gallery/DSC00365.webp",
+      "public/Velo Gallery/DSC00391.jpg",
+      "public/Velo Gallery/DSC00418.jpg",
+      "public/Velo Gallery/DSC01966-1024w.jpg",
+      "public/Velo Gallery/DSC01966-1920w.jpg",
+      "public/Velo Gallery/DSC01966-1920w.webp",
+      "public/Velo Gallery/DSC01966-320w.jpg",
+      "public/Velo Gallery/DSC01966-320w.webp",
+      "public/Velo Gallery/DSC01966-640w.jpg",
+      "public/Velo Gallery/DSC01966-640w.webp",
+      "public/Velo Gallery/DSC01966.JPG",
+      "public/Velo Gallery/DSC01966.webp",
+      "public/Velo Gallery/DSC01984-1024w.jpg",
+      "public/Velo Gallery/DSC01984-1920w.jpg",
+      "public/Velo Gallery/DSC01984-320w.jpg",
+      "public/Velo Gallery/DSC01984-640w.jpg",
+      "public/Velo Gallery/DSC01984-640w.webp",
+      "public/Velo Gallery/DSC01984.JPG",
+      "public/Velo Gallery/DSC01984.webp",
+      "public/Velo Gallery/DSC01995-1024w.jpg",
+      "public/Velo Gallery/DSC01995-1920w.jpg",
+      "public/Velo Gallery/DSC01995-1920w.webp",
+      "public/Velo Gallery/DSC01995-320w.jpg",
+      "public/Velo Gallery/DSC01995-320w.webp",
+      "public/Velo Gallery/DSC01995-640w.jpg",
+      "public/Velo Gallery/DSC01995-640w.webp",
+      "public/Velo Gallery/DSC01995.JPG",
+      "public/Velo Gallery/DSC01995.webp",
+      "public/Velo Gallery/DSC02009-1024w.jpg",
+      "public/Velo Gallery/DSC02009-1920w.jpg",
+      "public/Velo Gallery/DSC02009-1920w.webp",
+      "public/Velo Gallery/DSC02009-320w.jpg",
+      "public/Velo Gallery/DSC02009-320w.webp",
+      "public/Velo Gallery/DSC02009-640w.jpg",
+      "public/Velo Gallery/DSC02009-640w.webp",
+      "public/Velo Gallery/DSC02009.JPG",
+      "public/Velo Gallery/DSC02009.webp",
+      "public/Velo Gallery/DSC02013-1024w.jpg",
+      "public/Velo Gallery/DSC02013-1920w.jpg",
+      "public/Velo Gallery/DSC02013-1920w.webp",
+      "public/Velo Gallery/DSC02013-320w.jpg",
+      "public/Velo Gallery/DSC02013-320w.webp",
+      "public/Velo Gallery/DSC02013-640w.jpg",
+      "public/Velo Gallery/DSC02013-640w.webp",
+      "public/Velo Gallery/DSC02013.JPG",
+      "public/Velo Gallery/DSC02013.webp",
+      "public/Velo Gallery/DSC02025-1024w.jpg",
+      "public/Velo Gallery/DSC02025-1920w.jpg",
+      "public/Velo Gallery/DSC02025-1920w.webp",
+      "public/Velo Gallery/DSC02025-320w.jpg",
+      "public/Velo Gallery/DSC02025-320w.webp",
+      "public/Velo Gallery/DSC02025-640w.jpg",
+      "public/Velo Gallery/DSC02025-640w.webp",
+      "public/Velo Gallery/DSC02025.JPG",
+      "public/Velo Gallery/DSC02025.webp",
+      "public/Velo Gallery/DSC02026-1024w.jpg",
+      "public/Velo Gallery/DSC02026-1920w.jpg",
+      "public/Velo Gallery/DSC02026-1920w.webp",
+      "public/Velo Gallery/DSC02026-320w.jpg",
+      "public/Velo Gallery/DSC02026-320w.webp",
+      "public/Velo Gallery/DSC02026-640w.jpg",
+      "public/Velo Gallery/DSC02026-640w.webp",
+      "public/Velo Gallery/DSC02026.JPG",
+      "public/Velo Gallery/DSC02026.webp",
+      "public/Velo Gallery/DSC03519.jpeg",
+      "public/Velo Gallery/DSC05410-1024w.jpg",
+      "public/Velo Gallery/DSC05410-1920w.jpg",
+      "public/Velo Gallery/DSC05410-1920w.webp",
+      "public/Velo Gallery/DSC05410-320w.webp",
+      "public/Velo Gallery/DSC05410-640w.jpg",
+      "public/Velo Gallery/DSC05410-640w.webp",
+      "public/Velo Gallery/DSC05410.jpg",
+      "public/Velo Gallery/DSC05410.webp",
+      "public/Velo Gallery/DSC05414-1024w.jpg",
+      "public/Velo Gallery/DSC05414-1920w.jpg",
+      "public/Velo Gallery/DSC05414-1920w.webp",
+      "public/Velo Gallery/DSC05414-320w.jpg",
+      "public/Velo Gallery/DSC05414-320w.webp",
+      "public/Velo Gallery/DSC05414-640w.jpg",
+      "public/Velo Gallery/DSC05414-640w.webp",
+      "public/Velo Gallery/DSC05414.jpg",
+      "public/Velo Gallery/DSC05414.webp",
+      "public/Velo Gallery/DSC05416-1024w.jpg",
+      "public/Velo Gallery/DSC05416-1920w.jpg",
+      "public/Velo Gallery/DSC05416-1920w.webp",
+      "public/Velo Gallery/DSC05416-320w.jpg",
+      "public/Velo Gallery/DSC05416-320w.webp",
+      "public/Velo Gallery/DSC05416-640w.jpg",
+      "public/Velo Gallery/DSC05416-640w.webp",
+      "public/Velo Gallery/DSC05416.jpg",
+      "public/Velo Gallery/DSC05416.webp",
+      "public/Velo Gallery/DSC05425-1024w.jpg",
+      "public/Velo Gallery/DSC05425-1920w.jpg",
+      "public/Velo Gallery/DSC05425-1920w.webp",
+      "public/Velo Gallery/DSC05425-320w.jpg",
+      "public/Velo Gallery/DSC05425-320w.webp",
+      "public/Velo Gallery/DSC05425-640w.jpg",
+      "public/Velo Gallery/DSC05425-640w.webp",
+      "public/Velo Gallery/DSC05425.jpg",
+      "public/Velo Gallery/DSC05425.webp",
+      "public/Velo Gallery/DSC05433-1024w.jpg",
+      "public/Velo Gallery/DSC05433-1920w.jpg",
+      "public/Velo Gallery/DSC05433-1920w.webp",
+      "public/Velo Gallery/DSC05433-320w.jpg",
+      "public/Velo Gallery/DSC05433-320w.webp",
+      "public/Velo Gallery/DSC05433-640w.jpg",
+      "public/Velo Gallery/DSC05433-640w.webp",
+      "public/Velo Gallery/DSC05433.jpg",
+      "public/Velo Gallery/DSC05433.webp",
+      "public/Velo Gallery/DSC05445-1024w.jpg",
+      "public/Velo Gallery/DSC05445-1920w.jpg",
+      "public/Velo Gallery/DSC05445-1920w.webp",
+      "public/Velo Gallery/DSC05445-320w.jpg",
+      "public/Velo Gallery/DSC05445-320w.webp",
+      "public/Velo Gallery/DSC05445-640w.jpg",
+      "public/Velo Gallery/DSC05445-640w.webp",
+      "public/Velo Gallery/DSC05445.jpg",
+      "public/Velo Gallery/DSC05445.webp",
+      "public/Velo Gallery/DSC05451-1024w.jpg",
+      "public/Velo Gallery/DSC05451-1920w.jpg",
+      "public/Velo Gallery/DSC05451-1920w.webp",
+      "public/Velo Gallery/DSC05451-320w.jpg",
+      "public/Velo Gallery/DSC05451-320w.webp",
+      "public/Velo Gallery/DSC05451-640w.jpg",
+      "public/Velo Gallery/DSC05451-640w.webp",
+      "public/Velo Gallery/DSC05451.jpg",
+      "public/Velo Gallery/DSC05451.webp",
+      "public/Velo Gallery/DSC05463-1024w.jpg",
+      "public/Velo Gallery/DSC05463-1920w.jpg",
+      "public/Velo Gallery/DSC05463-1920w.webp",
+      "public/Velo Gallery/DSC05463-320w.jpg",
+      "public/Velo Gallery/DSC05463-320w.webp",
+      "public/Velo Gallery/DSC05463-640w.jpg",
+      "public/Velo Gallery/DSC05463-640w.webp",
+      "public/Velo Gallery/DSC05463.jpg",
+      "public/Velo Gallery/DSC05463.webp",
+      "public/Velo Gallery/DSC07828.jpg",
+      "public/Velo Gallery/DSC07836-1024w.jpg",
+      "public/Velo Gallery/DSC07836-1920w.jpg",
+      "public/Velo Gallery/DSC07836-1920w.webp",
+      "public/Velo Gallery/DSC07836-320w.jpg",
+      "public/Velo Gallery/DSC07836-320w.webp",
+      "public/Velo Gallery/DSC07836-640w.jpg",
+      "public/Velo Gallery/DSC07836-640w.webp",
+      "public/Velo Gallery/DSC07836.jpg",
+      "public/Velo Gallery/DSC07836.webp",
+      "public/Velo Gallery/DSC07846-1024w.jpg",
+      "public/Velo Gallery/DSC07846-1920w.jpg",
+      "public/Velo Gallery/DSC07846-1920w.webp",
+      "public/Velo Gallery/DSC07846-320w.jpg",
+      "public/Velo Gallery/DSC07846-320w.webp",
+      "public/Velo Gallery/DSC07846-640w.jpg",
+      "public/Velo Gallery/DSC07846-640w.webp",
+      "public/Velo Gallery/DSC07846.jpg",
+      "public/Velo Gallery/DSC07846.webp",
+      "public/Velo Gallery/DSC07847.jpg",
+      "public/Velo Gallery/DSC07850.jpg",
+      "public/Velo Gallery/DSC07865-1024w.jpg",
+      "public/Velo Gallery/DSC07865-1920w.jpg",
+      "public/Velo Gallery/DSC07865-1920w.webp",
+      "public/Velo Gallery/DSC07865-320w.jpg",
+      "public/Velo Gallery/DSC07865-320w.webp",
+      "public/Velo Gallery/DSC07865-640w.jpg",
+      "public/Velo Gallery/DSC07865-640w.webp",
+      "public/Velo Gallery/DSC07865.jpg",
+      "public/Velo Gallery/DSC07865.webp",
+      "public/Velo Gallery/DSC07871-1024w.jpg",
+      "public/Velo Gallery/DSC07871-1920w.jpg",
+      "public/Velo Gallery/DSC07871-1920w.webp",
+      "public/Velo Gallery/DSC07871-320w.jpg",
+      "public/Velo Gallery/DSC07871-320w.webp",
+      "public/Velo Gallery/DSC07871-640w.jpg",
+      "public/Velo Gallery/DSC07871-640w.webp",
+      "public/Velo Gallery/DSC07871.jpg",
+      "public/Velo Gallery/DSC07871.webp",
+      "public/Velo Gallery/DSC07875.jpg",
+      "public/Velo Gallery/DSC07898-1024w.jpg",
+      "public/Velo Gallery/DSC07898-1920w.jpg",
+      "public/Velo Gallery/DSC07898-1920w.webp",
+      "public/Velo Gallery/DSC07898-320w.jpg",
+      "public/Velo Gallery/DSC07898-320w.webp",
+      "public/Velo Gallery/DSC07898-640w.jpg",
+      "public/Velo Gallery/DSC07898-640w.webp",
+      "public/Velo Gallery/DSC07898.jpg",
+      "public/Velo Gallery/DSC07898.webp",
+      "public/Velo Gallery/DSC07909-1024w.jpg",
+      "public/Velo Gallery/DSC07909-1920w.jpg",
+      "public/Velo Gallery/DSC07909-1920w.webp",
+      "public/Velo Gallery/DSC07909-320w.jpg",
+      "public/Velo Gallery/DSC07909-320w.webp",
+      "public/Velo Gallery/DSC07909-640w.jpg",
+      "public/Velo Gallery/DSC07909-640w.webp",
+      "public/Velo Gallery/DSC07909.jpg",
+      "public/Velo Gallery/DSC07909.webp",
+      "public/Velo Gallery/DSC08082.webp",
+      "public/Velo Gallery/DSC08085-1024w.jpg",
+      "public/Velo Gallery/DSC08085-1920w.jpg",
+      "public/Velo Gallery/DSC08085-1920w.webp",
+      "public/Velo Gallery/DSC08085-320w.jpg",
+      "public/Velo Gallery/DSC08085-320w.webp",
+      "public/Velo Gallery/DSC08085-640w.jpg",
+      "public/Velo Gallery/DSC08085-640w.webp",
+      "public/Velo Gallery/DSC08085.jpg",
+      "public/Velo Gallery/DSC08085.webp",
+      "public/Velo Gallery/DSC08094-320w.jpg",
+      "public/Velo Gallery/DSC08094-320w.webp",
+      "public/Velo Gallery/DSC08143-1920w.webp",
+      "public/Velo Gallery/DSC08143.jpg",
+      "public/Velo Gallery/DSC08143.webp",
+      "public/Velo Gallery/DSC08154-1024w.jpg",
+      "public/Velo Gallery/DSC08154-1920w.jpg",
+      "public/Velo Gallery/DSC08154-1920w.webp",
+      "public/Velo Gallery/DSC08154-320w.jpg",
+      "public/Velo Gallery/DSC08154-320w.webp",
+      "public/Velo Gallery/DSC08154-640w.jpg",
+      "public/Velo Gallery/DSC08154-640w.webp",
+      "public/Velo Gallery/DSC08154.jpg",
+      "public/Velo Gallery/DSC08154.webp",
+      "public/Velo Gallery/DSC08198-1024w.jpg",
+      "public/Velo Gallery/DSC08198-1920w.jpg",
+      "public/Velo Gallery/DSC08198-1920w.webp",
+      "public/Velo Gallery/DSC08198-320w.jpg",
+      "public/Velo Gallery/DSC08198-320w.webp",
+      "public/Velo Gallery/DSC08198-640w.jpg",
+      "public/Velo Gallery/DSC08198-640w.webp",
+      "public/Velo Gallery/DSC08198.jpg",
+      "public/Velo Gallery/DSC08198.webp",
+      "public/Velo Gallery/DSC08201-1024w.jpg",
+      "public/Velo Gallery/DSC08201-1920w.jpg",
+      "public/Velo Gallery/DSC08201-1920w.webp",
+      "public/Velo Gallery/DSC08201-320w.jpg",
+      "public/Velo Gallery/DSC08201-320w.webp",
+      "public/Velo Gallery/DSC08201-640w.jpg",
+      "public/Velo Gallery/DSC08201-640w.webp",
+      "public/Velo Gallery/DSC08201.jpg",
+      "public/Velo Gallery/DSC08201.webp",
+      "public/Velo Gallery/DSC08210-1024w.jpg",
+      "public/Velo Gallery/DSC08210-1920w.jpg",
+      "public/Velo Gallery/DSC08210-1920w.webp",
+      "public/Velo Gallery/DSC08210-320w.jpg",
+      "public/Velo Gallery/DSC08210-320w.webp",
+      "public/Velo Gallery/DSC08210-640w.jpg",
+      "public/Velo Gallery/DSC08210-640w.webp",
+      "public/Velo Gallery/DSC08210.jpg",
+      "public/Velo Gallery/DSC08210.webp",
+      "public/Velo Gallery/DSC08324-1024w.jpg",
+      "public/Velo Gallery/DSC08324-1920w.jpg",
+      "public/Velo Gallery/DSC08324-1920w.webp",
+      "public/Velo Gallery/DSC08324-640w.webp",
+      "public/Velo Gallery/DSC08324.jpg",
+      "public/Velo Gallery/DSC08324.webp",
+      "public/Velo Gallery/DSC08342-640w.jpg",
+      "public/Velo Gallery/DSC08342.jpg",
+      "public/Velo Gallery/DSC08342.webp",
+      "public/Velo Gallery/DSC08372.jpg",
+      "public/Velo Gallery/DSC08418-1024w.jpg",
+      "public/Velo Gallery/DSC08418-1920w.jpg",
+      "public/Velo Gallery/DSC08418-1920w.webp",
+      "public/Velo Gallery/DSC08418-320w.jpg",
+      "public/Velo Gallery/DSC08418-320w.webp",
+      "public/Velo Gallery/DSC08418-640w.webp",
+      "public/Velo Gallery/DSC08418.JPG",
+      "public/Velo Gallery/DSC08418.webp",
+      "public/Velo Gallery/DSC08451.JPG",
+      "public/Velo Gallery/DSC08454.jpeg",
+      "public/Velo Gallery/DSC08461.jpeg",
+      "public/Velo Gallery/DSC08485-320w.jpg",
+      "public/Velo Gallery/DSC08485-320w.webp",
+      "public/Velo Gallery/DSC08485-640w.jpg",
+      "public/Velo Gallery/DSC08485-640w.webp",
+      "public/Velo Gallery/DSC08537-1920w.webp",
+      "public/Velo Gallery/DSC08537.jpg",
+      "public/Velo Gallery/DSC08537.webp",
+      "public/Velo Gallery/DSC08563.jpg",
+      "public/Velo Gallery/DSC08571.jpeg",
+      "public/Velo Gallery/DSC08640-320w.jpg",
+      "public/Velo Gallery/DSC08640-320w.webp",
+      "public/Velo Gallery/DSC08672.webp",
+      "public/Velo Gallery/DSC08679-1024w.jpg",
+      "public/Velo Gallery/DSC08679-1920w.jpg",
+      "public/Velo Gallery/DSC08679-1920w.webp",
+      "public/Velo Gallery/DSC08679-320w.jpg",
+      "public/Velo Gallery/DSC08679-320w.webp",
+      "public/Velo Gallery/DSC08679-640w.jpg",
+      "public/Velo Gallery/DSC08679-640w.webp",
+      "public/Velo Gallery/DSC08679.JPG",
+      "public/Velo Gallery/DSC08679.webp",
+      "public/Velo Gallery/DSC09030-1024w.jpg",
+      "public/Velo Gallery/DSC09030-1920w.jpg",
+      "public/Velo Gallery/DSC09030-1920w.webp",
+      "public/Velo Gallery/DSC09030-320w.jpg",
+      "public/Velo Gallery/DSC09030-320w.webp",
+      "public/Velo Gallery/DSC09030-640w.jpg",
+      "public/Velo Gallery/DSC09030-640w.webp",
+      "public/Velo Gallery/DSC09030.JPG",
+      "public/Velo Gallery/DSC09030.webp",
+      "public/Velo Gallery/DSC09453-1920w.jpg",
+      "public/Velo Gallery/DSC09453-1920w.webp",
+      "public/Velo Gallery/DSC09453-320w.jpg",
+      "public/Velo Gallery/DSC09453-320w.webp",
+      "public/Velo Gallery/DSC09453-640w.jpg",
+      "public/Velo Gallery/DSC09453-640w.webp",
+      "public/Velo Gallery/DSC09453.JPG",
+      "public/Velo Gallery/DSC09453.webp",
+      "public/Velo Gallery/DSC09575-1024w.jpg",
+      "public/Velo Gallery/DSC09575-1920w.jpg",
+      "public/Velo Gallery/DSC09575-1920w.webp",
+      "public/Velo Gallery/DSC09575-320w.jpg",
+      "public/Velo Gallery/DSC09575-320w.webp",
+      "public/Velo Gallery/DSC09575-640w.jpg",
+      "public/Velo Gallery/DSC09575-640w.webp",
+      "public/Velo Gallery/DSC09575.JPG",
+      "public/Velo Gallery/DSC09575.webp",
+      "public/Velo Gallery/DSC09589-1024w.jpg",
+      "public/Velo Gallery/DSC09589-1920w.jpg",
+      "public/Velo Gallery/DSC09589-1920w.webp",
+      "public/Velo Gallery/DSC09589-320w.jpg",
+      "public/Velo Gallery/DSC09589-320w.webp",
+      "public/Velo Gallery/DSC09589-640w.jpg",
+      "public/Velo Gallery/DSC09589-640w.webp",
+      "public/Velo Gallery/DSC09589.JPG",
+      "public/Velo Gallery/DSC09589.webp",
+      "public/Velo Gallery/DSC09638-1024w.jpg",
+      "public/Velo Gallery/DSC09638-1920w.jpg",
+      "public/Velo Gallery/DSC09638-1920w.webp",
+      "public/Velo Gallery/DSC09638-320w.webp",
+      "public/Velo Gallery/DSC09638-640w.jpg",
+      "public/Velo Gallery/DSC09638-640w.webp",
+      "public/Velo Gallery/DSC09638.JPG",
+      "public/Velo Gallery/DSC09638.webp",
+      "public/Velo Gallery/DSC09647-1024w.jpg",
+      "public/Velo Gallery/DSC09647-1920w.jpg",
+      "public/Velo Gallery/DSC09647-1920w.webp",
+      "public/Velo Gallery/DSC09647-320w.jpg",
+      "public/Velo Gallery/DSC09647-320w.webp",
+      "public/Velo Gallery/DSC09647-640w.jpg",
+      "public/Velo Gallery/DSC09647-640w.webp",
+      "public/Velo Gallery/DSC09647.JPG",
+      "public/Velo Gallery/DSC09647.webp",
+      "public/Velo Gallery/DSC09656-320w.jpg",
+      "public/Velo Gallery/DSC09656-320w.webp",
+      "public/Velo Gallery/DSC09679.JPG",
+      "public/Velo Gallery/DSC09687-1024w.jpg",
+      "public/Velo Gallery/DSC09687-1920w.jpg",
+      "public/Velo Gallery/DSC09687-1920w.webp",
+      "public/Velo Gallery/DSC09687-320w.jpg",
+      "public/Velo Gallery/DSC09687-320w.webp",
+      "public/Velo Gallery/DSC09687-640w.jpg",
+      "public/Velo Gallery/DSC09687-640w.webp",
+      "public/Velo Gallery/DSC09687.JPG",
+      "public/Velo Gallery/DSC09687.webp",
+      "public/Velo Gallery/DSC09721-1024w.jpg",
+      "public/Velo Gallery/DSC09721-1920w.jpg",
+      "public/Velo Gallery/DSC09721-1920w.webp",
+      "public/Velo Gallery/DSC09721-320w.jpg",
+      "public/Velo Gallery/DSC09721-320w.webp",
+      "public/Velo Gallery/DSC09721-640w.jpg",
+      "public/Velo Gallery/DSC09721-640w.webp",
+      "public/Velo Gallery/DSC09721.JPG",
+      "public/Velo Gallery/DSC09721.webp",
+      "public/Velo Gallery/DSC09724-1024w.jpg",
+      "public/Velo Gallery/DSC09724-1920w.jpg",
+      "public/Velo Gallery/DSC09724-1920w.webp",
+      "public/Velo Gallery/DSC09724-320w.jpg",
+      "public/Velo Gallery/DSC09724-320w.webp",
+      "public/Velo Gallery/DSC09724-640w.jpg",
+      "public/Velo Gallery/DSC09724-640w.webp",
+      "public/Velo Gallery/DSC09724.JPG",
+      "public/Velo Gallery/DSC09724.webp",
+      "public/Velo Gallery/DSC09731-1024w.jpg",
+      "public/Velo Gallery/DSC09731-1920w.jpg",
+      "public/Velo Gallery/DSC09731-1920w.webp",
+      "public/Velo Gallery/DSC09731-320w.jpg",
+      "public/Velo Gallery/DSC09731-320w.webp",
+      "public/Velo Gallery/DSC09731-640w.jpg",
+      "public/Velo Gallery/DSC09731-640w.webp",
+      "public/Velo Gallery/DSC09731.JPG",
+      "public/Velo Gallery/DSC09731.webp",
+      "public/Velo Gallery/DSC09743-1024w.jpg",
+      "public/Velo Gallery/DSC09743-1920w.jpg",
+      "public/Velo Gallery/DSC09743-1920w.webp",
+      "public/Velo Gallery/DSC09743-320w.jpg",
+      "public/Velo Gallery/DSC09743-320w.webp",
+      "public/Velo Gallery/DSC09743-640w.webp",
+      "public/Velo Gallery/DSC09743.JPG",
+      "public/Velo Gallery/DSC09743.webp",
+      "public/Velo Gallery/FAA20C66-CF13-464D-8309-B200753B0391.JPG",
+      "public/Velo Gallery/Firmenfeier.JPG",
+      "public/Velo Gallery/G1.jpg",
+      "public/Velo Gallery/G2.JPG",
+      "public/Velo Gallery/G3.JPG",
+      "public/Velo Gallery/G4.JPG",
+      "public/Velo Gallery/G5.jpg",
+      "public/Velo Gallery/G7.jpg",
+      "public/Velo Gallery/G8.jpg",
+      "public/Velo Gallery/Galerie.jpg",
+      "public/Velo Gallery/Gallerie.jpg",
+      "public/Velo Gallery/Himbeer Hibiskus FIZZ.jpg",
+      "public/Velo Gallery/Hochzeit-1024w.jpg",
+      "public/Velo Gallery/Hochzeit-1920w.jpg",
+      "public/Velo Gallery/Hochzeit-1920w.webp",
+      "public/Velo Gallery/Hochzeit-320w.jpg",
+      "public/Velo Gallery/Hochzeit-320w.webp",
+      "public/Velo Gallery/Hochzeit-640w.jpg",
+      "public/Velo Gallery/Hochzeit-640w.webp",
+      "public/Velo Gallery/Hochzeit.JPG",
+      "public/Velo Gallery/Hochzeit.webp",
+      "public/Velo Gallery/Hochzeiten.JPG",
+      "public/Velo Gallery/IMG_1440.JPG",
+      "public/Velo Gallery/IMG_3839.jpg",
+      "public/Velo Gallery/IMG_5834.JPG",
+      "public/Velo Gallery/IMG_5863.JPG",
+      "public/Velo Gallery/IMG_6918.JPG",
+      "public/Velo Gallery/IMG_7543.JPG",
+      "public/Velo Gallery/Kontakt Sebi.JPG",
+      "public/Velo Gallery/MANGO ROSMARIN.jpg",
+      "public/Velo Gallery/MINZ MARACUJA.jpg",
+      "public/Velo Gallery/Messen.jpg",
+      "public/Velo Gallery/Mobile+Bar.jpeg",
+      "public/Velo Gallery/Munich-1024w.jpg",
+      "public/Velo Gallery/Munich-1920w.jpg",
+      "public/Velo Gallery/Munich-1920w.webp",
+      "public/Velo Gallery/Munich-320w.jpg",
+      "public/Velo Gallery/Munich-320w.webp",
+      "public/Velo Gallery/Munich-640w.jpg",
+      "public/Velo Gallery/Munich-640w.webp",
+      "public/Velo Gallery/Munich.webp",
+      "public/Velo Gallery/Privat event-1024w.jpg",
+      "public/Velo Gallery/Privat event-1920w.jpg",
+      "public/Velo Gallery/Privat event-1920w.webp",
+      "public/Velo Gallery/Privat event-320w.jpg",
+      "public/Velo Gallery/Privat event-320w.webp",
+      "public/Velo Gallery/Privat event-640w.jpg",
+      "public/Velo Gallery/Privat event-640w.webp",
+      "public/Velo Gallery/Privat event.JPG",
+      "public/Velo Gallery/Privat event.webp",
+      "public/Velo Gallery/SPRITYVARIATIONE.jpg",
+      "public/Velo Gallery/Schenker-E-LKW-23.jpg",
+      "public/Velo Gallery/Schenker-E-LKW-70.jpg",
+      "public/Velo Gallery/Team Lars.JPG",
+      "public/Velo Gallery/TeamEvent und Workshops.jpg",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6-1024w.jpg",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6-1024w.webp",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6-320w.jpg",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6-320w.webp",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6-640w.jpg",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6-640w.webp",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6.JPG",
+      "public/Velo Gallery/a30d6ea6-fa0a-4492-b744-7d3e13e444e6.webp",
+      "public/Velo Gallery/a7401220.webp",
+      "public/Velo Gallery/a7401318-1024w.jpg",
+      "public/Velo Gallery/a7401318-1024w.webp",
+      "public/Velo Gallery/a7401318-320w.jpg",
+      "public/Velo Gallery/a7401318-320w.webp",
+      "public/Velo Gallery/a7401318-640w.jpg",
+      "public/Velo Gallery/a7401318-640w.webp",
+      "public/Velo Gallery/a7401318.webp",
+      "public/Velo Gallery/a7401419-1024w.jpg",
+      "public/Velo Gallery/a7401419-1024w.webp",
+      "public/Velo Gallery/a7401419-320w.jpg",
+      "public/Velo Gallery/a7401419-320w.webp",
+      "public/Velo Gallery/a7401419-640w.jpg",
+      "public/Velo Gallery/a7401419-640w.webp",
+      "public/Velo Gallery/a7401419.webp",
+      "public/Velo Gallery/basil-smash.webp",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172-1024w.jpg",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172-1024w.webp",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172-320w.jpg",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172-320w.webp",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172-640w.jpg",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172-640w.webp",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172.JPG",
+      "public/Velo Gallery/c8a071b1-b05a-4f91-8c11-cf1bd7348172.webp",
+      "public/Velo Gallery/cd2a9d8a-ec59-4acb-87be-f348982277bd-320w.jpg",
+      "public/Velo Gallery/cd2a9d8a-ec59-4acb-87be-f348982277bd-320w.webp",
+      "public/Velo Gallery/cd2a9d8a-ec59-4acb-87be-f348982277bd-640w.jpg",
+      "public/Velo Gallery/cd2a9d8a-ec59-4acb-87be-f348982277bd-640w.webp",
+      "public/Velo Gallery/cd2a9d8a-ec59-4acb-87be-f348982277bd.webp",
+      "public/Velo Gallery/dsc00143-320w.jpg",
+      "public/Velo Gallery/dsc00143-320w.webp",
+      "public/Velo Gallery/dsc00143-640w.jpg",
+      "public/Velo Gallery/dsc00174-1024w.jpg",
+      "public/Velo Gallery/dsc00174-1024w.webp",
+      "public/Velo Gallery/dsc00174-1920w.jpg",
+      "public/Velo Gallery/dsc00174-1920w.webp",
+      "public/Velo Gallery/dsc00174-320w.webp",
+      "public/Velo Gallery/dsc00174-640w.jpg",
+      "public/Velo Gallery/dsc00174-640w.webp",
+      "public/Velo Gallery/dsc00174.webp",
+      "public/Velo Gallery/dsc00185-1024w.jpg",
+      "public/Velo Gallery/dsc00185-1024w.webp",
+      "public/Velo Gallery/dsc00185-1920w.jpg",
+      "public/Velo Gallery/dsc00185-1920w.webp",
+      "public/Velo Gallery/dsc00185-320w.webp",
+      "public/Velo Gallery/dsc00185-640w.jpg",
+      "public/Velo Gallery/dsc00185-640w.webp",
+      "public/Velo Gallery/dsc00185.webp",
+      "public/Velo Gallery/dsc00209-1024w.jpg",
+      "public/Velo Gallery/dsc00209-1024w.webp",
+      "public/Velo Gallery/dsc00209-1920w.jpg",
+      "public/Velo Gallery/dsc00209-1920w.webp",
+      "public/Velo Gallery/dsc00209-320w.webp",
+      "public/Velo Gallery/dsc00209-640w.jpg",
+      "public/Velo Gallery/dsc00209-640w.webp",
+      "public/Velo Gallery/dsc00209.webp",
+      "public/Velo Gallery/dsc00254-1920w.webp",
+      "public/Velo Gallery/dsc00254.webp",
+      "public/Velo Gallery/dsc00335-1024w.jpg",
+      "public/Velo Gallery/dsc00335-1024w.webp",
+      "public/Velo Gallery/dsc00335-1920w.jpg",
+      "public/Velo Gallery/dsc00335-1920w.webp",
+      "public/Velo Gallery/dsc00335-320w.jpg",
+      "public/Velo Gallery/dsc00335-320w.webp",
+      "public/Velo Gallery/dsc00335-640w.jpg",
+      "public/Velo Gallery/dsc00335-640w.webp",
+      "public/Velo Gallery/dsc00335.webp",
+      "public/Velo Gallery/dsc00337-1024w.jpg",
+      "public/Velo Gallery/dsc00337-1024w.webp",
+      "public/Velo Gallery/dsc00337-1920w.jpg",
+      "public/Velo Gallery/dsc00337-1920w.webp",
+      "public/Velo Gallery/dsc00337-320w.jpg",
+      "public/Velo Gallery/dsc00337-320w.webp",
+      "public/Velo Gallery/dsc00337-640w.jpg",
+      "public/Velo Gallery/dsc00337-640w.webp",
+      "public/Velo Gallery/dsc00337.webp",
+      "public/Velo Gallery/dsc00346-1024w.jpg",
+      "public/Velo Gallery/dsc00346-1024w.webp",
+      "public/Velo Gallery/dsc00346-1920w.jpg",
+      "public/Velo Gallery/dsc00346-1920w.webp",
+      "public/Velo Gallery/dsc00346-640w.webp",
+      "public/Velo Gallery/dsc00346.webp",
+      "public/Velo Gallery/dsc00391-1024w.jpg",
+      "public/Velo Gallery/dsc00391-1024w.webp",
+      "public/Velo Gallery/dsc00391-1920w.jpg",
+      "public/Velo Gallery/dsc00391-1920w.webp",
+      "public/Velo Gallery/dsc00391-320w.jpg",
+      "public/Velo Gallery/dsc00391-320w.webp",
+      "public/Velo Gallery/dsc00391-640w.jpg",
+      "public/Velo Gallery/dsc00391-640w.webp",
+      "public/Velo Gallery/dsc00391.webp",
+      "public/Velo Gallery/dsc00418-1024w.jpg",
+      "public/Velo Gallery/dsc00418-1024w.webp",
+      "public/Velo Gallery/dsc00418-1920w.jpg",
+      "public/Velo Gallery/dsc00418-1920w.webp",
+      "public/Velo Gallery/dsc00418-320w.jpg",
+      "public/Velo Gallery/dsc00418-320w.webp",
+      "public/Velo Gallery/dsc00418-640w.jpg",
+      "public/Velo Gallery/dsc00418-640w.webp",
+      "public/Velo Gallery/dsc00418.webp",
+      "public/Velo Gallery/dsc03519-1024w.jpg",
+      "public/Velo Gallery/dsc03519-1024w.webp",
+      "public/Velo Gallery/dsc03519-1920w.jpg",
+      "public/Velo Gallery/dsc03519-1920w.webp",
+      "public/Velo Gallery/dsc03519-320w.jpg",
+      "public/Velo Gallery/dsc03519-320w.webp",
+      "public/Velo Gallery/dsc03519-640w.jpg",
+      "public/Velo Gallery/dsc03519-640w.webp",
+      "public/Velo Gallery/dsc03519.webp",
+      "public/Velo Gallery/dsc07828-1024w.jpg",
+      "public/Velo Gallery/dsc07828-1024w.webp",
+      "public/Velo Gallery/dsc07828-1920w.jpg",
+      "public/Velo Gallery/dsc07828-1920w.webp",
+      "public/Velo Gallery/dsc07828-320w.jpg",
+      "public/Velo Gallery/dsc07828-320w.webp",
+      "public/Velo Gallery/dsc07828-640w.jpg",
+      "public/Velo Gallery/dsc07828-640w.webp",
+      "public/Velo Gallery/dsc07828.webp",
+      "public/Velo Gallery/dsc07847-1024w.jpg",
+      "public/Velo Gallery/dsc07847-1024w.webp",
+      "public/Velo Gallery/dsc07847-1920w.jpg",
+      "public/Velo Gallery/dsc07847-1920w.webp",
+      "public/Velo Gallery/dsc07847-320w.jpg",
+      "public/Velo Gallery/dsc07847-320w.webp",
+      "public/Velo Gallery/dsc07847-640w.jpg",
+      "public/Velo Gallery/dsc07847-640w.webp",
+      "public/Velo Gallery/dsc07847.webp",
+      "public/Velo Gallery/dsc07850-1024w.jpg",
+      "public/Velo Gallery/dsc07850-1024w.webp",
+      "public/Velo Gallery/dsc07850-1920w.jpg",
+      "public/Velo Gallery/dsc07850-1920w.webp",
+      "public/Velo Gallery/dsc07850-320w.jpg",
+      "public/Velo Gallery/dsc07850-320w.webp",
+      "public/Velo Gallery/dsc07850-640w.jpg",
+      "public/Velo Gallery/dsc07850-640w.webp",
+      "public/Velo Gallery/dsc07850.webp",
+      "public/Velo Gallery/dsc07875-1024w.jpg",
+      "public/Velo Gallery/dsc07875-1024w.webp",
+      "public/Velo Gallery/dsc07875-1920w.jpg",
+      "public/Velo Gallery/dsc07875-1920w.webp",
+      "public/Velo Gallery/dsc07875-320w.jpg",
+      "public/Velo Gallery/dsc07875-320w.webp",
+      "public/Velo Gallery/dsc07875-640w.jpg",
+      "public/Velo Gallery/dsc07875-640w.webp",
+      "public/Velo Gallery/dsc07875.webp",
+      "public/Velo Gallery/dsc08372-1024w.jpg",
+      "public/Velo Gallery/dsc08372-1024w.webp",
+      "public/Velo Gallery/dsc08372-1920w.jpg",
+      "public/Velo Gallery/dsc08372-1920w.webp",
+      "public/Velo Gallery/dsc08372-320w.jpg",
+      "public/Velo Gallery/dsc08372-320w.webp",
+      "public/Velo Gallery/dsc08372-640w.jpg",
+      "public/Velo Gallery/dsc08372-640w.webp",
+      "public/Velo Gallery/dsc08372.webp",
+      "public/Velo Gallery/dsc08451-1024w.jpg",
+      "public/Velo Gallery/dsc08451-1024w.webp",
+      "public/Velo Gallery/dsc08451-1920w.jpg",
+      "public/Velo Gallery/dsc08451-1920w.webp",
+      "public/Velo Gallery/dsc08451-320w.jpg",
+      "public/Velo Gallery/dsc08451-640w.jpg",
+      "public/Velo Gallery/dsc08451-640w.webp",
+      "public/Velo Gallery/dsc08451.webp",
+      "public/Velo Gallery/dsc08563-1024w.jpg",
+      "public/Velo Gallery/dsc08563-1024w.webp",
+      "public/Velo Gallery/dsc08563-1920w.jpg",
+      "public/Velo Gallery/dsc08563-1920w.webp",
+      "public/Velo Gallery/dsc08563-320w.jpg",
+      "public/Velo Gallery/dsc08563-320w.webp",
+      "public/Velo Gallery/dsc08563-640w.jpg",
+      "public/Velo Gallery/dsc08563-640w.webp",
+      "public/Velo Gallery/dsc08563.webp",
+      "public/Velo Gallery/dsc09679-1024w.jpg",
+      "public/Velo Gallery/dsc09679-1024w.webp",
+      "public/Velo Gallery/dsc09679-1920w.jpg",
+      "public/Velo Gallery/dsc09679-1920w.webp",
+      "public/Velo Gallery/dsc09679-320w.jpg",
+      "public/Velo Gallery/dsc09679-320w.webp",
+      "public/Velo Gallery/dsc09679-640w.jpg",
+      "public/Velo Gallery/dsc09679-640w.webp",
+      "public/Velo Gallery/dsc09679.webp",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-1024w.jpg",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-1024w.webp",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-1920w.jpg",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-1920w.webp",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-320w.jpg",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-320w.webp",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-640w.jpg",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391-640w.webp",
+      "public/Velo Gallery/faa20c66-cf13-464d-8309-b200753b0391.webp",
+      "public/Velo Gallery/firemnfeier/firmenfeier-1024w.jpg",
+      "public/Velo Gallery/firemnfeier/firmenfeier-1024w.webp",
+      "public/Velo Gallery/firemnfeier/firmenfeier-1920w.jpg",
+      "public/Velo Gallery/firemnfeier/firmenfeier-320w.jpg",
+      "public/Velo Gallery/firemnfeier/firmenfeier-320w.webp",
+      "public/Velo Gallery/firemnfeier/firmenfeier-640w.jpg",
+      "public/Velo Gallery/firemnfeier/firmenfeier-640w.webp",
+      "public/Velo Gallery/firemnfeier/firmenfeier.webp",
+      "public/Velo Gallery/firmenfeier-1024w.jpg",
+      "public/Velo Gallery/firmenfeier-1024w.webp",
+      "public/Velo Gallery/firmenfeier-1920w.jpg",
+      "public/Velo Gallery/firmenfeier-1920w.webp",
+      "public/Velo Gallery/firmenfeier-320w.jpg",
+      "public/Velo Gallery/firmenfeier-320w.webp",
+      "public/Velo Gallery/firmenfeier-640w.jpg",
+      "public/Velo Gallery/firmenfeier-640w.webp",
+      "public/Velo Gallery/firmenfeier.webp",
+      "public/Velo Gallery/g1-1024w.jpg",
+      "public/Velo Gallery/g1-1024w.webp",
+      "public/Velo Gallery/g1-1920w.jpg",
+      "public/Velo Gallery/g1-1920w.webp",
+      "public/Velo Gallery/g1-320w.jpg",
+      "public/Velo Gallery/g1-320w.webp",
+      "public/Velo Gallery/g1-640w.jpg",
+      "public/Velo Gallery/g1-640w.webp",
+      "public/Velo Gallery/g1.webp",
+      "public/Velo Gallery/g2-1024w.jpg",
+      "public/Velo Gallery/g2-1024w.webp",
+      "public/Velo Gallery/g2-1920w.jpg",
+      "public/Velo Gallery/g2-1920w.webp",
+      "public/Velo Gallery/g2-320w.jpg",
+      "public/Velo Gallery/g2-320w.webp",
+      "public/Velo Gallery/g2-640w.jpg",
+      "public/Velo Gallery/g2.webp",
+      "public/Velo Gallery/g3-1024w.jpg",
+      "public/Velo Gallery/g3-1024w.webp",
+      "public/Velo Gallery/g3-1920w.jpg",
+      "public/Velo Gallery/g3-1920w.webp",
+      "public/Velo Gallery/g3-320w.jpg",
+      "public/Velo Gallery/g3-320w.webp",
+      "public/Velo Gallery/g3-640w.jpg",
+      "public/Velo Gallery/g3-640w.webp",
+      "public/Velo Gallery/g3.webp",
+      "public/Velo Gallery/g4-1024w.jpg",
+      "public/Velo Gallery/g4-1024w.webp",
+      "public/Velo Gallery/g4-1920w.jpg",
+      "public/Velo Gallery/g4-1920w.webp",
+      "public/Velo Gallery/g4-320w.jpg",
+      "public/Velo Gallery/g4-320w.webp",
+      "public/Velo Gallery/g4-640w.jpg",
+      "public/Velo Gallery/g4-640w.webp",
+      "public/Velo Gallery/g4.webp",
+      "public/Velo Gallery/g5-1024w.jpg",
+      "public/Velo Gallery/g5-1024w.webp",
+      "public/Velo Gallery/g5-1920w.jpg",
+      "public/Velo Gallery/g5-1920w.webp",
+      "public/Velo Gallery/g5-320w.jpg",
+      "public/Velo Gallery/g5-320w.webp",
+      "public/Velo Gallery/g5-640w.jpg",
+      "public/Velo Gallery/g5-640w.webp",
+      "public/Velo Gallery/g5.webp",
+      "public/Velo Gallery/g7-1024w.jpg",
+      "public/Velo Gallery/g7-1024w.webp",
+      "public/Velo Gallery/g7-1920w.jpg",
+      "public/Velo Gallery/g7-1920w.webp",
+      "public/Velo Gallery/g7-320w.jpg",
+      "public/Velo Gallery/g7-320w.webp",
+      "public/Velo Gallery/g7-640w.jpg",
+      "public/Velo Gallery/g7-640w.webp",
+      "public/Velo Gallery/g7.webp",
+      "public/Velo Gallery/g8-1024w.jpg",
+      "public/Velo Gallery/g8-1024w.webp",
+      "public/Velo Gallery/g8-1920w.jpg",
+      "public/Velo Gallery/g8-1920w.webp",
+      "public/Velo Gallery/g8-320w.jpg",
+      "public/Velo Gallery/g8-320w.webp",
+      "public/Velo Gallery/g8-640w.jpg",
+      "public/Velo Gallery/g8-640w.webp",
+      "public/Velo Gallery/g8.webp",
+      "public/Velo Gallery/galerie-1024w.jpg",
+      "public/Velo Gallery/galerie-1024w.webp",
+      "public/Velo Gallery/galerie-1920w.jpg",
+      "public/Velo Gallery/galerie-1920w.webp",
+      "public/Velo Gallery/galerie-320w.jpg",
+      "public/Velo Gallery/galerie-320w.webp",
+      "public/Velo Gallery/galerie-640w.jpg",
+      "public/Velo Gallery/galerie-640w.webp",
+      "public/Velo Gallery/galerie.webp",
+      "public/Velo Gallery/gallerie-1024w.jpg",
+      "public/Velo Gallery/gallerie-1024w.webp",
+      "public/Velo Gallery/gallerie-1920w.jpg",
+      "public/Velo Gallery/gallerie-1920w.webp",
+      "public/Velo Gallery/gallerie-320w.jpg",
+      "public/Velo Gallery/gallerie-320w.webp",
+      "public/Velo Gallery/gallerie-640w.jpg",
+      "public/Velo Gallery/gallerie-640w.webp",
+      "public/Velo Gallery/gallerie.webp",
+      "public/Velo Gallery/himbeer-hibiskus-fizz.webp",
+      "public/Velo Gallery/hochzeit/Hochzeiten.JPG",
+      "public/Velo Gallery/hochzeit/hochzeiten-1024w.jpg",
+      "public/Velo Gallery/hochzeit/hochzeiten-1024w.webp",
+      "public/Velo Gallery/hochzeit/hochzeiten-1920w.jpg",
+      "public/Velo Gallery/hochzeit/hochzeiten-320w.jpg",
+      "public/Velo Gallery/hochzeit/hochzeiten-320w.webp",
+      "public/Velo Gallery/hochzeit/hochzeiten-640w.jpg",
+      "public/Velo Gallery/hochzeit/hochzeiten-640w.webp",
+      "public/Velo Gallery/hochzeit/hochzeiten.webp",
+      "public/Velo Gallery/hochzeiten-1024w.jpg",
+      "public/Velo Gallery/hochzeiten-1024w.webp",
+      "public/Velo Gallery/hochzeiten-1920w.jpg",
+      "public/Velo Gallery/hochzeiten-1920w.webp",
+      "public/Velo Gallery/hochzeiten-320w.jpg",
+      "public/Velo Gallery/hochzeiten-320w.webp",
+      "public/Velo Gallery/hochzeiten-640w.jpg",
+      "public/Velo Gallery/hochzeiten-640w.webp",
+      "public/Velo Gallery/hochzeiten.webp",
+      "public/Velo Gallery/img1440-1024w.jpg",
+      "public/Velo Gallery/img1440-1024w.webp",
+      "public/Velo Gallery/img1440-1920w.jpg",
+      "public/Velo Gallery/img1440-1920w.webp",
+      "public/Velo Gallery/img1440-320w.jpg",
+      "public/Velo Gallery/img1440-320w.webp",
+      "public/Velo Gallery/img1440-640w.jpg",
+      "public/Velo Gallery/img1440-640w.webp",
+      "public/Velo Gallery/img1440.webp",
+      "public/Velo Gallery/img3839-1024w.jpg",
+      "public/Velo Gallery/img3839-1024w.webp",
+      "public/Velo Gallery/img3839-320w.jpg",
+      "public/Velo Gallery/img3839-320w.webp",
+      "public/Velo Gallery/img3839-640w.jpg",
+      "public/Velo Gallery/img3839-640w.webp",
+      "public/Velo Gallery/img3839.webp",
+      "public/Velo Gallery/img5834-1024w.jpg",
+      "public/Velo Gallery/img5834-1024w.webp",
+      "public/Velo Gallery/img5834-1920w.jpg",
+      "public/Velo Gallery/img5834-1920w.webp",
+      "public/Velo Gallery/img5834-320w.jpg",
+      "public/Velo Gallery/img5834-320w.webp",
+      "public/Velo Gallery/img5834-640w.jpg",
+      "public/Velo Gallery/img5834-640w.webp",
+      "public/Velo Gallery/img5834.webp",
+      "public/Velo Gallery/img5863-1024w.jpg",
+      "public/Velo Gallery/img5863-1024w.webp",
+      "public/Velo Gallery/img5863-1920w.jpg",
+      "public/Velo Gallery/img5863-1920w.webp",
+      "public/Velo Gallery/img5863-320w.jpg",
+      "public/Velo Gallery/img5863-320w.webp",
+      "public/Velo Gallery/img5863-640w.jpg",
+      "public/Velo Gallery/img5863-640w.webp",
+      "public/Velo Gallery/img5863.webp",
+      "public/Velo Gallery/img6918-320w.jpg",
+      "public/Velo Gallery/img6918-320w.webp",
+      "public/Velo Gallery/img6918.webp",
+      "public/Velo Gallery/img7543-1024w.jpg",
+      "public/Velo Gallery/img7543-1024w.webp",
+      "public/Velo Gallery/img7543-1920w.jpg",
+      "public/Velo Gallery/img7543-1920w.webp",
+      "public/Velo Gallery/img7543-320w.jpg",
+      "public/Velo Gallery/img7543-320w.webp",
+      "public/Velo Gallery/img7543-640w.jpg",
+      "public/Velo Gallery/img7543-640w.webp",
+      "public/Velo Gallery/img7543.webp",
+      "public/Velo Gallery/kontakt-sebi-320w.jpg",
+      "public/Velo Gallery/kontakt-sebi-320w.webp",
+      "public/Velo Gallery/mango-rosmarin.webp",
+      "public/Velo Gallery/messen/messen-1024w.jpg",
+      "public/Velo Gallery/messen/messen-1024w.webp",
+      "public/Velo Gallery/messen/messen-1920w.jpg",
+      "public/Velo Gallery/messen/messen-320w.jpg",
+      "public/Velo Gallery/messen/messen-320w.webp",
+      "public/Velo Gallery/messen/messen-640w.jpg",
+      "public/Velo Gallery/messen/messen-640w.webp",
+      "public/Velo Gallery/messen/messen.webp",
+      "public/Velo Gallery/messen-1024w.jpg",
+      "public/Velo Gallery/messen-1024w.webp",
+      "public/Velo Gallery/messen-1920w.jpg",
+      "public/Velo Gallery/messen-1920w.webp",
+      "public/Velo Gallery/messen-320w.jpg",
+      "public/Velo Gallery/messen-320w.webp",
+      "public/Velo Gallery/messen-640w.jpg",
+      "public/Velo Gallery/messen-640w.webp",
+      "public/Velo Gallery/messen.webp",
+      "public/Velo Gallery/minz-maracuja.webp",
+      "public/Velo Gallery/mobiles+Gin-Tasting+München+mobile+Bar+münchen.jpeg",
+      "public/Velo Gallery/private-feiern/private feiern.jpg",
+      "public/Velo Gallery/private-feiern/private-feiern-1024w.jpg",
+      "public/Velo Gallery/private-feiern/private-feiern-1024w.webp",
+      "public/Velo Gallery/private-feiern/private-feiern-1920w.jpg",
+      "public/Velo Gallery/private-feiern/private-feiern-320w.jpg",
+      "public/Velo Gallery/private-feiern/private-feiern-320w.webp",
+      "public/Velo Gallery/private-feiern/private-feiern-640w.jpg",
+      "public/Velo Gallery/private-feiern/private-feiern-640w.webp",
+      "public/Velo Gallery/private-feiern/private-feiern.webp",
+      "public/Velo Gallery/schenker-e-lkw-23-1024w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-23-1024w.webp",
+      "public/Velo Gallery/schenker-e-lkw-23-1920w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-23-1920w.webp",
+      "public/Velo Gallery/schenker-e-lkw-23-320w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-23-320w.webp",
+      "public/Velo Gallery/schenker-e-lkw-23-640w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-23-640w.webp",
+      "public/Velo Gallery/schenker-e-lkw-23.webp",
+      "public/Velo Gallery/schenker-e-lkw-70-1024w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-70-1024w.webp",
+      "public/Velo Gallery/schenker-e-lkw-70-1920w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-70-1920w.webp",
+      "public/Velo Gallery/schenker-e-lkw-70-320w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-70-320w.webp",
+      "public/Velo Gallery/schenker-e-lkw-70-640w.jpg",
+      "public/Velo Gallery/schenker-e-lkw-70-640w.webp",
+      "public/Velo Gallery/schenker-e-lkw-70.webp",
+      "public/Velo Gallery/sebastian about us .jpg",
+      "public/Velo Gallery/sprityvariatione-1024w.jpg",
+      "public/Velo Gallery/sprityvariatione-1024w.webp",
+      "public/Velo Gallery/sprityvariatione-1920w.jpg",
+      "public/Velo Gallery/sprityvariatione-1920w.webp",
+      "public/Velo Gallery/sprityvariatione-320w.jpg",
+      "public/Velo Gallery/sprityvariatione-320w.webp",
+      "public/Velo Gallery/sprityvariatione-640w.jpg",
+      "public/Velo Gallery/sprityvariatione-640w.webp",
+      "public/Velo Gallery/sprityvariatione.webp",
+      "public/Velo Gallery/tastingmunich/mobiles+Gin-Tasting+München+mobile+Bar+münchen.jpeg",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen-1024w.jpg",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen-1024w.webp",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen-320w.jpg",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen-320w.webp",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen-640w.jpg",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen-640w.webp",
+      "public/Velo Gallery/tastingmunich/mobilesgin-tastingmnchenmobilebarmnchen.webp",
+      "public/Velo Gallery/team events/TeamEvent und Workshops.jpg",
+      "public/Velo Gallery/team events/teamevent-und-workshops-1024w.jpg",
+      "public/Velo Gallery/team events/teamevent-und-workshops-1024w.webp",
+      "public/Velo Gallery/team events/teamevent-und-workshops-1920w.jpg",
+      "public/Velo Gallery/team events/teamevent-und-workshops-1920w.webp",
+      "public/Velo Gallery/team events/teamevent-und-workshops-320w.jpg",
+      "public/Velo Gallery/team events/teamevent-und-workshops-320w.webp",
+      "public/Velo Gallery/team events/teamevent-und-workshops-640w.jpg",
+      "public/Velo Gallery/team events/teamevent-und-workshops-640w.webp",
+      "public/Velo Gallery/team events/teamevent-und-workshops.webp",
+      "public/Velo Gallery/team-1024w.jpg",
+      "public/Velo Gallery/team-1024w.webp",
+      "public/Velo Gallery/team-1920w.jpg",
+      "public/Velo Gallery/team-1920w.webp",
+      "public/Velo Gallery/team-320w.jpg",
+      "public/Velo Gallery/team-320w.webp",
+      "public/Velo Gallery/team-640w.jpg",
+      "public/Velo Gallery/team-640w.webp",
+      "public/Velo Gallery/team-lars-320w.jpg",
+      "public/Velo Gallery/team-lars-320w.webp",
+      "public/Velo Gallery/team-lars-640w.webp",
+      "public/Velo Gallery/team-lars.webp",
+      "public/Velo Gallery/team.webp",
+      "public/Velo Gallery/teamevent-und-workshops/TeamEvent und Workshops.jpg",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1024w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1024w.webp",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1920w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-320w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-320w.webp",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-640w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-640w.webp",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops.webp",
+      "public/Velo Gallery/teamevent-und-workshops-1024w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops-1024w.webp",
+      "public/Velo Gallery/teamevent-und-workshops-1920w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops-1920w.webp",
+      "public/Velo Gallery/teamevent-und-workshops-320w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops-320w.webp",
+      "public/Velo Gallery/teamevent-und-workshops-640w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops-640w.webp",
+      "public/Velo Gallery/teamevent-und-workshops.webp",
+      "public/Velo Gallery/weihnachstfeier-1024w.jpg",
+      "public/Velo Gallery/weihnachstfeier-1024w.webp",
+      "public/Velo Gallery/weihnachstfeier-1920w.jpg",
+      "public/Velo Gallery/weihnachstfeier-1920w.webp",
+      "public/Velo Gallery/weihnachstfeier-320w.jpg",
+      "public/Velo Gallery/weihnachstfeier-320w.webp",
+      "public/Velo Gallery/weihnachstfeier-640w.jpg",
+      "public/Velo Gallery/weihnachstfeier-640w.webp",
+      "public/Velo Gallery/weihnachstfeier.JPG",
+      "public/Velo Gallery/weihnachstfeier.webp",
+      "public/icons/bar.svg",
+      "public/icons/barkeeper.svg",
+      "public/icons/cocktails.svg",
+      "public/icons/deco.svg",
+      "public/icons/guests.svg",
+      "public/icons/time.svg",
+      "public/images/placeholder.svg",
+      "public/logosa/Untitled.rtfd/Pasted Graphic.png",
+      "public/logosa/image2vector (1).svg",
+      "public/logosa/image2vector (10).svg",
+      "public/logosa/image2vector (2).svg",
+      "public/logosa/image2vector (3).svg",
+      "public/logosa/image2vector (4).svg",
+      "public/logosa/image2vector (5).svg",
+      "public/logosa/image2vector (6).svg",
+      "public/logosa/image2vector (7).svg",
+      "public/logosa/image2vector (8).svg",
+      "public/logosa/image2vector (9).svg",
+      "public/logosa/image2vector.svg"
+    ],
+    "duplicates": [
+      {
+        "md5": "494a5b9fde87ad8fa3504e8721d36a04",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-1024w.jpg",
+          "public/Velo Gallery/firemnfeier/firmenfeier-1024w.jpg",
+          "public/Velo Gallery/firmenfeier-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-1024w.jpg"
+      },
+      {
+        "md5": "98663835eb346234458a8251cebfc326",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-1024w.webp",
+          "public/Velo Gallery/firemnfeier/firmenfeier-1024w.webp",
+          "public/Velo Gallery/firmenfeier-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-1024w.webp"
+      },
+      {
+        "md5": "ae1ab680099b29dfec7824c27d56414a",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-1920w.jpg",
+          "public/Velo Gallery/firemnfeier/firmenfeier-1920w.jpg",
+          "public/Velo Gallery/firmenfeier-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-1920w.jpg"
+      },
+      {
+        "md5": "0373b2dae6f8c91674c69403df597e03",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-1920w.webp",
+          "public/Velo Gallery/firemnfeier/firmenfeier-1920w.webp",
+          "public/Velo Gallery/firmenfeier-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-1920w.webp"
+      },
+      {
+        "md5": "2426325458645027dc15c5184015d33a",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-320w.jpg",
+          "public/Velo Gallery/firemnfeier/firmenfeier-320w.jpg",
+          "public/Velo Gallery/firmenfeier-320w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-320w.jpg"
+      },
+      {
+        "md5": "ff189710bb452a93ebaf7b8aea47c11e",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-320w.webp",
+          "public/Velo Gallery/firemnfeier/firmenfeier-320w.webp",
+          "public/Velo Gallery/firmenfeier-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-320w.webp"
+      },
+      {
+        "md5": "feafee47fe306b7032ebc9be6794d448",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-640w.jpg",
+          "public/Velo Gallery/firemnfeier/firmenfeier-640w.jpg",
+          "public/Velo Gallery/firmenfeier-640w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-640w.jpg"
+      },
+      {
+        "md5": "a26610ab72c4bc10b2a9fa0fd99005b5",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453-640w.webp",
+          "public/Velo Gallery/firemnfeier/firmenfeier-640w.webp",
+          "public/Velo Gallery/firmenfeier-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453-640w.webp"
+      },
+      {
+        "md5": "e583323dfbdb50cd921800848465f98a",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453.webp",
+          "public/Velo Gallery/firemnfeier/firmenfeier.webp",
+          "public/Velo Gallery/firmenfeier.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453.webp"
+      },
+      {
+        "md5": "74e3ba66220f89e23198e47969515b34",
+        "files": [
+          "public/Velo Gallery/TeamEvent und Workshops.jpg",
+          "public/Velo Gallery/team events/TeamEvent und Workshops.jpg",
+          "public/Velo Gallery/teamevent-und-workshops/TeamEvent und Workshops.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/TeamEvent und Workshops.jpg"
+      },
+      {
+        "md5": "71b8097c2b8c56590f9e1a9c57b6f03f",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-1024w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1024w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-1024w.jpg"
+      },
+      {
+        "md5": "cf7ea7af32e9392b89551402a0faeaa9",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-1024w.webp",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1024w.webp",
+          "public/Velo Gallery/teamevent-und-workshops-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-1024w.webp"
+      },
+      {
+        "md5": "b9ef1c139edc1ff34ea11890b9c2b161",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-1920w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1920w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-1920w.jpg"
+      },
+      {
+        "md5": "c6b90edad4b1cfbb4597ce3ed59cde43",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-1920w.webp",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1920w.webp",
+          "public/Velo Gallery/teamevent-und-workshops-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-1920w.webp"
+      },
+      {
+        "md5": "caa3d0cade9157eee7a18cd1967bd24f",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-320w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-320w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops-320w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-320w.jpg"
+      },
+      {
+        "md5": "8fe5097dbf5949add1072908f47cc680",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-320w.webp",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-320w.webp",
+          "public/Velo Gallery/teamevent-und-workshops-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-320w.webp"
+      },
+      {
+        "md5": "04f6986cecd7f2e13ef37d40e4e60367",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-640w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-640w.jpg",
+          "public/Velo Gallery/teamevent-und-workshops-640w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-640w.jpg"
+      },
+      {
+        "md5": "ae095f54f48db79a2c384c26435f6e26",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops-640w.webp",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-640w.webp",
+          "public/Velo Gallery/teamevent-und-workshops-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops-640w.webp"
+      },
+      {
+        "md5": "f74be573adce587a85b595f3121feb6f",
+        "files": [
+          "public/Velo Gallery/team events/teamevent-und-workshops.webp",
+          "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops.webp",
+          "public/Velo Gallery/teamevent-und-workshops.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/team events/teamevent-und-workshops.webp"
+      },
+      {
+        "md5": "7db2f74a6c4e452a95a39beaaf49270f",
+        "files": ["public/Velo Gallery/20210814-DSC06501.JPG", "public/Velo Gallery/G2.JPG"],
+        "suggest_keep": "public/Velo Gallery/20210814-DSC06501.JPG"
+      },
+      {
+        "md5": "cedb261467dde01dc16440d2df40e139",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-1024w.jpg",
+          "public/Velo Gallery/g2-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-1024w.jpg"
+      },
+      {
+        "md5": "b18904045da3a140b6746402d3ab957a",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-1024w.webp",
+          "public/Velo Gallery/g2-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-1024w.webp"
+      },
+      {
+        "md5": "c542b45f16c2550622eff55763a20843",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-1920w.jpg",
+          "public/Velo Gallery/g2-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-1920w.jpg"
+      },
+      {
+        "md5": "1edce6f31b127ce16c83a21b3eeeef0f",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-1920w.webp",
+          "public/Velo Gallery/g2-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-1920w.webp"
+      },
+      {
+        "md5": "bac43031b71c14430822bf03f87aec51",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-320w.jpg",
+          "public/Velo Gallery/g2-320w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-320w.jpg"
+      },
+      {
+        "md5": "0b0cb384de3751d6007603d732d1ab11",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-320w.webp",
+          "public/Velo Gallery/g2-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-320w.webp"
+      },
+      {
+        "md5": "a41bdd5175c34fa43ac9421f0f2d7a18",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-640w.jpg",
+          "public/Velo Gallery/g2-640w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-640w.jpg"
+      },
+      {
+        "md5": "3611c6cb774b0b17ed82b0819ca88bcf",
+        "files": [
+          "public/Velo Gallery/20210814-dsc06501-640w.webp",
+          "public/Velo Gallery/g2-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501-640w.webp"
+      },
+      {
+        "md5": "379e28bbb034c7187eaad7d5ad86081b",
+        "files": ["public/Velo Gallery/20210814-dsc06501.webp", "public/Velo Gallery/g2.webp"],
+        "suggest_keep": "public/Velo Gallery/20210814-dsc06501.webp"
+      },
+      {
+        "md5": "c1245c08dfa22bd7c54f5435ed3ba939",
+        "files": [
+          "public/Velo Gallery/20220317-_W147453.JPG",
+          "public/Velo Gallery/Firmenfeier.JPG"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147453.JPG"
+      },
+      {
+        "md5": "b8f80c5744f3acacbb23452fb34961f2",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-1024w.jpg",
+          "public/Velo Gallery/g4-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-1024w.jpg"
+      },
+      {
+        "md5": "eba03d2fe9ede5d93b92febf471c942a",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-1024w.webp",
+          "public/Velo Gallery/g4-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-1024w.webp"
+      },
+      {
+        "md5": "d340676ccb6ae8e80fde2c0a59cd4390",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-1920w.jpg",
+          "public/Velo Gallery/g4-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-1920w.jpg"
+      },
+      {
+        "md5": "8e02e61e7a09a8a622416c2e5b97fda9",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-1920w.webp",
+          "public/Velo Gallery/g4-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-1920w.webp"
+      },
+      {
+        "md5": "c399183490b17d8b13a51258711ba2a3",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-320w.jpg",
+          "public/Velo Gallery/g4-320w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-320w.jpg"
+      },
+      {
+        "md5": "cf26928a2fc01af446d5f591d2476e65",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-320w.webp",
+          "public/Velo Gallery/g4-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-320w.webp"
+      },
+      {
+        "md5": "322add7eec0350ec9243ab5d9782b768",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-640w.jpg",
+          "public/Velo Gallery/g4-640w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-640w.jpg"
+      },
+      {
+        "md5": "fe8d55275b8d58b163838704db92f357",
+        "files": [
+          "public/Velo Gallery/20220317-_W147477-640w.webp",
+          "public/Velo Gallery/g4-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477-640w.webp"
+      },
+      {
+        "md5": "2fc35b3cd4b1ecde7c0bbb0e2aed7ad7",
+        "files": ["public/Velo Gallery/20220317-_W147477.JPG", "public/Velo Gallery/G4.JPG"],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477.JPG"
+      },
+      {
+        "md5": "377e0ae9aea5be5388b001d0d3bf1be9",
+        "files": ["public/Velo Gallery/20220317-_W147477.webp", "public/Velo Gallery/g4.webp"],
+        "suggest_keep": "public/Velo Gallery/20220317-_W147477.webp"
+      },
+      {
+        "md5": "bbc62bdec52a24789580b6675c4d68a1",
+        "files": [
+          "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-1024w.webp",
+          "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/3767168a-4c5c-4d36-bf20-8e390b86336c-1024w.webp"
+      },
+      {
+        "md5": "7ca6d4961e0c44409879853d17e588b3",
+        "files": ["public/Velo Gallery/A7401220.jpg", "public/Velo Gallery/Munich.jpg"],
+        "suggest_keep": "public/Velo Gallery/A7401220.jpg"
+      },
+      {
+        "md5": "98cd476bf178d22b9d90a1fe84875416",
+        "files": ["public/Velo Gallery/DSC09453-1024w.webp", "public/Velo Gallery/team-1024w.webp"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-1024w.webp"
+      },
+      {
+        "md5": "76dc50dd501b023a420dc6244cf6a8ee",
+        "files": ["public/Velo Gallery/DSC09453-1920w.jpg", "public/Velo Gallery/team-1920w.jpg"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-1920w.jpg"
+      },
+      {
+        "md5": "826c355f47e579d282ee4140690e17ca",
+        "files": ["public/Velo Gallery/DSC09453-1920w.webp", "public/Velo Gallery/team-1920w.webp"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-1920w.webp"
+      },
+      {
+        "md5": "b96883f026df12196dd60f844fcc1a49",
+        "files": ["public/Velo Gallery/DSC09453-320w.jpg", "public/Velo Gallery/team-320w.jpg"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-320w.jpg"
+      },
+      {
+        "md5": "5161d95af26926ac5565066c2d7b9775",
+        "files": ["public/Velo Gallery/DSC09453-320w.webp", "public/Velo Gallery/team-320w.webp"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-320w.webp"
+      },
+      {
+        "md5": "dae2c830438b87dd87f17687e061f0fd",
+        "files": ["public/Velo Gallery/DSC09453-640w.jpg", "public/Velo Gallery/team-640w.jpg"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-640w.jpg"
+      },
+      {
+        "md5": "089bde9b058e112339b15f1ad1cf7e6c",
+        "files": ["public/Velo Gallery/DSC09453-640w.webp", "public/Velo Gallery/team-640w.webp"],
+        "suggest_keep": "public/Velo Gallery/DSC09453-640w.webp"
+      },
+      {
+        "md5": "c51934dc45ce7f5c3bcf77d50ffc65bb",
+        "files": ["public/Velo Gallery/DSC09453.JPG", "public/Velo Gallery/Team.JPG"],
+        "suggest_keep": "public/Velo Gallery/DSC09453.JPG"
+      },
+      {
+        "md5": "3046f63f9148670bf20f3d6789325f5a",
+        "files": ["public/Velo Gallery/DSC09453.webp", "public/Velo Gallery/team.webp"],
+        "suggest_keep": "public/Velo Gallery/DSC09453.webp"
+      },
+      {
+        "md5": "cc44510d041708e491baa13e9e235aee",
+        "files": [
+          "public/Velo Gallery/DSC09721-1024w.jpg",
+          "public/Velo Gallery/img5863-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/DSC09721-1024w.jpg"
+      },
+      {
+        "md5": "69fd21923280cddba1c6ca3632b6e918",
+        "files": [
+          "public/Velo Gallery/DSC09721-1024w.webp",
+          "public/Velo Gallery/img5863-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/DSC09721-1024w.webp"
+      },
+      {
+        "md5": "5a827df82aefd1118465740de2485a7f",
+        "files": [
+          "public/Velo Gallery/DSC09721-1920w.jpg",
+          "public/Velo Gallery/img5863-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/DSC09721-1920w.jpg"
+      },
+      {
+        "md5": "15a4ba183783c17dd9fb3a06472821ca",
+        "files": [
+          "public/Velo Gallery/DSC09721-1920w.webp",
+          "public/Velo Gallery/img5863-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/DSC09721-1920w.webp"
+      },
+      {
+        "md5": "cf4cd8a8fe4cac0b56c2dbe47a1e029e",
+        "files": ["public/Velo Gallery/DSC09721-320w.jpg", "public/Velo Gallery/img5863-320w.jpg"],
+        "suggest_keep": "public/Velo Gallery/DSC09721-320w.jpg"
+      },
+      {
+        "md5": "bf5e04e1c1e2063fd13db48371e47013",
+        "files": [
+          "public/Velo Gallery/DSC09721-320w.webp",
+          "public/Velo Gallery/img5863-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/DSC09721-320w.webp"
+      },
+      {
+        "md5": "38d4dcca83c8980b1d26090547c7163b",
+        "files": ["public/Velo Gallery/DSC09721-640w.jpg", "public/Velo Gallery/img5863-640w.jpg"],
+        "suggest_keep": "public/Velo Gallery/DSC09721-640w.jpg"
+      },
+      {
+        "md5": "6fb58318939c449d05104bc4ba35549a",
+        "files": [
+          "public/Velo Gallery/DSC09721-640w.webp",
+          "public/Velo Gallery/img5863-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/DSC09721-640w.webp"
+      },
+      {
+        "md5": "d2ebd71dde4ed0a1b0fef98b010d5fc8",
+        "files": ["public/Velo Gallery/DSC09721.webp", "public/Velo Gallery/img5863.webp"],
+        "suggest_keep": "public/Velo Gallery/DSC09721.webp"
+      },
+      {
+        "md5": "6cf8e989b63934b31c365b805079591a",
+        "files": [
+          "public/Velo Gallery/Hochzeiten.JPG",
+          "public/Velo Gallery/hochzeit/Hochzeiten.JPG"
+        ],
+        "suggest_keep": "public/Velo Gallery/Hochzeiten.JPG"
+      },
+      {
+        "md5": "450be5286c23f72c0faa240bff402756",
+        "files": ["public/Velo Gallery/Munich.webp", "public/Velo Gallery/a7401220.webp"],
+        "suggest_keep": "public/Velo Gallery/Munich.webp"
+      },
+      {
+        "md5": "6e6e3784be3a007722fa7b6149a84462",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-1024w.jpg",
+          "public/Velo Gallery/hochzeiten-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-1024w.jpg"
+      },
+      {
+        "md5": "7ba1a7bf69cf0a008828c296eeee1666",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-1024w.webp",
+          "public/Velo Gallery/hochzeiten-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-1024w.webp"
+      },
+      {
+        "md5": "399d3314a944c575f0a13ccd3be9a18a",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-1920w.jpg",
+          "public/Velo Gallery/hochzeiten-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-1920w.jpg"
+      },
+      {
+        "md5": "49a8b54d8b66c8bb71fe3828286c66b3",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-1920w.webp",
+          "public/Velo Gallery/hochzeiten-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-1920w.webp"
+      },
+      {
+        "md5": "b757b81787564ff6cc2a6bc68550be28",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-320w.jpg",
+          "public/Velo Gallery/hochzeiten-320w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-320w.jpg"
+      },
+      {
+        "md5": "886d2ce7b8d126aa689a34bac5b7cc5e",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-320w.webp",
+          "public/Velo Gallery/hochzeiten-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-320w.webp"
+      },
+      {
+        "md5": "5ee40ea3ac77754a453b2c182c4585c0",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-640w.jpg",
+          "public/Velo Gallery/hochzeiten-640w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-640w.jpg"
+      },
+      {
+        "md5": "99dc2c3d6de270ea64786f4532840102",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten-640w.webp",
+          "public/Velo Gallery/hochzeiten-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten-640w.webp"
+      },
+      {
+        "md5": "420951629ca6315649f6194388772e91",
+        "files": [
+          "public/Velo Gallery/hochzeit/hochzeiten.webp",
+          "public/Velo Gallery/hochzeiten.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/hochzeit/hochzeiten.webp"
+      },
+      {
+        "md5": "7f45ec6b24ab55a044ee82cb7098cd84",
+        "files": [
+          "public/Velo Gallery/messen/messen-1024w.jpg",
+          "public/Velo Gallery/messen-1024w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-1024w.jpg"
+      },
+      {
+        "md5": "22b49dba39936dd59dfc7c14960fa041",
+        "files": [
+          "public/Velo Gallery/messen/messen-1024w.webp",
+          "public/Velo Gallery/messen-1024w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-1024w.webp"
+      },
+      {
+        "md5": "6eaedc2709988d705bc51e127e8d1144",
+        "files": [
+          "public/Velo Gallery/messen/messen-1920w.jpg",
+          "public/Velo Gallery/messen-1920w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-1920w.jpg"
+      },
+      {
+        "md5": "c5c8fe25488273257f34fb9537219d6d",
+        "files": [
+          "public/Velo Gallery/messen/messen-1920w.webp",
+          "public/Velo Gallery/messen-1920w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-1920w.webp"
+      },
+      {
+        "md5": "19ba30b85036b38ffb32105a323019bc",
+        "files": [
+          "public/Velo Gallery/messen/messen-320w.jpg",
+          "public/Velo Gallery/messen-320w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-320w.jpg"
+      },
+      {
+        "md5": "bfe05a2510a44b26db6b3bf8cf6adcaa",
+        "files": [
+          "public/Velo Gallery/messen/messen-320w.webp",
+          "public/Velo Gallery/messen-320w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-320w.webp"
+      },
+      {
+        "md5": "6701fda5be1b0e22da7e9d634b598531",
+        "files": [
+          "public/Velo Gallery/messen/messen-640w.jpg",
+          "public/Velo Gallery/messen-640w.jpg"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-640w.jpg"
+      },
+      {
+        "md5": "511113c125fc2d11d63bed8912a73b16",
+        "files": [
+          "public/Velo Gallery/messen/messen-640w.webp",
+          "public/Velo Gallery/messen-640w.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/messen/messen-640w.webp"
+      },
+      {
+        "md5": "096cc869c3c6d81b252521f09e16fe5d",
+        "files": ["public/Velo Gallery/messen/messen.webp", "public/Velo Gallery/messen.webp"],
+        "suggest_keep": "public/Velo Gallery/messen/messen.webp"
+      },
+      {
+        "md5": "9dd40a269b9f6fcc2d32249fdfabc0d5",
+        "files": [
+          "public/Velo Gallery/mobiles+Gin-Tasting+München+mobile+Bar+münchen.jpeg",
+          "public/Velo Gallery/tastingmunich/mobiles+Gin-Tasting+München+mobile+Bar+münchen.jpeg"
+        ],
+        "suggest_keep": "public/Velo Gallery/mobiles+Gin-Tasting+München+mobile+Bar+münchen.jpeg"
+      },
+      {
+        "md5": "f7e027d5bf253863e86ea82190ea97bd",
+        "files": [
+          "public/Velo Gallery/weihnachstfeier-1024w.webp",
+          "public/Velo Gallery/weihnachstfeier.webp"
+        ],
+        "suggest_keep": "public/Velo Gallery/weihnachstfeier-1024w.webp"
+      },
+      {
+        "md5": "ed0b16048a34dd3ede670aa986bc6136",
+        "files": ["public/images/clients/client-01.svg", "public/images/clients/client-12.svg"],
+        "suggest_keep": "public/images/clients/client-01.svg"
+      }
+    ],
+    "missing_refs": [
+      {
+        "ref": "image/*': ['.jpeg",
+        "from": "src/components/AdminUploadPanel.tsx",
+        "tried": ["public/image/*': ['.jpeg"]
+      },
+      {
+        "ref": ".jpg', '.png",
+        "from": "src/components/AdminUploadPanel.tsx",
+        "tried": ["public/.jpg', '.png"]
+      },
+      {
+        "ref": "/images/team/placeholder.jpg",
+        "from": "src/components/AssetNormalizationPanel.tsx",
+        "tried": ["public/images/team/placeholder.jpg"]
+      },
+      {
+        "ref": "/assets/backgrounds/cosmic-unified.jpg",
+        "from": "src/components/Meta.tsx",
+        "tried": ["public/assets/backgrounds/cosmic-unified.jpg"]
+      },
+      {
+        "ref": "/images/fallback-background.jpg",
+        "from": "src/components/atoms/ImageWithFallback.tsx",
+        "tried": ["public/images/fallback-background.jpg"]
+      },
+      {
+        "ref": "/images/fallback/default-image.webp",
+        "from": "src/components/atoms/SafeImage.tsx",
+        "tried": ["public/images/fallback/default-image.webp"]
+      },
+      {
+        "ref": "/public/images/artists/aaron.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/artists/aaron.jpg"]
+      },
+      {
+        "ref": "/public/images/artists/eli.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/artists/eli.jpg"]
+      },
+      {
+        "ref": "/public/images/artists/oliver.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/artists/oliver.jpg"]
+      },
+      {
+        "ref": "/public/images/artists/vive.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/artists/vive.jpg"]
+      },
+      {
+        "ref": "/public/images/team/AAron.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/team/AAron.jpg"]
+      },
+      {
+        "ref": "/public/images/team/Eli-luquez.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/team/Eli-luquez.jpg"]
+      },
+      {
+        "ref": "/public/images/team/Oli.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/team/Oli.jpg"]
+      },
+      {
+        "ref": "/public/images/team/Vive.jpg",
+        "from": "src/components/debug/BuildStateMonitor.tsx",
+        "tried": ["public/public/images/team/Vive.jpg"]
+      },
+      {
+        "ref": "/images/artists/eli.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/eli.jpg"]
+      },
+      {
+        "ref": "/images/artists/aaron.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/aaron.jpg"]
+      },
+      {
+        "ref": "/images/artists/oliver.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/oliver.jpg"]
+      },
+      {
+        "ref": "/images/artists/vive.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/vive.jpg"]
+      },
+      {
+        "ref": "/images/artists/angie.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/angie.jpg"]
+      },
+      {
+        "ref": "/images/artists/debi.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/debi.jpg"]
+      },
+      {
+        "ref": "/images/artists/loui.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/loui.jpg"]
+      },
+      {
+        "ref": "/images/artists/sasha.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/artists/sasha.jpg"]
+      },
+      {
+        "ref": "/images/team/Eli-luquez.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/Eli-luquez.jpg"]
+      },
+      {
+        "ref": "/images/team/AAron.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/AAron.jpg"]
+      },
+      {
+        "ref": "/images/team/Oli.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/Oli.jpg"]
+      },
+      {
+        "ref": "/images/team/Vive.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/Vive.jpg"]
+      },
+      {
+        "ref": "/images/team/ANGIE.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/ANGIE.jpg"]
+      },
+      {
+        "ref": "/images/team/Debi.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/Debi.jpg"]
+      },
+      {
+        "ref": "/images/team/Loui.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/Loui.jpg"]
+      },
+      {
+        "ref": "/images/team/Sasha.jpg",
+        "from": "src/components/debug/ImageChecker.tsx",
+        "tried": ["public/images/team/Sasha.jpg"]
+      },
+      {
+        "ref": "Tattoo Artist', icon: 'pen-icon.svg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/Tattoo Artist', icon: 'pen-icon.svg"]
+      },
+      {
+        "ref": "/path/to/maria-image.jpg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/path/to/maria-image.jpg"]
+      },
+      {
+        "ref": "Piercing Specialist', icon: 'piercing-icon.svg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/Piercing Specialist', icon: 'piercing-icon.svg"]
+      },
+      {
+        "ref": "/path/to/alex-image.jpg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/path/to/alex-image.jpg"]
+      },
+      {
+        "ref": "Nail Artist', icon: 'nail-icon.svg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/Nail Artist', icon: 'nail-icon.svg"]
+      },
+      {
+        "ref": "/path/to/sarah-image.jpg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/path/to/sarah-image.jpg"]
+      },
+      {
+        "ref": "Tattoo Artist', icon: 'pen-icon.svg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/Tattoo Artist', icon: 'pen-icon.svg"]
+      },
+      {
+        "ref": "/path/to/tom-image.jpg",
+        "from": "src/components/molecules/Card/ArtistCard.example.tsx",
+        "tried": ["public/path/to/tom-image.jpg"]
+      },
+      {
+        "ref": "/Diamond.svg",
+        "from": "src/components/molecules/Card/ServiceCards.tsx",
+        "tried": ["public/Diamond.svg"]
+      },
+      {
+        "ref": "/images/services/custom-tattoo-design.jpg",
+        "from": "src/components/molecules/ServiceCard.tsx",
+        "tried": ["public/images/services/custom-tattoo-design.jpg"]
+      },
+      {
+        "ref": "/images/services/tattoo-aftercare.jpg",
+        "from": "src/components/molecules/ServiceCard.tsx",
+        "tried": ["public/images/services/tattoo-aftercare.jpg"]
+      },
+      {
+        "ref": "/images/services/tattoo-sleeve-design.jpg",
+        "from": "src/components/molecules/ServiceCard.tsx",
+        "tried": ["public/images/services/tattoo-sleeve-design.jpg"]
+      },
+      {
+        "ref": "BMW', logo: '/assets/images/clients/bmw-logo.svg",
+        "from": "src/components/organisms/SuccessStories/SuccessStories.tsx",
+        "tried": ["public/BMW', logo: '/assets/images/clients/bmw-logo.svg"]
+      },
+      {
+        "ref": "Siemens', logo: '/assets/images/clients/siemens-logo.svg",
+        "from": "src/components/organisms/SuccessStories/SuccessStories.tsx",
+        "tried": ["public/Siemens', logo: '/assets/images/clients/siemens-logo.svg"]
+      },
+      {
+        "ref": "Munich Re', logo: '/assets/images/clients/munich-re-logo.svg",
+        "from": "src/components/organisms/SuccessStories/SuccessStories.tsx",
+        "tried": ["public/Munich Re', logo: '/assets/images/clients/munich-re-logo.svg"]
+      },
+      {
+        "ref": "Allianz', logo: '/assets/images/clients/allianz-logo.svg",
+        "from": "src/components/organisms/SuccessStories/SuccessStories.tsx",
+        "tried": ["public/Allianz', logo: '/assets/images/clients/allianz-logo.svg"]
+      },
+      {
+        "ref": "SAP', logo: '/assets/images/clients/sap-logo.svg",
+        "from": "src/components/organisms/SuccessStories/SuccessStories.tsx",
+        "tried": ["public/SAP', logo: '/assets/images/clients/sap-logo.svg"]
+      },
+      {
+        "ref": "Infineon', logo: '/assets/images/clients/infineon-logo.svg",
+        "from": "src/components/organisms/SuccessStories/SuccessStories.tsx",
+        "tried": ["public/Infineon', logo: '/assets/images/clients/infineon-logo.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/images/studio/studio-interior-1.jpg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/images/studio/studio-interior-1.jpg"]
+      },
+      {
+        "ref": "/images/studio/studio-interior-2.jpg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/images/studio/studio-interior-2.jpg"]
+      },
+      {
+        "ref": "/images/studio/studio-interior-3.jpg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/images/studio/studio-interior-3.jpg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/images/backgrounds/cosmic-nebula-background.jpg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/images/backgrounds/cosmic-nebula-background.jpg"]
+      },
+      {
+        "ref": "/assets/images/svg/Container_2.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/svg/Container_2.svg"]
+      },
+      {
+        "ref": "/assets/images/svg/Container_3.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/svg/Container_3.svg"]
+      },
+      {
+        "ref": "/assets/images/svg/Container_4.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/svg/Container_4.svg"]
+      },
+      {
+        "ref": "/assets/images/svg/Container.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/svg/Container.svg"]
+      },
+      {
+        "ref": "/images/backgrounds/cosmic-nebula-background.jpg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/images/backgrounds/cosmic-nebula-background.jpg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/config/imagePaths.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/Velo Gallery/20210828-DSC04132-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/20210828-DSC04132-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/A7401217-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/A7401217-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/A7401324-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/A7401324-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/A7401336-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/A7401336-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/A7401372-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/A7401372-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/A7401382-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/A7401382-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/A7401393-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/A7401393-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00136-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00136-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00143-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00143-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00170-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00170-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00183-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00183-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00190-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00190-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00207-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00207-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00224-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00224-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00234-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00234-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00237-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00237-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00250-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00250-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00254-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00254-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00259-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00259-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00260-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00260-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00278-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00278-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00281-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00281-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00300-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00300-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC00345-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC00345-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC05350-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC05350-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC07929-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC07929-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08040-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08040-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08068-320w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08068-320w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08082-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08082-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08094-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08094-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08143-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08143-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08251-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08251-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08333-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08333-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08342-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08342-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08485-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08485-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08525-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08525-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08537-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08537-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08558-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08558-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08604-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08604-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08640-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08640-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC08672-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC08672-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC09463-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC09463-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC09609-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC09609-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/DSC09656-1024w.webp",
+        "from": "src/data/galleryImages.ts",
+        "tried": ["public/Velo Gallery/DSC09656-1024w.webp"]
+      },
+      {
+        "ref": "/Velo Gallery/Hero .jpg",
+        "from": "src/pages/BuchungMucPage.tsx",
+        "tried": ["public/Velo Gallery/Hero .jpg"]
+      },
+      {
+        "ref": "firmenfeiern', label: 'Firmenfeiern', path: '/leistungen#firmenfeiern', image: '/Velo Gallery/firmenfeier.jpg",
+        "from": "src/pages/HomePage_NEW_Light.tsx",
+        "tried": ["public/firmenfeiern', label: 'Firmenfeiern', path: '/leistungen"]
+      },
+      {
+        "ref": "weihnachtsfeiern', label: 'Weihnachtsfeiern', path: '/leistungen#weihnachtsfeiern', image: '/Velo Gallery/20220317-_W147453.webp",
+        "from": "src/pages/HomePage_NEW_Light.tsx",
+        "tried": ["public/weihnachtsfeiern', label: 'Weihnachtsfeiern', path: '/leistungen"]
+      },
+      {
+        "ref": "messe-catering', label: 'Messe-Catering', path: '/leistungen#messe-catering', image: '/Velo Gallery/DSC02009-640w.webp",
+        "from": "src/pages/HomePage_NEW_Light.tsx",
+        "tried": ["public/messe-catering', label: 'Messe-Catering', path: '/leistungen"]
+      },
+      {
+        "ref": "/Velo Gallery/team event.jpg",
+        "from": "src/pages/HomePage_NEW_Light.tsx",
+        "tried": ["public/Velo Gallery/team event.jpg"]
+      },
+      {
+        "ref": "private-feiern', label: 'Private Feiern', path: '/leistungen#private-feiern', image: '/Velo Gallery/privatfeier.webp",
+        "from": "src/pages/HomePage_NEW_Light.tsx",
+        "tried": ["public/private-feiern', label: 'Private Feiern', path: '/leistungen"]
+      },
+      {
+        "ref": "hochzeiten', label: 'Hochzeiten', path: '/leistungen#hochzeiten', image: '/Velo Gallery/DSC05445-1920w.jpg",
+        "from": "src/pages/HomePage_NEW_Light.tsx",
+        "tried": ["public/hochzeiten', label: 'Hochzeiten', path: '/leistungen"]
+      },
+      {
+        "ref": "firmenfeiern', label: 'Firmenfeiern', path: '/leistungen#firmenfeiern', image: '/Velo Gallery/firmenfeier.jpg",
+        "from": "src/pages/HomePage_NEW_Warm.tsx",
+        "tried": ["public/firmenfeiern', label: 'Firmenfeiern', path: '/leistungen"]
+      },
+      {
+        "ref": "weihnachtsfeiern', label: 'Weihnachtsfeiern', path: '/leistungen#weihnachtsfeiern', image: '/Velo Gallery/20220317-_W147453.webp",
+        "from": "src/pages/HomePage_NEW_Warm.tsx",
+        "tried": ["public/weihnachtsfeiern', label: 'Weihnachtsfeiern', path: '/leistungen"]
+      },
+      {
+        "ref": "messe-catering', label: 'Messe-Catering', path: '/leistungen#messe-catering', image: '/Velo Gallery/DSC02009-640w.webp",
+        "from": "src/pages/HomePage_NEW_Warm.tsx",
+        "tried": ["public/messe-catering', label: 'Messe-Catering', path: '/leistungen"]
+      },
+      {
+        "ref": "/Velo Gallery/team event.jpg",
+        "from": "src/pages/HomePage_NEW_Warm.tsx",
+        "tried": ["public/Velo Gallery/team event.jpg"]
+      },
+      {
+        "ref": "private-feiern', label: 'Private Feiern', path: '/leistungen#private-feiern', image: '/Velo Gallery/privatfeier.webp",
+        "from": "src/pages/HomePage_NEW_Warm.tsx",
+        "tried": ["public/private-feiern', label: 'Private Feiern', path: '/leistungen"]
+      },
+      {
+        "ref": "hochzeiten', label: 'Hochzeiten', path: '/leistungen#hochzeiten', image: '/Velo Gallery/DSC05445-1920w.jpg",
+        "from": "src/pages/HomePage_NEW_Warm.tsx",
+        "tried": ["public/hochzeiten', label: 'Hochzeiten', path: '/leistungen"]
+      },
+      {
+        "ref": "/Velo Gallery/bar-icon.jpg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Velo Gallery/bar-icon.jpg"]
+      },
+      {
+        "ref": "Mobile Bar für 50 Gäste', iconUrl: '/icons/guests.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Mobile Bar für 50 Gäste', iconUrl: '/icons/guests.svg"]
+      },
+      {
+        "ref": "2 Stunden Bar-Service', iconUrl: '/icons/time.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/2 Stunden Bar-Service', iconUrl: '/icons/time.svg"]
+      },
+      {
+        "ref": "Grundauswahl an Cocktails', iconUrl: '/icons/cocktails.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Grundauswahl an Cocktails', iconUrl: '/icons/cocktails.svg"]
+      },
+      {
+        "ref": "Professioneller Barkeeper', iconUrl: '/icons/barkeeper.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Professioneller Barkeeper', iconUrl: '/icons/barkeeper.svg"]
+      },
+      {
+        "ref": "/Velo Gallery/bar-icon.jpg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Velo Gallery/bar-icon.jpg"]
+      },
+      {
+        "ref": "Mobile Bar für 100 Gäste', iconUrl: '/icons/guests.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Mobile Bar für 100 Gäste', iconUrl: '/icons/guests.svg"]
+      },
+      {
+        "ref": "4 Stunden Bar-Service', iconUrl: '/icons/time.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/4 Stunden Bar-Service', iconUrl: '/icons/time.svg"]
+      },
+      {
+        "ref": "Erweiterte Cocktail-Auswahl', iconUrl: '/icons/cocktails.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Erweiterte Cocktail-Auswahl', iconUrl: '/icons/cocktails.svg"]
+      },
+      {
+        "ref": "2 Barkeeper', iconUrl: '/icons/barkeeper.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/2 Barkeeper', iconUrl: '/icons/barkeeper.svg"]
+      },
+      {
+        "ref": "Edelstahl-Schank-Theke', iconUrl: '/icons/bar.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Edelstahl-Schank-Theke', iconUrl: '/icons/bar.svg"]
+      },
+      {
+        "ref": "/Velo Gallery/bar-icon.jpg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Velo Gallery/bar-icon.jpg"]
+      },
+      {
+        "ref": "Mobile Bar für 200+ Gäste', iconUrl: '/icons/guests.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Mobile Bar für 200+ Gäste', iconUrl: '/icons/guests.svg"]
+      },
+      {
+        "ref": "6 Stunden Bar-Service', iconUrl: '/icons/time.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/6 Stunden Bar-Service', iconUrl: '/icons/time.svg"]
+      },
+      {
+        "ref": "Premium Cocktail-Auswahl', iconUrl: '/icons/cocktails.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Premium Cocktail-Auswahl', iconUrl: '/icons/cocktails.svg"]
+      },
+      {
+        "ref": "3 Barkeeper', iconUrl: '/icons/barkeeper.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/3 Barkeeper', iconUrl: '/icons/barkeeper.svg"]
+      },
+      {
+        "ref": "Beleuchtung & Deko', iconUrl: '/icons/deco.svg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Beleuchtung & Deko', iconUrl: '/icons/deco.svg"]
+      },
+      {
+        "ref": "/Velo Gallery/partner1.jpg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Velo Gallery/partner1.jpg"]
+      },
+      {
+        "ref": "/Velo Gallery/partner2.jpg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Velo Gallery/partner2.jpg"]
+      },
+      {
+        "ref": "/Velo Gallery/partner3.jpg",
+        "from": "src/pages/UILabPreviewPage.tsx",
+        "tried": ["public/Velo Gallery/partner3.jpg"]
+      },
+      {
+        "ref": "/assets/images/photos/bar-team-interaction.webp",
+        "from": "src/pages/resources/corporate-event-catering-guide.tsx",
+        "tried": ["public/assets/images/photos/bar-team-interaction.webp"]
+      },
+      {
+        "ref": "/assets/images/hero/business-hero.webp",
+        "from": "src/sections/HeroSection.tsx",
+        "tried": ["public/assets/images/hero/business-hero.webp"]
+      },
+      {
+        "ref": "*.svg",
+        "from": "src/types/modules.d.ts",
+        "tried": ["public/*.svg"]
+      },
+      {
+        "ref": "*.png",
+        "from": "src/types/modules.d.ts",
+        "tried": ["public/*.png"]
+      },
+      {
+        "ref": "*.jpg",
+        "from": "src/types/modules.d.ts",
+        "tried": ["public/*.jpg"]
+      },
+      {
+        "ref": "*.jpeg",
+        "from": "src/types/modules.d.ts",
+        "tried": ["public/*.jpeg"]
+      },
+      {
+        "ref": "*.webp",
+        "from": "src/types/modules.d.ts",
+        "tried": ["public/*.webp"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/utils/imageUtils.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "/assets/images/icons/placeholder.svg",
+        "from": "src/utils/imageUtils.ts",
+        "tried": ["public/assets/images/icons/placeholder.svg"]
+      },
+      {
+        "ref": "placeholder') || src === '/images/placeholder.svg",
+        "from": "src/utils/imageUtils.ts",
+        "tried": ["public/placeholder') || src === '/images/placeholder.svg"]
+      },
+      {
+        "ref": "/images/team/eli.jpg",
+        "from": "src/utils/imageValidator.ts",
+        "tried": ["public/images/team/eli.jpg"]
+      }
+    ],
+    "referenced_paths": [
+      "public/Velo Gallery/20210813-_DSC2657-1024w.webp",
+      "public/Velo Gallery/20210813-_DSC2659-1024w.webp",
+      "public/Velo Gallery/20210814-DSC06342-1024w.webp",
+      "public/Velo Gallery/20210814-DSC06359-1024w.webp",
+      "public/Velo Gallery/20210814-DSC06498-1024w.webp",
+      "public/Velo Gallery/20210814-DSC06501-1024w.webp",
+      "public/Velo Gallery/20210814-DSC06538-1024w.webp",
+      "public/Velo Gallery/20210814-DSC06541-1024w.webp",
+      "public/Velo Gallery/20210910-DSC04622-1024w.webp",
+      "public/Velo Gallery/20210910-DSC04626-1024w.webp",
+      "public/Velo Gallery/20220317-DSC01962-1024w.webp",
+      "public/Velo Gallery/20220317-_W147453-1024w.webp",
+      "public/Velo Gallery/20220317-_W147453-1920w.webp",
+      "public/Velo Gallery/20220317-_W147477-1024w.webp",
+      "public/Velo Gallery/A7401220-1920w.jpg",
+      "public/Velo Gallery/A7401228-1024w.webp",
+      "public/Velo Gallery/A7401316-1024w.webp",
+      "public/Velo Gallery/A7401318-1024w.webp",
+      "public/Velo Gallery/A7401328-1024w.webp",
+      "public/Velo Gallery/A7401333-1024w.webp",
+      "public/Velo Gallery/A7401359-1024w.webp",
+      "public/Velo Gallery/A7401361-1024w.webp",
+      "public/Velo Gallery/A7401365-1024w.webp",
+      "public/Velo Gallery/A7401412-1024w.webp",
+      "public/Velo Gallery/A7401419-1024w.webp",
+      "public/Velo Gallery/Coburg-1024w.webp",
+      "public/Velo Gallery/Coburg.jpg",
+      "public/Velo Gallery/DSC00059-1024w.webp",
+      "public/Velo Gallery/DSC00139-1024w.webp",
+      "public/Velo Gallery/DSC00141-1024w.webp",
+      "public/Velo Gallery/DSC00144-1024w.webp",
+      "public/Velo Gallery/DSC00155-1024w.webp",
+      "public/Velo Gallery/DSC00157-1024w.webp",
+      "public/Velo Gallery/DSC00159-1024w.webp",
+      "public/Velo Gallery/DSC00160-1024w.webp",
+      "public/Velo Gallery/DSC00172-1024w.webp",
+      "public/Velo Gallery/DSC00174-1024w.webp",
+      "public/Velo Gallery/DSC00185-1024w.webp",
+      "public/Velo Gallery/DSC00192-1024w.webp",
+      "public/Velo Gallery/DSC00202-1024w.webp",
+      "public/Velo Gallery/DSC00204-1024w.webp",
+      "public/Velo Gallery/DSC00215-1024w.webp",
+      "public/Velo Gallery/DSC00271-1024w.webp",
+      "public/Velo Gallery/DSC00291-1024w.webp",
+      "public/Velo Gallery/DSC00297-1024w.webp",
+      "public/Velo Gallery/DSC00317-1024w.webp",
+      "public/Velo Gallery/DSC00337-1024w.webp",
+      "public/Velo Gallery/DSC00365-1024w.webp",
+      "public/Velo Gallery/DSC00391-1024w.webp",
+      "public/Velo Gallery/DSC01966-1024w.webp",
+      "public/Velo Gallery/DSC01984-1920w.webp",
+      "public/Velo Gallery/DSC01984-320w.webp",
+      "public/Velo Gallery/DSC01995-1024w.webp",
+      "public/Velo Gallery/DSC02009-1024w.webp",
+      "public/Velo Gallery/DSC02013-1024w.webp",
+      "public/Velo Gallery/DSC02025-1024w.webp",
+      "public/Velo Gallery/DSC02026-1024w.webp",
+      "public/Velo Gallery/DSC05410-1024w.webp",
+      "public/Velo Gallery/DSC05414-1024w.webp",
+      "public/Velo Gallery/DSC05416-1024w.webp",
+      "public/Velo Gallery/DSC05425-1024w.webp",
+      "public/Velo Gallery/DSC05433-1024w.webp",
+      "public/Velo Gallery/DSC05445-1024w.webp",
+      "public/Velo Gallery/DSC05451-1024w.webp",
+      "public/Velo Gallery/DSC05463-1024w.webp",
+      "public/Velo Gallery/DSC07836-1024w.webp",
+      "public/Velo Gallery/DSC07846-1024w.webp",
+      "public/Velo Gallery/DSC07847-1024w.webp",
+      "public/Velo Gallery/DSC07865-1024w.webp",
+      "public/Velo Gallery/DSC07871-1024w.webp",
+      "public/Velo Gallery/DSC07898-1024w.webp",
+      "public/Velo Gallery/DSC07909-1024w.webp",
+      "public/Velo Gallery/DSC08085-1024w.webp",
+      "public/Velo Gallery/DSC08154-1024w.webp",
+      "public/Velo Gallery/DSC08198-1024w.webp",
+      "public/Velo Gallery/DSC08201-1024w.webp",
+      "public/Velo Gallery/DSC08210-1024w.webp",
+      "public/Velo Gallery/DSC08324-1024w.webp",
+      "public/Velo Gallery/DSC08418-1024w.webp",
+      "public/Velo Gallery/DSC08451-1024w.webp",
+      "public/Velo Gallery/DSC08679-1024w.webp",
+      "public/Velo Gallery/DSC09030-1024w.webp",
+      "public/Velo Gallery/DSC09453-1024w.webp",
+      "public/Velo Gallery/DSC09575-1024w.webp",
+      "public/Velo Gallery/DSC09589-1024w.webp",
+      "public/Velo Gallery/DSC09638-1024w.webp",
+      "public/Velo Gallery/DSC09647-1024w.webp",
+      "public/Velo Gallery/DSC09679-1024w.webp",
+      "public/Velo Gallery/DSC09687-1024w.webp",
+      "public/Velo Gallery/DSC09721-1024w.webp",
+      "public/Velo Gallery/DSC09724-1024w.webp",
+      "public/Velo Gallery/DSC09731-1024w.webp",
+      "public/Velo Gallery/DSC09743-1024w.webp",
+      "public/Velo Gallery/DSC09743-640w.jpg",
+      "public/Velo Gallery/Hochzeit-1024w.webp",
+      "public/Velo Gallery/Munich-1024w.webp",
+      "public/Velo Gallery/Munich.jpg",
+      "public/Velo Gallery/Privat event-1024w.webp",
+      "public/Velo Gallery/Team.JPG",
+      "public/Velo Gallery/basil-smash-1024w.jpg",
+      "public/Velo Gallery/basil-smash-1024w.webp",
+      "public/Velo Gallery/basil-smash-1920w.jpg",
+      "public/Velo Gallery/basil-smash-1920w.webp",
+      "public/Velo Gallery/basil-smash-320w.jpg",
+      "public/Velo Gallery/basil-smash-320w.webp",
+      "public/Velo Gallery/basil-smash-640w.jpg",
+      "public/Velo Gallery/basil-smash-640w.webp",
+      "public/Velo Gallery/dsc08451-320w.webp",
+      "public/Velo Gallery/firemnfeier/firmenfeier-1920w.webp",
+      "public/Velo Gallery/g2-640w.webp",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-1024w.jpg",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-1024w.webp",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-1920w.jpg",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-1920w.webp",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-320w.jpg",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-320w.webp",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-640w.jpg",
+      "public/Velo Gallery/himbeer-hibiskus-fizz-640w.webp",
+      "public/Velo Gallery/hochzeit/hochzeiten-1920w.webp",
+      "public/Velo Gallery/mango-rosmarin-1024w.jpg",
+      "public/Velo Gallery/mango-rosmarin-1024w.webp",
+      "public/Velo Gallery/mango-rosmarin-1920w.jpg",
+      "public/Velo Gallery/mango-rosmarin-1920w.webp",
+      "public/Velo Gallery/mango-rosmarin-320w.jpg",
+      "public/Velo Gallery/mango-rosmarin-320w.webp",
+      "public/Velo Gallery/mango-rosmarin-640w.jpg",
+      "public/Velo Gallery/mango-rosmarin-640w.webp",
+      "public/Velo Gallery/messen/messen-1920w.webp",
+      "public/Velo Gallery/minz-maracuja-1024w.jpg",
+      "public/Velo Gallery/minz-maracuja-1024w.webp",
+      "public/Velo Gallery/minz-maracuja-1920w.jpg",
+      "public/Velo Gallery/minz-maracuja-1920w.webp",
+      "public/Velo Gallery/minz-maracuja-320w.jpg",
+      "public/Velo Gallery/minz-maracuja-320w.webp",
+      "public/Velo Gallery/minz-maracuja-640w.jpg",
+      "public/Velo Gallery/minz-maracuja-640w.webp",
+      "public/Velo Gallery/private-feiern/private-feiern-1920w.webp",
+      "public/Velo Gallery/team-lars-640w.jpg",
+      "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1920w.webp",
+      "public/icons/certificate.svg",
+      "public/icons/crown.svg",
+      "public/icons/eco.svg",
+      "public/icons/insurance.svg",
+      "public/images/clients/client-01.svg",
+      "public/images/clients/client-02.svg",
+      "public/images/clients/client-03.svg",
+      "public/images/clients/client-04.svg",
+      "public/images/clients/client-05.svg",
+      "public/images/clients/client-06.svg",
+      "public/images/clients/client-07.svg",
+      "public/images/clients/client-08.svg",
+      "public/images/clients/client-09.svg",
+      "public/images/clients/client-10.svg",
+      "public/images/clients/client-11.svg",
+      "public/images/clients/client-12.svg",
+      "public/images/partners/bounce-logo.svg",
+      "public/images/partners/iamrobot-logo.svg",
+      "public/images/partners/nannybag-logo.svg",
+      "public/images/partners/tum-logo.svg",
+      "public/velo.svg"
+    ]
+  }
+}

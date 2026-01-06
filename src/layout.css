@@ -1,0 +1,321 @@
+/*
+ * LAYOUT UTILITIES
+ * =================
+ * Spacing utilities based on 8pt grid system
+ * Use these classes instead of arbitrary spacing values
+ */
+
+/* Margin utilities */
+.m-0 {
+  margin: 0;
+}
+.m-xs {
+  margin: var(--space-xs);
+}
+.m-sm {
+  margin: var(--space-sm);
+}
+.m-md {
+  margin: var(--space-md);
+}
+.m-lg {
+  margin: var(--space-lg);
+}
+.m-xl {
+  margin: var(--space-xl);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mt-xs {
+  margin-top: var(--space-xs);
+}
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+.mt-md {
+  margin-top: var(--space-md);
+}
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-xs {
+  margin-bottom: var(--space-xs);
+}
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+.ml-xs {
+  margin-left: var(--space-xs);
+}
+.ml-sm {
+  margin-left: var(--space-sm);
+}
+.ml-md {
+  margin-left: var(--space-md);
+}
+.ml-lg {
+  margin-left: var(--space-lg);
+}
+.ml-xl {
+  margin-left: var(--space-xl);
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+.mr-xs {
+  margin-right: var(--space-xs);
+}
+.mr-sm {
+  margin-right: var(--space-sm);
+}
+.mr-md {
+  margin-right: var(--space-md);
+}
+.mr-lg {
+  margin-right: var(--space-lg);
+}
+.mr-xl {
+  margin-right: var(--space-xl);
+}
+
+/* Padding utilities */
+.p-0 {
+  padding: 0;
+}
+.p-xs {
+  padding: var(--space-xs);
+}
+.p-sm {
+  padding: var(--space-sm);
+}
+.p-md {
+  padding: var(--space-md);
+}
+.p-lg {
+  padding: var(--space-lg);
+}
+.p-xl {
+  padding: var(--space-xl);
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+.pt-xs {
+  padding-top: var(--space-xs);
+}
+.pt-sm {
+  padding-top: var(--space-sm);
+}
+.pt-md {
+  padding-top: var(--space-md);
+}
+.pt-lg {
+  padding-top: var(--space-lg);
+}
+.pt-xl {
+  padding-top: var(--space-xl);
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+.pb-xs {
+  padding-bottom: var(--space-xs);
+}
+.pb-sm {
+  padding-bottom: var(--space-sm);
+}
+.pb-md {
+  padding-bottom: var(--space-md);
+}
+.pb-lg {
+  padding-bottom: var(--space-lg);
+}
+.pb-xl {
+  padding-bottom: var(--space-xl);
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+.pl-xs {
+  padding-left: var(--space-xs);
+}
+.pl-sm {
+  padding-left: var(--space-sm);
+}
+.pl-md {
+  padding-left: var(--space-md);
+}
+.pl-lg {
+  padding-left: var(--space-lg);
+}
+.pl-xl {
+  padding-left: var(--space-xl);
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+.pr-xs {
+  padding-right: var(--space-xs);
+}
+.pr-sm {
+  padding-right: var(--space-sm);
+}
+.pr-md {
+  padding-right: var(--space-md);
+}
+.pr-lg {
+  padding-right: var(--space-lg);
+}
+.pr-xl {
+  padding-right: var(--space-xl);
+}
+
+/* Gap utilities for flex/grid */
+.gap-0 {
+  gap: 0;
+}
+.gap-xs {
+  gap: var(--space-xs);
+}
+.gap-sm {
+  gap: var(--space-sm);
+}
+.gap-md {
+  gap: var(--space-md);
+}
+.gap-lg {
+  gap: var(--space-lg);
+}
+.gap-xl {
+  gap: var(--space-xl);
+}
+
+/* Width utilities */
+.w-full {
+  width: 100%;
+}
+.w-half {
+  width: 50%;
+}
+.w-third {
+  width: 33.333%;
+}
+.w-quarter {
+  width: 25%;
+}
+
+/* Height utilities */
+.h-full {
+  height: 100%;
+}
+.h-half {
+  height: 50%;
+}
+.h-third {
+  height: 33.333%;
+}
+.h-quarter {
+  height: 25%;
+}
+
+/* Responsive layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--container-default);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* Flexbox utilities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Grid utilities */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .container {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+}

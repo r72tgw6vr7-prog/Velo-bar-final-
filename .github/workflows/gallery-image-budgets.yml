@@ -1,0 +1,35 @@
+name: Gallery image budgets
+
+'on':
+  pull_request:
+
+jobs:
+  gallery-image-budgets:
+    name: Enforce AVIF variants + budgets (gallery)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine changed files
+        id: changed
+        run: |
+          BASE_REF="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1 || true
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          git diff --name-only "$BASE_REF"...HEAD >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Check gallery image variants + budgets
+        run: node scripts/check-gallery-image-budgets.mjs

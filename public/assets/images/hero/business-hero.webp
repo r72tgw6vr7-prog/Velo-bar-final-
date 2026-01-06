@@ -1,0 +1,6 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Placeholder</title>
+  <rect x="48" y="48" width="416" height="416" rx="32" stroke="currentColor" stroke-opacity="0.35" stroke-width="10"/>
+  <path d="M140 336L220 256L292 328L360 264L432 336" stroke="currentColor" stroke-opacity="0.55" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="196" cy="204" r="30" stroke="currentColor" stroke-opacity="0.55" stroke-width="14"/>
+</svg>

@@ -1,0 +1,222 @@
+/* ============================================
+   INCLUDED ITEMS CAROUSEL STYLES
+   ============================================ */
+
+.included-carousel-section {
+  position: relative;
+  width: 100%;
+}
+
+.included-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Carousel Container */
+.included-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 16px 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.included-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Card Styling */
+.included-card {
+  flex: 0 0 calc(50% - 8px); /* 2 cards visible on mobile (48% each + gap) */
+  scroll-snap-align: center;
+  border-radius: 16px;
+  background: #fff8ec;
+  border: 2px solid rgba(238, 120, 104, 0.2);
+  padding: 16px 14px 18px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.included-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Container */
+.included-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--color-bg-surface-tinted, rgba(238, 120, 104, 0.1));
+}
+
+.included-card__icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent-primary, rgb(238, 120, 104));
+}
+
+/* Typography */
+.included-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  color: var(--color-text-on-light, #003141);
+}
+
+.included-card__body {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-text-on-light, #003141);
+  opacity: 0.8;
+}
+
+/* Navigation Arrows - Hidden on Mobile */
+.included-carousel-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff8ec;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--color-accent-primary, rgb(238, 120, 104));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.included-carousel-arrow:hover {
+  background: #fff8ec;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.included-carousel-arrow--left {
+  left: -20px;
+}
+
+.included-carousel-arrow--right {
+  right: -20px;
+}
+
+/* Progress Dots - Mobile Only */
+.included-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.included-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(238, 120, 104, 0.3);
+  transition: background 0.3s ease;
+}
+
+.included-carousel-dot:first-child {
+  background: var(--color-accent-primary, rgb(238, 120, 104));
+}
+
+/* ============================================
+   TABLET BREAKPOINT (768px - 1023px)
+   ============================================ */
+@media (min-width: 768px) {
+  .included-carousel {
+    gap: 20px;
+    padding: 0 24px 8px;
+  }
+
+  .included-card {
+    flex: 0 0 calc(33.333% - 14px); /* 3 cards visible */
+  }
+
+  .included-card__icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
+
+  .included-card__icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .included-card__title {
+    font-size: 1.125rem;
+  }
+
+  .included-carousel-dots {
+    display: none; /* Hide dots on tablet */
+  }
+}
+
+/* ============================================
+   DESKTOP BREAKPOINT (≥ 1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+  .included-carousel {
+    gap: 24px;
+    padding: 0 32px 8px;
+    overflow-x: hidden; /* Disable scroll on desktop */
+  }
+
+  .included-card {
+    flex: 0 0 calc(25% - 18px); /* 4 cards visible */
+  }
+
+  .included-card__icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
+
+  .included-card__icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .included-card__title {
+    font-size: 1.25rem;
+  }
+
+  .included-card__body {
+    font-size: 1rem;
+  }
+
+  /* Show navigation arrows on desktop */
+  .included-carousel-arrow {
+    display: flex;
+  }
+
+  .included-carousel-dots {
+    display: none;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (≥ 1280px)
+   ============================================ */
+@media (min-width: 1280px) {
+  .included-carousel-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

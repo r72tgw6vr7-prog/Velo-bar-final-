@@ -1,0 +1,113 @@
+{
+  "totalImages": 768,
+  "folderCounts": [
+    [
+      "/public/Velo Gallery/gallery-carousel",
+      497
+    ],
+    [
+      "/public/Velo Gallery",
+      111
+    ],
+    [
+      "/public/Velo Gallery/gallery-carousel/optimized",
+      58
+    ],
+    [
+      "/public/Velo Gallery/optimized",
+      17
+    ],
+    [
+      "/public/images/clients",
+      12
+    ],
+    [
+      "/public/icons",
+      10
+    ],
+    [
+      "/public/Velo Gallery/private-feiern",
+      9
+    ],
+    [
+      "/public/Velo Gallery/teamevent-und-workshops",
+      9
+    ],
+    [
+      "/public/Velo Gallery/hochzeit",
+      9
+    ],
+    [
+      "/public/Velo Gallery/firemnfeier",
+      9
+    ],
+    [
+      "/public/Velo Gallery/messen",
+      9
+    ],
+    [
+      "/public",
+      4
+    ],
+    [
+      "/public/images/partners",
+      4
+    ],
+    [
+      "/public/assets",
+      3
+    ],
+    [
+      "/public/images",
+      1
+    ],
+    [
+      "/public/Velo Gallery/private-feiern/optimized",
+      1
+    ],
+    [
+      "/public/Velo Gallery/teamevent-und-workshops/optimized",
+      1
+    ],
+    [
+      "/public/Velo Gallery/hochzeit/optimized",
+      1
+    ],
+    [
+      "/public/assets/images/hero",
+      1
+    ],
+    [
+      "/public/assets/images/photos",
+      1
+    ],
+    [
+      "/public/assets/_originals",
+      1
+    ]
+  ],
+  "largestFolder": [
+    "/public/Velo Gallery/gallery-carousel",
+    497
+  ],
+  "extCounts": [
+    [
+      "jpg",
+      270
+    ],
+    [
+      "svg",
+      29
+    ],
+    [
+      "webp",
+      468
+    ],
+    [
+      "jpeg",
+      1
+    ]
+  ],
+  "duplicateGroups": 119,
+  "duplicateFiles": 258
+}

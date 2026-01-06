@@ -1,0 +1,346 @@
+/**
+ * Velo.Bar Design System - DARK THEME
+ * ====================================
+ * Teal (#003141) background, cream text, coral (#ee7868) accents
+ * 60-30-10 Rule: Cream (60%) | Teal (30%) | Coral (10%)
+ */
+
+/* ============================================
+ * GLOBAL - TEAL BACKGROUND
+ * ============================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--color-bg-page) !important;
+  color: var(--color-text-on-dark);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+/* ============================================
+ * CARDS - DEPRECATED: Use unified card system in components/card.css
+ * ============================================ */
+
+/* Legacy card styles removed - use .card, .card--brand, .card--featured, .card--dark from components/card.css */
+
+/* ============================================
+ * NAVIGATION - Navy header
+ * ============================================ */
+
+.glass-nav,
+.nav {
+  background: var(--surface-nav);
+  border-bottom: 1px solid var(--color-border-on-dark);
+}
+
+.cosmic-nav-solid {
+  background: var(--surface-card) !important;
+  opacity: 1 !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.glass-nav-sticky,
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+/* ============================================
+ * BUTTONS - Flat Velo.Bar style
+ * ============================================ */
+
+.glass-button {
+  background: var(--cta-bg);
+  border: none;
+  color: var(--text-on-accent);
+  padding: var(--space-sm) var(--space-xl); /* 8pt grid */
+  border-radius: var(--radius-button);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button:hover {
+  background: var(--cta-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-hover);
+}
+
+.glass-button:active {
+  background: var(--cta-bg-active);
+  transform: scale(0.98);
+}
+
+.glass-button-primary {
+  background: var(--cta-bg);
+  color: var(--text-on-accent);
+}
+
+.glass-button-primary:hover {
+  background: var(--cta-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-hover);
+}
+
+.glass-button-primary:active {
+  background: var(--cta-bg-active);
+  transform: scale(0.98);
+}
+
+/* ============================================
+ * TEXT - White on navy
+ * ============================================ */
+
+.brand-text-primary,
+.text-primary,
+.cosmic-text-primary {
+  color: var(--text-on-dark) !important;
+  text-shadow: none !important;
+}
+
+.brand-text-secondary,
+.text-secondary,
+.cosmic-text-secondary {
+  color: var(--text-on-dark-secondary) !important;
+  text-shadow: none !important;
+}
+
+.brand-text-tertiary,
+.text-tertiary,
+.cosmic-text-tertiary {
+  color: var(--text-on-dark-tertiary) !important;
+  text-shadow: none !important;
+}
+
+.brand-text-accent,
+.text-accent,
+.cosmic-text-orange {
+  color: var(--color-coral) !important;
+  text-shadow: none !important;
+}
+
+/* ============================================
+ * INPUTS - Navy-light background
+ * ============================================ */
+
+.glass-input,
+.input {
+  background: var(--surface-card);
+  border: 1px solid var(--color-border-on-light);
+  color: var(--text-on-light);
+  padding: 16px 16px;
+  border-radius: var(--radius-button);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+}
+
+.glass-input:focus,
+.input:focus {
+  border-color: var(--color-coral);
+  outline: none;
+}
+
+.glass-input::placeholder,
+.input::placeholder {
+  color: var(--text-body-light);
+}
+
+/* ============================================
+ * REMOVE ALL EFFECTS
+ * ============================================ */
+
+.cosmic-glow,
+.brand-glow {
+  box-shadow: none !important;
+}
+
+.cosmic-border,
+.brand-border {
+  border: none !important;
+}
+
+.glass-section,
+.glass-section-transparent,
+.glass-section-overlay {
+  background: transparent !important;
+}
+
+/* Removed aggressive backdrop-filter override */
+
+/* ============================================
+ * GLOBAL DARK THEME OVERRIDES
+ * Force all light backgrounds to dark theme
+ * ============================================ */
+
+/* Override bg-white to dark surface */
+.bg-white {
+  background-color: var(--surface-card) !important;
+}
+
+/* Override bg-gray-50/100 to dark surface */
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: var(--surface-card-subtle) !important;
+}
+
+/* Override text-gray colors to white variants */
+.text-gray-900,
+.text-gray-800 {
+  color: var(--text-on-light) !important;
+}
+
+.text-gray-700,
+.text-gray-600 {
+  color: var(--text-body-light) !important;
+}
+
+.text-gray-500,
+.text-gray-400 {
+  color: var(--text-body-light) !important;
+}
+
+/* Override border-gray colors */
+.border-gray-200,
+.border-gray-300 {
+  border-color: var(--color-border-on-light) !important;
+}
+
+.divide-gray-200 > * + * {
+  border-color: var(--color-border-on-light) !important;
+}
+
+/* Override hover states */
+.hover\:bg-gray-100:hover {
+  background-color: var(--surface-card-subtle) !important;
+}
+
+/* Override emerald colors for dark theme */
+.text-emerald-700,
+.text-emerald-600 {
+  color: #34d399 !important;
+}
+
+.border-emerald-500 {
+  border-color: #34d399 !important;
+}
+
+.hover\:border-emerald-300:hover {
+  border-color: #6ee7b7 !important;
+}
+
+/* Override orange text for dark theme */
+.text-orange-700 {
+  color: var(--color-accent-primary) !important;
+}
+
+/* Override shadow colors for dark theme */
+.shadow-sm,
+.shadow-md {
+  box-shadow: var(--elevation-1) !important;
+}
+
+.shadow-md {
+  box-shadow: var(--elevation-2) !important;
+}
+
+/* Override hover:shadow-md for dark theme */
+.hover\:shadow-md:hover {
+  box-shadow: var(--elevation-2) !important;
+}
+
+/* Fix buttons with bg-white on dark backgrounds */
+button.bg-white,
+a.bg-white {
+  background-color: var(--cta-bg) !important;
+  color: var(--text-on-accent) !important;
+}
+
+button.bg-white:hover,
+a.bg-white:hover {
+  background-color: var(--color-accent-primary-hover) !important;
+}
+
+/* Fix table styling for dark theme */
+thead.bg-gray-50 {
+  background-color: var(--navy-dark) !important;
+}
+
+tbody.bg-navy-light {
+  background-color: var(--navy-light) !important;
+}
+
+/* Fix alternating row colors */
+tr.bg-gray-50 {
+  background-color: var(--navy-dark) !important;
+}
+
+/* ============================================
+ * SEMANTIC COLOR CLASS OVERRIDES
+ * Fix text-on-light, bg-navy-light, etc.
+ * ============================================ */
+
+.text-on-light {
+  color: var(--text-on-light) !important;
+}
+
+.text-text-secondary {
+  color: var(--offwhite-secondary) !important;
+}
+
+.text-text-tertiary {
+  color: var(--offwhite-secondary) !important;
+}
+
+.bg-navy-light {
+  background-color: var(--navy-light);
+}
+
+.home-hero-badge.bg-navy-light {
+  background-color: var(--color-cream);
+  border-color: rgba(var(--orange-rgb), 0.3);
+}
+
+.bg-surface-muted {
+  background-color: var(--navy-dark) !important;
+}
+
+.border-border-subtle {
+  border-color: var(--color-border-on-dark) !important;
+}
+
+/* Fix form inputs for dark theme */
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='date'],
+input[type='number'],
+textarea,
+select {
+  background-color: var(--surface-card) !important;
+  color: var(--text-on-light) !important;
+  border-color: var(--color-border-on-light) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-body-light) !important;
+}
+
+/* Fix date input calendar icon */
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Fix select dropdown */
+select option {
+  background-color: var(--surface-card);
+  color: var(--text-on-light);
+}

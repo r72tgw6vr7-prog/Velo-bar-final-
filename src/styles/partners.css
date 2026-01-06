@@ -1,0 +1,71 @@
+/* Partners carousel edge fade and spacing hardening */
+.partners-carousel-wrapper {
+  position: relative;
+}
+
+.partners-fade::before,
+.partners-fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.partners-fade::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(13, 13, 13, 0.95), rgba(13, 13, 13, 0));
+}
+
+.partners-fade::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(13, 13, 13, 0.95), rgba(13, 13, 13, 0));
+}
+
+/* Track layout (defaults to 32px gap; 48px on md+) */
+.partners-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--spacing-4), 5.5vw, var(--spacing-6));
+}
+
+/* Logo image sizing */
+img.partners-logo-img {
+  height: 2.5rem; /* 40px */
+  width: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  img.partners-logo-img {
+    height: 2.75rem; /* 44px */
+  }
+}
+
+@media (min-width: 1024px) {
+  img.partners-logo-img {
+    height: 3rem; /* 48px */
+  }
+}
+
+/* Optional marquee (disabled by default): apply class .partners-marquee to track if desired */
+.partners-marquee {
+  will-change: transform;
+  animation: partners-marquee 26s linear infinite;
+}
+
+@keyframes partners-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.partners-carousel-wrapper:hover .partners-marquee {
+  animation-play-state: paused;
+}

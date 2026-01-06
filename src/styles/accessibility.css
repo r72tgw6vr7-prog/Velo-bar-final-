@@ -1,0 +1,183 @@
+/**
+ * Accessibility Styles
+ * ===================
+ * CSS variables and utilities for accessibility features
+ */
+
+/* Base animations for accessibility features */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation utility classes */
+.animate-slideIn {
+  animation: slideIn var(--transition-duration-normal, 300ms)
+    var(--transition-easing-smooth, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.animate-fadeIn {
+  animation: fadeIn var(--transition-duration-normal, 300ms)
+    var(--transition-easing-smooth, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+/* Reduced Motion Preference */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Enhanced Focus Indicators */
+html.focus-indicators :focus {
+  outline: 2px solid var(--color-coral) !important;
+  outline-offset: 4px !important; /* 8pt grid: was 3px */
+}
+
+html.focus-indicators :focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+html.focus-indicators :focus-visible {
+  outline: 2px solid var(--color-coral) !important;
+  outline-offset: 4px !important; /* 8pt grid: was 3px */
+  box-shadow: 0 0 0 4px rgba(238, 120, 104, 0.3) !important;
+}
+
+/* High Contrast Mode */
+html.high-contrast {
+  --color-text-primary: #ffffff !important;
+  --color-text-secondary: #eeeeee !important;
+  --color-text-tertiary: #dddddd !important;
+  --brand-primary: var(--color-accent-primary) !important;
+  --brand-primary-hover: var(--color-accent-primary-hover) !important;
+  --brand-secondary: #00aaff !important;
+  --color-surface-dark: #003141 !important;
+  --hc-black: var(--color-teal) !important;
+  --hc-black-90: rgba(0, 49, 65, 0.95) !important;
+  --color-error: #ff6666 !important;
+  --color-success: #66ff99 !important;
+  --color-warning: var(--color-accent-primary) !important;
+
+  /* Canonical token overrides */
+  --color-text-on-dark: #ffffff !important;
+  --color-text-on-dark-secondary: #eeeeee !important;
+  --color-text-on-dark-tertiary: #dddddd !important;
+  --color-bg-page: var(--color-teal) !important;
+  --color-bg-dark: var(--color-teal) !important;
+  --color-bg-surface: var(--color-teal) !important;
+  --color-accent-primary: var(--color-accent-primary) !important;
+  --color-accent-primary-hover: var(--color-accent-primary-hover) !important;
+  --color-border-on-dark: #ffffff !important;
+}
+
+html.high-contrast button,
+html.high-contrast a,
+html.high-contrast .interactive {
+  text-decoration: underline !important;
+}
+
+html.high-contrast button:focus-visible,
+html.high-contrast a:focus-visible,
+html.high-contrast .interactive:focus-visible {
+  outline: 3px solid var(--brand-primary) !important;
+  outline-offset: 4px !important; /* 8pt grid: was 3px */
+}
+
+html.high-contrast img,
+html.high-contrast svg,
+html.high-contrast .border-thin {
+  border: 1px solid #ffffff !important;
+}
+
+/* Larger Text */
+html.large-text {
+  font-size: 120% !important;
+}
+
+html.large-text p,
+html.large-text ul,
+html.large-text ol,
+html.large-text li,
+html.large-text button,
+html.large-text input,
+html.large-text label {
+  line-height: 1.6 !important;
+}
+
+html.large-text h1 {
+  font-size: 2.6rem !important;
+}
+html.large-text h2 {
+  font-size: 2.2rem !important;
+}
+html.large-text h3 {
+  font-size: 1.8rem !important;
+}
+html.large-text h4 {
+  font-size: 1.5rem !important;
+}
+
+/* Skip links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-coral);
+  color: var(--color-teal);
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen reader utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* For focus trapped elements */
+.focus-trap-active:focus {
+  outline: 2px solid var(--color-coral) !important;
+}

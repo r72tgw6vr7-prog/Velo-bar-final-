@@ -1,0 +1,323 @@
+/**
+ * Mobile Active States
+ * ====================
+ * Provides visual feedback for touch interactions on mobile devices
+ * Ensures users know their tap registered
+ */
+
+/* ============================================
+   BUTTON ACTIVE STATES
+   ============================================ */
+
+/* Primary buttons - scale down + darken on tap */
+button:active,
+[role='button']:active,
+.button:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+  transition:
+    transform 0.1s ease-out,
+    opacity 0.1s ease-out;
+}
+
+/* Prevent active state on disabled buttons */
+button:disabled:active,
+[aria-disabled='true']:active {
+  transform: none;
+  opacity: 0.5;
+}
+
+/* ============================================
+   BUTTON VARIANTS
+   ============================================ */
+
+/* Primary button active state */
+button[class*='primary']:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
+
+/* Secondary button active state */
+button[class*='secondary']:active {
+  transform: scale(0.97);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Outline button active state */
+button[class*='outline']:active {
+  transform: scale(0.97);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ghost button active state */
+button[class*='ghost']:active {
+  transform: scale(0.97);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Icon buttons - subtle scale */
+.icon-button:active,
+button[class*='icon']:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   LINK ACTIVE STATES
+   ============================================ */
+
+a:active {
+  opacity: 0.7;
+  transition: opacity 0.1s ease-out;
+}
+
+/* Navigation links */
+nav a:active {
+  opacity: 0.8;
+  transform: translateY(1px);
+}
+
+/* Card links */
+a[class*='card']:active,
+.card a:active {
+  transform: scale(0.98);
+  opacity: 0.95;
+}
+
+/* ============================================
+   CAROUSEL & GALLERY CONTROLS
+   ============================================ */
+
+/* Carousel arrows */
+button[aria-label*='Previous']:active,
+button[aria-label*='Next']:active,
+.carousel-button:active {
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Carousel dots */
+button[aria-label*='slide']:active,
+.carousel-dot:active {
+  transform: scale(0.9);
+}
+
+/* ============================================
+   CLOSE BUTTONS
+   ============================================ */
+
+button[aria-label*='Close']:active,
+button[aria-label*='close']:active,
+.close-button:active {
+  transform: scale(0.9) rotate(90deg);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   SOCIAL MEDIA BUTTONS
+   ============================================ */
+
+button[aria-label*='Facebook']:active,
+button[aria-label*='Instagram']:active,
+button[aria-label*='Twitter']:active,
+button[aria-label*='TikTok']:active,
+.social-button:active {
+  transform: scale(0.92);
+  filter: brightness(1.2);
+}
+
+/* ============================================
+   FORM CONTROLS
+   ============================================ */
+
+/* Form submit buttons */
+button[type='submit']:active {
+  transform: scale(0.97);
+  filter: brightness(0.95);
+}
+
+/* Form reset buttons */
+button[type='reset']:active {
+  transform: scale(0.97);
+  opacity: 0.8;
+}
+
+/* Select dropdowns */
+select:active {
+  border-color: var(--brand-primary);
+  transform: scale(0.99);
+}
+
+/* Checkboxes and radios */
+input[type='checkbox']:active,
+input[type='radio']:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   MOBILE-SPECIFIC (TOUCH DEVICES)
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Enhanced active states for touch devices */
+
+  button:active,
+  [role='button']:active {
+    transform: scale(0.96);
+    transition: transform 0.05s ease-out;
+  }
+
+  /* Quick tap feedback */
+  .quick-tap:active {
+    background-color: rgba(var(--brand-primary-rgb), 0.1);
+    transition: background-color 0.05s ease-out;
+  }
+
+  /* Ripple effect alternative for mobile */
+  .mobile-ripple:active {
+    box-shadow: inset 0 0 20px rgba(var(--brand-primary-rgb), 0.3);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - FOCUS-VISIBLE
+   ============================================ */
+
+/* Remove active state when using keyboard (not touch) */
+button:focus-visible:active {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   ANIMATION DURATIONS
+   ============================================ */
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  button:active,
+  [role='button']:active,
+  a:active {
+    transform: none;
+    transition: opacity 0.01s;
+  }
+}
+
+/* ============================================
+   MOBILE MENU SPECIFIC
+   ============================================ */
+
+/* Hamburger menu button */
+button[aria-label*='menu']:active,
+button[aria-label*='Menu']:active,
+.menu-toggle:active {
+  transform: scale(0.95);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile menu items */
+.mobile-menu a:active,
+.mobile-menu button:active {
+  background-color: rgba(var(--brand-primary-rgb), 0.1);
+  transform: translateX(4px);
+}
+
+/* ============================================
+   LANGUAGE TOGGLE
+   ============================================ */
+
+button[aria-label*='language']:active,
+button[aria-label*='Language']:active,
+.language-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   CTA BUTTONS (HIGH PRIORITY)
+   ============================================ */
+
+.cta-button:active,
+button[class*='cta']:active {
+  transform: scale(0.96);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   FILTER & TAB BUTTONS
+   ============================================ */
+
+button[role='tab']:active,
+.tab-button:active,
+.filter-button:active {
+  transform: translateY(1px);
+  background-color: rgba(var(--brand-primary-rgb), 0.15);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Apply active state */
+.active-scale:active {
+  transform: scale(0.97);
+}
+
+.active-opacity:active {
+  opacity: 0.8;
+}
+
+.active-brightness:active {
+  filter: brightness(0.9);
+}
+
+.active-translate:active {
+  transform: translateY(2px);
+}
+
+/* Disable active state */
+.no-active:active {
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* ============================================
+   PRESS & HOLD INDICATORS
+   ============================================ */
+
+/* For actions that require press and hold */
+.press-hold:active {
+  animation: pulseActive 0.6s ease-in-out infinite;
+}
+
+@keyframes pulseActive {
+  0%,
+  100% {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+/* ============================================
+   HAPTIC FEEDBACK SIMULATION
+   ============================================ */
+
+/* Visual feedback that mimics haptic response */
+.haptic-feedback:active {
+  animation: hapticBounce 0.2s ease-out;
+}
+
+@keyframes hapticBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.94);
+  }
+  100% {
+    transform: scale(0.97);
+  }
+}

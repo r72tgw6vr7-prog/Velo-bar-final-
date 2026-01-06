@@ -1,0 +1,29 @@
+node_modules
+.git
+coverage
+docs
+*.log
+*.md
+repomix-output.xml
+
+# Large backup folders
+public-backup-*/
+*-backup-*
+FIGMA EXPORT
+*.pdf
+00-cover-guidelines
+02-pages-complete
+03-pages-in-progress
+guidelines
+handoff
+templates
+.vite
+dist/stats.html
+src/components-backup-2025-10-24-pre-enforcement
+# Exclude videos and archive
+**/*.MOV
+**/*.mov
+**/*.mp4
+**/*.MP4
+public/images/_ARCHIVE
+dist/images/_ARCHIVE

@@ -1,0 +1,184 @@
+/*
+ * SHARED BUTTON STYLES
+ * ====================
+ * Unified button styling based on pricing card design
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-family-base);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--motion-duration-fast) var(--motion-ease-standard);
+  white-space: nowrap;
+  border-radius: var(--button-radius-primary);
+  background: var(--cta-bg);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-brand-sm);
+}
+
+/* Button sizes */
+.btn--sm {
+  height: var(--button-height-sm);
+  padding: var(--button-padding-sm);
+  font-size: 14px;
+}
+
+.btn--md {
+  height: var(--button-height-md);
+  padding: var(--button-padding-md);
+  font-size: var(--button-font-size);
+}
+
+.btn--lg {
+  height: var(--button-height-lg);
+  padding: var(--button-padding-lg);
+  font-size: 18px;
+}
+
+/* Button variants */
+.btn--primary {
+  background: var(--cta-bg);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-brand-sm);
+}
+
+.btn--primary:hover {
+  background: var(--cta-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand-md);
+}
+
+.btn--primary:active {
+  background: var(--cta-bg-active);
+  transform: scale(0.98);
+  box-shadow: var(--shadow-brand-active);
+}
+
+.btn--secondary {
+  background: var(--surface-card);
+  color: var(--text-on-light);
+  border: 2px solid var(--cta-bg);
+  box-shadow: none;
+}
+
+.btn--secondary:hover {
+  background: var(--surface-card-subtle);
+  border-color: var(--cta-bg-hover);
+  transform: translateY(-2px);
+}
+
+.btn--secondary:active {
+  transform: scale(0.98);
+}
+
+.btn--ghost {
+  background: var(--surface-card-subtle);
+  color: var(--text-on-light);
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background: var(--surface-card);
+  transform: translateY(-1px);
+}
+
+.btn--ghost:active {
+  transform: scale(0.98);
+}
+
+/* Inverse button for light backgrounds */
+.btn--inverse {
+  background: var(--offwhite-primary);
+  color: var(--text-body-on-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--inverse:hover {
+  background: var(--offwhite-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--inverse:active {
+  transform: scale(0.98);
+}
+
+/* Button states */
+.btn:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--cta-bg);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  background: var(--cta-bg);
+}
+
+/* Full width button */
+.btn--full {
+  width: 100%;
+}
+
+/* Icon button */
+.btn--icon {
+  padding: 0;
+  width: var(--button-height-md);
+  height: var(--button-height-md);
+}
+
+.btn--icon.btn--sm {
+  width: var(--button-height-sm);
+  height: var(--button-height-sm);
+}
+
+.btn--icon.btn--lg {
+  width: var(--button-height-lg);
+  height: var(--button-height-lg);
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.btn-group .btn {
+  border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+  border-radius: var(--button-radius-primary) 0 0 var(--button-radius-primary);
+}
+
+.btn-group .btn:last-child {
+  border-radius: 0 var(--button-radius-primary) var(--button-radius-primary) 0;
+}
+
+.btn-group .btn:only-child {
+  border-radius: var(--button-radius-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .btn--lg {
+    height: var(--button-height-md);
+    padding: var(--button-padding-md);
+    font-size: var(--button-font-size);
+  }
+}

@@ -1,0 +1,111 @@
+/**
+ * WhyVeloBarSection Styles
+ * ========================
+ * Mobile-first responsive styles for trust signal cards
+ * Clean, production-ready (no debug styles)
+ */
+
+.why-velobar-section {
+  position: relative;
+  width: 100%;
+}
+
+.why-velobar-cards-grid {
+  position: relative;
+}
+
+/* Card base styles */
+.why-velobar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible state (set by GSAP or reduced-motion) */
+.why-velobar-card--visible,
+.why-velobar-card[style*='opacity: 1'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icon container */
+.why-velobar-card__icon {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+/* Icon hover animation */
+.why-velobar-card:hover .why-velobar-card__icon {
+  transform: scale(1.1);
+  border-color: #ee7868;
+  background-color: rgba(238, 120, 104, 0.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .why-velobar-cards-grid {
+    gap: 20px;
+  }
+
+  .why-velobar-card {
+    min-height: 240px;
+  }
+}
+
+/* Tablet: 2 columns, last card centered */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .why-velobar-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-velobar-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .why-velobar-cards-grid {
+    gap: 2rem;
+  }
+
+  .why-velobar-card {
+    min-height: 320px;
+  }
+}
+
+/* Reduced motion: skip animations, show immediately */
+@media (prefers-reduced-motion: reduce) {
+  .why-velobar-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .why-velobar-card {
+    border-width: 3px;
+  }
+}
+
+/* Print: no animations, avoid page breaks */
+@media print {
+  .why-velobar-card {
+    transform: none !important;
+    opacity: 1 !important;
+    break-inside: avoid;
+  }
+}

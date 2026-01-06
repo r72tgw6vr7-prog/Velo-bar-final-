@@ -1,0 +1,206 @@
+/**
+ * MenuPage Styles
+ * Signature Cocktails: Portfolio-style slides with overlaid text
+ * Classics: Simple cards (no parallax)
+ */
+
+/* ============================================
+   SIGNATURE COCKTAILS - Portfolio Slides
+   ============================================ */
+
+.signature-cocktails {
+  width: 100%;
+  overflow: hidden;
+}
+
+.signature-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.signature-hero__content {
+  order: 1;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.signature-hero__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-accent-primary);
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.signature-hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Portfolio-Style Slides */
+.signature-slide {
+  position: relative;
+  min-height: 100vh;
+  padding: 24px 0 32px;
+}
+
+.signature-slide__inner {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.signature-slide__image-wrap {
+  height: 80vh;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+  will-change: transform;
+}
+
+.signature-slide__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text overlay on bottom */
+.signature-slide__text {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.45), transparent);
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transform: translateX(-16px);
+  will-change: transform, opacity;
+}
+
+.signature-slide__text h3 {
+  color: var(--color-accent-primary);
+  margin-bottom: 4px;
+}
+
+.signature-slide__tagline {
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.signature-slide__meta {
+  opacity: 0.85;
+}
+
+/* ============================================
+   TABLET BREAKPOINT (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .signature-hero {
+    padding: 5rem 2rem;
+  }
+
+  .signature-slide {
+    padding: 32px 0 48px;
+  }
+
+  .signature-slide__inner {
+    max-width: 540px;
+  }
+
+  .signature-slide__image-wrap {
+    border-radius: 24px;
+  }
+
+  .signature-slide__text {
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+    padding: 18px 20px;
+    border-radius: 18px;
+  }
+}
+
+/* ============================================
+   DESKTOP BREAKPOINT (1024px+)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .signature-hero {
+    padding: 6rem 3rem;
+  }
+
+  .signature-slide__inner {
+    max-width: 640px;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP BREAKPOINT (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .signature-hero {
+    padding: 8rem 4rem;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-hero__content,
+  .signature-slide__text,
+  .signature-slide__image-wrap {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* GPU acceleration for smooth GSAP animations */
+.signature-slide__image-wrap,
+.signature-hero__content {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.signature-slide__image-wrap:focus {
+  outline: 3px solid rgb(238, 120, 104);
+  outline-offset: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .signature-hero__title {
+    color: rgb(200, 80, 64);
+  }
+
+  .signature-slide__image-wrap {
+    border: 2px solid rgb(51, 51, 51);
+  }
+
+  .signature-slide__text {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}

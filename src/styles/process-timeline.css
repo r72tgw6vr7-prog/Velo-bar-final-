@@ -1,0 +1,30 @@
+.timeline {
+  position: relative;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(166, 134, 70, 0.25);
+  overflow: hidden;
+}
+.timeline-fill {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--color-coral);
+}
+.timeline-fill.is-visible {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .timeline-fill.is-visible {
+    animation: timeline-draw 1.6s ease-out forwards;
+  }
+}
+@keyframes timeline-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

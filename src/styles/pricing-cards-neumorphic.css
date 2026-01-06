@@ -1,0 +1,156 @@
+/* ============================================
+   PRICING CARDS - NEUMORPHIC STYLING
+   ============================================ */
+
+/* PRICING CARD BASE */
+.pricing-card {
+  background: var(--color-bg-light); /* Brand cream background */
+  border-radius: 16px; /* Soft, rounded corners */
+  padding: 32px 24px; /* Generous internal spacing */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Soft, elegant shadow */
+  border: 2px solid transparent; /* No border by default */
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* FEATURED CARD (Professional - Middle) */
+.pricing-card.featured {
+  border: 2px solid var(--orange-primary); /* Coral accent border */
+  transform: scale(1.08); /* Slightly larger */
+  box-shadow: 0 12px 40px rgba(238, 120, 104, 0.25); /* Stronger coral shadow */
+  z-index: 10;
+}
+
+/* "BELIEBTESTES" BADGE */
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--orange-primary); /* Coral background */
+  color: var(--navy-primary); /* Navy text */
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: var(--font-size-14px);
+  font-weight: var(--font-weight-600);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(238, 120, 104, 0.3);
+  white-space: nowrap;
+}
+
+/* PRICING CARD HOVER STATE */
+.pricing-card:hover {
+  transform: translateY(-8px); /* Lift effect */
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16); /* Stronger shadow on hover */
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.08) translateY(-8px); /* Scale + lift combined */
+  box-shadow: 0 16px 48px rgba(238, 120, 104, 0.35); /* Coral-tinted shadow */
+}
+
+/* CARD HEADING */
+.pricing-card h3 {
+  font-size: var(--font-size-27px); /* H4 size */
+  font-weight: var(--font-weight-700); /* Bold */
+  color: var(--navy-primary); /* Navy text */
+  margin: 0 0 16px 0;
+  line-height: var(--line-height-1-3);
+}
+
+/* PRICE DISPLAY */
+.pricing-price {
+  font-size: var(--font-size-48px); /* Large price */
+  font-weight: var(--font-weight-700);
+  color: var(--orange-primary); /* Coral price */
+  margin: 12px 0 24px 0;
+  line-height: var(--line-height-1-1);
+}
+
+/* FEATURES LIST */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1;
+}
+
+.pricing-card li {
+  font-size: var(--font-size-16px);
+  color: var(--navy-primary); /* Navy text */
+  line-height: var(--line-height-1-8);
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.pricing-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--orange-primary); /* Coral bullet */
+  font-weight: bold;
+}
+
+/* CTA BUTTON */
+.pricing-card .btn-primary {
+  width: 100%;
+  background: var(--orange-primary); /* Coral button */
+  color: var(--navy-primary); /* Navy text */
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: var(--font-size-16px);
+  font-weight: var(--font-weight-600);
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.pricing-card .btn-primary:hover {
+  background: var(--orange-hover); /* Hover coral */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(238, 120, 104, 0.35);
+}
+
+.pricing-card .btn-primary:active {
+  background: var(--orange-hover);
+  transform: scale(0.98);
+}
+
+/* Focus styles for accessibility */
+.pricing-card .btn-primary:focus-visible {
+  outline: 2px solid var(--navy-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-card.featured {
+    transform: scale(1.03);
+  }
+
+  .pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-8px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card,
+  .pricing-card:hover,
+  .pricing-card.featured,
+  .pricing-card.featured:hover,
+  .pricing-card .btn-primary,
+  .pricing-card .btn-primary:hover,
+  .pricing-card .btn-primary:active {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "generatedAt": "2025-12-31T10:33:55.957Z",
+  "rules": ["forbiddenHexColors", "largeTypographyUtilities", "cssOutsideStylesDir"],
+  "files": {
+    "src/layout.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/index.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/tokens/typography.ts": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/variables.css": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/utility-classes.css": {
+      "forbiddenHexColors": 3,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/typography.css": {
+      "forbiddenHexColors": 4,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/global-background.css": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/glassmorphism.css": {
+      "forbiddenHexColors": 3,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/design-system.css": {
+      "forbiddenHexColors": 2,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/accessibility.css": {
+      "forbiddenHexColors": 7,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/styles/accessibility-micro-polish.css": {
+      "forbiddenHexColors": 2,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/services/emailService.ts": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/TrustSignalsSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/ServicesSection.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/PartnersAndTestimonialsSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/PartnersAndTestimonialsSection.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/sections/HeroSection.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/sections/FAQSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/ContactSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/ClientLogos.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/BookingSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/BeforeAfterSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/ArtistsSection.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/sections/ProcessTimeline/ProcessTimeline.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/VelobarcoPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/ServicesPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 6,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/PricingPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/NotFoundPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 5,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/MenuPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 4,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/ImpressumPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/HomePage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/DatenschutzPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/ContactPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 6,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/resources/corporate-event-catering-guide.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 11,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/locations/VenueLandingPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 14,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/locations/LocationsIndexPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 13,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/locations/DistrictPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 19,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/dev/TokenVerificationPage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 8,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/roi-hospitality-events.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 26,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/nachhaltige-firmenfeier.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 31,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/messestand-ideen-hospitality.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 25,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/messekatering-kosten-2025.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 27,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/last-minute-catering-muenchen.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 22,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/catering-ohne-stromanschluss.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 28,
+      "cssOutsideStylesDir": 0
+    },
+    "src/pages/blog/alkoholfreie-cocktails-firmenevents.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 29,
+      "cssOutsideStylesDir": 0
+    },
+    "src/lib/animations/keyframes.css": {
+      "forbiddenHexColors": 3,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/examples/SecureFormExample.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/card.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/components/PhaseCArchiveExecutor.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 4,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/GoogleMap.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/ConsentProvider.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/AssetNormalizationPanel.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 6,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/AdminUploadPanel.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/ui/sticky-scroll-reveal.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/ui/HeroHeading.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/templates/ServicePageTemplate.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 7,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/templates/ServicePageLayout.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 23,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/templates/PageTemplate.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/styles/ScrollingShowcase.css": {
+      "forbiddenHexColors": 2,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/components/pages/ServicesPageInteractive.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 9,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/TestimonialsCarousel.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/StickyCTABar.tsx": {
+      "forbiddenHexColors": 3,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/RecentEventsCarousel.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/CosmicNav.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/ContactForm.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/SuccessStories/SuccessStories.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 7,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/BookingWizard/BookingWizard.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/BookingForm/BookingForm.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 4,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/organisms/BookingForm/BookingForm.css": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/components/molecules/TrustSignals.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/TrustBadgesBar.module.css": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/components/molecules/StatsBar.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/ServiceCard.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/ProcessStepCard.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 2,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/PriceCard.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/DevBlankScreenTriage.tsx": {
+      "forbiddenHexColors": 5,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/CookieConsentBanner.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 3,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/BuildPreviewGate.tsx": {
+      "forbiddenHexColors": 8,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/BeforeAfterCard.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/Card/ServiceCards.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 5,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/molecules/Card/ServiceCards.module.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/components/molecules/Card/ArtistCard.css": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 1
+    },
+    "src/components/layouts/MainLayout.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/layout/ErrorBoundary.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/feedback/ErrorState.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/UniversalTextureBackground.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/Text.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/PageTitle.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/PageHeader.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 4,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/Heading.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 18,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/CosmicBackground.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/BrandSwitcher.tsx": {
+      "forbiddenHexColors": 2,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/ErrorMessage/ErrorMessage.tsx": {
+      "forbiddenHexColors": 0,
+      "largeTypographyUtilities": 1,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/atoms/Button/Button.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    },
+    "src/components/accessibility/AccessibilityAudit.tsx": {
+      "forbiddenHexColors": 1,
+      "largeTypographyUtilities": 0,
+      "cssOutsideStylesDir": 0
+    }
+  }
+}

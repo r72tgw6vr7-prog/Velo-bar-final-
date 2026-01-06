@@ -1,0 +1,164 @@
+/* BookingForm.css - Centered booking form with glass effect */
+
+.booking-form-container {
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+/* Remove dark background and gradient */
+.booking-form-container::before {
+  display: none;
+}
+
+.booking-form-container .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Solid card effect for form wrapper - NO glass/transparency */
+.glass-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+/* Form field styling */
+.form-field {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Input field styling */
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-width: 0; /* Prevent flex/grid blowout */
+  max-width: none; /* Remove any max-width constraints */
+  box-sizing: border-box;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 0; /* 8pt grid: was 0.75rem (12px) */
+  transition: all 0.3s ease;
+}
+
+/* Date input styling */
+.form-field input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.5;
+}
+
+/* Select styling */
+.form-field select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.form-field select option {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem; /* 8pt grid: was 0.75rem (12px) */
+}
+
+/* Focus styles */
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+/* Icon styling */
+.form-field .lucide {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Textarea styling */
+.form-field textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* Success message styling */
+.success-message {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: rgba(107, 114, 128, 0.2);
+  margin-bottom: 2rem;
+}
+
+/* Checkbox styling */
+input[type='checkbox'] {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  appearance: none;
+  border-radius: 0.25rem;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  width: 0.5rem;
+  height: 0.75rem;
+  border: solid var(--brand-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  top: 0;
+  left: 0.25rem;
+}
+
+/* Submit button styling */
+.booking-form-wrapper .button-icon-circle {
+  background-color: var(--brand-primary);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles - Mobile optimizations */
+@media (max-width: 1024px) {
+  .glass-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Ensure form fields stack properly on mobile */
+  .booking-form-wrapper form .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .glass-card {
+    padding: 1.5rem 1rem; /* 8pt grid: was 1.25rem 0.875rem (20px 14px) */
+  }
+}

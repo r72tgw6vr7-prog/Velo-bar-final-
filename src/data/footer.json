@@ -1,0 +1,26 @@
+{
+  "studio": {
+    "name": "NEW CLIENT SITE",
+    "address": "[Client Address], [Client City] [Client Postcode]",
+    "phone": "+49 (0) [Client Phone]",
+    "email": "info@client-site.com"
+  },
+  "hours": {
+    "monday": "[Client Hours]",
+    "tuesday": "[Client Hours]",
+    "wednesday": "[Client Hours]",
+    "thursday": "[Client Hours]",
+    "friday": "[Client Hours]",
+    "saturday": "[Client Hours]",
+    "sunday": "[Client Hours]"
+  },
+  "social": {
+    "instagram": "https://instagram.com/[client_instagram]",
+    "facebook": "https://facebook.com/[client_facebook]"
+  },
+  "legal": {
+    "privacyPolicy": "/datenschutz",
+    "imprint": "/impressum",
+    "terms": "/impressum"
+  }
+}

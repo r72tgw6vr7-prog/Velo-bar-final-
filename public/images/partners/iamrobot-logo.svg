@@ -1,0 +1,8 @@
+<svg width="320" height="96" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>I AM ROBOT</title>
+  <rect x="8" y="8" width="304" height="80" rx="20" stroke="currentColor" stroke-opacity="0.35" stroke-width="6"/>
+  <path d="M96 38H224" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round"/>
+  <path d="M112 58H208" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="132" cy="72" r="6" fill="currentColor" fill-opacity="0.65"/>
+  <circle cx="188" cy="72" r="6" fill="currentColor" fill-opacity="0.65"/>
+</svg>

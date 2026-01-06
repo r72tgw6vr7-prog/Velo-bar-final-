@@ -1,0 +1,37 @@
+name: Image path check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  image-path-check:
+    name: Check image references
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate image manifest
+        run: node scripts/generate-image-manifest.cjs
+
+      - name: Create shims (idempotent)
+        run: node scripts/create-public-shims.cjs || true
+
+      - name: Run image checker
+        run: node scripts/check-images.cjs
+
+      - name: Start static server
+        run: npx http-server public -p 5001 -c-1 & sleep 2
+
+      - name: Run runtime smoke checks (HTTP)
+        run: node scripts/smoke-check.cjs

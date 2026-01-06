@@ -1,0 +1,24 @@
+{
+  "extends": ["stylelint-config-standard", "@stylelint/postcss-css-in-js"],
+  "rules": {
+    "color-named": ["never", { "ignore": ["inside-function"] }],
+    "declaration-property-value-disallowed-list": {
+      "/^background-color|border-color|color$/": ["/^#[0-9A-Fa-f]{6}$/"]
+    },
+    "function-url-scheme-blacklist": ["http", "https"],
+    "no-descending-specificity": null,
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]*(-[a-z][a-zA-Z0-9]*)*$",
+    "plugin/no-low-performance-animation-properties": [
+      true,
+      { "properties": ["transform", "opacity"] }
+    ],
+    "plugin/stylelint-tailwindcss-classnames/classname-order": true,
+    "plugin/stylelint-tailwindcss-classnames/recommended": true
+  },
+  "plugins": [
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-high-performance-animation",
+    "stylelint-selector-bem-pattern",
+    "stylelint-tailwindcss-classnames"
+  ]
+}

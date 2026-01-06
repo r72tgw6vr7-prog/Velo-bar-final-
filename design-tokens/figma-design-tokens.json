@@ -1,0 +1,360 @@
+{
+  "velobar-design-system": {
+    "foundation": {
+      "colors": {
+        "brand": {
+          "background": {
+            "value": "#222222",
+            "type": "color",
+            "description": "Primary brand background - deep black"
+          },
+          "white": {
+            "value": "#FFFFFF",
+            "type": "color",
+            "description": "Pure white for text and contrasts"
+          },
+          "gold": {
+            "value": "#D4AF37",
+            "type": "color",
+            "description": "Luxury gold for CTAs, accents, highlights"
+          },
+          "chrome": {
+            "value": "#C0C0C0",
+            "type": "color",
+            "description": "Chrome silver for details, borders, secondary elements"
+          }
+        },
+        "interactive": {
+          "gold-hover": {
+            "value": "#C19B26",
+            "type": "color",
+            "description": "Gold hover state"
+          },
+          "chrome-hover": {
+            "value": "#A8A8A8",
+            "type": "color",
+            "description": "Chrome hover state"
+          }
+        }
+      },
+      "typography": {
+        "fonts": {
+          "heading": {
+            "value": "Playfair Display",
+            "type": "fontFamily",
+            "description": "Luxury serif for headlines"
+          },
+          "body": {
+            "value": "Inter",
+            "type": "fontFamily",
+            "description": "Clean sans-serif for body text"
+          }
+        },
+        "sizes": {
+          "mobile": {
+            "headline-xl": {
+              "value": "32px",
+              "type": "fontSize"
+            },
+            "headline-lg": {
+              "value": "24px",
+              "type": "fontSize"
+            },
+            "headline-md": {
+              "value": "20px",
+              "type": "fontSize"
+            },
+            "body-large": {
+              "value": "16px",
+              "type": "fontSize"
+            },
+            "body": {
+              "value": "14px",
+              "type": "fontSize"
+            },
+            "body-small": {
+              "value": "12px",
+              "type": "fontSize"
+            }
+          },
+          "tablet": {
+            "headline-xl": {
+              "value": "40px",
+              "type": "fontSize"
+            },
+            "headline-lg": {
+              "value": "32px",
+              "type": "fontSize"
+            },
+            "headline-md": {
+              "value": "24px",
+              "type": "fontSize"
+            },
+            "body-large": {
+              "value": "18px",
+              "type": "fontSize"
+            },
+            "body": {
+              "value": "16px",
+              "type": "fontSize"
+            },
+            "body-small": {
+              "value": "14px",
+              "type": "fontSize"
+            }
+          },
+          "desktop": {
+            "headline-xl": {
+              "value": "72px",
+              "type": "fontSize"
+            },
+            "headline-lg": {
+              "value": "48px",
+              "type": "fontSize"
+            },
+            "headline-md": {
+              "value": "32px",
+              "type": "fontSize"
+            },
+            "body-large": {
+              "value": "20px",
+              "type": "fontSize"
+            },
+            "body": {
+              "value": "18px",
+              "type": "fontSize"
+            },
+            "body-small": {
+              "value": "16px",
+              "type": "fontSize"
+            }
+          }
+        }
+      },
+      "spacing": {
+        "base": {
+          "value": "8px",
+          "type": "spacing",
+          "description": "Base spacing unit - all spacing must be multiples of 8px"
+        },
+        "scale": {
+          "1": {
+            "value": "8px",
+            "type": "spacing"
+          },
+          "2": {
+            "value": "16px",
+            "type": "spacing"
+          },
+          "3": {
+            "value": "24px",
+            "type": "spacing"
+          },
+          "4": {
+            "value": "32px",
+            "type": "spacing"
+          },
+          "5": {
+            "value": "40px",
+            "type": "spacing"
+          },
+          "6": {
+            "value": "48px",
+            "type": "spacing"
+          },
+          "8": {
+            "value": "64px",
+            "type": "spacing"
+          },
+          "10": {
+            "value": "80px",
+            "type": "spacing"
+          },
+          "12": {
+            "value": "96px",
+            "type": "spacing"
+          },
+          "16": {
+            "value": "128px",
+            "type": "spacing"
+          }
+        }
+      },
+      "breakpoints": {
+        "mobile": {
+          "value": "393px",
+          "type": "breakpoint",
+          "description": "iPhone 14/15 standard"
+        },
+        "tablet": {
+          "value": "768px",
+          "type": "breakpoint",
+          "description": "iPad Mini"
+        },
+        "desktop": {
+          "value": "1200px",
+          "type": "breakpoint",
+          "description": "12-column max-width"
+        }
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": {
+          "background": "{colors.brand.gold}",
+          "text": "{colors.brand.background}",
+          "border": "none",
+          "borderRadius": "8px",
+          "fontSize": "{typography.sizes.mobile.body}",
+          "fontFamily": "{typography.fonts.body}",
+          "padding": "12px 24px",
+          "minHeight": "44px",
+          "hover": {
+            "background": "{colors.interactive.gold-hover}"
+          }
+        },
+        "secondary": {
+          "background": "transparent",
+          "text": "{colors.brand.gold}",
+          "border": "2px solid {colors.brand.gold}",
+          "borderRadius": "8px",
+          "fontSize": "{typography.sizes.mobile.body}",
+          "fontFamily": "{typography.fonts.body}",
+          "padding": "10px 22px",
+          "minHeight": "44px",
+          "hover": {
+            "background": "{colors.brand.gold}",
+            "text": "{colors.brand.background}"
+          }
+        },
+        "ghost": {
+          "background": "transparent",
+          "text": "{colors.brand.chrome}",
+          "border": "none",
+          "borderRadius": "8px",
+          "fontSize": "{typography.sizes.mobile.body}",
+          "fontFamily": "{typography.fonts.body}",
+          "padding": "12px 24px",
+          "minHeight": "44px",
+          "hover": {
+            "text": "{colors.brand.gold}"
+          }
+        }
+      },
+      "cards": {
+        "artist": {
+          "mobile": {
+            "width": "163px",
+            "height": "217px",
+            "borderRadius": "16px",
+            "padding": "16px"
+          },
+          "tablet": {
+            "width": "228px",
+            "height": "304px",
+            "borderRadius": "16px",
+            "padding": "24px"
+          },
+          "desktop": {
+            "width": "360px",
+            "height": "480px",
+            "borderRadius": "16px",
+            "padding": "32px"
+          }
+        },
+        "service": {
+          "mobile": {
+            "minHeight": "160px",
+            "borderRadius": "16px",
+            "padding": "24px"
+          },
+          "tablet": {
+            "minHeight": "180px",
+            "borderRadius": "16px",
+            "padding": "32px"
+          },
+          "desktop": {
+            "minHeight": "200px",
+            "borderRadius": "16px",
+            "padding": "40px"
+          }
+        }
+      },
+      "navigation": {
+        "mobile": {
+          "height": "64px",
+          "padding": "0 16px"
+        },
+        "tablet": {
+          "height": "72px",
+          "padding": "0 24px"
+        },
+        "desktop": {
+          "height": "80px",
+          "padding": "0 32px"
+        }
+      },
+      "trustSignals": {
+        "mobile": {
+          "height": "80px",
+          "padding": "16px"
+        },
+        "tablet": {
+          "height": "90px",
+          "padding": "20px"
+        },
+        "desktop": {
+          "height": "100px",
+          "padding": "24px"
+        }
+      }
+    },
+    "effects": {
+      "shadows": {
+        "gold-glow-subtle": {
+          "value": "0 0 10px rgba(212, 175, 55, 0.2)",
+          "type": "boxShadow"
+        },
+        "gold-glow-standard": {
+          "value": "0 0 20px rgba(212, 175, 55, 0.3)",
+          "type": "boxShadow"
+        },
+        "gold-glow-strong": {
+          "value": "0 0 30px rgba(212, 175, 55, 0.4)",
+          "type": "boxShadow"
+        }
+      },
+      "glassmorphism": {
+        "background": {
+          "value": "rgba(34, 34, 34, 0.8)",
+          "type": "color"
+        },
+        "blur": {
+          "value": "20px",
+          "type": "blur"
+        },
+        "border": {
+          "value": "1px solid rgba(212, 175, 55, 0.1)",
+          "type": "border"
+        }
+      }
+    },
+    "accessibility": {
+      "focusStates": {
+        "outline": {
+          "value": "2px solid {colors.brand.gold}",
+          "type": "outline"
+        },
+        "outlineOffset": {
+          "value": "2px",
+          "type": "outlineOffset"
+        },
+        "minTouchTarget": {
+          "value": "44px",
+          "type": "size",
+          "description": "WCAG 2.1 AA minimum touch target"
+        }
+      }
+    }
+  }
+}

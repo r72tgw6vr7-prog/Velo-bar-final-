@@ -1,0 +1,26 @@
+.testimonials-swiper {
+  padding-bottom: 48px !important;
+  overflow: visible !important;
+}
+
+.testimonials-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(var(--color-text-primary-rgb), 0.3) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: var(--color-coral) !important;
+  width: 32px !important;
+  border-radius: 6px !important;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto !important;
+}

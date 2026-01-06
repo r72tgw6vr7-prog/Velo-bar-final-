@@ -1,0 +1,8 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Bar</title>
+  <rect x="14" y="14" width="100" height="100" rx="18" stroke="currentColor" stroke-opacity="0.35" stroke-width="6"/>
+  <path d="M40 44H88" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round"/>
+  <path d="M48 58H80" stroke="currentColor" stroke-opacity="0.55" stroke-width="10" stroke-linecap="round"/>
+  <path d="M56 72H72" stroke="currentColor" stroke-opacity="0.45" stroke-width="10" stroke-linecap="round"/>
+  <path d="M38 92H90" stroke="currentColor" stroke-opacity="0.5" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "corporateEvents": "Corporate Events",
+    "christmasParties": "Christmas Parties",
+    "tradeShows": "Trade Shows & Promotions",
+    "teamEvents": "Team Events",
+    "weddings": "Weddings",
+    "privateEvents": "Private Events",
+    "pricing": "Pricing",
+    "gallery": "Gallery",
+    "drinks": "Drinks",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "requestQuote": "Request Quote",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "title": "Mobile Cocktail Bar for Corporate Events",
+    "subtitle": "Premium cocktail catering for corporate parties, trade shows and events in Munich & Coburg",
+    "tagline": "Reliable • Sustainable • Premium",
+    "cta": "Request a Quote",
+    "ctaSecondary": "View Packages"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "From corporate events to trade shows to private parties – we bring the bar to you",
+    "learnMore": "Learn more"
+  },
+  "stats": {
+    "events": "Events completed",
+    "guests": "Guests per event",
+    "rating": "Google Rating",
+    "locations": "Locations in Bavaria"
+  },
+  "whyUs": {
+    "title": "Why Velo.Bar?",
+    "professionalTeam": "Professional Team",
+    "professionalTeamDesc": "Experienced bartenders with passion for exceptional cocktails",
+    "flexibleBooking": "Flexible Booking",
+    "flexibleBookingDesc": "Custom packages for events from 20 to 500+ guests",
+    "sustainable": "Sustainable",
+    "sustainableDesc": "Carbon-neutral bicycle bar – ideal for ESG-conscious companies"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say"
+  },
+  "contact": {
+    "title": "Request Your Event Quote",
+    "subtitle": "We'll respond within 24 hours with a customized offer",
+    "trustBadge1": "Response in 24h",
+    "trustBadge2": "500+ Events",
+    "trustBadge3": "4.9/5 Stars"
+  },
+  "form": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "eventType": "Event Type",
+    "eventDate": "Preferred Date",
+    "guestCount": "Number of Guests",
+    "budget": "Budget",
+    "message": "Message",
+    "privacy": "I agree to the Privacy Policy",
+    "submit": "Send Request",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "successDetail": "We'll get back to you within 24 hours."
+  },
+  "footer": {
+    "servicesTitle": "Services",
+    "infoTitle": "Information",
+    "legalTitle": "Legal",
+    "copyright": "© 2025 Velo.Bar. All rights reserved.",
+    "madeWith": "Made with love in Munich & Coburg",
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "locations": {
+    "title": "Our Locations",
+    "subtitle": "Mobile cocktail bar for events in Munich & Coburg",
+    "munich": "Munich & Area",
+    "munichDesc": "Corporate events, trade shows and parties in Greater Munich",
+    "coburg": "Coburg & Area",
+    "coburgDesc": "Weddings, summer festivals and corporate events in Upper Franconia"
+  },
+  "cta": {
+    "requestQuote": "Request Quote",
+    "learnMore": "Learn More",
+    "viewPackages": "View Packages",
+    "callNow": "Call Now",
+    "whatsapp": "WhatsApp Chat"
+  },
+  "common": {
+    "perGuest": "per guest",
+    "from": "from",
+    "hours": "hours",
+    "guests": "guests",
+    "included": "Included",
+    "mostPopular": "Most Popular"
+  }
+}

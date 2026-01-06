@@ -1,0 +1,8 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Certificate</title>
+  <rect x="22" y="18" width="84" height="92" rx="14" stroke="currentColor" stroke-opacity="0.35" stroke-width="6"/>
+  <path d="M40 46H88" stroke="currentColor" stroke-opacity="0.6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M40 62H80" stroke="currentColor" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="52" cy="82" r="10" stroke="currentColor" stroke-opacity="0.65" stroke-width="8"/>
+  <path d="M60 94L70 88L80 94" stroke="currentColor" stroke-opacity="0.55" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

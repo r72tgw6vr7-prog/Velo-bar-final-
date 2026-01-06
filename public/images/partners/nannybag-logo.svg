@@ -1,0 +1,6 @@
+<svg width="320" height="96" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>nannybag</title>
+  <rect x="8" y="8" width="304" height="80" rx="20" stroke="currentColor" stroke-opacity="0.35" stroke-width="6"/>
+  <path d="M120 62C120 48 132 38 160 38C188 38 200 48 200 62" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round"/>
+  <path d="M132 62V72H188V62" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

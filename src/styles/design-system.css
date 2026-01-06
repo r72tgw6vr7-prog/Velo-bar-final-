@@ -1,0 +1,897 @@
+/*
+  DESIGN SYSTEM: VELO.BAR BRAND
+   Matches https://www.velo-bar.com/
+   
+   Brand Colors:
+   - Background: #003141 (deep teal)
+   - Text: #fff8ec (warm cream)
+   - Accent: #ee7868 (coral)
+   - Secondary: #fab81d (golden yellow)
+   
+   Typography:
+   - Primary: proxima-nova, sans-serif
+   - Sizes: 52px (h1), 32px (h2), 24px (h3), 16px (body)
+   ============================================== */
+
+/* Import Proxima Nova alternative - Source Sans Pro is similar */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
+
+/* Import neumorphic pricing card styles */
+@import url('./pricing-cards-neumorphic.css');
+
+/* Import shared component styles */
+@import url('./components/card.css');
+@import url('./components/button.css');
+@import url('./components/input.css');
+@import url('./components/chip.css');
+
+/* Import layout utilities */
+@import url('./layout.css');
+
+/* Base styles for the new design system */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+}
+
+/* Token definitions live in src/styles/design-tokens.css. */
+
+/* Container Definitions */
+.container {
+  width: 100%;
+  max-width: var(--container-default);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+/* Responsive container (legacy class used across pages) */
+.responsive-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* Mobile padding */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .responsive-container {
+    /* Tablet */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    /* Desktop */
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 1280px;
+  }
+}
+
+/* Safe area utilities - restrict to mobile to avoid overriding desktop container padding */
+@media (max-width: 640px) {
+  .safe-area-padding {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .safe-area-padding-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-area-padding-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* 3) BASE (low specificity) */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :where(html) {
+    color-scheme: light dark;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  :where(body) {
+    margin: 0;
+    font-family: var(--font-family-primary);
+    font-size: var(--text-body);
+    font-weight: 400; /* Base text weight for T4 tests */
+    line-height: var(--line-height-body);
+    background-color: var(--surface-page);
+    color: var(--text-body-on-light);
+  }
+
+  :where(h1, h2, h3, h4) {
+    font-family: var(--font-family-heading);
+    color: var(--color-coral);
+    text-shadow: none;
+    filter: none;
+    text-align: center;
+  }
+
+  :where(h1) {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 768px) {
+    :where(h1) {
+      font-size: 2rem; /* 32px - mobile */
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    :where(h1) {
+      font-size: 2.5rem; /* 40px - tablet */
+    }
+  }
+
+  @media (min-width: 1025px) {
+    :where(h1) {
+      font-size: 3.25rem; /* 52px - desktop */
+    }
+  }
+
+  :where(h2) {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.01em;
+  }
+
+  @media (max-width: 768px) {
+    :where(h2) {
+      font-size: 1.5rem; /* 24px - mobile */
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    :where(h2) {
+      font-size: 1.875rem; /* 30px - tablet */
+    }
+  }
+
+  @media (min-width: 1025px) {
+    :where(h2) {
+      font-size: 2.625rem; /* 42px - desktop */
+    }
+  }
+
+  :where(h3) {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.005em;
+  }
+
+  @media (max-width: 768px) {
+    :where(h3) {
+      font-size: 1.25rem; /* 20px - mobile */
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    :where(h3) {
+      font-size: 1.5rem; /* 24px - tablet */
+    }
+  }
+
+  @media (min-width: 1025px) {
+    :where(h3) {
+      font-size: 2.125rem; /* 34px - desktop */
+    }
+  }
+
+  :where(h4) {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+  }
+
+  @media (max-width: 768px) {
+    :where(h4) {
+      font-size: 1.125rem; /* 18px - mobile */
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    :where(h4) {
+      font-size: 1.25rem; /* 20px - tablet */
+    }
+  }
+
+  @media (min-width: 1025px) {
+    :where(h4) {
+      font-size: 1.6875rem; /* 27px - desktop */
+    }
+  }
+
+  /* Grid wrapper for container queries */
+  .grid-wrapper {
+    container-type: inline-size;
+    width: 100%;
+  }
+
+  /* Team grid system - uses container queries */
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  @container grid-wrapper (min-width: 640px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+  }
+
+  @container grid-wrapper (min-width: 1024px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+    }
+  }
+
+  @container grid-wrapper (min-width: 1280px) {
+    .team-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  /* Navigation links: 500 or 600, NOT 700 (T4 compliance) */
+  :where(nav a, nav button) {
+    font-weight: 500;
+  }
+
+  :where(p, li) {
+    font-size: var(--font-size-body);
+    color: var(--text-body-on-light); /* AA-compliant secondary text */
+  }
+
+  :where(a) {
+    color: var(--color-coral); /* WCAG AA compliant link color */
+    text-decoration: underline; /* Underline for non-color differentiation */
+    text-underline-offset: 0.15em; /* Improve underline positioning */
+    transition: color var(--motion-duration-fast) var(--motion-ease-standard);
+  }
+
+  :where(a:hover) {
+    color: var(--cta-bg-hover); /* AA compliant hover state */
+  }
+
+  /* Allow navigation links to be underline-free by default */
+  :where(nav a) {
+    text-decoration: none;
+  }
+
+  :where(nav a:hover) {
+    text-decoration: underline;
+  }
+
+  :where(button, .button) {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  /* Enhanced focus styles for accessibility */
+  :where(
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible
+  ) {
+    outline: 2px solid var(--color-coral); /* Higher contrast for focus */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(238, 120, 104, 0.4); /* Ensure outline visibility on any background */
+  }
+}
+
+/* 4) COMPONENT UTILITIES */
+@layer components {
+  .u-cta-padding {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .bg-guardian-hero {
+    background-image: var(--bg-guardian-hero);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  /* Eyebrow text styling */
+  .eyebrow {
+    color: var(--color-coral); /* WCAG AA compliant */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Section typography utilities */
+  .section-title {
+    /* Brand coral for section headings */
+    color: var(--color-coral);
+  }
+
+  .section-description {
+    /* Dark brand teal for section body text on light backgrounds */
+    color: var(--color-cream);
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* Button Variants - Legacy .btn-* classes are deprecated (use Button component variants) */
+
+  /* Neon/Glow Effects */
+  .neon-glow {
+    box-shadow: var(--shadow-neon-md);
+  }
+  .neon-glow-sm {
+    box-shadow: var(--shadow-neon-sm);
+  }
+  .neon-glow-lg {
+    box-shadow: var(--shadow-neon-lg);
+  }
+  .text-neon {
+    text-shadow:
+      0 0 6px rgba(var(--neon-grey-rgb), 0.6),
+      0 0 16px rgba(var(--neon-grey-rgb), 0.3);
+  }
+  .ring-neon {
+    box-shadow: 0 0 0 3px rgba(var(--neon-grey-rgb), 0.45) !important;
+  }
+  .hover\:neon-glow:hover {
+    box-shadow: var(--shadow-neon-lg);
+  }
+
+  /* Cards & Surfaces - Unified premium styling */
+  .card {
+    background: var(--surface-card-translucent);
+    border: 1px solid var(--surface-card-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-card);
+    color: var(--text-body-on-light);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--surface-card-hover-border);
+  }
+
+  .card--featured {
+    border: 2px solid var(--color-coral);
+    transform: scale(1.02);
+  }
+
+  .card--dark {
+    background: var(--surface-page);
+    color: var(--text-on-dark);
+  }
+
+  /* Unified card base class for all card types */
+  .unified-card {
+    background: var(--surface-card-translucent);
+    border: 1px solid var(--surface-card-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .unified-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--surface-card-hover-border);
+  }
+
+  /* Unified badge system - matches EyebrowBadge style */
+  .unified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    border-radius: var(--radius-badge);
+    background-color: var(--surface-card-translucent);
+    color: var(--color-coral);
+    border: 1px solid var(--surface-card-hover-border);
+    box-shadow: var(--shadow-card-subtle);
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+  }
+
+  .unified-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .unified-badge-solid {
+    background-color: var(--color-coral);
+    color: var(--cta-text);
+    border-color: var(--color-coral);
+  }
+
+  /* Enhanced spacing utilities */
+  .section-spacing-sm {
+    padding: var(--space-2xl) 0;
+  }
+  .section-spacing-md {
+    padding: var(--space-3xl) 0;
+  }
+  .section-spacing-lg {
+    padding: var(--space-4xl) 0;
+  }
+  .section-spacing-xl {
+    padding: 96px 0;
+  }
+
+  .card-spacing-sm {
+    padding: var(--space-lg);
+  }
+  .card-spacing-md {
+    padding: var(--space-xl);
+  }
+  .card-spacing-lg {
+    padding: var(--space-2xl);
+  }
+
+  /* Typography scale improvements */
+  .text-headline {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-coral);
+  }
+
+  .text-subheadline {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-coral);
+  }
+
+  .text-body-large {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-cream);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .text-body-small {
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  /* Legacy card styles - to be deprecated */
+  .card-base {
+    background: var(--surface-card); /* Elevated surface */
+    border: 1px solid rgba(var(--orange-rgb), 0.1);
+    border-radius: var(--radius-card);
+    transition: all var(--motion-duration-normal) var(--motion-ease-standard);
+  }
+
+  .card-hover:hover {
+    background: var(--surface-card); /* Keep consistent */
+    border-color: rgba(var(--orange-rgb), 0.3);
+    transform: translateY(-2px);
+  }
+
+  .card-active {
+    background: var(--surface-card);
+    border-color: var(--color-accent-primary);
+    box-shadow: var(--shadow-brand-md);
+  }
+
+  .pricing-card {
+    background: var(--color-bg-light);
+    box-shadow: var(--elevation-1);
+    transition: box-shadow var(--motion-duration-normal) var(--motion-ease-standard);
+  }
+
+  .pricing-card:hover {
+    box-shadow: var(--elevation-2);
+    transform: translateY(-2px);
+  }
+
+  .pricing-card.featured {
+    background: var(--color-bg-light);
+    border: 3px solid var(--color-accent-primary);
+    box-shadow: var(--elevation-3);
+    transform: translateY(-4px);
+  }
+
+  /* ============================================
+     GLASSMORPHISM UTILITIES
+     Reusable frosted glass components
+     ============================================ */
+
+  /* Base glass surface */
+  .glass-surface {
+    background: var(--surface-card);
+    border: 1px solid var(--color-border-on-light);
+    box-shadow: var(--elevation-2);
+  }
+
+  /* Glass surface with hover state */
+  .glass-surface-hover {
+    background: var(--surface-card);
+    border: 1px solid var(--color-border-on-light);
+    box-shadow: var(--elevation-2);
+    transition: all var(--motion-duration-normal) var(--motion-ease-standard);
+  }
+
+  .glass-surface-hover:hover {
+    background: var(--surface-card);
+    border-color: var(--orange-primary);
+    box-shadow: var(--elevation-3);
+    transform: translateY(-2px);
+  }
+
+  /* Glass surface with active state */
+  .glass-surface-active {
+    background: var(--surface-card);
+    border-color: var(--orange-primary);
+    box-shadow: var(--elevation-3);
+  }
+
+  /* Intense glass (more visible) */
+  .glass-surface-intense {
+    background: var(--surface-card);
+    border: 1px solid var(--color-border-on-light);
+    box-shadow: var(--elevation-3);
+  }
+
+  /* Glass button (clickable glass element) */
+  .glass-button {
+    background: var(--cta-bg);
+    border: 1px solid var(--cta-bg);
+    color: var(--text-on-accent);
+    transition: all var(--motion-duration-normal) var(--motion-ease-standard);
+    cursor: pointer;
+  }
+
+  .glass-button:hover {
+    background: var(--cta-bg-hover);
+    border-color: var(--cta-bg-hover);
+    box-shadow: var(--elevation-2);
+    transform: translateY(-2px);
+  }
+
+  .glass-button:active {
+    transform: translateY(0);
+    box-shadow: var(--elevation-1);
+  }
+
+  /* Glass card (common pattern) */
+  .glass-card {
+    background: var(--surface-card);
+    border: 1px solid var(--color-border-on-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--elevation-2);
+    overflow: hidden;
+    transition: all var(--motion-duration-normal) var(--motion-ease-standard);
+  }
+
+  .glass-card:hover {
+    background: var(--surface-card);
+    border-color: var(--orange-primary);
+    box-shadow: var(--elevation-3);
+    transform: translateY(-4px);
+  }
+
+  /* Brand grey glow background (behind glass elements) */
+  .brand-glow-background {
+    position: relative;
+    background-image:
+      radial-gradient(circle at 20% 30%, var(--glow-grey-medium) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, var(--glow-grey-soft) 0%, transparent 50%);
+  }
+
+  /* Dual brand grey glow (stronger effect) */
+  .brand-glow-dual {
+    position: relative;
+    background-image:
+      radial-gradient(circle at 25% 25%, var(--glow-grey-bright) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, var(--glow-grey-medium) 0%, transparent 50%);
+  }
+
+  /* Animated primary glow */
+  @keyframes primary-glow {
+    0%,
+    100% {
+      opacity: 0.15;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
+
+  .brand-glow-animated {
+    position: relative;
+  }
+
+  .brand-glow-animated::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, var(--glow-grey-bright) 0%, transparent 60%);
+    animation: brand-pulse 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Floating neon lights animations for hero */
+  @keyframes float-up-slow {
+    0% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.3;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(-40px) translateX(15px);
+      opacity: 0.6;
+    }
+    75% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes float-up-medium {
+    0% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.25;
+    }
+    25% {
+      opacity: 0.45;
+    }
+    50% {
+      transform: translateY(-60px) translateX(-20px);
+      opacity: 0.55;
+    }
+    75% {
+      opacity: 0.35;
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.25;
+    }
+  }
+
+  @keyframes float-up-fast {
+    0% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.2;
+    }
+    25% {
+      opacity: 0.4;
+    }
+    50% {
+      transform: translateY(-80px) translateX(25px);
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes glow-brighten {
+    0%,
+    100% {
+      filter: brightness(0.8);
+    }
+    50% {
+      filter: brightness(1.1);
+    }
+  }
+
+  /* Neon light orbs */
+  .neon-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .neon-orb-small {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(var(--orange-rgb), 0.8),
+      rgba(var(--orange-rgb), 0.3),
+      transparent
+    );
+    animation:
+      float-up-slow 8s ease-in-out infinite,
+      glow-brighten 4s ease-in-out infinite;
+  }
+
+  .neon-orb-medium {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(
+      circle at 35% 35%,
+      rgba(107, 114, 128, 0.7),
+      rgba(107, 114, 128, 0.2),
+      transparent
+    );
+    animation:
+      float-up-medium 12s ease-in-out infinite,
+      glow-brighten 5s ease-in-out infinite 1s;
+  }
+
+  .neon-orb-large {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(
+      circle at 40% 40%,
+      rgba(var(--orange-rgb), 0.6),
+      rgba(var(--orange-rgb), 0.15),
+      transparent
+    );
+    animation:
+      float-up-fast 15s ease-in-out infinite,
+      glow-brighten 6s ease-in-out infinite 2s;
+  }
+
+  .neon-orb-1 {
+    animation-delay: 0s, 0s;
+  }
+  .neon-orb-2 {
+    animation-delay: 2s, 0.5s;
+  }
+  .neon-orb-3 {
+    animation-delay: 4s, 1s;
+  }
+  .neon-orb-4 {
+    animation-delay: 6s, 1.5s;
+  }
+
+  /* Browser fallback for no backdrop-filter support */
+  @supports not (filter: none) {
+    .glass-surface,
+    .glass-surface-hover,
+    .glass-surface-intense,
+    .glass-card,
+    .glass-button {
+      background: var(--color-bg-surface);
+    }
+  }
+
+  /* Form elements */
+  .form-input {
+    background: var(--surface-card);
+    border: 2px solid rgba(var(--orange-rgb), 0.2);
+    color: var(--text-body-on-light);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1) var(--space-2); /* 8pt grid */
+    transition: all var(--motion-duration-fast) var(--motion-ease-standard);
+  }
+
+  .form-input:focus {
+    border-color: var(--color-accent-primary);
+    background: var(--surface-card);
+    box-shadow: var(--shadow-focus-ring);
+  }
+
+  .form-input.error {
+    border-color: var(--danger-500); /* Error red */
+  }
+
+  .form-input.success {
+    border-color: var(--color-accent-primary); /* Orange for success */
+  }
+
+  /* Buttons */
+  /* @deprecated - Legacy .btn-primary class - use Button component instead */
+  .btn-primary {
+    background: var(--cta-bg);
+    color: var(--text-on-accent);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-button);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* @deprecated - Legacy .btn-primary:hover class - use Button component instead */
+  .btn-primary:hover {
+    background: var(--cta-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(238, 120, 104, 0.35);
+  }
+
+  /* @deprecated - Legacy .btn-primary:active class - use Button component instead */
+  .btn-primary:active {
+    background: var(--cta-bg-active);
+    transform: scale(0.98);
+  }
+
+  /* @deprecated - Legacy .btn-primary:focus-visible class - use Button component instead */
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+
+  /* ============================================
+     NEON GLOW EFFECTS FOR TYPOGRAPHY
+     Neutral grey glow (no magenta)
+     ============================================ */
+
+  /* Main neon glow effect - use on headings and important text */
+  .neon-glow-text {
+    text-shadow:
+      0 0 10px rgba(var(--neon-grey-rgb), 0.8),
+      0 0 20px rgba(var(--neon-grey-rgb), 0.5);
+    filter: drop-shadow(0 0 6px rgba(var(--neon-grey-rgb), 0.6));
+  }
+
+  /* Subtle neon glow - use on body text and secondary elements */
+  .neon-glow-text-subtle {
+    text-shadow:
+      0 0 8px rgba(var(--neon-grey-rgb), 0.5),
+      0 0 16px rgba(var(--neon-grey-rgb), 0.3);
+    filter: drop-shadow(0 0 4px rgba(var(--neon-grey-rgb), 0.3));
+  }
+
+  /* Intense neon glow - use sparingly for emphasis */
+  .neon-glow-text-intense {
+    text-shadow:
+      0 0 15px rgba(var(--neon-grey-rgb), 1),
+      0 0 30px rgba(var(--neon-grey-rgb), 0.8),
+      0 0 45px rgba(var(--neon-grey-rgb), 0.6),
+      0 0 60px rgba(var(--neon-grey-rgb), 0.4);
+    filter: drop-shadow(0 0 10px rgba(var(--neon-grey-rgb), 0.8));
+  }
+}

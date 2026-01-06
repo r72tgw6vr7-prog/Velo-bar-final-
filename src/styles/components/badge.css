@@ -1,0 +1,49 @@
+/* Badge Component Styles - Unified with design system */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  border-radius: var(--radius-badge);
+  line-height: 1.25rem;
+}
+
+.badge-default {
+  background-color: var(--surface-card-translucent);
+  color: var(--color-coral);
+  border: 1px solid var(--surface-card-border);
+}
+
+.badge-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--orange-rgb), 0),
+    rgba(var(--orange-rgb), 0.1),
+    rgba(var(--orange-rgb), 0)
+  );
+  color: var(--color-coral);
+}
+
+/* Solid badge with background - for hero eyebrows and section headers */
+.badge-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  border-radius: var(--radius-badge);
+  background-color: var(--surface-card-translucent);
+  color: var(--color-coral);
+  border: 1px solid var(--surface-card-hover-border);
+  box-shadow: var(--shadow-card-subtle);
+  letter-spacing: 0.025em;
+  transition: all 0.2s ease;
+}
+
+.badge-solid:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
+}

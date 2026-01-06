@@ -1,0 +1,115 @@
+/**
+ * Touch Target Accessibility
+ * ==========================
+ * Ensures all interactive elements meet 44x44px minimum touch target size
+ * per WCAG 2.1 Level AAA (Success Criterion 2.5.5)
+ */
+
+/* Minimum touch target utilities */
+.touch-target-min {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.touch-target-comfortable {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* Icon button wrapper - ensures icons have proper touch target */
+.icon-button {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Expand clickable area without changing visual size */
+.touch-target-expand::before {
+  content: '';
+  position: absolute;
+  inset: -8px; /* Expands by 8px on all sides */
+  min-width: 44px;
+  min-height: 44px;
+  z-index: -1;
+}
+
+/* Social media icon buttons */
+.social-icon-button {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Close buttons */
+.close-button {
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation dots/indicators */
+.carousel-dot,
+.pagination-dot {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Small icon with expanded touch target */
+.small-icon-clickable {
+  padding: 8px; /* 8pt grid: was 10px */
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Filter/tab buttons */
+.filter-button,
+.tab-button {
+  min-height: 44px;
+  padding-inline: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Link buttons in navigation */
+nav a,
+nav button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  /* Increase touch targets on mobile */
+  .touch-target-mobile {
+    min-width: 48px !important;
+    min-height: 48px !important;
+  }
+
+  /* Add more spacing between touch targets */
+  .touch-spacing-mobile > * + * {
+    margin-top: 8px;
+  }
+}
+
+/* Hover state for touch target visualization (dev only) */
+.dev-touch-target-debug *[onclick],
+.dev-touch-target-debug button,
+.dev-touch-target-debug a {
+  outline: 1px dashed rgba(255, 0, 0, 0.3);
+}

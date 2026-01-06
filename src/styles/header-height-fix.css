@@ -1,0 +1,175 @@
+/* Header Height & Logo/Burger Sizing Fixes */
+/* =========================================== */
+
+/* Header Height & Flex Centering */
+header.cosmic-nav-solid {
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: space-between;
+  height: 64px; /* mobile */
+  padding: 0 16px; /* horizontal only */
+}
+
+@media (min-width: 768px) {
+  header.cosmic-nav-solid {
+    height: 72px; /* tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  header.cosmic-nav-solid {
+    height: 80px; /* desktop */
+  }
+}
+
+/* Header inner layout - flex for mobile/tablet */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0; /* no extra padding */
+}
+
+/* Desktop: CSS Grid for perfectly centered logo */
+@media (min-width: 1024px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  /* Left nav group - align to end (right side of left column) */
+  .header-inner > div:first-child {
+    justify-self: end;
+    width: auto;
+    padding-right: 32px;
+  }
+
+  /* Center logo - stays centered */
+  .header-inner > div:nth-child(2) {
+    justify-self: center;
+  }
+
+  /* Right nav group - align to start (left side of right column) */
+  .header-inner > div:nth-child(3) {
+    justify-self: start;
+    width: auto;
+    padding-left: 32px;
+  }
+
+  /* Hide mobile menu button on desktop - it's already hidden via md:hidden but ensure grid ignores it */
+  .header-inner > button.header__burger {
+    display: none !important;
+  }
+}
+
+/* Logo sizing - 20% bigger (84% of header height) */
+.header__logo img,
+header.cosmic-nav-solid .logo {
+  display: block;
+  height: calc(0.84 * 64px) !important; /* 20% bigger than ~70% → now ~84% */
+  width: auto;
+  max-height: none !important; /* remove any max-height overrides */
+}
+
+@media (min-width: 768px) {
+  .header__logo img,
+  header.cosmic-nav-solid .logo {
+    height: calc(0.84 * 72px) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__logo img,
+  header.cosmic-nav-solid .logo {
+    height: calc(0.84 * 80px) !important;
+  }
+}
+
+/* Burger button centering & size */
+.header__burger {
+  display: inline-flex;
+  align-items: center; /* vertical center */
+  justify-content: center;
+  height: 100%; /* match header height */
+  padding: 0;
+  margin: 0; /* no margin */
+}
+
+.header__burger-icon {
+  width: 22px;
+  height: 16px;
+}
+
+/* Fixed gap between navbar and location badge */
+.home-hero-badge {
+  margin-top: 8px; /* mobile */
+}
+
+@media (min-width: 768px) {
+  .home-hero-badge {
+    margin-top: 12px; /* tablet/desktop */
+  }
+}
+
+/* Hard rules - NO conflicting styles */
+header.cosmic-nav-solid,
+header.cosmic-nav-solid .header-inner {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+header.cosmic-nav-solid img.h-16 {
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* Remove any absolute positioning on burger */
+.header__burger {
+  position: static !important;
+  top: auto !important;
+}
+
+/* ===============================
+   Mobile Nav Drawer Styles
+   =============================== */
+.mobile-nav-drawer {
+  position: absolute;
+  top: 64px; /* exactly header height on mobile */
+  left: 0;
+  right: 0;
+  background: var(--surface-nav); /* brand cream token */
+  z-index: 40; /* above content, below header if needed */
+  padding: 24px 24px 32px;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  /* Hide drawer on tablet/desktop (fallback to inline nav) */
+  .mobile-nav-drawer {
+    display: none;
+  }
+}
+
+.mobile-nav-drawer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mobile-nav-drawer__item {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  padding: 8px 0; /* big tap area */
+}
+
+.mobile-nav-drawer__cta {
+  margin-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 24px;
+}

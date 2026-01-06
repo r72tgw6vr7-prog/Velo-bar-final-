@@ -1,0 +1,67 @@
+node_modules
+.vercel
+/dist
+/.vite
+coverage/
+*.log
+
+# Environment files (CRITICAL: Never commit these!)
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+.env.*.local
+
+# Local Netlify folder
+.netlify
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.windsurf/rules/snyk_rules.md
+
+# Test artifacts and reports
+chromewebdata_*.report.html
+*.report.html
+
+# Debug/test files
+public/test-*.html
+public/diagnose.js
+public/texture-*-test.html
+
+# Audit reports and test results (local-only)
+*-audit-report.json
+*-report.json
+*-test-results*.txt
+a11y_report.json
+eslint-report.json
+gallery-audit-report.json
+page-titles-audit.json
+
+# Lighthouse CI artifacts (local-only)
+.lighthouseci/
+*.lhr.json
+*.lhr.html
+
+# Artifacts directory (generated outputs)
+artifacts/performance/
+artifacts/phoneframe/
+artifacts/image-audit-phase1.json
+
+# Test artifacts
+tests/**/artifacts/
+tests/**/report/
+tests/**/*-snapshots/
+
+# System files
+.DS_Store
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
+public/Velo Gallery/

@@ -1,0 +1,25 @@
+node_modules/
+.git/
+.vercel/
+.vscode/
+
+# local build artifacts
+coverage/
+dist/
+.vite/
+
+# tests & local reports
+tests/
+artifacts/
+.snapshots/
+
+# large backups / archives
+public-backup-*/
+public-backup-*.tar.gz
+
+# docs / analysis (not needed for runtime)
+docs/
+*.md
+
+# misc
+*.log

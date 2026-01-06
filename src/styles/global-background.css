@@ -1,0 +1,11 @@
+/* 
+  Global Background CSS - Brand Compliant
+  Navy (#1a2332) background per Velo.Bar brand kit
+  Rendered via UniversalTextureBackground component in main.tsx
+*/
+
+/* Ensure content is above background */
+#root {
+  position: relative;
+  z-index: 1;
+}

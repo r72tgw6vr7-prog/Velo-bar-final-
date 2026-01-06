@@ -1,0 +1,129 @@
+/**
+ * ServiceCards Module Styles
+ * ======================
+ * Styling for service cards components using design tokens
+ */
+
+/* Service card hover effects */
+.service-card {
+  transition: transform var(--transition-duration-normal) var(--transition-easing-smooth);
+}
+
+.service-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Service card bullet points */
+.service-bullet {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.service-bullet::before {
+  content: '•';
+  color: var(--brand-primary);
+  font-size: 1.2em;
+}
+
+/* Service card price and CTA wrapper */
+.service-card-actions {
+  margin-top: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  align-items: center;
+}
+
+/* Button hover effects */
+.service-button {
+  transition: all var(--transition-duration-normal) var(--transition-easing-smooth);
+}
+
+.service-button-primary {
+  background-color: var(--brand-primary);
+  color: var(--deep-black);
+  border: 2px solid transparent;
+}
+
+.service-button-primary:hover {
+  background-color: var(--brand-primary-dark);
+  transform: translateY(-2px);
+}
+
+.service-button-outline {
+  background-color: transparent;
+  color: var(--brand-white);
+  border: 2px solid var(--brand-primary-20);
+}
+
+.service-button-outline:hover {
+  border-color: var(--brand-primary);
+  background-color: var(--brand-primary-10);
+  transform: translateY(-2px);
+}
+
+/* Service image effects */
+.service-image {
+  transition: transform var(--transition-duration-slow) var(--transition-easing-smooth);
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .service-card {
+    min-height: 400px;
+    margin: 0 auto;
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+  }
+
+  .service-card {
+    min-height: 480px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .service-card {
+    min-height: 520px;
+  }
+}
+
+/* Accessibility */
+.service-card:focus-visible,
+.service-button:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-image,
+  .service-button {
+    transition: none !important;
+  }
+
+  .service-card:hover {
+    transform: none !important;
+  }
+
+  .service-card:hover .service-image {
+    transform: none !important;
+  }
+}

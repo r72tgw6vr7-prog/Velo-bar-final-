@@ -1,0 +1,75 @@
+{
+  "total": 768,
+  "used": 739,
+  "broken": 507,
+  "unused": 29,
+  "lcpAssets": [
+    "/public/hero.jpg",
+    "/public/Velo Gallery/mobile-bar-hero-320w.jpg",
+    "/public/Velo Gallery/mobile-bar-hero-640w.webp",
+    "/public/Velo Gallery/mobile-bar-hero-120w.webp",
+    "/public/Velo Gallery/mobile-bar-hero-80w.webp"
+  ],
+  "brokenExamples": [
+    {
+      "file": "image_audit.json",
+      "line": 1016,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/DSC08563.jpg\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/DSC08563.jpg"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 78,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/TeamEvent und Workshops.jpg\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/TeamEvent und Workshops.jpg"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 246,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/our story .JPG\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/our story .JPG"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 134,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/Team.JPG\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/Team.JPG"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 393,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/DSC00260.jpg\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/DSC00260.jpg"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 631,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/sebi.JPG\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/sebi.JPG"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 778,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/DSC08372.jpg\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/DSC08372.jpg"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 281,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/DSC07929.jpg\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/DSC07929.jpg"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 491,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/DSC07875.jpg\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/DSC07875.jpg"
+    },
+    {
+      "file": "image_audit.json",
+      "line": 554,
+      "snippet": "\"path\": \"public/Velo Gallery/velo bar bilder 2/IMG_7543.JPG\",",
+      "asset": "/public/Velo Gallery/gallery-carousel/IMG_7543.JPG"
+    }
+  ]
+}

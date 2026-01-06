@@ -1,0 +1,53 @@
+.badgesContainer {
+  height: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  padding: 8px 24px !important; /* 8pt grid: was 8px 20px */
+  background-color: var(--brand-background);
+  border-bottom: 1px solid rgba(var(--orange-rgb), 0.1);
+}
+
+.badgesRow {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  flex-wrap: nowrap !important;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* 8pt grid: was 12px */
+}
+
+.badgeIcon {
+  width: 18px !important;
+  height: 18px !important;
+  color: var(--brand-primary);
+}
+
+.badgeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px; /* 8pt grid: was 2px */
+}
+
+.badgeNumber {
+  font-size: 18px !important;
+  font-weight: 600;
+  color: var(--brand-primary);
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: 11px !important;
+  color: #c0c0c0;
+  white-space: nowrap;
+  line-height: 1;
+}

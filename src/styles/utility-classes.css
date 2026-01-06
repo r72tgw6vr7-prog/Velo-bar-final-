@@ -1,0 +1,496 @@
+/**
+ * STARGATE UTILITY CLASSES
+ * Version: v1.0
+ * 
+ * These utility classes are used across components and provide
+ * consistent styling for common UI patterns.
+ */
+
+/* Custom background gradients */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Hide scrollbars while maintaining functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch target size for accessibility */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Snap scrolling helpers */
+@media (max-width: 1023px) {
+  .snap-x.snap-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+}
+
+/* Micro-transitions for interactive elements */
+.micro-transition {
+  transition: all var(--motion-duration-sm) var(--motion-ease-standard);
+}
+
+/* ============================================
+  ELEVATION SYSTEM
+  Consistent shadows for cards and elevated surfaces
+  ============================================ */
+
+.u-elevation-0 {
+  box-shadow: var(--elevation-0);
+}
+
+.u-elevation-1 {
+  box-shadow: var(--elevation-1);
+}
+
+.u-elevation-2 {
+  box-shadow: var(--elevation-2);
+}
+
+.u-elevation-3 {
+  box-shadow: var(--elevation-3);
+}
+
+/* Stable class used across the codebase and tests */
+.card {
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.card--featured {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* Focus rings */
+.focus-accent-glow:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(238, 120, 104, 0.4);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Section spacing utilities */
+.section-padding {
+  padding-top: 3rem; /* 48px - mobile */
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 4rem; /* 64px - tablet */
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 5rem; /* 80px - desktop */
+    padding-bottom: 5rem;
+  }
+}
+
+/* Larger section spacing for better visual separation */
+.section-padding-lg {
+  padding-top: 4rem; /* 64px - mobile */
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding-lg {
+    padding-top: 5rem; /* 80px - tablet */
+    padding-bottom: 5rem;
+  }
+}
+
+/* Custom z-index helpers used in a few sections */
+.z-5 {
+  z-index: 5;
+}
+.z-6 {
+  z-index: 6;
+}
+.z-7 {
+  z-index: 7;
+}
+
+/* Section margin/spacing utilities has been removed as requested */
+
+@media (min-width: 1024px) {
+  .section-padding-lg {
+    padding-top: 6rem; /* 96px - desktop */
+    padding-bottom: 6rem;
+  }
+}
+
+/* ============================================
+   NEON GLOW COLOR UTILITIES
+   Apply neutral styling to brand-colored text
+   ============================================ */
+
+/* Override Tailwind's text-brand-primary to include neutral styling */
+.text-brand-primary,
+[class*='text-(--brand-primary)'] {
+  color: var(--color-coral) !important;
+  /* Removed magenta neon glow; keep text clean/neutral */
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* For lighter/secondary brand text */
+.text-brand-primary-80,
+[class*='text-(--brand-primary-80)'] {
+  color: rgba(255, 255, 255, 0.9) !important;
+  /* Removed magenta neon glow; keep subtle emphasis only through color */
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* ============================================
+   FAQ SNIPPET BLOCKS
+   Featured snippet optimization for voice search
+   ============================================ */
+
+.snippet-block {
+  /* Clean highlighted answer units for featured snippets */
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.snippet-block:hover {
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(var(--orange-rgb), 0.1);
+}
+
+.snippet-block h3 {
+  /* Question styling optimized for voice search answers */
+  color: var(--text-strong);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.snippet-block p {
+  /* Answer styling - clear, concise, scannable */
+  color: var(--text-body);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Featured snippet optimization */
+.snippet-block::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--color-coral), var(--cta-bg-hover));
+  border-radius: 2px;
+}
+
+/* ============================================
+   LOADING STATE UTILITIES
+   Skeletons, spinner, progress
+   ============================================ */
+
+.u-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.u-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.14) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: u-skeleton-shimmer var(--motion-duration-shimmer) var(--motion-ease-standard) infinite;
+}
+
+@keyframes u-skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.u-spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 9999px;
+  animation: u-spin var(--motion-duration-spin) var(--motion-ease-linear) infinite;
+}
+
+@keyframes u-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.u-progress {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.u-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-coral), var(--cta-bg-hover));
+  border-radius: inherit;
+  width: var(--u-progress-value, 0%);
+  transition: width var(--motion-duration-sm) var(--motion-ease-standard);
+}
+
+/* ============================================
+   ANIMATION UTILITIES
+   Fade, slide, scale
+   ============================================ */
+
+@keyframes u-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes u-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes u-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes u-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes u-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes u-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: u-fade-in var(--motion-duration-sm) var(--motion-ease-entrance) both;
+}
+.animate-fade-up {
+  animation: u-fade-up var(--motion-duration-sm) var(--motion-ease-entrance) both;
+}
+.animate-fade-down {
+  animation: u-fade-down var(--motion-duration-sm) var(--motion-ease-entrance) both;
+}
+.animate-slide-left {
+  animation: u-slide-left var(--motion-duration-md) var(--motion-ease-entrance) both;
+}
+.animate-slide-right {
+  animation: u-slide-right var(--motion-duration-md) var(--motion-ease-entrance) both;
+}
+.animate-scale-in {
+  animation: u-scale-in var(--motion-duration-sm) var(--motion-ease-entrance) both;
+}
+
+/* Reduced motion: disable animations/transitions for key utilities */
+@media (prefers-reduced-motion: reduce) {
+  .micro-transition {
+    transition: none !important;
+  }
+  .u-skeleton::after {
+    animation: none !important;
+  }
+  .u-spinner {
+    animation: none !important;
+  }
+  .u-progress__bar {
+    transition: none !important;
+  }
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-fade-down,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in {
+    animation: none !important;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE UTILITIES
+   ============================================ */
+
+@media (prefers-contrast: more) {
+  :root {
+    --hc-bg: #000;
+    --hc-text: #fff;
+    --hc-border: #fff;
+  }
+
+  .hc-surface {
+    background: var(--hc-bg) !important;
+    color: var(--hc-text) !important;
+    border: 1px solid var(--hc-border) !important;
+  }
+
+  .hc-text {
+    color: var(--hc-text) !important;
+  }
+
+  .hc-border {
+    border-color: var(--hc-border) !important;
+  }
+
+  .hc-focus :focus-visible {
+    outline: 2px solid var(--hc-border);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000 !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p,
+  li,
+  blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a[href]:after {
+    content: ' (' attr(href) ')';
+    font-size: 0.875em;
+  }
+
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break {
+    page-break-before: always;
+  }
+
+  .print-avoid {
+    page-break-inside: avoid;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+}

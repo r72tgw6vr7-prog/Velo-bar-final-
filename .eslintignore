@@ -1,0 +1,4 @@
+# Ignore test files as they're not critical for the build
+tests/**/*
+node_modules
+dist

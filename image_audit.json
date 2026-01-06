@@ -1,0 +1,2831 @@
+{
+  "count": 1373,
+  "total_size_bytes": 2059715011,
+  "by_ext": {
+    ".jpg": {
+      "count": 307,
+      "total_size_bytes": 1491957885
+    },
+    ".png": {
+      "count": 540,
+      "total_size_bytes": 496967946
+    },
+    ".heic": {
+      "count": 11,
+      "total_size_bytes": 29074243
+    },
+    ".webp": {
+      "count": 469,
+      "total_size_bytes": 19865444
+    },
+    ".jpeg": {
+      "count": 1,
+      "total_size_bytes": 18716964
+    },
+    ".svg": {
+      "count": 44,
+      "total_size_bytes": 1992137
+    },
+    ".tiff": {
+      "count": 1,
+      "total_size_bytes": 1140392
+    }
+  },
+  "heavy": [
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_5834.webp",
+      "ext": ".webp",
+      "size_bytes": 57381923,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/G5.jpg",
+      "ext": ".jpg",
+      "size_bytes": 35575831,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/public/images/team/Eli-luquez.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/public/images/team/Oli.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/public/images/artists/oliver.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/public/images/artists/eli.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/TeamEvent und Workshops.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/images/team/eli.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/images/team/Eli-luquez.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/images/team/Oli.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/images/artists/oliver.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/images/artists/eli.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27803242,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/public/images/team/AAron.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27511305,
+      "width": 7624,
+      "height": 5083
+    },
+    {
+      "path": "public/public/images/artists/aaron.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27511305,
+      "width": 7624,
+      "height": 5083
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Team.JPG",
+      "ext": ".jpg",
+      "size_bytes": 27511305,
+      "width": 7624,
+      "height": 5083
+    },
+    {
+      "path": "public/images/artists/aaron.jpg",
+      "ext": ".jpg",
+      "size_bytes": 27511305,
+      "width": 7624,
+      "height": 5083
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Messen.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/IMG_5834.webp",
+      "size_bytes": 25853641,
+      "width": 5760,
+        "path": "public/Velo Gallery/gallery-carousel/G5.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/TeamEvent und Workshops.webp",
+      "ext": ".jpg",
+      "size_bytes": 24817060,
+        "path": "public/Velo Gallery/gallery-carousel/Team.webp",
+      "height": 5760
+    },
+        "path": "public/Velo Gallery/gallery-carousel/Messen.webp",
+      "path": "public/images/artists/sasha.jpg",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC09679.webp",
+      "width": 8640,
+      "height": 5760
+        "path": "public/Velo Gallery/gallery-carousel/why us .webp",
+    {
+      "path": "public/Velo Gallery/partner2.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC00143.webp",
+      "size_bytes": 24705230,
+      "width": 8640,
+        "path": "public/Velo Gallery/gallery-carousel/G3.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/20230326-DSC05298.webp",
+      "ext": ".jpg",
+      "size_bytes": 24705230,
+        "path": "public/Velo Gallery/gallery-carousel/G4.webp",
+      "height": 5760
+    },
+        "path": "public/Velo Gallery/gallery-carousel/MANGO ROSMARIN.webp",
+      "path": "public/Velo Gallery/gallery-carousel/why us .jpg",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/G2.webp",
+      "width": 8640,
+      "height": 5760
+        "path": "public/Velo Gallery/gallery-carousel/our story .webp",
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00143.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/Schenker-E-LKW-70.webp",
+      "size_bytes": 22466104,
+      "width": 5760,
+        "path": "public/Velo Gallery/gallery-carousel/DSC03519.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/DSC07929.webp",
+      "ext": ".jpg",
+      "size_bytes": 22117493,
+        "path": "public/Velo Gallery/gallery-carousel/IMG_5863.webp",
+      "height": 7448
+    },
+        "path": "public/Velo Gallery/gallery-carousel/Firmenfeier.webp",
+      "path": "public/Velo Gallery/gallery-carousel/G3.JPG",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/Schenker-E-LKW-23.webp",
+      "width": 4965,
+      "height": 7448
+        "path": "public/Velo Gallery/gallery-carousel/20210814-DSC06359.webp",
+    {
+      "path": "public/Velo Gallery/gallery-carousel/20230326-DSC05298.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC00174.webp",
+      "size_bytes": 21689340,
+      "width": 5760,
+        "path": "public/Velo Gallery/gallery-carousel/DSC00391.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/DSC00254.webp",
+      "ext": ".jpg",
+      "size_bytes": 21546420,
+        "path": "public/Velo Gallery/gallery-carousel/20210910-DSC04622.webp",
+      "height": 6000
+    },
+        "path": "public/Velo Gallery/gallery-carousel/Gallerie.webp",
+      "path": "public/Velo Gallery/mango-rosmarin.jpg",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC00346.webp",
+      "width": 5358,
+      "height": 8037
+        "path": "public/Velo Gallery/gallery-carousel/G7.webp",
+    {
+      "path": "public/Velo Gallery/gallery-carousel/MANGO ROSMARIN.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC00418.webp",
+      "size_bytes": 21531869,
+      "width": 5358,
+        "path": "public/Velo Gallery/gallery-carousel/Galerie.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/DSC00260.webp",
+      "ext": ".jpg",
+      "size_bytes": 19991306,
+        "path": "public/Velo Gallery/gallery-carousel/DSC00209.webp",
+      "height": 5760
+    },
+        "path": "public/Velo Gallery/gallery-carousel/DSC00185.webp",
+      "path": "public/Velo Gallery/gallery-carousel/our story .JPG",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC00337.webp",
+      "width": 8640,
+      "height": 5760
+        "path": "public/Velo Gallery/gallery-carousel/Himbeer Hibiskus FIZZ.webp",
+    {
+      "path": "public/Velo Gallery/gallery-carousel/G2.JPG",
+        "path": "public/Velo Gallery/gallery-carousel/DSC07828.webp",
+      "size_bytes": 19991306,
+      "width": 8640,
+        "path": "public/Velo Gallery/gallery-carousel/20210814-DSC06342.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/DSC07875.webp",
+      "ext": ".jpg",
+      "size_bytes": 18901023,
+        "path": "public/Velo Gallery/gallery-carousel/DSC07847.webp",
+      "height": 7655
+    },
+        "path": "public/Velo Gallery/gallery-carousel/MINZ MARACUJA.webp",
+      "path": "public/Velo Gallery/gallery-carousel/DSC03519.jpeg",
+      "ext": ".jpeg",
+        "path": "public/Velo Gallery/gallery-carousel/Basil smash.webp",
+      "width": 5760,
+      "height": 8640
+        "path": "public/Velo Gallery/gallery-carousel/IMG_7543.webp",
+    {
+      "path": "public/Velo Gallery/gin-tasting.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/DSC07850.webp",
+      "size_bytes": 18464162,
+      "width": 8640,
+        "path": "public/Velo Gallery/gallery-carousel/G8.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/IMG_1440.webp",
+      "ext": ".jpg",
+      "size_bytes": 18464162,
+        "path": "public/Velo Gallery/gallery-carousel/sebi.webp",
+      "height": 5760
+    },
+        "path": "public/Velo Gallery/gallery-carousel/032B467F-3EC9-4C01-9B4D-C11C02CD8ED6.webp",
+      "path": "public/Velo Gallery/gallery-carousel/IMG_5863.JPG",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/9127B453-BD48-4C38-AE31-8963BB99F72D.webp",
+      "width": 5760,
+      "height": 8640
+        "path": "public/Velo Gallery/gallery-carousel/DSC08372.webp",
+    {
+      "path": "public/images/team/Debi.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/FAA20C66-CF13-464D-8309-B200753B0391.webp",
+      "size_bytes": 18429288,
+      "width": 5760,
+        "path": "public/Velo Gallery/gallery-carousel/DSC08563.webp",
+    },
+    {
+        "path": "public/Velo Gallery/gallery-carousel/SPRITYVARIATIONE.webp",
+      "ext": ".jpg",
+      "size_bytes": 18429288,
+        "path": "public/Velo Gallery/gallery-carousel/1d4a0f80-a847-4418-a8e0-004c4582a2a0.webp",
+      "height": 8640
+    },
+        "path": "public/Velo Gallery/gallery-carousel/Hochzeiten.webp",
+      "path": "public/Velo Gallery/gallery-carousel/Firmenfeier.JPG",
+      "ext": ".jpg",
+        "path": "public/Velo Gallery/gallery-carousel/A7401419.webp",
+      "width": 6000,
+      "height": 4000
+        "path": "public/Velo Gallery/gallery-carousel/A7401220.webp",
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Schenker-E-LKW-23.jpg",
+        "path": "public/Velo Gallery/gallery-carousel/A7401318.webp",
+      "size_bytes": 17337780,
+      "width": 5344,
+        "path": "public/Velo Gallery/gallery-carousel/IMG_3839.webp",
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/20210814-DSC06359.JPG",
+      "ext": ".jpg",
+      "size_bytes": 15947204,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00174.jpg",
+      "ext": ".jpg",
+      "size_bytes": 15690356,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00391.jpg",
+      "ext": ".jpg",
+      "size_bytes": 15163711,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00254.jpg",
+      "ext": ".jpg",
+      "size_bytes": 14123773,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/20210910-DSC04622.JPG",
+      "ext": ".jpg",
+      "size_bytes": 14086500,
+      "width": 7393,
+      "height": 4929
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Gallerie.jpg",
+      "ext": ".jpg",
+      "size_bytes": 14021960,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00346.jpg",
+      "ext": ".jpg",
+      "size_bytes": 14017059,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/G7.jpg",
+      "ext": ".jpg",
+      "size_bytes": 13982501,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00418.jpg",
+      "ext": ".jpg",
+      "size_bytes": 13924927,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Galerie.jpg",
+      "ext": ".jpg",
+      "size_bytes": 13924321,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00260.jpg",
+      "ext": ".jpg",
+      "size_bytes": 13565944,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00209.jpg",
+      "ext": ".jpg",
+      "size_bytes": 13280673,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00185.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12919091,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC00337.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12795071,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/himbeer-hibiskus-fizz.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12700012,
+      "width": 4422,
+      "height": 6633
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Himbeer Hibiskus FIZZ.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12700012,
+      "width": 4422,
+      "height": 6633
+    },
+    {
+      "path": "public/images/fallback-background.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12570875,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/mobile-bar-hero.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12570875,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC07828.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12570875,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/images/team/placeholder.jpg",
+      "ext": ".jpg",
+      "size_bytes": 12570875,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/20210814-DSC06342.JPG",
+      "ext": ".jpg",
+      "size_bytes": 12373175,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "tests/p0/artifacts/r2-01-initial-home-page.png",
+      "ext": ".png",
+      "size_bytes": 12179960,
+      "width": 2560,
+      "height": 11790
+    },
+    {
+      "path": "tests/p0/artifacts/t4-01-home-page-typography.png",
+      "ext": ".png",
+      "size_bytes": 12167407,
+      "width": 2560,
+      "height": 11790
+    },
+    {
+      "path": "public/Velo Gallery/mobile-bar-setup.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11965161,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC07875.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11965161,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC07847.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11943378,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "tests/p0/artifacts/r2-02-scrolled-to-bottom.png",
+      "ext": ".png",
+      "size_bytes": 11864450,
+      "width": 2560,
+      "height": 11790
+    },
+    {
+      "path": "public/Velo Gallery/minz-maracuja.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11517941,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/MINZ MARACUJA.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11517941,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/basil-smash.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11049094,
+      "width": 4672,
+      "height": 7008
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Basil smash.jpg",
+      "ext": ".jpg",
+      "size_bytes": 11049094,
+      "width": 4672,
+      "height": 7008
+    },
+    {
+      "path": "public/public/images/team/Vive.jpg",
+      "ext": ".jpg",
+      "size_bytes": 10716830,
+      "width": 5584,
+      "height": 3723
+    },
+    {
+      "path": "public/public/images/artists/vive.jpg",
+      "ext": ".jpg",
+      "size_bytes": 10716830,
+      "width": 5584,
+      "height": 3723
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_7543.JPG",
+      "ext": ".jpg",
+      "size_bytes": 10716830,
+      "width": 5584,
+      "height": 3723
+    },
+    {
+      "path": "public/images/team/Vive.jpg",
+      "ext": ".jpg",
+      "size_bytes": 10716830,
+      "width": 5584,
+      "height": 3723
+    },
+    {
+      "path": "public/images/artists/vive.jpg",
+      "ext": ".jpg",
+      "size_bytes": 10716830,
+      "width": 5584,
+      "height": 3723
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC07850.jpg",
+      "ext": ".jpg",
+      "size_bytes": 10322898,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/G8.jpg",
+      "ext": ".jpg",
+      "size_bytes": 10264299,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_1440.JPG",
+      "ext": ".jpg",
+      "size_bytes": 6970758,
+      "width": 4000,
+      "height": 6000
+    },
+    {
+      "path": "tests/p0/artifacts/seo5-04-gallery-page-loaded.png",
+      "ext": ".png",
+      "size_bytes": 6922895,
+      "width": 2560,
+      "height": 5076
+    },
+    {
+      "path": "tests/p0/report/data/52940b73c4e26286aea10d194478c01bfd7b2a7e.png",
+      "ext": ".png",
+      "size_bytes": 5434870,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-1d893--galerie---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 5434870,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/74239695674__D57D2E8F-B2BE-4816-972E-57E7BEFCE2D4.HEIC",
+      "ext": ".heic",
+      "size_bytes": 4401068,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_1677.HEIC",
+      "ext": ".heic",
+      "size_bytes": 4158477,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/sebi.JPG",
+      "ext": ".jpg",
+      "size_bytes": 4151728,
+      "width": 5760,
+      "height": 8640
+    },
+    {
+      "path": "tests/p0/report/data/21d75dc31d12049a5f3229236f8409e56dec6ef6.png",
+      "ext": ".png",
+      "size_bytes": 3922114,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ea193-ts-about---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 3922114,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 3816378,
+      "width": 1440,
+      "height": 5895
+    },
+    {
+      "path": "tests/p0/report/data/b0955dd2574140ba08eda5f671ddf98fa6e942b1.png",
+      "ext": ".png",
+      "size_bytes": 3816378,
+      "width": 1440,
+      "height": 5895
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-39ecd-sts-home---desktop-viewport-webkit/home-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 3816378,
+      "width": 1440,
+      "height": 5895
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6761.HEIC",
+      "ext": ".heic",
+      "size_bytes": 3644204,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/report/data/e057f0bdd46a2af3035ceb92558e6de4af9f6b35.png",
+      "ext": ".png",
+      "size_bytes": 3539277,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-82644-s-galerie---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 3539277,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 3337145,
+      "width": 1440,
+      "height": 6182
+    },
+    {
+      "path": "tests/p0/report/data/14f13af80476e06f6e0ceb2f1f37d7df5071df77.png",
+      "ext": ".png",
+      "size_bytes": 3300488,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-f66a8--gallery-interaction-events-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 3300488,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/032B467F-3EC9-4C01-9B4D-C11C02CD8ED6.JPG",
+      "ext": ".jpg",
+      "size_bytes": 3256004,
+      "width": 3724,
+      "height": 2096
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6654.HEIC",
+      "ext": ".heic",
+      "size_bytes": 3181336,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/artifacts/t4-02-gallery-typography.png",
+      "ext": ".png",
+      "size_bytes": 3139613,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/9127B453-BD48-4C38-AE31-8963BB99F72D.JPG",
+      "ext": ".jpg",
+      "size_bytes": 3048216,
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "path": "tests/p0/report/data/d21e06e994f2e084a46e1827e7e8e2bd397dcc23.png",
+      "ext": ".png",
+      "size_bytes": 2990210,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-8cbc3-enfeiern---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2990210,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/report/data/dc221557d7c88e77d24e2e48d6b348ae0667b341.png",
+      "ext": ".png",
+      "size_bytes": 2917967,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-bf452-istungen---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2917967,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/private feiern.HEIC",
+      "ext": ".heic",
+      "size_bytes": 2823843,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC08372.jpg",
+      "ext": ".jpg",
+      "size_bytes": 2793861,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "tests/p0/report/data/ece19ed771b4d62c39656326411877f15a28efd2.png",
+      "ext": ".png",
+      "size_bytes": 2789338,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-aada2-ests-faq---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2789338,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/r2-04-services-page-initial.png",
+      "ext": ".png",
+      "size_bytes": 2710756,
+      "width": 2560,
+      "height": 3130
+    },
+    {
+      "path": "tests/p0/report/data/556a58ba961971720a20cf8393fc5babfd274e30.png",
+      "ext": ".png",
+      "size_bytes": 2646967,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-39ecd-sts-home---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2646967,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/report/data/da47af61a90cc68695184761480978ccf6e7bffd.png",
+      "ext": ".png",
+      "size_bytes": 2614177,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Compo-bf17d-ts-Navigation-bar---desktop-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2614177,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/FAA20C66-CF13-464D-8309-B200753B0391.JPG",
+      "ext": ".jpg",
+      "size_bytes": 2599126,
+      "width": 3024,
+      "height": 3024
+    },
+    {
+      "path": "tests/p0/report/data/597c65cdc380bb7851ccbb21c5f78b2324391ab0.png",
+      "ext": ".png",
+      "size_bytes": 2597187,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ba7c0--anfrage---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2597187,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6077.HEIC",
+      "ext": ".heic",
+      "size_bytes": 2579974,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6646.HEIC",
+      "ext": ".heic",
+      "size_bytes": 2563370,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-mobile-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 2553562,
+      "width": 375,
+      "height": 9106
+    },
+    {
+      "path": "tests/p0/report/data/dff6faf1c2e1ca3f3f65e59abbd1601dd25eae8e.png",
+      "ext": ".png",
+      "size_bytes": 2553562,
+      "width": 375,
+      "height": 9106
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-be2a2-ests-home---mobile-viewport-webkit/home-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 2553562,
+      "width": 375,
+      "height": 9106
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 2519990,
+      "width": 1440,
+      "height": 2598
+    },
+    {
+      "path": "tests/p0/report/data/85f8cbce9f256b99d69ecb2a845a5c251622c289.png",
+      "ext": ".png",
+      "size_bytes": 2519990,
+      "width": 1440,
+      "height": 2598
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-1d893--galerie---desktop-viewport-webkit/galerie-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 2519990,
+      "width": 1440,
+      "height": 2598
+    },
+    {
+      "path": "tests/p0/report/data/061bb5992c5e83f84a51298f93a3f30a9f0a0148.png",
+      "ext": ".png",
+      "size_bytes": 2511028,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Inter-088aa-l-Tests-Button-hover-states-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2511028,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/c6-07-responsive-desktop.png",
+      "ext": ".png",
+      "size_bytes": 2506429,
+      "width": 2560,
+      "height": 5250
+    },
+    {
+      "path": "tests/p0/artifacts/c6-01-contact-page-with-api-key.png",
+      "ext": ".png",
+      "size_bytes": 2505959,
+      "width": 2560,
+      "height": 5250
+    },
+    {
+      "path": "tests/p0/artifacts/seo5-06-contact-page-loaded.png",
+      "ext": ".png",
+      "size_bytes": 2505262,
+      "width": 2560,
+      "height": 5250
+    },
+    {
+      "path": "tests/p0/artifacts/t4-02-about-typography.png",
+      "ext": ".png",
+      "size_bytes": 2504521,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/c6-03-contact-page-no-api-key.png",
+      "ext": ".png",
+      "size_bytes": 2425913,
+      "width": 2560,
+      "height": 5250
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 2317105,
+      "width": 895,
+      "height": 6281
+    },
+    {
+      "path": "tests/p0/report/data/5ec1651a5203acfce6721f9c4ddfd0db2a5fff1f.png",
+      "ext": ".png",
+      "size_bytes": 2317105,
+      "width": 895,
+      "height": 6281
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-e2c0c-ests-home---tablet-viewport-webkit/home-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 2317105,
+      "width": 895,
+      "height": 6281
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-tablet-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 2302362,
+      "width": 895,
+      "height": 6794
+    },
+    {
+      "path": "tests/p0/artifacts/t4-02-services-typography.png",
+      "ext": ".png",
+      "size_bytes": 2290053,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-desktop-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 2288069,
+      "width": 1440,
+      "height": 5902
+    },
+    {
+      "path": "tests/p0/report/data/611677143fa4bac2e00747e19d7a2b214ee77964.png",
+      "ext": ".png",
+      "size_bytes": 2288069,
+      "width": 1440,
+      "height": 5902
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-39ecd-sts-home---desktop-viewport-firefox/home-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 2288069,
+      "width": 1440,
+      "height": 5902
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/DSC08563.jpg",
+      "ext": ".jpg",
+      "size_bytes": 2222988,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-desktop-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 2142975,
+      "width": 1440,
+      "height": 2599
+    },
+    {
+      "path": "tests/p0/report/data/8420cecee179fb8832344559a0a55e8ebb9f517f.png",
+      "ext": ".png",
+      "size_bytes": 2142975,
+      "width": 1440,
+      "height": 2599
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-1d893--galerie---desktop-viewport-firefox/galerie-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 2142975,
+      "width": 1440,
+      "height": 2599
+    },
+    {
+      "path": "tests/p0/artifacts/seo5-07-form-filled.png",
+      "ext": ".png",
+      "size_bytes": 2074033,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/10844087f7f1c6194f3a14a2c9b864459d383cac.png",
+      "ext": ".png",
+      "size_bytes": 2057417,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Component-Visual-Tests-Pricing-cards-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2057417,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/report/data/2aa20322498106088dd7f8852b0aaf07c16c98ba.png",
+      "ext": ".png",
+      "size_bytes": 2048075,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-7bef4-s-preise---desktop-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 2048075,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/report/data/2d9e76e78c24ed2ae89bd8a93e0f0aa7b6bf4936.png",
+      "ext": ".png",
+      "size_bytes": 2015297,
+      "width": 375,
+      "height": 9128
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-be2a2-ests-home---mobile-viewport-chromium/home-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 2015297,
+      "width": 375,
+      "height": 9128
+    },
+    {
+      "path": "tests/p0/report/data/ea17b15a75c3c92b4c07bf1feaf97d89b7c02899.png",
+      "ext": ".png",
+      "size_bytes": 1972369,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-c4afc-sts-about---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1972369,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/t4-02-contact-typography.png",
+      "ext": ".png",
+      "size_bytes": 1972318,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/dffdb9b7b5b88af641bd7fffc69259947abda328.png",
+      "ext": ".png",
+      "size_bytes": 1969777,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-bea6e-urement-ID-from-environment-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1969777,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/1a51d0aef2b8f773b841485934e6638dff13e0bc.png",
+      "ext": ".png",
+      "size_bytes": 1965598,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-booking-flow-Booking-flow-landing-\u2192-form-\u2192-success-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1965598,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/d6b543002a9b82165fcfe84611893cc72929c4e6.png",
+      "ext": ".png",
+      "size_bytes": 1964098,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-49150-e-view-events-on-navigation-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1964098,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/8e0e4b734df13d937979412f187d94c66a948cb9.png",
+      "ext": ".png",
+      "size_bytes": 1963545,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-t4-fonts-T4-Computed-Fo-837f2-ypography-classes-correctly-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1963545,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/seo5-01-home-page-loaded.png",
+      "ext": ".png",
+      "size_bytes": 1961910,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/seo5-10-disabled-analytics.png",
+      "ext": ".png",
+      "size_bytes": 1961754,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/t4-03-buttons-highlighted.png",
+      "ext": ".png",
+      "size_bytes": 1960034,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/t4-06-default-theme-typography.png",
+      "ext": ".png",
+      "size_bytes": 1959159,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/b6ee1ed4aa7d1555e3e25913367a8ece02512a19.png",
+      "ext": ".png",
+      "size_bytes": 1957840,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-13a5c-should-track-booking-events-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1957840,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/t4-02-home-typography.png",
+      "ext": ".png",
+      "size_bytes": 1955570,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6652.HEIC",
+      "ext": ".heic",
+      "size_bytes": 1950445,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/report/data/a634fbb9d342d4bb2a33d6c9d8c6e06fe8d1c7b5.png",
+      "ext": ".png",
+      "size_bytes": 1941209,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-c6-maps-C6-Google-Maps--4fd39-bed-when-API-key-is-present-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1941209,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/5c9e076ab31d6474c120f2c49be2cf8c118ee053.png",
+      "ext": ".png",
+      "size_bytes": 1938433,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-c6-maps-C6-Google-Maps--15492-ironment-variable-correctly-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1938433,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/6b0b95c63c975555585a39fe15a88cda6dbfbc56.png",
+      "ext": ".png",
+      "size_bytes": 1926486,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-t4-fonts-T4-Computed-Fo-63c01-t-font-weights-on-home-page-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1926486,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/463e9a9872941f971fc78e330b88785462dd382d.png",
+      "ext": ".png",
+      "size_bytes": 1918341,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-t4-fonts-T4-Computed-Fo-2fc97-nt-weights-across-all-pages-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1918341,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/8c222fcd05e4761408ba9543ed9cc095444c5985.png",
+      "ext": ".png",
+      "size_bytes": 1902927,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-8c5b4-ate-event-payload-structure-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1902927,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/e79e27974efbff8f89b2517b12839668ae08fbee.png",
+      "ext": ".png",
+      "size_bytes": 1897625,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-c6-maps-C6-Google-Maps--c1ece--external-Google-Maps-links-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1897625,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/651b58bb09b3338ccc886ba2bd12339a095de928.png",
+      "ext": ".png",
+      "size_bytes": 1857065,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-c6-maps-C6-Google-Maps--b6d35--UI-when-API-key-is-missing-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1857065,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1830820,
+      "width": 1440,
+      "height": 2599
+    },
+    {
+      "path": "tests/p0/report/data/5b9b0b8a67dfd05116401fd0efda0c2007ef5760.png",
+      "ext": ".png",
+      "size_bytes": 1830820,
+      "width": 1440,
+      "height": 2599
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-1d893--galerie---desktop-viewport-chromium/galerie-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 1830820,
+      "width": 1440,
+      "height": 2599
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-tablet-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1755785,
+      "width": 895,
+      "height": 6293
+    },
+    {
+      "path": "tests/p0/report/data/f3cee2f08541bbbf4287fcebaa5f772f82e6d3ba.png",
+      "ext": ".png",
+      "size_bytes": 1755785,
+      "width": 895,
+      "height": 6293
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-e2c0c-ests-home---tablet-viewport-firefox/home-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 1755785,
+      "width": 895,
+      "height": 6293
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_5733.HEIC",
+      "ext": ".heic",
+      "size_bytes": 1703219,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/report/data/976d7437356083cc843c15efef0fdaea4890a9f6.png",
+      "ext": ".png",
+      "size_bytes": 1698294,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-r2-scroll-R2-Scroll-to--43bcc-sh-navigation-appropriately-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1698294,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "public/test-image.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/test.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/partner3.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/bar-icon.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/drinks-selection.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/SPRITYVARIATIONE.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/images/portfolio/test-1.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/images/artists/test-artist.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "public/images/services/test-1.jpg",
+      "ext": ".jpg",
+      "size_bytes": 1676372,
+      "width": 8640,
+      "height": 5760
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1660001,
+      "width": 895,
+      "height": 2110
+    },
+    {
+      "path": "tests/p0/report/data/76f53399aa878a6cec32fc96b2bc0dc5d8ae33bb.png",
+      "ext": ".png",
+      "size_bytes": 1660001,
+      "width": 895,
+      "height": 2110
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-82644-s-galerie---tablet-viewport-webkit/galerie-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 1660001,
+      "width": 895,
+      "height": 2110
+    },
+    {
+      "path": "tests/p0/report/data/f9d7b2276a5e57b192dbd20d7ff38b176d5a038e.png",
+      "ext": ".png",
+      "size_bytes": 1623766,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-aec29-menfeiern---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1623766,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/report/data/0a2b5be381d085ba8318f1e21dc318e7cb0bc795.png",
+      "ext": ".png",
+      "size_bytes": 1584658,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-5ef93-eistungen---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1584658,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/c6-07-responsive-tablet.png",
+      "ext": ".png",
+      "size_bytes": 1564172,
+      "width": 1790,
+      "height": 5474
+    },
+    {
+      "path": "tests/p0/artifacts/r2-05-services-scrolled-bottom.png",
+      "ext": ".png",
+      "size_bytes": 1560456,
+      "width": 2560,
+      "height": 3130
+    },
+    {
+      "path": "artifacts/gallery-page.png",
+      "ext": ".png",
+      "size_bytes": 1509297,
+      "width": 1280,
+      "height": 1827
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-tablet-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1508510,
+      "width": 895,
+      "height": 2111
+    },
+    {
+      "path": "tests/p0/report/data/3e1e7e48008e68a363d3a587206418767d43dcc0.png",
+      "ext": ".png",
+      "size_bytes": 1508510,
+      "width": 895,
+      "height": 2111
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-82644-s-galerie---tablet-viewport-firefox/galerie-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 1508510,
+      "width": 895,
+      "height": 2111
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/about-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1472874,
+      "width": 1440,
+      "height": 3742
+    },
+    {
+      "path": "tests/p0/report/data/e74842420f95c3b97c20c376f0806da3f1b33ec5.png",
+      "ext": ".png",
+      "size_bytes": 1472874,
+      "width": 1440,
+      "height": 3742
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ea193-ts-about---desktop-viewport-webkit/about-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 1472874,
+      "width": 1440,
+      "height": 3742
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1472368,
+      "width": 1440,
+      "height": 3927
+    },
+    {
+      "path": "tests/p0/report/data/8afd2c7af577458cad8b09fa6a082aef670a0794.png",
+      "ext": ".png",
+      "size_bytes": 1472368,
+      "width": 1440,
+      "height": 3927
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-aada2-ests-faq---desktop-viewport-webkit/faq-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 1472368,
+      "width": 1440,
+      "height": 3927
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-mobile-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1422997,
+      "width": 375,
+      "height": 9128
+    },
+    {
+      "path": "tests/p0/report/data/788e01f512344e88bfb6e4468b52580cd0d3eec5.png",
+      "ext": ".png",
+      "size_bytes": 1422997,
+      "width": 375,
+      "height": 9128
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-be2a2-ests-home---mobile-viewport-firefox/home-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 1422997,
+      "width": 375,
+      "height": 9128
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-mobile-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1379638,
+      "width": 375,
+      "height": 3663
+    },
+    {
+      "path": "tests/p0/report/data/73ff75367d9c592c9e01ae18babe13a45334a6c4.png",
+      "ext": ".png",
+      "size_bytes": 1379638,
+      "width": 375,
+      "height": 3663
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-295b9-s-galerie---mobile-viewport-chromium/galerie-mobile-expected.png",
+      "ext": ".png",
+      "size_bytes": 1379638,
+      "width": 375,
+      "height": 3663
+    },
+    {
+      "path": "tests/p0/artifacts/seo5-08-form-submitted.png",
+      "ext": ".png",
+      "size_bytes": 1375881,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/04740ccca5b94dbfd7f1a0cd8b616f8447a7e169.png",
+      "ext": ".png",
+      "size_bytes": 1362480,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-295b9-s-galerie---mobile-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1362480,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/report/data/53828d984b5c0b8a04d6aacd7f73c98e6b1f448b.png",
+      "ext": ".png",
+      "size_bytes": 1286495,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Component-Visual-Tests-Footer-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1286495,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "path": "tests/p0/report/data/1d3039a34cfc8efb29f3b7f9dcaf023a0e01f3cf.png",
+      "ext": ".png",
+      "size_bytes": 1265037,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-1d893--galerie---desktop-viewport-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1265037,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/report/data/fbd2b5faf8428e0120bc97bdbd90759ce30eb466.png",
+      "ext": ".png",
+      "size_bytes": 1253148,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-cda35-Tests-faq---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1253148,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-tablet-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1230246,
+      "width": 895,
+      "height": 2111
+    },
+    {
+      "path": "tests/p0/report/data/5c750219e7a11ee8f40442bfad9efdf1b2a98e49.png",
+      "ext": ".png",
+      "size_bytes": 1230246,
+      "width": 895,
+      "height": 2111
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-82644-s-galerie---tablet-viewport-chromium/galerie-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 1230246,
+      "width": 895,
+      "height": 2111
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/home-mobile-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1203947,
+      "width": 375,
+      "height": 9368
+    },
+    {
+      "path": "tests/p0/report/data/97fba2df30ae81c6c397321c8cd1870055a88f44.png",
+      "ext": ".png",
+      "size_bytes": 1203947,
+      "width": 375,
+      "height": 9368
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-be2a2-ests-home---mobile-viewport-chromium/home-mobile-expected.png",
+      "ext": ".png",
+      "size_bytes": 1203947,
+      "width": 375,
+      "height": 9368
+    },
+    {
+      "path": "tests/p0/report/data/46b98d8bb48b449a17d17a64eda4c34ede849fbc.png",
+      "ext": ".png",
+      "size_bytes": 1182061,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-7cfd8-ts-preise---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1182061,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/report/data/200cbc2c2b4057330652bfec7a389d397e25b135.png",
+      "ext": ".png",
+      "size_bytes": 1147481,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-1d893--galerie---desktop-viewport-chromium/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1147481,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Velo.Bar.JPG .TIFF",
+      "ext": ".tiff",
+      "size_bytes": 1140392,
+      "width": 750,
+      "height": 500
+    },
+    {
+      "path": "tests/p0/report/data/0f75f09471809adae3d44c3e4e25d982aa64b67b.png",
+      "ext": ".png",
+      "size_bytes": 1138269,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-r2-scroll-R2-Scroll-to--8c626-ng-from-services-to-gallery-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1138269,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/report/data/a573bb059903516009d4c573da06fb4975ef23d9.png",
+      "ext": ".png",
+      "size_bytes": 1138262,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-3170c-s-anfrage---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 1138262,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/firmenfeiern-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1136201,
+      "width": 1440,
+      "height": 1565
+    },
+    {
+      "path": "tests/p0/report/data/609d4804e5a338fbf37d26325e6452c37f8c4aa5.png",
+      "ext": ".png",
+      "size_bytes": 1136201,
+      "width": 1440,
+      "height": 1565
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-8cbc3-enfeiern---desktop-viewport-webkit/firmenfeiern-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 1136201,
+      "width": 1440,
+      "height": 1565
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/leistungen-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1119361,
+      "width": 1440,
+      "height": 1565
+    },
+    {
+      "path": "tests/p0/report/data/d76c3b00abc3f8d32b54c2bb99251e49f9afeee8.png",
+      "ext": ".png",
+      "size_bytes": 1119361,
+      "width": 1440,
+      "height": 1565
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-bf452-istungen---desktop-viewport-webkit/leistungen-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 1119361,
+      "width": 1440,
+      "height": 1565
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_0695.HEIC",
+      "ext": ".heic",
+      "size_bytes": 1112948,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/anfrage-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1048335,
+      "width": 1440,
+      "height": 2625
+    },
+    {
+      "path": "tests/p0/report/data/7dc96959d5ebc5e967e6ce7b42ccc95c68336892.png",
+      "ext": ".png",
+      "size_bytes": 1048335,
+      "width": 1440,
+      "height": 2625
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ba7c0--anfrage---desktop-viewport-webkit/anfrage-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 1048335,
+      "width": 1440,
+      "height": 2625
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 1025661,
+      "width": 1440,
+      "height": 3958
+    },
+    {
+      "path": "tests/p0/report/data/8f33b15026bb9176a56d99bdddaf67d7602951c6.png",
+      "ext": ".png",
+      "size_bytes": 989444,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-e2c0c-ests-home---tablet-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 989444,
+      "width": 1536,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/report/data/0b8763c3d26f6eb18cb7c68e63be189eeb46dbc5.png",
+      "ext": ".png",
+      "size_bytes": 958396,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-2e7a0-sts-about---mobile-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 958396,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "public/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1920w.webp",
+      "ext": ".webp",
+      "size_bytes": 958146,
+      "width": 1920,
+      "height": 2880
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_7783.HEIC",
+      "ext": ".heic",
+      "size_bytes": 955359,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-desktop-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 942815,
+      "width": 1440,
+      "height": 3981
+    },
+    {
+      "path": "tests/p0/report/data/d144160bf78b694552f34f5706eda389c73367f0.png",
+      "ext": ".png",
+      "size_bytes": 942815,
+      "width": 1440,
+      "height": 3981
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-aada2-ests-faq---desktop-viewport-firefox/faq-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 942815,
+      "width": 1440,
+      "height": 3981
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/about-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 938193,
+      "width": 1440,
+      "height": 3749
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/about-desktop-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 923928,
+      "width": 1440,
+      "height": 3749
+    },
+    {
+      "path": "tests/p0/report/data/df570ef34608c8a9962cd1dfaeaa0a9925a0b4db.png",
+      "ext": ".png",
+      "size_bytes": 923928,
+      "width": 1440,
+      "height": 3749
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ea193-ts-about---desktop-viewport-firefox/about-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 923928,
+      "width": 1440,
+      "height": 3749
+    },
+    {
+      "path": "public/Velo Gallery/private-feiern/private-feiern-1920w.webp",
+      "ext": ".webp",
+      "size_bytes": 893662,
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "path": "public/images/services/firmenfeier.jpg",
+      "ext": ".jpg",
+      "size_bytes": 893662,
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 882591,
+      "width": 895,
+      "height": 4717
+    },
+    {
+      "path": "tests/p0/report/data/90bef57c003eade7ceedfbabfc260c911315c225.png",
+      "ext": ".png",
+      "size_bytes": 882591,
+      "width": 895,
+      "height": 4717
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-cda35-Tests-faq---tablet-viewport-webkit/faq-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 882591,
+      "width": 895,
+      "height": 4717
+    },
+    {
+      "path": "tests/p0/artifacts/c6-07-responsive-mobile.png",
+      "ext": ".png",
+      "size_bytes": 871470,
+      "width": 750,
+      "height": 8484
+    },
+    {
+      "path": "tests/p0/report/data/4da64dd9a1cf4efaa34b8406148d138ea8521403.png",
+      "ext": ".png",
+      "size_bytes": 864562,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-r2-scroll-R2-Scroll-to--af087-r-with-browser-back-forward-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 864562,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "public/Velo Gallery/partner1.jpg",
+      "ext": ".jpg",
+      "size_bytes": 861283,
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "path": "public/Velo Gallery/A7401220-1920w.jpg",
+      "ext": ".jpg",
+      "size_bytes": 861283,
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "path": "tests/p0/report/data/d7840d972b323a3a4e4872f7c7020a7c67585555.png",
+      "ext": ".png",
+      "size_bytes": 841350,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/artifacts/p0-r2-scroll-R2-Scroll-to--c80c8-gating-from-home-to-gallery-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 841350,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/preise-desktop-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 838935,
+      "width": 1440,
+      "height": 2354
+    },
+    {
+      "path": "tests/p0/report/data/d45e0140cd086ccdd0b0ea42409d879639b17c28.png",
+      "ext": ".png",
+      "size_bytes": 838935,
+      "width": 1440,
+      "height": 2354
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-7bef4-s-preise---desktop-viewport-webkit/preise-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 838935,
+      "width": 1440,
+      "height": 2354
+    },
+    {
+      "path": "tests/p0/report/data/5a66b1bffb506ba030a30f9e089532f285fb3310.png",
+      "ext": ".png",
+      "size_bytes": 822349,
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-82644-s-galerie---tablet-viewport-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 822349,
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/1d4a0f80-a847-4418-a8e0-004c4582a2a0.JPG",
+      "ext": ".jpg",
+      "size_bytes": 806199,
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "path": "tests/p0/report/data/473ec6377154b79f9a30f777024a39cc74be10a2.png",
+      "ext": ".png",
+      "size_bytes": 789911,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Compo-b7021-ion-bar---mobile-hamburger--webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 789911,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-mobile-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 786624,
+      "width": 375,
+      "height": 3135
+    },
+    {
+      "path": "tests/p0/report/data/2d6b01387daf5954d7be6b467095f015e140a895.png",
+      "ext": ".png",
+      "size_bytes": 786624,
+      "width": 375,
+      "height": 3135
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-295b9-s-galerie---mobile-viewport-webkit/galerie-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 786624,
+      "width": 375,
+      "height": 3135
+    },
+    {
+      "path": "tests/p0/report/data/1d5003a0047fb148a04bb9a0601ce78f8f95f952.png",
+      "ext": ".png",
+      "size_bytes": 779428,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-be2a2-ests-home---mobile-viewport-webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 779428,
+      "width": 750,
+      "height": 1624
+    },
+    {
+      "path": "tests/p0/report/data/eaef551364ffef04b062c2971e7ce978fcd0c88c.png",
+      "ext": ".png",
+      "size_bytes": 775487,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ea193-ts-about---desktop-viewport-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 775487,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/report/data/0dc61851173b44647e62a2f2d6bc44f18f477d63.png",
+      "ext": ".png",
+      "size_bytes": 770314,
+      "width": 750,
+      "height": 1600
+    },
+    {
+      "path": "tests/p0/artifacts/p0-p1-navigation-P0-Core-n-b4935-g-on-mobile-menu-selectors--webkit/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 770314,
+      "width": 750,
+      "height": 1600
+    },
+    {
+      "path": "public/Velo Gallery/wedding-bar.jpg",
+      "ext": ".jpg",
+      "size_bytes": 765562,
+      "width": 2048,
+      "height": 1534
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/Hochzeiten.JPG",
+      "ext": ".jpg",
+      "size_bytes": 765562,
+      "width": 2048,
+      "height": 1534
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-tablet-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 760909,
+      "width": 895,
+      "height": 4779
+    },
+    {
+      "path": "tests/p0/report/data/41d283460176be715cd076a9e9ee670b1f92824e.png",
+      "ext": ".png",
+      "size_bytes": 760909,
+      "width": 895,
+      "height": 4779
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-cda35-Tests-faq---tablet-viewport-firefox/faq-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 760909,
+      "width": 895,
+      "height": 4779
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/A7401419.jpg",
+      "ext": ".jpg",
+      "size_bytes": 757761,
+      "width": 1365,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/galerie-mobile-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 754467,
+      "width": 375,
+      "height": 3146
+    },
+    {
+      "path": "tests/p0/report/data/7180ba42d6807b8648342ad14dc363f96e4e43c0.png",
+      "ext": ".png",
+      "size_bytes": 754467,
+      "width": 375,
+      "height": 3146
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-295b9-s-galerie---mobile-viewport-firefox/galerie-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 754467,
+      "width": 375,
+      "height": 3146
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/A7401220.jpg",
+      "ext": ".jpg",
+      "size_bytes": 739847,
+      "width": 2048,
+      "height": 1365
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/about-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 737143,
+      "width": 895,
+      "height": 3283
+    },
+    {
+      "path": "tests/p0/report/data/012e9745ef60f9c6704bf34b3831e0593cbe2b65.png",
+      "ext": ".png",
+      "size_bytes": 737143,
+      "width": 895,
+      "height": 3283
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-c4afc-sts-about---tablet-viewport-webkit/about-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 737143,
+      "width": 895,
+      "height": 3283
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/A7401318.jpg",
+      "ext": ".jpg",
+      "size_bytes": 734052,
+      "width": 1365,
+      "height": 2048
+    },
+    {
+      "path": "tests/p0/report/data/ab4bc646cf71aa64bf0602be63f6724c09c27d55.png",
+      "ext": ".png",
+      "size_bytes": 733611,
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-82644-s-galerie---tablet-viewport-chromium/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 733611,
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/pricing-cards-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 704527,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/report/data/f7e8b622776a807da05696445fedc32baf52a688.png",
+      "ext": ".png",
+      "size_bytes": 704527,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Component-Visual-Tests-Pricing-cards-webkit/pricing-cards-actual.png",
+      "ext": ".png",
+      "size_bytes": 704527,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/report/data/b19b8819daf7f0fe05ab0536f3d4f782a7bde5e6.png",
+      "ext": ".png",
+      "size_bytes": 699164,
+      "width": 375,
+      "height": 9368
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-be2a2-ests-home---mobile-viewport-chromium/home-mobile-diff.png",
+      "ext": ".png",
+      "size_bytes": 699164,
+      "width": 375,
+      "height": 9368
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-tablet-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 689129,
+      "width": 895,
+      "height": 4754
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_3839.jpg",
+      "ext": ".jpg",
+      "size_bytes": 677930,
+      "width": 1133,
+      "height": 1278
+    },
+    {
+      "path": "public/images/team/Loui.jpg",
+      "ext": ".jpg",
+      "size_bytes": 677930,
+      "width": 1133,
+      "height": 1278
+    },
+    {
+      "path": "public/images/artists/loui.jpg",
+      "ext": ".jpg",
+      "size_bytes": 677930,
+      "width": 1133,
+      "height": 1278
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-mobile-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 675023,
+      "width": 375,
+      "height": 7563
+    },
+    {
+      "path": "tests/p0/report/data/79e3b4ff59dde3cd70c45d90699664508e4140ed.png",
+      "ext": ".png",
+      "size_bytes": 675023,
+      "width": 375,
+      "height": 7563
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-476aa-Tests-faq---mobile-viewport-webkit/faq-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 675023,
+      "width": 375,
+      "height": 7563
+    },
+    {
+      "path": "public/Velo Gallery/hochzeit/hochzeiten-1920w.webp",
+      "ext": ".webp",
+      "size_bytes": 674854,
+      "width": 1920,
+      "height": 1438
+    },
+    {
+      "path": "public/images/services/hochzeit.jpg",
+      "ext": ".jpg",
+      "size_bytes": 674854,
+      "width": 1920,
+      "height": 1438
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/leistungen-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 668119,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/firmenfeiern-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 668119,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/report/data/a106d147469159b30aa83796b610fb2ba909f6f0.png",
+      "ext": ".png",
+      "size_bytes": 668119,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-8cbc3-enfeiern---desktop-viewport-chromium/firmenfeiern-desktop-expected.png",
+      "ext": ".png",
+      "size_bytes": 668119,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-bf452-istungen---desktop-viewport-chromium/leistungen-desktop-expected.png",
+      "ext": ".png",
+      "size_bytes": 668119,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/report/data/46ecea4d0cf763bc1a02f20da02e393893089b95.png",
+      "ext": ".png",
+      "size_bytes": 667392,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-8cbc3-enfeiern---desktop-viewport-chromium/firmenfeiern-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 667392,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-bf452-istungen---desktop-viewport-chromium/leistungen-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 667392,
+      "width": 1440,
+      "height": 1567
+    },
+    {
+      "path": "tests/p0/report/data/48fd6e81efe327d432bc399c7c7cf930eb9d65e0.png",
+      "ext": ".png",
+      "size_bytes": 664818,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-f66a8--gallery-interaction-events-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 664818,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/anfrage-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 661823,
+      "width": 1440,
+      "height": 2635
+    },
+    {
+      "path": "tests/p0/report/data/8e9d82815cfe544e307602235e1c36c8df1a44c1.png",
+      "ext": ".png",
+      "size_bytes": 661823,
+      "width": 1440,
+      "height": 2635
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ba7c0--anfrage---desktop-viewport-chromium/anfrage-desktop-expected.png",
+      "ext": ".png",
+      "size_bytes": 661823,
+      "width": 1440,
+      "height": 2635
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-mobile-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 658691,
+      "width": 375,
+      "height": 7634
+    },
+    {
+      "path": "tests/p0/report/data/dca1cd8652de0a703bbfc1bae319d4bff138c7d4.png",
+      "ext": ".png",
+      "size_bytes": 658691,
+      "width": 375,
+      "height": 7634
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-476aa-Tests-faq---mobile-viewport-firefox/faq-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 658691,
+      "width": 375,
+      "height": 7634
+    },
+    {
+      "path": "tests/p0/report/data/441dec3a7c3bc67d2d96464ef0e875981bd444f6.png",
+      "ext": ".png",
+      "size_bytes": 653182,
+      "width": 1440,
+      "height": 2634
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ba7c0--anfrage---desktop-viewport-chromium/anfrage-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 653182,
+      "width": 1440,
+      "height": 2634
+    },
+    {
+      "path": "tests/p0/report/data/33ac31728ab543afb7e8bf33ba45df4cdc048c86.png",
+      "ext": ".png",
+      "size_bytes": 631912,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "tests/p0/artifacts/p0-seo5-analytics-SEO5-GA4-f66a8--gallery-interaction-events-chromium/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 631912,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "tests/p0/report/data/54d49ac2f0dea34c886b8d825e45d39b28aec945.png",
+      "ext": ".png",
+      "size_bytes": 613310,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Inter-088aa-l-Tests-Button-hover-states-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 613310,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/firmenfeiern-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 610865,
+      "width": 895,
+      "height": 1869
+    },
+    {
+      "path": "tests/p0/report/data/b260fc8d149188b475f71e3e0f8dbd1d824e0045.png",
+      "ext": ".png",
+      "size_bytes": 610865,
+      "width": 895,
+      "height": 1869
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-aec29-menfeiern---tablet-viewport-webkit/firmenfeiern-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 610865,
+      "width": 895,
+      "height": 1869
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/leistungen-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 610437,
+      "width": 895,
+      "height": 1869
+    },
+    {
+      "path": "tests/p0/report/data/2065687399f0700e748d7f7974d63ca9711f6201.png",
+      "ext": ".png",
+      "size_bytes": 610437,
+      "width": 895,
+      "height": 1869
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-5ef93-eistungen---tablet-viewport-webkit/leistungen-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 610437,
+      "width": 895,
+      "height": 1869
+    },
+    {
+      "path": "tests/p0/report/data/b70b7eace1321742586a406561b7a5ac3db94780.png",
+      "ext": ".png",
+      "size_bytes": 598072,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-39ecd-sts-home---desktop-viewport-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 598072,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/report/data/633d24e2e6e04553f8b404a29fd4128ec44127b8.png",
+      "ext": ".png",
+      "size_bytes": 595404,
+      "width": 375,
+      "height": 3145
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-295b9-s-galerie---mobile-viewport-chromium/galerie-mobile-actual.png",
+      "ext": ".png",
+      "size_bytes": 595404,
+      "width": 375,
+      "height": 3145
+    },
+    {
+      "path": "tests/p0/report/data/c2238c78efcd40f519574032fbb13dd0c63561e3.png",
+      "ext": ".png",
+      "size_bytes": 589298,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Compo-bf17d-ts-Navigation-bar---desktop-firefox/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 589298,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/optimized/032B467F-3EC9-4C01-9B4D-C11C02CD8ED6.webp",
+      "ext": ".webp",
+      "size_bytes": 581082,
+      "width": 1919,
+      "height": 1080
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/preise-desktop-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 563455,
+      "width": 1440,
+      "height": 2363
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/anfrage-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 551025,
+      "width": 895,
+      "height": 2737
+    },
+    {
+      "path": "tests/p0/report/data/a7dc03e9c38cd2f6905fec13239a04fff206265e.png",
+      "ext": ".png",
+      "size_bytes": 551025,
+      "width": 895,
+      "height": 2737
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-3170c-s-anfrage---tablet-viewport-webkit/anfrage-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 551025,
+      "width": 895,
+      "height": 2737
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/optimized/9127B453-BD48-4C38-AE31-8963BB99F72D.webp",
+      "ext": ".webp",
+      "size_bytes": 544710,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/preise-tablet-webkit-darwin.png",
+      "ext": ".png",
+      "size_bytes": 543265,
+      "width": 895,
+      "height": 2588
+    },
+    {
+      "path": "tests/p0/report/data/78aa8c464cce36d3d98fff4817aff5f7a95e7ccf.png",
+      "ext": ".png",
+      "size_bytes": 543265,
+      "width": 895,
+      "height": 2588
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-7cfd8-ts-preise---tablet-viewport-webkit/preise-tablet-actual.png",
+      "ext": ".png",
+      "size_bytes": 543265,
+      "width": 895,
+      "height": 2588
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/faq-mobile-chromium-darwin.png",
+      "ext": ".png",
+      "size_bytes": 539198,
+      "width": 375,
+      "height": 7633
+    },
+    {
+      "path": "tests/p0/report/data/dbddc07066b8cc9889fe005a003f1a4c03a593c5.png",
+      "ext": ".png",
+      "size_bytes": 534458,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-bf452-istungen---desktop-viewport-chromium/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 534458,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/report/data/075d8b2c3faa95544d85e416080af0c640f0179e.png",
+      "ext": ".png",
+      "size_bytes": 533520,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-8cbc3-enfeiern---desktop-viewport-chromium/test-failed-1.png",
+      "ext": ".png",
+      "size_bytes": 533520,
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "path": "tests/p0/visual-regression.spec.ts-snapshots/anfrage-desktop-firefox-darwin.png",
+      "ext": ".png",
+      "size_bytes": 528391,
+      "width": 1440,
+      "height": 2635
+    },
+    {
+      "path": "tests/p0/report/data/a0ee5286e1b43026588e2ca85a1110c4ab9b3006.png",
+      "ext": ".png",
+      "size_bytes": 528391,
+      "width": 1440,
+      "height": 2635
+    },
+    {
+      "path": "tests/p0/artifacts/p0-visual-regression-Visua-ba7c0--anfrage---desktop-viewport-firefox/anfrage-desktop-actual.png",
+      "ext": ".png",
+      "size_bytes": 528391,
+      "width": 1440,
+      "height": 2635
+    }
+  ],
+  "missing_dimensions": [
+    {
+      "path": "public/assets/images/hero/business-hero.webp",
+      "ext": ".webp",
+      "size_bytes": 518,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/assets/images/photos/bar-team-interaction.webp",
+      "ext": ".webp",
+      "size_bytes": 518,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6652.HEIC",
+      "ext": ".heic",
+      "size_bytes": 1950445,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/74239695674__D57D2E8F-B2BE-4816-972E-57E7BEFCE2D4.HEIC",
+      "ext": ".heic",
+      "size_bytes": 4401068,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_1677.HEIC",
+      "ext": ".heic",
+      "size_bytes": 4158477,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6761.HEIC",
+      "ext": ".heic",
+      "size_bytes": 3644204,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_0695.HEIC",
+      "ext": ".heic",
+      "size_bytes": 1112948,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_7783.HEIC",
+      "ext": ".heic",
+      "size_bytes": 955359,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6654.HEIC",
+      "ext": ".heic",
+      "size_bytes": 3181336,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6646.HEIC",
+      "ext": ".heic",
+      "size_bytes": 2563370,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_5733.HEIC",
+      "ext": ".heic",
+      "size_bytes": 1703219,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/IMG_6077.HEIC",
+      "ext": ".heic",
+      "size_bytes": 2579974,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/Velo Gallery/gallery-carousel/private feiern.HEIC",
+      "ext": ".heic",
+      "size_bytes": 2823843,
+      "width": null,
+      "height": null
+    },
+    {
+      "path": "public/images/fallback/default-image.webp",
+      "ext": ".webp",
+      "size_bytes": 518,
+      "width": null,
+      "height": null
+    }
+  ]
+}

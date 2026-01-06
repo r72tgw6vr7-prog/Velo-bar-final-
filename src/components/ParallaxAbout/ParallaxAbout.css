@@ -1,0 +1,322 @@
+/**
+ * ParallaxAbout Styles
+ * Mobile-first responsive design with GSAP parallax scroll effects
+ */
+
+.parallax-about {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ============================================
+   HERO SECTION - Mobile First
+   ============================================ */
+
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-hero__content {
+  order: 1;
+  opacity: 0;
+  transform: translateY(40px);
+  padding: 1.5rem;
+}
+
+.about-hero__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--h1-weight);
+  line-height: var(--line-height-1-1);
+  margin-bottom: 1.5rem;
+  color: var(--color-accent-primary);
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: var(--body-lh);
+  color: #ffffff;
+  font-weight: var(--h2-weight);
+  max-width: 600px;
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.about-hero__images {
+  order: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.about-hero__image {
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  cursor: pointer;
+}
+
+.about-hero__image:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.about-hero__image:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* ============================================
+   STORY SECTIONS - Mobile First
+   ============================================ */
+
+.about-story {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-story__text {
+  order: 1;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.about-story--text-right .about-story__text {
+  transform: translateX(40px);
+}
+
+.about-story__heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-lh);
+  margin-bottom: 1.5rem;
+  color: var(--color-accent-primary);
+  letter-spacing: -0.01em;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.about-story__paragraph {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: var(--line-height-1-7);
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.about-story__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about-story__paragraph strong {
+  color: #ffffff;
+  font-weight: var(--h1-weight);
+}
+
+.about-story__image {
+  order: 2;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.about-story__image:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.about-story__image:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* ============================================
+   TABLET BREAKPOINT (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .about-hero {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 2rem;
+  }
+
+  .about-hero__content {
+    flex: 1;
+    order: 1;
+  }
+
+  .about-hero__images {
+    flex: 1;
+    order: 2;
+    gap: 1.5rem;
+  }
+
+  .about-hero__image {
+    border-radius: 20px;
+  }
+
+  .about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 5rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-story__text {
+    order: 1;
+  }
+
+  .about-story__image {
+    order: 2;
+    border-radius: 20px;
+  }
+
+  .about-story--text-right .about-story__text {
+    order: 2;
+  }
+
+  .about-story--text-right .about-story__image {
+    order: 1;
+  }
+}
+
+/* ============================================
+   DESKTOP BREAKPOINT (1024px+)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .about-hero {
+    padding: 6rem 3rem;
+    gap: 5rem;
+  }
+
+  .about-hero__title {
+    font-size: var(--font-size-3-5rem);
+  }
+
+  .about-hero__subtitle {
+    font-size: var(--font-size-1-25rem);
+  }
+
+  .about-hero__images {
+    gap: 2rem;
+  }
+
+  .about-hero__image {
+    border-radius: 24px;
+  }
+
+  .about-story {
+    padding: 6rem 3rem;
+    gap: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-story__heading {
+    font-size: var(--font-size-2-5rem);
+  }
+
+  .about-story__paragraph {
+    font-size: var(--font-size-1-125rem);
+  }
+
+  .about-story__image {
+    border-radius: 24px;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP BREAKPOINT (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .about-hero {
+    padding: 8rem 4rem;
+  }
+
+  .about-story {
+    padding: 8rem 4rem;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero__image,
+  .about-story__image {
+    transition: none;
+  }
+
+  .about-hero__content,
+  .about-story__text,
+  .about-story__image {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* GPU acceleration for smooth GSAP animations */
+.about-hero__image,
+.about-story__image,
+.about-hero__content,
+.about-story__text {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.about-hero__image:focus,
+.about-story__image:focus {
+  outline: 3px solid rgb(238, 120, 104);
+  outline-offset: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .about-hero__title,
+  .about-story__heading {
+    color: rgb(200, 80, 64);
+  }
+
+  .about-hero__image,
+  .about-story__image {
+    border: 2px solid rgb(51, 51, 51);
+  }
+}

@@ -1,0 +1,215 @@
+/* Home-New Page Unified Styling */
+/* Applies consistent premium theme across all sections */
+
+/* Base improvements for softer look */
+.home-new {
+  --surface-card: var(--surface-card-translucent);
+  --surface-card-subtle: var(--surface-card-translucent);
+  --color-bg-surface: var(--surface-card-translucent);
+  --private-card-scale: 1.2;
+}
+
+/* Unified card styling for all home-new cards */
+.home-new .home-new-card {
+  background: var(--surface-card-translucent) !important;
+  border: 1px solid var(--surface-card-border) !important;
+  border-radius: var(--radius-card) !important;
+  padding: var(--space-xl) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Allow inline border overrides for specific cards */
+.home-new .home-new-card[class*='border-['] {
+  border: inherit !important;
+}
+
+.home-new .home-new-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-card-hover) !important;
+  border-color: var(--surface-card-hover-border) !important;
+}
+
+/* Improved typography scale */
+.home-new .section-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  color: var(--color-coral);
+}
+
+.home-new .section-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-cream);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Hero improvements */
+.home-new .home-hero-title {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+}
+
+.home-new .home-hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-body-on-dark);
+}
+
+/* Service cards grid improvements */
+.home-new .animate-fade-up {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stats bar improvements */
+.home-new .text-coral {
+  color: var(--color-coral) !important;
+  font-weight: var(--font-weight-bold);
+}
+
+.home-new .text-navy {
+  color: var(--text-headline-on-light) !important;
+}
+
+/* Eyebrow scope improvements */
+.home-new .home-new-eyebrow-scope .bg-accent-primary\/10 {
+  background-color: var(--surface-card-translucent) !important;
+  color: var(--color-coral) !important;
+  border: 1px solid var(--surface-card-hover-border) !important;
+  border-radius: var(--radius-badge) !important;
+  padding: var(--space-sm) var(--space-lg) !important;
+  font-size: var(--font-size-small) !important;
+  font-weight: 500 !important;
+  box-shadow: var(--shadow-card-subtle) !important;
+}
+
+.home-new .home-new-eyebrow-scope .bg-accent-primary {
+  background-color: var(--color-coral) !important;
+  color: var(--cta-text) !important;
+  border: none !important;
+  border-radius: var(--radius-badge) !important;
+  padding: var(--space-xs) var(--space-md) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .home-new .section-title {
+    font-size: var(--font-size-h3);
+  }
+
+  .home-new .section-description {
+    font-size: 16px;
+  }
+
+  .home-new .home-new-card {
+    padding: var(--space-lg) !important;
+  }
+
+  .home-new .home-hero-title {
+    font-size: var(--font-size-h3);
+  }
+}
+
+@media (max-width: 767px) {
+  .home-new {
+    --private-card-scale: 1.35;
+  }
+
+  /* Service Cards Mobile Styling */
+  .home-new .service-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-xl) !important;
+  }
+
+  .home-new .service-card {
+    min-height: 400px !important;
+    max-width: 480px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .home-new .service-card__content {
+    padding: var(--space-xl) !important;
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .home-new .service-card__title {
+    font-size: var(--font-size-h3) !important;
+    line-height: var(--line-height-heading) !important;
+  }
+
+  .home-new .service-card__description {
+    font-size: var(--font-size-body) !important;
+    line-height: var(--line-height-body) !important;
+    max-width: 52ch;
+  }
+
+  /* Location Cards Mobile Styling */
+  .home-new .home-locations::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(var(--navy-primary-rgb), 0.55) 0%,
+      rgba(var(--navy-primary-rgb), 0.28) 60%,
+      rgba(var(--navy-primary-rgb), 0.18) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .home-new .home-locations > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-new .location-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-xl) !important;
+    scroll-snap-type: y mandatory;
+  }
+
+  .home-new .location-card {
+    /* Match Service card mobile sizing */
+    min-height: 400px !important;
+    max-width: 480px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    scroll-snap-align: start;
+  }
+
+  .home-new .location-card__content {
+    padding: var(--space-xl) !important;
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .home-new .location-card__title {
+    font-size: var(--font-size-h3) !important;
+    line-height: var(--line-height-heading) !important;
+  }
+
+  .home-new .location-card__description {
+    font-size: var(--font-size-body) !important;
+    line-height: var(--line-height-body) !important;
+    max-width: 52ch;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-new .home-new-card {
+    padding: var(--space-md) !important;
+  }
+}

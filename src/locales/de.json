@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "corporateEvents": "Firmenfeiern",
+    "christmasParties": "Weihnachtsfeiern",
+    "tradeShows": "Messe & Promotions",
+    "teamEvents": "Team-Events",
+    "weddings": "Hochzeiten",
+    "privateEvents": "Private Feiern",
+    "pricing": "Preise",
+    "gallery": "Galerie",
+    "drinks": "Drinks",
+    "about": "Über uns",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "requestQuote": "Jetzt anfragen",
+    "openMenu": "Navigationsmenü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "hero": {
+    "title": "Mobile Cocktailbar für Firmenevents",
+    "subtitle": "Premium Cocktail-Catering für Firmenfeiern, Messen und Corporate Events in München & Coburg",
+    "tagline": "Zuverlässig • Nachhaltig • Premium",
+    "cta": "Angebot anfordern",
+    "ctaSecondary": "Pakete ansehen"
+  },
+  "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Von Firmenfeiern über Messen bis hin zu privaten Events – wir bringen die Bar zu Ihnen",
+    "learnMore": "Mehr erfahren"
+  },
+  "stats": {
+    "events": "Events durchgeführt",
+    "guests": "Gäste pro Event",
+    "rating": "Google Bewertung",
+    "locations": "Standorte in Bayern"
+  },
+  "whyUs": {
+    "title": "Warum Velo.Bar?",
+    "professionalTeam": "Professionelles Team",
+    "professionalTeamDesc": "Erfahrene Barkeeper mit Leidenschaft für erstklassige Cocktails",
+    "flexibleBooking": "Flexible Buchung",
+    "flexibleBookingDesc": "Individuelle Pakete für Events von 20 bis 500+ Gäste",
+    "sustainable": "Nachhaltig",
+    "sustainableDesc": "CO₂-neutrale Fahrrad-Bar – ideal für ESG-bewusste Unternehmen"
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen"
+  },
+  "contact": {
+    "title": "Jetzt dein Event anfragen",
+    "subtitle": "Wir melden uns innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot",
+    "trustBadge1": "Antwort in 24h",
+    "trustBadge2": "500+ Events",
+    "trustBadge3": "4.9/5 Sterne"
+  },
+  "form": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "company": "Unternehmen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "eventType": "Event-Typ",
+    "eventDate": "Wunschtermin",
+    "guestCount": "Gästezahl",
+    "budget": "Budget",
+    "message": "Nachricht",
+    "privacy": "Ich stimme der Datenschutzerklärung zu",
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "successDetail": "Wir melden uns innerhalb von 24 Stunden bei dir."
+  },
+  "footer": {
+    "servicesTitle": "Leistungen",
+    "infoTitle": "Informationen",
+    "legalTitle": "Rechtliches",
+    "copyright": "© 2025 Velo.Bar. Alle Rechte vorbehalten.",
+    "madeWith": "Made with love in München & Coburg",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB"
+  },
+  "locations": {
+    "title": "Unsere Standorte",
+    "subtitle": "Mobile Cocktailbar für Events in München & Coburg",
+    "munich": "München & Umgebung",
+    "munichDesc": "Firmenfeiern, Messen und Events im Großraum München",
+    "coburg": "Coburg & Umgebung",
+    "coburgDesc": "Hochzeiten, Sommerfeste und Firmenevents in Oberfranken"
+  },
+  "cta": {
+    "requestQuote": "Angebot anfordern",
+    "learnMore": "Mehr erfahren",
+    "viewPackages": "Pakete ansehen",
+    "callNow": "Jetzt anrufen",
+    "whatsapp": "WhatsApp Chat"
+  },
+  "common": {
+    "perGuest": "pro Gast",
+    "from": "ab",
+    "hours": "Stunden",
+    "guests": "Gäste",
+    "included": "Inklusive",
+    "mostPopular": "Beliebtestes"
+  }
+}

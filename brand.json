@@ -1,0 +1,144 @@
+{
+  "name": "Velo.Bar",
+  "tagline": "Mobile Cocktailbar & Event Catering",
+  "locations": ["München & Umgebung", "Coburg & Umgebung"],
+  "founded": "2020/2021 (during COVID-19 pandemic)",
+  "funding": "Crowdfunding via Startnext",
+
+  "brand_identity": {
+    "personality": [
+      "Professional",
+      "Friendly ('Moin', 'Servus')",
+      "Passionate",
+      "Social",
+      "Mobile",
+      "Eco-conscious"
+    ],
+    "values": [
+      "Bringing bar culture to people during restrictions",
+      "Professional service",
+      "Personal touch",
+      "Sustainability (eco-system design)"
+    ],
+    "tone": "Casual, friendly, enthusiastic German (Du-Form), personal storytelling"
+  },
+
+  "logo": {
+    "primary": "Velo.Bar",
+    "hashtag": "#Velo.Bar",
+    "variations": ["Text-only logo", "Merch branding"],
+    "assets_needed": ["Logo SVG/PNG from Squarespace site", "Social media icons"]
+  },
+
+  "colors": {
+    "note": "Extracted from branding-kit/styles.css and https://www.velo-bar.com/",
+    "palette": {
+      "primary": "#000000",
+      "secondary": "#ffffff",
+      "accent_coral": "#ef7262",
+      "accent_gray": "#bbbbbb"
+    },
+    "usage": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "cta_accent": "#ef7262",
+      "muted_text": "#bbbbbb"
+    }
+  },
+
+  "typography": {
+    "note": "Extracted from branding-kit/styles.css",
+    "fonts": {
+      "primary": "proxima-nova",
+      "fallback": "sans-serif"
+    },
+    "scale": {
+      "large": {
+        "size": "20.5px",
+        "weight": "500",
+        "font": "proxima-nova",
+        "usage": "Headings, important text"
+      },
+      "base": {
+        "size": "16px",
+        "weight": "400",
+        "font": "sans-serif",
+        "usage": "Body text, paragraphs"
+      },
+      "small": {
+        "size": "12px",
+        "weight": "500",
+        "font": "proxima-nova",
+        "usage": "Labels, captions, secondary text"
+      }
+    }
+  },
+
+  "components": {
+    "buttons": {
+      "primary_cta": {
+        "text_examples": ["Jetzt anfragen!", "JETZT ANFRAGEN", "Jetzt anfragen", "Geht klar!"],
+        "style": "Prominent, likely rounded corners",
+        "color": "Accent color on dark background"
+      },
+      "secondary": {
+        "text_examples": ["Service- und Preisübersicht", "Hier gehts zu den Gin-Tastings"],
+        "style": "Less prominent than primary"
+      }
+    },
+    "cards": {
+      "service_cards": "Used for service offerings",
+      "product_cards": "SCHNELLANSICHT cards for shop items",
+      "image_gallery": "Grid layout for impressions/photos"
+    },
+    "forms": {
+      "booking_form": "Anfrage (contact/booking) form",
+      "newsletter": "Email signup",
+      "cookie_consent": "Geht klar! / Nein Danke!"
+    }
+  },
+
+  "imagery": {
+    "hero_images": [
+      "Mobile bar on bicycle/cargo bike",
+      "Bartenders Lars and Sebastian",
+      "Bar setup at events",
+      "Cocktails being prepared"
+    ],
+    "gallery_images": [
+      "DSC08454.JPG - Bar details",
+      "DSC08457.JPG - Event setup",
+      "DSC08461.JPG - Service in action",
+      "DSC08531.JPG, DSC08571.JPG, DSC08640.JPG, DSC08679.JPG - Event impressions",
+      "DSC01995.JPG, DSC02002.JPG, DSC02013.JPG, DSC02026.JPG - More event photos",
+      "DSC02560.jpg - Lars portrait",
+      "DSC02469.jpg - Sebastian portrait"
+    ],
+    "product_images": ["Merch items (hoodies, shirts, caps)", "Mobile bar setup photos"],
+    "image_pattern": "Professional event photography, candid service shots, product photography for shop"
+  },
+
+  "social_media": {
+    "instagram": "https://www.instagram.com/velo.bar/",
+    "facebook": "https://www.facebook.com/VeloBar-100601028666847",
+    "linkedin": "https://www.linkedin.com/company/velo-bar/?viewAsMember=true",
+    "hashtag": "#Velo.Bar"
+  },
+
+  "contact": {
+    "form": "https://www.velo-bar.com/anfrage or /anfragen",
+    "primary_cta": "Jetzt anfragen!",
+    "booking_munich": "https://www.velo-bar.com/velobar/buchungmuc",
+    "booking_coburg": "https://www.velo-bar.com/velobarco"
+  },
+
+  "key_differentiators": [
+    "Truly mobile (bicycle/cargo bike based)",
+    "Self-contained ecosystem (water tanks, cooling, battery-powered)",
+    "No electricity or water connection needed",
+    "Professional bartenders (Lars & Sebastian)",
+    "Personal, friendly service",
+    "Born during COVID to bring bar culture to people's homes",
+    "Crowdfunded startup"
+  ]
+}

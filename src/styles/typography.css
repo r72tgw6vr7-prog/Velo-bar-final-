@@ -1,0 +1,285 @@
+/**
+ * Typography Utility Classes
+ * ==========================
+ * Unified font: Source Sans Pro (similar to Velo.Bar's proxima-nova)
+ * Fallback: proxima-nova, sans-serif
+ */
+@layer utilities {
+  .typo-h1 {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xl);
+  }
+
+  .typo-h2 {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .typo-h3 {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.005em;
+    margin-bottom: var(--space-md);
+  }
+
+  .typo-h4 {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--space-sm);
+  }
+
+  .typo-body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--text-body-on-light);
+  }
+
+  .vb-body {
+    @apply text-base leading-relaxed text-[rgb(0,30,50)] md:text-lg;
+  }
+
+  .typo-body-large {
+    font-family: var(--font-family-base);
+    font-size: calc(var(--font-size-body) * 1.25);
+    line-height: var(--line-height-body);
+  }
+
+  .typo-body-small {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-body);
+  }
+
+  .typo-subtitle {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--text-body-on-light);
+    max-width: var(--container-narrow);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .typo-subtitle-large {
+    font-family: var(--font-family-base);
+    font-size: calc(var(--font-size-body) * 1.125);
+    line-height: var(--line-height-body);
+    color: var(--text-body-on-light);
+    max-width: var(--container-narrow);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .typo-lead {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--text-body-on-light);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .label-hero {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .label-section {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .label-badge {
+    font-family: var(--font-family-base);
+    font-size: calc(var(--font-size-small) * 0.85);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .label-inline {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .text-price {
+    font-family: var(--font-family-base);
+    font-size: 48px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+  }
+
+  .text-price-large {
+    font-family: var(--font-family-base);
+    font-size: 64px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+  }
+
+  .text-price-small {
+    font-family: var(--font-family-base);
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+  }
+
+  /* ===========================================
+     TEXT COLORS FOR GRADIENT BACKGROUND
+     Light cream top → dark teal bottom
+     =========================================== */
+
+  /* Headlines on light (cream) background - deep teal for max contrast */
+  .text-headline-light {
+    color: var(--text-headline-on-light);
+  }
+
+  /* Headlines on dark (teal) background - cream */
+  .text-headline-dark {
+    color: var(--text-headline-on-dark);
+  }
+
+  /* Body text on light background - dark teal */
+  .text-body-light {
+    color: var(--text-body-on-light);
+  }
+
+  /* Body text on dark background - softened cream */
+  .text-body-dark {
+    color: var(--text-body-on-dark);
+  }
+
+  /* Muted/secondary text - medium teal @ 70% */
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  /* Legacy utility classes - keep for backwards compatibility */
+  .text-primary {
+    color: var(--color-text-on-dark);
+  }
+
+  .text-secondary {
+    color: var(--color-text-on-dark-secondary);
+  }
+
+  .text-tertiary {
+    color: var(--color-text-on-dark-tertiary);
+  }
+
+  .text-accent {
+    color: var(--color-accent-primary);
+  }
+
+  .text-success {
+    color: var(--color-success-green);
+  }
+
+  .text-error {
+    color: var(--color-error-red);
+  }
+
+  .text-warning {
+    color: var(--color-accent-secondary);
+  }
+
+  /* Text alignment */
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  /* Text weight utilities */
+  .font-light {
+    font-weight: var(--font-weight-light);
+  }
+
+  .font-normal {
+    font-weight: var(--font-weight-normal);
+  }
+
+  .font-medium {
+    font-weight: var(--font-weight-medium);
+  }
+
+  .font-semibold {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .font-bold {
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* Text transform */
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .text-lowercase {
+    text-transform: lowercase;
+  }
+
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+
+  /* Text decoration */
+  .text-underline {
+    text-decoration: underline;
+  }
+
+  .text-line-through {
+    text-decoration: line-through;
+  }
+
+  /* List styles */
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-inline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-inline li {
+    display: inline-block;
+    margin-right: var(--space-sm);
+  }
+
+  .list-inline li:last-child {
+    margin-right: 0;
+  }
+}

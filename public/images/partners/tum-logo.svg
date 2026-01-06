@@ -1,0 +1,7 @@
+<svg width="320" height="96" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>TUM</title>
+  <rect x="8" y="8" width="304" height="80" rx="20" stroke="currentColor" stroke-opacity="0.35" stroke-width="6"/>
+  <path d="M72 70V34H112" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M136 70V34L160 52L184 34V70" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M208 70V34H248V70" stroke="currentColor" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

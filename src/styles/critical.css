@@ -1,0 +1,161 @@
+/*
+ * CRITICAL CSS - Above-the-fold styles only
+ * This file contains only the essential styles needed for initial render
+ * to eliminate render-blocking and improve FCP/LCP
+ */
+
+/* Critical: Reset and base styles */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  font-family: 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+  font-display: swap;
+  color: #fff8ec;
+  background-color: #003141;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+/* Critical: Brand colors for immediate render */
+:root {
+  --color-teal: #003141;
+  --color-coral: #ee7868;
+  --color-cream: #fff8ec;
+  --color-gold: #fab81d;
+  --text-on-dark: #fff8ec;
+  --text-on-light: #003141;
+  --cta-bg: #ee7868;
+  --cta-text: #fff8ec;
+}
+
+/* Critical: Navigation styles (above-the-fold) */
+nav, header {
+  background-color: var(--color-teal);
+  position: relative;
+  z-index: 100;
+}
+
+/* Critical: Hero section layout */
+.hero-section, 
+[class*="hero"], 
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-teal) 100%);
+}
+
+/* Critical: Typography for above-the-fold content */
+h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: var(--text-on-light);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.625rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+/* Critical: Button styles for CTAs */
+button, 
+.btn, 
+[class*="button"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--cta-bg);
+  color: var(--cta-text);
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(238, 120, 104, 0.3);
+}
+
+/* Critical: Container and layout */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Critical: Hide non-essential content initially */
+.defer-load {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Critical: Loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Critical: Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+  
+  button, .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Critical: Focus states for accessibility */
+button:focus,
+.btn:focus,
+a:focus {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+}
+
+/* Critical: Prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Critical: Background gradient base */
+.bg-guardian-hero {
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-teal) 100%);
+}

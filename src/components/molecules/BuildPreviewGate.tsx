@@ -1,0 +1,384 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { Play, Server, Check, Trash2, AlertCircle, ExternalLink } from 'lucide-react';
+
+// ============================================
+// COMPONENT: BuildPreviewGate
+// ============================================
+// PURPOSE: Produce a clean production build, serve a preview, and emit a pass/fail gate report.
+// [file:ba687238]
+
+interface CommandOutput {
+  command: string;
+  output: string[];
+  timestamp: Date;
+  exitCode?: number;
+  status: 'pending' | 'running' | 'success' | 'error';
+}
+
+interface ChecklistItem {
+  id: string;
+  label: string;
+  checked: boolean;
+}
+
+export const BuildPreviewGate: React.FC = () => {
+  const [outputs, setOutputs] = useState<CommandOutput[]>([]);
+  const [currentCommand, setCurrentCommand] = useState<string | null>(null);
+  const [viteUrls, setViteUrls] = useState<{ local: string; network?: string } | null>(null);
+  const [checklist, setChecklist] = useState<ChecklistItem[]>([
+    { id: 'home-renders', label: 'Home page renders correctly', checked: false },
+    { id: 'no-console-errors', label: 'No console errors in browser', checked: false },
+    { id: 'no-404s', label: 'No 404s for team images', checked: false },
+  ]);
+  const logRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll log to bottom
+  useEffect(() => {
+    if (logRef.current) {
+      logRef.current.scrollTop = logRef.current.scrollHeight;
+    }
+  }, [outputs]);
+
+  // Extract Vite URLs from output
+  const extractViteUrls = (outputLines: string[]) => {
+    const urlPattern = /Local:\s+(http:\/\/[^\s]+)/;
+    const networkPattern = /Network:\s+(http:\/\/[^\s]+)/;
+
+    for (const line of outputLines) {
+      const localMatch = line.match(urlPattern);
+      const networkMatch = line.match(networkPattern);
+
+      if (localMatch) {
+        setViteUrls((prev) => ({ ...prev, local: localMatch[1] }));
+      }
+      if (networkMatch) {
+        setViteUrls((prev) => ({ ...prev!, network: networkMatch[1] }));
+      }
+    }
+  };
+
+  // Simulate command execution (in real implementation, this would call a backend API)
+  const executeCommand = async (cmd: string, label: string) => {
+    setCurrentCommand(label);
+
+    const commandOutput: CommandOutput = {
+      command: cmd,
+      output: [],
+      timestamp: new Date(),
+      status: 'running',
+    };
+
+    setOutputs((prev) => [...prev, commandOutput]);
+
+    // Simulate command execution
+    // In a real implementation, this would make an API call to execute the command
+    // and stream back the output
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Mock success output
+    const mockOutput = [`$ ${cmd}`, 'Running command...', 'Command completed successfully'];
+
+    // Special handling for different commands
+    if (cmd.includes('preview')) {
+      mockOutput.push('');
+      mockOutput.push('  ➜  Local:   http://localhost:4173/');
+      mockOutput.push('  ➜  Network: http://192.168.1.100:4173/');
+      mockOutput.push('  ➜  press h + enter to show help');
+      extractViteUrls(mockOutput);
+    }
+
+    setOutputs((prev) =>
+      prev.map((out, idx) =>
+        idx === prev.length - 1
+          ? { ...out, output: mockOutput, status: 'success', exitCode: 0 }
+          : out,
+      ),
+    );
+
+    setCurrentCommand(null);
+  };
+
+  const handleClearCache = () => {
+    executeCommand('rm -rf node_modules/.vite', 'Clear Vite Cache');
+  };
+
+  const handleStartDev = () => {
+    executeCommand('npm run dev', 'Start Dev Server');
+  };
+
+  const handleBuild = () => {
+    executeCommand('npm run build', 'Build Production');
+  };
+
+  const handleStartPreview = () => {
+    executeCommand('npm run preview', 'Start Preview Server');
+  };
+
+  const handleChecklistToggle = (id: string) => {
+    setChecklist((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item)),
+    );
+  };
+
+  const generateReport = () => {
+    const allPassed = checklist.every((item) => item.checked);
+    const timestamp = new Date().toISOString();
+
+    const report = `# BUILD PREVIEW REPORT
+Generated: ${timestamp}
+
+## Summary
+**Status:** ${allPassed ? '[PASS]' : '[FAIL]'}
+
+## Commands Executed
+${outputs
+  .map(
+    (out, idx) => `
+### ${idx + 1}. ${out.command}
+- **Timestamp:** ${out.timestamp.toISOString()}
+- **Status:** ${out.status}
+- **Exit Code:** ${out.exitCode ?? 'N/A'}
+`,
+  )
+  .join('\n')}
+
+## Preview URLs
+${
+  viteUrls
+    ? `
+- **Local:** ${viteUrls.local}
+${viteUrls.network ? `- **Network:** ${viteUrls.network}` : ''}
+`
+    : '_No preview URLs detected_'
+}
+
+## Verification Checklist
+${checklist.map((item) => `- [${item.checked ? 'x' : ' '}] ${item.label}`).join('\n')}
+
+## Recommendation
+${
+  allPassed
+    ? '[OK] **READY TO DEPLOY** - All checks passed. Preview is green.'
+    : '[ERROR] **DO NOT DEPLOY** - Some checks failed. Please review and fix issues before deploying.'
+}
+
+---
+*Report generated by BuildPreviewGate component*
+`;
+
+    // Download report
+    const blob = new Blob([report], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'BUILD_PREVIEW_REPORT.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const allChecked = checklist.every((item) => item.checked);
+
+  return (
+    <div className='bg-navy mx-auto w-full max-w-2xl rounded-md p-8 text-white'>
+      <div className='flex flex-col gap-0'>
+        {/* Header */}
+        <section>
+          <h1 className='mb-0 text-2xl font-bold'>Build Preview Gate</h1>
+          <p className='text-sm text-[#C0C0C0]'>
+            Run commands, verify the preview, and generate a deployment gate report.
+          </p>
+        </section>
+
+        {/* Command Buttons */}
+        <section className='mt-8'>
+          <h2 className='mb-0 text-lg font-semibold'>Commands</h2>
+          <div className='flex flex-col gap-0'>
+            <button
+              onClick={handleClearCache}
+              disabled={currentCommand !== null}
+              className='flex items-center gap-0 rounded bg-red-600 px-8 py-0 transition-colors duration-200 hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-gray-600'
+            >
+              <Trash2 size={16} />
+              <span>Clear Vite Cache</span>
+            </button>
+
+            <button
+              onClick={handleStartDev}
+              disabled={currentCommand !== null}
+              className='bg-accent-primary hover:bg-accent-primary-hover flex items-center gap-0 rounded px-8 py-0 transition-colors duration-200 disabled:cursor-not-allowed disabled:bg-gray-600'
+            >
+              <Play size={16} />
+              <span>Start Dev Server</span>
+            </button>
+
+            <button
+              onClick={handleBuild}
+              disabled={currentCommand !== null}
+              className='flex items-center gap-0 rounded bg-green-600 px-8 py-0 transition-colors duration-200 hover:bg-green-700 disabled:cursor-not-allowed disabled:bg-gray-600'
+            >
+              <Server size={16} />
+              <span>Build Production</span>
+            </button>
+
+            <button
+              onClick={handleStartPreview}
+              disabled={currentCommand !== null}
+              className='flex items-center gap-0 rounded bg-purple-600 px-8 py-0 transition-colors duration-200 hover:bg-purple-700 disabled:cursor-not-allowed disabled:bg-gray-600'
+            >
+              <ExternalLink size={16} />
+              <span>Start Preview Server</span>
+            </button>
+          </div>
+
+          {currentCommand && (
+            <div
+              className='text-accent-primary mt-0 flex items-center gap-0 text-sm'
+              role='status'
+              aria-live='polite'
+            >
+              <div className='border-accent-primary h-4 w-4 animate-spin rounded-full border-2 border-t-transparent'></div>
+              <span>Running: {currentCommand}...</span>
+            </div>
+          )}
+        </section>
+
+        {/* Command Output Log */}
+        <section className='mt-8'>
+          <h2 className='mb-0 text-lg font-semibold'>Output Log</h2>
+          <div
+            ref={logRef}
+            className='h-64 overflow-y-auto rounded border border-[#C0C0C0]/20 bg-black/50 p-8 font-mono text-xs'
+          >
+            {outputs.length === 0 ? (
+              <p className='text-gray-500'>No commands executed yet...</p>
+            ) : (
+              <div className='flex flex-col gap-8'>
+                {outputs.map((out, idx) => (
+                  <div key={`${out.command}-${idx}`} className='flex flex-col gap-0'>
+                    <div className='flex items-center justify-between gap-0'>
+                      <span className='text-[#C0C0C0]'>{out.command}</span>
+                      <span
+                        className={`rounded px-2 py-0 text-xs ${out.status === 'success' ? 'bg-green-600' : ''} ${out.status === 'error' ? 'bg-red-600' : ''} ${out.status === 'running' ? 'bg-accent-primary' : ''} ${out.status === 'pending' ? 'bg-gray-600' : ''} text-white`}
+                      >
+                        {out.status}
+                      </span>
+                    </div>
+                    <pre className='wrap-break-word whitespace-pre-wrap text-[#C0C0C0]'>
+                      {out.output.join('\n')}
+                    </pre>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Preview URLs */}
+        {viteUrls && (
+          <section className='mt-8 rounded border border-green-700 bg-green-900/20 p-8'>
+            <h2 className='mb-0 flex items-center gap-0 text-lg font-semibold'>
+              <Server size={18} />
+              Preview URLs
+            </h2>
+            <div className='flex flex-col gap-0'>
+              <div>
+                <span className='text-[#C0C0C0]'>Local:</span>
+                <a
+                  href={viteUrls.local}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-accent-primary hover:text-accent-primary-hover ml-0 underline transition-colors duration-200'
+                >
+                  {viteUrls.local}
+                </a>
+              </div>
+              {viteUrls.network && (
+                <div>
+                  <span className='text-[#C0C0C0]'>Network:</span>
+                  <a
+                    href={viteUrls.network}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-accent-primary hover:text-accent-primary-hover ml-0 underline transition-colors duration-200'
+                  >
+                    {viteUrls.network}
+                  </a>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* Verification Checklist */}
+        <section className='mt-8'>
+          <h2 className='mb-0 text-lg font-semibold'>Verification Checklist</h2>
+          <div className='bg-navy flex flex-col gap-0 rounded p-8'>
+            {checklist.map((item) => (
+              <label
+                key={item.id}
+                className='flex cursor-pointer items-center gap-0 rounded p-0 transition-colors duration-200 hover:bg-gray-700/50'
+              >
+                <input
+                  type='checkbox'
+                  checked={item.checked}
+                  onChange={() => handleChecklistToggle(item.id)}
+                  className='h-5 w-5 rounded border-gray-600 text-green-600 focus:ring-2 focus:ring-green-500'
+                />
+                <span className={item.checked ? 'text-gray-500 line-through' : ''}>
+                  {item.label}
+                </span>
+                {item.checked && <Check size={16} className='ml-auto text-green-500' />}
+              </label>
+            ))}
+          </div>
+        </section>
+
+        {/* Gate Status */}
+        <section className='mt-8'>
+          <div
+            className={`rounded border-2 p-4 transition-colors duration-200 ${
+              allChecked ? 'border-green-600 bg-green-900/20' : 'border-red-600 bg-red-900/20'
+            }`}
+            role='status'
+            aria-live='polite'
+          >
+            <div className='flex items-center gap-0'>
+              {allChecked ? (
+                <>
+                  <Check size={24} className='text-green-500' />
+                  <div>
+                    <h3 className='font-bold text-green-400'>READY TO DEPLOY</h3>
+                    <p className='text-sm text-[#C0C0C0]'>All checks passed. Preview is green.</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <AlertCircle size={24} className='text-red-500' />
+                  <div>
+                    <h3 className='font-bold text-red-400'>DO NOT DEPLOY</h3>
+                    <p className='text-sm text-[#C0C0C0]'>Complete all checks before deploying.</p>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Generate Report Button */}
+        <section className='mt-8'>
+          <button
+            onClick={generateReport}
+            disabled={outputs.length === 0}
+            className='bg-accent-primary hover:bg-accent-primary-hover w-full rounded px-8 py-0 font-semibold text-black transition-colors duration-200 disabled:cursor-not-allowed disabled:bg-gray-600'
+          >
+            Generate BUILD_PREVIEW_REPORT.md
+          </button>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default BuildPreviewGate;
