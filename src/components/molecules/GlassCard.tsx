@@ -42,19 +42,29 @@ export const GlassCard: React.FC<GlassCardProps> = ({
     heavy: 'card card--featured',
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (onClick && (event.key === 'Enter' || event.key === ' ')) {
       event.preventDefault();
       onClick();
     }
   };
 
+  const interactiveProps: Pick<
+    React.HTMLAttributes<HTMLDivElement>,
+    'onClick' | 'onKeyDown' | 'role' | 'tabIndex'
+  > =
+    onClick != null
+      ? {
+          onClick,
+          onKeyDown: handleKeyDown,
+          role: 'button',
+          tabIndex: 0,
+        }
+      : {};
+
   return (
     <div
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
-      role={onClick ? 'button' : undefined}
-      tabIndex={onClick ? 0 : undefined}
+      {...interactiveProps}
       className={cn(
         variantClasses[variant],
         paddingClasses[padding],

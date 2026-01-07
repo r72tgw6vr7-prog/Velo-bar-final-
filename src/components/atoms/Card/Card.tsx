@@ -147,7 +147,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
     // Handle keyboard interaction
     const isClickable = !!onClick;
-    const cardRole = isClickable ? 'button' : role;
+    const cardRole = isClickable ? role ?? 'button' : role;
     const cardTabIndex = tabIndex !== undefined ? tabIndex : isClickable ? 0 : undefined;
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -156,6 +156,22 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         onClick?.();
       }
     };
+
+    const interactiveProps: Pick<
+      React.HTMLAttributes<HTMLDivElement>,
+      'onClick' | 'role' | 'tabIndex' | 'onKeyDown'
+    > =
+      isClickable && onClick
+        ? {
+            onClick,
+            role: cardRole,
+            tabIndex: cardTabIndex,
+            onKeyDown: handleKeyDown,
+          }
+        : {
+            role: cardRole,
+            tabIndex: cardTabIndex,
+          };
 
     // Compose all CSS classes
     const classes = [
@@ -202,10 +218,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={classes}
-        onClick={onClick}
-        role={cardRole}
-        tabIndex={cardTabIndex}
-        onKeyDown={isClickable ? handleKeyDown : undefined}
+        {...interactiveProps}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         aria-describedby={ariaDescribedBy}

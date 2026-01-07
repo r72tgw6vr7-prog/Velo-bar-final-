@@ -5,13 +5,6 @@
 
 /* eslint-disable no-console -- performance monitor emits console diagnostics and recovery suggestions when thresholds are exceeded */
 
-// Add type declaration for Vite's import.meta.env
-interface ImportMetaEnv {
-  DEV: boolean;
-  PROD: boolean;
-  MODE: string;
-}
-
 interface PerformanceMetrics {
   pageLoadTime: number;
   componentMountTime: number;

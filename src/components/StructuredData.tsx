@@ -1,10 +1,45 @@
 import React from 'react';
 import { env } from '../lib/env';
 
-interface StructuredDataProps {
-  type: 'organization' | 'local-business' | 'article' | 'service' | 'person';
-  data?: Record<string, any>;
+export interface ArticleSchemaData {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
 }
+
+export interface ServiceOffer {
+  '@type'?: 'Offer';
+  name: string;
+  description?: string;
+  price?: string;
+  priceCurrency?: string;
+  url?: string;
+}
+
+export interface ServiceSchemaData {
+  name: string;
+  description: string;
+  offers?: ServiceOffer[];
+}
+
+export interface PersonSchemaData {
+  name: string;
+  jobTitle?: string;
+  description: string;
+  image?: string;
+  specialties?: string[];
+  portfolioUrl?: string;
+}
+
+type StructuredDataProps =
+  | { type: 'organization' }
+  | { type: 'local-business' }
+  | { type: 'article'; data: ArticleSchemaData }
+  | { type: 'service'; data: ServiceSchemaData }
+  | { type: 'person'; data: PersonSchemaData };
 
 // --- Multi-location JSON-LD graph ---
 const organizationId = `${env.VITE_SITE_URL}/#organization`;
@@ -75,82 +110,88 @@ const coburgLocalBusiness = {
   openingHours: env.VITE_COBURG_OPENING_HOURS,
 };
 
-const structuredDataTemplates = {
-  organization: baseOrganization,
-  'local-business': munichLocalBusiness,
-
-  article: (data: any) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: data.title,
-    description: data.description,
-    image: data.image,
-    author: {
-      '@type': 'Organization',
-      name: env.VITE_BUSINESS_NAME || 'Velo.Bar – Mobile Cocktailbar & Event Catering',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: env.VITE_BUSINESS_NAME || 'Velo.Bar – Mobile Cocktailbar & Event Catering',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${env.VITE_SITE_URL}/velo.svg`,
-      },
-    },
-    datePublished: data.datePublished,
-    dateModified: data.dateModified || data.datePublished,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': data.url,
-    },
-  }),
-
-  service: (data: any) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: data.name,
-    description: data.description,
-    provider: baseOrganization,
-    areaServed: {
-      '@type': 'City',
-      name: env.VITE_BUSINESS_CITY,
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: data.name,
-      itemListElement: data.offers || [],
-    },
-  }),
-
-  person: (data: any) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: data.name,
-    jobTitle: data.jobTitle || 'Software Engineer',
-    description: data.description,
-    image: data.image,
-    worksFor: {
-      '@type': 'Organization',
-      name: env.VITE_BUSINESS_NAME,
-    },
-    knowsAbout: data.specialties || ['Mobile Cocktailbar', 'Event Catering', 'Mixology'],
-    url: data.portfolioUrl,
-  }),
-};
+function buildStructuredData(props: StructuredDataProps) {
+  switch (props.type) {
+    case 'organization':
+    case 'local-business':
+      return {
+        '@context': 'https://schema.org',
+        '@graph': [baseOrganization, munichLocalBusiness, coburgLocalBusiness],
+      };
+    case 'article': {
+      const data = props.data;
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: data.title,
+        description: data.description,
+        image: data.image,
+        author: {
+          '@type': 'Organization',
+          name: env.VITE_BUSINESS_NAME || 'Velo.Bar – Mobile Cocktailbar & Event Catering',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: env.VITE_BUSINESS_NAME || 'Velo.Bar – Mobile Cocktailbar & Event Catering',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${env.VITE_SITE_URL}/velo.svg`,
+          },
+        },
+        datePublished: data.datePublished,
+        dateModified: data.dateModified || data.datePublished,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': data.url,
+        },
+      };
+    }
+    case 'service': {
+      const data = props.data;
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: data.name,
+        description: data.description,
+        provider: baseOrganization,
+        areaServed: {
+          '@type': 'City',
+          name: env.VITE_BUSINESS_CITY,
+        },
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: data.name,
+          itemListElement: data.offers || [],
+        },
+      };
+    }
+    case 'person': {
+      const data = props.data;
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: data.name,
+        jobTitle: data.jobTitle || 'Software Engineer',
+        description: data.description,
+        image: data.image,
+        worksFor: {
+          '@type': 'Organization',
+          name: env.VITE_BUSINESS_NAME,
+        },
+        knowsAbout: data.specialties || ['Mobile Cocktailbar', 'Event Catering', 'Mixology'],
+        url: data.portfolioUrl,
+      };
+    }
+    default: {
+      const exhaustiveCheck: never = props;
+      return exhaustiveCheck;
+    }
+  }
+}
 
 // Outputs a JSON-LD graph with Organization, München, and Coburg
-export default function StructuredData({ type, data = {} }: StructuredDataProps) {
-  let structuredData;
-  if (type === 'organization' || type === 'local-business') {
-    structuredData = {
-      '@context': 'https://schema.org',
-      '@graph': [baseOrganization, munichLocalBusiness, coburgLocalBusiness],
-    };
-  } else {
-    const template = structuredDataTemplates[type];
-    structuredData =
-      typeof template === 'function' ? template(data) : { ...(template as object), ...data };
-  }
+export default function StructuredData(props: StructuredDataProps) {
+  const structuredData = buildStructuredData(props);
   return (
     <script
       type='application/ld+json'
@@ -171,28 +212,14 @@ export function LocalBusinessSchema() {
   return <StructuredData type='local-business' />;
 }
 
-export function ArticleSchema(props: {
-  title: string;
-  description: string;
-  image: string;
-  url: string;
-  datePublished: string;
-  dateModified?: string;
-}) {
+export function ArticleSchema(props: ArticleSchemaData) {
   return <StructuredData type='article' data={props} />;
 }
 
-export function ServiceSchema(props: { name: string; description: string; offers?: any[] }) {
+export function ServiceSchema(props: ServiceSchemaData) {
   return <StructuredData type='service' data={props} />;
 }
 
-export function PersonSchema(props: {
-  name: string;
-  jobTitle?: string;
-  description: string;
-  image?: string;
-  specialties?: string[];
-  portfolioUrl?: string;
-}) {
+export function PersonSchema(props: PersonSchemaData) {
   return <StructuredData type='person' data={props} />;
 }

@@ -23,10 +23,10 @@
 import CardDefault from '@/components/atoms/Card';
 
 // Named re-exports for backward compatibility (preserve molecules API)
-export const Card = CardDefault as any;
-export const CardHeader = (CardDefault as any).Header;
-export const CardContent = (CardDefault as any).Body;
-export const CardFooter = (CardDefault as any).Footer;
+export const Card = CardDefault;
+export const CardHeader = CardDefault.Header;
+export const CardContent = CardDefault.Body;
+export const CardFooter = CardDefault.Footer;
 
 // Default export for backward compatibility
-export default CardDefault as any;
+export default CardDefault;

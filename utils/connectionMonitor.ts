@@ -5,11 +5,16 @@
 
 /* eslint-disable no-console -- connection monitor intentionally logs status changes and slow/failed checks for diagnostics */
 
-// Add type declaration for Vite's import.meta.env
-interface ImportMetaEnv {
-  DEV: boolean;
-  PROD: boolean;
-  MODE: string;
+import React from 'react';
+
+type ImportMetaWithEnv = ImportMeta & { env?: { DEV?: boolean } };
+
+function isDevEnvironment(): boolean {
+  try {
+    return Boolean((import.meta as ImportMetaWithEnv).env?.DEV);
+  } catch {
+    return false;
+  }
 }
 
 class ConnectionMonitor {
@@ -27,7 +32,7 @@ class ConnectionMonitor {
       window.addEventListener('online', () => {
         this.isOnline = true;
         this.notifyListeners(true);
-        if (import.meta.env.DEV) {
+        if (isDevEnvironment()) {
           console.log('Connection restored');
         }
       });
@@ -35,7 +40,7 @@ class ConnectionMonitor {
       window.addEventListener('offline', () => {
         this.isOnline = false;
         this.notifyListeners(false);
-        if (import.meta.env.DEV) {
+        if (isDevEnvironment()) {
           console.warn('Connection lost');
         }
       });
@@ -61,7 +66,7 @@ class ConnectionMonitor {
       const start = performance.now();
 
       // Try to fetch a small resource to test connection speed
-      const response = await fetch('/favicon.ico', {
+      await fetch('/favicon.ico', {
         cache: 'no-cache',
         mode: 'no-cors',
       });

@@ -71,8 +71,7 @@ test.describe('R2: Scroll to Top on Navigation', () => {
 
     // Scroll to bottom
     await helpers.scrollToBottom();
-    const bottomPosition = await helpers.getScrollPosition();
-    expect(bottomPosition.y).toBeGreaterThan(300);
+    await expect.poll(async () => (await helpers.getScrollPosition()).y).toBeGreaterThan(300);
 
     await helpers.takeScreenshot('r2-05-services-scrolled-bottom', true);
 
@@ -126,8 +125,11 @@ test.describe('R2: Scroll to Top on Navigation', () => {
 
     // Navigate and scroll on mobile
     await helpers.scrollToBottom();
-    const bottomPosition = await helpers.getScrollPosition();
-
+    await helpers.getScrollPosition();
+    await expect.poll(async () => {
+      const position = await helpers.getScrollPosition();
+      return position.y;
+    }).toBeGreaterThan(200);
     await helpers.takeScreenshot('r2-08-mobile-scrolled-bottom', true);
 
     // Navigate to different page
@@ -160,7 +162,11 @@ test.describe('R2: Scroll to Top on Navigation', () => {
 
     // Start at home, scroll down
     await helpers.scrollToBottom();
-    const homeBottomPosition = await helpers.getScrollPosition();
+    await helpers.getScrollPosition();
+    await expect.poll(async () => {
+      const position = await helpers.getScrollPosition();
+      return position.y;
+    }).toBeGreaterThan(200);
 
     // Navigate to gallery
     await page.locator('nav a[href="/galerie"], nav a[href*="galerie"]').first().click();
