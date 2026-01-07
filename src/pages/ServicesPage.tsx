@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section';
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import { HeroHeading } from '@/components/ui/HeroHeading';

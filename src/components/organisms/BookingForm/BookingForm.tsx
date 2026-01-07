@@ -7,7 +7,7 @@
  * Keeps existing validation, CSRF handling, and accessibility.
  */
 
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, type SubmitErrorHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input, Button, Textarea, Select } from '@/components/atoms';
 import { useState } from 'react';
@@ -140,7 +140,7 @@ export function BookingForm({ className = '' }: BookingFormProps) {
   };
 
   // Track validation errors via react-hook-form's onInvalid
-  const onInvalid = (formErrors: any) => {
+  const onInvalid: SubmitErrorHandler<BookingFormValues> = () => {
     trackForm?.error && trackForm.error('booking', 'validation');
     trackForm?.submitted && trackForm.submitted('booking', false);
     setLastError('Bitte prüfen Sie die Eingaben.');

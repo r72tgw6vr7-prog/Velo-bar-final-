@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Button } from '@/components/atoms/Button';
 import { Link } from 'react-router-dom';
 import { SuccessStories } from '@/components/organisms/SuccessStories';

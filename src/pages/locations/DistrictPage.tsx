@@ -7,7 +7,7 @@
 
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Button } from '@/components/atoms/Button';
 import { Breadcrumbs } from '@/components/atoms/Breadcrumbs';
 import {

@@ -7,7 +7,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section';
 import { Button } from '@/components/atoms/Button/Button';
 import { ArrowRight, Check, ChevronDown, Clock, Phone } from 'lucide-react';

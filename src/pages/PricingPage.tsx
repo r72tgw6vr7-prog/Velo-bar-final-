@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section';
 import { HeroHeading } from '@/components/ui/HeroHeading';
 import { FinalCTA } from '@/components/FinalCTA';

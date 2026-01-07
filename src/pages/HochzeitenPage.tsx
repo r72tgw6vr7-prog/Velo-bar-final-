@@ -7,7 +7,7 @@
 import React from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
 import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { getServicePagePackages } from '@/content/servicePagePackages';
 import { serviceFAQs, serviceTestimonials } from '@/data/services';
 
