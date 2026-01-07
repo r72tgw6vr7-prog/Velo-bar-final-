@@ -13,6 +13,7 @@ export default defineConfig({
     sitemap({
       hostname: 'https://www.velobar.de',
       dynamicRoutes: routes,
+      generateRobotsTxt: false, // Prevent conflict with manual robots.txt
     }),
     // Gzip compression for production
     viteCompression({
