@@ -28,9 +28,9 @@ import { cn } from '@/utils/classname.ts';
 import { resolvePublicPath, publicHas } from '@/utils/resolvePublicPath.ts';
 
 /**
- * Responsive image breakpoints
+ * Responsive image breakpoints - optimized for mobile-first, remove oversized 1920w
  */
-const RESPONSIVE_WIDTHS = [320, 640, 1024, 1920] as const;
+const RESPONSIVE_WIDTHS = [256, 320, 640, 1024] as const;
 
 /**
  * ResponsiveImage props

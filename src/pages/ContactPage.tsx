@@ -10,12 +10,15 @@
  * - Trust indicators
  */
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Section } from '@/components/atoms/Section/Section.tsx';
-import { BookingWizard } from '@/components/organisms/BookingWizard/BookingWizard.tsx';
 import { ExpressQuote } from '@/components/molecules/ExpressQuote/ExpressQuote.tsx';
 import { Phone, Star, MessageCircle, Calendar, Users } from 'lucide-react';
+
+const BookingWizard = React.lazy(() => 
+  import('@/components/organisms/BookingWizard/BookingWizard.tsx')
+);
 
 export const ContactPage: React.FC = () => {
   return (
@@ -85,7 +88,13 @@ export const ContactPage: React.FC = () => {
           <div className='mx-auto w-full max-w-5xl'>
             <div className='w-full'>
               <ExpressQuote className='mb-4 w-full' />
-              <BookingWizard className='w-full' />
+              <Suspense fallback={
+                <div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg flex items-center justify-center">
+                  <div className="text-gray-500">Laden...</div>
+                </div>
+              }>
+                <BookingWizard className='w-full' />
+              </Suspense>
             </div>
           </div>
         </Section>

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import * as React from 'react';
-import { Suspense, useState, lazy } from 'react';
+import { Suspense, useState, lazy, useEffect } from 'react';
 
 // Lazy load all page components for code splitting (default exports)
 const HomePage = lazy(() => import('./pages/HomePage.tsx'));
@@ -67,6 +67,19 @@ function App() {
 
   // Check if in development mode to show accessibility tools
   const isDev = import.meta.env.DEV;
+
+  // Register service worker in production
+  useEffect(() => {
+    if ('serviceWorker' in navigator && import.meta.env.PROD) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('SW registered: ', registration);
+        })
+        .catch((registrationError) => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    }
+  }, []);
 
   // Key press handler for accessibility audit tool (Alt+Shift+A)
   React.useEffect(() => {

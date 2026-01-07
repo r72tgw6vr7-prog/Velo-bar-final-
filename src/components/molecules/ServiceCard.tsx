@@ -180,21 +180,21 @@ export default ServiceCard;
 // Example usage for VeloBar services:
 //
 // <ServiceCard
-//   imageUrl="/images/services/firmenfeier.jpg"
+//   imageUrl="/test-assets/test-image.jpg"
 //   title="Firmenfeiern"
 //   description="Professioneller Barservice für Ihre Firmenevents - von kleinen Team-Events bis zu großen Firmenfeiern."
 //   ctaUrl="/firmenfeiern"
 // />
 //
 // <ServiceCard
-//   imageUrl="/images/services/messe.jpg"
+//   imageUrl="/test-assets/test-image.jpg"
 //   title="Messe & Promotions"
 //   description="Mobile Bars für Messestände und Promotion-Events - wir bringen das Hospitality-Erlebnis zu Ihren Kunden."
 //   ctaUrl="/messe-catering"
 // />
 //
 // <ServiceCard
-//   imageUrl="/images/services/hochzeit.jpg"
+//   imageUrl="/test-assets/test-image.jpg"
 //   title="Hochzeiten"
 //   description="Unvergessliche Cocktails für den schönsten Tag in Ihrem Leben - professionell und stilvoll."
 //   ctaUrl="/hochzeiten"

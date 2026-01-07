@@ -161,8 +161,10 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
     });
 
     // Cleanup: mm.revert() handles all animations created inside matchMedia
+    // Also kill any remaining ScrollTriggers to prevent memory leaks
     return () => {
       mm.revert();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 

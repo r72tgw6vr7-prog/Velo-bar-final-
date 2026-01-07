@@ -51,12 +51,35 @@ export default function Meta({
 
       {/* Homepage specific preload for hero LCP */}
       {canonicalPath === '/' && (
-        <link
-          rel='preload'
-          as='image'
-          href='/Velo%20Gallery/mobile-bar-hero.jpg'
-          fetchPriority='high'
-        />
+        <>
+          <link
+            rel='preload'
+            as='image'
+            href='/Velo%20Gallery/mobile-bar-hero-640w.webp'
+            fetchPriority='high'
+          />
+          <link
+            rel='prefetch'
+            as='image'
+            href='/Velo%20Gallery/gallery-carousel/weihnachstfeier-320w.webp'
+          />
+        </>
+      )}
+
+      {/* Gallery page specific prefetches */}
+      {canonicalPath === '/galerie' && (
+        <>
+          <link
+            rel='prefetch'
+            as='image'
+            href='/Velo%20Gallery/gallery-carousel/TeamEvent%20und%20Workshops-320w.webp'
+          />
+          <link
+            rel='prefetch'
+            as='image'
+            href='/Velo%20Gallery/gallery-carousel/Firmenfeier-320w.webp'
+          />
+        </>
       )}
 
       {/* Hreflang alternate links */}

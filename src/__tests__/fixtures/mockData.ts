@@ -45,7 +45,7 @@ export const mockArtist: Artist = {
   portfolio: [
     {
       id: 'img-1',
-      src: '/images/portfolio/test-1.jpg',
+      src: '/test-assets/test-image.jpg',
       alt: 'Test artwork 1',
       category: 'realism',
     },
@@ -73,7 +73,7 @@ export const mockArtists: Artist[] = [
  */
 export const mockGalleryImage: GalleryImage = {
   id: 'gallery-1',
-  src: '/Velo Gallery/event-1.jpg',
+  src: '/Velo Gallery/event-1-640w.webp',
   alt: 'Test project screenshot',
   category: 'realism',
   artist: 'Test Artist',

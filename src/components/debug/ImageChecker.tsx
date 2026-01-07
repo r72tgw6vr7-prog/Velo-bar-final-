@@ -19,9 +19,9 @@ export const ImageChecker: React.FC = () => {
   useEffect(() => {
     const imagesToCheck = [
       // canonical representative images (artists/team assets removed)
-      '/Velo Gallery/mobile-bar-hero.jpg',
+      '/Velo Gallery/mobile-bar-hero-640w.webp',
       '/Velo Gallery/drinks-selection.jpg',
-      '/Velo Gallery/event-1.jpg',
+      '/Velo Gallery/event-1-640w.webp',
     ];
 
     const checkImage = async (url: string): Promise<ImageCheckResult> => {

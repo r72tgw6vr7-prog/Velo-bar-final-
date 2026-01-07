@@ -24,7 +24,7 @@ const scatteredPhotos: PhotoFrame[] = [
   // Top area (10vh-25vh)
   {
     id: 'p1',
-    src: '/Velo Gallery/mobile-bar-hero',
+    src: '/Velo Gallery/mobile-bar-hero-640w',
     alt: 'Mobile bar',
     width: 160,
     height: 120,
@@ -44,7 +44,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p3',
-    src: '/Velo Gallery/event-1',
+    src: '/Velo Gallery/event-1-640w',
     alt: 'Event',
     width: 180,
     height: 130,
@@ -54,7 +54,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p4',
-    src: '/Velo Gallery/gin-tasting',
+    src: '/Velo Gallery/gin-tasting-640w',
     alt: 'Gin',
     width: 120,
     height: 120,
@@ -64,7 +64,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p5',
-    src: '/Velo Gallery/event-2',
+    src: '/Velo Gallery/event-2-640w',
     alt: 'Corporate',
     width: 150,
     height: 110,
@@ -86,7 +86,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p7',
-    src: '/Velo Gallery/event-3',
+    src: '/Velo Gallery/event-3-640w',
     alt: 'Barkeeper',
     width: 130,
     height: 130,
@@ -96,7 +96,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p8',
-    src: '/Velo Gallery/mobile-bar-setup',
+    src: '/Velo Gallery/mobile-bar-setup-640w',
     alt: 'Setup',
     width: 160,
     height: 120,
@@ -106,7 +106,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p9',
-    src: '/Velo Gallery/mobile-bar-hero',
+    src: '/Velo Gallery/mobile-bar-hero-640w',
     alt: 'Bar',
     width: 140,
     height: 140,
@@ -128,7 +128,7 @@ const scatteredPhotos: PhotoFrame[] = [
   // Lower area (45vh-70vh)
   {
     id: 'p11',
-    src: '/Velo Gallery/event-1',
+    src: '/Velo Gallery/event-1-640w',
     alt: 'Party',
     width: 150,
     height: 150,
@@ -138,7 +138,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p12',
-    src: '/Velo Gallery/gin-tasting',
+    src: '/Velo Gallery/gin-tasting-640w',
     alt: 'Tasting',
     width: 120,
     height: 120,
@@ -148,7 +148,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p13',
-    src: '/Velo Gallery/event-2',
+    src: '/Velo Gallery/event-2-640w',
     alt: 'Corporate',
     width: 160,
     height: 140,
@@ -168,7 +168,7 @@ const scatteredPhotos: PhotoFrame[] = [
   },
   {
     id: 'p15',
-    src: '/Velo Gallery/event-3',
+    src: '/Velo Gallery/event-3-640w',
     alt: 'Barkeeper',
     width: 170,
     height: 130,
@@ -189,7 +189,7 @@ export const HeroParallax = ({ className = '' }: HeroParallaxProps) => {
     scatteredPhotos.slice(10, 15),
   ];
 
-  const repeatCount = 4;
+  const repeatCount = 2;
 
   const getRepeatedRow = (row: PhotoFrame[]): PhotoFrame[] => {
     const repeated: PhotoFrame[] = [];
@@ -236,7 +236,7 @@ export const HeroParallax = ({ className = '' }: HeroParallaxProps) => {
                     sizes='160px'
                     className='h-full w-full'
                     priority={rowIndex === 0 && index === 0}
-                    fetchPriority={rowIndex === 0 && index === 0 ? 'high' : undefined}
+                    fetchPriority={rowIndex === 0 && index === 0 ? 'high' : 'low'}
                   />
                 </div>
               ))}
@@ -254,6 +254,8 @@ export const HeroParallax = ({ className = '' }: HeroParallaxProps) => {
                     alt={photo.alt}
                     sizes='160px'
                     className='h-full w-full'
+                    priority={false}
+                    fetchPriority='low'
                   />
                 </div>
               ))}

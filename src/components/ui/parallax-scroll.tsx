@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Button, ResponsiveImage } from '@/components/atoms/index.ts';
@@ -16,7 +17,8 @@ interface ParallaxScrollProps {
 }
 
 const BASE_COLUMNS = 4;
-const BATCH_SIZE = 15;
+const BATCH_SIZE = 8; // Reduced from 15 for better performance
+const MEMORY_UNLOAD_THRESHOLD = 1000; // px distance before unloading
 const ROWS_PER_BATCH = Math.max(1, Math.ceil(BATCH_SIZE / BASE_COLUMNS));
 
 const buildRows = (items: ParallaxImage[], columns: number) => {
@@ -61,7 +63,7 @@ const mergeForMobile = (columns: ParallaxImage[][], targetColumnCount: number) =
   return merged;
 };
 
-const Tile = ({ image }: { image: ParallaxImage }) => {
+const Tile = React.memo(({ image }: { image: ParallaxImage }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -76,7 +78,7 @@ const Tile = ({ image }: { image: ParallaxImage }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: '300px 0px', threshold: 0.15 },
+      { rootMargin: '150px 0px', threshold: 0.1 },
     );
 
     observer.observe(element);
@@ -98,7 +100,7 @@ const Tile = ({ image }: { image: ParallaxImage }) => {
       )}
     </div>
   );
-};
+});
 
 export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
   gsap.registerPlugin(ScrollTrigger);

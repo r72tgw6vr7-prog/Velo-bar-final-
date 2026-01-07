@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import type { ViteDevServer } from 'vite';
 import react from '@vitejs/plugin-react';
+import basicSsl from '@vitejs/plugin-basic-ssl';
 import path from 'node:path';
 import viteCompression from 'vite-plugin-compression';
 import type { IncomingMessage, ServerResponse } from 'node:http';
@@ -10,6 +11,7 @@ import { routes } from './src/ssg.routes.ts';
 export default defineConfig({
   plugins: [
     react(),
+    basicSsl(),
     sitemap({
       hostname: 'https://www.velobar.de',
       dynamicRoutes: routes,
@@ -226,16 +228,33 @@ export default defineConfig({
             return 'vendor';
           }
 
+          // Animation libraries - separate for lazy loading
+          if (id.includes('gsap')) {
+            return 'vendor-animations';
+          }
+          if (id.includes('framer-motion')) {
+            return 'vendor-framer';
+          }
+
           // Other vendor packages
           if (id.includes('node_modules')) {
             if (id.includes('@radix-ui')) {
               return 'vendor-radix';
             }
-            if (id.includes('framer-motion')) {
-              return 'vendor-framer';
-            }
             if (id.includes('lucide-react')) {
               return 'vendor-icons';
+            }
+            if (id.includes('date-fns')) {
+              return 'vendor-date';
+            }
+            if (id.includes('zod')) {
+              return 'vendor-validation';
+            }
+            if (id.includes('axios')) {
+              return 'vendor-http';
+            }
+            if (id.includes('react-day-picker')) {
+              return 'vendor-datepicker';
             }
             return 'vendor';
           }

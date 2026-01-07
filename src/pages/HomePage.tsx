@@ -106,7 +106,7 @@ export const HomePage = () => {
             <link
               rel='preload'
               as='image'
-              href='/Velo%20Gallery/mobile-bar-hero.jpg'
+              href='/Velo%20Gallery/mobile-bar-hero-640w.webp'
               fetchPriority='high'
             />
           </Helmet>

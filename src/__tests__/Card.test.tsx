@@ -96,13 +96,13 @@ describe('Card Component', () => {
 
   describe('Background Image', () => {
     it('renders with background image', () => {
-      const { container } = render(<Card backgroundImage='/test-image.jpg'>Content</Card>);
+      const { container } = render(<Card backgroundImage='/test-assets/test-image.jpg'>Content</Card>);
       const card = container.querySelector('.card') as HTMLElement;
       expect(card.style.backgroundImage).toContain('test-image.jpg');
     });
 
     it('applies background image styles', () => {
-      const { container } = render(<Card backgroundImage='/test.jpg'>Content</Card>);
+      const { container } = render(<Card backgroundImage='/test-assets/test-image.jpg'>Content</Card>);
       const card = container.querySelector('.card') as HTMLElement;
       expect(card.style.backgroundSize).toBe('cover');
       expect(card.style.backgroundPosition).toContain('center');
@@ -110,7 +110,7 @@ describe('Card Component', () => {
 
     it('renders overlay when specified with background image', () => {
       const { container } = render(
-        <Card backgroundImage='/test.jpg' overlay>
+        <Card backgroundImage='/test-assets/test-image.jpg' overlay>
           Content
         </Card>,
       );

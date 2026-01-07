@@ -198,18 +198,18 @@ describe('Card - Consolidated Component', () => {
   describe('Background Image', () => {
     it('should render with background image', () => {
       render(
-        <Card backgroundImage='/test-image.jpg' data-testid='bg-card'>
+        <Card backgroundImage='/test-assets/test-image.jpg' data-testid='bg-card'>
           Content
         </Card>,
       );
 
       const card = screen.getByTestId('bg-card');
-      expect(card.style.backgroundImage).toContain('/test-image.jpg');
+      expect(card.style.backgroundImage).toContain('/test-assets/test-image.jpg');
     });
 
     it('should render overlay when specified', () => {
       const { container } = render(
-        <Card backgroundImage='/test.jpg' overlay={true}>
+        <Card backgroundImage='/test-assets/test-image.jpg' overlay={true}>
           Content
         </Card>,
       );
