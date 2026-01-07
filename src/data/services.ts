@@ -12,13 +12,13 @@
  * @see {@link ../schemas/service.ts} for validation schemas
  */
 
-import type { ServicePackage, FAQ, Testimonial } from '@/components/templates/ServicePageLayout';
+import type { ServicePackage, FAQ, Testimonial } from '@/components/templates/ServicePageLayout.tsx';
 import {
   validateServicePackages,
   validateFAQs,
   validateTestimonials,
   formatValidationError,
-} from '@/schemas/service';
+} from '@/schemas/service.ts';
 
 // Enable/disable validation (set to false in production for performance)
 const ENABLE_VALIDATION = import.meta.env.DEV;

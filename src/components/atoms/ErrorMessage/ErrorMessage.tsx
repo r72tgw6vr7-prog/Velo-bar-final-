@@ -8,8 +8,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertCircle, XCircle, AlertTriangle, RefreshCw } from 'lucide-react';
-import { cn } from '@/utils/classname';
-import { errorAnimations } from '@/lib/animations/variants';
+import { cn } from '@/utils/classname.ts';
+import { errorAnimations } from '@/lib/animations/variants.ts';
 
 export type ErrorType = 'error' | 'warning' | 'info' | 'critical';
 

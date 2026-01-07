@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section } from '@/components/atoms/Section/Section';
-import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
-import { HeroHeading } from '@/components/ui/HeroHeading';
-import { ScrollReveal } from '@/components/atoms/ScrollReveal';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { StickyScroll } from '@/components/ui/sticky-scroll-reveal.tsx';
+import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
+import { ScrollReveal } from '@/components/atoms/ScrollReveal.tsx';
 
 type ServicesContentItem = {
   title: string;

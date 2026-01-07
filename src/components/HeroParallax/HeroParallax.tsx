@@ -5,7 +5,7 @@
  */
 
 import '@/styles/hero.css';
-import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata';
+import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
 
 interface PhotoFrame {
   id: string;

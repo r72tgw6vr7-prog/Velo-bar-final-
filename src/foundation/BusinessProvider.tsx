@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { designTokens } from '../design-tokens';
+import { designTokens } from '../design-tokens.ts';
 
 // Use the design tokens directly
 export const designSystemTokens = designTokens;

@@ -7,17 +7,17 @@
 
 import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section, Container } from '@/components/atoms';
-import { GridClean } from '@/components/atoms/Grid.clean';
-import { HeroLocked } from '@/sections/HeroLocked';
-import { getLocalBusinessSchema, getWebSiteSchema, combineSchemas } from '@/seo/schema';
-import { ClientLogos } from '@/sections/ClientLogos';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section, Container } from '@/components/atoms/index.ts';
+import { GridClean } from '@/components/atoms/Grid.clean.tsx';
+import { HeroLocked } from '@/sections/HeroLocked.tsx';
+import { getLocalBusinessSchema, getWebSiteSchema, combineSchemas } from '@/seo/schema.ts';
+import { ClientLogos } from '@/sections/ClientLogos.tsx';
 const WhyVeloBarSection = lazy(() =>
-  import('@/sections/WhyVeloBarSection').then((m) => ({ default: m.WhyVeloBarSection })),
+  import('@/sections/WhyVeloBarSection/WhyVeloBarSection.tsx').then((m) => ({ default: m.WhyVeloBarSection })),
 );
-import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata';
-import { FinalCTA } from '@/components/FinalCTA';
+import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
+import { FinalCTA } from '@/components/FinalCTA.tsx';
 import { Helmet } from 'react-helmet-async';
 import '@/styles/pages/home-new.css';
 import '@/styles/pages/home-new-unified.css';

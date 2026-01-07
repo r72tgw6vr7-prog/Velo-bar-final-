@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, useCallback, useRef } from 'react';
-import client, { ApiError } from './axiosClient';
+import client, { ApiError } from './axiosClient.ts';
 
 type QueryStatus = 'idle' | 'loading' | 'error' | 'success';
 

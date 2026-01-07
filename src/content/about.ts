@@ -1,4 +1,4 @@
-import type { AboutPageContent } from './types';
+import type { AboutPageContent } from './types.ts';
 
 export const aboutContent: AboutPageContent = {
   slug: 'about',

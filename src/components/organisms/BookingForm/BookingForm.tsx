@@ -9,18 +9,18 @@
 
 import { useForm, Controller, type SubmitErrorHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Input, Button, Textarea, Select } from '@/components/atoms';
+import { Input, Button, Textarea, Select } from '@/components/atoms/index.ts';
 import { useState } from 'react';
 // Use the stable toast wrapper so tests can mock it deterministically.
 // cn import removed as it's no longer needed
-import { toast } from '@/lib/toast';
+import { toast } from '@/lib/toast.ts';
 import { ArrowRight, User, Phone, Calendar, Clock, MessageCircle, ChevronDown } from 'lucide-react';
 import './BookingForm.css';
 import { Link } from 'react-router-dom';
-import { csrfFetch } from '@/lib/csrfHelper';
-import { bookingFormSchema, type BookingFormValues } from '@/lib/forms/schemas/booking';
-import { useAnalytics } from '@/hooks/useAnalytics';
-import { toContactPayloadFromSimple } from '@/lib/forms/transformers/booking';
+import { csrfFetch } from '@/lib/csrfHelper.ts';
+import { bookingFormSchema, type BookingFormValues } from '@/lib/forms/schemas/booking.ts';
+import { useAnalytics } from '@/hooks/useAnalytics.ts';
+import { toContactPayloadFromSimple } from '@/lib/forms/transformers/booking.ts';
 
 // Service and artist options (now event-focused, values kept simple)
 const serviceOptions = [

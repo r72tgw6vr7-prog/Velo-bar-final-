@@ -96,7 +96,7 @@ export const DevBlankScreenTriage: React.FC = () => {
   // Step 2: Verify mount chain
   const checkMountChain = async () => {
     updateStep('mount-check', { status: 'running' });
-    addLog('Checking mount chain (index.html -> main.tsx -> createRoot)...', 'info');
+    addLog('Checking mount chain (index.html -> main.ts-> createRoot)...', 'info');
 
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
@@ -105,7 +105,7 @@ export const DevBlankScreenTriage: React.FC = () => {
       indexHtml: {
         hasRootDiv: true,
         hasScript: true,
-        scriptPath: '/src/main.tsx',
+        scriptPath: '/src/main.ts,
       },
       mainTsx: {
         exists: true,
@@ -130,24 +130,24 @@ export const DevBlankScreenTriage: React.FC = () => {
       details.push(`[OK] index.html has <script src="${checks.indexHtml.scriptPath}"></script>`);
     }
 
-    // Check main.tsx
+    // Check main.ts
     if (!checks.mainTsx.exists) {
-      issues.push('main.tsx not found at /src/main.tsx');
+      issues.push('main.tsnot found at /src/main.ts);
     } else {
-      details.push('[OK] src/main.tsx exists');
+      details.push('[OK] src/main.tsexists');
     }
 
     if (!checks.mainTsx.hasCreateRoot) {
-      issues.push('main.tsx missing ReactDOM.createRoot() call');
+      issues.push('main.tsmissing ReactDOM.createRoot() call');
       details.push('[ERROR] Use: ReactDOM.createRoot(document.getElementById("root")!)');
     } else {
-      details.push('[OK] main.tsx uses createRoot()');
+      details.push('[OK] main.tsuses createRoot()');
     }
 
     if (!checks.mainTsx.hasRender) {
-      issues.push('main.tsx missing .render() call');
+      issues.push('main.tsmissing .render() call');
     } else {
-      details.push('[OK] main.tsx calls .render()');
+      details.push('[OK] main.tscalls .render()');
     }
 
     if (issues.length > 0) {
@@ -224,7 +224,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     updateStep('hello-test', {
       status: 'success',
       details: [
-        'Original main.tsx backed up to main.tsx.backup',
+        'Original main.tsbacked up to main.tsx.backup',
         'Swapped to minimal hello world:',
         testCode,
         '',
@@ -244,13 +244,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     addLog('↩️  Reverting to original main.tsx...', 'info');
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    addLog('$ mv src/main.tsx.backup src/main.tsx', 'info');
+    addLog('$ mv src/main.tsx.backup src/main.ts, 'info');
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     addLog('[OK] Original code restored', 'success');
     updateStep('hello-test', {
       status: 'success',
-      details: ['Original main.tsx restored from backup'],
+      details: ['Original main.tsrestored from backup'],
     });
   };
 
@@ -336,9 +336,9 @@ ${logs.map((log) => `- [${log.timestamp.toLocaleTimeString()}] ${log.message}`).
 2. **Verify File Structure**
    \`\`\`
    index.html (contains <div id="root"></div>)
-   └── <script type="module" src="/src/main.tsx"></script>
+   └── <script type="module" src="/src/main.ts></script>
    
-   src/main.tsx (contains):
+   src/main.ts(contains):
    └── ReactDOM.createRoot(document.getElementById('root')!).render(...)
    \`\`\`
 

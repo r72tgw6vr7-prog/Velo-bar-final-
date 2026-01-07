@@ -3,8 +3,8 @@
  */
 
 import React from 'react';
-import { PageHeader } from '@/components/atoms/PageHeader';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageHeader } from '@/components/atoms/PageHeader.tsx';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 
 interface ImpressumPageProps {
   language?: 'DE' | 'EN';

@@ -4,15 +4,15 @@
  * Development-only dashboard for monitoring Web Vitals in real-time.
  * Shows Core Web Vitals metrics and performance status.
  *
- * Usage: Add to App.tsx during development
+ * Usage: Add to App.tsduring development
  * ```tsx
  * {process.env.NODE_ENV === 'development' && <PerformanceDashboard />}
  * ```
  */
 
 import React from 'react';
-import { useWebVitalsReport } from '@/hooks/useWebVitals';
-import { THRESHOLDS } from '@/lib/webVitals';
+import { useWebVitalsReport } from '@/hooks/useWebVitals.ts';
+import { THRESHOLDS } from '@/lib/webVitals.ts';
 
 export function PerformanceDashboard() {
   const vitals = useWebVitalsReport();

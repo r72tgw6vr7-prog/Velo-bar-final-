@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Button } from '../components/atoms/Button/Button';
+import { Button } from '../components/atoms/Button/Button.tsx';
 
 describe('Button Component', () => {
   describe('Rendering', () => {

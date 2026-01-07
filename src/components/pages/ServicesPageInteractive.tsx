@@ -9,9 +9,9 @@ import React, { useMemo, useState, useCallback, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { Sparkles, Zap, Shield, Heart, Euro, ChevronRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { cn } from '../../utils/classname';
-import { Button, Section } from '../atoms';
-import { servicesContent } from '../../content/services';
+import { cn } from '../../utils/classname.ts';
+import { Button, Section } from '../atoms/index.ts';
+import { servicesContent } from '../../content/services.ts';
 
 const categories = servicesContent.categories;
 

@@ -3,11 +3,11 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section } from '@/components/atoms/Section/Section';
-import { HeroHeading } from '@/components/ui/HeroHeading';
-import { ParallaxAbout } from '@/components/ParallaxAbout/ParallaxAbout';
-import { aboutContent } from '@/content/about';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
+import { ParallaxAbout } from '@/components/ParallaxAbout/ParallaxAbout.tsx';
+import { aboutContent } from '@/content/about.ts';
 
 export const AboutPage: React.FC = () => {
   const { hero } = aboutContent;

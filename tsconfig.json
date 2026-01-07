@@ -6,7 +6,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "allowJs": true,
+    "allowJs": false,
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "strict": true,

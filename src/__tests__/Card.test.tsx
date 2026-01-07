@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Card, { CardHeader, CardContent, CardFooter } from '@/components/molecules/Card/Card';
+import Card, { CardHeader, CardContent, CardFooter } from '@/components/molecules/Card/Card.tsx';
 
 describe('Card Component', () => {
   describe('Rendering', () => {

@@ -13,8 +13,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Input } from '../../components/atoms';
-import type { InputSize, InputVariant } from '../../types/components';
+import { Input } from '../../components/atoms/index.ts';
+import type { InputSize, InputVariant } from '../../types/components.ts';
 
 describe('Input - Consolidated Component', () => {
   describe('Basic Rendering', () => {

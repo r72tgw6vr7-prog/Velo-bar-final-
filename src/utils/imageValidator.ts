@@ -4,7 +4,7 @@
  * Provides robust image loading with fallbacks and error handling.
  */
 
-import { IMAGE_PATHS } from '../config/imagePaths';
+import { IMAGE_PATHS } from '../config/imagePaths.ts';
 
 /**
  * Validates if an image exists by attempting to load it

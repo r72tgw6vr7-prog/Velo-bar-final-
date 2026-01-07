@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import { cn } from '../../utils/classname';
-import { Section } from '../atoms';
-import { Container } from '../atoms';
+import { cn } from '../../utils/classname.ts';
+import { Section } from '../atoms/index.ts';
+import { Container } from '../atoms/index.ts';
 import {
   Carousel,
   CarouselContent,
@@ -15,7 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from '@/components/atoms';
+} from '@/components/atoms/index.ts';
 
 export interface Testimonial {
   id: number;

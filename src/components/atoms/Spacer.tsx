@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 type SpacerSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | number;
 

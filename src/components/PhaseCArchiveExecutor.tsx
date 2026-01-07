@@ -32,7 +32,7 @@ interface ArchiveResult {
 }
 
 const ARCHIVE_DATA: ArchiveGroup[] = [
-  { group: 'app-shells', files: ['App.tsx', 'App.velobar-ds.tsx'] },
+  { group: 'app-shells', files: ['App.ts, 'App.velobar-ds.ts] },
   { group: 'demos', path: 'src/components/demo' },
   {
     group: 'tests',
@@ -57,7 +57,7 @@ const ARCHIVE_DATA: ArchiveGroup[] = [
   },
 ];
 
-const WORKING_ENTRY_PATH = ['index.html', 'src/main.tsx', 'src/pages/HomePage.tsx'];
+const WORKING_ENTRY_PATH = ['index.html', 'src/main.ts, 'src/pages/HomePage.ts];
 
 export const PhaseCArchiveExecutor: React.FC = () => {
   const [stage, setStage] = useState<'checklist' | 'confirmation' | 'executing' | 'complete'>(
@@ -189,7 +189,7 @@ ${movedItems.map((item) => `- ${item}`).join('\n')}
 
 ## Preserved Working Entry Path
 
-[OK] **Active Entry Point:** \`index.html\` -> \`src/main.tsx\` -> \`src/pages/HomePage.tsx\`
+[OK] **Active Entry Point:** \`index.html\` -> \`src/main.ts` -> \`src/pages/HomePage.ts`
 
 ${WORKING_ENTRY_PATH.map((file) => `- \`${file}\``).join('\n')}
 
@@ -242,7 +242,7 @@ npm run preview
               <p className='text-offwhite/80 text-sm'>
                 This operation will <strong>move</strong> (not delete) ~{totalItems}+ files to
                 archive-{getArchiveDate()}/. The working entry path will be preserved:{' '}
-                <code className='text-accent-primary'>index.html → main.tsx → HomePage</code>
+                <code className='text-accent-primary'>index.html → main.ts→ HomePage</code>
               </p>
             </div>
           </div>
@@ -320,7 +320,7 @@ npm run preview
               </p>
               <p>
                 • Working entry preserved:{' '}
-                <code className='text-green-500'>index.html → main.tsx → HomePage</code>
+                <code className='text-green-500'>index.html → main.ts→ HomePage</code>
               </p>
               <p>
                 • Operation: <strong>MOVE ONLY</strong> (no deletions)

@@ -5,7 +5,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { colors, typography, spacing, fonts, shadows, breakpoints } from '../design-tokens';
+import { colors, typography, spacing, fonts, shadows, breakpoints } from '../design-tokens.ts';
 
 describe('Design Tokens', () => {
   describe('Colors', () => {

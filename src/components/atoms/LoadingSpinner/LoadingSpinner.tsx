@@ -1,4 +1,4 @@
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 export type LoadingSpinnerSize = 'xs' | 'sm' | 'md' | 'lg';
 export type LoadingSpinnerVariant = 'brand' | 'neutral' | 'inverse';

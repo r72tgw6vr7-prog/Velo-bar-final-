@@ -5,11 +5,11 @@
  */
 
 import { useState, useEffect } from 'react';
-import { cn } from '../../utils/classname';
-import type { PageType } from '../../types/page-types';
+import { cn } from '../../utils/classname.ts';
+import type { PageType } from '../../types/page-types.ts';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
-import { Button } from '../atoms';
+import { Button } from '../atoms/index.ts';
 
 interface CookieConsentBannerProps {
   onNavigate: (page: PageType) => void;

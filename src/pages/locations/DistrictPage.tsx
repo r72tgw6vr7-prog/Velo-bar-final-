@@ -7,9 +7,9 @@
 
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Button } from '@/components/atoms/Button';
-import { Breadcrumbs } from '@/components/atoms/Breadcrumbs';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
+import { Breadcrumbs } from '@/components/atoms/Breadcrumbs.tsx';
 import {
   MapPin,
   Users,
@@ -25,9 +25,9 @@ import {
   Zap,
   Shield,
 } from 'lucide-react';
-import { getDistrictBySlug, generateDistrictSchema } from '@/data/munich-districts';
-import { firmenfeiernContent } from '@/content/firmenfeiern';
-import { Section } from '@/components/atoms';
+import { getDistrictBySlug, generateDistrictSchema } from '@/data/munich-districts.ts';
+import { firmenfeiernContent } from '@/content/firmenfeiern.ts';
+import { Section } from '@/components/atoms/index.ts';
 
 // Icon mapping
 const iconMap = {

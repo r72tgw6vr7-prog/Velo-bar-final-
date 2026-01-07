@@ -10,7 +10,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, XCircle, AlertCircle, Info, X } from 'lucide-react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 type ToastType = 'success' | 'error' | 'warning' | 'info';
 

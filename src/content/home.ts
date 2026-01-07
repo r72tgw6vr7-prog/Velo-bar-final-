@@ -1,4 +1,4 @@
-import type { HomePageContent } from './types';
+import type { HomePageContent } from './types.ts';
 
 export const homeContent: HomePageContent = {
   slug: 'home',

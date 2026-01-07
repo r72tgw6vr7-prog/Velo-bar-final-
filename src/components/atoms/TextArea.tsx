@@ -5,7 +5,7 @@
  */
 
 import React, { TextareaHTMLAttributes } from 'react';
-import { cn } from '../../utils/classname';
+import { cn } from '../../utils/classname.ts';
 
 /**
  * TextArea component using design tokens for styling.

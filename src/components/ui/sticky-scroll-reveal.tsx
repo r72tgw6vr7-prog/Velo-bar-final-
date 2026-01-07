@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 interface StickyScrollProps {
   content: {

@@ -24,8 +24,8 @@
  */
 
 import React, { useState } from 'react';
-import { cn } from '@/utils/classname';
-import { resolvePublicPath, publicHas } from '@/utils/resolvePublicPath';
+import { cn } from '@/utils/classname.ts';
+import { resolvePublicPath, publicHas } from '@/utils/resolvePublicPath.ts';
 
 /**
  * Responsive image breakpoints

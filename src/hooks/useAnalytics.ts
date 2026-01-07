@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import analytics from '../utils/analytics';
+import analytics from '../utils/analytics.ts';
 
 /**
  * Custom hook for Google Analytics integration

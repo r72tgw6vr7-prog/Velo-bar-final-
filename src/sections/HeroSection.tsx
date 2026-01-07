@@ -10,10 +10,10 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Section } from '@/components/atoms';
-import { ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImage';
-import { willChangeStyles } from '@/utils/performance';
-import { TRUST_BADGES, TrustBadgeItem } from './TrustBadges';
+import { Section } from '@/components/atoms/index.ts';
+import { ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
+import { willChangeStyles } from '@/utils/performance.ts';
+import { TRUST_BADGES, TrustBadgeItem } from './TrustBadges.ts';
 
 interface StatItem {
   value: string;

@@ -5,8 +5,8 @@
  */
 
 import React from 'react';
-import { Section } from '@/components/atoms';
-import { cn } from '../../../utils/classname';
+import { Section } from '../../atoms/index.ts';
+import { cn } from '../../../utils/classname.ts';
 
 interface ServiceCard {
   id: string;

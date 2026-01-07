@@ -3,5 +3,5 @@
  * ==================================
  */
 
-export { ResponsiveImage, type ResponsiveImageProps } from './ResponsiveImage';
-export { ResponsiveImage as default } from './ResponsiveImage';
+export { ResponsiveImage, type ResponsiveImageProps } from './ResponsiveImage.tsx';
+export { ResponsiveImage as default } from './ResponsiveImage.tsx';

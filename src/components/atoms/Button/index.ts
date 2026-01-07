@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button, { buttonVariants } from './Button.tsx';
 
-export { Button };
+export { Button, buttonVariants };
 export default Button;

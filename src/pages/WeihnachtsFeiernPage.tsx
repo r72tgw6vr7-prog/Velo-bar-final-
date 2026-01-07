@@ -8,13 +8,13 @@
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section } from '@/components/atoms/Section/Section';
-import { Button } from '@/components/atoms/Button/Button';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
 import { ArrowRight, Check, ChevronDown, Clock, Phone, Snowflake } from 'lucide-react';
-import Footer from '@/components/pages/Footer';
-import { useContent } from '@/hooks/useContent';
-import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema';
+import Footer from '@/components/pages/Footer.tsx';
+import { useContent } from '@/hooks/useContent.ts';
+import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema.ts';
 
 const WeihnachtsFeiernPage: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);

@@ -29,7 +29,7 @@
 
 import React, { forwardRef, InputHTMLAttributes, useState } from 'react';
 // Comment out for now, but will use design tokens in a real implementation
-// import { designTokens } from '../../../design-tokens';
+// import { designTokens } from '../../../design-tokens.ts';
 
 // =================================================
 // Types

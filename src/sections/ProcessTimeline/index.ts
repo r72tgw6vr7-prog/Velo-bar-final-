@@ -1,1 +1,1 @@
-export { ProcessTimeline } from './ProcessTimeline';
+export { ProcessTimeline } from './ProcessTimeline.ts';

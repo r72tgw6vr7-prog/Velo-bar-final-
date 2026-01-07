@@ -4,9 +4,9 @@
  */
 
 import { createContext, useContext, useReducer, ReactNode } from 'react';
-import { appReducer, initialAppState, AppState, AppAction } from './appReducer';
-import { PageType, BreadcrumbData } from '../types/routes';
-import { ROUTE_MAPPING } from '../constants/routes';
+import { appReducer, initialAppState, AppState, AppAction } from './appReducer.ts';
+import { PageType, BreadcrumbData } from '../types/routes.ts';
+import { ROUTE_MAPPING } from '../constants/routes.ts';
 
 interface AppContextType {
   state: AppState;

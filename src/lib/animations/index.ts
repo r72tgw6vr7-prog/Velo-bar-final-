@@ -6,9 +6,9 @@
  */
 
 // Export all animation utilities
-export * from './micro-transitions';
-export * from './variants';
-export * from './hooks';
+export * from './micro-transitions.ts';
+export * from './variants.ts';
+export * from './hooks.ts';
 
 // Re-export the AnimatedSection component for convenience
-export { default as AnimatedSection } from '../../components/organisms/AnimatedSection';
+export { default as AnimatedSection } from '../../components/organisms/AnimatedSection.ts';

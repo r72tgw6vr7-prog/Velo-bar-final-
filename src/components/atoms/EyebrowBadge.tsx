@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 export interface EyebrowBadgeProps {
   icon?: ReactNode;

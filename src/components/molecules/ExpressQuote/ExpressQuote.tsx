@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Loader2, CheckCircle } from 'lucide-react';
-import { csrfFetch } from '@/lib/csrfHelper';
+import { csrfFetch } from '@/lib/csrfHelper.ts';
 
 interface ExpressQuoteProps {
   className?: string;

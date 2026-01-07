@@ -13,7 +13,7 @@
  */
 
 import type { Variants, Transition } from 'framer-motion';
-import { TRANSITION_DURATIONS } from './micro-transitions';
+import { TRANSITION_DURATIONS } from './micro-transitions.ts';
 
 // Easing presets that work with Framer Motion
 const EASINGS = {

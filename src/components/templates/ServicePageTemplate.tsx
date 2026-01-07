@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container } from '@/components/atoms/Container';
-import { Section } from '@/components/atoms/Section/Section';
-import { Button } from '@/components/atoms/Button/Button';
-import { cn } from '@/utils/classname';
+import { Container } from '@/components/atoms/Container/index.ts';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { Button } from '@/components/atoms/Button/index.ts';
+import { cn } from '@/utils/classname.ts';
 
 export type ServicePageTemplateProps = {
   heroTitle: React.ReactNode;

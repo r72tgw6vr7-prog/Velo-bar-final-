@@ -5,7 +5,7 @@
  */
 
 import React, { InputHTMLAttributes } from 'react';
-import { cn } from '../../utils/classname';
+import { cn } from '../../utils/classname.ts';
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Label text for the checkbox */

@@ -6,8 +6,8 @@
  * accessibility requirements.
  */
 
-import { designTokens } from '../../design-tokens';
-import { checkContrast } from './contrastChecker';
+import { designTokens } from '../../design-tokens.ts';
+import { checkContrast } from './contrastChecker.ts';
 
 // Main color combinations to analyze
 const colorCombinations = [

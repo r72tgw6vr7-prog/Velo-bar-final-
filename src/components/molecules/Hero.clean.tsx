@@ -9,9 +9,9 @@
  */
 
 import React from 'react';
-import { cn } from '@/utils/classname';
-import { SectionClean } from '../atoms/Section.clean';
-import { Container } from '../atoms/Container/Container';
+import { cn } from '@/utils/classname.ts';
+import { SectionClean } from '../atoms/Section.clean.ts';
+import { Container } from '../atoms/Container/Container.ts';
 
 export interface HeroCleanProps {
   /** Content to render inside the hero */

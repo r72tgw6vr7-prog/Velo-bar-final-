@@ -1,6 +1,6 @@
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Button } from '@/components/atoms/Button';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 
 const MessestandIdeenHospitalityPage: React.FC = () => {

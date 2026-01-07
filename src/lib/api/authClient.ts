@@ -1,4 +1,4 @@
-import { createHttpClient, HttpClient, RequestConfig } from './httpClient';
+import { createHttpClient, HttpClient, RequestConfig } from './httpClient.ts';
 // NOTE: Use the typed `createHttpClient` factory so call-sites can use generic `get/post/request` returning `{ data: T }`.
 
 /**

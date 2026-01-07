@@ -1,3 +1,3 @@
-export { WhyVeloBarSection } from './WhyVeloBarSection';
-export type { WhyVeloBarSectionProps } from './WhyVeloBarSection';
-export { default } from './WhyVeloBarSection';
+export { WhyVeloBarSection } from './WhyVeloBarSection.ts';
+export type { WhyVeloBarSectionProps } from './WhyVeloBarSection.ts';
+export { default } from './WhyVeloBarSection.ts';

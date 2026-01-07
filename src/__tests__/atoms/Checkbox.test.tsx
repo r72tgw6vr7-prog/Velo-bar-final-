@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Checkbox from '@/components/atoms/Checkbox';
+import Checkbox from '@/components/atoms/Checkbox.tsx';
 
 describe('Checkbox atom', () => {
   it('renders with label and required asterisk', () => {

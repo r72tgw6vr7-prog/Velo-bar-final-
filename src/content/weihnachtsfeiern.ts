@@ -4,7 +4,7 @@
  * Bilingual content (DE/EN) for Christmas corporate events
  */
 
-import type { ServicePageContent } from './types';
+import type { ServicePageContent } from './types.ts';
 
 export interface WeihnachtsfeiernPageContent extends ServicePageContent {
   seasonalCocktails: readonly {

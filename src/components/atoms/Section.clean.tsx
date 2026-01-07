@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Section } from './Section/Section';
+import { Section } from './Section/Section.ts';
 
 export interface SectionCleanProps {
   /** Content to render */

@@ -6,14 +6,14 @@
  */
 
 // Import variables for use in this file
-import { colorVariables } from './colors';
-import { spacingVariables } from './spacing';
-import { typographyVariables } from './typography';
-import breakpoints, { breakpointVariables } from './breakpoints';
+import { colorVariables } from './colors.ts';
+import { spacingVariables } from './spacing.ts';
+import { typographyVariables } from './typography.ts';
+import _breakpoints, { breakpointVariables } from './breakpoints.ts';
 
 // Export all tokens from their respective files
-export { default as colors, type ColorPalette, type ColorToken } from './colors';
-export { default as spacing, type SpacingScale, type SpacingValue } from './spacing';
+export { default as colors, type ColorPalette, type ColorToken } from './colors.ts';
+export { default as spacing, type SpacingScale, type SpacingValue } from './spacing.ts';
 export {
   fontFamilies,
   fontWeights,
@@ -25,10 +25,10 @@ export {
   type LineHeight,
   type LetterSpacing,
   type FontSize,
-} from './typography';
+} from './typography.ts';
 
-export { default as breakpoints, mediaQueries } from './breakpoints';
-export type { Breakpoint } from './breakpoints';
+export { default as breakpoints, mediaQueries } from './breakpoints.ts';
+export type { Breakpoint } from './breakpoints.ts';
 
 /**
  * Generates CSS variables for all design tokens.

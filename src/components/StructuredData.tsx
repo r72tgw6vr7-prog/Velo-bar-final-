@@ -1,5 +1,5 @@
 import React from 'react';
-import { env } from '../lib/env';
+import { env } from '../lib/env.ts';
 
 export interface ArticleSchemaData {
   title: string;

@@ -2,13 +2,13 @@
 
 import { useEffect, useRef } from 'react';
 
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 /**
  * BackgroundGradientAnimation
  * ===========================
  * Light, airy background with soft teal and coral glows on cream base.
- * Mount ONCE at root level (main.tsx).
+ * Mount ONCE at root level (main.ts.
  *
  * Brand colors ONLY:
  * - Cream: rgb(255, 248, 236)

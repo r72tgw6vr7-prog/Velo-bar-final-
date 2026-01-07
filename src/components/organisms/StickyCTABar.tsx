@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Phone, MessageCircle, X } from 'lucide-react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 interface StickyCTABarProps {
   phoneNumber?: string;

@@ -3,7 +3,7 @@
  * Complete route definitions with metadata for B2B event catering
  */
 
-import { ROUTES, RouteConfig } from '../types/routes';
+import { ROUTES, RouteConfig } from '../types/routes.ts';
 
 export const ROUTE_CONFIG: Record<string, RouteConfig> = {
   [ROUTES.HOME]: {

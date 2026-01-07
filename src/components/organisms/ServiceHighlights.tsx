@@ -11,8 +11,8 @@ import {
   Star,
   ChevronRight,
 } from 'lucide-react';
-import { useBusinessDesignSystem } from '../../foundation';
-import { Container } from '@/components/atoms/Container/Container';
+import { useBusinessDesignSystem } from '../../foundation/index.ts';
+import { Container } from '@/components/atoms/Container/Container.tsx';
 
 interface ServiceHighlightsProps {
   onServiceClick?: (serviceId: string) => void;

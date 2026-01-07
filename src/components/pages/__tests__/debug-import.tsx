@@ -4,7 +4,7 @@ import React from 'react';
 const TestServicesPage = () => {
   try {
     const ServicesPageInteractive =
-      require('../ServicesPageInteractive.tsx').ServicesPageInteractive;
+      require('../ServicesPageInteractive.ts).ServicesPageInteractive;
     return <div>Component imported successfully: {ServicesPageInteractive ? 'Yes' : 'No'}</div>;
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);

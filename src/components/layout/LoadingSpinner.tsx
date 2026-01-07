@@ -1,1 +1,1 @@
-export { LoadingSpinner as default } from '@/components/atoms/LoadingSpinner/LoadingSpinner';
+export { LoadingSpinner as default } from '@/components/atoms/LoadingSpinner/LoadingSpinner.tsx';

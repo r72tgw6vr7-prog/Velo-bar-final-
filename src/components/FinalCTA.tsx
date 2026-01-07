@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import analytics from '@/utils/analytics';
+import analytics from '@/utils/analytics.ts';
 
 export const FinalCTA = () => {
   return (

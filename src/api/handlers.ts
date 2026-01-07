@@ -5,7 +5,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { sendEmail } from '../services/emailService';
+import { sendEmail } from '../services/emailService.ts';
 
 // CORS headers for all responses
 const corsHeaders = {

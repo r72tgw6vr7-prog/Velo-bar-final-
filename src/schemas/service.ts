@@ -4,7 +4,7 @@
  * Runtime validation using Zod for service data integrity
  *
  * @see {@link ../data/services.ts} for the actual data
- * @see {@link ../components/templates/ServicePageLayout.tsx} for TypeScript types
+ * @see {@link ../components/templates/ServicePageLayout.ts for TypeScript types
  */
 
 import { z } from 'zod';

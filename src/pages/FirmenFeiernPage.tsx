@@ -8,10 +8,10 @@
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section } from '@/components/atoms/Section/Section';
-import { Button } from '@/components/atoms/Button/Button';
-import { Breadcrumbs } from '@/components/atoms/Breadcrumbs';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
+import { Breadcrumbs } from '@/components/atoms/Breadcrumbs.tsx';
 import {
   ArrowRight,
   Check,
@@ -26,9 +26,9 @@ import {
   Zap,
   Shield,
 } from 'lucide-react';
-import Footer from '@/components/pages/Footer';
-import { useContent } from '@/hooks/useContent';
-import { getServiceSchema, getBreadcrumbSchema, combineSchemas, getFAQSchema } from '@/seo/schema';
+import Footer from '@/components/pages/Footer.tsx';
+import { useContent } from '@/hooks/useContent.ts';
+import { getServiceSchema, getBreadcrumbSchema, combineSchemas, getFAQSchema } from '@/seo/schema.ts';
 
 // Icon mapping for dynamic icon rendering
 const iconMap = {

@@ -1,9 +1,9 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import type { StateCreator } from 'zustand';
-import type { BookingWizardValues } from '@/lib/forms/schemas/booking';
-import { bookingWizardDefaultValues } from '@/lib/forms/schemas/booking';
-import { getItemSafe, setItemSafe, removeItemSafe } from '@/lib/storage/localStorageSafe';
+import type { BookingWizardValues } from '@/lib/forms/schemas/booking.ts';
+import { bookingWizardDefaultValues } from '@/lib/forms/schemas/booking.ts';
+import { getItemSafe, setItemSafe, removeItemSafe } from '@/lib/storage/localStorageSafe.ts';
 
 const STORAGE_KEY = 'booking-store-draft';
 

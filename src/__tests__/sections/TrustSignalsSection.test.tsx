@@ -6,7 +6,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { TrustSignalsSection } from '@/sections/TrustSignalsSection';
+import TrustSignalsSection from '@/sections/TrustSignalsSection.tsx';
 
 const mockPartners = [
   { logo: '/logos/partner1.svg', name: 'Partner 1', description: 'Premium Partner' },

@@ -1,5 +1,5 @@
-import type { ServicePackageContent } from './types';
-import { servicesContent } from './services';
+import type { ServicePackageContent } from './types.ts';
+import { servicesContent } from './services.ts';
 
 export type ServicePageId =
   | 'firmenfeiern'

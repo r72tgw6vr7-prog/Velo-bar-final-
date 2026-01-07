@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
+import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
 
 const BuchungMucPage: React.FC = () => {
   const packages = servicePackages.buchungMuc;

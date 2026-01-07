@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { P0TestHelpers, TEST_DATA } from './helpers';
+import { P0TestHelpers, TEST_DATA } from './helpers.ts';
 
 /**
  * R2: Scroll to Top on Navigation

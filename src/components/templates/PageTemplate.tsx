@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container } from '@/components/atoms/Container';
-import { Section } from '@/components/atoms/Section/Section';
-import { cn } from '@/utils/classname';
+import { Container } from '@/components/atoms/Container/index.ts';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { cn } from '@/utils/classname.ts';
 
 export type PageTemplateProps = {
   title?: React.ReactNode;

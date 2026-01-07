@@ -10,8 +10,8 @@
  */
 
 import React from 'react';
-import { Breadcrumbs } from '@/components/atoms/Breadcrumbs';
-import { cn } from '@/utils/classname';
+import { Breadcrumbs } from '@/components/atoms/Breadcrumbs.tsx';
+import { cn } from '@/utils/classname.ts';
 
 interface BreadcrumbItem {
   label: string;

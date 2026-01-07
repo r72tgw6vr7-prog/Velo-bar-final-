@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactForm as ContactFormComponent } from '@/components/organisms/ContactForm';
+import { ContactForm as ContactFormComponent } from '@/components/organisms/ContactForm.tsx';
 
 export interface ContactInfo {
   icon: string;

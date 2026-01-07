@@ -1,4 +1,4 @@
-import type { BookingFormValues, BookingWizardValues } from '@/lib/forms/schemas/booking';
+import type { BookingFormValues, BookingWizardValues } from '@/lib/forms/schemas/booking.ts';
 
 type ContactPayload = {
   name: string;

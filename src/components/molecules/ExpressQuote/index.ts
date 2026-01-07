@@ -1,1 +1,1 @@
-export { ExpressQuote, default } from './ExpressQuote';
+export { ExpressQuote, default } from './ExpressQuote.ts';

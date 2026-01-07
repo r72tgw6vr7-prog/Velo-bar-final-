@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 import '@/styles/glassmorphism.css';
 
 export interface GlassButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

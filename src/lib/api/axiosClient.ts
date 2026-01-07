@@ -1,4 +1,4 @@
-import { createHttpClient, HttpClient, RequestConfig } from './httpClient';
+import { createHttpClient, HttpClient, RequestConfig } from './httpClient.ts';
 // NOTE: Use createHttpClient to get a typed wrapper around axios that returns { data:T }
 
 const MAX_RETRIES = 3;

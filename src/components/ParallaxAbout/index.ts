@@ -1,1 +1,1 @@
-export { ParallaxAbout } from './ParallaxAbout';
+export { ParallaxAbout } from './ParallaxAbout.ts';

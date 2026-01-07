@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
-import { CardClean } from './Card.clean';
-import { Heading } from '../atoms/Heading';
-import { Text } from '../atoms/Text';
-import { cn } from '@/utils/classname';
+import { CardClean } from './Card.clean.ts';
+import { Heading } from '../atoms/Heading.ts';
+import { Text } from '../atoms/Text.ts';
+import { cn } from '@/utils/classname.ts';
 
 export interface FeatureCardCleanProps {
   /** Icon or image element */

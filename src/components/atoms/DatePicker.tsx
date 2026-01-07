@@ -1,7 +1,7 @@
 import React from 'react';
 import { DayPicker, type DayPickerProps } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 export type DatePickerProps = DayPickerProps & {
   className?: string;

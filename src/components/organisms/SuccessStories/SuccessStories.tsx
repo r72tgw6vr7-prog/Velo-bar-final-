@@ -12,7 +12,7 @@
  */
 
 import React from 'react';
-import Pagination from '@/components/ui/Pagination/Pagination';
+import Pagination from '@/components/ui/Pagination/Pagination.tsx';
 import { Star, Users, Calendar, Award, Quote } from 'lucide-react';
 
 // Client logos - using placeholder paths, replace with actual client logos

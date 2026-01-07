@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
-import { Button } from './Button/Button';
-import { cn } from '@/utils/classname';
+import { useTheme } from '@/contexts/ThemeContext.tsx';
+import { Button } from './Button/index.ts';
+import { cn } from '@/utils/classname.ts';
 
 export type ThemeToggleProps = {
   className?: string;

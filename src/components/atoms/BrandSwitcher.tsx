@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTheme } from '@/contexts/ThemeContext';
-import { cn } from '@/utils/classname';
+import { useTheme } from '@/contexts/ThemeContext.tsx';
+import { cn } from '@/utils/classname.ts';
 
 type Brand = 'default' | 'emerald' | 'royal';
 

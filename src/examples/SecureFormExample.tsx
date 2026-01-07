@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from 'react';
-import { csrfFetch } from '@/lib/csrfHelper';
+import { csrfFetch } from '@/lib/csrfHelper.ts';
 
 interface FormData {
   name: string;
@@ -148,7 +148,7 @@ export function SecureFormExample() {
  * If you need more control over the CSRF token lifecycle:
  */
 
-import { useCsrfToken } from '@/lib/csrfHelper';
+import { useCsrfToken } from '@/lib/csrfHelper.ts';
 
 export function SecureFormWithHook() {
   const { token, loading: tokenLoading, error: tokenError, refreshToken } = useCsrfToken();

@@ -17,7 +17,7 @@ import {
   validateTestimonials,
   safeValidate,
   formatValidationError,
-} from '@/schemas/service';
+} from '@/schemas/service.ts';
 
 describe('ServicePackageSchema', () => {
   it('should validate a valid service package', () => {

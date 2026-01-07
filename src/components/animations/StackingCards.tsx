@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 import './StackingCards.css';
 
 export interface StackingCard {

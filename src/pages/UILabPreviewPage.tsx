@@ -10,36 +10,36 @@
 import '@/styles/pages/home-new.css';
 import '@/styles/pages/ui-lab-unified.css';
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section } from '@/components/atoms/Section/Section';
-import { Container } from '@/components/atoms/Container/Container';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { Container } from '@/components/atoms/Container/Container.tsx';
 
 // Hero - using canonical component
-import { HeroLocked } from '@/sections/HeroLocked';
-import { EyebrowBadge } from '@/components/atoms/EyebrowBadge';
+import { HeroLocked } from '@/sections/HeroLocked.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 // Cards & Trust
-import { StackingCards } from '@/components/animations/StackingCards';
-import { ServiceCards } from '@/components/molecules/Card/ServiceCards';
-import { PriceCard } from '@/components/molecules/PriceCard';
-import { TrustBadges } from '@/components/molecules/TrustBadges';
-import { StickyTrustSignalsBar } from '@/components/molecules/StickyTrustSignalsBar';
+import { StackingCards } from '@/components/animations/StackingCards.tsx';
+import { ServiceCards } from '@/components/molecules/Card/ServiceCards.tsx';
+import { PriceCard } from '@/components/molecules/PriceCard.tsx';
+import { TrustBadges } from '@/components/molecules/TrustBadges.tsx';
+import { StickyTrustSignalsBar } from '@/components/molecules/StickyTrustSignalsBar.tsx';
 
 // About / Parallax
-import { ParallaxAbout } from '@/components/ParallaxAbout/ParallaxAbout';
+import { ParallaxAbout } from '@/components/ParallaxAbout/ParallaxAbout.tsx';
 
 // Sections
-import { ServicesSection } from '@/sections/ServicesSection';
-import { PartnersAndTestimonialsSection } from '@/sections/PartnersAndTestimonialsSection';
-import { TrustSignalsSection } from '@/sections/TrustSignalsSection';
-import { ClientLogos } from '@/sections/ClientLogos';
+import { ServicesSection } from '@/sections/ServicesSection.tsx';
+import { PartnersAndTestimonialsSection } from '@/sections/PartnersAndTestimonialsSection.tsx';
+import { TrustSignalsSection } from '@/sections/TrustSignalsSection.tsx';
+import { ClientLogos } from '@/sections/ClientLogos.tsx';
 
 // Menu/Drinks content (simplified version)
-import { HeroHeading } from '@/components/ui/HeroHeading';
+import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 
 // Pricing components
 import { PricingPage } from '@/pages/PricingPage.tsx';
-import { IncludedItemCard } from '@/components/molecules/IncludedItemCard';
+import { IncludedItemCard } from '@/components/molecules/IncludedItemCard.tsx';
 
 // Location components
 import VenueLandingPage from '@/pages/locations/VenueLandingPage.tsx';

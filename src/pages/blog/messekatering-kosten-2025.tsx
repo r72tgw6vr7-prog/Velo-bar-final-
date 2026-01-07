@@ -1,9 +1,9 @@
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Button } from '@/components/atoms/Button';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
-import { SuccessStories } from '@/components/organisms/SuccessStories';
-import { Section } from '@/components/atoms';
+import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
+import { Section } from '@/components/atoms/index.ts';
 
 const MessekateringKostenPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting

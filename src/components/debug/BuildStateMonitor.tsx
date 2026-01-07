@@ -31,8 +31,8 @@ const BuildStateMonitor: React.FC = () => {
   useEffect(() => {
     const checkFiles = async () => {
       const files = [
-        { name: 'team-section.tsx', path: '/src/components/TeamSection.tsx' },
-        { name: 'team-grid.tsx', path: '/src/components/TeamGrid.tsx' },
+        { name: 'team-section.ts, path: '/src/components/TeamSection.ts },
+        { name: 'team-grid.ts, path: '/src/components/TeamGrid.ts },
       ];
 
       const fileStatus = await Promise.all(

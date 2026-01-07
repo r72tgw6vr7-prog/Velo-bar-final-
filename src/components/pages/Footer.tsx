@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 // Navigation links - organized by category
 const navLinks = {

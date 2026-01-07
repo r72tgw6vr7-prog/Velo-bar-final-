@@ -4,7 +4,7 @@
  * Bilingual content (DE/EN) for trade fair/expo events
  */
 
-import type { ServicePageContent } from './types';
+import type { ServicePageContent } from './types.ts';
 
 // German content (default)
 export const messeCateringContentDE: ServicePageContent = {

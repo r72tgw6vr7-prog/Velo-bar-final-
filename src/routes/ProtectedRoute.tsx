@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext';
-import ROUTE_CONFIG from '../core/constants/routes';
-import { ROUTES } from '../core/types/routes';
+import { useAuth } from '@/context/AuthContext.tsx';
+import ROUTE_CONFIG from '../core/constants/routes.ts';
+import { ROUTES } from '../core/types/routes.ts';
 
 type ProtectedRouteProps = {
   children: React.ReactElement;

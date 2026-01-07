@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { StackingCards } from '../StackingCards';
+import { StackingCards } from '../StackingCards.ts';
 import { Users, Calendar, Star } from 'lucide-react';
 
 describe('StackingCards', () => {

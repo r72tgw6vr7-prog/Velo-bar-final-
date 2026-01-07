@@ -4,7 +4,7 @@
 // PURPOSE: Display trusted partner and press logos with accent heading
 
 import React from 'react';
-import { PARTNERS } from '../data/partners';
+import { PARTNERS } from '../data/partners.ts';
 import '../styles/partners.css';
 
 // TypeScript interfaces

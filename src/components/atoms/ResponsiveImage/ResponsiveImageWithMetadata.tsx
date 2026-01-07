@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ResponsiveImage, ResponsiveImageProps } from '@/components/atoms/ResponsiveImage';
-import { getImageMeta } from '@/utils/image-metadata';
+import { ResponsiveImage, ResponsiveImageProps } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
+import { getImageMeta } from '@/utils/image-metadata.ts';
 
 interface ResponsiveImageWithMetadataProps extends Omit<ResponsiveImageProps, 'placeholder'> {
   src: string;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Link } from 'react-router-dom';
-import { venueDatabase } from './VenueLandingPage';
-import { Button } from '@/components/atoms/Button/Button';
+import { venueDatabase } from './VenueLandingPage.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
 
 const LocationsIndexPage: React.FC = () => {
   const venues = Object.values(venueDatabase);

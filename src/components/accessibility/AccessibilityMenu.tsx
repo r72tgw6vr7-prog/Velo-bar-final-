@@ -5,10 +5,10 @@
  */
 
 import React, { useState } from 'react';
-import { cn } from '../../utils/classname';
-import { useAccessibility } from './AccessibilityProvider';
+import { cn } from '../../utils/classname.ts';
+import { useAccessibility } from './AccessibilityProvider.tsx';
 import { Accessibility, X, Eye, Type, MousePointerClick, Zap, Settings } from 'lucide-react';
-import { Button } from '../atoms';
+import { Button } from '../atoms/index.ts';
 
 interface AccessibilityMenuProps {
   className?: string;

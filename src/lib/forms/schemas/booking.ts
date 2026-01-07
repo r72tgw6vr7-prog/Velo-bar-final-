@@ -5,10 +5,10 @@ import {
   drinkPreferences,
   serviceDurations,
   budgetRanges,
-} from '@/components/organisms/BookingWizard/constants';
+} from '@/components/organisms/BookingWizard/constants.ts';
 
 /**
- * Single-step booking form (BookingForm.tsx) schema
+ * Single-step booking form (BookingForm.ts schema
  */
 export const bookingFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters' }).max(100),

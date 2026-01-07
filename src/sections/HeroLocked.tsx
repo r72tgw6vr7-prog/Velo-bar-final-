@@ -9,9 +9,9 @@
  */
 
 import React from 'react';
-import { Section, Container } from '@/components/atoms';
-import { HeroBike } from '@/components/HeroBike';
-import { HeroParallax } from '@/components/HeroParallax';
+import { Section, Container } from '@/components/atoms/index.ts';
+import HeroBike from '@/components/HeroBike/HeroBike.tsx';
+import HeroParallax from '@/components/HeroParallax/HeroParallax.tsx';
 import { MapPin } from 'lucide-react';
 import '@/styles/hero.css';
 
@@ -37,7 +37,7 @@ export const HeroLocked: React.FC = () => {
             </div>
           </div>
 
-          <h1 className='home-hero-title text-accent text-3xl leading-tight font-extrabold tracking-tight md:text-5xl lg:text-6xl'>
+          <h1 className='home-hero-title text-accent text-3xl leading-tight font-extrabold tracking-tight md:text-5xl lg:text-6xl flex items-center justify-center min-h-[75px]'>
             Mobile Cocktailbar für dein Event
           </h1>
           <p className='home-hero-subtitle mt-4 inline-block text-center text-base leading-tight font-bold text-white drop-shadow-sm md:text-lg'>

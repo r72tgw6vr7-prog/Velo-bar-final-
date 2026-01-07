@@ -3,7 +3,7 @@
  * Consolidated app state with useReducer pattern
  */
 
-import { PageType, BreadcrumbData } from '../types/routes';
+import { PageType, BreadcrumbData } from '../types/routes.ts';
 
 export interface AppState {
   // Navigation state

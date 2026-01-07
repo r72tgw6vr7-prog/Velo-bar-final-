@@ -17,8 +17,8 @@ import {
   useLuxuryInteractions,
   LuxuryButton,
   LuxuryInput,
-} from '@/components/atoms/MicroInteractions';
-import { useBusinessDesignSystem } from '@/foundation/BusinessProvider';
+} from '@/components/atoms/MicroInteractions.tsx';
+import { useBusinessDesignSystem } from '@/foundation/BusinessProvider.tsx';
 
 // Temporary solid background (image removed)
 

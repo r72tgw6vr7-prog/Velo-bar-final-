@@ -14,13 +14,13 @@
  * 2. Phase 2: Update imports to use atoms/Card directly
  * 3. Phase 3: Remove this wrapper file (future cleanup sprint)
  *
- * @deprecated Use '@/components/atoms/Card' instead
- * @see '@/components/atoms/Card'
+ * @deprecated Use '@/components/atoms/Card/Card.tsx instead
+ * @see '@/components/atoms/Card/Card.tsx
  * @see CONSOLIDATION_ANALYSIS.md for details
  */
 
 // Import the consolidated atoms Card component and re-export its slots
-import CardDefault from '@/components/atoms/Card';
+import CardDefault from '@/components/atoms/index.ts';
 
 // Named re-exports for backward compatibility (preserve molecules API)
 export const Card = CardDefault;

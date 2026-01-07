@@ -1,4 +1,4 @@
-import type { ServicesPageContent } from './types';
+import type { ServicesPageContent } from './types.ts';
 
 export const servicesContent: ServicesPageContent = {
   slug: 'services',

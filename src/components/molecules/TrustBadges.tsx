@@ -1,5 +1,5 @@
 import React from 'react';
-import { TRUST_BADGES } from '../../sections/TrustBadges';
+import { TRUST_BADGES } from '../../sections/TrustBadges.tsx';
 
 interface TrustBadgesProps {
   className?: string;

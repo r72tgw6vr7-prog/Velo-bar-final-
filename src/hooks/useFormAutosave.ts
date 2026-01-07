@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import type { FieldValues, UseFormReturn } from 'react-hook-form';
-import { getItemSafe, setItemSafe, removeItemSafe } from '@/lib/storage/localStorageSafe';
+import { getItemSafe, setItemSafe, removeItemSafe } from '@/lib/storage/localStorageSafe.ts';
 
 interface FormAutosaveOptions {
   storageKey: string;

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { P0TestHelpers, TEST_DATA, EXPECTED_FONT_WEIGHTS } from './helpers';
+import { P0TestHelpers, TEST_DATA, EXPECTED_FONT_WEIGHTS } from './helpers.ts';
 
 /**
  * T4: Computed Font Weights Compliance

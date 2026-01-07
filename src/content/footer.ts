@@ -1,4 +1,4 @@
-import type { FooterContent } from './types';
+import type { FooterContent } from './types.ts';
 
 export const footerContent: FooterContent = {
   brandName: 'Velo.Bar',

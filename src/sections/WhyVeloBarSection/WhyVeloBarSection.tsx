@@ -12,9 +12,9 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Users, Calendar, Star } from 'lucide-react';
-import { Section } from '@/components/atoms/Section/Section';
-import { Container } from '@/components/atoms/Container/Container';
-import { cn } from '@/utils/classname';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { Container } from '@/components/atoms/Container/Container.tsx';
+import { cn } from '@/utils/classname.ts';
 import './WhyVeloBarSection.css';
 
 // Trust signal card data - "Warum Velo.Bar?"

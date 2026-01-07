@@ -6,7 +6,7 @@ import type {
   ServiceDuration,
   BudgetRange,
   StepTitle,
-} from './types';
+} from './types.ts';
 
 export const eventTypes: EventType[] = [
   {

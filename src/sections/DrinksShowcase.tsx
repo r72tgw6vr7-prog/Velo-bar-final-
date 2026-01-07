@@ -1,4 +1,4 @@
-import { Section } from '@/components/atoms/Section/Section';
+import { Section } from '@/components/atoms/Section/Section.tsx';
 import type { FC } from 'react';
 
 const signatureCocktails = [

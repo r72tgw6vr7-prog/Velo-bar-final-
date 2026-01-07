@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 export interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: number; // px

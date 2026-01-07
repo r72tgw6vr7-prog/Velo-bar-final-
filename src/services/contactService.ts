@@ -1,6 +1,6 @@
 import validator from 'validator';
-import { validateContact, ContactData } from '@/server/validation';
-import { csrfFetch } from '@/lib/csrfHelper';
+import { validateContact, ContactData } from '@/server/validation.ts';
+import { csrfFetch } from '@/lib/csrfHelper.ts';
 
 /**
  * Service wrapper for contact submissions.

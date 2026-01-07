@@ -3,63 +3,63 @@ import * as React from 'react';
 import { Suspense, useState, lazy } from 'react';
 
 // Lazy load all page components for code splitting (default exports)
-const HomePage = lazy(() => import('./pages/HomePage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const MenuPage = lazy(() => import('./pages/MenuPage'));
-const BuchungMucPage = lazy(() => import('./pages/BuchungMucPage'));
-const VelobarcoPage = lazy(() => import('./pages/VelobarcoPage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const PricingPage = lazy(() => import('./pages/PricingPage'));
-const GalleryPage = lazy(() => import('./pages/GalleryPage'));
-const FAQPage = lazy(() => import('./pages/FAQPage'));
-const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
-const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const HomePage = lazy(() => import('./pages/HomePage.tsx'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage.tsx'));
+const MenuPage = lazy(() => import('./pages/MenuPage.tsx'));
+const BuchungMucPage = lazy(() => import('./pages/BuchungMucPage.tsx'));
+const VelobarcoPage = lazy(() => import('./pages/VelobarcoPage.tsx'));
+const AboutPage = lazy(() => import('./pages/AboutPage.tsx'));
+const PricingPage = lazy(() => import('./pages/PricingPage.tsx'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage.tsx'));
+const FAQPage = lazy(() => import('./pages/FAQPage.tsx'));
+const ImpressumPage = lazy(() => import('./pages/ImpressumPage.tsx'));
+const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage.tsx'));
+const ContactPage = lazy(() => import('./pages/ContactPage.tsx'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage.tsx'));
 const CorporateEventCateringGuidePage = lazy(
-  () => import('./pages/resources/corporate-event-catering-guide'),
+  () => import('./pages/resources/corporate-event-catering-guide.tsx'),
 );
-const MessestandIdeenPage = lazy(() => import('./pages/blog/messestand-ideen-hospitality'));
-const ROIHospitalityEventsPage = lazy(() => import('./pages/blog/roi-hospitality-events'));
-const MessekateringKostenPage = lazy(() => import('./pages/blog/messekatering-kosten-2025'));
+const MessestandIdeenPage = lazy(() => import('./pages/blog/messestand-ideen-hospitality.tsx'));
+const ROIHospitalityEventsPage = lazy(() => import('./pages/blog/roi-hospitality-events.tsx'));
+const MessekateringKostenPage = lazy(() => import('./pages/blog/messekatering-kosten-2025.tsx'));
 const AlkoholfreieCocktailsPage = lazy(
-  () => import('./pages/blog/alkoholfreie-cocktails-firmenevents'),
+  () => import('./pages/blog/alkoholfreie-cocktails-firmenevents.tsx'),
 );
-const NachhaltigeFirmenfeierPage = lazy(() => import('./pages/blog/nachhaltige-firmenfeier'));
-const LastMinuteCateringPage = lazy(() => import('./pages/blog/last-minute-catering-muenchen'));
+const NachhaltigeFirmenfeierPage = lazy(() => import('./pages/blog/nachhaltige-firmenfeier.tsx'));
+const LastMinuteCateringPage = lazy(() => import('./pages/blog/last-minute-catering-muenchen.tsx'));
 const CateringOhneStromanschlussPage = lazy(
-  () => import('./pages/blog/catering-ohne-stromanschluss'),
+  () => import('./pages/blog/catering-ohne-stromanschluss.tsx'),
 );
-const DistrictPage = lazy(() => import('./pages/locations/DistrictPage'));
-const TokenVerificationPage = lazy(() => import('./pages/dev/TokenVerificationPage'));
-const UILabPreviewPage = lazy(() => import('./pages/UILabPreviewPage'));
+const DistrictPage = lazy(() => import('./pages/locations/DistrictPage.tsx'));
+const TokenVerificationPage = lazy(() => import('./pages/dev/TokenVerificationPage.tsx'));
+const UILabPreviewPage = lazy(() => import('./pages/UILabPreviewPage.tsx'));
 
 // Venue-specific landing pages (Programmatic SEO)
-const MesseMuenchenPage = lazy(() => import('./pages/locations/messe-muenchen'));
-const MOCMuenchenPage = lazy(() => import('./pages/locations/moc-muenchen'));
-const BallhausforumInfinityPage = lazy(() => import('./pages/locations/ballhausforum-infinity'));
-const Werk1MuenchenPage = lazy(() => import('./pages/locations/werk1-muenchen'));
-const SchlossSchleissheimPage = lazy(() => import('./pages/locations/schloss-schleissheim'));
-const ZenithMuenchenPage = lazy(() => import('./pages/locations/zenith-muenchen'));
-const AlteUttingPage = lazy(() => import('./pages/locations/alte-utting'));
-const LocationsIndexPage = lazy(() => import('./pages/locations/LocationsIndexPage'));
+const MesseMuenchenPage = lazy(() => import('./pages/locations/messe-muenchen.tsx'));
+const MOCMuenchenPage = lazy(() => import('./pages/locations/moc-muenchen.tsx'));
+const BallhausforumInfinityPage = lazy(() => import('./pages/locations/ballhausforum-infinity.tsx'));
+const Werk1MuenchenPage = lazy(() => import('./pages/locations/werk1-muenchen.tsx'));
+const SchlossSchleissheimPage = lazy(() => import('./pages/locations/schloss-schleissheim.tsx'));
+const ZenithMuenchenPage = lazy(() => import('./pages/locations/zenith-muenchen.tsx'));
+const AlteUttingPage = lazy(() => import('./pages/locations/alte-utting.tsx'));
+const LocationsIndexPage = lazy(() => import('./pages/locations/LocationsIndexPage.tsx'));
 
 // Accessibility imports (keep eager - needed immediately)
-import { AccessibilityProvider, AccessibilityMenu } from './components/accessibility';
+import { AccessibilityProvider, AccessibilityMenu } from './components/accessibility/index.ts';
 import './styles/accessibility.css';
-import { LanguageProvider } from './contexts/LanguageContext';
-import { AppProvider } from './core/state/AppContext';
-import Meta from '@/components/Meta';
+import { LanguageProvider } from '@/contexts/LanguageContext.tsx';
+import { AppProvider } from './core/state/AppContext.tsx';
+import Meta from '@/components/Meta.tsx';
 // Fix import path to match actual directory structure
-import { BusinessProvider } from './foundation/BusinessProvider';
-import ScrollToTop from '@/components/ScrollToTop';
-import AnalyticsProvider from '@/components/AnalyticsProvider';
-import { ROUTES } from './core/types/routes';
-import ROUTE_CONFIG from './core/constants/routes';
-import { PerformanceDashboard } from '@/components/debug/PerformanceDashboard';
-import { StickyCTABar } from '@/components/organisms/StickyCTABar';
-import ErrorBoundary from '@/components/layout/ErrorBoundary';
-import ProtectedRoute from '@/routes/ProtectedRoute';
+import { BusinessProvider } from './foundation/BusinessProvider.tsx';
+import ScrollToTop from '@/components/ScrollToTop.tsx';
+import AnalyticsProvider from '@/components/AnalyticsProvider.tsx';
+import { ROUTES } from './core/types/routes.ts';
+import ROUTE_CONFIG from './core/constants/routes.ts';
+import { PerformanceDashboard } from '@/components/debug/PerformanceDashboard.tsx';
+import { StickyCTABar } from '@/components/organisms/StickyCTABar.tsx';
+import ErrorBoundary from '@/components/layout/ErrorBoundary.tsx';
+import ProtectedRoute from '@/routes/ProtectedRoute.tsx';
 
 function App() {
   // State to toggle accessibility audit tool for developers
@@ -445,7 +445,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           >
             {/* Dynamically import to avoid bundling in production */}
             {React.createElement(
-              React.lazy(() => import('./components/accessibility/AccessibilityAudit')),
+              React.lazy(() => import('./components/accessibility/AccessibilityAudit.tsx')),
               {
                 onClose: () => setShowA11yAudit(false),
               },

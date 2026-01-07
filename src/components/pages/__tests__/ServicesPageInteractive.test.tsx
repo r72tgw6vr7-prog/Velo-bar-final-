@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
-import { ServicesPageInteractive } from '../ServicesPageInteractive';
-import { servicesContent } from '../../../content/services';
+import { ServicesPageInteractive } from '../ServicesPageInteractive.ts';
+import { servicesContent } from '../../../content/services.ts';
 /* eslint-disable no-console */
 
 // Mock framer-motion to avoid animation issues in tests

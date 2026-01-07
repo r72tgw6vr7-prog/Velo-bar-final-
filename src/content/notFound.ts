@@ -1,4 +1,4 @@
-import type { NotFoundPageContent } from './types';
+import type { NotFoundPageContent } from './types.ts';
 
 export const notFoundContent: NotFoundPageContent = {
   slug: 'not-found',

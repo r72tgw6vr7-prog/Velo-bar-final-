@@ -11,13 +11,13 @@
  *
  * Migration Path:
  * 1. Phase 1: This wrapper provides backward compatibility (CURRENT)
- * 2. Phase 2: Update imports to use './Input' directly
+ * 2. Phase 2: Update imports to use './Input.ts directly
  * 3. Phase 3: Remove this wrapper file (future cleanup sprint)
  *
  * @deprecated Use './Input' instead
- * @see ./Input.tsx
+ * @see ./Input.ts
  */
 
 // Re-export everything from the main Input component
-export * from './Input';
-export { default } from './Input';
+export * from './Input.tsx';
+export { default } from './Input.tsx';

@@ -32,15 +32,15 @@ import {
   Clock,
   Wine,
 } from 'lucide-react';
-import { Button } from '@/components/atoms/Button/Button';
+import { Button } from '@/components/atoms/Button/index.ts';
 import {
   trackBookingStepView,
   trackBookingSubmitError,
   trackBookingSubmitSuccess,
   getUTMParams,
-} from '@/analytics/trackEvent';
-import { useBookingFlow } from './hooks/useBookingFlow';
-import type { BookingWizardProps } from './types';
+} from '@/analytics/trackEvent.ts';
+import { useBookingFlow } from './hooks/useBookingFlow.ts';
+import type { BookingWizardProps } from './types.ts';
 import {
   eventTypes,
   guestRanges,
@@ -50,18 +50,18 @@ import {
   stepTitles,
   validEventTypes,
   validGuestRanges,
-} from './constants';
+} from './constants.ts';
 import {
   bookingWizardSchema,
   bookingWizardDefaultValues,
   type BookingWizardValues,
-} from '@/lib/forms/schemas/booking';
-import { toContactPayloadFromWizard } from '@/lib/forms/transformers/booking';
-import { useFormAutosave } from '@/hooks/useFormAutosave';
-import { useBookingStore, bookingSelectors } from '@/store/useBookingStore';
-import { calculatePrice } from '@/services/booking/pricing';
-import { useSendContact } from '@/lib/api/domainHooks';
-import type { ContactPayload } from '@/lib/api/schemas';
+} from '@/lib/forms/schemas/booking.ts';
+import { toContactPayloadFromWizard } from '@/lib/forms/transformers/booking.ts';
+import { useFormAutosave } from '@/hooks/useFormAutosave.ts';
+import { useBookingStore, bookingSelectors } from '@/store/useBookingStore.ts';
+import { calculatePrice } from '@/services/booking/pricing.ts';
+import { useSendContact } from '@/lib/api/domainHooks.ts';
+import type { ContactPayload } from '@/lib/api/schemas.ts';
 
 export const BookingWizard: React.FC<BookingWizardProps> = ({
   onComplete,

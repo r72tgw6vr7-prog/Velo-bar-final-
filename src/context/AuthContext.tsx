@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import authClient, { getAccessToken, setAccessToken } from '@/lib/api/authClient';
-import { getApiErrorMessage } from '@/lib/api/errors';
+import authClient, { getAccessToken, setAccessToken } from '@/lib/api/authClient.ts';
+import { getApiErrorMessage } from '@/lib/api/errors.ts';
 
 type AuthUser = {
   id: string;

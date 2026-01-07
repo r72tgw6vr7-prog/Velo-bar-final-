@@ -5,10 +5,10 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import firmenfeiernContentDE, { firmenfeiernContentEN } from '../content/firmenfeiern';
-import weihnachtsfeiernContentDE, { weihnachtsfeiernContentEN } from '../content/weihnachtsfeiern';
-import messeCateringContentDE, { messeCateringContentEN } from '../content/messe-catering';
-import privateFeiernContentDE, { privateFeiernContentEN } from '../content/private-feiern';
+import firmenfeiernContentDE, { firmenfeiernContentEN } from '../content/firmenfeiern.ts';
+import weihnachtsfeiernContentDE, { weihnachtsfeiernContentEN } from '../content/weihnachtsfeiern.ts';
+import messeCateringContentDE, { messeCateringContentEN } from '../content/messe-catering.ts';
+import privateFeiernContentDE, { privateFeiernContentEN } from '../content/private-feiern.ts';
 
 describe('Content Types - Structure Validation', () => {
   describe('FirmenFeiern Content', () => {

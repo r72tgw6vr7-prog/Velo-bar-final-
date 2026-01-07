@@ -3,8 +3,8 @@ import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 import type { LucideProps } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Palette, Zap, Heart, CheckCircle, Sparkles } from 'lucide-react';
-import { useBusinessDesignSystem } from '../../foundation';
-import { ProcessStepCard } from '../molecules/ProcessStepCard';
+import { useBusinessDesignSystem } from '../../foundation/index.ts';
+import { ProcessStepCard } from '../molecules/ProcessStepCard.ts';
 
 interface TimelineStep {
   id: string;

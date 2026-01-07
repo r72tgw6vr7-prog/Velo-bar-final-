@@ -5,11 +5,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Button } from '@/components/atoms';
-import { getNavigationRoutes } from '../../core/constants/routes';
-import { LanguageSwitcher } from '@/components/atoms/LanguageSwitcher';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { cn } from '@/utils/classname';
+import { Container, Button } from '@/components/atoms/index.ts';
+import { getNavigationRoutes } from '../../core/constants/routes.ts';
+import { LanguageSwitcher } from '@/components/molecules/LanguageSwitcher.tsx';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { cn } from '@/utils/classname.ts';
 
 const isLightColor = (value: string | null | undefined): boolean => {
   if (!value) return false;

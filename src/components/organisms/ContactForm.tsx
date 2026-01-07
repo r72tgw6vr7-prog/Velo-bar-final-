@@ -5,9 +5,13 @@
  */
 
 import React, { useState } from 'react';
-import { contactFormSchema, type ContactFormValues } from '@/lib/forms/schemas/contact';
-import { cn } from '../../utils/classname';
-import { Input, TextArea, Button, Checkbox, Select, SelectOption } from '../atoms';
+import { contactFormSchema, type ContactFormValues } from '@/lib/forms/schemas/contact.ts';
+import { cn } from '../../utils/classname.ts';
+import { Input } from '../atoms/Input/index.ts';
+import { TextArea } from '../atoms/TextArea.tsx';
+import { Button } from '../atoms/Button/index.ts';
+import { Checkbox } from '../atoms/Checkbox.tsx';
+import { Select, SelectOption } from '../atoms/Select.tsx';
 
 interface FormData {
   name: string;

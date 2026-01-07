@@ -1,4 +1,4 @@
-import { ApiError } from './axiosClient';
+import { ApiError } from './axiosClient.ts';
 
 export function getApiErrorMessage(error: unknown, fallback = 'Request failed'): string {
   if (!error) return fallback;

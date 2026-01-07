@@ -12,4 +12,4 @@
  * @category Atoms
  */
 
-export { Container } from './Container/Container';
+export { Container } from './Container/Container.ts';

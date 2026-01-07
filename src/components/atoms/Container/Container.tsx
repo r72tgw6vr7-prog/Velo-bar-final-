@@ -13,9 +13,9 @@
  */
 
 import React from 'react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 import { cva, type VariantProps } from 'class-variance-authority';
-import type { ContainerType } from '@/types/container';
+import type { ContainerType } from '@/types/container.ts';
 
 // Define the container variants for consistent sizing
 const containerVariants = cva(

@@ -1,6 +1,6 @@
 import { AlertTriangle } from 'lucide-react';
-import { Button } from '@/components/atoms';
-import { cn } from '@/utils/classname';
+import { Button } from '@/components/atoms/index.ts';
+import { cn } from '@/utils/classname.ts';
 import type { ReactNode } from 'react';
 
 export interface ErrorStateProps {

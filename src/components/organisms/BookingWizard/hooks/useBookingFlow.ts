@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import type { BookingStep } from '../types';
+import type { BookingStep } from '../types.ts';
 
 export interface UseBookingFlowReturn {
   currentStep: BookingStep;

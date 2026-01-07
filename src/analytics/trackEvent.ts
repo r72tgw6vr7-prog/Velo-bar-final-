@@ -1,4 +1,4 @@
-import analytics from '@/utils/analytics';
+import analytics from '@/utils/analytics.ts';
 
 /**
  * Typed, privacy-friendly event tracking wrapper.

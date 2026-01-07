@@ -1,8 +1,8 @@
 import React from 'react';
-import TestimonialsCarousel from '@/components/organisms/TestimonialsCarousel';
+import TestimonialsCarousel from '@/components/organisms/TestimonialsCarousel.tsx';
 import './PartnersAndTestimonialsSection.css';
-import { IMAGE_PATHS } from '../config/imagePaths';
-import { useTestimonials } from '@/lib/api/domainHooks';
+import { IMAGE_PATHS } from '../config/imagePaths.ts';
+import { useTestimonials } from '@/lib/api/domainHooks.ts';
 
 // PARTNER LOGOS - REFINEMENT #4: Only 4 real partners - FIXED WITH CORRECT PATHS
 const partnerLogos = [

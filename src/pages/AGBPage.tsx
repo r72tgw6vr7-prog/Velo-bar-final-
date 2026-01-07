@@ -3,9 +3,9 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { agbContent } from '@/content/agb';
-import { HeroHeading } from '@/components/ui/HeroHeading';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { agbContent } from '@/content/agb.ts';
+import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 
 export const AGBPage: React.FC = () => {
   return (

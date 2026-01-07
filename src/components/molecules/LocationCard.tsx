@@ -7,8 +7,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata';
-import { cn } from '@/utils/classname';
+import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
+import { cn } from '@/utils/classname.ts';
 
 export interface LocationCardProps {
   title: string;

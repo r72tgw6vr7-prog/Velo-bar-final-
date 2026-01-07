@@ -1,1 +1,1 @@
-export { BookingWizard, default } from './BookingWizard';
+export { BookingWizard, default } from './BookingWizard.ts';

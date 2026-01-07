@@ -8,7 +8,7 @@
 import { motion } from 'framer-motion';
 import type { Variant, Variants, HTMLMotionProps, PanInfo } from 'framer-motion';
 import React, { forwardRef } from 'react';
-import { useScrollAnimation } from '@/lib/animations/hooks';
+import { useScrollAnimation } from '@/lib/animations/hooks.ts';
 
 // Extend motion.section props but override the drag handler types
 type MotionSectionProps = Omit<

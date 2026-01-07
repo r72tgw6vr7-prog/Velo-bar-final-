@@ -5,7 +5,7 @@
  * Can be used for static sitemap generation or dynamic sitemap API
  */
 
-import { munichDistricts } from '../data/munich-districts';
+import { munichDistricts } from '../data/munich-districts.ts';
 
 export interface SitemapEntry {
   url: string;

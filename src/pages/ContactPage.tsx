@@ -11,10 +11,10 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { Section } from '@/components/atoms/Section/Section';
-import { BookingWizard } from '@/components/organisms/BookingWizard';
-import { ExpressQuote } from '@/components/molecules/ExpressQuote';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { BookingWizard } from '@/components/organisms/BookingWizard/BookingWizard.tsx';
+import { ExpressQuote } from '@/components/molecules/ExpressQuote/ExpressQuote.tsx';
 import { Phone, Star, MessageCircle, Calendar, Users } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {

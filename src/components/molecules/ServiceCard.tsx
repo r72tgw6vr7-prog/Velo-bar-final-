@@ -6,9 +6,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Card from '@/components/atoms/Card';
-import { cn } from '@/utils/classname';
-import { designTokens } from '@/design-tokens';
+import Card from '@/components/atoms/Card/Card.tsx';
+import { cn } from '@/utils/classname.ts';
+import { designTokens } from '@/design-tokens.ts';
 
 const msToSec = (ms: string) => parseFloat(ms) / 1000;
 const DUR_NORMAL = msToSec(designTokens.animations.duration.normal);

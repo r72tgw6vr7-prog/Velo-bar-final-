@@ -2,13 +2,13 @@
  * PageBackground Component
  * =====================
  * A simple content wrapper for pages.
- * The animated gradient background is now rendered ONCE at root level (main.tsx).
+ * The animated gradient background is now rendered ONCE at root level (main.ts.
  * This component just provides consistent layout and z-index for page content.
  */
 
 import React from 'react';
 
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 interface PageBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

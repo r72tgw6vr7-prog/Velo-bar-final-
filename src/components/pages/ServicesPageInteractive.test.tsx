@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from '../ui/Section';
-import PageHeader from '../ui/PageHeader';
+import Section from '../ui/Section.ts';
+import PageHeader from '../ui/PageHeader.ts';
 
 const ServicesPageInteractiveTest: React.FC = () => {
   return (

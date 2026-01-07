@@ -5,7 +5,7 @@ import path from 'node:path';
 import viteCompression from 'vite-plugin-compression';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import sitemap from 'vite-plugin-sitemap';
-import { routes } from './src/ssg.routes';
+import { routes } from './src/ssg.routes.ts';
 
 export default defineConfig({
   plugins: [
@@ -34,7 +34,7 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use('/api/optimize-image', async (req, res) => {
           try {
-            const handler = (await import('./src/api/optimize-image')).handler;
+            const handler = (await import('./src/api/optimize-image.ts')).handler;
             const response = await handler(req as unknown as Request);
 
             // Forward the response headers

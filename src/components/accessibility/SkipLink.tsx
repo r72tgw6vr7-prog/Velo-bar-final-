@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { VisuallyHidden } from './VisuallyHidden';
+import { VisuallyHidden } from './VisuallyHidden.tsx';
 
 interface SkipLinkProps extends HTMLAttributes<HTMLAnchorElement> {
   targetId?: string;

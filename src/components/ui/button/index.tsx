@@ -27,7 +27,7 @@
  */
 
 import React from 'react';
-import AtomButton from '../../atoms/Button/Button';
+import AtomButton from '../../atoms/Button/Button.ts';
 
 /** Legacy variant names for backward compatibility */
 export type LegacyVariant = 'accent' | 'outlineAccent' | 'primary' | 'secondary' | 'tertiary';

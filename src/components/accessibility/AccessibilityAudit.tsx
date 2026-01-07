@@ -5,9 +5,9 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { cn } from '../../utils/classname';
+import { cn } from '../../utils/classname.ts';
 import { AlertTriangle, CheckCircle, Info, Search, X } from 'lucide-react';
-import { Button } from '../atoms';
+import { Button } from '../atoms/index.ts';
 
 interface AccessibilityIssue {
   element: HTMLElement;

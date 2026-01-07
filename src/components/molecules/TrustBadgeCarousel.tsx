@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { TrustBadge } from '../atoms/TrustBadge';
+import { TrustBadge } from '../atoms/TrustBadge.ts';
 
 interface TrustBadge {
   icon: string;

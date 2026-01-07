@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { ep } from './endpoints';
-import { useApiQuery, useApiMutation } from './hooks';
-import { withQuery, type PageParams } from './pagination';
+import { ep } from './endpoints.ts';
+import { useApiQuery, useApiMutation } from './hooks.ts';
+import { withQuery, type PageParams } from './pagination.ts';
 import {
   ArtistSchema,
   GalleryItemSchema,
@@ -13,7 +13,7 @@ import {
   type Testimonial,
   type ContactPayload,
   type ContactResponse,
-} from './schemas';
+} from './schemas.ts';
 
 // ARTISTS
 export function useArtists(params?: PageParams) {

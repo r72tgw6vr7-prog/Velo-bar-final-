@@ -1,2 +1,2 @@
-export { default as HeroBike } from './HeroBike';
-export { default } from './HeroBike';
+export { default as HeroBike } from './HeroBike.ts';
+export { default } from './HeroBike.ts';

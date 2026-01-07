@@ -1,4 +1,4 @@
-import type { LegalPageContent } from './types';
+import type { LegalPageContent } from './types.ts';
 
 export const agbContent: LegalPageContent = {
   slug: 'agb',

@@ -23,7 +23,7 @@ export const LazyDatePicker = lazy(() =>
 
 // UI Lab and development components (defer completely)
 export const LazyUILabPreviewPage = lazy(() => 
-  import('@/pages/UILabPreviewPage.tsx')
+  import('@/pages/UILabPreviewPage.ts)
 );
 
 // Analytics components (defer until interaction)

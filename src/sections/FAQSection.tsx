@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 interface FAQ {
   id: string;

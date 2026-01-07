@@ -6,10 +6,10 @@
  */
 
 import React, { useMemo } from 'react';
-import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
-import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema';
+import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
+import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema.ts';
 
 const TeamEventsWorkshopsPage: React.FC = () => {
   const packages = servicePackages.teamEvents;

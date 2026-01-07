@@ -22,6 +22,15 @@ export default [
         },
       },
     },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project: './tsconfig.json',
+          alwaysTryTypes: true,
+        },
+        node: true,
+      },
+    },
     plugins: {
       '@typescript-eslint': typescriptPlugin,
       react: reactPlugin,
@@ -49,10 +58,25 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
 
       // Import rules
-      'import/no-unresolved': 'off',
+      'import/no-unresolved': [
+        'error',
+        {
+          commonjs: true,
+          caseSensitive: true,
+        },
+      ],
       'import/named': 'off',
       'import/default': 'error',
       'import/namespace': 'error',
+      'import/extensions': [
+        'error',
+        'always',
+        {
+          ignorePackages: true,
+          ts: 'always',
+          tsx: 'always',
+        },
+      ],
 
       // Accessibility rules
       'jsx-a11y/anchor-is-valid': 'warn',

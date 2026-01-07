@@ -1,3 +1,3 @@
-import PageHeader from '@/components/atoms/PageHeader';
+import PageHeader from '@/components/atoms/PageHeader.tsx';
 
 export default PageHeader;

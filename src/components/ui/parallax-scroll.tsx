@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Button, ResponsiveImage } from '@/components/atoms';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { Button, ResponsiveImage } from '@/components/atoms/index.ts';
+import { useMediaQuery } from '@/hooks/useMediaQuery.ts';
 import './ParallaxScrollDemo.css';
 
 interface ParallaxImage {

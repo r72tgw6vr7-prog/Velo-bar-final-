@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from '@/components/atoms/Card';
-import Button from '@/components/atoms/Button/Button';
-import { cn } from '@/utils/classname';
+import Card from '@/components/atoms/Card/Card.tsx';
+import Button from '@/components/atoms/Button/index.ts';
+import { cn } from '@/utils/classname.ts';
 
 export interface ServiceCardMobileProps {
   title: string;

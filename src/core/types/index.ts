@@ -10,12 +10,12 @@ import {
   type RouteConfig,
   type NavItem,
   type BreadcrumbData,
-} from './routes';
+} from './routes.ts';
 export type { PageType, RouteConfig, NavItem, BreadcrumbData };
 export { ROUTES };
 
 // State types
-export type { AppState, AppAction } from '../state/appReducer';
+export type { AppState, AppAction } from '../state/appReducer.ts';
 
 // Common UI types
 export interface BaseComponent {

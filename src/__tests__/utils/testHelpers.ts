@@ -8,9 +8,9 @@ import React, { ReactElement, ReactNode } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { vi } from 'vitest';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
-import { LanguageProvider } from '../../contexts/LanguageContext';
-import { AppProvider } from '../../core/state/AppContext';
-import { AccessibilityProvider } from '../../components/accessibility';
+import { LanguageProvider } from '../../contexts/LanguageContext.ts';
+import { AppProvider } from '../../core/state/AppContext.ts';
+import { AccessibilityProvider } from '../../components/accessibility/index.ts';
 
 /**
  * Custom render function that wraps components with all necessary providers

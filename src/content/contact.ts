@@ -1,4 +1,4 @@
-import type { ContactPageContent } from './types';
+import type { ContactPageContent } from './types.ts';
 
 export const contactContent: ContactPageContent = {
   slug: 'contact',

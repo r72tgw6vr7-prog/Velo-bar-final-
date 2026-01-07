@@ -6,7 +6,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import webVitals from '@/lib/webVitals';
+import webVitals from '@/lib/webVitals.ts';
 
 /* eslint-disable no-console -- uses console for dev-only Web Vitals diagnostics and initialization logs */
 

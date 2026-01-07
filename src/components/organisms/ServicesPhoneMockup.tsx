@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 import './ServicesPhoneMockup.css';
 

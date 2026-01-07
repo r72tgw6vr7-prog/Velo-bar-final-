@@ -10,7 +10,7 @@
  */
 
 import { motion } from 'framer-motion';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 
 type SpinnerSize = 'sm' | 'md' | 'lg';
 type SpinnerVariant = 'spinner' | 'dots' | 'pulse' | 'bars';

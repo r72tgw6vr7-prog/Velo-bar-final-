@@ -2,10 +2,10 @@
  * FirmenFeiern (Corporate Events) Page Content
  * =============================================
  * Complete content for the corporate events service page
- * Extracted from FirmenFeiernPage.tsx for content layer migration
+ * Extracted from FirmenFeiernPage.tsfor content layer migration
  */
 
-import type { ServicePageContent } from './types';
+import type { ServicePageContent } from './types.ts';
 
 // Extended content type for this specific page
 export interface FirmenfeiernPageContent extends ServicePageContent {

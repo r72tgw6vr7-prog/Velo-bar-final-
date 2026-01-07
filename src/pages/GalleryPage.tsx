@@ -3,9 +3,9 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { ParallaxScrollDemo } from '@/components/gallery/ParallaxScrollDemo';
-import { HeroHeading } from '@/components/ui/HeroHeading';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { ParallaxScrollDemo } from '@/components/gallery/ParallaxScrollDemo.tsx';
+import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 
 export const GalleryPage: React.FC = () => {
   return (

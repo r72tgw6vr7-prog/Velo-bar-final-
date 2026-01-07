@@ -12,8 +12,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Card } from '../../components/atoms/Card/Card';
-import type { CardVariant, CardPadding } from '../../types/components';
+import { Card } from '../../components/atoms/Card/Card.tsx';
+import type { CardVariant, CardPadding } from '../../types/components.ts';
 
 describe('Card - Consolidated Component', () => {
   describe('Variant Rendering', () => {

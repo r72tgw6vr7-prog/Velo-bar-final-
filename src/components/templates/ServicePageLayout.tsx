@@ -28,12 +28,12 @@
  */
 
 import React from 'react';
-import { cn } from '@/utils/classname';
-import { Button, Section, Container } from '@/components/atoms';
-import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata';
+import { cn } from '@/utils/classname.ts';
+import { Button, Section, Container } from '@/components/atoms/index.ts';
+import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
-import Footer from '@/components/pages/Footer';
+import Footer from '@/components/pages/Footer.tsx';
 
 /**
  * Service package data structure

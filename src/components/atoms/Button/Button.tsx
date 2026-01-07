@@ -1,8 +1,8 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/utils/classname';
+import { cn } from '@/utils/classname.ts';
 import { Slot } from '@radix-ui/react-slot';
-import Spinner from '../Spinner';
+import Spinner from '../Spinner.tsx';
 
 type WithClassName = { className?: string; children?: React.ReactNode };
 

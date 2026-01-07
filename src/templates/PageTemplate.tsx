@@ -32,12 +32,12 @@
  */
 
 import React from 'react';
-import { CosmicNav } from '../components/organisms/CosmicNav';
-import { Footer } from '../components/pages';
-import { Section, PageBackground } from '../components/atoms';
-import Meta from '@/components/Meta';
-import ErrorBoundary from '../components/layout/ErrorBoundary';
-import { cn } from '../utils/classname';
+import { CosmicNav } from '../components/organisms/CosmicNav.tsx';
+import Footer from '../components/pages/Footer.tsx';
+import { Section, PageBackground } from '../components/atoms/index.ts';
+import Meta from '@/components/Meta.tsx';
+import ErrorBoundary from '../components/layout/ErrorBoundary.tsx';
+import { cn } from '../utils/classname.ts';
 
 interface PageTemplateProps {
   /** Main content of the page */

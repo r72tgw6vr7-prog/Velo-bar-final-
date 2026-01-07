@@ -5,11 +5,11 @@
  */
 
 import React from 'react';
-import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
-import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { getServicePagePackages } from '@/content/servicePagePackages';
-import { serviceFAQs, serviceTestimonials } from '@/data/services';
+import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
+import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout.tsx';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { getServicePagePackages } from '@/content/servicePagePackages.ts';
+import { serviceFAQs, serviceTestimonials } from '@/data/services.ts';
 
 const HochzeitenPage: React.FC = () => {
   const packages = getServicePagePackages('hochzeiten');

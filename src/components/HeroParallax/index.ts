@@ -1,2 +1,2 @@
-export { HeroParallax } from './HeroParallax';
-export { default } from './HeroParallax';
+export { HeroParallax } from './HeroParallax.ts';
+export { default } from './HeroParallax.ts';

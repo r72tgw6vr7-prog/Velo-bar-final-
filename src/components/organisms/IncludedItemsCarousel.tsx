@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { IncludedItemCard, IncludedItemCardProps } from '../molecules/IncludedItemCard';
+import { IncludedItemCard, IncludedItemCardProps } from '../molecules/IncludedItemCard.ts';
 import '../../styles/included-carousel.css';
 
 export interface IncludedItemsCarouselProps {

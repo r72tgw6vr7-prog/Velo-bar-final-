@@ -1,4 +1,4 @@
-import manifest from '@/generated/imageManifest';
+import manifest from '@/generated/imageManifest.ts';
 
 function norm(u: string) {
   try {

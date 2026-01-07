@@ -1,6 +1,6 @@
 import React from 'react';
-import { Badge } from '@/components/atoms/Badge/Badge';
-import { ReviewCard } from '@/components/molecules/ReviewCard';
+import { Badge } from '@/components/atoms/Badge/Badge.tsx';
+import { ReviewCard } from '@/components/molecules/ReviewCard.tsx';
 
 interface Partner {
   logo: string;

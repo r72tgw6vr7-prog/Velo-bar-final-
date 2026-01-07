@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { v4 as uuidv4 } from 'uuid';
 import { Upload, Image as ImageIcon, Loader2 } from 'lucide-react';
-import { csrfFetch } from '@/lib/csrfHelper';
+import { csrfFetch } from '@/lib/csrfHelper.ts';
 
 // WARNING: This component should NOT be included in production builds
 // For development/testing only. Use proper authentication in production.

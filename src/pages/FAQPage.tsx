@@ -6,11 +6,11 @@
  */
 
 import React from 'react';
-import { FAQSection } from '@/sections/FAQSection';
-import { PageTemplate } from '@/templates/PageTemplate';
-import { getFAQSchema } from '@/seo/schema';
-import { Section } from '@/components/atoms/Section/Section';
-import { HeroHeading } from '@/components/ui/HeroHeading';
+import { FAQSection } from '@/sections/FAQSection.tsx';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { getFAQSchema } from '@/seo/schema.ts';
+import { Section } from '@/components/atoms/Section/Section.tsx';
+import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 
 // FAQ items for Velobar
 const faqItems = [

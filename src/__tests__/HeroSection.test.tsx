@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import type { HTMLAttributes, ReactNode } from 'react';
-import { HeroSection } from '@/sections/HeroSection';
+import { HeroSection } from '@/sections/HeroSection.tsx';
 
 // Mock framer-motion
 vi.mock('framer-motion', async () => {

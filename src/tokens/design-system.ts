@@ -3,9 +3,9 @@
  * This file is kept for backward compatibility and re-exports from the main tokens file.
  *
  * Migration: Replace imports of this file with:
- * import { designTokens } from '@/design-tokens';
+ * import { designTokens } from '@/design-tokens.ts';
  */
 
 // Thin alias to the single source of truth
-export * from '../design-tokens';
-export { default } from '../design-tokens';
+import _tokens from '../design-tokens.ts';
+export { default } from '../design-tokens.ts';

@@ -1,214 +1,142 @@
 #!/usr/bin/env node
-
 /**
- * Import Path Validator
- * Validates that imports follow project standards
- * - No deep relative imports (more than 2 levels)
- * - Prefer path aliases (@/) over relative paths
- * - No circular dependencies
+ * validate-imports.mjs
+ *
+ * - Scans all .ts/.tsx/.js files in src/
+ * - For each import/export specifier that is local (./ ../ @/):
+ *   - Checks it resolves via TypeScript resolver
+ *   - Ensures specifier contains an explicit extension (ts/tsx/jsx/js)
+ *   - Ensures exact on-disk casing for each path segment
+ *
+ * Exit code: 0 if all checks pass; 1 if any violation found.
+ *
+ * Usage (CI): node scripts/validate-imports.mjs
  */
 
-import { readFileSync, readdirSync, statSync } from 'fs';
-import { join, dirname, relative } from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'fs';
+import path from 'path';
+import ts from 'typescript';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const ROOT = join(__dirname, '..');
+const ROOT = process.cwd();
+const SRC = path.join(ROOT, 'src');
 
-const COLORS = {
-  reset: '\x1b[0m',
-  red: '\x1b[31m',
-  yellow: '\x1b[33m',
-  green: '\x1b[32m',
-  blue: '\x1b[36m',
-};
+function walk(dir) {
+  const files = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name === 'dist' || entry.name === 'node_modules') continue;
+      files.push(...walk(p));
+    } else if (/\.(ts|tsx|js|jsx)$/.test(entry.name)) {
+      files.push(p);
+    }
+  }
+  return files;
+}
 
-let issues = {
-  deepImports: [],
-  shouldUseAlias: [],
-  circularDeps: [],
-};
+// load tsconfig for compiler options
+function getCompilerOptions() {
+  const cfgPath = ts.findConfigFile(ROOT, ts.sys.fileExists, 'tsconfig.json');
+  if (!cfgPath) return {};
+  const read = ts.readConfigFile(cfgPath, ts.sys.readFile);
+  const parsed = ts.parseJsonConfigFileContent(read.config, ts.sys, path.dirname(cfgPath));
+  return parsed.options || {};
+}
 
-/**
- * Get all TypeScript files recursively
- */
-function getAllTsFiles(dir, fileList = []) {
-  const files = readdirSync(dir);
+const compilerOptions = getCompilerOptions();
+const host = ts.createCompilerHost(compilerOptions);
 
-  files.forEach((file) => {
-    const filePath = join(dir, file);
-    const stat = statSync(filePath);
+const files = walk(SRC);
+const importRe = /(?:import|export)\s[^;]*?from\s*['"]([^'"]+)['"]/g;
+let errors = [];
 
-    if (stat.isDirectory()) {
-      // Skip node_modules, dist, etc.
-      if (!['node_modules', 'dist', '.git', 'coverage'].includes(file)) {
-        getAllTsFiles(filePath, fileList);
+for (const file of files) {
+  const content = fs.readFileSync(file, 'utf8');
+  // Remove comments to avoid parsing commented imports
+  const contentWithoutComments = content.replace(/\/\/.*$/gm, '');
+  let m;
+  while ((m = importRe.exec(contentWithoutComments)) !== null) {
+    const spec = m[1];
+    if (!/^(?:\.{1,2}\/|@\/)/.test(spec)) continue; // not local
+
+    // check explicit extension
+    if (!/\.(ts|tsx|js|jsx|json)$/.test(spec)) {
+      errors.push({
+        file,
+        spec,
+        type: 'MISSING_EXTENSION',
+        msg: `Import does not include explicit extension: '${spec}' in ${path.relative(ROOT, file)}` 
+      });
+      continue;
+    }
+
+    // resolve module via TS
+    let resolved;
+    if (spec.startsWith('@/')) {
+      // mimic TS path mapping @/ -> src/
+      const candidate = path.join(ROOT, spec.replace(/^@\//, 'src/'));
+      // try exact path
+      if (fs.existsSync(candidate)) {
+        resolved = candidate;
+      } else {
+        // try with extensions
+        const exts = ['.tsx', '.ts', '.jsx', '.js'];
+        for (const ex of exts) {
+          if (fs.existsSync(candidate + ex)) {
+            resolved = candidate + ex;
+            break;
+          }
+        }
       }
-    } else if (file.match(/\.(ts|tsx)$/)) {
-      fileList.push(filePath);
-    }
-  });
-
-  return fileList;
-}
-
-/**
- * Extract imports from a file
- */
-function extractImports(filePath) {
-  const content = readFileSync(filePath, 'utf-8');
-  const importRegex = /import\s+(?:[\w,\s{}*]+\s+from\s+)?['"]([^'"]+)['"]/g;
-  const imports = [];
-  let match;
-
-  while ((match = importRegex.exec(content)) !== null) {
-    imports.push({
-      path: match[1],
-      line: content.substring(0, match.index).split('\n').length,
-    });
-  }
-
-  return imports;
-}
-
-/**
- * Count levels of relative imports
- */
-function countRelativeLevels(importPath) {
-  const matches = importPath.match(/\.\.\//g);
-  return matches ? matches.length : 0;
-}
-
-/**
- * Check if import should use alias
- */
-function shouldUsePathAlias(importPath, currentFile) {
-  // If it's importing from src/components, src/lib, src/hooks, etc.
-  const aliasTargets = ['components', 'lib', 'hooks', 'types', 'utils', 'config'];
-
-  for (const target of aliasTargets) {
-    if (importPath.includes(`/${target}/`) || importPath.includes(`src/${target}`)) {
-      return !importPath.startsWith('@/');
-    }
-  }
-
-  return false;
-}
-
-/**
- * Validate imports in a file
- */
-function validateFile(filePath) {
-  const imports = extractImports(filePath);
-  const relPath = relative(ROOT, filePath);
-
-  imports.forEach(({ path: importPath, line }) => {
-    // Skip node_modules and @radix-ui, etc.
-    if (!importPath.startsWith('.') && !importPath.startsWith('@/')) {
-      return;
+    } else {
+      const containing = file;
+      const result = ts.resolveModuleName(spec, containing, compilerOptions, host);
+      if (result && result.resolvedModule && result.resolvedModule.resolvedFileName) {
+        resolved = result.resolvedModule.resolvedFileName;
+      }
     }
 
-    // Check for deep relative imports
-    const levels = countRelativeLevels(importPath);
-    if (levels > 2) {
-      issues.deepImports.push({
-        file: relPath,
-        line,
-        import: importPath,
-        levels,
+    if (!resolved || !fs.existsSync(resolved)) {
+      errors.push({
+        file,
+        spec,
+        type: 'UNRESOLVED',
+        msg: `Cannot resolve import '${spec}' in ${path.relative(ROOT, file)} (resolved -> ${resolved})` 
+      });
+      continue;
+    }
+
+    // casing check: walk each path segment and ensure exact string match in parent dir
+    const rel = path.relative(ROOT, resolved);
+    const segments = rel.split(path.sep);
+    let cur = ROOT;
+    let badSegment = null;
+    for (const seg of segments) {
+      const entries = fs.readdirSync(cur);
+      if (!entries.includes(seg)) {
+        badSegment = { cur, seg, entries };
+        break;
+      }
+      cur = path.join(cur, seg);
+    }
+    if (badSegment) {
+      errors.push({
+        file,
+        spec,
+        type: 'CASING_MISMATCH',
+        msg: `Casing mismatch for import '${spec}' in ${path.relative(ROOT, file)}; expected segment '${badSegment.seg}' exists with different case in ${path.relative(ROOT, badSegment.cur)}` 
       });
     }
-
-    // Check if should use path alias
-    if (importPath.startsWith('../') && shouldUsePathAlias(importPath, filePath)) {
-      issues.shouldUseAlias.push({
-        file: relPath,
-        line,
-        import: importPath,
-      });
-    }
-  });
+  }
 }
 
-/**
- * Print results
- */
-function printResults() {
-  console.log(`\n${COLORS.blue}╔════════════════════════════════════════╗`);
-  console.log(`║   Import Path Validation Report       ║`);
-  console.log(`╚════════════════════════════════════════╝${COLORS.reset}\n`);
-
-  // Deep imports
-  if (issues.deepImports.length > 0) {
-    console.log(
-      `${COLORS.red}[ERROR] Deep Relative Imports (${issues.deepImports.length})${COLORS.reset}`,
-    );
-    console.log(`   Imports with more than 2 levels (../../..)\n`);
-
-    issues.deepImports.forEach(({ file, line, import: imp, levels }) => {
-      console.log(`   ${file}:${line}`);
-      console.log(`   └─ ${COLORS.yellow}${imp}${COLORS.reset} (${levels} levels)`);
-      console.log();
-    });
+if (errors.length > 0) {
+  console.error('validate-imports: Found issues:');
+  for (const e of errors) {
+    console.error(`- [${e.type}] ${e.msg}`);
   }
-
-  // Should use alias
-  if (issues.shouldUseAlias.length > 0) {
-    console.log(
-      `${COLORS.yellow}[WARN]  Should Use Path Alias (${issues.shouldUseAlias.length})${COLORS.reset}`,
-    );
-    console.log(`   Relative imports that should use @/ alias\n`);
-
-    issues.shouldUseAlias.forEach(({ file, line, import: imp }) => {
-      console.log(`   ${file}:${line}`);
-      console.log(`   └─ ${COLORS.yellow}${imp}${COLORS.reset}`);
-
-      // Suggest fix
-      const suggestion = imp.replace(/\.\.\/src\//, '@/').replace(/\.\.\//g, '');
-      if (suggestion !== imp) {
-        console.log(`   [TIP] Suggestion: ${COLORS.green}${suggestion}${COLORS.reset}`);
-      }
-      console.log();
-    });
-  }
-
-  // Summary
-  console.log(`${COLORS.blue}═══════════════════════════════════════${COLORS.reset}`);
-
-  const totalIssues = issues.deepImports.length + issues.shouldUseAlias.length;
-
-  if (totalIssues === 0) {
-    console.log(`${COLORS.green}[OK] All imports follow project standards!${COLORS.reset}`);
-  } else {
-    console.log(`${COLORS.red}Total Issues: ${totalIssues}${COLORS.reset}`);
-    console.log(`  - Deep imports: ${issues.deepImports.length}`);
-    console.log(`  - Should use alias: ${issues.shouldUseAlias.length}`);
-  }
-
-  console.log();
-
-  return totalIssues;
+  process.exit(1);
+} else {
+  console.log('validate-imports: all imports resolved, have explicit extensions, and casing matches on-disk files.');
+  process.exit(0);
 }
-
-/**
- * Main execution
- */
-function main() {
-  console.log('[CHECK] Scanning TypeScript files...\n');
-
-  const srcDir = join(ROOT, 'src');
-  const files = getAllTsFiles(srcDir);
-
-  console.log(`Found ${files.length} TypeScript files\n`);
-  console.log('Validating imports...\n');
-
-  files.forEach(validateFile);
-
-  const totalIssues = printResults();
-
-  // Exit with error code if issues found
-  process.exit(totalIssues > 0 ? 1 : 0);
-}
-
-main();

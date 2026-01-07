@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import type { Language } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import type { Language } from '@/contexts/LanguageContext.tsx';
 import { Globe } from 'lucide-react';
 
 interface LanguageSwitcherProps {

@@ -1,7 +1,7 @@
 // Glassmorphism effects for this portfolio site
 // Based on design-tokens-complete.json specifications
 
-import { designTokens } from '../design-tokens';
+import { designTokens } from '../design-tokens.ts';
 
 // Helper function to create CSS-in-JS glassmorphism effects
 export const createGlassmorphism = (

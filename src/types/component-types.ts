@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { PageType } from './route-types';
+import { PageType } from './route-types.ts';
 
 export interface ContainerProps {
   children: ReactNode;

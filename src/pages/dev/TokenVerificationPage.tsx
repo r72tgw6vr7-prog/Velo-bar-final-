@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from '@/components/atoms/Container';
-import { Button } from '@/components/atoms/Button';
+import { Container } from '@/components/atoms/Container/Container.tsx';
+import { Button } from '@/components/atoms/Button/Button.tsx';
 
 type Swatch = {
   name: string;

@@ -7,8 +7,8 @@
  */
 
 // Primary export - the consolidated Input component
-export { default as Input } from './Input';
-export { Input as default } from './Input';
+export { default as Input } from './Input.ts';
+export { Input as default } from './Input.ts';
 
 // Re-export types
 export type {
@@ -18,9 +18,9 @@ export type {
   IconPosition,
   ValidationState,
   InputColorScheme,
-} from './Input';
+} from './Input.tsx';
 
 // Backward compatibility exports
-export { default as ConsolidatedInput } from './ConsolidatedInput';
-export { default as InputField } from './InputField.wrapper';
-export { default as FormInput } from './FormInput.wrapper';
+export { default as ConsolidatedInput } from './ConsolidatedInput.ts';
+export { default as InputField } from './InputField.wrapper.ts';
+export { default as FormInput } from './FormInput.wrapper.ts';
