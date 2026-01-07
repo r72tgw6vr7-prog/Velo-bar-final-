@@ -7,7 +7,7 @@
 
 import React, { useMemo } from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
 import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema';
 

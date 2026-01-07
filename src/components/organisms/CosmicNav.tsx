@@ -6,7 +6,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button } from '@/components/atoms';
-import { getNavigationRoutes } from '@core/constants/routes';
+import { getNavigationRoutes } from '../../core/constants/routes';
 import { LanguageSwitcher } from '@/components/atoms/LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/utils/classname';

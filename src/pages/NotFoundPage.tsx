@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { notFoundContent } from '@/content/notFound';
 
 export const NotFoundPage: React.FC = () => {

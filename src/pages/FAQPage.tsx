@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { FAQSection } from '@/sections/FAQSection';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { getFAQSchema } from '@/seo/schema';
 import { Section } from '@/components/atoms/Section/Section';
 import { HeroHeading } from '@/components/ui/HeroHeading';

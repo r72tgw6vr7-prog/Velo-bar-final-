@@ -48,14 +48,14 @@ const LocationsIndexPage = lazy(() => import('./pages/locations/LocationsIndexPa
 import { AccessibilityProvider, AccessibilityMenu } from './components/accessibility';
 import './styles/accessibility.css';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { AppProvider } from '@core/state/AppContext';
+import { AppProvider } from './core/state/AppContext';
 import Meta from '@/components/Meta';
 // Fix import path to match actual directory structure
 import { BusinessProvider } from './foundation/BusinessProvider';
 import ScrollToTop from '@/components/ScrollToTop';
 import AnalyticsProvider from '@/components/AnalyticsProvider';
-import { ROUTES } from '@core/types/routes';
-import ROUTE_CONFIG from '@core/constants/routes';
+import { ROUTES } from './core/types/routes';
+import ROUTE_CONFIG from './core/constants/routes';
 import { PerformanceDashboard } from '@/components/debug/PerformanceDashboard';
 import { StickyCTABar } from '@/components/organisms/StickyCTABar';
 import ErrorBoundary from '@/components/layout/ErrorBoundary';

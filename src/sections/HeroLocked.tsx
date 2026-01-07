@@ -18,7 +18,7 @@ import '@/styles/hero.css';
 export const HeroLocked: React.FC = () => {
   return (
     <Section
-      container='none'V
+      container='none'
       spacing='none'
       background='transparent'
       className='home-hero relative'

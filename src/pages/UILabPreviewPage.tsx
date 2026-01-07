@@ -10,7 +10,7 @@
 import '@/styles/pages/home-new.css';
 import '@/styles/pages/ui-lab-unified.css';
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Section } from '@/components/atoms/Section/Section';
 import { Container } from '@/components/atoms/Container/Container';
 

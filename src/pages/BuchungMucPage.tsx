@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
 
 const BuchungMucPage: React.FC = () => {

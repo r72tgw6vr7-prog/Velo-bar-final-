@@ -8,7 +8,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Section } from '@/components/atoms/Section/Section';
 import { Button } from '@/components/atoms/Button/Button';
 import { ArrowRight, Check, ChevronDown, Clock, Phone, Snowflake } from 'lucide-react';

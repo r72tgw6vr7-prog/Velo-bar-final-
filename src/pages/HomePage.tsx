@@ -7,7 +7,7 @@
 
 import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Section, Container } from '@/components/atoms';
 import { GridClean } from '@/components/atoms/Grid.clean';
 import { HeroLocked } from '@/sections/HeroLocked';

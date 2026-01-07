@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { PageHeader } from '@/components/atoms/PageHeader';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 
 interface DatenschutzPageProps {
   language?: 'DE' | 'EN';

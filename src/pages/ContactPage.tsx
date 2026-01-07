@@ -11,7 +11,7 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Section } from '@/components/atoms/Section/Section';
 import { BookingWizard } from '@/components/organisms/BookingWizard';
 import { ExpressQuote } from '@/components/molecules/ExpressQuote';

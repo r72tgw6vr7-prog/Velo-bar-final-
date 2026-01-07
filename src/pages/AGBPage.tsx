@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate';
+import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { agbContent } from '@/content/agb';
 import { HeroHeading } from '@/components/ui/HeroHeading';
 

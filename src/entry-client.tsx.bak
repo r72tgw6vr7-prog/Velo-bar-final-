@@ -1,0 +1,8 @@
+// SSG entry files - disabled since project uses regular Vite build
+// These files were for vite-react-ssg which is not installed
+// Keeping as reference for future SSG implementation if needed
+
+import React from 'react';
+import App from './App';
+
+export default App;

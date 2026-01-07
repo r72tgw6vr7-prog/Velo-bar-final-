@@ -20,7 +20,6 @@
       "@/types/*": ["./src/types/*"],
       "@core/*": ["./src/core/*"]
     },
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true
   },
