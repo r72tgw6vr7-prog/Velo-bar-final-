@@ -38,12 +38,12 @@ import { ClientLogos } from '@/sections/ClientLogos';
 import { HeroHeading } from '@/components/ui/HeroHeading';
 
 // Pricing components
-import { PricingPage } from '@/pages/PricingPage';
+import { PricingPage } from '@/pages/PricingPage.tsx';
 import { IncludedItemCard } from '@/components/molecules/IncludedItemCard';
 
 // Location components
-import VenueLandingPage from '@/pages/locations/VenueLandingPage';
-import LocationsIndexPage from '@/pages/locations/LocationsIndexPage';
+import VenueLandingPage from '@/pages/locations/VenueLandingPage.tsx';
+import LocationsIndexPage from '@/pages/locations/LocationsIndexPage.tsx';
 
 // Icons
 import { MapPin, Users, Calendar, Star } from 'lucide-react';
