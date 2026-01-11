@@ -6,7 +6,7 @@ export const endpoints = {
   gallery: '/api/gallery',
   testimonials: '/api/testimonials',
   contact: '/api/contact',
-  booking: '/.netlify/functions/booking',
+  booking: '/api/booking',
   me: '/api/auth/me',
   login: '/api/auth/login',
   logout: '/api/auth/logout',
