@@ -56,19 +56,15 @@ export function toContactPayloadFromWizard(
     phone: values.phone,
     subject: `Event-Anfrage: ${values.eventType || 'Velobar Event'}`,
     message:
+      `Standort: ${values.location === 'munich' ? 'MUNICH' : 'COBURG'}\n` +
       `Event-Typ: ${values.eventType}\n` +
       `Gäste: ${values.guestCount}\n` +
       `Datum: ${values.eventDate}\n` +
-      `Dauer: ${values.serviceDuration}\n` +
-      `Getränke: ${values.drinkPreference}\n` +
-      `Budget: ${values.budgetRange}\n` +
       `Nachricht: ${values.message || 'Keine zusätzlichen Angaben'}`,
     eventType: values.eventType,
     eventDate: values.eventDate,
     guestCount: values.guestCount,
-    budget: values.budgetRange,
-    drinkPreference: values.drinkPreference,
-    serviceDuration: values.serviceDuration,
+    eventLocation: values.location,
     company: values.company,
     vatId: values.vatId || undefined,
     costCenter: values.costCenter || undefined,

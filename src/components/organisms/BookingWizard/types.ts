@@ -3,12 +3,16 @@ import { LucideIcon } from 'lucide-react';
 export type BookingStep = 1 | 2 | 3 | 4;
 
 export interface Step1Data {
+  location: string;
+}
+
+export interface Step2Data {
   eventType: string;
   guestCount: string;
   eventDate: string;
 }
 
-export interface Step2Data {
+export interface Step3Data {
   company: string;
   vatId?: string;
   costCenter?: string;
@@ -16,12 +20,6 @@ export interface Step2Data {
   lastName: string;
   email: string;
   phone: string;
-}
-
-export interface Step3Data {
-  drinkPreference: string;
-  serviceDuration: string;
-  budgetRange: string;
   message: string;
   privacyAccepted: boolean;
 }
@@ -42,21 +40,11 @@ export interface GuestRange {
   label: string;
 }
 
-export interface DrinkPreference {
+export interface Location {
   id: string;
   label: string;
+  icon: LucideIcon;
   description: string;
-}
-
-export interface ServiceDuration {
-  id: string;
-  label: string;
-  description: string;
-}
-
-export interface BudgetRange {
-  id: string;
-  label: string;
 }
 
 export interface StepTitle {

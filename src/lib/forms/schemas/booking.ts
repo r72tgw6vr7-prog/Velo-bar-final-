@@ -2,10 +2,8 @@ import { z } from 'zod';
 import {
   validEventTypes,
   validGuestRanges,
-  drinkPreferences,
-  serviceDurations,
-  budgetRanges,
 } from '@/components/organisms/BookingWizard/constants.ts';
+import { LocationId } from '@/lib/locations';
 
 /**
  * Single-step booking form (BookingForm.ts schema
@@ -33,6 +31,10 @@ export type BookingFormValues = z.infer<typeof bookingFormSchema>;
  * Booking wizard (multi-step) schema
  */
 export const bookingWizardSchema = z.object({
+  // Step 1: Location selection (new first step)
+  location: z.enum(['munich', 'coburg'] as const).describe('Bitte Standort auswählen'),
+
+  // Step 2: Event basics (previously step 1)
   eventType: z.string().refine((val) => validEventTypes.includes(val), {
     message: 'Bitte Event-Typ auswählen',
   }),
@@ -41,6 +43,7 @@ export const bookingWizardSchema = z.object({
   }),
   eventDate: z.string().min(1, { message: 'Datum erforderlich' }),
 
+  // Step 3: Company & contact (previously step 2)
   company: z.string().min(1, { message: 'Firma erforderlich' }),
   vatId: z.string().optional(),
   costCenter: z.string().optional(),
@@ -49,15 +52,7 @@ export const bookingWizardSchema = z.object({
   email: z.string().email({ message: 'Gültige E-Mail erforderlich' }),
   phone: z.union([z.string().min(7, { message: 'Telefonnummer erforderlich' }), z.literal('')]),
 
-  drinkPreference: z.string().refine((val) => drinkPreferences.some((d) => d.id === val), {
-    message: 'Bitte Getränkepräferenz wählen',
-  }),
-  serviceDuration: z.string().refine((val) => serviceDurations.some((d) => d.id === val), {
-    message: 'Bitte Servicedauer wählen',
-  }),
-  budgetRange: z.string().refine((val) => budgetRanges.some((b) => b.id === val), {
-    message: 'Bitte Budget wählen',
-  }),
+  // Message field moved from deleted step 3 to current step 3
   message: z.string().optional(),
   privacyAccepted: z
     .boolean()
@@ -72,6 +67,7 @@ export type BookingWizardValues = z.infer<typeof bookingWizardSchema>;
  * Shared defaults for forms
  */
 export const bookingWizardDefaultValues: BookingWizardValues = {
+  location: 'munich', // Default to Munich but will require explicit selection
   eventType: '',
   guestCount: '',
   eventDate: '',
@@ -82,9 +78,6 @@ export const bookingWizardDefaultValues: BookingWizardValues = {
   lastName: '',
   email: '',
   phone: '',
-  drinkPreference: '',
-  serviceDuration: '',
-  budgetRange: '',
   message: '',
   privacyAccepted: false,
   website: '',

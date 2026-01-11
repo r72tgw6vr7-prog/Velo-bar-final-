@@ -194,13 +194,17 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
 
   // Handle "Show more photos" expansion with proper refresh
   const handleShowMore = () => {
+    // Prevent rapid multiple clicks
     if (isExpandingRef.current) return;
     isExpandingRef.current = true;
 
     const accordion = accordionRef.current;
     if (!accordion) {
       setVisibleRows((current) => Math.min(current + ROWS_PER_BATCH, maxRows));
-      isExpandingRef.current = false;
+      // Always reset flag
+      setTimeout(() => {
+        isExpandingRef.current = false;
+      }, 100);
       return;
     }
 
@@ -209,30 +213,34 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
 
     // Update visible rows
     setVisibleRows((current) => Math.min(current + ROWS_PER_BATCH, maxRows));
+    
+    // Clear any existing timeouts
+    const timeoutId = setTimeout(() => {
+      // Always clean up
+      resetExpandState(accordion);
+    }, 600);
 
     // Wait for layout changes to complete, then refresh ScrollTrigger
     const handleTransitionEnd = () => {
-      accordion.removeEventListener('transitionend', handleTransitionEnd);
-      accordion.classList.remove('is-expanding');
+      clearTimeout(timeoutId); // Clear the fallback timeout
+      resetExpandState(accordion, handleTransitionEnd);
+    };
 
+    // Function to reset expansion state properly
+    const resetExpandState = (el: HTMLElement, listener?: EventListener) => {
+      if (listener) {
+        el.removeEventListener('transitionend', listener);
+      }
+      el.classList.remove('is-expanding');
+      
       // Refresh ScrollTrigger after DOM updates
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
-        isExpandingRef.current = false;
+        isExpandingRef.current = false; // Guarantee flag reset
       });
     };
 
     accordion.addEventListener('transitionend', handleTransitionEnd);
-
-    // Fallback timeout in case transitionend doesn't fire
-    setTimeout(() => {
-      if (isExpandingRef.current) {
-        accordion.removeEventListener('transitionend', handleTransitionEnd);
-        accordion.classList.remove('is-expanding');
-        ScrollTrigger.refresh();
-        isExpandingRef.current = false;
-      }
-    }, 600);
   };
 
   return (

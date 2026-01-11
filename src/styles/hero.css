@@ -183,8 +183,11 @@
   flex-wrap: nowrap;
   align-items: center;
   width: max-content;
+  /* Fixed: consistent gap between groups */
+  gap: clamp(12px, 1.2vw, 25px);
   animation: hero-scroll-left 25s linear infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0); /* Force GPU acceleration */
 }
 
 /* Performance hints: ensure GPU acceleration during transforms */
@@ -203,10 +206,9 @@
 .hero-parallax-group {
   display: flex;
   flex-wrap: nowrap;
-  /* Changed: smooth spacing via clamp */
   gap: clamp(12px, 1.2vw, 25px);
   align-items: center;
-  padding-right: clamp(12px, 1.2vw, 25px);
+  /* REMOVED padding-right - causes gap at loop point */
 }
 
 .hero-parallax-track:hover {
@@ -229,19 +231,19 @@
 
 @keyframes hero-scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes hero-scroll-right {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -494,7 +496,12 @@
 
   .hero-parallax-group {
     gap: 14px;
-    padding-right: 14px;
+    /* REMOVED padding-right - causes gap at loop point */
+  }
+
+  .hero-parallax-track {
+    /* Fixed: Added consistent gap between groups */
+    gap: 14px;
   }
 
   .hero-parallax-poster {

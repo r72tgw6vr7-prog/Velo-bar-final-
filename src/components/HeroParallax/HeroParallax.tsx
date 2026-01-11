@@ -2,10 +2,13 @@
  * HeroParallax Component
  * ======================
  * Full height photos scattered, no text to avoid.
+ * Uses JS-based infinite marquee with exact measurements for gap-free animation.
  */
 
 import '@/styles/hero.css';
+import { useEffect } from 'react';
 import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
+import { initInfiniteMarquees } from './InfiniteMarqueeFix';
 
 interface PhotoFrame {
   id: string;
@@ -189,7 +192,8 @@ export const HeroParallax = ({ className = '' }: HeroParallaxProps) => {
     scatteredPhotos.slice(10, 15),
   ];
 
-  const repeatCount = 2;
+  // Duplicate photos many times to ensure continuous flow
+  const repeatCount = 6; // Increased from 2 to 6 for better coverage
 
   const getRepeatedRow = (row: PhotoFrame[]): PhotoFrame[] => {
     const repeated: PhotoFrame[] = [];
@@ -222,7 +226,7 @@ export const HeroParallax = ({ className = '' }: HeroParallaxProps) => {
         const rowOffset = rowIndex * 2;
 
         return (
-          <div key={`row-${rowIndex}`} className='hero-parallax-track'>
+          <div key={`row-${rowIndex}`} className={`hero-parallax-track ${rowIndex % 2 === 1 ? 'scroll-right' : ''}`}>
             <div className='hero-parallax-group'>
               {repeatedRow.map((photo, index) => (
                 <div

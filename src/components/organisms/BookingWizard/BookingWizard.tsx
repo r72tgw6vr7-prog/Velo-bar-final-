@@ -2,9 +2,9 @@
  * BookingWizard - Multi-Step B2B Event Inquiry Form
  * ==================================================
  * 4-step wizard for B2B event booking:
- * Step 1: Event Basics (type, guests, date)
- * Step 2: Company & Contact (company, name, email, phone)
- * Step 3: Service Options (drinks, duration, budget, message)
+ * Step 1: Location Selection (Munich or Coburg)
+ * Step 2: Event Basics (type, guests, date)
+ * Step 3: Company & Contact (company, name, email, phone, message)
  * Step 4: Review & Confirmation
  *
  * Features:
@@ -31,6 +31,9 @@ import {
   User,
   Clock,
   Wine,
+  Briefcase,
+  Gift,
+  MapPin,
 } from 'lucide-react';
 import { Button } from '@/components/atoms/Button/index.ts';
 import {
@@ -44,9 +47,7 @@ import type { BookingWizardProps } from './types.ts';
 import {
   eventTypes,
   guestRanges,
-  drinkPreferences,
-  serviceDurations,
-  budgetRanges,
+  locations,
   stepTitles,
   validEventTypes,
   validGuestRanges,
@@ -56,12 +57,10 @@ import {
   bookingWizardDefaultValues,
   type BookingWizardValues,
 } from '@/lib/forms/schemas/booking.ts';
-import { toContactPayloadFromWizard } from '@/lib/forms/transformers/booking.ts';
 import { useFormAutosave } from '@/hooks/useFormAutosave.ts';
 import { useBookingStore, bookingSelectors } from '@/store/useBookingStore.ts';
 import { calculatePrice } from '@/services/booking/pricing.ts';
-import { useSendContact } from '@/lib/api/domainHooks.ts';
-import type { ContactPayload } from '@/lib/api/schemas.ts';
+import { ep } from '@/lib/api/endpoints.ts';
 
 export const BookingWizard: React.FC<BookingWizardProps> = ({
   onComplete,
@@ -84,7 +83,6 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     setSubmitError,
   } = useBookingFlow();
   const formRef = useRef<HTMLFormElement>(null);
-  const sendContact = useSendContact();
 
   // Get pre-fill values from URL params or props (URL params take priority)
   const urlEventType = searchParams.get('eventType') || searchParams.get('type');
@@ -137,6 +135,8 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
   const { isDirty } = form.formState;
 
   // Watch specific fields to avoid reference issues
+  // Watch form fields for each step
+  const location = watch('location');
   const eventType = watch('eventType');
   const guestCount = watch('guestCount');
   const eventDate = watch('eventDate');
@@ -144,12 +144,9 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
   const firstName = watch('firstName');
   const lastName = watch('lastName');
   const email = watch('email');
-  const privacyAccepted = watch('privacyAccepted');
-  const drinkPreference = watch('drinkPreference');
-  const serviceDuration = watch('serviceDuration');
-  const budgetRange = watch('budgetRange');
   const phone = watch('phone');
   const message = watch('message');
+  const privacyAccepted = watch('privacyAccepted');
 
   // Use watch subscription to avoid infinite loops
   useEffect(() => {
@@ -165,18 +162,18 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
 
   // Compute pricing estimate during render to avoid infinite loops
   const computedPricingEstimate = useMemo(() => {
-    if (eventType && guestCount && serviceDuration) {
+    if (eventType && guestCount) {
       const estimate = calculatePrice({
         eventType,
         guestCount,
-        duration: serviceDuration,
+        duration: '4-5h', // Default duration since we removed the selection
         addons: [],
         rush: false,
       });
       return estimate.total;
     }
     return undefined;
-  }, [eventType, guestCount, serviceDuration]);
+  }, [eventType, guestCount]);
 
   // Update pricing estimate in store when it changes
   useEffect(() => {
@@ -207,18 +204,19 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
   const canProceed = (step: number): boolean => {
     switch (step) {
       case 1:
-        return !!eventType && !!guestCount && !!eventDate;
+        return !!location;
       case 2:
-        return !!company && !!firstName && !!lastName && !!email;
+        return !!eventType && !!guestCount && !!eventDate;
       case 3:
-        return privacyAccepted;
+        return !!company && !!firstName && !!lastName && !!email && privacyAccepted;
       default:
         return true;
     }
   };
 
   const stepForField = (field: keyof BookingWizardValues): 1 | 2 | 3 | 4 => {
-    if (field === 'eventType' || field === 'guestCount' || field === 'eventDate') return 1;
+    if (field === 'location') return 1;
+    if (field === 'eventType' || field === 'guestCount' || field === 'eventDate') return 2;
     if (
       field === 'company' ||
       field === 'vatId' ||
@@ -226,14 +224,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
       field === 'firstName' ||
       field === 'lastName' ||
       field === 'email' ||
-      field === 'phone'
-    ) {
-      return 2;
-    }
-    if (
-      field === 'drinkPreference' ||
-      field === 'serviceDuration' ||
-      field === 'budgetRange' ||
+      field === 'phone' ||
       field === 'message' ||
       field === 'privacyAccepted'
     ) {
@@ -252,11 +243,11 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
   const validateStep = async (step: number): Promise<boolean> => {
     switch (step) {
       case 1:
-        return await trigger(['eventType', 'guestCount', 'eventDate']);
+        return await trigger(['location']);
       case 2:
-        return await trigger(['company', 'firstName', 'lastName', 'email']);
+        return await trigger(['eventType', 'guestCount', 'eventDate']);
       case 3:
-        return await trigger(['privacyAccepted']);
+        return await trigger(['company', 'firstName', 'lastName', 'email', 'privacyAccepted']);
       default:
         return true;
     }
@@ -282,10 +273,32 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     setSubmitError(null);
 
     try {
-      const payload = toContactPayloadFromWizard(data, {
+      const bookingPayload = {
+        location: data.location,
+        customerName: `${data.firstName} ${data.lastName}`.trim(),
+        customerEmail: data.email,
+        company: data.company,
+        phone: data.phone || undefined,
+        eventType: data.eventType,
+        guestCount: data.guestCount,
+        eventDate: data.eventDate,
+        message: data.message || undefined,
+        vatId: data.vatId || undefined,
+        costCenter: data.costCenter || undefined,
         source: urlSource,
-      }) as unknown as ContactPayload;
-      await sendContact.mutate(payload);
+      };
+
+      const response = await fetch(ep.booking(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bookingPayload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || 'Booking submission failed');
+      }
 
       // Track successful submission with source and UTM params
       const utmParams = getUTMParams();
@@ -295,10 +308,9 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
       setCurrentStep(4);
       onComplete?.();
     } catch (error: unknown) {
-      const status = (error as { response?: { status?: number } })?.response?.status ?? 0;
-      const errorType = status ? `http_${status}` : 'request_failed';
+      const errorMessage = error instanceof Error ? error.message : 'request_failed';
       // Track failed submission without sending PII
-      trackBookingSubmitError(errorType, urlSource);
+      trackBookingSubmitError(errorMessage, urlSource);
 
       console.error('Booking wizard error:', error);
       setSubmitError(
@@ -356,6 +368,55 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
   );
 
   const Step1 = () => (
+    <div className='space-y-8'>
+      <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
+        <MapPin className='mr-2 inline' size={20} />
+        Bitte wählen Sie Ihren Standort
+      </h3>
+      <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+        {locations.map((loc) => (
+          <button
+            key={loc.id}
+            type='button'
+            onClick={() => setValue('location', loc.id as 'munich' | 'coburg')}
+            className={`flex items-start gap-4 rounded-xl border p-6 text-left transition-colors duration-200 ease-out ${
+              location === loc.id
+                ? 'border-[#ee7868] bg-[#ee7868] hover:bg-[#f08b7d]'
+                : 'border-[#003141] bg-[#fff8ec] hover:bg-[rgba(255,248,236,0.9)]'
+            }`}
+          >
+            <div
+              className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-lg ${
+                location === loc.id
+                  ? 'bg-[#fff8ec] text-[#003141]'
+                  : 'bg-[#003141] text-[#fff8ec]'
+              }`}
+            >
+              <loc.icon size={28} />
+            </div>
+            <div>
+              <div
+                className={`font-(--typography-font-weight-bold) text-xl ${
+                  location === loc.id ? 'text-[#fff8ec]' : 'text-[#003141]'
+                }`}
+              >
+                {loc.label}
+              </div>
+              <div
+                className={`text-(--typography-body) ${
+                  location === loc.id ? 'text-[#fff8ec]/90' : 'text-[#003141]/70'
+                }`}
+              >
+                {loc.description}
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+
+  const Step2 = () => (
     <div className='space-y-8'>
       <div>
         <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
@@ -460,7 +521,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     </div>
   );
 
-  const Step2 = () => (
+  const Step3 = () => (
     <div className='space-y-8'>
       <div>
         <label className='mb-0 block font-(--typography-font-weight-medium) text-(--typography-body-small) text-[#fff8ec]'>
@@ -583,117 +644,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           className='w-full rounded-xl border-2 border-[#003141] bg-[#fff8ec] px-8 py-4 text-[#003141] focus:border-[#ee7868] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none'
         />
       </div>
-    </div>
-  );
-
-  const Step3 = () => (
-    <div className='space-y-8'>
-      <div>
-        <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
-          <Wine className='mr-2 inline' size={20} />
-          Welche Getränke wünschen Sie?
-        </h3>
-        <div className='grid grid-cols-1 gap-8 sm:grid-cols-3'>
-          {drinkPreferences.map((pref) => (
-            <button
-              key={pref.id}
-              type='button'
-              onClick={() => setValue('drinkPreference', pref.id)}
-              className={`rounded-xl border-2 p-4 text-center transition-all ${
-                drinkPreference === pref.id
-                  ? 'border-[#ee7868] bg-[#ee7868] hover:border-[#f08b7d] hover:bg-[#f08b7d]'
-                  : 'border-[#003141] bg-[#fff8ec] hover:border-[#003141]/80'
-              }`}
-            >
-              <div
-                className={`font-(--typography-font-weight-medium) ${
-                  drinkPreference === pref.id ? 'text-[#fff8ec]' : 'text-[#003141]'
-                }`}
-              >
-                {pref.label}
-              </div>
-              <div
-                className={`text-(--typography-body-small) ${
-                  drinkPreference === pref.id ? 'text-[#fff8ec]/90' : 'text-[#003141]/70'
-                }`}
-              >
-                {pref.description}
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
-          <Clock className='mr-2 inline' size={20} />
-          Wie lange soll der Service dauern?
-        </h3>
-        <div className='grid grid-cols-1 gap-8 sm:grid-cols-3'>
-          {serviceDurations.map((dur) => (
-            <button
-              key={dur.id}
-              type='button'
-              onClick={() => setValue('serviceDuration', dur.id)}
-              className={`rounded-xl border-2 p-4 text-center transition-all ${
-                serviceDuration === dur.id
-                  ? 'border-[#ee7868] bg-[#ee7868] hover:border-[#f08b7d] hover:bg-[#f08b7d]'
-                  : 'border-[#003141] bg-[#fff8ec] hover:border-[#003141]/80'
-              }`}
-            >
-              <div
-                className={`font-(--typography-font-weight-medium) ${
-                  serviceDuration === dur.id ? 'text-[#fff8ec]' : 'text-[#003141]'
-                }`}
-              >
-                {dur.label}
-              </div>
-              <div
-                className={`text-(--typography-body-small) ${
-                  serviceDuration === dur.id ? 'text-[#fff8ec]/90' : 'text-[#003141]/70'
-                }`}
-              >
-                {dur.description}
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
-          <Euro className='mr-2 inline' size={20} />
-          Was ist Ihr ungefähres Budget?
-        </h3>
-        {computedPricingEstimate !== undefined && (
-          <div className='mb-4 inline-flex items-center gap-2 rounded-full bg-[#ee7868]/10 px-4 py-2 text-(--typography-body-small) text-[#ee7868]'>
-            Geschätzter Richtwert: €{computedPricingEstimate.toLocaleString('de-DE')}
-          </div>
-        )}
-        <div className='grid grid-cols-2 gap-8 sm:grid-cols-3'>
-          {budgetRanges.map((range) => (
-            <button
-              key={range.id}
-              type='button'
-              onClick={() => setValue('budgetRange', range.id)}
-              className={`rounded-xl border-2 p-4 text-center transition-all ${
-                budgetRange === range.id
-                  ? 'border-[#ee7868] bg-[#ee7868] hover:border-[#f08b7d] hover:bg-[#f08b7d]'
-                  : 'border-[#003141] bg-[#fff8ec] hover:border-[#003141]/80'
-              }`}
-            >
-              <div
-                className={`font-(--typography-font-weight-medium) ${
-                  budgetRange === range.id ? 'text-[#fff8ec]' : 'text-[#003141]'
-                }`}
-              >
-                {range.label}
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
+      
       <div>
         <label className='mb-0 block font-(--typography-font-weight-medium) text-(--typography-body-small) text-[#fff8ec]'>
           Weitere Informationen (optional)
@@ -705,7 +656,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           className='w-full resize-none rounded-xl border-2 border-[#003141] bg-[#fff8ec] px-8 py-4 text-[#003141] focus:border-[#ee7868] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none'
         />
       </div>
-
+      
       <div className='flex items-start gap-3'>
         <input
           type='checkbox'
@@ -744,55 +695,64 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     </div>
   );
 
+  /* Step3 for drinks/duration/budget has been removed and replaced with Company & Contact info */
+
   const Step4 = () => {
-    if (isComplete) {
+    if (isSubmitting || isComplete) {
       return (
         <div className='py-8 text-center'>
           <div className='mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-green-100'>
             <Check className='text-green-600' size={40} />
           </div>
           <h3 className='mb-8 font-(--typography-font-weight-bold) text-(--typography-headline-lg) text-[#fff8ec]'>
-            Vielen Dank für Ihre Anfrage!
+            {isSubmitting ? 'Anfrage wird gesendet...' : 'Vielen Dank für Ihre Anfrage!'}
           </h3>
           <p className='mx-auto mb-8 max-w-md text-(--typography-body-standard) text-[#fff8ec]/80'>
-            Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.
+            {isSubmitting ? 'Bitte haben Sie einen Moment Geduld...' : 'Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.'}
           </p>
 
-          <div className='mx-auto max-w-md rounded-xl bg-[#fff8ec] p-8 text-left'>
-            <h4 className='mb-0 font-(--typography-font-weight-semibold) text-[#003141]'>
-              Zusammenfassung:
-            </h4>
-            <div className='space-y-0 text-(--typography-body-small) text-[#003141]/80'>
-              <div>
-                <strong>Event:</strong> {eventTypes.find((t) => t.id === eventType)?.label}
+          {isComplete && (
+            <>
+              <div className='mx-auto max-w-md rounded-xl bg-[#fff8ec] p-8 text-left'>
+                <h4 className='mb-0 font-(--typography-font-weight-semibold) text-[#003141]'>
+                  Zusammenfassung:
+                </h4>
+                <div className='space-y-0 text-(--typography-body-small) text-[#003141]/80'>
+                  <div>
+                    <strong>Standort:</strong> {locations.find((l) => l.id === watch('location'))?.label}
+                  </div>
+                  <div>
+                    <strong>Event:</strong> {eventTypes.find((t) => t.id === watch('eventType'))?.label}
+                  </div>
+                  <div>
+                    <strong>Gäste:</strong> {guestRanges.find((g) => g.id === watch('guestCount'))?.label}
+                  </div>
+                  <div>
+                    <strong>Datum:</strong> {watch('eventDate')}
+                  </div>
+                  <div>
+                    <strong>Unternehmen:</strong> {watch('company')}
+                  </div>
+                  <div>
+                    <strong>Kontakt:</strong> {watch('firstName')} {watch('lastName')}
+                  </div>
+                  <div>
+                    <strong>E-Mail:</strong> {watch('email')}
+                  </div>
+                </div>
               </div>
-              <div>
-                <strong>Gäste:</strong> {guestRanges.find((g) => g.id === guestCount)?.label}
-              </div>
-              <div>
-                <strong>Datum:</strong> {eventDate}
-              </div>
-              <div>
-                <strong>Unternehmen:</strong> {company}
-              </div>
-              <div>
-                <strong>Kontakt:</strong> {firstName} {lastName}
-              </div>
-              <div>
-                <strong>E-Mail:</strong> {email}
-              </div>
-            </div>
-          </div>
 
-          <div className='mt-8 flex flex-col justify-center gap-8 sm:flex-row'>
-            <a
-              href='tel:+4916094623196'
-              className='inline-flex items-center justify-center gap-0 rounded-xl border border-[#003141] bg-[#fff8ec] px-8 py-4 font-(--typography-font-weight-medium) text-[#003141] transition-colors duration-200 ease-out hover:bg-[#003141] hover:text-[#fff8ec]'
-            >
-              <Phone size={18} />
-              Jetzt anrufen
-            </a>
-          </div>
+              <div className='mt-8 flex flex-col justify-center gap-8 sm:flex-row'>
+                <a
+                  href='tel:+4916094623196'
+                  className='inline-flex items-center justify-center gap-0 rounded-xl border border-[#003141] bg-[#fff8ec] px-8 py-4 font-(--typography-font-weight-medium) text-[#003141] transition-colors duration-200 ease-out hover:bg-[#003141] hover:text-[#fff8ec]'
+                >
+                  <Phone size={18} />
+                  Jetzt anrufen
+                </a>
+              </div>
+            </>
+          )}
         </div>
       );
     }
@@ -807,19 +767,31 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           <div className='space-y-8'>
             <div className='border-b border-[#003141]/20 pb-8'>
               <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
+                Standort
+              </h5>
+              <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
+                <div>
+                  <strong>Standort:</strong>{' '}
+                  {locations.find((l) => l.id === watch('location'))?.label || '—'}
+                </div>
+              </div>
+            </div>
+            
+            <div className='border-b border-[#003141]/20 pb-8'>
+              <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
                 Event-Details
               </h5>
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
                   <strong>Event-Typ:</strong>{' '}
-                  {eventTypes.find((t) => t.id === eventType)?.label || '—'}
+                  {eventTypes.find((t) => t.id === watch('eventType'))?.label || '—'}
                 </div>
                 <div>
                   <strong>Gästezahl:</strong>{' '}
-                  {guestRanges.find((g) => g.id === guestCount)?.label || '—'}
+                  {guestRanges.find((g) => g.id === watch('guestCount'))?.label || '—'}
                 </div>
                 <div>
-                  <strong>Datum:</strong> {eventDate || '—'}
+                  <strong>Datum:</strong> {watch('eventDate') || '—'}
                 </div>
               </div>
             </div>
@@ -830,46 +802,30 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
               </h5>
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
-                  <strong>Unternehmen:</strong> {company || '—'}
+                  <strong>Unternehmen:</strong> {watch('company') || '—'}
                 </div>
                 <div>
-                  <strong>Name:</strong> {firstName} {lastName}
+                  <strong>Name:</strong> {watch('firstName')} {watch('lastName')}
                 </div>
                 <div>
-                  <strong>E-Mail:</strong> {email || '—'}
+                  <strong>E-Mail:</strong> {watch('email') || '—'}
                 </div>
                 <div>
-                  <strong>Telefon:</strong> {phone || '—'}
+                  <strong>Telefon:</strong> {watch('phone') || '—'}
                 </div>
               </div>
             </div>
 
-            <div>
-              <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
-                Service-Optionen
-              </h5>
-              <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
-                <div>
-                  <strong>Getränke:</strong>{' '}
-                  {drinkPreferences.find((d) => d.id === drinkPreference)?.label ||
-                    'Nicht angegeben'}
-                </div>
-                <div>
-                  <strong>Dauer:</strong>{' '}
-                  {serviceDurations.find((s) => s.id === serviceDuration)?.label ||
-                    'Nicht angegeben'}
-                </div>
-                <div>
-                  <strong>Budget:</strong>{' '}
-                  {budgetRanges.find((b) => b.id === budgetRange)?.label || 'Nicht angegeben'}
+            {watch('message') && (
+              <div>
+                <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
+                  Nachricht
+                </h5>
+                <div className='text-(--typography-body-small) text-[#003141]/80'>
+                  {watch('message')}
                 </div>
               </div>
-              {message && (
-                <div className='mt-8 text-(--typography-body-small) text-[#003141]/80'>
-                  <strong>Nachricht:</strong> {message}
-                </div>
-              )}
-            </div>
+            )}
           </div>
         </div>
 
@@ -941,7 +897,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
               </Button>
             )}
 
-            {currentStep < 3 ? (
+            {currentStep < 4 ? (
               <Button
                 type='button'
                 variant='coral'
@@ -950,19 +906,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 disabled={!canProceed(currentStep)}
                 className='min-w-[120px]'
               >
-                Weiter
-                <ArrowRight className='ml-2' size={16} />
-              </Button>
-            ) : currentStep === 3 ? (
-              <Button
-                type='button'
-                variant='coral'
-                size='md'
-                onClick={nextStep}
-                disabled={!canProceed(currentStep)}
-                className='min-w-40'
-              >
-                Zur Zusammenfassung
+                {currentStep === 3 ? 'Zur Zusammenfassung' : 'Weiter'}
                 <ArrowRight className='ml-2' size={16} />
               </Button>
             ) : (

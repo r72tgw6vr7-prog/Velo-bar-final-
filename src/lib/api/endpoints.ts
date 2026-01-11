@@ -6,6 +6,7 @@ export const endpoints = {
   gallery: '/api/gallery',
   testimonials: '/api/testimonials',
   contact: '/api/contact',
+  booking: '/.netlify/functions/booking',
   me: '/api/auth/me',
   login: '/api/auth/login',
   logout: '/api/auth/logout',
@@ -24,6 +25,7 @@ export const ep = {
   testimonials: () => endpoints.testimonials,
 
   contact: () => endpoints.contact,
+  booking: () => endpoints.booking,
   me: () => endpoints.me,
   login: () => endpoints.login,
   logout: () => endpoints.logout,
