@@ -64,7 +64,7 @@ export const useScrollDepthTracking = () => {
       timeoutId = setTimeout(handleScroll, 100);
     };
 
-    window.addEventListener('scroll', throttledHandleScroll);
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', throttledHandleScroll);

@@ -18,8 +18,12 @@
 .partners-carousel-container {
   --gap: var(--spacing-6);
   --item-width: 180px;
-  --loop-distance: calc(4 * var(--item-width) + 3 * var(--gap));
-  width: min(100%, var(--loop-distance));
+  --items-per-loop: 3;
+  --container-width: calc(
+    var(--items-per-loop) * var(--item-width) + (var(--items-per-loop) - 1) * var(--gap)
+  );
+  --loop-distance: calc(var(--items-per-loop) * (var(--item-width) + var(--gap)));
+  width: min(100%, var(--container-width));
   height: 120px;
   overflow: hidden;
   position: relative;
@@ -37,7 +41,6 @@
   display: flex;
   align-items: center;
   gap: var(--gap);
-  --loop-distance: calc(4 * var(--item-width) + 3 * var(--gap));
   will-change: transform;
   animation: scrollPartners 60s linear infinite;
 }
@@ -74,8 +77,10 @@
 }
 
 /* Pause animation on hover for better UX */
-.partners-carousel-container:hover .partners-carousel-track {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .partners-carousel-container:hover .partners-carousel-track {
+    animation-play-state: paused;
+  }
 }
 
 /* Responsive */
@@ -90,6 +95,10 @@
     --gap: 8px;
     --item-width: clamp(120px, 45vw, 160px);
     height: 92px;
+  }
+
+  .partners-carousel-track {
+    animation-duration: 600s;
   }
   .partners-logo {
     height: 72px;

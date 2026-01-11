@@ -46,7 +46,7 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({
         </div>
 
         <div className='overflow-hidden'>
-          <div className='flex min-w-max animate-[client-marquee_25s_linear_infinite] gap-20 transition-[animation-play-state] duration-300 hover:[animation-play-state:paused]'>
+          <div className='client-logos-track flex min-w-max animate-[client-marquee_25s_linear_infinite] gap-20 transition-[animation-play-state] duration-300'>
             {logos.map((logo) => (
               <div key={logo.id} className='flex h-28 w-64 items-center justify-center px-10'>
                 <img
@@ -65,6 +65,18 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({
         @keyframes client-marquee {
           0% { transform: translate3d(0, 0, 0); }
           100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          .client-logos-track:hover {
+            animation-play-state: paused;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .client-logos-track {
+            animation-duration: 250s;
+          }
         }
       `}</style>
     </section>

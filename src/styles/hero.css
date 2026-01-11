@@ -114,8 +114,18 @@
   transform-origin: 6019px 4537px;
 }
 
+#front-wheel {
+  transform-box: view-box;
+  transform-origin: 6019px 4537px;
+}
+
 /* Back wheel spokes - rotating animation */
 #back-wheel-spokes {
+  transform-box: view-box;
+  transform-origin: 4919px 4537px;
+}
+
+#back-wheel {
   transform-box: view-box;
   transform-origin: 4919px 4537px;
 }
@@ -211,8 +221,10 @@
   /* REMOVED padding-right - causes gap at loop point */
 }
 
-.hero-parallax-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .hero-parallax-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* Extra rows are enabled only on tablet/desktop */
@@ -379,15 +391,10 @@
 
   #front-wheel,
   #back-wheel {
-    animation: none !important;
-    transform: none !important;
-  }
-
-  #front-wheel-spokes,
-  #back-wheel-spokes {
+    transform-box: view-box;
     will-change: transform;
     backface-visibility: hidden;
-    animation: hero-wheel-rotate 6s linear infinite;
+    animation: hero-wheel-rotate 10s linear infinite;
   }
 
   /* Bike container - proportional offset and width so bike overlaps parallax slightly */
@@ -484,14 +491,14 @@
   }
 
   .hero-parallax-track {
-    animation: hero-scroll-left 28s linear infinite;
+    animation: hero-scroll-left 280s linear infinite;
     will-change: transform;
     transform: translate3d(0, 0, 0);
   }
 
   .hero-parallax > .hero-parallax-track:nth-child(2) {
     animation-name: hero-scroll-right;
-    animation-duration: 32s;
+    animation-duration: 320s;
   }
 
   .hero-parallax-group {

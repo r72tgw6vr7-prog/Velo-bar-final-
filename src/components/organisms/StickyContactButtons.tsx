@@ -31,7 +31,7 @@ export const StickyContactButtons: React.FC<StickyContactButtonsProps> = ({
       setShowScrollButton(window.scrollY > 500);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

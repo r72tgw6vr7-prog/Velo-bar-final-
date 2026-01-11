@@ -1,0 +1,35 @@
+/**
+ * Conservative Mobile Performance Optimizations
+ * ==============================================
+ * REDUCE intensity, DON'T disable animations.
+ * Maintains visual effects while improving mobile FPS.
+ */
+
+@media (max-width: 768px) {
+  /* Reduce shadow intensity on mobile */
+  .gallery-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Smoother scroll behavior */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Reduce will-change scope - only on actively animating elements */
+  .is-animating {
+    will-change: transform, opacity;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

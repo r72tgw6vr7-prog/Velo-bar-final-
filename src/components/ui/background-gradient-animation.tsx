@@ -15,6 +15,9 @@ import { cn } from '@/utils/classname.ts';
  * - Deep teal: rgb(0, 49, 65)
  * - Medium teal: rgb(0, 80, 100)
  * - Coral: rgb(238, 120, 104)
+ *
+ * MOBILE PERF: Disables expensive blur filter and RAF loop on mobile devices
+ * to maintain 60fps. Uses static gradient fallback instead.
  */
 
 export function BackgroundGradientAnimation() {
@@ -44,7 +47,7 @@ export function BackgroundGradientAnimation() {
       tgY.current = event.clientY;
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     animationId = requestAnimationFrame(move);
 
     return () => {

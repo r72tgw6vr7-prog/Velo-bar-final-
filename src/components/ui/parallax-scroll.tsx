@@ -112,11 +112,11 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
   const column1Ref = useRef<HTMLDivElement | null>(null);
   const column2Ref = useRef<HTMLDivElement | null>(null);
   const column3Ref = useRef<HTMLDivElement | null>(null);
-  const isExpandingRef = useRef(false);
-
+  
   const isMobile = useMediaQuery('(max-width: 767px)');
   const columnCount = isMobile ? 2 : BASE_COLUMNS;
   const [visibleRows, setVisibleRows] = useState(ROWS_PER_BATCH);
+  const [isExpanding, setIsExpanding] = useState(false);
 
   const rows = useMemo(() => buildRows(images, BASE_COLUMNS), [images]);
   const maxRows = rows.length;
@@ -195,52 +195,48 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
   // Handle "Show more photos" expansion with proper refresh
   const handleShowMore = () => {
     // Prevent rapid multiple clicks
-    if (isExpandingRef.current) return;
-    isExpandingRef.current = true;
+    if (isExpanding) return;
+    setIsExpanding(true);
 
     const accordion = accordionRef.current;
+    
+    // Update visible rows first
+    setVisibleRows((current) => Math.min(current + ROWS_PER_BATCH, maxRows));
+
     if (!accordion) {
-      setVisibleRows((current) => Math.min(current + ROWS_PER_BATCH, maxRows));
-      // Always reset flag
+      // Simple fallback - just reset flag after brief delay
       setTimeout(() => {
-        isExpandingRef.current = false;
-      }, 100);
+        setIsExpanding(false);
+      }, 150);
       return;
     }
 
     // Mark accordion as expanding
     accordion.classList.add('is-expanding');
 
-    // Update visible rows
-    setVisibleRows((current) => Math.min(current + ROWS_PER_BATCH, maxRows));
-    
-    // Clear any existing timeouts
-    const timeoutId = setTimeout(() => {
-      // Always clean up
-      resetExpandState(accordion);
-    }, 600);
-
-    // Wait for layout changes to complete, then refresh ScrollTrigger
-    const handleTransitionEnd = () => {
-      clearTimeout(timeoutId); // Clear the fallback timeout
-      resetExpandState(accordion, handleTransitionEnd);
-    };
-
-    // Function to reset expansion state properly
-    const resetExpandState = (el: HTMLElement, listener?: EventListener) => {
-      if (listener) {
-        el.removeEventListener('transitionend', listener);
-      }
-      el.classList.remove('is-expanding');
+    // Guaranteed cleanup with multiple fallbacks
+    const resetExpandState = () => {
+      // Force remove the class
+      accordion.classList.remove('is-expanding');
+      
+      // Double check and force remove again
+      setTimeout(() => {
+        accordion.classList.remove('is-expanding');
+        setIsExpanding(false);
+      }, 50);
       
       // Refresh ScrollTrigger after DOM updates
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
-        isExpandingRef.current = false; // Guarantee flag reset
       });
     };
 
-    accordion.addEventListener('transitionend', handleTransitionEnd);
+    // Multiple cleanup attempts with different timings
+    setTimeout(resetExpandState, 300);
+    setTimeout(() => {
+      accordion.classList.remove('is-expanding');
+      setIsExpanding(false);
+    }, 500);
   };
 
   return (
@@ -284,7 +280,7 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
             variant='inverse'
             onClick={handleShowMore}
             aria-controls='velo-gallery-grid'
-            disabled={isExpandingRef.current}
+            disabled={isExpanding}
           >
             Mehr Bilder anzeigen
           </Button>

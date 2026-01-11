@@ -92,7 +92,10 @@ export function initInfiniteMarquees() {
     // CRITICAL: Create TRUE circular animation
     // We animate EXACTLY one group width, then snap back
     const animationName = `marquee-${trackIdx}`;
-    const duration = moveRight ? '35s' : '28s';
+    const baseDurationSeconds = moveRight ? 35 : 28;
+    const isPhone = window.matchMedia('(max-width: 768px)').matches;
+    const durationSeconds = isPhone ? baseDurationSeconds * 10 : baseDurationSeconds;
+    const duration = `${durationSeconds}s`;
     
     const style = document.createElement('style');
     style.className = 'marquee-style';
@@ -108,9 +111,11 @@ export function initInfiniteMarquees() {
         animation-play-state: running;
         will-change: transform;
       }
-      
-      .hero-parallax-track:nth-child(${trackIdx + 1}):hover .marquee-wrapper {
-        animation-play-state: paused;
+
+      @media (hover: hover) and (pointer: fine) {
+        .hero-parallax-track:nth-child(${trackIdx + 1}):hover .marquee-wrapper {
+          animation-play-state: paused;
+        }
       }
     `;
     
