@@ -4,6 +4,8 @@ import { Section } from '@/components/atoms/Section/Section.tsx';
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal.tsx';
 import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 import { ScrollReveal } from '@/components/atoms/ScrollReveal.tsx';
+import { Helmet } from 'react-helmet-async';
+import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema.ts';
 
 type ServicesContentItem = {
   title: string;
@@ -132,6 +134,22 @@ const ServicesPage: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // SEO: Service schema for all offerings on one page
+  const servicesOverviewSchema = combineSchemas(
+    getServiceSchema({
+      name: 'Mobile Cocktailbar Services',
+      description:
+        'Professionelle Cocktailbar-Services für Firmenfeiern, Hochzeiten, Messen, Team-Events und private Feiern in München und Coburg.',
+      serviceType: 'Event Catering',
+      areaServed: ['München', 'Coburg', 'Bayern'],
+      url: 'https://www.velo-bar.com/leistungen',
+    }),
+    getBreadcrumbSchema([
+      { name: 'Home', url: 'https://www.velo-bar.com' },
+      { name: 'Leistungen', url: 'https://www.velo-bar.com/leistungen' },
+    ]),
+  );
+
   return (
     <PageTemplate
       title='Leistungen | Mobile Cocktailbar | Velo.Bar'
@@ -140,6 +158,9 @@ const ServicesPage: React.FC = () => {
       withContainer={false}
       background='transparent'
     >
+      <Helmet>
+        <script type='application/ld+json'>{JSON.stringify(servicesOverviewSchema)}</script>
+      </Helmet>
       <main id='main-content' role='main' className='services-page'>
         <Section
           as='header'

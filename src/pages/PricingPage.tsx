@@ -8,8 +8,48 @@ import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section.tsx';
 import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 import { FinalCTA } from '@/components/FinalCTA.tsx';
+import { Helmet } from 'react-helmet-async';
+import { getBreadcrumbSchema } from '@/seo/schema.ts';
 
 export const PricingPage: React.FC = () => {
+  // SEO: Offer schema for mobile cocktailbar pricing packages
+  const pricingSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Product',
+        name: 'Mobile Cocktailbar Event Catering',
+        description: 'Mobile Cocktailbar mit professionellen Barkeepern für Firmenfeiern, Hochzeiten und Events',
+        brand: {
+          '@type': 'Brand',
+          name: 'Velo.Bar',
+        },
+        offers: [
+          {
+            '@type': 'Offer',
+            name: 'Starter Paket',
+            description: 'Bis zu 50 Gäste, 3 Stunden Service, 4 Cocktail-Klassiker',
+            price: '500',
+            priceCurrency: 'EUR',
+            availability: 'https://schema.org/InStock',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Professional Paket',
+            description: 'Bis zu 150 Gäste, 5 Stunden Service, 8 Cocktails',
+            price: '1200',
+            priceCurrency: 'EUR',
+            availability: 'https://schema.org/InStock',
+          },
+        ],
+      },
+      getBreadcrumbSchema([
+        { name: 'Home', url: 'https://www.velo-bar.com' },
+        { name: 'Preise', url: 'https://www.velo-bar.com/preise' },
+      ]),
+    ],
+  };
+
   return (
     <PageTemplate
       title='Preise & Pakete'
@@ -18,6 +58,9 @@ export const PricingPage: React.FC = () => {
       withContainer={false}
       background='transparent'
     >
+      <Helmet>
+        <script type='application/ld+json'>{JSON.stringify(pricingSchema)}</script>
+      </Helmet>
       <HeroHeading
         eyebrow='Transparente Preise'
         title='Preise & Pakete'
