@@ -10,7 +10,7 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
   src,
   ...props
 }) => {
-  const [meta, setMeta] = useState({ placeholder: '' });
+  const [meta, setMeta] = useState({ placeholder: '', aspectRatio: undefined });
 
   useEffect(() => {
     const sizeSuffixMatch = src.match(/-\d+w\.(webp|jpg|jpeg|png)$/i);
@@ -42,5 +42,5 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
     })();
   }, [src]);
 
-  return <ResponsiveImage src={src} placeholder={meta.placeholder} {...props} />;
+  return <ResponsiveImage src={src} placeholder={meta.placeholder} aspectRatio={meta.aspectRatio} {...props} />;
 };

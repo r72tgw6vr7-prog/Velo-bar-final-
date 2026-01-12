@@ -1,4 +1,5 @@
 import React from 'react';
+import { SITE_URL } from '@/lib/site.ts';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
@@ -311,7 +312,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
     provider: {
       '@type': 'Organization',
       name: 'Velo.Bar',
-      url: 'https://velo-bar.com',
+      url: SITE_URL,
     },
     areaServed: {
       '@type': 'Place',

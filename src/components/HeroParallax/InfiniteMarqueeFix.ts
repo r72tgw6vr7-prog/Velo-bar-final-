@@ -123,15 +123,30 @@ export function initInfiniteMarquees() {
   }
   
   // Execute once DOM is loaded
-  if (document.readyState === 'complete') {
-    setTimeout(setupMarquees, 100);
-  } else {
-    window.addEventListener('load', () => setTimeout(setupMarquees, 100));
+  const shouldDefer = import.meta.env.VITE_PERF_MARQUEE_DEFER === 'true';
+
+  function runSetupDeferred() {
+    if (shouldDefer && 'requestIdleCallback' in window) {
+      // Defer heavy setup to idle time so it doesn't block LCP
+      (window as any).requestIdleCallback(setupMarquees, { timeout: 200 });
+    } else {
+      setTimeout(setupMarquees, 100);
+    }
   }
-  
+
+  if (document.readyState === 'complete') {
+    runSetupDeferred();
+  } else {
+    window.addEventListener('load', () => runSetupDeferred());
+  }
+
   // Re-run on window resize to adjust copy count if needed
   window.addEventListener('resize', () => {
-    setTimeout(setupMarquees, 100);
+    if (shouldDefer && 'requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(setupMarquees, { timeout: 200 });
+    } else {
+      setTimeout(setupMarquees, 100);
+    }
   });
 }
 

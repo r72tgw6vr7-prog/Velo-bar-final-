@@ -6,22 +6,24 @@
  */
 
 // Business constants
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.velo-bar.com';
+
 const BUSINESS_INFO = {
   name: 'Velo.Bar – Mobile Cocktailbar',
-  legalName: 'Velo.Bar GmbH',
-  url: 'https://www.velo-bar.com',
-  logo: 'https://www.velo-bar.com/velo.svg',
-  image: 'https://www.velo-bar.com/images/hero/mobile-cocktailbar-muenchen.webp',
+  legalName: 'Sebastian Reichstaller & Lars Eggers GbR, SelectONEdrink GbR',
+  url: SITE_URL,
+  logo: `${SITE_URL}/velo.svg`,
+  image: `${SITE_URL}/images/hero/mobile-cocktailbar-muenchen.webp`,
   telephone: '+49 160 94623196',
   email: 'hallo@velo-bar.com',
   foundingDate: '2020',
   priceRange: '€€-€€€',
-  // Munich address (primary)
+  // Munich address (primary) — kept consistent with Impressum
   address: {
-    streetAddress: 'Leopoldstraße 1',
+    streetAddress: 'Matthias-Mayer-Straße 5',
     addressLocality: 'München',
     addressRegion: 'Bayern',
-    postalCode: '80802',
+    postalCode: '81379',
     addressCountry: 'DE',
   },
   // Service areas
@@ -84,14 +86,7 @@ export function getLocalBusinessSchema() {
     areaServed: BUSINESS_INFO.areaServed,
     sameAs: BUSINESS_INFO.sameAs,
     openingHoursSpecification: BUSINESS_INFO.openingHoursSpecification,
-    // Aggregated rating (if available)
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '87',
-      bestRating: '5',
-      worstRating: '1',
-    },
+
     // Services offered
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -343,19 +338,19 @@ export function getMesseCateringPillarSchema() {
       // Service Schema
       {
         '@type': 'Service',
-        '@id': 'https://www.velo-bar.com/messe-catering/#service',
+        '@id': `${SITE_URL}/messe-catering/#service`,
         name: 'Mobile Cocktailbar für Messestände',
         alternateName: 'Trade Fair Cocktail Catering',
         description:
           'Premium mobile Cocktailbar für Ihren Messestand in München. Der Networking-Booster für mehr qualifizierte Leads. Durchschnittlich 47% längere Standbesuche. Autark ohne Strom- oder Wasseranschluss.',
-        url: 'https://www.velo-bar.com/messe-catering',
-        image: 'https://www.velo-bar.com/images/services/messe-cocktailbar.webp',
+        url: `${SITE_URL}/messe-catering`,
+        image: `${SITE_URL}/images/services/messe-cocktailbar.webp`,
         serviceType: 'Trade Fair Catering',
         provider: {
           '@type': 'LocalBusiness',
-          '@id': 'https://www.velo-bar.com/#organization',
+          '@id': `${SITE_URL}/#organization`,
           name: 'Velo.Bar',
-          url: 'https://www.velo-bar.com',
+          url: SITE_URL,
           telephone: '+49 160 94623196',
           email: 'hallo@velo-bar.com',
           address: {
@@ -427,7 +422,7 @@ export function getMesseCateringPillarSchema() {
       // FAQ Schema
       {
         '@type': 'FAQPage',
-        '@id': 'https://www.velo-bar.com/messe-catering/#faq',
+        '@id': `${SITE_URL}/messe-catering/#faq`,
         mainEntity: [
           {
             '@type': 'Question',
@@ -479,14 +474,15 @@ export function getMesseCateringPillarSchema() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://www.velo-bar.com',
+            item: SITE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Messe-Catering',
-            item: 'https://www.velo-bar.com/messe-catering',
+            item: `${SITE_URL}/messe-catering`,
           },
+
         ],
       },
     ],

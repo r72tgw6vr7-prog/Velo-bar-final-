@@ -7,9 +7,10 @@
 
 import React, { useMemo } from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
 import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema.ts';
+import { SITE_URL } from '@/lib/site.ts';
 
 const TeamEventsWorkshopsPage: React.FC = () => {
   const packages = servicePackages.teamEvents;
@@ -24,14 +25,15 @@ const TeamEventsWorkshopsPage: React.FC = () => {
           name: 'Cocktail-Workshops & Team-Events',
           description:
             'Interaktive Cocktail-Workshops für Teambuilding in München. Professionelle Barkeeper-Trainer für Gruppen von 10-40 Teilnehmern.',
-          url: 'https://www.velo-bar.com/team-events',
-          image: 'https://www.velo-bar.com/images/services/team-events-workshop.webp',
+          url: `${SITE_URL}/team-events`,
+          image: `${SITE_URL}/images/services/team-events-workshop.webp`,
+
           areaServed: ['München', 'Coburg', 'Bayern'],
           serviceType: 'TeamBuildingWorkshop',
         }),
         getBreadcrumbSchema([
-          { name: 'Home', url: 'https://www.velo-bar.com' },
-          { name: 'Team-Events & Workshops', url: 'https://www.velo-bar.com/team-events' },
+          { name: 'Home', url: SITE_URL },
+          { name: 'Team-Events & Workshops', url: `${SITE_URL}/team-events` },
         ]),
       ),
     [],

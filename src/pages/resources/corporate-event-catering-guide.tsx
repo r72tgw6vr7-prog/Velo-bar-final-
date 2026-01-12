@@ -3,6 +3,7 @@ import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
+import { SITE_URL } from '@/lib/site.ts';
 
 const CorporateEventCateringGuidePage: React.FC = () => {
   // JSON-LD Schema for this specific Article/Guide
@@ -13,18 +14,18 @@ const CorporateEventCateringGuidePage: React.FC = () => {
       'Der ultimative Guide zu Corporate Event Catering & Beverage Logistics in München (2025)',
     description:
       'Wie Sie Ihren Messestand mit einer mobilen Bar zum Besucher-Magnet machen und Logistikrisiken minimieren. Ein Praxis-Guide für Event Manager.',
-    image: 'https://velo-bar.com/assets/backgrounds/cosmic-unified.jpg',
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
-      url: 'https://velo-bar.com',
+      url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Velo.Bar',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://velo-bar.com/assets/logo.png',
+        url: `${SITE_URL}/assets/logo.png`,
       },
     },
     datePublished: '2025-01-15',

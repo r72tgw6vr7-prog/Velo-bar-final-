@@ -7,22 +7,34 @@
 
 import { sendEmail } from '../services/emailService.ts';
 
-// CORS headers for all responses
-const corsHeaders = {
-  'Access-Control-Allow-Origin': process.env.VITE_ALLOWED_ORIGINS || '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-  'Access-Control-Max-Age': '86400',
-};
+// Build CORS headers dynamically per-request to respect allowed origins env and avoid wildcard origin
+function getCORSHeaders(origin?: string): Record<string, string> {
+  const allowedEnv = process.env.ALLOWED_ORIGINS || process.env.VITE_ALLOWED_ORIGINS || '';
+  const allowedOrigins = allowedEnv ? allowedEnv.split(',').map((s) => s.trim()) : [];
+  const headers: Record<string, string> = {
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+    'Access-Control-Max-Age': '86400',
+  };
+  if (origin && allowedOrigins.length && allowedOrigins.includes(origin)) {
+    headers['Access-Control-Allow-Origin'] = origin;
+    headers['Vary'] = 'Origin';
+  } else if (allowedOrigins.length === 1) {
+    headers['Access-Control-Allow-Origin'] = allowedOrigins[0];
+  }
+  return headers;
+}
 
 /**
  * Handle CORS preflight requests
  */
 export function handleCORS(req: Request): Response | null {
   if (req.method === 'OPTIONS') {
+    const origin = req.headers.get('origin') || undefined;
+    const headers = getCORSHeaders(origin);
     return new Response(null, {
       status: 200,
-      headers: corsHeaders,
+      headers,
     });
   }
   return null;
@@ -32,9 +44,9 @@ export function handleCORS(req: Request): Response | null {
  * Add CORS headers to response
  */
 export function addCORSHeaders(response: Response): Response {
-  Object.entries(corsHeaders).forEach(([key, value]) => {
-    response.headers.set(key, value);
-  });
+  // Add generic CORS headers (origin may be added by hosting layer or preflight handler)
+  const headers = getCORSHeaders();
+  Object.entries(headers).forEach(([key, value]) => response.headers.set(key, value));
   return response;
 }
 

@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
-import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
+import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
+import { PageTemplate } from '@/templates/PageTemplate';
+import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
 
 const BuchungMucPage: React.FC = () => {
   const packages = servicePackages.buchungMuc;
@@ -18,6 +18,7 @@ const BuchungMucPage: React.FC = () => {
     <PageTemplate
       title='München Booking | Mobile Bar München & Umgebung | Velobar'
       description='Buchen Sie die mobile Velo.Bar für Ihr Event in München. Selbstversorgendes Öko-System, professionelle Barkeeper, Gin-Tastings ab 49€.'
+      canonicalPath='/velobar/buchungmuc'
       withContainer={false}
     >
       <ServicePageLayout

@@ -10,6 +10,22 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velobar.de"}]},
+    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.de"}]},
+    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velobar.com"}]},
+    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.de"}]},
+    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.com"}]},
+    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.com"}]},
+
+    {"source": "/messen", "destination": "/messe-catering", "statusCode": 301},
+    {"source": "/team-events", "destination": "/leistungen#team-events-workshops", "statusCode": 301},
+    {"source": "/teamevents", "destination": "/leistungen#team-events-workshops", "statusCode": 301},
+    {"source": "/buchung", "destination": "/anfrage", "statusCode": 301},
+    {"source": "/booking", "destination": "/anfrage", "statusCode": 301},
+    {"source": "/buchungmuc", "destination": "/anfrage?region=muenchen", "statusCode": 301},
+    {"source": "/velobar/buchungmuc", "destination": "/anfrage?region=muenchen", "statusCode": 301}
+  ],
   "headers": [
     {
       "source": "/(.*)\\.html",
@@ -48,15 +64,15 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://vitals.vercel-insights.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://velo.bar; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://vitals.vercel-insights.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.velo-bar.com; upgrade-insecure-requests"
         },
         {
           "key": "Content-Security-Policy-Report-Only",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://vitals.vercel-insights.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://velo.bar; report-uri /api/csp-report; report-to csp-endpoint"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://vitals.vercel-insights.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.velo-bar.com; report-uri /api/csp-report; report-to csp-endpoint"
         },
         {
           "key": "Report-To",
-          "value": "{\"group\":\"csp-endpoint\",\"max_age\":10886400,\"endpoints\":[{\"url\":\"https://velo.bar/api/csp-report\"}]}"
+          "value": "{\"group\":\"csp-endpoint\",\"max_age\":10886400,\"endpoints\":[{\"url\":\"https://www.velo-bar.com/api/csp-report\"}]}"
         },
         {
           "key": "Referrer-Policy",

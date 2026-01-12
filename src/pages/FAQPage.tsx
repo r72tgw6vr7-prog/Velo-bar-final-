@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { FAQSection } from '@/sections/FAQSection.tsx';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { getFAQSchema } from '@/seo/schema.ts';
 import { Section } from '@/components/atoms/Section/Section.tsx';
 import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
@@ -183,6 +183,7 @@ const FAQPage: React.FC = () => {
     <PageTemplate
       title='FAQ | Häufig gestellte Fragen'
       description='Antworten auf häufig gestellte Fragen zu unseren mobilen Cocktailbar-Services, Buchungen, Preisen und mehr.'
+      canonicalPath='/faq'
       withContainer={false}
       background='transparent'
       structuredData={faqSchema}

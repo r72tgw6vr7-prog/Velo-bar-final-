@@ -6,6 +6,7 @@
  */
 
 import { munichDistricts } from '../data/munich-districts.ts';
+import { SITE_URL } from '@/lib/site.ts';
 
 export interface SitemapEntry {
   url: string;
@@ -15,7 +16,7 @@ export interface SitemapEntry {
 }
 
 export const generateDistrictSitemapEntries = (): SitemapEntry[] => {
-  const baseUrl = 'https://velo-bar.com';
+  const baseUrl = SITE_URL;
   const currentDate = new Date().toISOString().split('T')[0];
 
   return munichDistricts.map((district) => ({
@@ -55,7 +56,7 @@ export const getSitemapForDistrict = (districtSlug: string): string | null => {
   const district = munichDistricts.find((d) => d.slug === districtSlug);
   if (!district) return null;
 
-  const baseUrl = 'https://velo-bar.com';
+  const baseUrl = SITE_URL;
   const currentDate = new Date().toISOString().split('T')[0];
 
   return generateSitemapXML([
@@ -76,7 +77,7 @@ export const getSitemapForDistrict = (districtSlug: string): string | null => {
 // Generate robots.txt content
 export const generateRobotsTxt = (): string => {
   const districtUrls = munichDistricts
-    .map((district) => `https://velo-bar.com/firmenfeieren/${district.slug}`)
+    .map((district) => `${SITE_URL}/firmenfeieren/${district.slug}`)
     .join('\n');
 
   return `User-agent: *
@@ -86,8 +87,8 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /.well-known/
 
-Sitemap: https://velo-bar.com/sitemap.xml
-Sitemap: https://velo-bar.com/sitemap-districts.xml
+Sitemap: ${SITE_URL}/sitemap.xml
+Sitemap: ${SITE_URL}/sitemap-districts.xml
 
 # Priority pages for crawling
 ${districtUrls}`;

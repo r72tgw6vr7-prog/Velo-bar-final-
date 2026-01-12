@@ -8,13 +8,14 @@
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { ArrowRight, Check, ChevronDown, Clock, Phone, Snowflake } from 'lucide-react';
 import Footer from '@/components/pages/Footer.tsx';
 import { useContent } from '@/hooks/useContent.ts';
 import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema.ts';
+import { SITE_URL } from '@/lib/site.ts';
 
 const WeihnachtsFeiernPage: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -31,14 +32,16 @@ const WeihnachtsFeiernPage: React.FC = () => {
           name: 'Mobile Bar für Firmenweihnachtsfeiern',
           description:
             'Festliche mobile Cocktailbar für Ihre Firmenweihnachtsfeier in München. Glühwein, Winter-Cocktails und professioneller Barkeeper-Service.',
-          url: 'https://www.velo-bar.com/weihnachtsfeiern',
-          image: 'https://www.velo-bar.com/images/services/weihnachtsfeier-cocktailbar.webp',
+          url: `${SITE_URL}/weihnachtsfeiern`,
+          image: `${SITE_URL}/images/services/weihnachtsfeier-cocktailbar.webp`,
+
           areaServed: ['München', 'Coburg', 'Bayern'],
           serviceType: 'ChristmasPartyCatering',
         }),
         getBreadcrumbSchema([
-          { name: 'Home', url: 'https://www.velo-bar.com' },
-          { name: 'Weihnachtsfeiern', url: 'https://www.velo-bar.com/weihnachtsfeiern' },
+          { name: 'Home', url: SITE_URL },
+          { name: 'Weihnachtsfeiern', url: `${SITE_URL}/weihnachtsfeiern` },
+
         ]),
       ),
     [],

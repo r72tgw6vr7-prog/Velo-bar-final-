@@ -7,7 +7,7 @@
 
 import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section, Container } from '@/components/atoms/index.ts';
 import { GridClean } from '@/components/atoms/Grid.clean.tsx';
 import { HeroLocked } from '@/sections/HeroLocked.tsx';
@@ -81,7 +81,7 @@ const locationCards = [
     id: 'coburg',
     title: 'Coburg & Umgebung',
     description: 'Velobar für Hochzeiten, Sommerfeste und Unternehmens-Events im Raum Coburg.',
-    image: '/Velo Gallery/A7401220-1920w.jpg',
+    image: '/Velo Gallery/A7401220',
     cta: 'Events in Coburg anfragen',
     link: '/anfrage?region=coburg',
   },

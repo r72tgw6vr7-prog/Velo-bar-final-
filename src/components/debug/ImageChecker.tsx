@@ -20,7 +20,7 @@ export const ImageChecker: React.FC = () => {
     const imagesToCheck = [
       // canonical representative images (artists/team assets removed)
       '/Velo Gallery/mobile-bar-hero-640w.webp',
-      '/Velo Gallery/drinks-selection.jpg',
+      '/Velo Gallery/drinks-selection',
       '/Velo Gallery/event-1-640w.webp',
     ];
 

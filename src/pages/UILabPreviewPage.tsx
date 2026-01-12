@@ -10,7 +10,7 @@
 import '@/styles/pages/home-new.css';
 import '@/styles/pages/ui-lab-unified.css';
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section.tsx';
 import { Container } from '@/components/atoms/Container/Container.tsx';
 
@@ -147,7 +147,7 @@ const UILabPreviewPage: React.FC = () => {
           </div>
           <div className='grid grid-cols-1 gap-8 md:grid-cols-3'>
             <PriceCard
-              iconUrl='/Velo Gallery/bar-icon.jpg'
+              iconUrl='/Velo Gallery/bar-icon'
               title='Basic Package'
               description='Perfect for smaller events'
               features={[
@@ -260,13 +260,13 @@ const UILabPreviewPage: React.FC = () => {
             subtitle='Warum Kunden uns wählen'
             partners={[
               {
-                logo: '/Velo Gallery/partner1.jpg',
+                logo: '/Velo Gallery/partner1',
                 name: 'BMW Group',
                 description: 'Corporate Events',
               },
-              { logo: '/Velo Gallery/partner2.jpg', name: 'Siemens', description: 'Team Events' },
+              { logo: '/Velo Gallery/partner2', name: 'Siemens', description: 'Team Events' },
               {
-                logo: '/Velo Gallery/partner3.jpg',
+                logo: '/Velo Gallery/partner3',
                 name: 'Allianz',
                 description: 'Company Celebrations',
               },

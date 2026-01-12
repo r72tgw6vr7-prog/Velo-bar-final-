@@ -1,147 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.velobar.de/</loc>
+    <loc>https://www.velo-bar.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/leistungen</loc>
+    <loc>https://www.velo-bar.com/leistungen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/menu</loc>
+    <loc>https://www.velo-bar.com/firmenfeiern</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.velo-bar.com/weihnachtsfeiern</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.velo-bar.com/messe-catering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.velo-bar.com/private-feiern</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/preise</loc>
+    <loc>https://www.velo-bar.com/menu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.velo-bar.com/preise</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/galerie</loc>
+    <loc>https://www.velo-bar.com/galerie</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/about</loc>
+    <loc>https://www.velo-bar.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/anfrage</loc>
+    <loc>https://www.velo-bar.com/anfrage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/velobar/buchungmuc</loc>
+    <loc>https://www.velo-bar.com/velobar/buchungmuc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/velobarco</loc>
+    <loc>https://www.velo-bar.com/velobarco</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations</loc>
+    <loc>https://www.velo-bar.com/locations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/messe-muenchen</loc>
+    <loc>https://www.velo-bar.com/locations/messe-muenchen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/moc-muenchen</loc>
+    <loc>https://www.velo-bar.com/locations/moc-muenchen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/ballhausforum-infinity</loc>
+    <loc>https://www.velo-bar.com/locations/ballhausforum-infinity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/werk1-muenchen</loc>
+    <loc>https://www.velo-bar.com/locations/werk1-muenchen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/schloss-schleissheim</loc>
+    <loc>https://www.velo-bar.com/locations/schloss-schleissheim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/zenith-muenchen</loc>
+    <loc>https://www.velo-bar.com/locations/zenith-muenchen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/locations/alte-utting</loc>
+    <loc>https://www.velo-bar.com/locations/alte-utting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/resources/corporate-event-catering-guide</loc>
+    <loc>https://www.velo-bar.com/resources/corporate-event-catering-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/messestand-ideen-hospitality</loc>
+    <loc>https://www.velo-bar.com/blog/messestand-ideen-hospitality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/roi-hospitality-events</loc>
+    <loc>https://www.velo-bar.com/blog/roi-hospitality-events</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/messekatering-kosten-2025</loc>
+    <loc>https://www.velo-bar.com/blog/messekatering-kosten-2025</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/alkoholfreie-cocktails-firmenevents</loc>
+    <loc>https://www.velo-bar.com/blog/alkoholfreie-cocktails-firmenevents</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/nachhaltige-firmenfeier</loc>
+    <loc>https://www.velo-bar.com/blog/nachhaltige-firmenfeier</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/last-minute-catering-muenchen</loc>
+    <loc>https://www.velo-bar.com/blog/last-minute-catering-muenchen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/blog/catering-ohne-stromanschluss</loc>
+    <loc>https://www.velo-bar.com/blog/catering-ohne-stromanschluss</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/impressum</loc>
+    <loc>https://www.velo-bar.com/impressum</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/datenschutz</loc>
+    <loc>https://www.velo-bar.com/datenschutz</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/legal</loc>
+    <loc>https://www.velo-bar.com/legal</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.velobar.de/agb</loc>
+    <loc>https://www.velo-bar.com/agb</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

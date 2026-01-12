@@ -2,6 +2,7 @@ import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
+import { SITE_URL } from '@/lib/site.ts';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
 
@@ -13,25 +14,25 @@ const MessekateringKostenPage: React.FC = () => {
     headline: 'Messekatering München: Kosten vs. ROI – Der komplette Budget-Guide 2025',
     description:
       'Was kostet professionelles Messekatering in München? Transparenter Preisvergleich, versteckte Kosten vermeiden und ROI berechnen.',
-    image: 'https://velo-bar.com/assets/backgrounds/cosmic-unified.jpg',
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
-      url: 'https://velo-bar.com',
+      url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Velo.Bar',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://velo-bar.com/assets/logo.png',
+        url: `${SITE_URL}/assets/logo.png`,
       },
     },
-    datePublished: '2025-01-25',
+    datePublished: '2025-02-01',
     dateModified: '2025-12-08',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://velo-bar.com/blog/messekatering-kosten-2025',
+      '@id': `${SITE_URL}/blog/messekatering-kosten-2025`,
     },
     keywords: [
       'Messekatering Kosten',

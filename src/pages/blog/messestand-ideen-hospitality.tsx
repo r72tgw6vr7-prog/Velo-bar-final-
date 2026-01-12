@@ -2,6 +2,7 @@ import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
+import { SITE_URL } from '@/lib/site.ts';
 
 const MessestandIdeenHospitalityPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting
@@ -11,25 +12,25 @@ const MessestandIdeenHospitalityPage: React.FC = () => {
     headline: '5 kreative Messestand-Ideen, die Besucher magnetisch anziehen',
     description:
       'Entdecken Sie innovative Messestand-Konzepte mit Hospitality-Faktor: Speakeasy Bars, Molecular Cocktails, Zero-Waste Konzepte und mehr für BAUMA, ISPO & Co.',
-    image: 'https://velo-bar.com/assets/backgrounds/cosmic-unified.jpg',
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
-      url: 'https://velo-bar.com',
+      url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Velo.Bar',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://velo-bar.com/assets/logo.png',
+        url: `${SITE_URL}/assets/logo.png`,
       },
     },
     datePublished: '2025-01-15',
     dateModified: '2025-12-08',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://velo-bar.com/blog/messestand-ideen-hospitality',
+      '@id': `${SITE_URL}/blog/messestand-ideen-hospitality`,
     },
   };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
+import { SITE_URL } from '@/lib/site.ts';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
 
@@ -13,25 +14,25 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
     headline: 'Alkoholfreie Cocktails für Firmenevents: Der Mocktail-Trend 2025',
     description:
       '45% mehr Nachfrage: Warum alkoholfreie Cocktails bei B2B-Events immer wichtiger werden und wie Sie sie professionell anbieten.',
-    image: 'https://velo-bar.com/assets/backgrounds/cosmic-unified.jpg',
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
-      url: 'https://velo-bar.com',
+      url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Velo.Bar',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://velo-bar.com/assets/logo.png',
+        url: `${SITE_URL}/assets/logo.png`,
       },
     },
-    datePublished: '2025-01-28',
+    datePublished: '2025-02-15',
     dateModified: '2025-12-08',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://velo-bar.com/blog/alkoholfreie-cocktails-firmenevents',
+      '@id': `${SITE_URL}/blog/alkoholfreie-cocktails-firmenevents`,
     },
     keywords: [
       'alkoholfreie Cocktails Firmenfeier',

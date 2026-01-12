@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { PageHeader } from '@/components/atoms/PageHeader.tsx';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 
 interface ImpressumPageProps {
   language?: 'DE' | 'EN';

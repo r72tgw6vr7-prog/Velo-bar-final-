@@ -63,6 +63,11 @@ export default function Meta({
             as='image'
             href='/Velo%20Gallery/gallery-carousel/weihnachstfeier-320w.webp'
           />
+
+          {/* Optional: preload extracted hero SVG when PERF flag enabled */}
+          {import.meta.env.VITE_PERF_HERO_SVG === 'true' && (
+            <link rel='preload' as='image' href='/hero-bike.svg' fetchPriority='high' />
+          )}
         </>
       )}
 

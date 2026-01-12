@@ -4,7 +4,22 @@ interface HeroBikeProps {
   className?: string;
 }
 
+const usePerfHero = import.meta.env.VITE_PERF_HERO_SVG === 'true';
+
 const HeroBike = ({ className }: HeroBikeProps) => {
+  // Flag-controlled extraction: default OFF to preserve exact current behavior
+  if (usePerfHero) {
+    return (
+      <img
+        className={`hero-bike ${className || ''}`}
+        src='/hero-bike.svg'
+        alt='Decorative bicycle illustration'
+        aria-hidden='false'
+        fetchPriority='high'
+      />
+    );
+  }
+
   return (
     <svg
       className={`hero-bike ${className || ''}`}

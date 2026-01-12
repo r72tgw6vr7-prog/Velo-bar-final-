@@ -3,6 +3,7 @@ import { PageTemplate } from '@/templates/PageTemplate.tsx';
 import { Link } from 'react-router-dom';
 import { venueDatabase } from './VenueLandingPage.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
+import { SITE_URL } from '@/lib/site.ts';
 
 const LocationsIndexPage: React.FC = () => {
   const venues = Object.values(venueDatabase);
@@ -23,8 +24,9 @@ const LocationsIndexPage: React.FC = () => {
       '@type': 'ListItem',
       position: index + 1,
       name: venue.name,
-      url: `https://velo-bar.com/locations/${venue.slug}`,
+      url: `${SITE_URL}/locations/${venue.slug}`,
     })),
+
   };
 
   const VenueCard: React.FC<{ venue: (typeof venues)[0] }> = ({ venue }) => (

@@ -408,7 +408,7 @@ export const generateDistrictSchema = (district: MunichDistrict) => {
     '@type': 'LocalBusiness',
     name: `Velo.Bar - Mobile Cocktailbar ${district.name}`,
     description: `Professionelle mobile Cocktailbar für Firmenfeiern und Business Events in ${district.name}, München`,
-    url: `https://velo-bar.com/firmenfeieren/${district.slug}`,
+    url: `https://www.velo-bar.com/firmenfeieren/${district.slug}`,
     telephone: '+49 160 94623196',
     email: 'info@velo-bar.com',
     address: {

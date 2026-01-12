@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
 
 const VelobarcoPage: React.FC = () => {
@@ -18,6 +18,7 @@ const VelobarcoPage: React.FC = () => {
     <PageTemplate
       title='Coburg Booking | Mobile Bar Coburg & Umgebung | Velobar'
       description='Buchen Sie die mobile Velo.Bar für Ihr Event in Coburg. Cocktailbar und Gin-Tastings für private und Firmenfeiern.'
+      canonicalPath='/velobarco'
       withContainer={false}
     >
       <ServicePageLayout

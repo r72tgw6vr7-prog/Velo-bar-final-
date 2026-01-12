@@ -13,7 +13,7 @@ export default defineConfig({
     react(),
     basicSsl(),
     sitemap({
-      hostname: 'https://www.velobar.de',
+      hostname: 'https://www.velo-bar.com',
       dynamicRoutes: routes,
       generateRobotsTxt: false, // Prevent conflict with manual robots.txt
     }),

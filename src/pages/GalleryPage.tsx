@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { ParallaxScrollDemo } from '@/components/gallery/ParallaxScrollDemo.tsx';
 import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 

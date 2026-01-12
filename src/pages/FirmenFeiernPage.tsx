@@ -8,7 +8,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { PageTemplate } from '@/templates/PageTemplate';
 import { Section } from '@/components/atoms/Section/Section.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Breadcrumbs } from '@/components/atoms/Breadcrumbs.tsx';
@@ -113,14 +113,15 @@ const FirmenFeiernPage: React.FC = () => {
         name: 'Cocktail-Catering für Firmenfeiern',
         description:
           'Premium mobile Cocktailbar für Firmenfeiern in München. All-inclusive Barkeeper-Service für 50-500+ Gäste. Autark ohne Strom oder Wasseranschluss.',
-        url: 'https://www.velo-bar.com/firmenfeiern',
-        image: 'https://www.velo-bar.com/images/services/firmenfeiern-cocktailbar.webp',
+        url: `${SITE_URL}/firmenfeiern`,
+        image: `${SITE_URL}/images/services/firmenfeiern-cocktailbar.webp`,
+
         areaServed: ['München', 'Coburg', 'Bayern'],
         serviceType: 'CorporateEventCatering',
       }),
       getBreadcrumbSchema([
-        { name: 'Home', url: 'https://www.velo-bar.com' },
-        { name: 'Firmenfeiern', url: 'https://www.velo-bar.com/firmenfeiern' },
+        { name: 'Home', url: SITE_URL },
+        { name: 'Firmenfeiern', url: `${SITE_URL}/firmenfeiern` },
       ]),
       ...faqSchemas,
     );

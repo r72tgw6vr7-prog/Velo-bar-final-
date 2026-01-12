@@ -239,13 +239,30 @@ async function sendBookingEmail(data: BookingPayload): Promise<void> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // CORS handling (allowlist-driven). Populate ALLOWED_ORIGINS or VITE_ALLOWED_ORIGINS in env.
+  const allowedEnv = process.env.ALLOWED_ORIGINS || process.env.VITE_ALLOWED_ORIGINS || '';
+  const allowedOrigins = allowedEnv ? allowedEnv.split(',').map((s) => s.trim()) : [];
+  const origin = req.headers.origin as string | undefined;
+  if (origin && allowedOrigins.length && allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  } else if (allowedOrigins.length === 1) {
+    // Single allowed origin fallback
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigins[0]);
+  }
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
 
+  // Preflight
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    return res.status(204).end();
+  }
+
+  // Gentle rate limiting by IP to stop automated abuse while not impacting normal users
+  const ip = (req.headers['x-forwarded-for'] as string) || (req.socket && (req.socket.remoteAddress || 'unknown')) || 'unknown';
+  const key = `booking:${ip}`;
+  if (!checkRateLimit(key)) {
+    return res.status(429).json({ ok: false, error: 'Too many requests. Please try again later.' });
   }
 
   if (req.method !== 'POST') {
