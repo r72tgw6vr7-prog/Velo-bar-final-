@@ -29,13 +29,3 @@ public/images/_ARCHIVE
 dist/images/_ARCHIVE
 
 # Broken symlinks that fail Vercel build
-public/images/portfolio
-public/images/services
-public/images/fallback
-public/Velo Gallery
-public/logos
-public/icons
-public/assets/images/svg
-public/assets/images/clients
-public/assets/images/icons
-public/velobar
