@@ -6,7 +6,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '../../utils/classname.ts';
-import { AlertTriangle, CheckCircle, Info, Search, X } from 'lucide-react';
+import AlertTriangle from 'lucide-react/dist/esm/icons/alert-triangle';
+import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
+import Info from 'lucide-react/dist/esm/icons/info';
+import Search from 'lucide-react/dist/esm/icons/search';
+import X from 'lucide-react/dist/esm/icons/x';
 import { Button } from '../atoms/index.ts';
 
 interface AccessibilityIssue {

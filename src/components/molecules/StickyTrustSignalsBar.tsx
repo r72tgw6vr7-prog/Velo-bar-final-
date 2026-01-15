@@ -1,5 +1,8 @@
 import React from 'react';
-import { Shield, Award, Clock, Star } from 'lucide-react';
+import Shield from 'lucide-react/dist/esm/icons/shield';
+import Award from 'lucide-react/dist/esm/icons/award';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import Star from 'lucide-react/dist/esm/icons/star';
 
 interface TrustSignalBadge {
   icon: React.ElementType;

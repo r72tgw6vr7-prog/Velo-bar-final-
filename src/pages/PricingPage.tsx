@@ -10,16 +10,19 @@ import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 import { FinalCTA } from '@/components/FinalCTA.tsx';
 import { Helmet } from 'react-helmet-async';
 import { getBreadcrumbSchema } from '@/seo/schema.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 export const PricingPage: React.FC = () => {
+  const { t } = useLanguage();
+
   // SEO: Offer schema for mobile cocktailbar pricing packages
   const pricingSchema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Product',
-        name: 'Mobile Cocktailbar Event Catering',
-        description: 'Mobile Cocktailbar mit professionellen Barkeepern für Firmenfeiern, Hochzeiten und Events',
+        name: t('pricing.schema.product.name'),
+        description: t('pricing.schema.product.description'),
         brand: {
           '@type': 'Brand',
           name: 'Velo.Bar',
@@ -27,16 +30,16 @@ export const PricingPage: React.FC = () => {
         offers: [
           {
             '@type': 'Offer',
-            name: 'Starter Paket',
-            description: 'Bis zu 50 Gäste, 3 Stunden Service, 4 Cocktail-Klassiker',
+            name: t('pricing.schema.offers.starter.name'),
+            description: t('pricing.schema.offers.starter.description'),
             price: '500',
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
           },
           {
             '@type': 'Offer',
-            name: 'Professional Paket',
-            description: 'Bis zu 150 Gäste, 5 Stunden Service, 8 Cocktails',
+            name: t('pricing.schema.offers.professional.name'),
+            description: t('pricing.schema.offers.professional.description'),
             price: '1200',
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
@@ -44,16 +47,16 @@ export const PricingPage: React.FC = () => {
         ],
       },
       getBreadcrumbSchema([
-        { name: 'Home', url: 'https://www.velo-bar.com' },
-        { name: 'Preise', url: 'https://www.velo-bar.com/preise' },
+        { name: t('nav.home'), url: 'https://www.velo-bar.com' },
+        { name: t('nav.pricing'), url: 'https://www.velo-bar.com/preise' },
       ]),
     ],
   };
 
   return (
     <PageTemplate
-      title='Preise & Pakete'
-      description='Transparente Preise für mobile Cocktailbar-Services in München und Coburg.'
+      title={t('pricing.seoTitle')}
+      description={t('pricing.seoDescription')}
       canonicalPath='/preise'
       withContainer={false}
       background='transparent'
@@ -62,9 +65,9 @@ export const PricingPage: React.FC = () => {
         <script type='application/ld+json'>{JSON.stringify(pricingSchema)}</script>
       </Helmet>
       <HeroHeading
-        eyebrow='Transparente Preise'
-        title='Preise & Pakete'
-        subtitle='Transparente Festpreise. Keine versteckten Kosten. Alles inklusive.'
+        eyebrow={t('pricing.hero.eyebrow')}
+        title={t('pricing.hero.title')}
+        subtitle={t('pricing.hero.subtitle')}
       />
 
       {/* Pricing Tiers */}
@@ -72,53 +75,53 @@ export const PricingPage: React.FC = () => {
         <div className='grid gap-8 md:grid-cols-3'>
           {/* Starter Package */}
           <div className='pricing-card'>
-            <h3>Starter</h3>
-            <div className='pricing-price'>ab 500€</div>
+            <h3>{t('pricing.packages.starter.name')}</h3>
+            <div className='pricing-price'>{t('pricing.packages.starter.price')}</div>
             <ul>
-              <li>Bis zu 50 Gäste</li>
-              <li>3 Stunden Service</li>
-              <li>4 Cocktail-Klassiker</li>
-              <li>Professionelle Barkeeper</li>
-              <li>Komplette Ausstattung</li>
-              <li>Auf- und Abbau</li>
+              <li>{t('pricing.packages.starter.features.0')}</li>
+              <li>{t('pricing.packages.starter.features.1')}</li>
+              <li>{t('pricing.packages.starter.features.2')}</li>
+              <li>{t('pricing.packages.starter.features.3')}</li>
+              <li>{t('pricing.packages.starter.features.4')}</li>
+              <li>{t('pricing.packages.starter.features.5')}</li>
             </ul>
             <Link to='/anfrage' className='btn-primary'>
-              Anfragen
+              {t('pricing.packages.starter.cta')}
             </Link>
           </div>
 
           {/* Professional Package */}
           <div className='pricing-card featured'>
-            <span className='pricing-badge'>Beliebtestes</span>
-            <h3>Professional</h3>
-            <div className='pricing-price'>ab 1.200€</div>
+            <span className='pricing-badge'>{t('pricing.packages.professional.badge')}</span>
+            <h3>{t('pricing.packages.professional.name')}</h3>
+            <div className='pricing-price'>{t('pricing.packages.professional.price')}</div>
             <ul>
-              <li>Bis zu 150 Gäste</li>
-              <li>5 Stunden Service</li>
-              <li>8 Cocktails zur Auswahl</li>
-              <li>Premium-Spirituosen</li>
-              <li>Individuelle Cocktails</li>
-              <li>Elegante Dekoration</li>
+              <li>{t('pricing.packages.professional.features.0')}</li>
+              <li>{t('pricing.packages.professional.features.1')}</li>
+              <li>{t('pricing.packages.professional.features.2')}</li>
+              <li>{t('pricing.packages.professional.features.3')}</li>
+              <li>{t('pricing.packages.professional.features.4')}</li>
+              <li>{t('pricing.packages.professional.features.5')}</li>
             </ul>
             <Link to='/anfrage' className='btn-primary'>
-              Anfragen
+              {t('pricing.packages.professional.cta')}
             </Link>
           </div>
 
           {/* Enterprise Package */}
           <div className='pricing-card'>
-            <h3>Enterprise</h3>
-            <div className='pricing-price'>auf Anfrage</div>
+            <h3>{t('pricing.packages.enterprise.name')}</h3>
+            <div className='pricing-price'>{t('pricing.packages.enterprise.price')}</div>
             <ul>
-              <li>150+ Gäste</li>
-              <li>Flexible Servicezeiten</li>
-              <li>Unbegrenzte Auswahl</li>
-              <li>Mehrere Barstationen</li>
-              <li>Corporate Branding</li>
-              <li>Dedizierter Eventmanager</li>
+              <li>{t('pricing.packages.enterprise.features.0')}</li>
+              <li>{t('pricing.packages.enterprise.features.1')}</li>
+              <li>{t('pricing.packages.enterprise.features.2')}</li>
+              <li>{t('pricing.packages.enterprise.features.3')}</li>
+              <li>{t('pricing.packages.enterprise.features.4')}</li>
+              <li>{t('pricing.packages.enterprise.features.5')}</li>
             </ul>
             <Link to='/anfrage' className='btn-primary'>
-              Anfragen
+              {t('pricing.packages.enterprise.cta')}
             </Link>
           </div>
         </div>
@@ -129,7 +132,7 @@ export const PricingPage: React.FC = () => {
         <h2 className='mb-16 flex justify-center'>
           <span className='inline-flex items-center rounded-full bg-[rgba(255,248,236,0.95)] px-6 py-2 shadow-sm'>
             <span className='text-sm font-semibold tracking-wide text-[rgb(238,120,104)]'>
-              Was ist immer inklusive?
+              {t('pricing.included.title')}
             </span>
           </span>
         </h2>
@@ -150,8 +153,10 @@ export const PricingPage: React.FC = () => {
                 />
               </svg>
             </span>
-            <h3 className='text-on-light mb-0 font-semibold'>Premium Spirituosen</h3>
-            <p className='vb-body'>Hochwertige Zutaten für perfekte Cocktails</p>
+            <h3 className='text-on-light mb-0 font-semibold'>
+              {t('pricing.included.items.spirits.title')}
+            </h3>
+            <p className='vb-body'>{t('pricing.included.items.spirits.description')}</p>
           </div>
           <div className='flex h-full flex-col text-center'>
             <span className='mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-(--color-bg-surface-tinted)'>
@@ -169,8 +174,10 @@ export const PricingPage: React.FC = () => {
                 />
               </svg>
             </span>
-            <h3 className='text-on-light mb-0 font-semibold'>Prof. Barkeeper</h3>
-            <p className='vb-body'>Erfahrene Barkeeper mit Event-Expertise</p>
+            <h3 className='text-on-light mb-0 font-semibold'>
+              {t('pricing.included.items.bartender.title')}
+            </h3>
+            <p className='vb-body'>{t('pricing.included.items.bartender.description')}</p>
           </div>
           <div className='flex h-full flex-col text-center'>
             <span className='mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-(--color-bg-surface-tinted)'>
@@ -188,8 +195,10 @@ export const PricingPage: React.FC = () => {
                 />
               </svg>
             </span>
-            <h3 className='text-on-light mb-0 font-semibold'>Komplette Ausstattung</h3>
-            <p className='vb-body'>Gläser, Eis, Equipment - alles dabei</p>
+            <h3 className='text-on-light mb-0 font-semibold'>
+              {t('pricing.included.items.equipment.title')}
+            </h3>
+            <p className='vb-body'>{t('pricing.included.items.equipment.description')}</p>
           </div>
           <div className='flex h-full flex-col text-center'>
             <span className='mx-auto mb-8 flex h-12 w-12 items-center justify-center rounded-full bg-(--color-bg-surface-tinted)'>
@@ -207,8 +216,10 @@ export const PricingPage: React.FC = () => {
                 />
               </svg>
             </span>
-            <h3 className='text-on-light mb-0 font-semibold'>Auf- und Abbau</h3>
-            <p className='vb-body'>Wir kümmern uns um alles</p>
+            <h3 className='text-on-light mb-0 font-semibold'>
+              {t('pricing.included.items.setup.title')}
+            </h3>
+            <p className='vb-body'>{t('pricing.included.items.setup.description')}</p>
           </div>
         </div>
       </Section>

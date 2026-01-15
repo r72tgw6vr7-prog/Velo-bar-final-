@@ -59,6 +59,7 @@ export function BackgroundGradientAnimation() {
   return (
     <div
       className={cn('fixed inset-0 -z-10 overflow-hidden', 'h-screen w-screen', 'bg-guardian-hero')}
+      style={{ backgroundColor: 'rgba(0, 49, 65, 0.15)' }}
       aria-hidden='true'
     >
       {/* SVG filter for soft gooey blur */}
@@ -84,32 +85,31 @@ export function BackgroundGradientAnimation() {
       >
         {/* ORB 1: Cream glow - ABOVE hero text, not centered behind it
             Provides soft top-lighting without washing out content */}
-        <div
-          className='animate-first absolute'
-          style={{
-            width: '45vw',
-            height: '45vw',
-            top: '-10%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background:
-              'radial-gradient(circle at 50% 40%, rgba(255, 248, 236, 0.7) 0%, rgba(255, 248, 236, 0) 70%)',
-            mixBlendMode: 'soft-light',
-            transformOrigin: 'center center',
-          }}
-        />
+        <div className='absolute bottom-[-10%] left-1/2 -translate-x-1/2'>
+          <div
+            className='animate-first'
+            style={{
+              width: '45vw',
+              height: '45vw',
+              background:
+                'radial-gradient(circle at 50% 40%, rgba(255, 248, 236, 0.15) 0%, rgba(255, 248, 236, 0) 70%)',
+              mixBlendMode: 'soft-light',
+              transformOrigin: 'center center',
+            }}
+          />
+        </div>
 
         {/* ORB 2: Teal glow - bottom-left
             Adds depth and cool tones to lower portion */}
         <div
           className='animate-second absolute'
           style={{
-            width: '40vw',
-            height: '40vw',
-            bottom: '-10%',
+            width: '65vw',
+            height: '65vw',
+            top: '-10%',
             left: '-5%',
             background:
-              'radial-gradient(circle at 20% 80%, rgba(0, 80, 100, 0.5) 0%, rgba(0, 80, 100, 0) 75%)',
+              'radial-gradient(circle at 20% 80%, rgba(0, 80, 100, 0.9) 0%, rgba(0, 80, 100, 0) 75%)',
             mixBlendMode: 'multiply',
             transformOrigin: 'calc(50% - 400px) center',
           }}
@@ -122,10 +122,10 @@ export function BackgroundGradientAnimation() {
           style={{
             width: '30vw',
             height: '30vw',
-            top: '25%',
+            top: '60%',
             right: '-5%',
             background:
-              'radial-gradient(circle at 80% 30%, rgba(238, 120, 104, 0.45) 0%, rgba(238, 120, 104, 0) 75%)',
+              'radial-gradient(circle at 80% 70%, rgba(238, 120, 104, 0.2) 0%, rgba(238, 120, 104, 0) 75%)',
             mixBlendMode: 'soft-light',
             transformOrigin: 'calc(50% + 400px) center',
           }}
@@ -133,20 +133,19 @@ export function BackgroundGradientAnimation() {
 
         {/* ORB 4: Secondary teal - bottom center, very subtle
             Balances composition without competing with content */}
-        <div
-          className='animate-fourth absolute'
-          style={{
-            width: '25vw',
-            height: '25vw',
-            bottom: '5%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background:
-              'radial-gradient(circle at 50% 60%, rgba(0, 80, 100, 0.35) 0%, rgba(0, 80, 100, 0) 70%)',
-            mixBlendMode: 'multiply',
-            transformOrigin: 'center calc(50% + 200px)',
-          }}
-        />
+        <div className='absolute top-[5%] left-1/2 -translate-x-1/2'>
+          <div
+            className='animate-fourth'
+            style={{
+              width: '45vw',
+              height: '45vw',
+              background:
+                'radial-gradient(circle at 50% 60%, rgba(0, 80, 100, 0.75) 0%, rgba(0, 80, 100, 0) 70%)',
+              mixBlendMode: 'multiply',
+              transformOrigin: 'center calc(50% + 200px)',
+            }}
+          />
+        </div>
 
         {/* Interactive pointer-following orb - very subtle coral */}
         <div
@@ -158,7 +157,7 @@ export function BackgroundGradientAnimation() {
             top: '-50%',
             left: '-50%',
             background:
-              'radial-gradient(circle at center, rgba(238, 120, 104, 0.2) 0%, rgba(238, 120, 104, 0) 40%)',
+              'radial-gradient(circle at center, rgba(0, 80, 100, 0.15) 0%, rgba(0, 80, 100, 0) 40%)',
             mixBlendMode: 'soft-light',
           }}
         />

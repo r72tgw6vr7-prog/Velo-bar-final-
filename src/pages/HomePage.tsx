@@ -8,96 +8,148 @@
 import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import { PageTemplate } from '@/templates/PageTemplate';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Section, Container } from '@/components/atoms/index.ts';
 import { GridClean } from '@/components/atoms/Grid.clean.tsx';
 import { HeroLocked } from '@/sections/HeroLocked.tsx';
-import { getLocalBusinessSchema, getWebSiteSchema, combineSchemas } from '@/seo/schema.ts';
+import { getLocalBusinessSchema, getWebSiteSchema, getReviewSchema, combineSchemas } from '@/seo/schema.ts';
 import { ClientLogos } from '@/sections/ClientLogos.tsx';
+import { TestimonialsSection } from '@/sections/TestimonialsSection.tsx';
 const WhyVeloBarSection = lazy(() =>
   import('@/sections/WhyVeloBarSection/WhyVeloBarSection.tsx').then((m) => ({ default: m.WhyVeloBarSection })),
 );
 import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
 import { FinalCTA } from '@/components/FinalCTA.tsx';
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '@/contexts/LanguageContext';
 import '@/styles/pages/home-new.css';
 import '@/styles/pages/home-new-unified.css';
 
-const serviceCards = [
-  {
-    id: 'firmenfeiern',
-    label: 'Firmenfeiern',
-    description: 'Mobile Cocktailbar für Corporate Events, Afterworks und Sommerfeste.',
-    href: '/leistungen#firmenfeiern',
-    image: '/Velo Gallery/firemnfeier/firmenfeier-1920w.webp',
-  },
-  {
-    id: 'messe',
-    label: 'Messe-Catering',
-    description: 'Autarke Bar-Konzepte für Messestände – ohne Strom- oder Wasseranschluss.',
-    href: '/leistungen#messe-catering',
-    image: '/Velo Gallery/messen/messen-1920w.webp',
-  },
-  {
-    id: 'hochzeiten',
-    label: 'Hochzeiten',
-    description: 'Signature Drinks & Premium-Service für Trauungen und Abendempfänge.',
-    href: '/leistungen#hochzeiten',
-    image: '/Velo Gallery/hochzeit/hochzeiten-1920w.webp',
-  },
-  {
-    id: 'weihnachten',
-    label: 'Weihnachtsfeiern',
-    description: 'Winterliche Cocktail-Kreationen und Glühwein-Varianten für Teams.',
-    href: '/leistungen#weihnachtsfeiern',
-    image: '/Velo Gallery/gallery-carousel/weihnachstfeier-640w.webp',
-  },
-  {
-    id: 'team-events',
-    label: 'Team-Events & Workshops',
-    description: 'Cocktailkurse & Gin Tastings als interaktives Teamerlebnis.',
-    href: '/leistungen#team-events-workshops',
-    image: '/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops-1920w.webp',
-  },
-  {
-    id: 'private',
-    label: 'Private Feiern',
-    description: 'Geburtstage, Jubiläen oder Rooftop-Partys – wir bringen die Bar.',
-    href: '/leistungen#private-feiern',
-    image: '/Velo Gallery/private-feiern/private-feiern-1920w.webp',
-  },
-] as const;
+// Service and location card data moved inside component to use translations
 
-const locationCards = [
+// Google Reviews data for schema
+const reviewsData = [
   {
-    id: 'munich',
-    title: 'München & Umgebung',
-    description:
-      'Perfekte mobile Cocktailbar für Firmenfeiern, Messen und Privat-Events im Großraum München.',
-    image: '/Velo Gallery/DSC09743-640w.jpg',
-    cta: 'Events in München anfragen',
-    link: '/anfrage?region=muenchen',
+    name: 'Xenia Davidoff',
+    text: 'The mobile bar Velo.Bar was the absolute highlight of our wedding! The drinks they prepared were incredibly well-received by our guests. The seamless communication with Lars and his team made our lives easier during the wedding preparations.',
+    rating: 5,
+    date: '2023-01-15',
   },
   {
-    id: 'coburg',
-    title: 'Coburg & Umgebung',
-    description: 'Velobar für Hochzeiten, Sommerfeste und Unternehmens-Events im Raum Coburg.',
-    image: '/Velo Gallery/A7401220',
-    cta: 'Events in Coburg anfragen',
-    link: '/anfrage?region=coburg',
+    name: 'Angela Samberger',
+    text: 'Sebastian and his Velo.Bar catered for 50 guests at my garden party with cocktails. I highly recommend him. Great bar, delicious cocktails, professional service, and a fantastic guy! Everything was straightforward, reliable, and a truly memorable experience.',
+    rating: 5,
+    date: '2024-07-20',
   },
-] as const;
+  {
+    name: 'Arlind Maurer',
+    text: 'Sebastian and the Velo.Bar were an absolute hit after our civil wedding. Not even the pouring rain could dampen that. A great concept, outstanding service, and a hassle-free experience.',
+    rating: 5,
+    date: '2024-01-10',
+  },
+  {
+    name: 'Ruth Gaspar',
+    text: 'We booked the VeloBar for the champagne reception in the English Garden after our civil ceremony. Everything worked out perfectly, and despite the rain, it was a very successful event. Many thanks to Lars Eggers for the uncomplicated planning and execution.',
+    rating: 5,
+    date: '2024-01-05',
+  },
+  {
+    name: 'Viktoria O.',
+    text: 'Absolutely recommendable! We booked a champagne reception after our civil wedding in Munich, and it was simply perfect! Nice guys, fair price, and easy to contact. Definitely book them, and you can celebrate and relax without worry.',
+    rating: 5,
+    date: '2024-01-08',
+  },
+  {
+    name: 'Radu Lupoaie',
+    text: 'Pure awesomeness! Velo Bar team helped us organize a champagne reception at Standesamt Munich. Everything was great, from the initial communication and planning until the main day. They are very friendly and professional and all the guests loved it!',
+    rating: 5,
+    date: '2021-06-15',
+  },
+];
 
-// SEO: Combine LocalBusiness + WebSite schemas for homepage
-const homePageSchema = combineSchemas(getLocalBusinessSchema(), getWebSiteSchema());
+// SEO: Combine LocalBusiness + WebSite + Review schemas for homepage
+const homePageSchema = combineSchemas(
+  getLocalBusinessSchema(),
+  getWebSiteSchema(),
+  getReviewSchema(reviewsData)
+);
 
 export const HomePage = () => {
+  const { t } = useLanguage();
+
+  // Service cards using translations
+  const serviceCards = [
+    {
+      id: 'firmenfeiern',
+      label: t('services.firmenfeiern.title'),
+      description: t('services.firmenfeiern.description'),
+      href: '/leistungen#firmenfeiern',
+      image: '/Velo Gallery/firemnfeier/firmenfeier',
+    },
+    {
+      id: 'messe',
+      label: t('services.messe.title'),
+      description: t('services.messe.description'),
+      href: '/leistungen#messe-catering',
+      image: '/Velo Gallery/messen/messen',
+    },
+    {
+      id: 'hochzeiten',
+      label: t('services.hochzeiten.title'),
+      description: t('services.hochzeiten.description'),
+      href: '/leistungen#hochzeiten',
+      image: '/Velo Gallery/hochzeit/hochzeiten',
+    },
+    {
+      id: 'weihnachten',
+      label: t('services.weihnachtsfeiern.title'),
+      description: t('services.weihnachtsfeiern.description'),
+      href: '/leistungen#weihnachtsfeiern',
+      image: '/Velo Gallery/gallery-carousel/weihnachstfeier',
+    },
+    {
+      id: 'team-events',
+      label: t('services.teamEvents.title'),
+      description: t('services.teamEvents.description'),
+      href: '/leistungen#team-events-workshops',
+      image: '/Velo Gallery/teamevent-und-workshops/teamevent-und-workshops',
+    },
+    {
+      id: 'private',
+      label: t('services.privateFeiern.title'),
+      description: t('services.privateFeiern.description'),
+      href: '/leistungen#private-feiern',
+      image: '/Velo Gallery/private-feiern/private-feiern',
+    },
+  ];
+
+  // Location cards using translations
+  const locationCards = [
+    {
+      id: 'munich',
+      title: t('locations.munich'),
+      description: t('locations.munichDesc'),
+      image: '/Velo Gallery/DSC09743',
+      cta: t('locations.munichCta'),
+      link: '/anfrage?region=muenchen',
+    },
+    {
+      id: 'coburg',
+      title: t('locations.coburg'),
+      description: t('locations.coburgDesc'),
+      image: '/Velo Gallery/A7401220',
+      cta: t('locations.coburgCta'),
+      link: '/anfrage?region=coburg',
+    },
+  ];
+
   return (
-    <div className='home-new'>
+    <SiteBackground>
       <PageTemplate
-        // SEO: Title ~58 chars with location + primary keyword
-        title='Mobile Cocktailbar München & Coburg | Velo.Bar'
+        // SEO: Title optimized for CTR with emoji and pricing USP
+        title={t('pages.home.seo.title')}
         // SEO: Description ~150 chars with intent, location, USPs
-        description='Premium mobile Cocktailbar für Firmenfeiern, Hochzeiten & Events in München. Professioneller Barkeeper-Service für 50-500+ Gäste. Jetzt anfragen!'
+        description={t('pages.home.seo.description')}
         canonicalPath='/'
         structuredData={homePageSchema}
         withContainer={false}
@@ -128,10 +180,10 @@ export const HomePage = () => {
           <Container size='default'>
             <div className='mx-auto mb-12 max-w-3xl text-center'>
               <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
-                München & Coburg – wir kommen überall hin
+                {t('pages.home.locations.title')}
               </h2>
               <p className='mt-4 text-base font-semibold text-white md:text-lg'>
-                Zwei feste Standorte in Bayern plus deutschlandweite Einsätze auf Anfrage.
+                {t('pages.home.locations.subtitle')}
               </p>
             </div>
             <GridClean cols={2} gap='lg' className='location-cards gap-y-8'>
@@ -190,11 +242,10 @@ export const HomePage = () => {
           <Container size='default'>
             <div className='mx-auto mb-12 max-w-3xl text-center'>
               <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
-                Von Cocktail-Catering bis Gin-Tasting
+                {t('pages.home.services.title')}
               </h2>
               <p className='mt-4 text-base font-semibold text-white md:text-lg'>
-                Wählen Sie aus unseren beliebtesten Service-Kategorien – alle mobil, autark und auf
-                Ihr Event zugeschnitten.
+                {t('pages.home.services.subtitle')}
               </p>
             </div>
             <GridClean
@@ -254,7 +305,7 @@ export const HomePage = () => {
                         to={service.href}
                         className='mx-auto inline-flex items-center justify-center rounded-full bg-[#ee7868] px-5 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-[#ee7868]/90 md:px-6 md:py-3 md:text-base'
                       >
-                        Mehr erfahren
+                        {t('pages.home.services.cta')}
                       </Link>
                     </div>
                   </div>
@@ -274,41 +325,44 @@ export const HomePage = () => {
           <Container size='default'>
             <div className='mx-auto mb-10 max-w-3xl text-center'>
               <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
-                Zahlen, die Vertrauen schaffen
+                {t('pages.home.stats.title')}
               </h2>
               <p className='mt-4 text-base font-semibold text-white md:text-lg'>
-                Premium-Service, messbar in jeder Kennzahl.
+                {t('pages.home.stats.subtitle')}
               </p>
             </div>
             <div className='home-new-card border-accent/20 rounded-2xl border-2 p-6 shadow-lg'>
               <GridClean cols={4} gap='lg'>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>500+</div>
-                  <div className='text-on-light text-sm'>Events durchgeführt</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.0')}</div>
+                  <div className='text-on-light text-sm'>{t('pages.home.stats.items.0')}</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>50-500</div>
-                  <div className='text-on-light text-sm'>Gäste pro Event</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.1')}</div>
+                  <div className='text-on-light text-sm'>{t('pages.home.stats.items.1')}</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>4.9★</div>
-                  <div className='text-on-light text-sm'>Google Bewertung</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.2')}</div>
+                  <div className='text-on-light text-sm'>{t('pages.home.stats.items.2')}</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>2</div>
-                  <div className='text-on-light text-sm'>Standorte in Bayern</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.3')}</div>
+                  <div className='text-on-light text-sm'>{t('pages.home.stats.items.3')}</div>
                 </div>
               </GridClean>
             </div>
           </Container>
         </Section>
 
+        {/* Testimonials - Google Reviews */}
+        <TestimonialsSection />
+
         {/* Final CTA */}
         <Section container='default' spacing='xl' background='transparent'>
           <FinalCTA />
         </Section>
       </PageTemplate>
-    </div>
+    </SiteBackground>
   );
 };
 

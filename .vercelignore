@@ -27,5 +27,6 @@ src/components-backup-2025-10-24-pre-enforcement
 **/*.MP4
 public/images/_ARCHIVE
 dist/images/_ARCHIVE
+**/originals-archive/**
 
 # Broken symlinks that fail Vercel build

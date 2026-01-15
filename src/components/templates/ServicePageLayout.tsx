@@ -32,8 +32,10 @@ import { cn } from '@/utils/classname.ts';
 import { Button, Section, Container } from '@/components/atoms/index.ts';
 import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import Check from 'lucide-react/dist/esm/icons/check';
 import Footer from '@/components/pages/Footer.tsx';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 /**
  * Service package data structure
@@ -137,23 +139,34 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
   heroSubtitle,
   heroImage: _heroImage,
   heroImageAlt: _heroImageAlt,
-  heroCtaText = 'Jetzt anfragen',
-  heroCtaLink = '/anfrage',
+  heroCtaText,
+  heroCtaLink,
   suitableFor,
   processSteps,
   packages,
-  packagesTitle = 'Unsere Pakete',
+  packagesTitle,
   faqs,
-  faqTitle = 'Häufig gestellte Fragen',
+  faqTitle,
   testimonials,
-  testimonialsTitle = 'Was unsere Kunden sagen',
-  ctaTitle = 'Bereit für Ihr Event?',
-  ctaSubtitle = 'Kontaktieren Sie uns für ein unverbindliches Angebot',
-  ctaButtonText = 'Jetzt anfragen',
-  ctaButtonLink = '/anfrage',
+  testimonialsTitle,
+  ctaTitle,
+  ctaSubtitle,
+  ctaButtonText,
+  ctaButtonLink,
   children,
 }) => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFaqIndex] = React.useState<number | null>(null);
+
+  const resolvedHeroCtaText = heroCtaText ?? t('servicePageLayout.hero.ctaText');
+  const resolvedHeroCtaLink = heroCtaLink ?? '/anfrage';
+  const resolvedPackagesTitle = packagesTitle ?? t('servicePageLayout.packages.title');
+  const resolvedFaqTitle = faqTitle ?? t('servicePageLayout.faq.title');
+  const resolvedTestimonialsTitle = testimonialsTitle ?? t('servicePageLayout.testimonials.title');
+  const resolvedCtaTitle = ctaTitle ?? t('servicePageLayout.cta.title');
+  const resolvedCtaSubtitle = ctaSubtitle ?? t('servicePageLayout.cta.subtitle');
+  const resolvedCtaButtonText = ctaButtonText ?? t('servicePageLayout.cta.button');
+  const resolvedCtaButtonLink = ctaButtonLink ?? '/anfrage';
 
   return (
     <>
@@ -162,7 +175,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
         <header className='w-full py-8 md:py-16'>
           <div className='mx-auto flex max-w-4xl flex-col items-center px-8 text-center sm:px-8 lg:px-8'>
             <span className='mb-0 text-sm font-semibold text-[rgb(238,120,104)]'>
-              Velo.Bar Service
+              {t('servicePageLayout.hero.eyebrow')}
             </span>
             <h1 className='mb-8 text-4xl font-bold tracking-tight text-[#ee7868] md:text-5xl lg:text-6xl'>
               {heroTitle}
@@ -171,8 +184,8 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
               {heroSubtitle}
             </p>
             <Button variant='primary' size='lg' asChild>
-              <Link to={heroCtaLink}>
-                {heroCtaText}
+              <Link to={resolvedHeroCtaLink}>
+                {resolvedHeroCtaText}
                 <ArrowRight className='ml-0' size={20} />
               </Link>
             </Button>
@@ -211,7 +224,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                   'font-headline',
                 )}
               >
-                {suitableFor.title || 'Für wen geeignet?'}
+                {suitableFor.title || t('servicePageLayout.suitableFor.title')}
               </h2>
               <div className='grid gap-8 md:grid-cols-2'>
                 {suitableFor.items.map((item, index) => (
@@ -255,7 +268,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                   'font-headline',
                 )}
               >
-                {processSteps.title || 'Ablauf & Logistik'}
+                {processSteps.title || t('servicePageLayout.process.title')}
               </h2>
               <div className='space-y-8'>
                 {processSteps.steps.map((step, index) => (
@@ -303,7 +316,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                 'font-headline',
               )}
             >
-              {packagesTitle}
+              {resolvedPackagesTitle}
             </h2>
 
             <div
@@ -326,7 +339,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                 >
                   {pkg.highlighted && (
                     <div className={cn('mb-4 text-xs font-bold uppercase', 'text-text-accent')}>
-                      Beliebt
+                      {t('servicePageLayout.packages.popularBadge')}
                     </div>
                   )}
 
@@ -357,7 +370,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                     asChild
                   >
                     <Link to='/anfrage'>
-                      Anfrage stellen
+                      {t('servicePageLayout.packages.cta')}
                       <ArrowRight className='ml-0' size={20} />
                     </Link>
                   </Button>
@@ -383,7 +396,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                   'font-headline',
                 )}
               >
-                {testimonialsTitle}
+                {resolvedTestimonialsTitle}
               </h2>
 
               <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
@@ -437,7 +450,7 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                   'font-headline',
                 )}
               >
-                {faqTitle}
+                {resolvedFaqTitle}
               </h2>
 
               <div className='space-y-8'>
@@ -507,18 +520,18 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
                 'font-headline',
               )}
             >
-              {ctaTitle}
+              {resolvedCtaTitle}
             </h2>
-            <p className='mb-8 text-xl text-[#003141]'>{ctaSubtitle}</p>
+            <p className='mb-8 text-xl text-[#003141]'>{resolvedCtaSubtitle}</p>
             <Button
               variant='primary'
               size='lg'
               className='bg-[#ee7868] text-white transition-colors duration-200 hover:bg-[#ee7868]/90'
               asChild
             >
-              <Link to={ctaButtonLink}>
-                {ctaButtonText}
-                <ArrowRight className='ml-0' size={24} />
+              <Link to={resolvedCtaButtonLink}>
+                {resolvedCtaButtonText}
+                <ArrowRight className='ml-0' size={20} />
               </Link>
             </Button>
           </Container>
@@ -534,11 +547,11 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
         >
           <div className='mx-auto flex max-w-7xl items-center justify-between gap-8'>
             <div className='hidden md:block'>
-              <span className='text-text-primary font-semibold'>{ctaTitle}</span>
+              <span className='text-text-primary font-semibold'>{resolvedCtaTitle}</span>
             </div>
             <Button variant='primary' size='lg' className='ml-auto' asChild>
-              <Link to={ctaButtonLink}>
-                {ctaButtonText}
+              <Link to={resolvedCtaButtonLink}>
+                {resolvedCtaButtonText}
                 <ArrowRight className='ml-0' size={20} />
               </Link>
             </Button>

@@ -11,7 +11,10 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, Home } from 'lucide-react';
+import ChevronRight from 'lucide-react/dist/esm/icons/chevron-right';
+import Home from 'lucide-react/dist/esm/icons/home';
+import ROUTE_CONFIG from '@/core/constants/routes.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 interface BreadcrumbItem {
   label: string;
@@ -23,30 +26,28 @@ interface BreadcrumbsProps {
   className?: string;
 }
 
-// Route label mapping for automatic breadcrumb generation
-const routeLabels: Record<string, string> = {
-  '/': 'Home',
-  '/firmenfeiern': 'Firmenfeiern',
-  '/weihnachtsfeiern': 'Weihnachtsfeiern',
-  '/messe-catering': 'Messe & Promotions',
-  '/team-events-workshops': 'Team-Events & Workshops',
-  '/private-feiern': 'Private Feiern',
-  '/hochzeiten': 'Hochzeiten',
-  '/preise': 'Preise',
-  '/galerie': 'Galerie',
-  '/menu': 'Drinks',
-  '/about': 'Über uns',
-  '/faq': 'FAQ',
-  '/anfrage': 'Anfrage',
-  '/impressum': 'Impressum',
-  '/datenschutz': 'Datenschutz',
-  '/agb': 'AGB',
-  '/velobar/buchungmuc': 'München',
-  '/velobarco': 'Coburg',
+const EXTRA_ROUTE_LABELS: Record<string, { de: string; en: string }> = {
+  '/agb': { de: 'AGB', en: 'Terms & Conditions' },
+  '/locations': { de: 'Event-Locations', en: 'Event Venues' },
+  '/firmenfeieren': { de: 'Firmenfeiern München', en: 'Corporate Events Munich' },
 };
 
-// Known safe routes - only these paths are allowed in breadcrumbs
-const SAFE_ROUTES = new Set(Object.keys(routeLabels));
+const SAFE_ROUTES = new Set([
+  ...Object.values(ROUTE_CONFIG).map((config) => config.path),
+  ...Object.keys(EXTRA_ROUTE_LABELS),
+]);
+
+function getRouteLabel(path: string, language: 'de' | 'en', t: (key: string) => string): string {
+  if (path === '/') return t('nav.home');
+
+  const fromConfig = Object.values(ROUTE_CONFIG).find((config) => config.path === path);
+  if (fromConfig) return fromConfig.label[language];
+
+  const extra = EXTRA_ROUTE_LABELS[path];
+  if (extra) return extra[language];
+
+  return path;
+}
 
 function escapeJsonLd(json: unknown): string {
   return JSON.stringify(json)
@@ -60,23 +61,31 @@ function sanitizeBreadcrumbItems(items: BreadcrumbItem[]): BreadcrumbItem[] {
     if (!item) return false;
     if (typeof item.label !== 'string' || typeof item.path !== 'string') return false;
     if (!item.path.startsWith('/')) return false;
-    return SAFE_ROUTES.has(item.path);
+
+    if (SAFE_ROUTES.has(item.path)) return true;
+
+    const match = item.path.match(/^\/(locations|firmenfeieren)\/([a-zA-Z0-9-]{1,50})$/);
+    if (!match) return false;
+
+    // Programmatic routes (validated by strict regex above)
+    return match[1] === 'locations' || match[1] === 'firmenfeieren';
   });
 }
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
   const location = useLocation();
+  const { language, t } = useLanguage();
 
   // Auto-generate breadcrumbs from current path if not provided
   // Security: Only uses statically defined route labels, never dynamic user input
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
-    const crumbs: BreadcrumbItem[] = [{ label: 'Home', path: '/' }];
+    const crumbs: BreadcrumbItem[] = [{ label: getRouteLabel('/', language, t), path: '/' }];
 
     // Check if current path is a known safe route
     const pathname = location.pathname;
     if (SAFE_ROUTES.has(pathname)) {
       // Use the predefined label (static, not user-controlled)
-      crumbs.push({ label: routeLabels[pathname], path: pathname });
+      crumbs.push({ label: getRouteLabel(pathname, language, t), path: pathname });
     } else {
       // For nested routes, try to match parent paths only
       const segments = pathname.split('/').filter(Boolean);
@@ -86,7 +95,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
         if (!/^[a-zA-Z0-9-]{1,50}$/.test(segment)) continue;
         currentPath += `/${segment}`;
         if (SAFE_ROUTES.has(currentPath)) {
-          crumbs.push({ label: routeLabels[currentPath], path: currentPath });
+          crumbs.push({ label: getRouteLabel(currentPath, language, t), path: currentPath });
         }
       }
     }
@@ -119,7 +128,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: jsonLdString }} />
 
       {/* Visual Breadcrumbs */}
-      <nav aria-label='Breadcrumb' className={`px-4 py-4 sm:px-6 lg:px-8 ${className}`}>
+      <nav aria-label={t('common.breadcrumbAria')} className={`px-4 py-4 sm:px-6 lg:px-8 ${className}`}>
         <ol className='flex flex-wrap items-center gap-0 text-sm text-gray-500'>
           {breadcrumbs.map((item, index) => {
             const isLast = index === breadcrumbs.length - 1;

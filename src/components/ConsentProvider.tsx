@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 /* eslint-disable no-console -- consent provider logs GA4 initialization/disable and consent parse issues for diagnostics */
 
@@ -173,6 +174,7 @@ function disableAnalytics() {
 // Cookie Banner Component
 function CookieBanner() {
   const { acceptAll, acceptNecessary, openSettings } = useConsent();
+  const { t } = useLanguage();
 
   return (
     <div className='fixed right-0 bottom-0 left-0 z-50 border-t border-neutral-700 bg-neutral-900 p-8'>
@@ -180,13 +182,12 @@ function CookieBanner() {
         <div className='flex flex-col items-start gap-8 md:flex-row md:items-center'>
           <div className='flex-1'>
             <p className='text-sm text-white'>
-              Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und anonyme Nutzungsstatistiken
-              zu sammeln.
+              {t('cookieConsent.description')}{' '}
               <button
                 onClick={openSettings}
                 className='text-accent-primary hover:text-accent-primary-light ml-0 underline transition duration-200 ease-out'
               >
-                Einstellungen anpassen
+                {t('cookieConsent.customize')}
               </button>
             </p>
           </div>
@@ -195,13 +196,13 @@ function CookieBanner() {
               onClick={acceptNecessary}
               className='rounded border border-neutral-600 px-8 py-0 text-sm text-white transition duration-200 ease-out hover:bg-neutral-800'
             >
-              Nur Notwendige
+              {t('cookieConsent.rejectAll')}
             </button>
             <button
               onClick={acceptAll}
               className='bg-accent-primary text-navy-dark hover:bg-accent-primary-hover rounded px-3 py-2 text-sm font-medium transition duration-200 ease-out'
             >
-              Alle Akzeptieren
+              {t('cookieConsent.acceptAll')}
             </button>
           </div>
         </div>
@@ -213,6 +214,7 @@ function CookieBanner() {
 // Cookie Settings Modal
 function CookieSettings() {
   const { consent, updateConsent, closeSettings } = useConsent();
+  const { t } = useLanguage();
   const [tempConsent, setTempConsent] = useState(consent);
 
   const handleSave = () => {
@@ -223,53 +225,53 @@ function CookieSettings() {
   return (
     <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-8'>
       <div className='w-full max-w-md rounded-lg bg-neutral-900 p-8'>
-        <h2 className='mb-8 text-xl font-semibold text-white'>Cookie-Einstellungen</h2>
+        <h2 className='mb-8 text-xl font-semibold text-white'>{t('cookieConsent.title')}</h2>
 
         <div className='space-y-8'>
           <div className='flex items-center justify-between'>
             <div>
-              <h3 className='font-medium text-white'>Notwendige Cookies</h3>
+              <h3 className='font-medium text-white'>{t('cookieConsent.essential.title')}</h3>
               <p className='text-sm text-neutral-400'>
-                Erforderlich für die Grundfunktionen der Website
+                {t('cookieConsent.essential.description')}
               </p>
             </div>
             <input
               type='checkbox'
               checked={true}
               disabled
-              aria-label='Notwendige Cookies'
+              aria-label={t('cookieConsent.essential.title')}
               className='h-5 w-5'
             />
           </div>
 
           <div className='flex items-center justify-between'>
             <div>
-              <h3 className='font-medium text-white'>Analytics Cookies</h3>
+              <h3 className='font-medium text-white'>{t('cookieConsent.analytics.title')}</h3>
               <p className='text-sm text-neutral-400'>
-                Helfen uns, die Website-Nutzung zu verstehen
+                {t('cookieConsent.analytics.description')}
               </p>
             </div>
             <input
               type='checkbox'
               checked={tempConsent.analytics}
               onChange={(e) => setTempConsent((prev) => ({ ...prev, analytics: e.target.checked }))}
-              aria-label='Analytics Cookies'
+              aria-label={t('cookieConsent.analytics.title')}
               className='h-5 w-5'
             />
           </div>
 
           <div className='flex items-center justify-between'>
             <div>
-              <h3 className='font-medium text-white'>Marketing Cookies</h3>
+              <h3 className='font-medium text-white'>{t('cookieConsent.marketing.title')}</h3>
               <p className='text-sm text-neutral-400'>
-                Für personalisierte Werbung (derzeit nicht verwendet)
+                {t('cookieConsent.marketing.description')}
               </p>
             </div>
             <input
               type='checkbox'
               checked={tempConsent.marketing}
               onChange={(e) => setTempConsent((prev) => ({ ...prev, marketing: e.target.checked }))}
-              aria-label='Marketing Cookies'
+              aria-label={t('cookieConsent.marketing.title')}
               className='h-5 w-5'
             />
           </div>
@@ -280,13 +282,13 @@ function CookieSettings() {
             onClick={closeSettings}
             className='flex-1 rounded border border-neutral-600 px-8 py-0 text-white transition duration-200 ease-out hover:bg-neutral-800'
           >
-            Abbrechen
+            {t('cookieConsent.cancel')}
           </button>
           <button
             onClick={handleSave}
             className='bg-accent-primary text-navy-dark hover:bg-accent-primary-hover flex-1 rounded px-3 py-2 font-medium transition duration-200 ease-out'
           >
-            Speichern
+            {t('cookieConsent.save')}
           </button>
         </div>
       </div>

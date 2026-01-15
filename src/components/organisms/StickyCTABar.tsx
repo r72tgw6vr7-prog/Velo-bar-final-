@@ -7,8 +7,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Phone, MessageCircle, X } from 'lucide-react';
+import Phone from 'lucide-react/dist/esm/icons/phone';
+import MessageCircle from 'lucide-react/dist/esm/icons/message-circle';
+import X from 'lucide-react/dist/esm/icons/x';
 import { cn } from '@/utils/classname.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 interface StickyCTABarProps {
   phoneNumber?: string;
@@ -22,6 +25,7 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
   className,
 }) => {
   const location = useLocation();
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -42,7 +46,7 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
 
   if (!isVisible || isHiddenRoute) return null;
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hallo! Ich interessiere mich für ein Event mit der Velo.Bar.')}`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t('stickyCta.whatsappMessage'))}`;
   const phoneLink = `tel:${phoneNumber.replace(/\s/g, '')}`;
 
   return (
@@ -60,11 +64,11 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
           <div className='flex items-center justify-between gap-8'>
             {/* Left: Message */}
             <div className='min-w-0 flex-1'>
-              <p className='truncate text-sm font-semibold text-gray-900 sm:text-base'>
-                Kostenloses Angebot in 2 Stunden
+              <p className='truncate text-sm font-semibold text-offwhite-primary sm:text-base'>
+                {t('stickyCta.headline')}
               </p>
-              <p className='hidden text-xs text-gray-500 sm:block sm:text-sm'>
-                Jetzt anrufen oder per WhatsApp kontaktieren
+              <p className='hidden text-xs text-offwhite-primary sm:block sm:text-sm'>
+                {t('stickyCta.subline')}
               </p>
             </div>
 
@@ -81,10 +85,10 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
                   'transition-all duration-200',
                   'focus:ring-accent-primary focus:ring-2 focus:ring-offset-2 focus:outline-none',
                 )}
-                aria-label='Anrufen'
+                aria-label={t('stickyCta.call')}
               >
                 <Phone size={18} aria-hidden='true' focusable='false' />
-                <span className='hidden sm:inline'>Anrufen</span>
+                <span className='hidden sm:inline'>{t('stickyCta.call')}</span>
               </a>
 
               {/* WhatsApp button */}
@@ -100,10 +104,10 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
                   'transition-all duration-200',
                   'focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:outline-none',
                 )}
-                aria-label='WhatsApp'
+                aria-label={t('stickyCta.whatsapp')}
               >
                 <MessageCircle size={18} aria-hidden='true' focusable='false' />
-                <span className='hidden sm:inline'>WhatsApp</span>
+                <span className='hidden sm:inline'>{t('stickyCta.whatsapp')}</span>
               </a>
 
               {/* Close button */}
@@ -115,10 +119,10 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
                   'transition-colors duration-200',
                   'focus:ring-2 focus:ring-gray-300 focus:outline-none',
                 )}
-                aria-label='Schließen'
+                aria-label={t('stickyCta.close')}
               >
                 <X size={18} aria-hidden='true' focusable='false' />
-                <span className='sr-only'>Schließen</span>
+                <span className='sr-only'>{t('stickyCta.close')}</span>
               </button>
             </div>
           </div>

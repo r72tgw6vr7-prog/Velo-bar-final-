@@ -2,9 +2,11 @@
  * ImpressumPage - Legal Notice
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { PageHeader } from '@/components/atoms/PageHeader.tsx';
 import { PageTemplate } from '@/templates/PageTemplate';
+import { SiteBackground } from '@/components/layout/SiteBackground';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 interface ImpressumPageProps {
   language?: 'DE' | 'EN';
@@ -16,92 +18,91 @@ type ImpressumSection = {
   paragraphs?: readonly string[];
   listItems?: readonly string[];
 };
-
-const impressumSections: readonly ImpressumSection[] = [
-  {
-    id: 'tmg',
-    title: 'Angaben gemäß § 5 TMG',
-    paragraphs: [
-      'Velo.Bar',
-      'Sebastian Reichstaller & Lars Eggers GbR, SelectONEdrink GbR',
-      'Matthias-Mayer-Straße 5',
-      '81379 München',
-    ],
-  },
-  {
-    id: 'represented-by',
-    title: 'Vertreten durch:',
-    paragraphs: ['Sebastian Reichstaller', 'Lars Eggers'],
-  },
-  {
-    id: 'contact',
-    title: 'Kontakt',
-    paragraphs: ['Telefon: +49 160 94623196', 'E-Mail: hallo@velo-bar.com'],
-  },
-  {
-    id: 'eu-dispute',
-    title: 'EU-Streitschlichtung',
-    paragraphs: [
-      'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:',
-      'https://ec.europa.eu/consumers/odr.',
-      'Unsere E-Mail-Adresse finden Sie oben im Impressum.',
-    ],
-  },
-  {
-    id: 'consumer-dispute',
-    title: 'Verbraucherstreitbeilegung/Universalschlichtungsstelle',
-    paragraphs: [
-      'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
-    ],
-  },
-  {
-    id: 'liability-content',
-    title: 'Haftung für Inhalte',
-    paragraphs: [
-      'Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nichtverpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.',
-    ],
-  },
-  {
-    id: 'liability-links',
-    title: 'Haftung für Links',
-    paragraphs: [
-      'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.',
-    ],
-  },
-  {
-    id: 'copyright',
-    title: 'Urheberrecht',
-    paragraphs: [
-      'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.',
-    ],
-  },
-  {
-    id: 'cancellation-fees',
-    title: 'Stornogebühren:Storno:',
-    paragraphs: [
-      'Der Kunde hat jederzeit das Recht, vom Vertrag zurückzutreten. Soweit keine weiteren schriftlichen Vereinbarungen zwischen dem Kunden und der Lars Eggers & Sebastian Reichstaller GbR getroffen wurden, hat die Lars Eggers & Sebastian Reistaller GbR Anspruch auf eine angemessene Entschädigung wie folgt:',
-    ],
-    listItems: [
-      '1) Bei einer Stornierung bis zehn volle Werktage vor dem ersten Veranstaltungstag werden 20% der letzgültigen Angebotssumme in Rechnung gestellt.',
-      '2) Bei einer Stornierung zwischen zehn und drei vollen Werktage vor dem ersten Veranstaltungstag werden 90% der letzgültigen Angebotssumme in Rechnung gestellt.',
-      '3) Bei einer Stornierung unter drei vollen Werktage vor dem ersten Veranstaltungstag werden 100 % der letztgültigen Angebotessumme in Rechnung gestellt.',
-    ],
-  },
-] as const;
-
-export const ImpressumPage: React.FC<ImpressumPageProps> = ({ language = 'DE' }) => {
-  const title = language === 'EN' ? 'Legal Notice' : 'Impressum';
+export const ImpressumPage: React.FC<ImpressumPageProps> = ({ language: _language = 'DE' }) => {
+  const { t } = useLanguage();
+  const title = t('pages.impressum.title');
   const subtitle = undefined;
 
+  const impressumSections: readonly ImpressumSection[] = useMemo(
+    () => [
+      {
+        id: 'tmg',
+        title: t('pages.impressum.sections.tmg.title'),
+        paragraphs: [
+          t('pages.impressum.sections.tmg.paragraphs.0'),
+          t('pages.impressum.sections.tmg.paragraphs.1'),
+          t('pages.impressum.sections.tmg.paragraphs.2'),
+          t('pages.impressum.sections.tmg.paragraphs.3'),
+        ],
+      },
+      {
+        id: 'represented-by',
+        title: t('pages.impressum.sections.representedBy.title'),
+        paragraphs: [
+          t('pages.impressum.sections.representedBy.paragraphs.0'),
+          t('pages.impressum.sections.representedBy.paragraphs.1'),
+        ],
+      },
+      {
+        id: 'contact',
+        title: t('pages.impressum.sections.contact.title'),
+        paragraphs: [
+          t('pages.impressum.sections.contact.paragraphs.0'),
+          t('pages.impressum.sections.contact.paragraphs.1'),
+        ],
+      },
+      {
+        id: 'eu-dispute',
+        title: t('pages.impressum.sections.euDispute.title'),
+        paragraphs: [
+          t('pages.impressum.sections.euDispute.paragraphs.0'),
+          t('pages.impressum.sections.euDispute.paragraphs.1'),
+          t('pages.impressum.sections.euDispute.paragraphs.2'),
+        ],
+      },
+      {
+        id: 'consumer-dispute',
+        title: t('pages.impressum.sections.consumerDispute.title'),
+        paragraphs: [t('pages.impressum.sections.consumerDispute.paragraphs.0')],
+      },
+      {
+        id: 'liability-content',
+        title: t('pages.impressum.sections.liabilityContent.title'),
+        paragraphs: [t('pages.impressum.sections.liabilityContent.paragraphs.0')],
+      },
+      {
+        id: 'liability-links',
+        title: t('pages.impressum.sections.liabilityLinks.title'),
+        paragraphs: [t('pages.impressum.sections.liabilityLinks.paragraphs.0')],
+      },
+      {
+        id: 'copyright',
+        title: t('pages.impressum.sections.copyright.title'),
+        paragraphs: [t('pages.impressum.sections.copyright.paragraphs.0')],
+      },
+      {
+        id: 'cancellation-fees',
+        title: t('pages.impressum.sections.cancellationFees.title'),
+        paragraphs: [t('pages.impressum.sections.cancellationFees.paragraphs.0')],
+        listItems: [
+          t('pages.impressum.sections.cancellationFees.listItems.0'),
+          t('pages.impressum.sections.cancellationFees.listItems.1'),
+          t('pages.impressum.sections.cancellationFees.listItems.2'),
+        ],
+      },
+    ],
+    [t],
+  );
+
   return (
-    <PageTemplate
-      title={title}
-      description={subtitle}
-      withContainer={false}
-      background='transparent'
-    >
-      <div className='bg-navy'>
-        <PageHeader eyebrow='Rechtliches' title={title} subtitle={subtitle} />
+    <SiteBackground>
+      <PageTemplate
+        title={title}
+        description={subtitle}
+        withContainer={false}
+        background='transparent'
+      >
+        <PageHeader eyebrow={t('pages.legal.eyebrow')} title={title} subtitle={subtitle} />
 
         <div className='mx-auto max-w-4xl px-8 py-16 sm:px-8 lg:px-8'>
           {impressumSections.map((section) => (
@@ -138,8 +139,8 @@ export const ImpressumPage: React.FC<ImpressumPageProps> = ({ language = 'DE' })
             </section>
           ))}
         </div>
-      </div>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

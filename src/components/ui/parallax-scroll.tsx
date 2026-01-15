@@ -245,20 +245,20 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
         <div ref={gridRef} className='parallax-grid' id='velo-gallery-grid'>
           <div ref={column0Ref} className='parallax-column'>
             {responsiveColumns[0]?.map((image, imageIndex) => (
-              <Tile key={`${image.basePath}-${imageIndex}`} image={image} />
+              <Tile key={`col0-${image.basePath}-${imageIndex}`} image={image} />
             ))}
           </div>
 
           <div ref={column1Ref} className='parallax-column'>
             {responsiveColumns[1]?.map((image, imageIndex) => (
-              <Tile key={`${image.basePath}-${imageIndex}`} image={image} />
+              <Tile key={`col1-${image.basePath}-${imageIndex}`} image={image} />
             ))}
           </div>
 
           {responsiveColumns[2] && (
             <div ref={column2Ref} className='parallax-column'>
               {responsiveColumns[2].map((image, imageIndex) => (
-                <Tile key={`${image.basePath}-${imageIndex}`} image={image} />
+                <Tile key={`col2-${image.basePath}-${imageIndex}`} image={image} />
               ))}
             </div>
           )}
@@ -266,7 +266,7 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
           {responsiveColumns[3] && (
             <div ref={column3Ref} className='parallax-column'>
               {responsiveColumns[3].map((image, imageIndex) => (
-                <Tile key={`${image.basePath}-${imageIndex}`} image={image} />
+                <Tile key={`col3-${image.basePath}-${imageIndex}`} image={image} />
               ))}
             </div>
           )}

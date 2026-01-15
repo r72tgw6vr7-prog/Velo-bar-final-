@@ -1,20 +1,22 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { SITE_URL } from '@/lib/site.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const CorporateEventCateringGuidePage: React.FC = () => {
+  const { t } = useLanguage();
+
   // JSON-LD Schema for this specific Article/Guide
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline:
-      'Der ultimative Guide zu Corporate Event Catering & Beverage Logistics in München (2025)',
-    description:
-      'Wie Sie Ihren Messestand mit einer mobilen Bar zum Besucher-Magnet machen und Logistikrisiken minimieren. Ein Praxis-Guide für Event Manager.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    headline: t('pages.resources.corporateEventCateringGuide.schema.headline'),
+    description: t('pages.resources.corporateEventCateringGuide.schema.description'),
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -33,24 +35,27 @@ const CorporateEventCateringGuidePage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='Corporate Event Catering & Beverage Logistics Guide 2025 | Velo.Bar'
-      description='Der ultimative Guide für Event Manager in München: Mobile Bars für Messen, Logistik, Menü-Engineering und ROI-Berechnung.'
-      canonicalPath='/resources/corporate-event-catering-guide'
-      structuredData={schemaData}
-    >
-      <main className='bg-navy'>
-        {/* Custom Hero for the Guide */}
+    <SiteBackground>
+      <PageTemplate
+        title={t('pages.resources.corporateEventCateringGuide.seo.title')}
+        description={t('pages.resources.corporateEventCateringGuide.seo.description')}
+        canonicalPath='/resources/corporate-event-catering-guide'
+        structuredData={schemaData}
+        withContainer={false}
+      >
+        <main className='w-full'>
+          {/* Custom Hero for the Guide */}
         <div className='bg-navy-primary relative overflow-hidden py-24 text-white lg:py-32'>
           <div className='relative z-10 mx-auto max-w-4xl px-8 text-center sm:px-8 lg:px-8'>
             <span className='mb-8 inline-block rounded-full border border-indigo-400/30 bg-indigo-500/20 px-0 py-0 text-sm font-semibold text-indigo-300'>
-              Ressourcen & Guides
+              {t('pages.resources.corporateEventCateringGuide.hero.badge')}
             </span>
             <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
-              Corporate Event Catering & <br /> Beverage Logistics in München
+              {t('pages.resources.corporateEventCateringGuide.hero.titleLine1')} <br />
+              {t('pages.resources.corporateEventCateringGuide.hero.titleLine2')}
             </h1>
             <p className='mx-auto mb-8 max-w-2xl text-xl text-gray-300'>
-              Der Praxis-Guide 2025 für Event Manager:innen und Messe-Aussteller.
+              {t('pages.resources.corporateEventCateringGuide.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -68,7 +73,9 @@ const CorporateEventCateringGuidePage: React.FC = () => {
               stärksten Hebel für Verweildauer (Dwell Time) und Lead-Qualität.
             </p>
             <div className='not-prose my-8 rounded-r-lg border-l-4 border-indigo-600 bg-indigo-50 p-8'>
-              <h3 className='mb-0 text-lg font-bold text-indigo-900'>In diesem Guide:</h3>
+              <h3 className='mb-0 text-lg font-bold text-indigo-900'>
+                {t('pages.resources.corporateEventCateringGuide.guideBox.title')}
+              </h3>
               <ul className='list-disc space-y-0 pl-8 text-indigo-800'>
                 <li>
                   Wie mobile Bars die <strong>Verweildauer am Messestand</strong> erhöhen
@@ -89,7 +96,7 @@ const CorporateEventCateringGuidePage: React.FC = () => {
           {/* Section 1: Dwell Time */}
           <section className='mb-24'>
             <h2 className='mb-8 text-3xl font-bold text-gray-900'>
-              Warum mobile Bars die Verweildauer erhöhen
+              {t('pages.resources.corporateEventCateringGuide.sections.dwellTime.title')}
             </h2>
             <div className='prose prose-lg mb-8 text-gray-600'>
               <p>
@@ -107,7 +114,9 @@ const CorporateEventCateringGuidePage: React.FC = () => {
                   💡
                 </div>
                 <div>
-                  <h4 className='mb-0 text-lg font-bold text-gray-900'>Pro Tipp aus der Praxis</h4>
+                  <h4 className='mb-0 text-lg font-bold text-gray-900'>
+                    {t('pages.resources.corporateEventCateringGuide.proTip.title')}
+                  </h4>
                   <p className='text-gray-600'>
                     Entwickeln Sie ein <strong>„Signature-Getränk"</strong> in Ihrer
                     Corporate-Farbe. Nutzen Sie das Servieren als Moment für Ihren Elevator Pitch.
@@ -121,7 +130,7 @@ const CorporateEventCateringGuidePage: React.FC = () => {
           {/* Section 2: Logistics */}
           <section className='mb-24'>
             <h2 className='mb-8 text-3xl font-bold text-gray-900'>
-              Logistik: Strom, Wasser und Platzbedarf
+              {t('pages.resources.corporateEventCateringGuide.sections.logistics.title')}
             </h2>
             <div className='prose prose-lg mb-8 text-gray-600'>
               <p>
@@ -157,16 +166,18 @@ const CorporateEventCateringGuidePage: React.FC = () => {
 
             {/* Internal Link Block */}
             <div className='rounded-xl bg-indigo-600 p-8 text-center text-white'>
-              <h3 className='mb-8 text-2xl font-bold'>Planen Sie einen Messeauftritt?</h3>
+              <h3 className='mb-8 text-2xl font-bold'>
+                {t('pages.resources.corporateEventCateringGuide.ctaMesse.title')}
+              </h3>
               <p className='mb-8 opacity-90'>
-                Holen Sie sich unsere kostenlose Logistik-Checkliste für die Messe München.
+                {t('pages.resources.corporateEventCateringGuide.ctaMesse.description')}
               </p>
               <Link to='/messe-catering'>
                 <Button
                   variant='primary'
                   className='border-none bg-white text-indigo-600 transition duration-200 ease-out hover:bg-gray-100'
                 >
-                  Zur Messe-Catering Seite
+                  {t('pages.resources.corporateEventCateringGuide.ctaMesse.button')}
                 </Button>
               </Link>
             </div>
@@ -175,7 +186,7 @@ const CorporateEventCateringGuidePage: React.FC = () => {
           {/* Section 3: Menu Engineering */}
           <section className='mb-24'>
             <h2 className='mb-8 text-3xl font-bold text-gray-900'>
-              Menü-Engineering: Ihre Marke im Glas
+              {t('pages.resources.corporateEventCateringGuide.sections.menuEngineering.title')}
             </h2>
             <div className='prose prose-lg text-gray-600'>
               <p>
@@ -194,7 +205,7 @@ const CorporateEventCateringGuidePage: React.FC = () => {
           {/* Section 4: ROI */}
           <section className='mb-16'>
             <h2 className='mb-8 text-3xl font-bold text-gray-900'>
-              Budget & ROI: Was zählt wirklich?
+              {t('pages.resources.corporateEventCateringGuide.sections.roi.title')}
             </h2>
             <div className='prose prose-lg mb-8 text-gray-600'>
               <p>
@@ -214,13 +225,13 @@ const CorporateEventCateringGuidePage: React.FC = () => {
                       scope='col'
                       className='px-8 py-0 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
                     >
-                      Klassisches Catering
+                      {t('pages.resources.corporateEventCateringGuide.table.classicCatering')}
                     </th>
                     <th
                       scope='col'
                       className='px-8 py-0 text-left text-xs font-bold font-medium tracking-wider text-indigo-600 uppercase'
                     >
-                      Mobile Premium Bar
+                      {t('pages.resources.corporateEventCateringGuide.table.mobilePremiumBar')}
                     </th>
                   </tr>
                 </thead>
@@ -258,28 +269,28 @@ const CorporateEventCateringGuidePage: React.FC = () => {
           {/* Conclusion CTA */}
           <section className='rounded-2xl border border-gray-200 bg-gray-50 p-8 text-center md:p-16'>
             <h2 className='mb-8 text-3xl font-bold text-gray-900'>
-              Lassen Sie uns Ihr Event planen
+              {t('pages.resources.corporateEventCateringGuide.sections.conclusion.title')}
             </h2>
             <p className='mx-auto mb-8 max-w-2xl text-lg text-gray-600'>
-              In einem 20-minütigen Gespräch analysieren wir Ihre Logistik-Möglichkeiten und
-              erstellen ein unverbindliches Konzept für Ihren nächsten Auftritt in München.
+              {t('pages.resources.corporateEventCateringGuide.sections.conclusion.description')}
             </p>
             <div className='flex flex-col justify-center gap-8 sm:flex-row'>
               <Link to='/anfrage?eventType=messe&source=corporate-guide'>
                 <Button size='lg' variant='primary'>
-                  Jetzt Beratung anfragen
+                  {t('pages.resources.corporateEventCateringGuide.sections.conclusion.primaryButton')}
                 </Button>
               </Link>
               <Link to='/firmenfeiern'>
                 <Button size='lg' variant='outline'>
-                  Mehr zu Firmenfeiern
+                  {t('pages.resources.corporateEventCateringGuide.sections.conclusion.secondaryButton')}
                 </Button>
               </Link>
             </div>
           </section>
         </div>
-      </main>
-    </PageTemplate>
+        </main>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

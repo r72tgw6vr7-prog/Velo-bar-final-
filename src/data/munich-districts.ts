@@ -32,6 +32,244 @@ export interface MunichDistrict {
   };
 }
 
+type DistrictOverride = {
+  description?: string;
+  characteristics?: string[];
+  businessFocus?: string[];
+  transport?: {
+    parking?: string;
+  };
+  seo?: {
+    primaryKeyword?: string;
+    secondaryKeywords?: string[];
+    localIntent?: string[];
+  };
+};
+
+const DISTRICT_OVERRIDES: Record<string, { en: DistrictOverride }> = {
+  schwabing: {
+    en: {
+      description:
+        'Elegant artists’ district with a bohemian vibe and premium venues',
+      characteristics: [
+        'Art & culture scene',
+        'Gourmet restaurants',
+        'Luxury boutiques',
+        'Close to the English Garden',
+        'Historic buildings',
+      ],
+      businessFocus: ['Creative agencies', 'Consulting', 'Hospitality', 'Luxury segment'],
+      transport: { parking: 'Parking garages along Leopoldstraße' },
+      seo: {
+        primaryKeyword: 'Corporate event Schwabing',
+        secondaryKeywords: [
+          'Corporate party Schwabing',
+          'Business event Munich Schwabing',
+          'Team event Schwabing',
+        ],
+        localIntent: [
+          'Book a corporate event in Schwabing',
+          'Mobile cocktail bar Schwabing',
+          'Mobile bar Munich Schwabing',
+        ],
+      },
+    },
+  },
+  maxvorstadt: {
+    en: {
+      description: 'Education and culture hub with museums and a university vibe',
+      characteristics: [
+        'Munich arts district',
+        'LMU (university) nearby',
+        'TUM (technical university) nearby',
+        'Pinakothek museums',
+        'Student atmosphere',
+      ],
+      businessFocus: ['Education', 'Research', 'Cultural institutions', 'Startups'],
+      transport: { parking: 'Parking garages around Königsplatz' },
+      seo: {
+        primaryKeyword: 'Corporate event Maxvorstadt',
+        secondaryKeywords: [
+          'Corporate party Maxvorstadt',
+          'Business event Munich Maxvorstadt',
+          'Team event Maxvorstadt',
+        ],
+        localIntent: [
+          'Book a corporate event in Maxvorstadt',
+          'Mobile cocktail bar Maxvorstadt',
+          'Mobile bar Munich Maxvorstadt',
+        ],
+      },
+    },
+  },
+  haidhausen: {
+    en: {
+      description: 'Charming villa district with a French flair and exclusive venues',
+      characteristics: [
+        'French quarter',
+        'Historic villas',
+        'Gasteig cultural center',
+        'Close to the Isar river',
+        'Gourmet restaurants',
+      ],
+      businessFocus: ['Law firms', 'Professional services', 'Hospitality', 'Culture'],
+      transport: { parking: 'Gasteig parking garage' },
+      seo: {
+        primaryKeyword: 'Corporate event Haidhausen',
+        secondaryKeywords: [
+          'Corporate party Haidhausen',
+          'Business event Munich Haidhausen',
+          'Team event Haidhausen',
+        ],
+        localIntent: [
+          'Book a corporate event in Haidhausen',
+          'Mobile cocktail bar Haidhausen',
+          'Mobile bar Munich Haidhausen',
+        ],
+      },
+    },
+  },
+  sendling: {
+    en: {
+      description: 'Traditional Munich district with authentic charm and modern upgrades',
+      characteristics: [
+        'Historic Sendlinger Tor area',
+        'Traditional taverns',
+        'Small streets and courtyards',
+        'Rapidly developing neighborhood',
+        'Close to the city center',
+      ],
+      businessFocus: ['Craft businesses', 'Creative scene', 'Hospitality', 'Startups'],
+      transport: { parking: 'Parking garages around Sendlinger Tor' },
+      seo: {
+        primaryKeyword: 'Corporate event Sendling',
+        secondaryKeywords: [
+          'Corporate party Sendling',
+          'Business event Munich Sendling',
+          'Team event Sendling',
+        ],
+        localIntent: [
+          'Book a corporate event in Sendling',
+          'Mobile cocktail bar Sendling',
+          'Mobile bar Munich Sendling',
+        ],
+      },
+    },
+  },
+  garching: {
+    en: {
+      description:
+        'High-tech science hub with research institutions and innovative companies',
+      characteristics: [
+        'Research campus',
+        'Technology cluster',
+        'Modern architecture',
+        'Science and innovation focus',
+        'Direct subway connection',
+      ],
+      businessFocus: ['R&D', 'Technology', 'Science', 'Innovation'],
+      transport: { parking: 'Plenty of parking available' },
+      seo: {
+        primaryKeyword: 'Corporate event Garching',
+        secondaryKeywords: [
+          'Corporate party Garching',
+          'Business event Munich Garching',
+          'Team event Garching',
+        ],
+        localIntent: [
+          'Book a corporate event in Garching',
+          'Mobile cocktail bar Garching',
+          'Mobile bar near Munich Garching',
+        ],
+      },
+    },
+  },
+  'neuhausen-nymphenburg': {
+    en: {
+      description:
+        'Green residential district with Nymphenburg Palace and a family-friendly vibe',
+      characteristics: [
+        'Nymphenburg Palace',
+        'Botanical Garden',
+        'Green spaces',
+        'Family-friendly',
+        'Great connectivity',
+      ],
+      businessFocus: ['Healthcare', 'Education', 'Services', 'Small businesses'],
+      transport: { parking: 'Parking garages around Rotkreuzplatz' },
+      seo: {
+        primaryKeyword: 'Corporate event Neuhausen-Nymphenburg',
+        secondaryKeywords: [
+          'Corporate party Neuhausen-Nymphenburg',
+          'Business event Munich Neuhausen-Nymphenburg',
+          'Team event Neuhausen-Nymphenburg',
+        ],
+        localIntent: [
+          'Book a corporate event in Neuhausen-Nymphenburg',
+          'Mobile cocktail bar Neuhausen-Nymphenburg',
+          'Mobile bar Munich Neuhausen-Nymphenburg',
+        ],
+      },
+    },
+  },
+  'berg-am-laim': {
+    en: {
+      description:
+        'Growing business area with modern infrastructure and great accessibility',
+      characteristics: [
+        'Business parks',
+        'Modern office complexes',
+        'Great transport links',
+        'Mixed residential & commercial areas',
+        'Shopping centers',
+      ],
+      businessFocus: ['Logistics', 'Industry', 'Retail', 'Services'],
+      transport: { parking: 'Large parking areas near the trade fair' },
+      seo: {
+        primaryKeyword: 'Corporate event Berg am Laim',
+        secondaryKeywords: [
+          'Corporate party Berg am Laim',
+          'Business event Munich Berg am Laim',
+          'Team event Berg am Laim',
+        ],
+        localIntent: [
+          'Book a corporate event in Berg am Laim',
+          'Mobile cocktail bar Berg am Laim',
+          'Mobile bar Munich Berg am Laim',
+        ],
+      },
+    },
+  },
+  'trudering-riem': {
+    en: {
+      description:
+        'Modern district with Messe München and excellent infrastructure',
+      characteristics: [
+        'Messe München (trade fair)',
+        'Close to the airport',
+        'Modern architecture',
+        'Business parks',
+        'New residential developments',
+      ],
+      businessFocus: ['Trade fairs', 'Logistics', 'Aviation', 'Industry'],
+      transport: { parking: 'Messe parking garages' },
+      seo: {
+        primaryKeyword: 'Corporate event Trudering-Riem',
+        secondaryKeywords: [
+          'Corporate party Trudering-Riem',
+          'Business event Munich Trudering-Riem',
+          'Team event Trudering-Riem',
+        ],
+        localIntent: [
+          'Book a corporate event in Trudering-Riem',
+          'Mobile cocktail bar Trudering-Riem',
+          'Mobile bar Munich Trudering-Riem',
+        ],
+      },
+    },
+  },
+};
+
 export const munichDistricts: MunichDistrict[] = [
   {
     id: 'schwabing',
@@ -373,8 +611,31 @@ export const munichDistricts: MunichDistrict[] = [
 ];
 
 // Helper functions for programmatic SEO
-export const getDistrictBySlug = (slug: string): MunichDistrict | undefined => {
-  return munichDistricts.find((district) => district.slug === slug);
+export const getDistrictBySlug = (slug: string, language: 'de' | 'en' = 'de'): MunichDistrict | undefined => {
+  const district = munichDistricts.find((d) => d.slug === slug);
+  if (!district) return undefined;
+
+  if (language === 'de') return district;
+
+  const override = DISTRICT_OVERRIDES[district.slug]?.en;
+  if (!override) return district;
+
+  return {
+    ...district,
+    description: override.description ?? district.description,
+    characteristics: override.characteristics ?? district.characteristics,
+    businessFocus: override.businessFocus ?? district.businessFocus,
+    transport: {
+      ...district.transport,
+      parking: override.transport?.parking ?? district.transport.parking,
+    },
+    seo: {
+      ...district.seo,
+      primaryKeyword: override.seo?.primaryKeyword ?? district.seo.primaryKeyword,
+      secondaryKeywords: override.seo?.secondaryKeywords ?? district.seo.secondaryKeywords,
+      localIntent: override.seo?.localIntent ?? district.seo.localIntent,
+    },
+  };
 };
 
 export const getDistrictsBySearchVolume = (volume: 'high' | 'medium' | 'low'): MunichDistrict[] => {
@@ -389,7 +650,20 @@ export const getDistrictsByBusinessFocus = (focus: string): MunichDistrict[] => 
   );
 };
 
-export const generateDistrictKeywords = (district: MunichDistrict): string[] => {
+export const generateDistrictKeywords = (district: MunichDistrict, language: 'de' | 'en' = 'de'): string[] => {
+  if (language === 'en') {
+    return [
+      district.seo.primaryKeyword,
+      ...district.seo.secondaryKeywords,
+      ...district.seo.localIntent,
+      `Mobile bar ${district.name}`,
+      `Mobile cocktail bar ${district.name}`,
+      `Event catering ${district.name}`,
+      `Corporate event ${district.name}`,
+      `Business event ${district.name}`,
+    ];
+  }
+
   return [
     district.seo.primaryKeyword,
     ...district.seo.secondaryKeywords,
@@ -402,19 +676,29 @@ export const generateDistrictKeywords = (district: MunichDistrict): string[] => 
   ];
 };
 
-export const generateDistrictSchema = (district: MunichDistrict) => {
+export const generateDistrictSchema = (district: MunichDistrict, language: 'de' | 'en' = 'de') => {
+  const isEnglish = language === 'en';
+  const name = isEnglish
+    ? `Velo.Bar - Mobile cocktail bar ${district.name}`
+    : `Velo.Bar - Mobile Cocktailbar ${district.name}`;
+  const description = isEnglish
+    ? `Professional mobile cocktail bar for corporate events and business events in ${district.name}, Munich`
+    : `Professionelle mobile Cocktailbar für Firmenfeiern und Business Events in ${district.name}, München`;
+  const addressLocality = isEnglish ? 'Munich' : 'München';
+  const addressRegion = isEnglish ? 'Bavaria' : 'Bayern';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: `Velo.Bar - Mobile Cocktailbar ${district.name}`,
-    description: `Professionelle mobile Cocktailbar für Firmenfeiern und Business Events in ${district.name}, München`,
+    name,
+    description,
     url: `https://www.velo-bar.com/firmenfeieren/${district.slug}`,
     telephone: '+49 160 94623196',
     email: 'info@velo-bar.com',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'München',
-      addressRegion: 'Bayern',
+      addressLocality,
+      addressRegion,
       postalCode: '80331',
       addressCountry: 'DE',
     },
@@ -422,25 +706,25 @@ export const generateDistrictSchema = (district: MunichDistrict) => {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        addressLocality: 'München',
-        addressRegion: 'Bayern',
+        addressLocality,
+        addressRegion,
       },
       geoRadius: '5000',
     },
     areaServed: {
       '@type': 'Place',
-      name: `${district.name}, München`,
+      name: isEnglish ? `${district.name}, Munich` : `${district.name}, München`,
     },
-    serviceType: 'Mobile Cocktailbar Service',
+    serviceType: isEnglish ? 'Mobile cocktail bar service' : 'Mobile Cocktailbar Service',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Firmenfeier Services',
+      name: isEnglish ? 'Corporate event services' : 'Firmenfeier Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Mobile Cocktailbar für Firmenfeiern',
+            name: isEnglish ? 'Mobile cocktail bar for corporate events' : 'Mobile Cocktailbar für Firmenfeiern',
           },
         },
       ],

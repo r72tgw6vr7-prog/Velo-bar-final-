@@ -7,39 +7,45 @@
 import React from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
 import { PageTemplate } from '@/templates/PageTemplate';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const BuchungMucPage: React.FC = () => {
+  const { t } = useLanguage();
+
   const packages = servicePackages.buchungMuc;
   const faqs = serviceFAQs.buchungMuc;
   const testimonials = serviceTestimonials.buchungMuc;
 
   return (
-    <PageTemplate
-      title='München Booking | Mobile Bar München & Umgebung | Velobar'
-      description='Buchen Sie die mobile Velo.Bar für Ihr Event in München. Selbstversorgendes Öko-System, professionelle Barkeeper, Gin-Tastings ab 49€.'
-      canonicalPath='/velobar/buchungmuc'
-      withContainer={false}
-    >
-      <ServicePageLayout
-        heroTitle='VELO.BAR München'
-        heroSubtitle='Münchens Premium Mobile Bar für Firmenfeiern & Events. Buchen Sie jetzt für Ihr nächstes Event.'
-        heroImage='/Velo Gallery/Hero '
-        heroImageAlt='Velo.Bar München - Bartender am mobilen Bar-Fahrrad'
-        packages={packages}
-        packagesTitle='Unsere Angebote für München & Umgebung'
-        faqs={faqs}
-        faqTitle='Häufig gestellte Fragen'
-        testimonials={testimonials}
-        testimonialsTitle='Was unsere Münchner Kunden sagen'
-        ctaTitle='Bereit für Ihre mobile Bar in München?'
-        ctaSubtitle='Kontaktieren Sie uns für ein unverbindliches Angebot'
-        ctaButtonText='Jetzt anfragen!'
-        ctaButtonLink='/anfrage'
+    <SiteBackground>
+      <PageTemplate
+        title={t('pages.bookingMuc.seo.title')}
+        description={t('pages.bookingMuc.seo.description')}
+        canonicalPath='/velobar/buchungmuc'
+        withContainer={false}
       >
-        {/* München-specific content - eco-system info moved to dedicated section */}
-      </ServicePageLayout>
-    </PageTemplate>
+        <ServicePageLayout
+          heroTitle={t('pages.bookingMuc.layout.heroTitle')}
+          heroSubtitle={t('pages.bookingMuc.layout.heroSubtitle')}
+          heroImage='/Velo Gallery/Hero '
+          heroImageAlt={t('pages.bookingMuc.layout.heroImageAlt')}
+          packages={packages}
+          packagesTitle={t('pages.bookingMuc.layout.packagesTitle')}
+          faqs={faqs}
+          faqTitle={t('pages.bookingMuc.layout.faqTitle')}
+          testimonials={testimonials}
+          testimonialsTitle={t('pages.bookingMuc.layout.testimonialsTitle')}
+          ctaTitle={t('pages.bookingMuc.layout.ctaTitle')}
+          ctaSubtitle={t('pages.bookingMuc.layout.ctaSubtitle')}
+          ctaButtonText={t('pages.bookingMuc.layout.ctaButtonText')}
+          ctaButtonLink='/anfrage'
+        >
+          {/* München-specific content - eco-system info moved to dedicated section */}
+        </ServicePageLayout>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

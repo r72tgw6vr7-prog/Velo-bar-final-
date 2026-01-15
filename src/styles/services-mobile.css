@@ -71,10 +71,8 @@
   align-items: center;
   text-align: center;
   padding: 1.5rem 1.25rem 2rem;
-  background: rgba(0, 49, 65, 0.72);
-  border: 1px solid rgba(238, 120, 104, 0.18);
+  background: var(--color-bg-surface);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
 }
 
 /* Badge */
@@ -103,7 +101,7 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--text-headline-on-dark);
+  color: var(--color-accent-primary);
   margin: 0 0 0.5rem 0;
 }
 
@@ -121,7 +119,7 @@
 .services-mobile-card-description {
   font-size: 0.9375rem;
   line-height: 1.55;
-  color: var(--text-body-on-dark);
+  color: var(--color-text-on-light-secondary);
   margin: 0 0 1.25rem 0;
   max-width: 32ch;
 }

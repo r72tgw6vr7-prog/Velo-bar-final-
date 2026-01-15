@@ -1,5 +1,8 @@
 import React from 'react';
-import { Star, Users, Calendar, Shield } from 'lucide-react';
+import Star from 'lucide-react/dist/esm/icons/star';
+import Users from 'lucide-react/dist/esm/icons/users';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Shield from 'lucide-react/dist/esm/icons/shield';
 
 export interface TrustBadgeItem {
   svg: React.ReactNode;

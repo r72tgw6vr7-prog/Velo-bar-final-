@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Startseite",
+    "homeAria": "Velo.Bar Startseite",
     "services": "Leistungen",
     "corporateEvents": "Firmenfeiern",
     "christmasParties": "Weihnachtsfeiern",
@@ -27,8 +28,32 @@
   },
   "services": {
     "title": "Unsere Leistungen",
-    "subtitle": "Von Firmenfeiern über Messen bis hin zu privaten Events – wir bringen die Bar zu Ihnen",
-    "learnMore": "Mehr erfahren"
+    "subtitle": "Von Firmenfeiern über Messen bis hin zu privaten Events – wir bringen die Bar zu dir",
+    "learnMore": "Mehr erfahren",
+    "firmenfeiern": {
+      "title": "Firmenfeiern",
+      "description": "Mobile Cocktailbar für Corporate Events, Afterworks und Sommerfeste."
+    },
+    "messe": {
+      "title": "Messe-Catering",
+      "description": "Autarke Bar-Konzepte für Messestände – ohne Strom- oder Wasseranschluss."
+    },
+    "hochzeiten": {
+      "title": "Hochzeiten",
+      "description": "Signature Drinks & Premium-Service für Trauungen und Abendempfänge."
+    },
+    "weihnachtsfeiern": {
+      "title": "Weihnachtsfeiern",
+      "description": "Winterliche Cocktail-Kreationen und Glühwein-Varianten für Teams."
+    },
+    "teamEvents": {
+      "title": "Team-Events & Workshops",
+      "description": "Cocktailkurse & Gin Tastings als interaktives Teamerlebnis."
+    },
+    "privateFeiern": {
+      "title": "Private Feiern",
+      "description": "Geburtstage, Jubiläen oder Rooftop-Partys – wir bringen die Bar."
+    }
   },
   "stats": {
     "events": "Events durchgeführt",
@@ -55,6 +80,149 @@
     "trustBadge2": "500+ Events",
     "trustBadge3": "4.9/5 Sterne"
   },
+  "bookingWizard": {
+    "progress": {
+      "step": "Schritt",
+      "almostDone": "– Fast fertig!"
+    },
+    "steps": {
+      "1": {
+        "title": "Standortwahl",
+        "subtitle": "Wo findet dein Event statt?"
+      },
+      "2": {
+        "title": "Event-Basics",
+        "subtitle": "Was planst du?"
+      },
+      "3": {
+        "title": "Unternehmen & Kontakt",
+        "subtitle": "Wer bist du?"
+      },
+      "4": {
+        "title": "Zusammenfassung",
+        "subtitle": "Prüfen & Absenden"
+      }
+    },
+    "step1": {
+      "heading": "Bitte wähle deinen Standort"
+    },
+    "step2": {
+      "eventTypeQuestion": "Welche Art von Event planst du?",
+      "guestCountQuestion": "Wie viele Gäste erwartest du?",
+      "dateLabel": "Wann findet dein Event statt?",
+      "dateRequired": "Bitte wähle ein Datum"
+    },
+    "locations": {
+      "munich": {
+        "label": "MÜNCHEN",
+        "description": "Events in und um München"
+      },
+      "coburg": {
+        "label": "COBURG",
+        "description": "Events in und um Coburg"
+      }
+    },
+    "eventTypes": {
+      "firmenfeier": {
+        "label": "Firmenfeier",
+        "description": "Teamevents, Sommerfeste, Jubiläen"
+      },
+      "weihnachtsfeier": {
+        "label": "Weihnachtsfeier",
+        "description": "Festliche Cocktails & Glühwein"
+      },
+      "messe": {
+        "label": "Messe / Promotion",
+        "description": "Messestand, Product Launch"
+      },
+      "hochzeit": {
+        "label": "Hochzeit",
+        "description": "Empfang, Party oder beides"
+      },
+      "privat": {
+        "label": "Private Feier",
+        "description": "Geburtstage, JGA, Jubiläen"
+      },
+      "gin-tasting": {
+        "label": "Gin-Tasting",
+        "description": "Workshop mit Premium-Gins"
+      }
+    },
+    "guestRanges": {
+      "20_50": "20–50 Gäste",
+      "50_100": "50–100 Gäste",
+      "100_200": "100–200 Gäste",
+      "200_plus": "200+ Gäste"
+    },
+    "actions": {
+      "back": "Zurück",
+      "next": "Weiter",
+      "toSummary": "Zur Zusammenfassung",
+      "submit": "Anfrage absenden",
+      "sending": "Wird gesendet...",
+      "callNow": "Jetzt anrufen"
+    },
+    "step4": {
+      "submittingTitle": "Anfrage wird gesendet...",
+      "submittingDetail": "Bitte habe einen Moment Geduld...",
+      "successTitle": "Vielen Dank für deine Anfrage!",
+      "successDetail": "Wir haben deine Anfrage erhalten und melden uns innerhalb von 24 Stunden bei dir.",
+      "summary": {
+        "heading": "Zusammenfassung:"
+      }
+    },
+    "summary": {
+      "location": "Standort",
+      "event": "Event",
+      "guests": "Gäste",
+      "date": "Datum",
+      "company": "Unternehmen",
+      "contact": "Kontakt",
+      "email": "E-Mail"
+    },
+    "review": {
+      "heading": "Bitte überprüfe deine Angaben:",
+      "sections": {
+        "location": "Standort",
+        "eventDetails": "Event-Details",
+        "contactDetails": "Kontaktdaten",
+        "message": "Nachricht"
+      },
+      "fields": {
+        "location": "Standort",
+        "eventType": "Event-Typ",
+        "guestCount": "Gästezahl",
+        "date": "Datum",
+        "company": "Unternehmen",
+        "name": "Name",
+        "email": "E-Mail",
+        "phone": "Telefon"
+      }
+    }
+  },
+  "expressQuote": {
+    "title": "Keine Zeit für Details? Wir melden uns bei dir.",
+    "placeholderEmail": "deine-email@firma.de",
+    "footer": "⚡ Antwort innerhalb von 4 Stunden während der Geschäftszeiten",
+    "aria": {
+      "email": "E-Mail-Adresse für Express-Angebot"
+    },
+    "actions": {
+      "cta": "Angebot anfordern",
+      "sending": "Senden..."
+    },
+    "success": {
+      "title": "Anfrage erhalten!",
+      "detail": "Wir melden uns innerhalb von 4 Stunden bei dir."
+    },
+    "validation": {
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein."
+    },
+    "errors": {
+      "requestFailed": "Anfrage fehlgeschlagen",
+      "generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    }
+  },
   "form": {
     "firstName": "Vorname",
     "lastName": "Nachname",
@@ -70,13 +238,280 @@
     "submit": "Anfrage senden",
     "sending": "Wird gesendet...",
     "success": "Nachricht erfolgreich gesendet!",
-    "successDetail": "Wir melden uns innerhalb von 24 Stunden bei dir."
+    "successDetail": "Wir melden uns innerhalb von 24 Stunden bei dir.",
+    "placeholders": {
+      "name": "Wie sollen wir dich nennen?",
+      "email": "deine.email@beispiel.de",
+      "message": "Wie können wir dir helfen?",
+      "company": "Dein Firmenname",
+      "eventDetails": "Besondere Wünsche, Fragen, Details zu deinem Event..."
+    }
+  },
+  "testimonialsCarousel": {
+    "title": "Was Kunden sagen",
+    "aria": {
+      "section": "Kundenbewertungen",
+      "goToSlide": "Zu Folie",
+      "previous": "Vorherige Bewertung",
+      "next": "Nächste Bewertung"
+    },
+    "defaults": {
+      "0": {
+        "text": "Die Zusammenarbeit war von Anfang bis Ende hervorragend. Das Team hat unsere Website nicht nur optisch, sondern auch technisch auf ein neues Level gebracht – performant, zugänglich und leicht zu pflegen.",
+        "author": "M.S.",
+        "source": "Google Bewertung"
+      },
+      "1": {
+        "text": "Unsere Kund:innen heben besonders die saubere Codebasis, die klare Informationsarchitektur und die starke Performance hervor. Selbst komplexe Anforderungen wurden strukturiert gelöst und transparent kommuniziert.",
+        "author": "Unternehmensbewertung",
+        "source": "Projektfeedback"
+      },
+      "2": {
+        "text": "Das Studio setzt auf individuelle digitale Lösungen und einen kollaborativen Ansatz. Von der ersten Idee bis zum Launch wurden wir eng begleitet, Entscheidungen wurden erklärt und messbare Ergebnisse standen im Fokus.",
+        "author": "TripAdvisor Bewertung",
+        "source": "TripAdvisor Bewertung"
+      }
+    }
+  },
+  "partnersTestimonials": {
+    "partners": {
+      "title": "Unsere Partner & Presse",
+      "subtitle": "Vertrauensvolle Partnerschaften mit führenden Marken der Branche"
+    },
+    "testimonials": {
+      "title": "Was Kunden sagen",
+      "source": "Kundenstimme",
+      "loadError": "Bewertungen konnten nicht geladen werden."
+    },
+    "aria": {
+      "section": "Partner & Bewertungen",
+      "partnersCarousel": "Partner und Presse Karussell",
+      "loadingTestimonials": "Bewertungen werden geladen"
+    }
+  },
+  "servicesInteractive": {
+    "hero": {
+      "defaultTitle": "Professionelle Webentwicklung",
+      "defaultSubtitle": "Enterprise-Grade Lösungen mit modernen Tech-Stacks, skalierbaren Architekturen und messbaren Business-Ergebnissen. Wählen Sie aus unseren spezialisierten Service-Angeboten."
+    },
+    "aria": {
+      "categories": "Service-Kategorien",
+      "selectCategoryPrefix": "Kategorie auswählen",
+      "selectCategorySuffix": "",
+      "showingPrefix": "Zeige",
+      "showingSuffix": "Services",
+      "for": "für"
+    },
+    "categoryCard": {
+      "from": "ab",
+      "custom": "Individuell"
+    },
+    "packages": {
+      "heading": "Wählen Sie das passende Paket"
+    },
+    "serviceCard": {
+      "badgePopular": "Beliebt",
+      "badgePackage": "Paket",
+      "durationFlexible": "Flexibel"
+    },
+    "price": {
+      "from": "ab"
+    }
+  },
+  "serviceHighlights": {
+    "aria": {
+      "section": "Service-Highlights"
+    },
+    "coreTitle": "Service-Highlights",
+    "coreSubtitle": "Mobile Cocktailbar & Event-Catering auf höchstem Niveau",
+    "collabTitle": "Zusammenarbeit & Betreuung",
+    "collabSubtitle": "So entstehen erfolgreiche Digitalprojekte",
+    "viewDetails": "Details ansehen",
+    "contactCta": "Projektanfrage senden",
+    "coreServices": {
+      "customWebapps": {
+        "name": "Individuelle Webanwendungen",
+        "subtitle": "Full-Stack Lösungen",
+        "description": "Skalierbare Webanwendungen und Plattformen, maßgeschneidert für spezifische Geschäftsanforderungen.",
+        "priceRange": "Projektbasiert ab €4.000"
+      },
+      "frontendArchitecture": {
+        "name": "Frontend-Architektur & Design-Systeme",
+        "subtitle": "Nachhaltige UI-Architektur",
+        "description": "Robuste Frontend-Architekturen, Komponentenbibliotheken und Design-Systeme für große Teams.",
+        "priceRange": "Ab €1.600 / Workshop"
+      },
+      "performance": {
+        "name": "Performance & Core Web Vitals",
+        "subtitle": "Schnelle Ladezeiten",
+        "description": "Gezielte Optimierungen für Core Web Vitals, Lighthouse-Scores und wahrgenommene Geschwindigkeit.",
+        "priceRange": "Audit ab €1.200"
+      },
+      "ecommerce": {
+        "name": "E-Commerce & Buchungslösungen",
+        "subtitle": "Konversionsstarke Systeme",
+        "description": "Onlineshops, Buchungssysteme und Customer Journeys mit klaren Metriken und Tracking.",
+        "priceRange": "Projektbasiert ab €6.000"
+      },
+      "consulting": {
+        "name": "Technische Beratung",
+        "subtitle": "Strategische Begleitung",
+        "description": "Technische Sparringspartnerschaft für Roadmaps, Architekturentscheidungen und Team-Coaching.",
+        "priceRange": "Ab €1.200 / Tag"
+      },
+      "uiUx": {
+        "name": "UI/UX Design & Prototyping",
+        "subtitle": "Nutzerzentrierte Interfaces",
+        "description": "Interaktive Prototypen, Design-Reviews und Mikrointeraktionen für überzeugende Nutzererlebnisse.",
+        "priceRange": "Ab €2.000"
+      }
+    },
+    "collaborationModels": {
+      "projectBased": {
+        "name": "Projektbasierte Zusammenarbeit",
+        "subtitle": "Klare Ziele & Scope",
+        "locations": {
+          "0": "Discovery & Zieldefinition",
+          "1": "Konzept & Architektur",
+          "2": "Implementierung",
+          "3": "Launch & Handover"
+        },
+        "startingPrice": "Ab €4.000",
+        "description": "Ideal für klar umrissene Projekte mit definiertem Umfang und Fahrplan."
+      },
+      "retainer": {
+        "name": "Retainer & Langfrist-Support",
+        "subtitle": "Kontinuierliche Weiterentwicklung",
+        "locations": {
+          "0": "Technische Betreuung",
+          "1": "Roadmap-Planung",
+          "2": "Code Reviews",
+          "3": "Pair Programming"
+        },
+        "startingPrice": "Ab €1.500 / Monat",
+        "description": "Für Teams, die laufend Unterstützung bei Architektur, Refactoring und neuen Features benötigen."
+      },
+      "workshops": {
+        "name": "Workshops & Audits",
+        "subtitle": "Fokussierte Sessions",
+        "locations": {
+          "0": "Architecture Review",
+          "1": "Performance-Audit",
+          "2": "Design-System-Workshop",
+          "3": "Team-Enablement"
+        },
+        "startingPrice": "Ab €1.200 / Session",
+        "description": "Kompakte Formate zur schnellen Analyse, Entscheidungsfindung und gezielten Verbesserung."
+      }
+    }
+  },
+  "bookingForm": {
+    "heading": "Jetzt Event anfragen",
+    "intro": "Planst du eine Firmenfeier, Hochzeit, Messe oder ein Gin-Tasting? Nutze das Formular, um uns kurz dein Event zu beschreiben – wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.",
+    "altContactTitle": "Alternative Kontaktwege:",
+    "contact": {
+      "emailLabel": "E-Mail:",
+      "emailValue": "hallo@velo-bar.com",
+      "phoneLabel": "Telefon:",
+      "phoneValue": "+49 160 94623196"
+    },
+    "success": {
+      "title": "Anfrage gesendet!",
+      "subtitle": "Vielen Dank für deine Anfrage. Wir melden uns schnellstmöglich mit einem unverbindlichen Angebot.",
+      "newRequest": "Neue Anfrage stellen"
+    },
+    "fields": {
+      "name": { "label": "Name", "placeholder": "Vollständiger Name*" },
+      "phone": { "label": "Telefon", "placeholder": "Telefonnummer*" },
+      "email": { "label": "E-Mail", "placeholder": "E-Mail-Adresse*" },
+      "date": { "label": "Datum", "placeholder": "Wunschtermin*" },
+      "time": {
+        "label": "Uhrzeit",
+        "placeholder": "Wunschzeit*",
+        "defaultOption": "Wunschzeit*",
+        "options": {
+          "morning": "Vormittag (9-12 Uhr)",
+          "afternoon": "Nachmittag (12-17 Uhr)",
+          "evening": "Abend (17-20 Uhr)"
+        }
+      },
+      "service": {
+        "label": "Service",
+        "placeholder": "Service auswählen*",
+        "defaultOption": "Service auswählen*"
+      },
+      "artist": {
+        "label": "Barkeeper",
+        "placeholder": "Barkeeper auswählen*",
+        "defaultOption": "Barkeeper auswählen*"
+      },
+      "message": { "label": "Nachricht", "placeholder": "Nachricht hier eingeben*" }
+    },
+    "serviceOptions": {
+      "firmenfeier": "Firmenfeier",
+      "weihnachtsfeier": "Weihnachtsfeier",
+      "messe": "Messe / Promotion",
+      "hochzeit": "Hochzeit",
+      "ginTasting": "Gin-Tasting / Workshop"
+    },
+    "artistOptions": {
+      "artist1": "Alex Johnson",
+      "artist2": "Sam Carter",
+      "artist3": "Jordan Lee",
+      "artist4": "Taylor Kim",
+      "noPreference": "Keine Präferenz"
+    },
+    "consent": {
+      "prefix": "Ich stimme den",
+      "termsLink": "AGB",
+      "middle": "und der",
+      "privacyLink": "Datenschutzerklärung",
+      "suffix": "zu."
+    },
+    "submit": {
+      "label": "Jetzt anfragen",
+      "sending": "Wird gesendet..."
+    },
+    "toasts": {
+      "tooManyRequests": {
+        "title": "Zu viele Anfragen",
+        "description": "Bitte warten Sie einen Moment, bevor Sie es erneut versuchen."
+      },
+      "incomplete": {
+        "title": "Anfrage unvollständig",
+        "description": "Bitte prüfen Sie Ihre Angaben und versuchen Sie es erneut."
+      },
+      "submitFailed": {
+        "title": "Anfrage konnte nicht gesendet werden",
+        "description": "Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt."
+      },
+      "success": {
+        "title": "Anfrage erfolgreich gesendet!",
+        "description": "Wir melden uns schnellstmöglich mit einem unverbindlichen Angebot."
+      }
+    },
+    "errors": {
+      "tooManyRequests": "Zu viele Anfragen — bitte versuchen Sie es später erneut.",
+      "incomplete": "Anfrage unvollständig — bitte prüfen Sie Ihre Angaben.",
+      "submitFailed": "Anfrage konnte nicht gesendet werden — bitte versuchen Sie es erneut.",
+      "networkFailed": "Anfrage konnte nicht gesendet werden — Netzwerkfehler.",
+      "validation": "Bitte prüfen Sie die Eingaben."
+    }
   },
   "footer": {
+    "ariaLabel": "Site footer",
+    "businessName": "Velo.Bar – Mobile Cocktailbar",
+    "streetAddress": "Matthias-Mayer-Straße 5",
+    "postalCode": "81379",
+    "addressLocality": "München",
+    "telPrefix": "Tel:",
+    "phone": "+49 160 94623196",
+    "email": "hallo@velo-bar.com",
     "servicesTitle": "Leistungen",
     "infoTitle": "Informationen",
     "legalTitle": "Rechtliches",
     "copyright": "© 2025 Velo.Bar. Alle Rechte vorbehalten.",
+    "rightsReserved": "Alle Rechte vorbehalten.",
     "madeWith": "Made with love in München & Coburg",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
@@ -86,9 +521,11 @@
     "title": "Unsere Standorte",
     "subtitle": "Mobile Cocktailbar für Events in München & Coburg",
     "munich": "München & Umgebung",
-    "munichDesc": "Firmenfeiern, Messen und Events im Großraum München",
+    "munichDesc": "Perfekte mobile Cocktailbar für Firmenfeiern, Messen und Privat-Events im Großraum München.",
+    "munichCta": "Events in München anfragen",
     "coburg": "Coburg & Umgebung",
-    "coburgDesc": "Hochzeiten, Sommerfeste und Firmenevents in Oberfranken"
+    "coburgDesc": "Velobar für Hochzeiten, Sommerfeste und Unternehmens-Events im Raum Coburg.",
+    "coburgCta": "Events in Coburg anfragen"
   },
   "cta": {
     "requestQuote": "Angebot anfordern",
@@ -97,12 +534,1329 @@
     "callNow": "Jetzt anrufen",
     "whatsapp": "WhatsApp Chat"
   },
+  "pages": {
+    "home": {
+      "seo": {
+        "title": " Mobile Cocktailbar München | Premium Bar ab 890€",
+        "description": "Premium mobile Cocktailbar für Firmenfeiern, Hochzeiten & Events in München. Professioneller Barkeeper-Service für 50-500+ Gäste. Jetzt anfragen!"
+      },
+      "locations": {
+        "title": "München & Coburg – wir kommen überall hin",
+        "subtitle": "Zwei feste Standorte in Bayern plus deutschlandweite Einsätze auf Anfrage."
+      },
+      "services": {
+        "title": "Von Cocktail-Catering bis Gin-Tasting",
+        "subtitle": "Wähle aus unseren beliebtesten Service-Kategorien – alle mobil, autark und auf dein Event zugeschnitten.",
+        "cta": "Mehr erfahren"
+      },
+      "stats": {
+        "title": "Zahlen, die Vertrauen schaffen",
+        "subtitle": "Premium-Service, messbar in jeder Kennzahl.",
+        "items": {
+          "0": "Events durchgeführt",
+          "1": "Gäste bedient",
+          "2": "Google Bewertung",
+          "3": "Standorte in Bayern"
+        },
+        "values": {
+          "0": "500+",
+          "1": "+10.000",
+          "2": "5.0★",
+          "3": "2"
+        }
+      }
+    },
+    "homeNew": {
+      "seo": {
+        "title": "Sandbox Homepage | Velo.Bar",
+        "description": "Sandbox-Version der Velo.Bar Startseite für Tests und Entwicklung."
+      }
+    },
+    "resources": {
+      "corporateEventCateringGuide": {
+        "seo": {
+          "title": "Corporate Event Catering & Beverage Logistics Guide 2025",
+          "description": "Der ultimative Guide für Event Manager in München: Mobile Bars für Messen, Logistik, Menü-Engineering und ROI-Berechnung."
+        },
+        "schema": {
+          "headline": "Der ultimative Guide zu Corporate Event Catering & Beverage Logistics in München (2025)",
+          "description": "Wie Sie Ihren Messestand mit einer mobilen Bar zum Besucher-Magnet machen und Logistikrisiken minimieren. Ein Praxis-Guide für Event Manager."
+        },
+        "hero": {
+          "badge": "Ressourcen & Guides",
+          "titleLine1": "Corporate Event Catering &",
+          "titleLine2": "Beverage Logistics in München",
+          "subtitle": "Der Praxis-Guide 2025 für Event Manager:innen und Messe-Aussteller."
+        },
+        "guideBox": {
+          "title": "In diesem Guide:"
+        },
+        "sections": {
+          "dwellTime": {
+            "title": "Warum mobile Bars die Verweildauer erhöhen"
+          },
+          "logistics": {
+            "title": "Logistik: Strom, Wasser und Platzbedarf"
+          },
+          "menuEngineering": {
+            "title": "Menü-Engineering: Ihre Marke im Glas"
+          },
+          "roi": {
+            "title": "Budget & ROI: Was zählt wirklich?"
+          },
+          "conclusion": {
+            "title": "Lassen Sie uns Ihr Event planen",
+            "description": "In einem 20-minütigen Gespräch analysieren wir Ihre Logistik-Möglichkeiten und erstellen ein unverbindliches Konzept für Ihren nächsten Auftritt in München.",
+            "primaryButton": "Jetzt Beratung anfragen",
+            "secondaryButton": "Mehr zu Firmenfeiern"
+          }
+        },
+        "proTip": {
+          "title": "Pro Tipp aus der Praxis"
+        },
+        "ctaMesse": {
+          "title": "Planen Sie einen Messeauftritt?",
+          "description": "Holen Sie sich unsere kostenlose Logistik-Checkliste für die Messe München.",
+          "button": "Zur Messe-Catering Seite"
+        },
+        "table": {
+          "classicCatering": "Klassisches Catering",
+          "mobilePremiumBar": "Mobile Premium Bar"
+        }
+      }
+    },
+    "locationsIndex": {
+      "seo": {
+        "title": "Event-Locations München | Mobile Bar für alle Venues",
+        "description": "Mobile Cocktailbar für Münchner Event-Locations: Messe München, MOC, Zenith, Werk1 und mehr. Autarker Bar-Service ohne Infrastruktur."
+      },
+      "schema": {
+        "name": "Event-Locations in München für Mobile Bar Service",
+        "description": "Übersicht aller Münchner Event-Locations, für die Velo.Bar professionellen Cocktail-Service anbietet."
+      },
+      "hero": {
+        "badge": "Münchner Event-Locations",
+        "titlePrefix": "Mobile Bar für",
+        "titleAccent": "Ihre Location",
+        "subtitle": "Von der Messe München bis zum Schloss Schleißheim – wir kennen die besten Event-Locations und ihre besonderen Anforderungen."
+      },
+      "sections": {
+        "messe": "Messe & Kongress",
+        "locations": "Event-Locations",
+        "historic": "Historische Locations",
+        "corporate": "Startup & Corporate Hubs"
+      },
+      "cta": {
+        "title": "Ihre Location nicht dabei?",
+        "description": "Kein Problem! Wir sind flexibel und kommen überall hin – von der Büro-Terrasse bis zum Alpengipfel. Erzählen Sie uns von Ihrer Location.",
+        "button": "Individuelle Anfrage stellen"
+      }
+    },
+    "district": {
+      "breadcrumbs": {
+        "corporateEvents": "Firmenfeiern"
+      },
+      "notFound": {
+        "title": "Bezirk nicht gefunden",
+        "description": "Der gesuchte Stadtteil wurde nicht gefunden.",
+        "cta": "Zu den Firmenfeiern"
+      },
+      "hero": {
+        "title": "Mobile Cocktailbar für Firmenfeiern in {district}",
+        "eyebrow": "Ihre Partner für Business Events in {district}",
+        "description": "Professionelle mobile Cocktailbar für exklusive Firmenfeiern und Business Events in {district}, München. {districtDescription}",
+        "primaryCta": "Firmenfeier in {district} anfragen",
+        "secondaryCta": "Preise & Pakete"
+      },
+      "stats": {
+        "population": "Einwohner",
+        "partnerHotels": "Partner-Hotels",
+        "travelTime": "Anfahrtszeit",
+        "travelTimeValue": "15min",
+        "eventsDone": "Events durchgeführt",
+        "eventsDoneValue": "500+"
+      },
+      "sections": {
+        "characteristics": {
+          "title": "Warum {district} perfekt für Ihre Firmenfeier ist",
+          "subtitle": "Entdecken Sie die einzigartigen Vorteile des Stadtteils für Ihr Business Event",
+          "cardDescription": "Perfekte Bedingungen für unvergessliche Firmenfeiern im Herzen von {district}"
+        },
+        "localVenues": {
+          "title": "Premium Event-Locations in {district}",
+          "subtitle": "Exklusive Partner für Ihre Firmenfeier im Stadtteil"
+        },
+        "transport": {
+          "title": "Erreichbarkeit & Anbindung {district}",
+          "subtitle": "Optimale Verkehrsanbindung für Ihre Gäste"
+        },
+        "businessFocus": {
+          "title": "Business-Fokus {district}",
+          "subtitle": "Perfekt für Unternehmen aus diesen Branchen"
+        },
+        "cta": {
+          "title": "Bereit für Ihre Firmenfeier in {district}?",
+          "description": "Lassen Sie uns gemeinsam ein unvergessliches Business Event in Ihrem Stadtteil gestalten.",
+          "primary": "Jetzt anfragen",
+          "secondary": "Kontakt aufnehmen"
+        },
+        "nearby": {
+          "title": "Auch in benachbarten Stadtteilen verfügbar",
+          "subtitle": "Wir sind auch in diesen nahegelegenen Bezirken für Sie aktiv",
+          "population": "{population} Einwohner"
+        }
+      },
+      "localVenues": {
+        "types": {
+          "hotel": "Hotel",
+          "eventSpace": "Event Space"
+        },
+        "descriptions": {
+          "hotel": "Luxuriöse Event-Räume für Ihre Firmenfeier in {district}",
+          "eventSpace": "Unique Location für besondere Business Events in {district}"
+        }
+      },
+      "transport": {
+        "subwayTitle": "U-Bahn",
+        "busTitle": "Bus",
+        "parkingTitle": "Parken",
+        "linePrefix": "Linie {line}"
+      }
+    },
+    "venue": {
+      "notFound": {
+        "title": "Location nicht gefunden",
+        "description": "Diese Location ist noch nicht in unserer Datenbank.",
+        "cta": "Anfrage stellen"
+      },
+      "seo": {
+        "title": "Mobile Bar für {venue} | Catering & Cocktailservice",
+        "description": "Professioneller Bar-Service für Ihr Event in {venue}, München. Autarke mobile Bar, keine Infrastruktur nötig. Jetzt anfragen!"
+      },
+      "schema": {
+        "name": "Mobile Cocktailbar für {venue}",
+        "description": "Professioneller Bar-Service für Events in {venue}, München. Autarke mobile Bar ohne Strom- oder Wasseranschluss."
+      },
+      "hero": {
+        "badge": "Location · {district}",
+        "titlePrefix": "Mobile Bar für",
+        "cta": "Jetzt Angebot anfordern"
+      },
+      "sections": {
+        "about": {
+          "title": "Über {venue}"
+        },
+        "details": {
+          "title": "📍 Location Details",
+          "addressLabel": "Adresse:",
+          "capacityLabel": "Kapazität:",
+          "districtLabel": "Bezirk:"
+        },
+        "highlights": {
+          "title": "✨ Highlights"
+        },
+        "eventTypes": {
+          "title": "Beliebte Event-Typen in {venue}"
+        },
+        "challenges": {
+          "title": "Herausforderungen & Unsere Lösungen",
+          "challengesTitle": "❌ Typische Herausforderungen",
+          "solutionsTitle": "✅ Velo.Bar Lösungen"
+        },
+        "why": {
+          "title": "Warum Velo.Bar für {venue}?",
+          "cards": {
+            "autark": {
+              "title": "100% Autark",
+              "description": "Kein Strom, kein Wasser von der Location nötig"
+            },
+            "setup": {
+              "title": "30 Min Aufbau",
+              "description": "Schnell einsatzbereit, schnell wieder weg"
+            },
+            "allInclusive": {
+              "title": "All-Inclusive",
+              "description": "Keine versteckten Kosten, transparente Pakete"
+            }
+          }
+        },
+        "cta": {
+          "title": "Event in {venue} geplant?",
+          "description": "Wir kennen die Location und ihre Anforderungen. Lassen Sie uns gemeinsam Ihr Event perfekt planen.",
+          "primary": "Jetzt Angebot anfordern",
+          "secondary": "Preise ansehen"
+        },
+        "related": {
+          "title": "Ähnliche Locations"
+        }
+      }
+    },
+    "services": {
+      "seo": {
+        "title": "Leistungen | Mobile Cocktailbar | Velo.Bar",
+        "description": "Alle Leistungen auf einen Blick: Firmenfeiern, Weihnachtsfeiern, Messe-Catering, Team-Events, Private Feiern und Hochzeiten in München & Coburg."
+      },
+      "hero": {
+        "eyebrow": "Unsere Leistungen",
+        "title": "DEINE SERVICES AUF EINEN BLICK",
+        "subtitle": "Von Firmenfeier bis Hochzeit: Wähle den passenden Service. Wir machen dir in wenigen Minuten ein Angebot."
+      },
+      "schema": {
+        "serviceName": "Mobile Cocktailbar Services",
+        "serviceDescription": "Professionelle Cocktailbar-Services für Firmenfeiern, Hochzeiten, Messen, Team-Events und private Feiern in München und Coburg.",
+        "areaServed": {
+          "munich": "München",
+          "coburg": "Coburg",
+          "bavaria": "Bayern"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Leistungen"
+        }
+      },
+      "cards": {
+        "corporate": {
+          "title": "Firmenfeiern",
+          "description": "Mobile Cocktailbar für Firmenfeiern von 50–500 Gästen. Premium-Drinks, professionelles Team und reibungslose Abläufe – perfekt für Weihnachtsfeiern, Sommerfeste und Kick-offs.",
+          "heading": "Firmenfeiern",
+          "bullets": {
+            "0": "Komplettes Bar-Setup inkl. Equipment",
+            "1": "Individuelle Cocktailkarte im CI des Unternehmens",
+            "2": "2–4 Barkeeper je nach Gästezahl",
+            "3": "Reporting & Abrechnung nach Event"
+          }
+        },
+        "christmas": {
+          "title": "Weihnachtsfeiern",
+          "description": "Winterliche Signature-Drinks, Glühwein-Varianten und stimmungsvolle Dekoration – garantiert festliche Atmosphäre für Teams und Kund:innen.",
+          "heading": "Winter Specials",
+          "bullets": {
+            "0": "Glühwein, Punsch & alkoholfreie Alternativen",
+            "1": "Zimt, Orange & Gewürz-Essenzen für Winter-Cocktails",
+            "2": "Stimmungsvolles Bar-Setup mit warmen Lichtern",
+            "3": "Optionale Team-Challenges wie Cocktail-Workshops"
+          }
+        },
+        "trade": {
+          "title": "Messen & Trade Shows",
+          "description": "Kompakte Bar für Messestände, Showrooms und Produktlaunches. Maximiert Verweildauer und Gesprächsqualität an deinem Stand.",
+          "heading": "Messepakete",
+          "bullets": {
+            "0": "Kompakte Fläche (ab 2×2 m)",
+            "1": "Branding-Optionen an Bar & Gläsern",
+            "2": "Schneller Auf- und Abbau auch bei straffen Timings",
+            "3": "Flexible Zeitslots (z.B. Messe-Happy-Hour)"
+          }
+        },
+        "team": {
+          "title": "Team-Events",
+          "description": "Mixology-Workshops und interaktive Tastings, die Teams zusammenbringen und neue Geschmackserlebnisse eröffnen.",
+          "heading": "Cocktail-Workshops",
+          "bullets": {
+            "0": "Geführte Cocktail-Workshops mit Profi-Barkeeper:innen",
+            "1": "Team-Challenges & Blind-Tastings",
+            "2": "Wahlweise alkoholfreie oder klassische Rezepte",
+            "3": "Dokumentation der Rezepte zum Mitnehmen"
+          }
+        },
+        "private": {
+          "title": "Private Feiern",
+          "description": "Geburtstage, Gartenfeste, Jubiläen – wir bringen die Bar zu dir nach Hause oder in deine Wunschlocation.",
+          "heading": "Private Feiern",
+          "bullets": {
+            "0": "1–2 Barkeeper abgestimmt auf Gästezahl",
+            "1": "Auswahl klassischer & moderner Cocktails",
+            "2": "Optional: Gin- oder Cocktail-Tasting",
+            "3": "Auf Wunsch mit mobiler Backbar & Dekor"
+          }
+        },
+        "weddings": {
+          "title": "Hochzeiten",
+          "description": "Begleitung deines Hochzeitstages von Empfang bis Mitternachtsbar. Signature Cocktails, stilvolle Präsentation und zuverlässiger Service.",
+          "heading": "Hochzeitsbar",
+          "bullets": {
+            "0": "Welcome Drinks & Aperitifs für den Empfang",
+            "1": "Individuelle Hochzeits-Signatures",
+            "2": "Nahtlose Abstimmung mit Trauzeug:innen & Location",
+            "3": "Optional: alkoholfreie Menübegleitung"
+          }
+        }
+      }
+    },
+    "faq": {
+      "seo": {
+        "title": "FAQ | Häufig gestellte Fragen",
+        "description": "Antworten auf häufig gestellte Fragen zu unseren mobilen Cocktailbar-Services, Buchungen, Preisen und mehr."
+      },
+      "hero": {
+        "eyebrow": "Wir helfen dir gerne",
+        "title": "Häufig gestellte Fragen",
+        "subtitle": "Finde Antworten auf die häufigsten Fragen zu unseren mobilen Cocktailbar-Services, Buchungen und Preisen."
+      },
+      "snippetSection": {
+        "title": "Direkte Antworten für deine Planung",
+        "subtitle": "Optimiert für Google Assistant, Siri & Co."
+      },
+      "items": {
+        "0": {
+          "question": "Wie weit im Voraus sollte ich buchen?",
+          "answer": "Wir empfehlen, mindestens 4-6 Wochen vor deinem Event zu buchen. Für Hochzeiten und große Firmenevents solltest du 3-6 Monate einplanen. Bei kurzfristigen Anfragen tun wir unser Bestes, dich zu unterstützen."
+        },
+        "1": {
+          "question": "Was ist im Preis enthalten?",
+          "answer": "Unsere Pakete beinhalten die mobile Bar, professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren und Equipment. Gläser und Servietten sind ebenfalls inklusive."
+        },
+        "2": {
+          "question": "Können Sie auch alkoholfreie Cocktails anbieten?",
+          "answer": "Absolut! Wir bieten eine breite Auswahl an Mocktails und alkoholfreien Alternativen. Diese können auch als Hauptangebot oder ergänzend zu alkoholischen Cocktails serviert werden."
+        },
+        "3": {
+          "question": "Welche Regionen bedienen Sie?",
+          "answer": "Wir sind in München, Coburg und ganz Bayern aktiv. Für Events außerhalb Bayerns kontaktiere uns gerne für ein individuelles Angebot."
+        },
+        "4": {
+          "question": "Wie viele Gäste können Sie bedienen?",
+          "answer": "Von intimen Feiern mit 20 Gästen bis zu großen Firmenevents mit 500+ Personen – wir passen unser Setup flexibel an deine Gästezahl an."
+        },
+        "5": {
+          "question": "Kann ich die Cocktailkarte individuell gestalten?",
+          "answer": "Ja! Wir erstellen gerne eine maßgeschneiderte Cocktailkarte, die zu deinem Event-Thema, deiner Marke oder deinen Geschmacksvorlieben passt."
+        },
+        "6": {
+          "question": "Braucht die mobile Bar Strom oder Wasser?",
+          "answer": "Nein! Unsere Velo.Bar ist vollständig autark. Keine Steckdose, kein Wasseranschluss nötig. Perfekt für Messen, Outdoor-Events und Locations mit eingeschränkter Infrastruktur."
+        },
+        "7": {
+          "question": "Was kostet eine mobile Bar für 50 Gäste?",
+          "answer": "Eine mobile Bar für 50 Gäste kostet ab 890€ für 4 Stunden. Dieses Paket beinhaltet professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren, Equipment und Gläser. Alle Preise sind transparent ohne versteckte Kosten."
+        },
+        "8": {
+          "question": "Können Sie auch Last-Minute-Anfragen bedienen?",
+          "answer": "Ja! Bei Verfügbarkeit können wir Events mit nur 48-72 Stunden Vorlauf realisieren. Rufen Sie uns einfach an – wir finden eine Lösung."
+        },
+        "9": {
+          "question": "Bieten Sie nachhaltige Event-Optionen?",
+          "answer": "Ja! Wir arbeiten mit regionalen bayerischen Brennereien, nutzen Zero-Waste Garnituren und liefern CO₂-neutral mit dem Lastenrad. Nach jedem Event erhältst du ein Nachhaltigkeits-Zertifikat für dein ESG-Reporting."
+        }
+      },
+      "snippets": {
+        "booking": {
+          "title": "Buchung & Planung",
+          "items": {
+            "0": {
+              "question": "Wie weit im Voraus sollte ich eine mobile Cocktailbar buchen?",
+              "answer": "Wir empfehlen mindestens 4-6 Wochen vor deinem Event zu buchen. Für Hochzeiten und große Firmenevents plane 3-6 Monate ein. Kurzfristige Buchungen bis 1 Woche vorher sind möglich, abhängig von Verfügbarkeit."
+            },
+            "1": {
+              "question": "Was kostet eine mobile Bar für 50 Gäste?",
+              "answer": "Eine mobile Bar für 50 Gäste kostet ab 890€ für 4 Stunden. Dieses Paket beinhaltet professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren, Equipment und Gläser. Alle Preise sind transparent ohne versteckte Kosten."
+            },
+            "2": {
+              "question": "Kann ich Last-Minute Catering in München buchen?",
+              "answer": "Ja! Bei Verfügbarkeit realisieren wir Events mit nur 48-72 Stunden Vorlauf. Wir antworten innerhalb von 2 Stunden, auch am Wochenende. Ruf uns an unter +49 160 94623196."
+            }
+          }
+        },
+        "logistics": {
+          "title": "Technik & Logistik",
+          "items": {
+            "0": {
+              "question": "Benötigt die mobile Cocktailbar Strom oder Wasser?",
+              "answer": "Nein, unsere Fahrrad-Bar ist 100% autark. Kein Strom, kein Wasseranschluss nötig. Funktioniert überall - im Büro, auf Terrassen oder im Freien. Perfekt für Locations mit beschränkten Anschlüssen."
+            },
+            "1": {
+              "question": "Wie viel Platz benötigt eine mobile Cocktailbar?",
+              "answer": "Nur 2 Quadratmeter Stellfläche werden für unsere kompakte Fahrrad-Bar benötigt. Die mobile Bar passt in jeden Raum oder auf jede Terrasse. Ideal für enge Locations oder als zusätzlicher Eye-Catcher."
+            },
+            "2": {
+              "question": "Wie lange dauert der Aufbau der mobilen Bar?",
+              "answer": "Der Aufbau dauert nur 30-45 Minuten. Wir kommen 1-2 Stunden vor Event-Beginn. Abbau erfolgt nach Ende des Events und dauert ca. 30 Minuten."
+            }
+          }
+        },
+        "services": {
+          "title": "Services & Angebote",
+          "items": {
+            "0": {
+              "question": "Welche Cocktails eignen sich für Firmenfeiern?",
+              "answer": "Beliebte Firmenfeier-Cocktails: Aperol Spritz, Gin Tonic, Prosecco mit Beeren, Mojito. Diese benötigen 30-60 Sekunden pro Drink, ermöglichen hohen Durchsatz und gefallen den meisten Gästen. Wir erstellen auch maßgeschneiderte Signature-Drinks."
+            },
+            "1": {
+              "question": "Können Sie alkoholfreie Cocktails anbieten?",
+              "answer": "Absolut! Wir bieten eine breite Auswahl an Mocktails und alkoholfreien Alternativen mit Premium Non-Alcoholic Spirits wie Seedlip. Diese können als Hauptangebot oder ergänzend zu alkoholischen Cocktails serviert werden."
+            },
+            "2": {
+              "question": "Bieten Sie Messecatering in München an?",
+              "answer": "Ja! Wir sind Spezialisten für Messe-Catering in München. Ob BAUMA, ISPO oder EXPO REAL – unsere autarke Bar funktioniert ohne Messe-Infrastruktur. Du sparst €400-750 an Strom-/Wasseranschlusskosten."
+            }
+          }
+        },
+        "sustainability": {
+          "title": "Nachhaltigkeit & ESG",
+          "items": {
+            "0": {
+              "question": "Ist Velo.Bar nachhaltig?",
+              "answer": "Ja! Wir sind CO₂-neutral: Anlieferung per Lastenrad, regionaler bayerische Spirits, Zero-Waste Garnituren, kein Wasserverbrauch. Nach jedem Event erhältst du ein Nachhaltigkeits-Zertifikat für dein ESG-Reporting."
+            },
+            "1": {
+              "question": "Arbeiten Sie mit regionalen Produkten?",
+              "answer": "Absolut! Wir nutzen Gin aus dem Chiemgau, Whisky aus Franken und Kräuterliköre aus den Alpen. Kurze Lieferwege, lokale Wertschöpfung und authentischer bayerischer Geschmack."
+            }
+          }
+        },
+        "events": {
+          "title": "Event-Typen",
+          "items": {
+            "0": {
+              "question": "Bieten Sie Catering für Weihnachtsfeiern an?",
+              "answer": "Ja! Wir haben spezielle Wintercocktails: Virgin Glühwein, Hot Apple Cider, Cranberry Fizz. Buche 8+ Wochen vorher für Weihnachtsfeiern in München – die Saison ist schnell ausgebucht."
+            },
+            "1": {
+              "question": "Können Sie Outdoor-Events ohne Strom bedienen?",
+              "answer": "Perfekt für uns! Unsere Akku-Technik ermöglicht 8+ Stunden Betrieb ohne Steckdose. Sommerfeste im Park, Betriebsausflüge am See, Teamevents in der Natur – überall wo es keine Infrastruktur gibt."
+            }
+          }
+        }
+      }
+    },
+    "about": {
+      "parallax": {
+        "hero": {
+          "title": "Wir sind die Velo Bar",
+          "subtitle": "Gegründet mit der Vision, Premium-Cocktails auf Rädern zu bringen. Leidenschaft für Qualität, Handwerk und Bar-Erlebnisse, die im Kopf bleiben.",
+          "founder1": {
+            "aria": "Sebastian - Co-Founder",
+            "alt": "Sebastian - Co-Founder"
+          },
+          "founder2": {
+            "aria": "Lars Eggers - Co-Founder",
+            "alt": "Lars Eggers - Co-Founder"
+          }
+        },
+        "story1": {
+          "heading": "Die Geschichte",
+          "p1": "Was mit einer Idee begann – \"Wie bringen wir Bar-Qualität zu Messen und Firmenfeiern?\" – ist heute ein etabliertes Unternehmen mit über 500 Events für Kunden in München und Coburg.",
+          "p2": "Wenn die Gäste nicht in die Bar kommen können, bringen wir die Bar zu ihnen. Diese Vision hat uns zu dem gemacht, was wir heute sind: Spezialisten für Premium-Cocktail-Catering bei Corporate Events.",
+          "imageAlt": "Velo Bar Our Story"
+        },
+        "story2": {
+          "heading": "Warum wir die Richtigen für dein Event sind",
+          "imageAlt": "Why Velo Bar",
+          "p1Strong": "Du kannst dich entspannen – wir kümmern uns um Bar & Drinks.",
+          "p1": "Saubere Abläufe, erfahrenes Team, zuverlässiger Service. Du konzentrierst dich auf dein Event, wir liefern das Bar-Erlebnis.",
+          "p2Strong": "Deine Gäste bekommen Premium-Cocktails, keine Standard-Mischungen.",
+          "p2": "Wir investieren in die besten Spirituosen, trainierte Barkeeper und handgemachte Drinks. Qualität, die man schmeckt.",
+          "p3Strong": "Dein Event wirkt professionell, aber nicht steif.",
+          "p3": "Lars bringt 10 Jahre internationale Barkeeper-Erfahrung mit, Sebastian die süddeutsche Gastfreundschaft und lokale München-Expertise. Zusammen bilden wir das perfekte Gespann."
+        },
+        "team": {
+          "heading": "Das Team",
+          "p1Strong": "Lars (Nord) + Sebastian (Süd) = Perfektes Gespann für München",
+          "p2": "\"Moin\" trifft auf \"Servus\" – internationale Barkeeper-Erfahrung trifft auf lokale Verwurzelung. Unsere unterschiedlichen Hintergründe ergänzen sich perfekt und schaffen eine einzigartige Mischung aus Professionalität und Herzlichkeit.",
+          "p3": "Mit über 500 erfolgreich durchgeführten Events für Unternehmen wie BMW, Siemens und innovative Startups haben wir bewiesen: Unsere Vision funktioniert. Jedes Event ist für uns eine Chance, Premium-Bar-Handwerk zu zeigen.",
+          "links": {
+            "corporate": "Erfahre mehr über unsere Firmenfeiern",
+            "middle": "oder sieh dir unsere",
+            "gallery": "Galerie",
+            "suffix": "an."
+          },
+          "imageAlt": "Velo Bar Team"
+        }
+      }
+    },
+    "gallery": {
+      "seo": {
+        "title": "Galerie",
+        "description": "Eindrücke von unseren Events: Cocktailbars auf Firmenfeiern, Hochzeiten und privaten Feiern."
+      },
+      "hero": {
+        "eyebrow": "Event Impressionen",
+        "title": "Galerie",
+        "subtitle": "So sieht es aus, wenn wir Ihr Event unvergesslich machen."
+      }
+    },
+    "bookingMuc": {
+      "seo": {
+        "title": "München Buchung | Mobile Bar München & Umgebung | Velo.Bar",
+        "description": "Buchen Sie die mobile Velo.Bar für Ihr Event in München. Selbstversorgendes Öko-System, professionelle Barkeeper, Gin-Tastings ab 49€."
+      },
+      "layout": {
+        "heroTitle": "VELO.BAR München",
+        "heroSubtitle": "Münchens Premium Mobile Bar für Firmenfeiern & Events. Buchen Sie jetzt für Ihr nächstes Event.",
+        "heroImageAlt": "Velo.Bar München - Bartender am mobilen Bar-Fahrrad",
+        "packagesTitle": "Unsere Angebote für München & Umgebung",
+        "faqTitle": "Häufig gestellte Fragen",
+        "testimonialsTitle": "Was unsere Münchner Kunden sagen",
+        "ctaTitle": "Bereit für Ihre mobile Bar in München?",
+        "ctaSubtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
+        "ctaButtonText": "Jetzt anfragen!"
+      }
+    },
+    "bookingCoburg": {
+      "seo": {
+        "title": "Coburg Buchung | Mobile Bar Coburg & Umgebung | Velo.Bar",
+        "description": "Buchen Sie die mobile Velo.Bar für Ihr Event in Coburg. Cocktailbar und Gin-Tastings für private und Firmenfeiern."
+      },
+      "layout": {
+        "heroTitle": "VELO.BAR Coburg",
+        "heroSubtitle": "Mobile Cocktailbar & Gin-Tastings für Coburg & Umgebung",
+        "packagesTitle": "Unsere Angebote für Coburg & Umgebung",
+        "faqTitle": "Häufig gestellte Fragen",
+        "testimonialsTitle": "Was unsere Coburger Kunden sagen",
+        "ctaTitle": "Bereit für Ihre mobile Bar in Coburg?",
+        "ctaSubtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
+        "ctaButtonText": "Jetzt anfragen!"
+      },
+      "coburgSection": {
+        "title": "Warum Velo.Bar in Coburg?",
+        "description": "Egal ob Gin-Tasting, Geburtstag, Firmenfeier oder private Feier - wir bringen professionelle Bar-Kultur nach Coburg. Unsere mobile Bar ist vollständig autark und kann überall eingesetzt werden.",
+        "cards": {
+          "servus": {
+            "title": "Servus!",
+            "text": "Sebastian bringt echte Bar-Expertise aus München nach Coburg"
+          },
+          "moin": {
+            "title": "Moin!",
+            "text": "Lars ergänzt mit norddeutscher Herzlichkeit und Professionalität"
+          }
+        }
+      }
+    },
+    "contact": {
+      "seo": {
+        "title": "Anfrage | Mobile Cocktailbar München | Velo.Bar",
+        "description": "Senden Sie uns Ihre Event-Anfrage für mobile Cocktailbar-Services in München und Coburg. Antwort in 24 Stunden. ✓ Jetzt anfragen!"
+      },
+      "hero": {
+        "badge": "Unverbindliche Anfrage",
+        "title": "Jetzt dein Event anfragen",
+        "subtitle": "In nur 3 Schritten zur perfekten Cocktailbar für dein Event. Wir melden uns innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot."
+      },
+      "kpis": {
+        "events": "Events durchgeführt",
+        "guests": "Gäste bewirtet",
+        "rating": "Kundenbewertung"
+      },
+      "loading": "Laden...",
+      "bottomCta": {
+        "title": "Lieber direkt anrufen?",
+        "subtitle": "Wir beraten dich gerne persönlich zu deinem Event.",
+        "whatsapp": "WhatsApp Chat"
+      }
+    },
+    "legal": {
+      "eyebrow": "Rechtliches"
+    },
+    "impressum": {
+      "title": "Impressum",
+      "sections": {
+        "tmg": {
+          "title": "Angaben gemäß § 5 TMG",
+          "paragraphs": {
+            "0": "Velo.Bar",
+            "1": "Sebastian Reichstaller & Lars Eggers GbR, SelectONEdrink GbR",
+            "2": "Matthias-Mayer-Straße 5",
+            "3": "81379 München"
+          }
+        },
+        "representedBy": {
+          "title": "Vertreten durch:",
+          "paragraphs": {
+            "0": "Sebastian Reichstaller",
+            "1": "Lars Eggers"
+          }
+        },
+        "contact": {
+          "title": "Kontakt",
+          "paragraphs": {
+            "0": "Telefon: +49 160 94623196",
+            "1": "E-Mail: hallo@velo-bar.com"
+          }
+        },
+        "euDispute": {
+          "title": "EU-Streitschlichtung",
+          "paragraphs": {
+            "0": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+            "1": "https://ec.europa.eu/consumers/odr.",
+            "2": "Unsere E-Mail-Adresse finden Sie oben im Impressum."
+          }
+        },
+        "consumerDispute": {
+          "title": "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
+          "paragraphs": {
+            "0": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+          }
+        },
+        "liabilityContent": {
+          "title": "Haftung für Inhalte",
+          "paragraphs": {
+            "0": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nichtverpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
+          }
+        },
+        "liabilityLinks": {
+          "title": "Haftung für Links",
+          "paragraphs": {
+            "0": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+          }
+        },
+        "copyright": {
+          "title": "Urheberrecht",
+          "paragraphs": {
+            "0": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
+          }
+        },
+        "cancellationFees": {
+          "title": "Stornogebühren:Storno:",
+          "paragraphs": {
+            "0": "Der Kunde hat jederzeit das Recht, vom Vertrag zurückzutreten. Soweit keine weiteren schriftlichen Vereinbarungen zwischen dem Kunden und der Lars Eggers & Sebastian Reichstaller GbR getroffen wurden, hat die Lars Eggers & Sebastian Reistaller GbR Anspruch auf eine angemessene Entschädigung wie folgt:"
+          },
+          "listItems": {
+            "0": "1) Bei einer Stornierung bis zehn volle Werktage vor dem ersten Veranstaltungstag werden 20% der letzgültigen Angebotssumme in Rechnung gestellt.",
+            "1": "2) Bei einer Stornierung zwischen zehn und drei vollen Werktage vor dem ersten Veranstaltungstag werden 90% der letzgültigen Angebotssumme in Rechnung gestellt.",
+            "2": "3) Bei einer Stornierung unter drei vollen Werktage vor dem ersten Veranstaltungstag werden 100 % der letztgültigen Angebotessumme in Rechnung gestellt."
+          }
+        }
+      }
+    },
+    "datenschutz": {
+      "title": "Datenschutzrichtlinien",
+      "intro": {
+        "p1": "Diese Website sammelt personenbezogene Daten, die als Grundlage für unsere Website-Analytics dienen. Dazu gehören:",
+        "list1": {
+          "0": "Informationen über Ihren Browser, Ihr Netzwerk und Ihr Gerät",
+          "1": "Webseiten, die Sie vor dem Besuch dieser Website aufgerufen haben",
+          "2": "Ihre IP-Adresse"
+        },
+        "p2": "Diese Informationen können auch Details über Ihre Nutzung dieser Website enthalten, einschließlich:",
+        "list2": {
+          "0": "Klicks",
+          "1": "Interne Links",
+          "2": "Besuchte Seiten",
+          "3": "Scrollen",
+          "4": "Suchvorgänge",
+          "5": "Zeitstempel"
+        },
+        "p3": "Wir teilen diese Informationen mit Squarespace, unserem Anbieter für Website-Analytics, um mehr über den Traffic und die Aktivität auf dieser Website zu erfahren."
+      },
+      "cookies": {
+        "heading": "Cookies",
+        "p1": "Diese Website verwendet Cookies und ähnliche Technologien, wobei es sich um kleine Dateien oder kurze Texte handelt, die auf ein Gerät heruntergeladen werden, wenn ein Besucher auf eine Website oder App zugreift.",
+        "p2Prefix": "Informationen zum Anzeigen der auf deinem Gerät platzierten Cookies findest du unter",
+        "linkText": "Über die von Squarespace verwendeten Cookies",
+        "p2Suffix": ".",
+        "li1": {
+          "linkText": "Diese funktionellen und erforderlichen Cookies werden immer verwendet",
+          "suffix": ", da sie es Squarespace, unserer Hosting-Plattform, ermöglichen, diese Website sicher für Sie bereitzustellen."
+        },
+        "li2": {
+          "linkText": "Diese Analytics- und Performance-Cookies",
+          "suffix": "werden nur dann wie im Folgenden beschrieben auf dieser Website verwendet, wenn Sie unser Cookie-Banner bestätigen. Wir verwenden Analytics-Cookies, um Einblick in den Website-Traffic, die Website-Aktivität und weitere Daten zu erhalten."
+        }
+      },
+      "hosting": {
+        "heading": "Hosting",
+        "p1": "Diese Website wird von Squarespace gehostet. Squarespace sammelt personenbezogene Daten, wenn Sie diese Website besuchen. Dazu gehören:",
+        "list": {
+          "0": "Informationen über Ihren Browser, Ihr Netzwerk und Ihr Gerät",
+          "1": "Webseiten, die Sie vor dem Besuch dieser Website aufgerufen haben",
+          "2": "Ihre IP-Adresse"
+        },
+        "p2": "Squarespace benötigt die Daten für den Betrieb dieser Website sowie zum Schutz und zur Verbesserung seiner Plattform und Services. Squarespace analysiert die Daten in entpersonalisierter Form."
+      },
+      "fonts": {
+        "heading": "Schriftarten",
+        "p1": "Diese Website verwendet Schriftartendateien von Google Fonts und Adobe Fonts. Um Ihnen diese Website korrekt anzuzeigen, können Server, auf denen die Schriftartendateien gespeichert sind, personenbezogene Daten über Sie erhalten. Dazu gehören:",
+        "list": {
+          "0": "Informationen über Ihren Browser, Ihr Netzwerk oder Ihr Gerät",
+          "1": "Ihre IP-Adresse"
+        }
+      },
+      "closing": "#Velo.Bar"
+    },
+    "firmenfeiern": {
+      "offer": {
+        "title": "Kostenloses Angebot in 2 Stunden",
+        "subtitleShort": "Teilen Sie uns Ihre Anforderungen mit und Sie erhalten ein maßgeschneidertes Angebot – innerhalb von 2 Stunden.",
+        "subtitleLong": "Teilen Sie uns Ihre Anforderungen mit und Sie erhalten ein maßgeschneidertes Angebot – garantiert innerhalb von 2 Stunden während der Geschäftszeiten."
+      },
+      "bicycleUsp": {
+        "title": "Warum unsere Fahrrad-Bar der Unterschied ist",
+        "subtitle": "Einzigartig in München: Nachhaltig, platzsparend und ein echter Hingucker für Ihre Gäste"
+      },
+      "snippets": {
+        "pricing": {
+          "title": "Kosten & Platzbedarf",
+          "intro": "Direkte Antworten zur Budgetplanung",
+          "q1": {
+            "question": "Was kostet eine mobile Bar für eine Firmenfeier?",
+            "answer": "Eine mobile Bar für Firmenfeiern kostet ab 1.190€ für 4 Stunden (50 Gäste). Premium-Pakete mit Signature-Drinks und Branding ab 2.190€. Alle Preise inklusive Barkeeper, Glas, Zutaten und Equipment – vollständig autark ohne Strom."
+          },
+          "q2": {
+            "question": "Wie viel Platz wird für eine mobile Cocktailbar benötigt?",
+            "answer": "Nur 2m² Stellfläche wird für unsere Fahrrad-Bar benötigt. Die kompakte mobile Bar passt in jeden Raum oder auf jede Terrasse. Ideal für begrenzte Locations oder als zusätzlicher Eye-Catcher."
+          }
+        },
+        "planning": {
+          "title": "Buchung & Cocktail-Auswahl",
+          "intro": "Wichtige Tipps für Ihre Firmenfeier-Planung",
+          "q1": {
+            "question": "Wie lange vorher sollte man eine mobile Bar für Firmenfeiern buchen?",
+            "answer": "Buchen Sie 4-6 Wochen im Voraus für beste Verfügbarkeit. Kurzfristige Buchungen bis 1 Woche vorher möglich, abhängig von Kapazität. Saisonhochpunkte (November/Dezember) früher reservieren."
+          },
+          "q2": {
+            "question": "Welche Cocktails eignen sich am besten für Firmenfeiern?",
+            "answer": "Beliebte Firmenfeier-Cocktails: Aperol Spritz, Gin Tonic, Prosecco mit Beeren, Mojito. Diese benötigen 30-60 Sekunden pro Drink, ermöglichen hohen Durchsatz und gefallen den meisten Gästen."
+          }
+        },
+        "logistics": {
+          "title": "Technische Anforderungen & Kapazität",
+          "intro": "Alles Wichtige zu Standort und Gästen",
+          "q1": {
+            "question": "Benötigt die mobile Bar Strom oder Wasseranschluss?",
+            "answer": "Nein. Unsere Fahrrad-Bar ist 100% autark – kein Strom, kein Wasser nötig. Funktioniert überall, egal ob im Büro, auf dem Parkdeck oder im Freien. Perfekt für schwierige Locations."
+          },
+          "q2": {
+            "question": "Wie viele Gäste kann eine mobile Bar bedienen?",
+            "answer": "Eine Bar bedient bis zu 150 Gäste bei 4 Stunden. Bei mehr Gästen empfehlen wir eine zweite Bar. Unser Barkeeper mixt bis zu 120 Cocktails pro Stunde – keine Wartezeiten."
+          }
+        }
+      },
+      "story": {
+        "locationsTitle": "München & Coburg – Dual-Location Vorteil",
+        "emphasis": {
+          "premium": "Premium-Cocktails, nachhaltig und mobil – überall.",
+          "specialization": "Unsere Spezialisierung:"
+        }
+      },
+      "pricing": {
+        "title": "Kosten Mobile Bar Firmenfeier – Transparente Pakete",
+        "subtitle": "All-inclusive Preise ohne versteckte Kosten. MwSt. auf Wunsch inklusive ausgewiesen.",
+        "mostPopular": "Beliebteste Wahl",
+        "perGuestSuffix": "/ Gast",
+        "serviceSuffix": "Service",
+        "legalLine": "Alle Preise zzgl. MwSt. (auf Wunsch inkl. MwSt. ausweisbar). Individuelle Pakete auf Anfrage."
+      },
+      "relatedServices": {
+        "title": "Weitere Services für Unternehmen"
+      },
+      "faqAccordion": {
+        "title": "Häufige Fragen zu Firmenfeiern",
+        "subtitle": "Alle wichtigen Informationen für Ihre Planung"
+      },
+      "schema": {
+        "serviceName": "Cocktail-Catering für Firmenfeiern",
+        "serviceDescription": "Premium mobile Cocktailbar für Firmenfeiern in München. All-inclusive Barkeeper-Service für 50-500+ Gäste. Autark ohne Strom oder Wasseranschluss.",
+        "areaServed": {
+          "munich": "München",
+          "coburg": "Coburg",
+          "bavaria": "Bayern"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Firmenfeiern"
+        }
+      }
+    },
+    "weihnachtsfeiern": {
+      "pricing": {
+        "title": "Weihnachtsfeier Pakete – Transparente Preise",
+        "subtitle": "All-inclusive Festpreise für Ihre Weihnachtsfeier",
+        "perGuestSuffix": "/ Gast",
+        "serviceSuffix": "Service",
+        "ctaFallback": "Angebot anfordern"
+      },
+      "faq": {
+        "title": "Häufige Fragen zu Weihnachtsfeiern"
+      },
+      "finalCta": {
+        "title": "Jetzt Weihnachtsfeier anfragen",
+        "subtitle": "Sichern Sie sich Ihren Wunschtermin für die Weihnachtssaison",
+        "button": "Unverbindlich anfragen"
+      },
+      "schema": {
+        "serviceName": "Mobile Bar für Firmenweihnachtsfeiern",
+        "serviceDescription": "Festliche mobile Cocktailbar für Ihre Firmenweihnachtsfeier in München. Glühwein, Winter-Cocktails und professioneller Barkeeper-Service.",
+        "areaServed": {
+          "munich": "München",
+          "coburg": "Coburg",
+          "bavaria": "Bayern"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Weihnachtsfeiern"
+        }
+      }
+    },
+    "teamEvents": {
+      "seo": {
+        "title": "Cocktail-Workshops für Team-Events München",
+        "description": "Interaktive Cocktail-Workshops für Teambuilding in München & Coburg. Professionelle Barkeeper für 10-40 Teilnehmer. Jetzt Workshop buchen!"
+      },
+      "hero": {
+        "title": "Team-Events & Cocktail-Workshops",
+        "subtitle": "Gemeinsam Cocktails mixen, lernen und Spaß haben – perfekt für Team-Building und Firmenevents"
+      },
+      "packagesTitle": "Unsere Workshop-Pakete",
+      "faqTitle": "Häufig gestellte Fragen zu Workshops",
+      "testimonialsTitle": "Was Teilnehmer sagen",
+      "cta": {
+        "title": "Bereit für ein unvergessliches Team-Erlebnis?",
+        "subtitle": "Buchen Sie Ihren Cocktail-Workshop für Ihr nächstes Team-Event",
+        "button": "Jetzt Workshop buchen"
+      },
+      "schema": {
+        "serviceName": "Cocktail-Workshops & Team-Events",
+        "serviceDescription": "Interaktive Cocktail-Workshops für Teambuilding in München. Professionelle Barkeeper-Trainer für Gruppen von 10-40 Teilnehmern.",
+        "areaServed": {
+          "munich": "München",
+          "coburg": "Coburg",
+          "bavaria": "Bayern"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Team-Events & Workshops"
+        }
+      },
+      "suitableFor": {
+        "items": {
+          "0": "Interaktive Team-Building-Workshops (10-40 Teilnehmer)",
+          "1": "Abteilungs-Events mit Lerneffekt & Spaß-Faktor",
+          "2": "Onboarding-Programme für neue Mitarbeiter",
+          "3": "Kreativitäts-Workshops für Marketing-Teams",
+          "4": "Führungskräfte-Trainings: Teamwork praktisch erleben",
+          "5": "Incentive-Events mit aktiver Teilnahme statt passivem Konsum"
+        }
+      },
+      "process": {
+        "steps": {
+          "0": {
+            "step": "1. Team-Ziele definieren",
+            "description": "Was soll der Workshop erreichen? Bessere Kommunikation, kreative Problemlösung, Vertrauensaufbau? Wir entwickeln den passenden Workshop-Ablauf."
+          },
+          "1": {
+            "step": "2. Didaktisches Workshop-Konzept",
+            "description": "Strukturierter Ablaufplan mit Lernzielen, praktischen Übungen, Team-Challenges und individuellen Skill-Building-Elementen – didaktisch fundiert."
+          },
+          "2": {
+            "step": "3. Location & Setup-Planung",
+            "description": "Wir kommen in Ihre Räume oder empfehlen inspirierende Workshop-Locations. Flexibles Setup für Gruppen von 6-40 Teilnehmern."
+          },
+          "3": {
+            "step": "4. Professionelle Workshop-Ausstattung",
+            "description": "Jeder Teilnehmer erhält einen eigenen Arbeitsplatz mit Profi-Equipment: Shaker, Jigger, Zutaten, Rezeptkarten – wie echte Barkeeper."
+          },
+          "4": {
+            "step": "5. Hands-On Workshop-Durchführung",
+            "description": "Unser erfahrener Barkeeper-Trainer vermittelt Techniken, moderiert Team-Challenges und sorgt für Aha-Momente plus echten Teamgeist."
+          },
+          "5": {
+            "step": "6. Takeaways & Transfer",
+            "description": "Teilnehmer erhalten Rezeptkarten (bzw. Zertifikate bei Masterclass) und reflektieren gemeinsam: Was nehmen wir mit ins Team?"
+          }
+        }
+      },
+      "learn": {
+        "title": "Was Sie in unseren Workshops lernen",
+        "items": {
+          "0": { "strong": "Cocktail-Basics:", "text": "Shaken, Rühren, Muddeln – die Grundtechniken" },
+          "1": { "strong": "Spirituosen-Kunde:", "text": "Gin, Rum, Vodka, Tequila richtig einsetzen" },
+          "2": { "strong": "Klassische Cocktails:", "text": "Mojito, Margarita, Negroni perfekt mixen" },
+          "3": { "strong": "Kreative Garnierungen:", "text": "Die perfekte Präsentation" },
+          "4": { "strong": "Team-Challenges:", "text": "Gemeinsam eigene Signature-Drinks entwickeln" }
+        }
+      },
+      "occasions": {
+        "title": "Beliebte Workshop-Anlässe",
+        "items": {
+          "0": "Team-Building Events",
+          "1": "Firmen-Jubiläen",
+          "2": "Mitarbeiter-Incentives",
+          "3": "Abteilungs-Ausflüge",
+          "4": "Onboarding-Events",
+          "5": "Weihnachtsfeiern (interaktiv)",
+          "6": "Kundenevents"
+        },
+        "note": "Auch für private Gruppen: JGA, Geburtstage, Freundeskreise!"
+      },
+      "packages": {
+        "items": {
+          "0": {
+            "name": "Cocktail-Schnupperkurs",
+            "price": "€50",
+            "priceDetail": "pro Person (min. 10 Personen)",
+            "features": {
+              "0": "2 Stunden Workshop",
+              "1": "Einführung in Cocktail-Basics",
+              "2": "3 Cocktails selbst mixen",
+              "3": "Alle Zutaten & Equipment inklusive",
+              "4": "Professioneller Barkeeper als Trainer",
+              "5": "Rezeptkarten zum Mitnehmen"
+            }
+          },
+          "1": {
+            "name": "Team-Building Cocktail-Kurs",
+            "price": "€80",
+            "priceDetail": "pro Person (min. 12 Personen)",
+            "features": {
+              "0": "3 Stunden intensiver Workshop",
+              "1": "Team-Challenges & Cocktail-Wettbewerb",
+              "2": "5 Cocktails selbst mixen",
+              "3": "Profi-Techniken lernen",
+              "4": "Teamwork & Kommunikation fördern",
+              "5": "Siegprämie für bestes Team",
+              "6": "Snacks & Fingerfood inklusive"
+            }
+          },
+          "2": {
+            "name": "VIP Barkeeper-Masterclass",
+            "price": "€120",
+            "priceDetail": "pro Person (min. 8 Personen)",
+            "features": {
+              "0": "4 Stunden Profi-Training",
+              "1": "Fortgeschrittene Techniken",
+              "2": "8+ Premium-Cocktails",
+              "3": "Eigene Signature-Drinks kreieren",
+              "4": "Molekulare Cocktails & Flair-Bartending",
+              "5": "Zertifikat",
+              "6": "Gourmet-Snacks & Dinner"
+            }
+          }
+        }
+      },
+      "faqs": {
+        "items": {
+          "0": {
+            "question": "Sind Vorkenntnisse erforderlich?",
+            "answer": "Nein, unsere Workshops sind für Anfänger konzipiert. Wir starten bei den Basics und steigern uns je nach Workshop-Paket. Jeder kann mitmachen – vom absoluten Neuling bis zum Hobby-Barkeeper."
+          },
+          "1": {
+            "question": "Wo finden die Workshops statt?",
+            "answer": "Wir kommen zu euch! Ob in euren Firmenräumen, einer gemieteten Location oder bei euch zuhause – wir bringen alle Equipment mit. Alternativ bieten wir auch Workshops in Partner-Locations in München und Coburg an."
+          },
+          "2": {
+            "question": "Wie viele Personen können teilnehmen?",
+            "answer": "Die optimale Gruppengröße liegt bei 10-20 Personen. Bei größeren Teams (bis 40 Personen) arbeiten wir mit zwei Trainern parallel in zwei Gruppen. Kleinere Gruppen (ab 6 Personen) sind auf Anfrage möglich."
+          },
+          "3": {
+            "question": "Eignet sich das als Team-Building-Maßnahme?",
+            "answer": "Absolut! Unsere Team-Building-Kurse fördern Kommunikation, Kreativität und Zusammenarbeit. Mit Team-Challenges, Cocktail-Wettbewerben und gemeinsamen Erfolgserlebnissen stärken wir den Teamgeist auf unterhaltsame Art."
+          },
+          "4": {
+            "question": "Können Teilnehmer auch alkoholfreie Varianten mixen?",
+            "answer": "Ja, wir bieten zu jedem Cocktail auch eine alkoholfreie Mocktail-Variante an. Teilnehmer können selbst entscheiden, ob sie Alkohol oder alkoholfrei mixen möchten."
+          },
+          "5": {
+            "question": "Gibt es eine Teilnahme-Bescheinigung?",
+            "answer": "Bei der VIP Barkeeper-Masterclass erhalten alle Teilnehmer ein Velobar-Zertifikat. Für die anderen Workshops gibt es Rezeptkarten zum Mitnehmen mit allen gelernten Cocktails."
+          }
+        }
+      },
+      "testimonials": {
+        "items": {
+          "0": {
+            "quote": "Der beste Team-Event, den wir je hatten! Alle waren begeistert und wir haben viel gelacht. Die Cocktails waren natürlich auch top!",
+            "author": "Julia Hoffmann",
+            "company": "IT-Startup München"
+          },
+          "1": {
+            "quote": "Perfektes Team-Building. Unsere Mitarbeiter reden noch Wochen später über den Cocktail-Wettbewerb. Absolute Empfehlung!",
+            "author": "Markus Bauer",
+            "company": "Marketing-Agentur Coburg"
+          }
+        }
+      }
+    }
+  },
+  "servicePageLayout": {
+    "hero": {
+      "eyebrow": "Velo.Bar Service",
+      "ctaText": "Jetzt anfragen"
+    },
+    "suitableFor": {
+      "title": "Für wen geeignet?"
+    },
+    "process": {
+      "title": "Ablauf & Logistik"
+    },
+    "packages": {
+      "title": "Unsere Pakete",
+      "popularBadge": "Beliebt",
+      "cta": "Anfrage stellen"
+    },
+    "testimonials": {
+      "title": "Was unsere Kunden sagen"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen"
+    },
+    "cta": {
+      "title": "Bereit für Ihr Event?",
+      "subtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
+      "button": "Jetzt anfragen"
+    }
+  },
   "common": {
     "perGuest": "pro Gast",
     "from": "ab",
     "hours": "Stunden",
     "guests": "Gäste",
     "included": "Inklusive",
-    "mostPopular": "Beliebtestes"
+    "mostPopular": "Beliebtestes",
+    "logoAlt": "Velo.Bar Logo",
+    "loading": "Laden...",
+    "skipToContent": "Zum Inhalt springen",
+    "loadingAuditTool": "Audit-Tool wird geladen...",
+    "breadcrumbAria": "Breadcrumb"
+  },
+  "meta": {
+    "siteName": "Velo.Bar – Mobile Cocktailbar & Event Catering",
+    "applicationName": "Velo.Bar – Mobile Cocktailbar & Event Catering"
+  },
+  "cookieConsent": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Essentielle Cookies sind für die Grundfunktionen erforderlich. Optional können Sie Analyse- und Marketing-Cookies zulassen.",
+    "learnMore": "Mehr erfahren",
+    "acceptAll": "Alle akzeptieren",
+    "rejectAll": "Ablehnen",
+    "customize": "Anpassen",
+    "essential": {
+      "title": "Essentielle Cookies",
+      "description": "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden."
+    },
+    "analytics": {
+      "title": "Analyse-Cookies",
+      "description": "Diese Cookies ermöglichen es uns, die Nutzung der Website zu analysieren und zu verbessern."
+    },
+    "marketing": {
+      "title": "Marketing-Cookies",
+      "description": "Diese Cookies werden verwendet, um Ihnen personalisierte Werbung anzuzeigen."
+    },
+    "save": "Einstellungen speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen"
+  },
+  "notFound": {
+    "seoTitle": "404 - Seite nicht gefunden",
+    "seoDescription": "Die gesuchte Seite konnte nicht gefunden werden.",
+    "eyebrow": "404",
+    "title": "Seite nicht gefunden",
+    "subtitle": "Die angeforderte Seite existiert nicht oder wurde verschoben.",
+    "body": "Die gesuchte Seite existiert nicht. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.",
+    "cta": "Zur Startseite"
+  },
+  "heroHome": {
+    "badge": "München & Coburg",
+    "title": "Mobile Cocktailbar für dein Event",
+    "subtitle": "Professioneller Barkeeper-Service für Events in München und Coburg."
+  },
+  "pricing": {
+    "seoTitle": "Preise & Pakete | Mobile Cocktailbar | Velo.Bar",
+    "seoDescription": "Transparente Preise für mobile Cocktailbar-Services in München und Coburg. All-inclusive Pakete ab 500€.",
+    "schema": {
+      "product": {
+        "name": "Mobile Cocktailbar Event Catering",
+        "description": "Mobile Cocktailbar mit professionellen Barkeepern für Firmenfeiern, Hochzeiten und Events"
+      },
+      "offers": {
+        "starter": {
+          "name": "Starter Paket",
+          "description": "Bis zu 50 Gäste, 3 Stunden Service, 4 Cocktail-Klassiker"
+        },
+        "professional": {
+          "name": "Professional Paket",
+          "description": "Bis zu 150 Gäste, 5 Stunden Service, 8 Cocktails"
+        }
+      }
+    },
+    "hero": {
+      "eyebrow": "Transparente Preise",
+      "title": "Preise & Pakete",
+      "subtitle": "Transparente Festpreise. Keine versteckten Kosten. Alles inklusive."
+    },
+    "packages": {
+      "starter": {
+        "name": "Starter",
+        "price": "ab 500€",
+        "features": {
+          "0": "Bis zu 50 Gäste",
+          "1": "3 Stunden Service",
+          "2": "4 Cocktail-Klassiker",
+          "3": "Professionelle Barkeeper",
+          "4": "Komplette Ausstattung",
+          "5": "Auf- und Abbau"
+        },
+        "cta": "Anfragen"
+      },
+      "professional": {
+        "name": "Professional",
+        "badge": "Beliebtestes",
+        "price": "ab 1.200€",
+        "features": {
+          "0": "Bis zu 150 Gäste",
+          "1": "5 Stunden Service",
+          "2": "8 Cocktails zur Auswahl",
+          "3": "Premium-Spirituosen",
+          "4": "Individuelle Cocktails",
+          "5": "Elegante Dekoration"
+        },
+        "cta": "Anfragen"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "auf Anfrage",
+        "features": {
+          "0": "150+ Gäste",
+          "1": "Flexible Servicezeiten",
+          "2": "Unbegrenzte Auswahl",
+          "3": "Mehrere Barstationen",
+          "4": "Corporate Branding",
+          "5": "Dedizierter Eventmanager"
+        },
+        "cta": "Anfragen"
+      }
+    },
+    "included": {
+      "title": "Was ist immer inklusive?",
+      "items": {
+        "spirits": {
+          "title": "Premium Spirituosen",
+          "description": "Hochwertige Zutaten für perfekte Cocktails"
+        },
+        "bartender": {
+          "title": "Prof. Barkeeper",
+          "description": "Erfahrene Barkeeper mit Event-Expertise"
+        },
+        "equipment": {
+          "title": "Komplette Ausstattung",
+          "description": "Gläser, Eis, Equipment - alles dabei"
+        },
+        "setup": {
+          "title": "Auf- und Abbau",
+          "description": "Wir kümmern uns um alles"
+        }
+      }
+    }
+  },
+  "menu": {
+    "seoTitle": "Drinks & Cocktails | Velo.Bar",
+    "seoDescription": "Unsere Cocktail-Auswahl für Events: Klassiker, Longdrinks und alkoholfreie Optionen.",
+    "hero": {
+      "eyebrow": "Unsere Cocktails",
+      "title": "Drinks",
+      "subtitle": "Unsere Cocktail-Auswahl als Inspiration. Wir kreieren die passenden Drinks für dein Event."
+    }
+  },
+  "stickyCta": {
+    "headline": "Kostenloses Angebot in 2 Stunden",
+    "subline": "Jetzt anrufen oder per WhatsApp kontaktieren",
+    "call": "Anrufen",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hallo! Ich interessiere mich für ein Event mit Velo.Bar.",
+    "close": "Schließen"
+  },
+  "stickyContact": {
+    "callNow": "Jetzt anrufen",
+    "whatsappOffer": "Sofort-Angebot per Chat",
+    "scrollToTop": "Nach oben",
+    "whatsappMessage": "Hallo! Ich interessiere mich für eure mobile Cocktailbar. Könnt ihr mir ein Angebot erstellen?"
+  },
+  "map": {
+    "title": "Velo.Bar – Mobile Cocktailbar in München",
+    "location": "München, Deutschland",
+    "openMap": "Karte öffnen",
+    "planRoute": "Route planen"
+  },
+  "messeCatering": {
+    "stats": {
+      "longerVisits": "Längere Standbesuche",
+      "moreBusinessCards": "Mehr Visitenkarten",
+      "tradeShowEvents": "Messe-Events",
+      "googleRating": "Google Bewertung"
+    }
+  },
+  "drinksShowcase": {
+    "sectionTitle": "Signature Drinks",
+    "signatureBadge": "Signature Drink",
+    "ingredientsHeading": "Zutaten",
+    "classicHighballsBadge": "Klassische Highballs",
+    "cocktails": {
+      "raspberryHibiscusFizz": {
+        "name": "Himbeer-Hibiskus-Fizz",
+        "type": "Erfrischend · Fruchtig",
+        "description": "Ein eleganter Fruchtcocktail mit floralen Noten und prickelnder Frische. Perfekt für den Sommer."
+      },
+      "basilSmash": {
+        "name": "Basil Smash",
+        "type": "Frisch · Kräuterig",
+        "description": "Frisches Basilikum trifft auf Zitrus und eine raffinierte Gin-Basis – aromatisch und lebendig."
+      },
+      "passionfruitMojito": {
+        "name": "Maracuja-Mojito",
+        "type": "Tropisch · Erfrischend",
+        "description": "Die tropische Variante des Klassikers mit exotischer Maracuja und frischer Minze."
+      },
+      "mangoRosemaryMule": {
+        "name": "Mango-Rosmarin-Mule",
+        "type": "Würzig · Aromatisch",
+        "description": "Würzige Mango trifft auf aromatischen Rosmarin und die Schärfe von Ginger Beer."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Bereit für Ihr Event?",
+    "subtitle": "Sichern Sie sich jetzt Ihre mobile Cocktailbar für Ihr nächstes Event!",
+    "description": "Egal ob München oder Coburg – wir bringen die mobile Cocktailbar zu Ihrem Event. Jetzt unverbindlich anfragen!",
+    "text": "Wir bringen die mobile Cocktailbar zu Ihrem Event – jetzt Angebot anfordern!",
+    "button": "Jetzt unverbindlich anfragen"
+  },
+  "testimonialsSection": {
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "32 Fünf-Sterne-Bewertungen auf Google – hier sind einige Highlights",
+    "viewAll": "Alle 32 Bewertungen auf Google ansehen"
+  },
+  "clientLogos": {
+    "title": "Vertraut von führenden Unternehmen",
+    "subtitle": "Diese Unternehmen haben uns für ihre Events gebucht"
+  },
+  "successStories": {
+    "title": "Vertrauen von führenden Unternehmen",
+    "subtitle": "Wir haben für über 500 Events geliefert – von DAX-Konzernen bis innovative Startups.",
+    "featuredAt": "Bekannt aus Events für",
+    "metrics": {
+      "events": {
+        "label": "Events durchgeführt",
+        "description": "seit 2018"
+      },
+      "guests": {
+        "label": "Gäste bewirtet",
+        "description": "in München & Coburg"
+      },
+      "rating": {
+        "label": "Kundenbewertung",
+        "description": "bei 87+ Rezensionen"
+      },
+      "recommendation": {
+        "label": "Weiterempfehlung",
+        "description": "unserer B2B-Kunden"
+      }
+    }
+  },
+  "whyVeloBarSection": {
+    "title": "Warum Velo.Bar?",
+    "subtitle": "Drei sehr gute Gründe, warum wir der richtige Partner für dein Event sind.",
+    "cards": {
+      "professional": {
+        "title": "Professionelle Barkeeper",
+        "description": "Erfahrene Barkeeper mit Leidenschaft für erstklassige Cocktails und Service. Wir bringen 10+ Jahre internationale Bar-Erfahrung zu deinem Event."
+      },
+      "flexible": {
+        "title": "Flexibel buchbar",
+        "description": "Von kleinen Feiern bis zu Großevents – wir passen uns deinen Bedürfnissen an. Für 50-500+ Gäste, überall in München und Coburg."
+      },
+      "premium": {
+        "title": "Premium Qualität",
+        "description": "Handgemachte Cocktails mit den besten Spirituosen. Deine Gäste bekommen Bar-Qualität, die man schmeckt und die im Gedächtnis bleibt."
+      }
+    }
   }
 }

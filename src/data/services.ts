@@ -80,7 +80,7 @@ export const servicePackages = {
         '3 Barkeeper im Schichtbetrieb',
         'Empfang + Abend-Service',
         'Themen-Cocktails nach Wunsch',
-        'Premium-Dekoration in Ihren Hochzeitsfarben',
+        'Premium-Dekoration in deinen Hochzeitsfarben',
         'Mitternachtsbar möglich',
         'Signature Wedding Cocktail',
         '8+ Stunden durchgehender Service',
@@ -93,7 +93,7 @@ export const servicePackages = {
       features: [
         'Komplette Event-Planung',
         '4+ Barkeeper (Schichtbetrieb)',
-        'Persönliche Cocktail-Kreationen mit Ihren Namen',
+        'Persönliche Cocktail-Kreationen mit deinen Namen',
         'Luxus-Spirituosen & Champagner',
         'Personalisierte Dekoration & Menükarten',
         'VIP-Bar für Brautpaar & Familie',
@@ -317,7 +317,7 @@ export const servicePackages = {
         'Luxus-Spirituosen & Champagner',
         'Individuelles Cocktail-Konzept',
         'Themen-Dekoration nach Wunsch',
-        'Signature-Drinks für Ihre Feier',
+        'Signature-Drinks für deine Feier',
         'Unlimited Service',
         'Persönlicher Event-Koordinator',
       ],
@@ -333,7 +333,7 @@ export const servicePackages = {
         'Bis zu 50 verschiedene Gins',
         'Professionelle Verkostungsleitung',
         'Mobile Bar inklusive',
-        'An einem Ort Ihrer Wahl',
+        'An einem Ort deiner Wahl',
         'Komplettes Equipment',
         'Keine Infrastruktur nötig',
       ],
@@ -376,7 +376,7 @@ export const servicePackages = {
         'Bis zu 50 verschiedene Gins',
         'Professionelle Verkostungsleitung',
         'Mobile Bar inklusive',
-        'An einem Ort Ihrer Wahl',
+        'An einem Ort deiner Wahl',
         'Komplettes Equipment',
         'Keine Infrastruktur nötig',
       ],
@@ -423,19 +423,19 @@ export const serviceFAQs = {
         'Die beliebtesten Zeitpunkte sind der Sektempfang (nach der Trauung), während der Fotosession der Brautpaares, oder als Mitternachtsbar/Late-Night-Bar. Viele Paare buchen uns auch für den ganzen Tag – von Empfang bis Mitternacht.',
     },
     {
-      question: 'Können Sie Cocktails in unseren Hochzeitsfarben kreieren?',
+      question: 'Könnt ihr Cocktails in unseren Hochzeitsfarben kreieren?',
       answer:
-        'Ja, absolut! Wir können Farben, Garnierungen und sogar die Drinks selbst an Ihre Hochzeitsfarben anpassen. Blush Pink, Gold, Smaragdgrün – alles ist möglich. Auch personalisierte Cocktail-Namen mit Ihren Vornamen sind sehr beliebt.',
+        'Ja, absolut! Wir können Farben, Garnierungen und sogar die Drinks selbst an eure Hochzeitsfarben anpassen. Blush Pink, Gold, Smaragdgrün – alles ist möglich. Auch personalisierte Cocktail-Namen mit euren Vornamen sind sehr beliebt.',
     },
     {
       question: 'Wie viele Cocktails sollten wir pro Gast einplanen?',
       answer:
-        'Für einen 3-stündigen Empfang rechnen wir ca. 2-3 Drinks pro Gast. Bei Ganztags-Service ca. 4-6 Drinks pro Gast (verteilt über den Tag/Abend). Wir passen die Mengen an Ihre Gästeanzahl und Dauer an.',
+        'Für einen 3-stündigen Empfang rechnen wir ca. 2-3 Drinks pro Gast. Bei Ganztags-Service ca. 4-6 Drinks pro Gast (verteilt über den Tag/Abend). Wir passen die Mengen an eure Gästeanzahl und Dauer an.',
     },
     {
-      question: 'Können Sie auch mit unserer Hochzeitslocation zusammenarbeiten?',
+      question: 'Könnt ihr auch mit unserer Hochzeitslocation zusammenarbeiten?',
       answer:
-        'Ja, wir haben Erfahrung mit vielen Hochzeitslocations in München, Coburg und Umgebung. Wir klären im Vorfeld mit der Location alle Details (Stromanschluss, Aufbaufläche, Zeitplan). Falls Ihre Location spezielle Anforderungen hat, finden wir gemeinsam eine Lösung.',
+        'Ja, wir haben Erfahrung mit vielen Hochzeitslocations in München, Coburg und Umgebung. Wir klären im Vorfeld mit der Location alle Details (Stromanschluss, Aufbaufläche, Zeitplan). Falls eure Location spezielle Anforderungen hat, finden wir gemeinsam eine Lösung.',
     },
     {
       question: 'Was ist mit Gästen, die keinen Alkohol trinken?',
@@ -445,40 +445,40 @@ export const serviceFAQs = {
     {
       question: 'Können wir vor der Hochzeit eine Verkostung machen?',
       answer:
-        'Ja! Für Premium- und Luxury-Pakete bieten wir eine Vorab-Verkostung an (ca. 4-6 Wochen vor der Hochzeit). So können Sie Ihre Lieblings-Cocktails auswählen und wir können Ihren persönlichen Signature-Drink entwickeln. Dies ist im Paket enthalten.',
+        'Ja! Für Premium- und Luxury-Pakete bieten wir eine Vorab-Verkostung an (ca. 4-6 Wochen vor der Hochzeit). So könnt ihr eure Lieblings-Cocktails auswählen und wir können euren persönlichen Signature-Drink entwickeln. Dies ist im Paket enthalten.',
     },
   ] as FAQ[],
 
   firmenfeiern: [
     {
-      question: 'Wie viel Vorlauf benötigen Sie für eine Firmenfeier?',
+      question: 'Wie viel Vorlauf benötigt ihr für eine Firmenfeier?',
       answer:
-        'Idealerweise sollten Sie 4-6 Wochen im Voraus buchen, besonders während der Hauptsaison (Sommer und Weihnachtszeit). Für kurzfristige Anfragen kontaktieren Sie uns bitte direkt – oft können wir auch bei kürzerer Vorlaufzeit helfen.',
+        'Idealerweise solltet ihr 4-6 Wochen im Voraus buchen, besonders während der Hauptsaison (Sommer und Weihnachtszeit). Für kurzfristige Anfragen kontaktiert uns bitte direkt – oft können wir auch bei kürzerer Vorlaufzeit helfen.',
     },
     {
-      question: 'Können Sie Cocktails an unser Corporate Design anpassen?',
+      question: 'Könnt ihr Cocktails an unser Corporate Design anpassen?',
       answer:
-        'Ja, absolut! Wir können Farben, Garnierungen und sogar die Namengebung der Cocktails an Ihr Firmen-Branding anpassen. Auch personalisierte Cocktail-Menükarten in Ihrem Corporate Design sind möglich.',
+        'Ja, absolut! Wir können Farben, Garnierungen und sogar die Namengebung der Cocktails an euer Firmen-Branding anpassen. Auch personalisierte Cocktail-Menükarten in eurem Corporate Design sind möglich.',
     },
     {
-      question: 'Bieten Sie auch alkoholfreie Optionen an?',
+      question: 'Bietet ihr auch alkoholfreie Optionen an?',
       answer:
         'Selbstverständlich! Zu jedem Cocktail bieten wir eine alkoholfreie Alternative. Wir können auch komplett alkoholfreie Events betreuen, falls gewünscht.',
     },
     {
       question: 'Was ist im Preis inbegriffen?',
       answer:
-        'Der Paketpreis umfasst alle Barkeeper, die komplette Bar-Ausstattung (Shaker, Gläser, Dekoration), alle Zutaten, Eiswürfel, Servietten und die Auf- und Abbauzeit. Lediglich die Location müssen Sie separat organisieren.',
+        'Der Paketpreis umfasst alle Barkeeper, die komplette Bar-Ausstattung (Shaker, Gläser, Dekoration), alle Zutaten, Eiswürfel, Servietten und die Auf- und Abbauzeit. Lediglich die Location müsst ihr separat organisieren.',
     },
     {
-      question: 'Welche Locations in München und Coburg bedienen Sie?',
+      question: 'Welche Locations in München und Coburg bedient ihr?',
       answer:
-        'Wir kommen zu Ihnen – egal ob Firmengelände, gemietete Eventlocation, Biergarten oder Outdoor-Veranstaltung. Die einzige Voraussetzung ist ein Stromanschluss und ausreichend Platz für unsere mobile Bar.',
+        'Wir kommen zu euch – egal ob Firmengelände, gemietete Eventlocation, Biergarten oder Outdoor-Veranstaltung. Die einzige Voraussetzung ist ein Stromanschluss und ausreichend Platz für unsere mobile Bar.',
     },
     {
       question: 'Können wir vor dem Event eine Cocktail-Verkostung machen?',
       answer:
-        'Ja, für Premium- und VIP-Pakete bieten wir eine Vorab-Verkostung an, bei der Sie Ihre Lieblingscocktails auswählen können. Dies ist besonders bei individuellen Signature-Drinks empfehlenswert.',
+        'Ja, für Premium- und VIP-Pakete bieten wir eine Vorab-Verkostung an, bei der ihr eure Lieblingscocktails auswählen könnt. Dies ist besonders bei individuellen Signature-Drinks empfehlenswert.',
     },
   ] as FAQ[],
 
@@ -486,25 +486,25 @@ export const serviceFAQs = {
     {
       question: 'Wann sollte ich für die Weihnachtsfeier buchen?',
       answer:
-        'Die Weihnachtssaison (November bis Ende Dezember) ist unsere Hochsaison. Wir empfehlen eine Buchung bereits im September oder Oktober, um Ihren Wunschtermin zu sichern. Kurzfristige Anfragen sind manchmal möglich – kontaktieren Sie uns!',
+        'Die Weihnachtssaison (November bis Ende Dezember) ist unsere Hochsaison. Wir empfehlen eine Buchung bereits im September oder Oktober, um euren Wunschtermin zu sichern. Kurzfristige Anfragen sind manchmal möglich – kontaktiert uns!',
     },
     {
-      question: 'Welche typischen Weihnachtscocktails bieten Sie an?',
+      question: 'Welche typischen Weihnachtscocktails bietet ihr an?',
       answer:
         'Unsere Winter-Klassiker umfassen Glühwein Martini, Winter Spice Mojito, Christmas Mule, White Russian, Cranberry Gin Fizz und alkoholfreie Varianten wie Winterpunsch und Apfel-Zimt-Mocktail.',
     },
     {
-      question: 'Können Sie auch eine Punsch- oder Glühwein-Station aufbauen?',
+      question: 'Könnt ihr auch eine Punsch- oder Glühwein-Station aufbauen?',
       answer:
         'Absolut! Zusätzlich zur Cocktailbar bieten wir eine separate Heißgetränke-Station mit verschiedenen Glühwein-Variationen, Punsch und Feuerzangenbowle an. Dies ist besonders bei Outdoor-Weihnachtsfeiern beliebt.',
     },
     {
       question: 'Ist die Weihnachtsdekoration im Preis inbegriffen?',
       answer:
-        'Ja, jedes Paket enthält weihnachtliche Dekoration für die Bar. Für Premium- und VIP-Pakete verwenden wir hochwertige Dekoration mit Lichterketten, Tannenzweigen und eleganten Weihnachtselementen in Ihren Firmenfarben.',
+        'Ja, jedes Paket enthält weihnachtliche Dekoration für die Bar. Für Premium- und VIP-Pakete verwenden wir hochwertige Dekoration mit Lichterketten, Tannenzweigen und eleganten Weihnachtselementen in euren Firmenfarben.',
     },
     {
-      question: 'Können Sie auch bei Outdoor-Weihnachtsmärkten auftreten?',
+      question: 'Könnt ihr auch bei Outdoor-Weihnachtsmärkten auftreten?',
       answer:
         'Ja, wir haben Erfahrung mit Outdoor-Weihnachtsveranstaltungen. Wir benötigen lediglich Stromanschluss und bei starkem Regen/Schnee einen Unterstand oder Pavillon.',
     },
@@ -514,27 +514,27 @@ export const serviceFAQs = {
     {
       question: 'Wie funktioniert die Branding-Integration am Messestand?',
       answer:
-        'Wir können Ihre Firmenlogos auf die Bar anbringen, personalisierte Cocktail-Namen mit Ihren Produkten verknüpfen und die Dekoration in Ihren Corporate Colors gestalten. Auch gebrandete Gläser, Servietten und Menükarten sind möglich.',
+        'Wir können eure Firmenlogos auf die Bar anbringen, personalisierte Cocktail-Namen mit euren Produkten verknüpfen und die Dekoration in euren Corporate Colors gestalten. Auch gebrandete Gläser, Servietten und Menükarten sind möglich.',
     },
     {
-      question: 'Wie viele Drinks können Sie pro Stunde servieren?',
+      question: 'Wie viele Drinks könnt ihr pro Stunde servieren?',
       answer:
         'Bei Messen mit hohem Durchlauf (z.B. ISPO, Ambiente) servieren wir ca. 30-50 Drinks pro Barkeeper und Stunde. Für Premium-Service mit komplexeren Cocktails ca. 20-30 Drinks pro Stunde. Wir passen die Anzahl der Barkeeper entsprechend an.',
     },
     {
-      question: 'Können Sie bei allen Messen in München auftreten?',
+      question: 'Könnt ihr bei allen Messen in München auftreten?',
       answer:
         'Ja, wir haben Erfahrung mit allen großen Messen in München (Messe München Riem) sowie kleineren Messen und Ausstellungen. Wir kümmern uns um alle Anmeldungen und Genehmigungen in Abstimmung mit der Messeleitung.',
     },
     {
       question: 'Was kostet der Service bei mehrtägigen Messen?',
       answer:
-        'Bei mehrtägigen Events (z.B. 3-5 Tage) bieten wir attraktive Paketpreise. Ein durchschnittliches 3-Tage-Paket liegt bei €4.500-€6.000, abhängig von Besucherzahl und Service-Level. Kontaktieren Sie uns für ein individuelles Angebot.',
+        'Bei mehrtägigen Events (z.B. 3-5 Tage) bieten wir attraktive Paketpreise. Ein durchschnittliches 3-Tage-Paket liegt bei €4.500-€6.000, abhängig von Besucherzahl und Service-Level. Kontaktiert uns für ein individuelles Angebot.',
     },
     {
       question: 'Benötigen wir eine spezielle Ausstattung am Stand?',
       answer:
-        'Wir bringen alles mit – Sie benötigen nur einen Stromanschluss und ausreichend Platz (ca. 2,5x2 Meter für die Basic-Bar, mehr für Premium-Setups). Wasseranschluss ist optional, wir bringen eigene Wasserkanister mit.',
+        'Wir bringen alles mit – ihr benötigt nur einen Stromanschluss und ausreichend Platz (ca. 2,5x2 Meter für die Basic-Bar, mehr für Premium-Setups). Wasseranschluss ist optional, wir bringen eigene Wasserkanister mit.',
     },
   ] as FAQ[],
 
@@ -547,7 +547,7 @@ export const serviceFAQs = {
     {
       question: 'Wo finden die Workshops statt?',
       answer:
-        'Wir kommen zu Ihnen! Ob in Ihren Firmenräumen, einer gemieteten Location oder bei Ihnen zuhause – wir bringen alle Equipment mit. Alternativ bieten wir auch Workshops in Partner-Locations in München und Coburg an.',
+        'Wir kommen zu euch! Ob in euren Firmenräumen, einer gemieteten Location oder bei euch zuhause – wir bringen alle Equipment mit. Alternativ bieten wir auch Workshops in Partner-Locations in München und Coburg an.',
     },
     {
       question: 'Wie viele Personen können teilnehmen?',
@@ -557,7 +557,7 @@ export const serviceFAQs = {
     {
       question: 'Eignet sich das als Team-Building-Maßnahme?',
       answer:
-        'Absolut! Unsere Team-Building-Kurse fördern Kommunikation, Kreativität und Zusammenarbeit. Mit Team-Challenges, Cocktail-Wettbewerben und gemeinsamen Erfolgserlebnissen stärken Sie den Teamgeist auf unterhaltsame Art.',
+        'Absolut! Unsere Team-Building-Kurse fördern Kommunikation, Kreativität und Zusammenarbeit. Mit Team-Challenges, Cocktail-Wettbewerben und gemeinsamen Erfolgserlebnissen stärken wir den Teamgeist auf unterhaltsame Art.',
     },
     {
       question: 'Können Teilnehmer auch alkoholfreie Varianten mixen?',
@@ -575,7 +575,7 @@ export const serviceFAQs = {
     {
       question: 'Für welche privaten Anlässe eignet sich Velobar?',
       answer:
-        'Perfekt für Geburtstage (18., 30., 40., 50., etc.), Hochzeitstage, Verlobungsfeiern, Gartenpartys, JGA (Junggesellenabschiede), Taufen, Konfirmationen und alle anderen Anlässe, bei denen Sie Ihre Gäste mit erstklassigen Cocktails begeistern möchten.',
+        'Perfekt für Geburtstage (18., 30., 40., 50., etc.), Hochzeitstage, Verlobungsfeiern, Gartenpartys, JGA (Junggesellenabschiede), Taufen, Konfirmationen und alle anderen Anlässe, bei denen ihr eure Gäste mit erstklassigen Cocktails begeistern möchtet.',
     },
     {
       question: 'Wie viel Platz benötigt die mobile Bar?',
@@ -585,22 +585,22 @@ export const serviceFAQs = {
     {
       question: 'Können wir die Cocktailkarte selbst zusammenstellen?',
       answer:
-        'Ja! Sie können aus unserer Cocktailkarte Ihre Favoriten wählen oder uns Wünsche mitteilen. Wir beraten Sie gerne, welche Cocktails zu Ihrem Anlass und Ihren Gästen passen. Für Premium- und Luxus-Pakete kreieren wir auch personalisierte Signature-Drinks.',
+        'Ja! Ihr könnt aus unserer Cocktailkarte eure Favoriten wählen oder uns Wünsche mitteilen. Wir beraten euch gerne, welche Cocktails zu eurem Anlass und euren Gästen passen. Für Premium- und Luxus-Pakete kreieren wir auch personalisierte Signature-Drinks.',
     },
     {
       question: 'Was passiert bei schlechtem Wetter bei Gartenpartys?',
       answer:
-        'Bei Outdoor-Events sollten Sie einen Plan B haben (Pavillon, Überdachung oder Indoor-Alternative). Wir selbst sind wetterfest ausgestattet, aber für Ihre Gäste empfehlen wir einen Regenschutz. Kontaktieren Sie uns bei Wettersorgen vorab – wir finden eine Lösung!',
+        'Bei Outdoor-Events solltet ihr einen Plan B haben (Pavillon, Überdachung oder Indoor-Alternative). Wir selbst sind wetterfest ausgestattet, aber für eure Gäste empfehlen wir einen Regenschutz. Kontaktiert uns bei Wettersorgen vorab – wir finden eine Lösung!',
     },
     {
-      question: 'Können Sie auch spezielle Diät-Wünsche berücksichtigen?',
+      question: 'Könnt ihr auch spezielle Diät-Wünsche berücksichtigen?',
       answer:
-        'Ja, teilen Sie uns vorab mit, wenn Gäste Allergien haben oder vegan/vegetarisch leben. Wir verwenden dann beispielsweise Aquafaba statt Eiweiß, vegane Sirupe und achten auf entsprechende Garnierungen.',
+        'Ja, teilt uns vorab mit, wenn Gäste Allergien haben oder vegan/vegetarisch leben. Wir verwenden dann beispielsweise Aquafaba statt Eiweiß, vegane Sirupe und achten auf entsprechende Garnierungen.',
     },
     {
       question: 'Wie läuft die Bezahlung ab?',
       answer:
-        'Nach Buchung erhalten Sie eine Rechnung mit 30% Anzahlung. Den Restbetrag begleichen Sie nach dem Event per Überweisung. Bei sehr kurzfristigen Buchungen kann Vorauszahlung erforderlich sein.',
+        'Nach Buchung erhaltet ihr eine Rechnung mit 30% Anzahlung. Den Restbetrag begleicht ihr nach dem Event per Überweisung. Bei sehr kurzfristigen Buchungen kann Vorauszahlung erforderlich sein.',
     },
   ] as FAQ[],
 
@@ -618,17 +618,17 @@ export const serviceFAQs = {
     {
       question: 'Was ist im Service alles enthalten?',
       answer:
-        'Wir bringen die mobile Bar, professionelle Barkeeper, Service-Mitarbeiter und kümmern uns um alle Abläufe. Sie müssen sich um nichts kümmern - nach der Buchung und Getränkeabsprache können Sie sich entspannt zurücklehnen.',
+        'Wir bringen die mobile Bar, professionelle Barkeeper, Service-Mitarbeiter und kümmern uns um alle Abläufe. Ihr müsst euch um nichts kümmern - nach der Buchung und Getränkeabsprache könnt ihr euch entspannt zurücklehnen.',
     },
     {
       question: 'Wie läuft die Buchung eines Gin-Tastings ab?',
       answer:
-        'Schreiben Sie uns einfach wo, wann und wie viele Personen Sie erwarten. Sie erhalten dann ein schnelles und unverbindliches Angebot für Ihr mobiles Gin-Tasting in München. Preis: ab 49€ pro Person.',
+        'Schreibt uns einfach wo, wann und wie viele Personen ihr erwartet. Ihr erhaltet dann ein schnelles und unverbindliches Angebot für euer mobiles Gin-Tasting in München. Preis: ab 49€ pro Person.',
     },
     {
       question: 'Können wir unsere Lieblingsdrinks bestellen?',
       answer:
-        'Selbstverständlich! Wir besprechen Ihre Lieblingsdrinks und erstellen eine individuelle Getränkekarte für Ihr Event.',
+        'Selbstverständlich! Wir besprechen eure Lieblingsdrinks und erstellen eine individuelle Getränkekarte für euer Event.',
     },
     {
       question: 'Wie mobil ist die Velo.Bar wirklich?',
@@ -646,12 +646,12 @@ export const serviceFAQs = {
     {
       question: 'Was macht die Gin-Tastings in Coburg besonders?',
       answer:
-        'Wir bieten mobile Gin-Tastings mit bis zu 50 verschiedenen Gins an einem Ort Ihrer Wahl. Perfekt für private Runden, Firmenevents oder besondere Anlässe. Ab 49€ pro Person.',
+        'Wir bieten mobile Gin-Tastings mit bis zu 50 verschiedenen Gins an einem Ort eurer Wahl. Perfekt für private Runden, Firmenevents oder besondere Anlässe. Ab 49€ pro Person.',
     },
     {
       question: 'Wie kann ich die Velo.Bar für Coburg buchen?',
       answer:
-        'Schreiben Sie uns einfach wo, wann und wie viele Personen Sie erwarten. Wir erstellen Ihnen dann ein schnelles und unverbindliches Angebot für Ihr Event in Coburg.',
+        'Schreibt uns einfach wo, wann und wie viele Personen ihr erwartet. Wir erstellen euch dann ein schnelles und unverbindliches Angebot für euer Event in Coburg.',
     },
     {
       question: 'Brauche ich eine spezielle Location?',

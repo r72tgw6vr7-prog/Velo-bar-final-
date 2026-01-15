@@ -64,6 +64,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   // Effect to save language to localStorage when it changes
   useEffect(() => {
+    console.log('🌍 Locale changed to:', language);
     localStorage.setItem('velo-language', language);
     // Update document lang attribute
     document.documentElement.lang = language;

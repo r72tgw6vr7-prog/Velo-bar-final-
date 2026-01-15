@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const clientLogos = [
   { id: 1, src: '/images/clients/client-01.svg', alt: 'Partner 1' },
@@ -30,19 +31,22 @@ interface ClientLogosProps {
 export const ClientLogos: React.FC<ClientLogosProps> = ({
   className = '',
   variant: _variant = 'marquee',
-  title = 'Vertrauen von führenden Unternehmen',
-  subtitle = 'Diese Unternehmen haben uns bereits für ihre Events gebucht',
+  title,
+  subtitle,
   prominent = false,
 }) => {
+  const { t } = useLanguage();
   const logos = clientLogos;
   const sectionClass = prominent ? 'bg-transparent' : 'bg-surface';
+  const heading = title ?? t('clientLogos.title');
+  const sub = subtitle ?? t('clientLogos.subtitle');
 
   return (
     <section className={`${sectionClass} py-16 ${className}`}>
       <div className='container mx-auto px-8'>
         <div className='mb-10 text-center'>
-          <h2 className='text-accent text-3xl font-bold md:text-4xl'>{title}</h2>
-          <p className='mt-4 text-base font-semibold text-white md:text-lg'>{subtitle}</p>
+          <h2 className='text-accent text-3xl font-bold md:text-4xl'>{heading}</h2>
+          <p className='mt-4 text-base font-semibold text-white md:text-lg'>{sub}</p>
         </div>
 
         <div className='overflow-hidden'>

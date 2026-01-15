@@ -1,0 +1,27 @@
+{
+  "name": "Velo.Bar – Mobile Cocktailbar",
+  "short_name": "Velo.Bar",
+  "description": "Premium mobile Cocktailbar für Events in München & Coburg",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#D4886B",
+  "background_color": "#0F1419",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

@@ -13,7 +13,12 @@
 
 import React from 'react';
 import Pagination from '@/components/ui/Pagination/Pagination.tsx';
-import { Star, Users, Calendar, Award, Quote } from 'lucide-react';
+import Star from 'lucide-react/dist/esm/icons/star';
+import Users from 'lucide-react/dist/esm/icons/users';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Award from 'lucide-react/dist/esm/icons/award';
+import Quote from 'lucide-react/dist/esm/icons/quote';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 // Client logos - using placeholder paths, replace with actual client logos
 const clientLogos = [
@@ -29,26 +34,26 @@ const metrics = [
   {
     icon: Calendar,
     value: '500+',
-    label: 'Events durchgeführt',
-    description: 'seit 2018',
+    labelKey: 'successStories.metrics.events.label',
+    descriptionKey: 'successStories.metrics.events.description',
   },
   {
     icon: Users,
     value: '50.000+',
-    label: 'Gäste bewirtet',
-    description: 'in München & Coburg',
+    labelKey: 'successStories.metrics.guests.label',
+    descriptionKey: 'successStories.metrics.guests.description',
   },
   {
     icon: Star,
     value: '4.9/5',
-    label: 'Kundenbewertung',
-    description: 'bei 87+ Rezensionen',
+    labelKey: 'successStories.metrics.rating.label',
+    descriptionKey: 'successStories.metrics.rating.description',
   },
   {
     icon: Award,
     value: '100%',
-    label: 'Weiterempfehlung',
-    description: 'unserer B2B-Kunden',
+    labelKey: 'successStories.metrics.recommendation.label',
+    descriptionKey: 'successStories.metrics.recommendation.description',
   },
 ];
 
@@ -95,11 +100,14 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
   variant = 'full',
   showTestimonials = true,
   className = '',
-  title = 'Vertrauen von führenden Unternehmen',
-  subtitle = 'Wir haben für über 500 Events geliefert – von DAX-Konzernen bis innovative Startups.',
+  title,
+  subtitle,
   testimonialsPageSize,
 }) => {
+  const { t } = useLanguage();
   const [tPage, setTPage] = React.useState(1);
+  const resolvedTitle = title ?? t('successStories.title');
+  const resolvedSubtitle = subtitle ?? t('successStories.subtitle');
   const tPageSize = testimonialsPageSize ?? testimonials.length;
   const start = (tPage - 1) * tPageSize;
   const end = start + tPageSize;
@@ -117,8 +125,8 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
                 <metric.icon className='text-accent-primary h-6 w-6' />
               </div>
               <div className='text-on-light text-2xl font-bold md:text-3xl'>{metric.value}</div>
-              <div className='text-sm font-medium text-black/80'>{metric.label}</div>
-              <div className='text-xs text-black/60'>{metric.description}</div>
+              <div className='text-sm font-medium text-black/80'>{t(metric.labelKey)}</div>
+              <div className='text-xs text-black/60'>{t(metric.descriptionKey)}</div>
             </div>
           ))}
         </div>
@@ -130,7 +138,7 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
   if (variant === 'logos-only') {
     return (
       <div className={`py-8 ${className}`}>
-        <p className='mb-8 text-center text-sm text-black/60'>Vertraut von führenden Unternehmen</p>
+        <p className='mb-8 text-center text-sm text-black/60'>{t('clientLogos.title')}</p>
         <div className='flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale transition transition-all duration-200 ease-out hover:grayscale-0'>
           {clientLogos.map((client, index) => (
             <div key={index} className='flex h-8 items-center md:h-10'>
@@ -147,7 +155,7 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
   if (variant === 'compact') {
     return (
       <div className={`bg-surface-tinted rounded-xl p-6 ${className}`}>
-        <h3 className='text-on-light mb-8 text-lg font-bold'>Warum Velo.Bar?</h3>
+        <h3 className='text-on-light mb-8 text-lg font-bold'>{t('whyVeloBarSection.title')}</h3>
         <div className='space-y-8'>
           {metrics.slice(0, 3).map((metric, index) => (
             <div key={index} className='flex items-center gap-0'>
@@ -156,7 +164,7 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
               </div>
               <div>
                 <div className='text-on-light font-bold'>{metric.value}</div>
-                <div className='text-sm text-black/70'>{metric.label}</div>
+                <div className='text-sm text-black/70'>{t(metric.labelKey)}</div>
               </div>
             </div>
           ))}
@@ -186,14 +194,14 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
       <div className='mx-auto max-w-6xl px-8 sm:px-8 lg:px-8'>
         {/* Header */}
         <div className='mb-16 text-center'>
-          <h2 className='text-on-light mb-8 text-3xl font-bold md:text-4xl'>{title}</h2>
-          <p className='mx-auto max-w-2xl text-lg text-black/70'>{subtitle}</p>
+          <h2 className='text-on-light mb-8 text-3xl font-bold md:text-4xl'>{resolvedTitle}</h2>
+          <p className='mx-auto max-w-2xl text-lg text-black/70'>{resolvedSubtitle}</p>
         </div>
 
         {/* Client Logos */}
         <div className='mb-16'>
           <p className='mb-8 text-center text-sm font-medium tracking-wide text-black/60 uppercase'>
-            Bekannt aus Events für
+            {t('successStories.featuredAt')}
           </p>
           <div className='flex flex-wrap items-center justify-center gap-8'>
             {clientLogos.map((client, index) => (
@@ -219,8 +227,8 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
                   <metric.icon className='text-accent-primary h-7 w-7' />
                 </div>
                 <div className='mb-0 text-3xl font-bold text-white md:text-4xl'>{metric.value}</div>
-                <div className='text-sm font-medium text-white/80'>{metric.label}</div>
-                <div className='text-xs text-white/80'>{metric.description}</div>
+                <div className='text-sm font-medium text-white/80'>{t(metric.labelKey)}</div>
+                <div className='text-xs text-white/80'>{t(metric.descriptionKey)}</div>
               </div>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
@@ -14,7 +15,7 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
     headline: 'Alkoholfreie Cocktails für Firmenevents: Der Mocktail-Trend 2025',
     description:
       '45% mehr Nachfrage: Warum alkoholfreie Cocktails bei B2B-Events immer wichtiger werden und wie Sie sie professionell anbieten.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -44,20 +45,21 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='Alkoholfreie Cocktails für Firmenevents: Der Mocktail-Trend 2025 | Velo.Bar'
-      description='45% mehr Nachfrage: Warum alkoholfreie Cocktails bei B2B-Events immer wichtiger werden. Trend-Rezepte, Non-Alcoholic Spirits und Planungstipps.'
-      canonicalPath='/blog/alkoholfreie-cocktails-firmenevents'
-      structuredData={schemaData}
-      withContainer={false}
-      className='bg-navy'
-    >
-      {/* Hero Section */}
-      <Section
-        container='narrow'
-        spacing='xl'
-        className='from-navy via-navy-light to-accent-primary relative overflow-hidden bg-linear-to-br text-white'
+    <SiteBackground>
+      <PageTemplate
+        title='Alkoholfreie Cocktails für Firmenevents: Der Mocktail-Trend 2025 | Velo.Bar'
+        description='45% mehr Nachfrage: Warum alkoholfreie Cocktails bei B2B-Events immer wichtiger werden. Trend-Rezepte, Non-Alcoholic Spirits und Planungstipps.'
+        canonicalPath='/blog/alkoholfreie-cocktails-firmenevents'
+        structuredData={schemaData}
+        withContainer={false}
+        background='transparent'
       >
+        {/* Hero Section */}
+        <Section
+          container='narrow'
+          spacing='xl'
+          className='from-navy via-navy-light to-accent-primary relative overflow-hidden bg-linear-to-br text-white'
+        >
         <div className='absolute inset-0 z-0 opacity-20'>
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(var(--orange-rgb),0.4),transparent_50%)]' />
         </div>
@@ -400,7 +402,8 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
           </div>
         </section>
       </Section>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

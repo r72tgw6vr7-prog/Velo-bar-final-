@@ -6,122 +6,129 @@ import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 import { ScrollReveal } from '@/components/atoms/ScrollReveal.tsx';
 import { Helmet } from 'react-helmet-async';
 import { getServiceSchema, getBreadcrumbSchema, combineSchemas } from '@/seo/schema.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 type ServicesContentItem = {
+  id: string;
   title: string;
   description: string;
   content: React.ReactNode;
-};
-
-const servicesContent: ServicesContentItem[] = [
-  {
-    title: 'Firmenfeiern',
-    description:
-      'Mobile Cocktailbar für Firmenfeiern von 50–500 Gästen. Premium-Drinks, professionelles Team und reibungslose Abläufe – perfekt für Weihnachtsfeiern, Sommerfeste und Kick-offs.',
-    content: (
-      <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
-        <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
-          Corporate Events
-        </h3>
-        <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
-          <li>✓ Komplettes Bar-Setup inkl. Equipment</li>
-          <li>✓ Individuelle Cocktailkarte im CI des Unternehmens</li>
-          <li>✓ 2–4 Barkeeper je nach Gästezahl</li>
-          <li>✓ Reporting & Abrechnung nach Event</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: 'Weihnachtsfeiern',
-    description:
-      'Winterliche Signature-Drinks, Glühwein-Varianten und stimmungsvolle Dekoration – garantiert festliche Atmosphäre für Teams und Kund:innen.',
-    content: (
-      <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
-        <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
-          Seasonal Specials
-        </h3>
-        <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
-          <li>✓ Glühwein, Punsch & alkoholfreie Alternativen</li>
-          <li>✓ Zimt, Orange & Gewürz-Essenzen für Winter-Cocktails</li>
-          <li>✓ Stimmungsvolles Bar-Setup mit warmen Lichtern</li>
-          <li>✓ Optionale Team-Challenges wie Cocktail-Workshops</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: 'Messen & Trade Shows',
-    description:
-      'Kompakte Bar für Messestände, Showrooms und Produktlaunches. Maximiert Verweildauer und Gesprächsqualität an Ihrem Stand.',
-    content: (
-      <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
-        <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>Messepakete</h3>
-        <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
-          <li>✓ Kompakte Fläche (ab 2×2 m)</li>
-          <li>✓ Branding-Optionen an Bar & Gläsern</li>
-          <li>✓ Schneller Auf- und Abbau auch bei straffen Timings</li>
-          <li>✓ Flexible Zeitslots (z.B. Messe-Happy-Hour)</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: 'Team-Events',
-    description:
-      'Mixology-Workshops und interaktive Tastings, die Teams zusammenbringen und neue Geschmackserlebnisse eröffnen.',
-    content: (
-      <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
-        <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
-          Mixology Sessions
-        </h3>
-        <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
-          <li>✓ Geführte Cocktail-Workshops mit Profi-Barkeeper:innen</li>
-          <li>✓ Team-Challenges & Blind-Tastings</li>
-          <li>✓ Wahlweise alkoholfreie oder klassische Rezepte</li>
-          <li>✓ Dokumentation der Rezepte zum Mitnehmen</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: 'Private Feiern',
-    description:
-      'Geburtstage, Gartenfeste, Jubiläen – wir bringen die Bar zu Ihnen nach Hause oder in Ihre Wunschlocation.',
-    content: (
-      <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
-        <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
-          Private Events
-        </h3>
-        <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
-          <li>✓ 1–2 Barkeeper abgestimmt auf Gästezahl</li>
-          <li>✓ Auswahl klassischer & moderner Cocktails</li>
-          <li>✓ Optional: Gin- oder Cocktail-Tasting</li>
-          <li>✓ Auf Wunsch mit mobiler Backbar & Dekor</li>
-        </ul>
-      </div>
-    ),
-  },
-  {
-    title: 'Hochzeiten',
-    description:
-      'Begleitung Ihres Hochzeitstages von Empfang bis Mitternachtsbar. Signature Cocktails, stilvolle Präsentation und zuverlässiger Service.',
-    content: (
-      <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
-        <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>Wedding Bar</h3>
-        <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
-          <li>✓ Welcome Drinks & Aperitifs für den Empfang</li>
-          <li>✓ Individuelle Hochzeits-Signatures</li>
-          <li>✓ Nahtlose Abstimmung mit Trauzeug:innen & Location</li>
-          <li>✓ Optional: alkoholfreie Menübegleitung</li>
-        </ul>
-      </div>
-    ),
-  },
-];
+ };
 
 const ServicesPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useLanguage();
+
+  const servicesContent: ServicesContentItem[] = [
+    {
+      id: 'firmenfeiern',
+      title: t('pages.services.cards.corporate.title'),
+      description: t('pages.services.cards.corporate.description'),
+      content: (
+        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+          <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+            {t('pages.services.cards.corporate.heading')}
+          </h3>
+          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+            <li>✓ {t('pages.services.cards.corporate.bullets.0')}</li>
+            <li>✓ {t('pages.services.cards.corporate.bullets.1')}</li>
+            <li>✓ {t('pages.services.cards.corporate.bullets.2')}</li>
+            <li>✓ {t('pages.services.cards.corporate.bullets.3')}</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 'weihnachtsfeiern',
+      title: t('pages.services.cards.christmas.title'),
+      description: t('pages.services.cards.christmas.description'),
+      content: (
+        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+          <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+            {t('pages.services.cards.christmas.heading')}
+          </h3>
+          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+            <li>✓ {t('pages.services.cards.christmas.bullets.0')}</li>
+            <li>✓ {t('pages.services.cards.christmas.bullets.1')}</li>
+            <li>✓ {t('pages.services.cards.christmas.bullets.2')}</li>
+            <li>✓ {t('pages.services.cards.christmas.bullets.3')}</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 'messe',
+      title: t('pages.services.cards.trade.title'),
+      description: t('pages.services.cards.trade.description'),
+      content: (
+        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+          <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+            {t('pages.services.cards.trade.heading')}
+          </h3>
+          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+            <li>✓ {t('pages.services.cards.trade.bullets.0')}</li>
+            <li>✓ {t('pages.services.cards.trade.bullets.1')}</li>
+            <li>✓ {t('pages.services.cards.trade.bullets.2')}</li>
+            <li>✓ {t('pages.services.cards.trade.bullets.3')}</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 'team-events',
+      title: t('pages.services.cards.team.title'),
+      description: t('pages.services.cards.team.description'),
+      content: (
+        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+          <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+            {t('pages.services.cards.team.heading')}
+          </h3>
+          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+            <li>✓ {t('pages.services.cards.team.bullets.0')}</li>
+            <li>✓ {t('pages.services.cards.team.bullets.1')}</li>
+            <li>✓ {t('pages.services.cards.team.bullets.2')}</li>
+            <li>✓ {t('pages.services.cards.team.bullets.3')}</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 'private-feiern',
+      title: t('pages.services.cards.private.title'),
+      description: t('pages.services.cards.private.description'),
+      content: (
+        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+          <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+            {t('pages.services.cards.private.heading')}
+          </h3>
+          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+            <li>✓ {t('pages.services.cards.private.bullets.0')}</li>
+            <li>✓ {t('pages.services.cards.private.bullets.1')}</li>
+            <li>✓ {t('pages.services.cards.private.bullets.2')}</li>
+            <li>✓ {t('pages.services.cards.private.bullets.3')}</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 'hochzeiten',
+      title: t('pages.services.cards.weddings.title'),
+      description: t('pages.services.cards.weddings.description'),
+      content: (
+        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+          <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+            {t('pages.services.cards.weddings.heading')}
+          </h3>
+          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+            <li>✓ {t('pages.services.cards.weddings.bullets.0')}</li>
+            <li>✓ {t('pages.services.cards.weddings.bullets.1')}</li>
+            <li>✓ {t('pages.services.cards.weddings.bullets.2')}</li>
+            <li>✓ {t('pages.services.cards.weddings.bullets.3')}</li>
+          </ul>
+        </div>
+      ),
+    },
+  ];
 
   useEffect(() => {
     const checkMobile = () => {
@@ -137,23 +144,22 @@ const ServicesPage: React.FC = () => {
   // SEO: Service schema for all offerings on one page
   const servicesOverviewSchema = combineSchemas(
     getServiceSchema({
-      name: 'Mobile Cocktailbar Services',
-      description:
-        'Professionelle Cocktailbar-Services für Firmenfeiern, Hochzeiten, Messen, Team-Events und private Feiern in München und Coburg.',
+      name: t('pages.services.schema.serviceName'),
+      description: t('pages.services.schema.serviceDescription'),
       serviceType: 'Event Catering',
       areaServed: ['München', 'Coburg', 'Bayern'],
       url: 'https://www.velo-bar.com/leistungen',
     }),
     getBreadcrumbSchema([
-      { name: 'Home', url: 'https://www.velo-bar.com' },
-      { name: 'Leistungen', url: 'https://www.velo-bar.com/leistungen' },
+      { name: t('nav.home'), url: 'https://www.velo-bar.com' },
+      { name: t('nav.services'), url: 'https://www.velo-bar.com/leistungen' },
     ]),
   );
 
   return (
     <PageTemplate
-      title='Leistungen | Mobile Cocktailbar | Velo.Bar'
-      description='Alle Leistungen auf einen Blick: Firmenfeiern, Weihnachtsfeiern, Messe-Catering, Team-Events, Private Feiern und Hochzeiten in München & Coburg.'
+      title={t('pages.services.seo.title')}
+      description={t('pages.services.seo.description')}
       canonicalPath='/leistungen'
       withContainer={false}
       background='transparent'
@@ -170,9 +176,9 @@ const ServicesPage: React.FC = () => {
           className='flex min-h-[25vh] items-center'
         >
           <HeroHeading
-            eyebrow='Unsere Leistungen'
-            title='DEINE SERVICES AUF EINEN BLICK'
-            subtitle='Von Firmenfeier bis Hochzeit: Wähle den passenden Service. Wir machen dir in wenigen Minuten ein Angebot an.'
+            eyebrow={t('pages.services.hero.eyebrow')}
+            title={t('pages.services.hero.title')}
+            subtitle={t('pages.services.hero.subtitle')}
           />
         </Section>
 
@@ -185,18 +191,18 @@ const ServicesPage: React.FC = () => {
           {isMobile ? (
             <div className='mobile-services-stack space-y-6 px-6 py-8'>
               {servicesContent.map((service, index) => (
-                <div key={service.title} className='service-block-mobile space-y-4'>
+                <div key={service.id} className='service-block-mobile space-y-4'>
                   {/* Main Service Card */}
                   <ScrollReveal
                     variant='fadeUp'
                     delay={index * 0.15}
                     className='service-card-mobile'
                   >
-                    <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl bg-(--color-teal) px-10 py-12 text-(--offwhite-primary)'>
-                      <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
+                    <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl bg-(--color-bg-surface) px-10 py-12'>
+                      <h3 className='text-2xl font-semibold tracking-tight text-accent-primary'>
                         {service.title}
                       </h3>
-                      <p className='text-base leading-relaxed text-(--text-dark-tea)'>
+                      <p className='text-base leading-relaxed text-(--color-text-on-light-secondary)'>
                         {service.description}
                       </p>
                     </div>

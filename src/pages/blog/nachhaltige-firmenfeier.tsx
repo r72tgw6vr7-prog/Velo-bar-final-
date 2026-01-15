@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
@@ -14,7 +15,7 @@ const NachhaltigeFirmenfeierPage: React.FC = () => {
     headline: 'Nachhaltige Firmenfeier München: Zero-Waste Events mit Velo.Bar',
     description:
       '68% der Unternehmen priorisieren Nachhaltigkeit bei Events. So organisieren Sie eine grüne Firmenfeier mit regionalen Zutaten und CO₂-neutralem Catering.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -45,20 +46,21 @@ const NachhaltigeFirmenfeierPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='Nachhaltige Firmenfeier München: Zero-Waste & Regional | Velo.Bar'
-      description='68% der Unternehmen priorisieren Nachhaltigkeit. Zero-Waste Catering, regionale Spirits und CO₂-neutrale Events in München.'
-      canonicalPath='/blog/nachhaltige-firmenfeier'
-      structuredData={schemaData}
-      withContainer={false}
-      className='bg-navy'
-    >
-      {/* Hero Section */}
-      <Section
-        container='narrow'
-        spacing='xl'
-        className='relative overflow-hidden bg-linear-to-br from-green-900 via-emerald-800 to-teal-900 text-white'
+    <SiteBackground>
+      <PageTemplate
+        title='Nachhaltige Firmenfeier München: Zero-Waste & Regional | Velo.Bar'
+        description='68% der Unternehmen priorisieren Nachhaltigkeit. Zero-Waste Catering, regionale Spirits und CO₂-neutrale Events in München.'
+        canonicalPath='/blog/nachhaltige-firmenfeier'
+        structuredData={schemaData}
+        withContainer={false}
+        background='transparent'
       >
+        {/* Hero Section */}
+        <Section
+          container='narrow'
+          spacing='xl'
+          className='relative overflow-hidden bg-linear-to-br from-green-900 via-emerald-800 to-teal-900 text-white'
+        >
         <div className='absolute inset-0 z-0 opacity-20'>
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.4),transparent_50%)]' />
         </div>
@@ -456,7 +458,8 @@ const NachhaltigeFirmenfeierPage: React.FC = () => {
           </div>
         </section>
       </Section>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

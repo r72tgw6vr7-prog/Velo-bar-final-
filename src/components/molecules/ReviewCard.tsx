@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import Star from 'lucide-react/dist/esm/icons/star';
 
 interface ReviewCardProps {
   rating: number; // Out of 5

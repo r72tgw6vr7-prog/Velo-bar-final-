@@ -1,4 +1,10 @@
-import { Briefcase, Gift, Building2, Heart, PartyPopper, Sparkles, MapPin } from 'lucide-react';
+import Briefcase from 'lucide-react/dist/esm/icons/briefcase';
+import Gift from 'lucide-react/dist/esm/icons/gift';
+import Building2 from 'lucide-react/dist/esm/icons/building-2';
+import Heart from 'lucide-react/dist/esm/icons/heart';
+import PartyPopper from 'lucide-react/dist/esm/icons/party-popper';
+import Sparkles from 'lucide-react/dist/esm/icons/sparkles';
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';;
 import type {
   EventType,
   GuestRange,
@@ -50,7 +56,7 @@ export const guestRanges: GuestRange[] = [
 export const locations: Location[] = [
   {
     id: 'munich',
-    label: 'MUNICH',
+    label: 'MÜNCHEN',
     icon: MapPin,
     description: 'Events in und um München',
   },
@@ -63,9 +69,9 @@ export const locations: Location[] = [
 ];
 
 export const stepTitles: StepTitle[] = [
-  { step: 1, title: 'Standortwahl', subtitle: 'Wo findet Ihr Event statt?' },
-  { step: 2, title: 'Event-Basics', subtitle: 'Was planen Sie?' },
-  { step: 3, title: 'Unternehmen & Kontakt', subtitle: 'Wer sind Sie?' },
+  { step: 1, title: 'Standortwahl', subtitle: 'Wo findet dein Event statt?' },
+  { step: 2, title: 'Event-Basics', subtitle: 'Was planst du?' },
+  { step: 3, title: 'Unternehmen & Kontakt', subtitle: 'Wer bist du?' },
   { step: 4, title: 'Zusammenfassung', subtitle: 'Prüfen & Absenden' },
 ];
 

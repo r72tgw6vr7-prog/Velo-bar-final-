@@ -16,6 +16,10 @@ export default defineConfig({
       hostname: 'https://www.velo-bar.com',
       dynamicRoutes: routes,
       generateRobotsTxt: false, // Prevent conflict with manual robots.txt
+      // SEO: Add lastmod dates (Google trusts this over changefreq)
+      lastmod: new Date(),
+      changefreq: 'weekly',
+      priority: 0.8,
     }),
     // Gzip compression for production
     viteCompression({

@@ -8,6 +8,7 @@ import React from 'react';
 import { cn } from '../../utils/classname.ts';
 import { Section } from '../atoms/index.ts';
 import { Container } from '../atoms/index.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 import {
   Carousel,
   CarouselContent,
@@ -23,27 +24,6 @@ export interface Testimonial {
   author: string;
   source: string;
 }
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    text: 'Die Zusammenarbeit war von Anfang bis Ende hervorragend. Das Team hat unsere Website nicht nur optisch, sondern auch technisch auf ein neues Level gebracht – performant, zugänglich und leicht zu pflegen.',
-    author: 'M.S.',
-    source: 'Google Review',
-  },
-  {
-    id: 2,
-    text: 'Unsere Kund:innen heben besonders die saubere Codebasis, die klare Informationsarchitektur und die starke Performance hervor. Selbst komplexe Anforderungen wurden strukturiert gelöst und transparent kommuniziert.',
-    author: 'Unternehmensbewertung',
-    source: 'Projektfeedback',
-  },
-  {
-    id: 3,
-    text: 'Das Studio setzt auf individuelle digitale Lösungen und einen kollaborativen Ansatz. Von der ersten Idee bis zum Launch wurden wir eng begleitet, Entscheidungen wurden erklärt und messbare Ergebnisse standen im Fokus.',
-    author: 'TripAdvisor Review',
-    source: 'TripAdvisor Review',
-  },
-];
 
 const Star = () => (
   <svg
@@ -63,11 +43,39 @@ export interface TestimonialsCarouselProps {
 
 export function TestimonialsCarousel({
   className = '',
-  testimonialsList = testimonials,
-  title = 'Was Kunden sagen',
+  testimonialsList,
+  title,
 }: TestimonialsCarouselProps) {
+  const { t } = useLanguage();
   const [api, setApi] = React.useState<CarouselApi | null>(null);
   const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const defaultTestimonials: Testimonial[] = React.useMemo(
+    () => [
+      {
+        id: 1,
+        text: t('testimonialsCarousel.defaults.0.text'),
+        author: t('testimonialsCarousel.defaults.0.author'),
+        source: t('testimonialsCarousel.defaults.0.source'),
+      },
+      {
+        id: 2,
+        text: t('testimonialsCarousel.defaults.1.text'),
+        author: t('testimonialsCarousel.defaults.1.author'),
+        source: t('testimonialsCarousel.defaults.1.source'),
+      },
+      {
+        id: 3,
+        text: t('testimonialsCarousel.defaults.2.text'),
+        author: t('testimonialsCarousel.defaults.2.author'),
+        source: t('testimonialsCarousel.defaults.2.source'),
+      },
+    ],
+    [t],
+  );
+
+  const resolvedTestimonials = testimonialsList ?? defaultTestimonials;
+  const resolvedTitle = title ?? t('testimonialsCarousel.title');
 
   // Update current index when carousel changes
   React.useEffect(() => {
@@ -103,7 +111,7 @@ export function TestimonialsCarousel({
       spacing='2xl'
       className={cn('relative z-(--z-content)', className)}
       container='none'
-      aria-label='Customer testimonials'
+      aria-label={t('testimonialsCarousel.aria.section')}
     >
       <Container size='md'>
         <h2
@@ -114,13 +122,13 @@ export function TestimonialsCarousel({
             'animate-fade-in',
           )}
         >
-          {title}
+          {resolvedTitle}
         </h2>
 
         <div className={cn('relative')}>
           <Carousel setApi={setApi} className={cn('[--gap:1.5rem]', 'animate-fade-up')}>
             <CarouselContent>
-              {testimonialsList.map((testimonial, index) => (
+              {resolvedTestimonials.map((testimonial, index) => (
                 <CarouselItem
                   key={testimonial.id}
                   className={cn(
@@ -163,7 +171,7 @@ export function TestimonialsCarousel({
             </CarouselContent>
 
             <div className={cn('mt-6 flex items-center justify-center gap-2 md:mt-8')}>
-              {testimonialsList.map((_, index) => (
+              {resolvedTestimonials.map((_, index) => (
                 <button
                   key={`dot-${index}`}
                   className={cn(
@@ -174,7 +182,7 @@ export function TestimonialsCarousel({
                     'group',
                   )}
                   onClick={() => api?.scrollTo(index)}
-                  aria-label={`Go to slide ${index + 1}`}
+                  aria-label={`${t('testimonialsCarousel.aria.goToSlide')} ${index + 1}`}
                   aria-current={currentIndex === index ? 'true' : 'false'}
                 >
                   <span
@@ -190,8 +198,11 @@ export function TestimonialsCarousel({
               ))}
             </div>
 
-            <CarouselPrevious className={cn('hidden md:flex')} aria-label='Previous testimonial' />
-            <CarouselNext className={cn('hidden md:flex')} aria-label='Next testimonial' />
+            <CarouselPrevious
+              className={cn('hidden md:flex')}
+              aria-label={t('testimonialsCarousel.aria.previous')}
+            />
+            <CarouselNext className={cn('hidden md:flex')} aria-label={t('testimonialsCarousel.aria.next')} />
           </Carousel>
         </div>
       </Container>

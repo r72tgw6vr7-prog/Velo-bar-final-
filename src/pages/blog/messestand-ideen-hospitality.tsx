@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
@@ -12,7 +13,7 @@ const MessestandIdeenHospitalityPage: React.FC = () => {
     headline: '5 kreative Messestand-Ideen, die Besucher magnetisch anziehen',
     description:
       'Entdecken Sie innovative Messestand-Konzepte mit Hospitality-Faktor: Speakeasy Bars, Molecular Cocktails, Zero-Waste Konzepte und mehr für BAUMA, ISPO & Co.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -35,14 +36,15 @@ const MessestandIdeenHospitalityPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='5 kreative Messestand-Ideen mit Hospitality-Faktor | Velo.Bar'
-      description='Innovative Messestand-Konzepte für Marketing Manager: Speakeasy Bars, Molecular Cocktails, Zero-Waste Konzepte. Steigern Sie Ihren Messe-Erfolg.'
-      canonicalPath='/blog/messestand-ideen-hospitality'
-      structuredData={schemaData}
-      containerSize='narrow'
-    >
-      <article className='prose prose-lg max-w-none'>
+    <SiteBackground>
+      <PageTemplate
+        title='5 kreative Messestand-Ideen mit Hospitality-Faktor | Velo.Bar'
+        description='Innovative Messestand-Konzepte für Marketing Manager: Speakeasy Bars, Molecular Cocktails, Zero-Waste Konzepte. Steigern Sie Ihren Messe-Erfolg.'
+        canonicalPath='/blog/messestand-ideen-hospitality'
+        structuredData={schemaData}
+        containerSize='narrow'
+      >
+        <article className='prose prose-lg max-w-none'>
         {/* Blog Header */}
         <header className='mb-16 text-center'>
           <div className='mb-8'>
@@ -391,8 +393,9 @@ const MessestandIdeenHospitalityPage: React.FC = () => {
             BAUMA, ISPO & Co. und wissen, was wirklich funktioniert.
           </p>
         </footer>
-      </article>
-    </PageTemplate>
+        </article>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

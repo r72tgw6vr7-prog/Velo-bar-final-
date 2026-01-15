@@ -1,37 +1,28 @@
 import { Section } from '@/components/atoms/Section/Section.tsx';
+import { ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
 import type { FC } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const signatureCocktails = [
   {
-    name: 'Himbeer - Hibiskus Fizz',
+    key: 'raspberryHibiscusFizz',
     imageBase: 'himbeer-hibiskus-fizz',
-    ingredients: ['Vodka', 'SESES Himbeere - Hibiskus', 'Soda', 'Zitrone', 'Zucker'],
-    type: 'Refreshing · Fruity',
-    description:
-      'Ein eleganter Fruchtcocktail mit floralen Noten und spritziger Frische. Perfekt für den Sommer.',
+    ingredients: ['Vodka', 'SESES Raspberry - Hibiscus', 'Soda', 'Lemon', 'Sugar'],
   },
   {
-    name: 'Basil Smash',
+    key: 'basilSmash',
     imageBase: 'basil-smash',
-    ingredients: ['Gin', 'Basilikum', 'Zitrone', 'Zucker'],
-    type: 'Fresh · Herbal',
-    description:
-      'Frischer Basilikum trifft auf Zitrus und eine elegante Gin-Basis – aromatisch und lebendig.',
+    ingredients: ['Gin', 'Basil', 'Lemon', 'Sugar'],
   },
   {
-    name: 'Maracuja Mojito',
+    key: 'passionfruitMojito',
     imageBase: 'minz-maracuja',
-    ingredients: ['Rum', 'SESES Maracuja - Minze', 'Soda', 'Limette', 'Zucker', 'Minze'],
-    type: 'Tropical · Refreshing',
-    description:
-      'Die tropische Variante des Klassikers mit exotischer Maracuja und frischer Minze.',
+    ingredients: ['Rum', 'SESES Passionfruit - Mint', 'Soda', 'Lime', 'Sugar', 'Mint'],
   },
   {
-    name: 'Mango Rosmarin Mule',
+    key: 'mangoRosemaryMule',
     imageBase: 'mango-rosmarin',
-    ingredients: ['Vodka', 'SESES Mango - Rosmarin', 'Ginger Beer', 'Limette'],
-    type: 'Spicy · Aromatic',
-    description: 'Würzige Mango trifft auf aromatischen Rosmarin und die Schärfe von Ginger Beer.',
+    ingredients: ['Vodka', 'SESES Mango - Rosemary', 'Ginger Beer', 'Lime'],
   },
 ];
 
@@ -45,66 +36,68 @@ const classicHighballs = [
 ];
 
 export const DrinksShowcase: FC = () => {
+  const { t } = useLanguage();
   return (
     <section aria-labelledby='drinks-showcase-title'>
       {/* Signature Cocktails - Full Width Alternating Rows */}
       <Section container='wide' spacing='xl' background='light'>
         <h2 id='drinks-showcase-title' className='sr-only'>
-          Signature Drinks
+          {t('drinksShowcase.sectionTitle')}
         </h2>
 
         <div className='space-y-24'>
           {signatureCocktails.map((cocktail, index) => {
             const isEven = index % 2 === 0;
-            const basePath = `/Velo Gallery/${cocktail.imageBase}`;
 
             return (
               <div
-                key={cocktail.name}
+                key={cocktail.key}
                 className='grid grid-cols-1 items-center gap-12 lg:grid-cols-2'
               >
                 {/* Image Column */}
                 <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className='aspect-4/3 overflow-hidden rounded-2xl shadow-xl lg:aspect-3/4'>
-                    <img
-                      src={`${basePath}.jpg`}
-                      alt={cocktail.name}
-                      className='h-full w-full object-cover transition-transform duration-700 hover:scale-105'
-                      loading='lazy'
+                    <ResponsiveImage
+                      src={`/Velo Gallery/${cocktail.imageBase}`}
+                      alt={t(`drinksShowcase.cocktails.${cocktail.key}.name`)}
+                      className='h-full w-full transition-transform duration-700 hover:scale-105'
+                      objectFit='cover'
+                      sizes='(max-width: 768px) 100vw, 50vw'
+                      priority={index === 0}
                     />
                   </div>
                 </div>
 
                 {/* Text Column */}
                 <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className='space-y-6 md:space-y-7 md:rounded-2xl md:border md:border-(--color-coral)/10 md:bg-(--offwhite-primary)/70 md:p-8 md:backdrop-blur-sm'>
+                  <div className='space-y-6 rounded-2xl border border-(--color-coral)/10 bg-(--color-bg-surface)/90 p-6 backdrop-blur-sm overflow-hidden md:space-y-7 md:bg-(--offwhite-primary)/70 md:p-8'>
                     <div className='space-y-3'>
                       <div className='inline-flex items-center rounded-full bg-(--color-coral) px-4 py-2 shadow-sm'>
                         <span className='text-xs font-semibold tracking-wide text-(--offwhite-primary)'>
-                          Signature Drink
+                          {t('drinksShowcase.signatureBadge')}
                         </span>
                       </div>
 
                       <h3 className='text-3xl font-bold tracking-tight text-(--color-teal) md:text-4xl'>
-                        {cocktail.name}
+                        {t(`drinksShowcase.cocktails.${cocktail.key}.name`)}
                       </h3>
 
                       <p className='text-base font-medium text-(--color-coral) italic md:text-lg'>
-                        {cocktail.type}
+                        {t(`drinksShowcase.cocktails.${cocktail.key}.type`)}
                       </p>
                     </div>
 
                     <div className='h-px w-16 bg-(--color-coral)/30' />
 
                     <p className='text-base leading-relaxed text-(--text-dark-tea) md:text-lg'>
-                      {cocktail.description}
+                      {t(`drinksShowcase.cocktails.${cocktail.key}.description`)}
                     </p>
 
                     <div className='h-px w-full bg-(--color-coral)/15' />
 
                     <div className='space-y-3'>
                       <h4 className='text-sm font-semibold tracking-wide text-(--color-teal)'>
-                        Zutaten
+                        {t('drinksShowcase.ingredientsHeading')}
                       </h4>
                       <div className='flex flex-wrap gap-2'>
                         {cocktail.ingredients.map((ingredient) => (
@@ -130,7 +123,7 @@ export const DrinksShowcase: FC = () => {
         <div className='mb-12 text-center'>
           <div className='inline-flex items-center rounded-full border border-(--orange-primary)/20 bg-(--offwhite-primary) px-6 py-2 shadow-sm'>
             <span className='text-sm font-semibold tracking-wide text-(--orange-primary) uppercase'>
-              Classic Highballs
+              {t('drinksShowcase.classicHighballsBadge')}
             </span>
           </div>
         </div>

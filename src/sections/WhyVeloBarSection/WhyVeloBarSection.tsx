@@ -11,34 +11,34 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Users, Calendar, Star } from 'lucide-react';
+import Users from 'lucide-react/dist/esm/icons/users';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Star from 'lucide-react/dist/esm/icons/star';
 import { Section } from '@/components/atoms/Section/Section.tsx';
 import { Container } from '@/components/atoms/Container/Container.tsx';
 import { cn } from '@/utils/classname.ts';
 import './WhyVeloBarSection.css';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 // Trust signal card data - "Warum Velo.Bar?"
 const WHY_VELOBAR_CARDS = [
   {
     id: 'professional-barkeepers',
     icon: Users,
-    title: 'Professionelle Barkeeper',
-    description:
-      'Erfahrene Barkeeper mit Leidenschaft für erstklassige Cocktails und Service. Wir bringen 10+ Jahre internationale Bar-Erfahrung zu Ihrem Event.',
+    titleKey: 'whyVeloBarSection.cards.professional.title',
+    descriptionKey: 'whyVeloBarSection.cards.professional.description',
   },
   {
     id: 'flexible-booking',
     icon: Calendar,
-    title: 'Flexibel buchbar',
-    description:
-      'Von kleinen Feiern bis zu Großevents – wir passen uns Ihren Bedürfnissen an. Für 50-500+ Gäste, überall in München und Coburg.',
+    titleKey: 'whyVeloBarSection.cards.flexible.title',
+    descriptionKey: 'whyVeloBarSection.cards.flexible.description',
   },
   {
     id: 'premium-quality',
     icon: Star,
-    title: 'Premium Qualität',
-    description:
-      'Handgemachte Cocktails mit den besten Spirituosen. Ihre Gäste bekommen Bar-Qualität, die man schmeckt und die im Gedächtnis bleibt.',
+    titleKey: 'whyVeloBarSection.cards.premium.title',
+    descriptionKey: 'whyVeloBarSection.cards.premium.description',
   },
 ] as const;
 
@@ -55,10 +55,20 @@ export interface WhyVeloBarSectionProps {
 
 export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({
   className,
-  cards = WHY_VELOBAR_CARDS,
+  cards,
 }) => {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const localizedCards =
+    cards ??
+    WHY_VELOBAR_CARDS.map((card) => ({
+      id: card.id,
+      icon: card.icon,
+      title: t(card.titleKey),
+      description: t(card.descriptionKey),
+    }));
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -117,9 +127,9 @@ export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({
       <Container size='default'>
         {/* Section Header */}
         <div className='mx-auto mb-12 max-w-3xl text-center'>
-          <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>Warum Velo.Bar?</h2>
+          <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>{t('whyVeloBarSection.title')}</h2>
           <p className='mt-4 text-base font-semibold text-white md:text-lg'>
-            Drei gute Gründe, warum wir der richtige Partner für Ihr Event sind.
+            {t('whyVeloBarSection.subtitle')}
           </p>
         </div>
 
@@ -128,7 +138,7 @@ export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({
           ref={sectionRef}
           className='why-velobar-cards-grid grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3'
         >
-          {cards.map((card, index) => {
+          {localizedCards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <div
@@ -137,7 +147,7 @@ export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({
                   cardsRef.current[index] = el;
                 }}
                 className='why-velobar-card group relative flex h-full flex-col rounded-2xl border-2 border-[#ee7868] bg-[#fff8ec] p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#ee7868] hover:shadow-xl md:rounded-3xl md:p-8'
-                style={{ zIndex: cards.length - index }}
+                style={{ zIndex: localizedCards.length - index }}
               >
                 {/* Icon */}
                 <div className='why-velobar-card__icon mb-6 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#ee7868] md:h-12 md:w-12'>

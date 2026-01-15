@@ -16,7 +16,7 @@ export { GlassOverlay } from './GlassOverlay.tsx';
 // LoadingSpinner - unified site-wide loading indicator
 export { LoadingSpinner } from './LoadingSpinner/LoadingSpinner.tsx';
 // BrandLogo - Official brand logo component
-export { BrandLogo } from './BrandLogo.tsx';
+export { BrandLogo } from './BrandLogo';
 
 /**
  * LEGACY COMPONENTS

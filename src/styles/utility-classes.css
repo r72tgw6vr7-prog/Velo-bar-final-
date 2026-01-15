@@ -180,21 +180,27 @@
   transition: all 0.2s ease;
 }
 
-.snippet-block:hover {
-  transform: translateX(2px);
-  box-shadow: 0 4px 12px rgba(var(--orange-rgb), 0.1);
+@media (hover: hover) and (pointer: fine) {
+  .snippet-block:hover {
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(var(--orange-rgb), 0.1);
+  }
 }
 
 .snippet-block h3 {
   /* Question styling optimized for voice search answers */
-  color: var(--text-strong);
+  color: var(--color-text-on-light);
   font-weight: 600;
   line-height: 1.4;
 }
 
+.snippet-block h4 {
+  color: var(--color-text-on-light);
+}
+
 .snippet-block p {
   /* Answer styling - clear, concise, scannable */
-  color: var(--text-body);
+  color: var(--color-text-on-light-secondary);
   line-height: 1.6;
   font-size: 0.95rem;
 }

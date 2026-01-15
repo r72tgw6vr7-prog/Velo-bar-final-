@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
@@ -14,7 +15,7 @@ const LastMinuteCateringPage: React.FC = () => {
     headline: 'Last-Minute Catering München: Schnelle Hilfe für Event-Notfälle',
     description:
       'Event in 1-2 Wochen und noch kein Catering? So finden Sie kurzfristig professionellen Bar-Service in München – auch bei Absagen.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -44,19 +45,20 @@ const LastMinuteCateringPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='Last-Minute Catering München: Schnelle Hilfe für Event-Notfälle | Velo.Bar'
-      description='Event in 1-2 Wochen und noch kein Catering? Schnelle, professionelle Bar-Services in München – auch bei kurzfristigen Anfragen.'
-      canonicalPath='/blog/last-minute-catering-muenchen'
-      structuredData={schemaData}
-      withContainer={false}
-      className='bg-navy'
-    >
-      <Section
-        container='narrow'
-        spacing='xl'
-        className='bg-navy-primary relative overflow-hidden text-white'
+    <SiteBackground>
+      <PageTemplate
+        title='Last-Minute Catering München: Schnelle Hilfe für Event-Notfälle | Velo.Bar'
+        description='Event in 1-2 Wochen und noch kein Catering? Schnelle, professionelle Bar-Services in München – auch bei kurzfristigen Anfragen.'
+        canonicalPath='/blog/last-minute-catering-muenchen'
+        structuredData={schemaData}
+        withContainer={false}
+        background='transparent'
       >
+        <Section
+          container='narrow'
+          spacing='xl'
+          className='bg-navy-primary relative overflow-hidden text-white'
+        >
         <div className='absolute inset-0 z-0 opacity-20'>
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(251,146,60,0.4),transparent_50%)]' />
         </div>
@@ -336,10 +338,10 @@ const LastMinuteCateringPage: React.FC = () => {
           <h2 className='mb-8 text-2xl font-bold text-gray-900'>Weitere Ressourcen</h2>
           <div className='grid gap-8 md:grid-cols-2'>
             <Link
-              to='/blog/messekatering-kosten-2025'
+              to='/blog/messecatering-kosten-2025'
               className='block flex h-full flex-col rounded-xl border border-gray-200 bg-gray-50 p-8 transition duration-200 ease-out hover:border-orange-300 hover:shadow-md'
             >
-              <h3 className='mb-0 font-bold text-gray-900'>💰 Messekatering-Kosten</h3>
+              <h3 className='mb-0 font-bold text-gray-900'>💰 Messecatering-Kosten</h3>
               <p className='text-sm text-gray-600'>Transparente Preise für BAUMA, ISPO & Co.</p>
             </Link>
             <Link
@@ -383,8 +385,8 @@ const LastMinuteCateringPage: React.FC = () => {
           </div>
         </section>
       </Section>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
-
 export default LastMinuteCateringPage;

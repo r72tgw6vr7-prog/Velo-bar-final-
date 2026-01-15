@@ -1,4 +1,4 @@
-export type PageParams = {
+ export type PageParams = {
   page?: number;
   pageSize?: number;
   cursor?: string;

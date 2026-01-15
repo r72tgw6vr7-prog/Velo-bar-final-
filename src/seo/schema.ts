@@ -489,6 +489,48 @@ export function getMesseCateringPillarSchema() {
   };
 }
 
+/**
+ * Review Schema for testimonials section
+ * Enables review rich results in search
+ */
+export interface ReviewItem {
+  name: string;
+  text: string;
+  rating: number;
+  date: string;
+}
+
+export function getReviewSchema(reviews: ReviewItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: 'Velo.Bar',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '32',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: reviews.map((review) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.name,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      reviewBody: review.text,
+      datePublished: review.date,
+    })),
+  };
+}
+
 export default {
   getLocalBusinessSchema,
   getWebSiteSchema,
@@ -498,4 +540,5 @@ export default {
   getEventSchema,
   combineSchemas,
   getMesseCateringPillarSchema,
+  getReviewSchema,
 };

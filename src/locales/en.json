@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "homeAria": "Velo.Bar Home",
     "services": "Services",
     "corporateEvents": "Corporate Events",
     "christmasParties": "Christmas Parties",
@@ -28,7 +29,31 @@
   "services": {
     "title": "Our Services",
     "subtitle": "From corporate events to trade shows to private parties – we bring the bar to you",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "firmenfeiern": {
+      "title": "Corporate Events",
+      "description": "Mobile cocktail bar for corporate events, after-work parties and summer festivals."
+    },
+    "messe": {
+      "title": "Trade Show Catering",
+      "description": "Self-sufficient bar concepts for trade show booths – no power or water connection needed."
+    },
+    "hochzeiten": {
+      "title": "Weddings",
+      "description": "Signature drinks & premium service for ceremonies and evening receptions."
+    },
+    "weihnachtsfeiern": {
+      "title": "Christmas Parties",
+      "description": "Winter cocktail creations and mulled wine variations for teams."
+    },
+    "teamEvents": {
+      "title": "Team Events & Workshops",
+      "description": "Cocktail courses & gin tastings as interactive team experiences."
+    },
+    "privateFeiern": {
+      "title": "Private Parties",
+      "description": "Birthdays, anniversaries or rooftop parties – we bring the bar."
+    }
   },
   "stats": {
     "events": "Events completed",
@@ -55,6 +80,149 @@
     "trustBadge2": "500+ Events",
     "trustBadge3": "4.9/5 Stars"
   },
+  "bookingWizard": {
+    "progress": {
+      "step": "Step",
+      "almostDone": "– Almost done!"
+    },
+    "steps": {
+      "1": {
+        "title": "Location",
+        "subtitle": "Where will your event take place?"
+      },
+      "2": {
+        "title": "Event Basics",
+        "subtitle": "What are you planning?"
+      },
+      "3": {
+        "title": "Company & Contact",
+        "subtitle": "Who are you?"
+      },
+      "4": {
+        "title": "Summary",
+        "subtitle": "Review & Submit"
+      }
+    },
+    "step1": {
+      "heading": "Please choose your location"
+    },
+    "step2": {
+      "eventTypeQuestion": "What type of event are you planning?",
+      "guestCountQuestion": "How many guests do you expect?",
+      "dateLabel": "When is your event?",
+      "dateRequired": "Please select a date"
+    },
+    "locations": {
+      "munich": {
+        "label": "MUNICH",
+        "description": "Events in and around Munich"
+      },
+      "coburg": {
+        "label": "COBURG",
+        "description": "Events in and around Coburg"
+      }
+    },
+    "eventTypes": {
+      "firmenfeier": {
+        "label": "Corporate event",
+        "description": "Team events, summer parties, anniversaries"
+      },
+      "weihnachtsfeier": {
+        "label": "Christmas party",
+        "description": "Festive cocktails & mulled wine"
+      },
+      "messe": {
+        "label": "Trade show / promotion",
+        "description": "Booth catering, product launch"
+      },
+      "hochzeit": {
+        "label": "Wedding",
+        "description": "Reception, party, or both"
+      },
+      "privat": {
+        "label": "Private party",
+        "description": "Birthdays, bachelor(ette) parties, anniversaries"
+      },
+      "gin-tasting": {
+        "label": "Gin tasting",
+        "description": "Workshop with premium gins"
+      }
+    },
+    "guestRanges": {
+      "20_50": "20–50 guests",
+      "50_100": "50–100 guests",
+      "100_200": "100–200 guests",
+      "200_plus": "200+ guests"
+    },
+    "actions": {
+      "back": "Back",
+      "next": "Next",
+      "toSummary": "To summary",
+      "submit": "Submit request",
+      "sending": "Sending...",
+      "callNow": "Call now"
+    },
+    "step4": {
+      "submittingTitle": "Sending request...",
+      "submittingDetail": "Please wait a moment...",
+      "successTitle": "Thanks for your request!",
+      "successDetail": "We've received your request and will get back to you within 24 hours.",
+      "summary": {
+        "heading": "Summary:"
+      }
+    },
+    "summary": {
+      "location": "Location",
+      "event": "Event",
+      "guests": "Guests",
+      "date": "Date",
+      "company": "Company",
+      "contact": "Contact",
+      "email": "Email"
+    },
+    "review": {
+      "heading": "Please review your details:",
+      "sections": {
+        "location": "Location",
+        "eventDetails": "Event details",
+        "contactDetails": "Contact details",
+        "message": "Message"
+      },
+      "fields": {
+        "location": "Location",
+        "eventType": "Event type",
+        "guestCount": "Guest count",
+        "date": "Date",
+        "company": "Company",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone"
+      }
+    }
+  },
+  "expressQuote": {
+    "title": "No time for details? We'll reach out to you.",
+    "placeholderEmail": "your-email@company.com",
+    "footer": "⚡ Response within 4 hours during business hours",
+    "aria": {
+      "email": "Email address for express quote"
+    },
+    "actions": {
+      "cta": "Request a quote",
+      "sending": "Sending..."
+    },
+    "success": {
+      "title": "Request received!",
+      "detail": "We'll get back to you within 4 hours."
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address."
+    },
+    "errors": {
+      "requestFailed": "Request failed",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
   "form": {
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -70,13 +238,280 @@
     "submit": "Send Request",
     "sending": "Sending...",
     "success": "Message sent successfully!",
-    "successDetail": "We'll get back to you within 24 hours."
+    "successDetail": "We'll get back to you within 24 hours.",
+    "placeholders": {
+      "name": "What should we call you?",
+      "email": "your.email@example.com",
+      "message": "How can we help you?",
+      "company": "Your Company Name",
+      "eventDetails": "Special requests, questions, details about your event..."
+    }
+  },
+  "testimonialsCarousel": {
+    "title": "What customers say",
+    "aria": {
+      "section": "Customer testimonials",
+      "goToSlide": "Go to slide",
+      "previous": "Previous testimonial",
+      "next": "Next testimonial"
+    },
+    "defaults": {
+      "0": {
+        "text": "The collaboration was excellent from start to finish. The team brought our website to a new level — visually and technically: fast, accessible, and easy to maintain.",
+        "author": "M.S.",
+        "source": "Google review"
+      },
+      "1": {
+        "text": "Our customers especially highlight the clean codebase, clear information architecture and strong performance. Even complex requirements were solved in a structured way and communicated transparently.",
+        "author": "Company review",
+        "source": "Project feedback"
+      },
+      "2": {
+        "text": "The studio focuses on tailored digital solutions and a collaborative approach. From the first idea to launch we were closely supported, decisions were explained, and measurable outcomes were the focus.",
+        "author": "TripAdvisor review",
+        "source": "TripAdvisor review"
+      }
+    }
+  },
+  "partnersTestimonials": {
+    "partners": {
+      "title": "Our partners & press",
+      "subtitle": "Trusted partnerships with leading brands in the industry"
+    },
+    "testimonials": {
+      "title": "What customers say",
+      "source": "Customer voice",
+      "loadError": "Testimonials could not be loaded."
+    },
+    "aria": {
+      "section": "Partners & testimonials",
+      "partnersCarousel": "Partners and press carousel",
+      "loadingTestimonials": "Loading testimonials"
+    }
+  },
+  "servicesInteractive": {
+    "hero": {
+      "defaultTitle": "Professional web development services",
+      "defaultSubtitle": "Enterprise-grade solutions with modern tech stacks, scalable architectures, and measurable business outcomes. Select from our specialized service offerings."
+    },
+    "aria": {
+      "categories": "Service categories",
+      "selectCategoryPrefix": "Select",
+      "selectCategorySuffix": "category",
+      "showingPrefix": "Showing",
+      "showingSuffix": "services",
+      "for": "for"
+    },
+    "categoryCard": {
+      "from": "from",
+      "custom": "Custom"
+    },
+    "packages": {
+      "heading": "Choose the right package"
+    },
+    "serviceCard": {
+      "badgePopular": "Popular",
+      "badgePackage": "Package",
+      "durationFlexible": "Flexible"
+    },
+    "price": {
+      "from": "from"
+    }
+  },
+  "serviceHighlights": {
+    "aria": {
+      "section": "Service highlights"
+    },
+    "coreTitle": "Service Highlights",
+    "coreSubtitle": "Mobile cocktail bar and event catering at the highest level",
+    "collabTitle": "Collaboration & Ongoing Support",
+    "collabSubtitle": "How successful digital projects are built",
+    "viewDetails": "View details",
+    "contactCta": "Request a project",
+    "coreServices": {
+      "customWebapps": {
+        "name": "Custom Web Applications",
+        "subtitle": "Full-Stack Solutions",
+        "description": "Scalable web applications and platforms tailored to specific business requirements.",
+        "priceRange": "Project-based from €4,000"
+      },
+      "frontendArchitecture": {
+        "name": "Frontend Architecture & Design Systems",
+        "subtitle": "Sustainable UI Architecture",
+        "description": "Robust frontend architectures, component libraries and design systems for growing teams.",
+        "priceRange": "From €1,600 / workshop"
+      },
+      "performance": {
+        "name": "Performance & Core Web Vitals",
+        "subtitle": "Fast Experiences",
+        "description": "Targeted optimization for Core Web Vitals, Lighthouse scores and perceived performance.",
+        "priceRange": "Audits from €1,200"
+      },
+      "ecommerce": {
+        "name": "E-Commerce & Booking Solutions",
+        "subtitle": "Conversion-Focused Systems",
+        "description": "Online stores, booking flows and customer journeys with clear metrics and tracking.",
+        "priceRange": "Project-based from €6,000"
+      },
+      "consulting": {
+        "name": "Technical Consulting",
+        "subtitle": "Strategic Partnership",
+        "description": "Technical sparring for roadmaps, architecture decisions and team enablement.",
+        "priceRange": "From €1,200 / day"
+      },
+      "uiUx": {
+        "name": "UI/UX Design & Prototyping",
+        "subtitle": "User-Centered Interfaces",
+        "description": "Interactive prototypes, design reviews and micro-interactions for compelling experiences.",
+        "priceRange": "From €2,000"
+      }
+    },
+    "collaborationModels": {
+      "projectBased": {
+        "name": "Project-Based Collaboration",
+        "subtitle": "Clear Scope & Outcomes",
+        "locations": {
+          "0": "Discovery & Goals",
+          "1": "Concept & Architecture",
+          "2": "Implementation",
+          "3": "Launch & Handover"
+        },
+        "startingPrice": "From €4,000",
+        "description": "Ideal for projects with a clearly defined scope and timeline."
+      },
+      "retainer": {
+        "name": "Retainer & Long-Term Support",
+        "subtitle": "Continuous Improvement",
+        "locations": {
+          "0": "Technical guidance",
+          "1": "Roadmap planning",
+          "2": "Code reviews",
+          "3": "Pair programming"
+        },
+        "startingPrice": "From €1,500 / month",
+        "description": "For teams that need ongoing support with architecture, refactoring and new features."
+      },
+      "workshops": {
+        "name": "Workshops & Audits",
+        "subtitle": "Focused Sessions",
+        "locations": {
+          "0": "Architecture review",
+          "1": "Performance audit",
+          "2": "Design system workshop",
+          "3": "Team enablement"
+        },
+        "startingPrice": "From €1,200 / session",
+        "description": "Compact formats for quick analysis, decision-making and targeted improvement."
+      }
+    }
+  },
+  "bookingForm": {
+    "heading": "Request your event",
+    "intro": "Planning a corporate event, wedding, trade show or a gin tasting? Use the form to briefly describe your event — we’ll get back to you within 24 hours with a non-binding quote.",
+    "altContactTitle": "Alternative contact options:",
+    "contact": {
+      "emailLabel": "Email:",
+      "emailValue": "hallo@velo-bar.com",
+      "phoneLabel": "Phone:",
+      "phoneValue": "+49 160 94623196"
+    },
+    "success": {
+      "title": "Request sent!",
+      "subtitle": "Thanks for your request. We’ll get back to you as soon as possible with a non-binding quote.",
+      "newRequest": "Create a new request"
+    },
+    "fields": {
+      "name": { "label": "Name", "placeholder": "Full name*" },
+      "phone": { "label": "Phone", "placeholder": "Phone number*" },
+      "email": { "label": "Email", "placeholder": "Email address*" },
+      "date": { "label": "Date", "placeholder": "Preferred date*" },
+      "time": {
+        "label": "Time",
+        "placeholder": "Preferred time*",
+        "defaultOption": "Preferred time*",
+        "options": {
+          "morning": "Morning (9–12)",
+          "afternoon": "Afternoon (12–17)",
+          "evening": "Evening (17–20)"
+        }
+      },
+      "service": {
+        "label": "Service",
+        "placeholder": "Select service*",
+        "defaultOption": "Select service*"
+      },
+      "artist": {
+        "label": "Bartender",
+        "placeholder": "Select bartender*",
+        "defaultOption": "Select bartender*"
+      },
+      "message": { "label": "Message", "placeholder": "Write your message here*" }
+    },
+    "serviceOptions": {
+      "firmenfeier": "Corporate event",
+      "weihnachtsfeier": "Christmas party",
+      "messe": "Trade show / promotion",
+      "hochzeit": "Wedding",
+      "ginTasting": "Gin tasting / workshop"
+    },
+    "artistOptions": {
+      "artist1": "Alex Johnson",
+      "artist2": "Sam Carter",
+      "artist3": "Jordan Lee",
+      "artist4": "Taylor Kim",
+      "noPreference": "No preference"
+    },
+    "consent": {
+      "prefix": "I agree to the",
+      "termsLink": "Terms",
+      "middle": "and the",
+      "privacyLink": "Privacy Policy",
+      "suffix": "."
+    },
+    "submit": {
+      "label": "Request now",
+      "sending": "Sending..."
+    },
+    "toasts": {
+      "tooManyRequests": {
+        "title": "Too many requests",
+        "description": "Please wait a moment before trying again."
+      },
+      "incomplete": {
+        "title": "Request incomplete",
+        "description": "Please check your entries and try again."
+      },
+      "submitFailed": {
+        "title": "Request could not be sent",
+        "description": "Please try again or contact us directly."
+      },
+      "success": {
+        "title": "Request sent successfully!",
+        "description": "We’ll get back to you as soon as possible with a non-binding quote."
+      }
+    },
+    "errors": {
+      "tooManyRequests": "Too many requests — please try again later.",
+      "incomplete": "Request incomplete — please check your entries.",
+      "submitFailed": "Request could not be sent — please try again.",
+      "networkFailed": "Request could not be sent — network error.",
+      "validation": "Please check the inputs."
+    }
   },
   "footer": {
+    "ariaLabel": "Site footer",
+    "businessName": "Velo.Bar – Mobile Cocktail Bar",
+    "streetAddress": "Matthias-Mayer-Straße 5",
+    "postalCode": "81379",
+    "addressLocality": "Munich",
+    "telPrefix": "Tel:",
+    "phone": "+49 160 94623196",
+    "email": "hallo@velo-bar.com",
     "servicesTitle": "Services",
     "infoTitle": "Information",
     "legalTitle": "Legal",
     "copyright": "© 2025 Velo.Bar. All rights reserved.",
+    "rightsReserved": "All rights reserved.",
     "madeWith": "Made with love in Munich & Coburg",
     "imprint": "Imprint",
     "privacy": "Privacy Policy",
@@ -86,9 +521,11 @@
     "title": "Our Locations",
     "subtitle": "Mobile cocktail bar for events in Munich & Coburg",
     "munich": "Munich & Area",
-    "munichDesc": "Corporate events, trade shows and parties in Greater Munich",
+    "munichDesc": "Perfect mobile cocktail bar for corporate events, trade shows and private events in Greater Munich.",
+    "munichCta": "Request events in Munich",
     "coburg": "Coburg & Area",
-    "coburgDesc": "Weddings, summer festivals and corporate events in Upper Franconia"
+    "coburgDesc": "Velobar for weddings, summer festivals and corporate events in the Coburg area.",
+    "coburgCta": "Request events in Coburg"
   },
   "cta": {
     "requestQuote": "Request Quote",
@@ -97,12 +534,1329 @@
     "callNow": "Call Now",
     "whatsapp": "WhatsApp Chat"
   },
+  "pages": {
+    "home": {
+      "seo": {
+        "title": "🍸 Mobile cocktail bar Munich | Premium bar from €890",
+        "description": "Premium mobile cocktail bar for corporate events, weddings & parties in Munich. Professional bartending for 50–500+ guests. Request now!"
+      },
+      "locations": {
+        "title": "Munich & Coburg — we come to you",
+        "subtitle": "Two home bases in Bavaria plus nationwide events on request."
+      },
+      "services": {
+        "title": "From cocktail catering to gin tastings",
+        "subtitle": "Choose from our most popular service categories — all mobile, self-sufficient and tailored to your event.",
+        "cta": "Learn more"
+      },
+      "stats": {
+        "title": "Numbers you can trust",
+        "subtitle": "Premium service — measurable in every KPI.",
+        "items": {
+          "0": "Events delivered",
+          "1": "Guests served",
+          "2": "Google rating",
+          "3": "Locations in Bavaria"
+        },
+        "values": {
+          "0": "500+",
+          "1": "10,000+",
+          "2": "5.0★",
+          "3": "2"
+        }
+      }
+    },
+    "homeNew": {
+      "seo": {
+        "title": "Sandbox Homepage | Velo.Bar",
+        "description": "Sandbox version of the Velo.Bar homepage for testing and development."
+      }
+    },
+    "resources": {
+      "corporateEventCateringGuide": {
+        "seo": {
+          "title": "Corporate Event Catering & Beverage Logistics Guide 2025",
+          "description": "The ultimate guide for event managers in Munich: mobile bars for trade shows, logistics, menu engineering and ROI."
+        },
+        "schema": {
+          "headline": "The ultimate guide to corporate event catering & beverage logistics in Munich (2025)",
+          "description": "How to turn your trade show booth into a visitor magnet with a mobile bar and minimize logistics risks. A practical guide for event managers."
+        },
+        "hero": {
+          "badge": "Resources & Guides",
+          "titleLine1": "Corporate event catering &",
+          "titleLine2": "Beverage logistics in Munich",
+          "subtitle": "The practical guide for event managers and trade show exhibitors (2025)."
+        },
+        "guideBox": {
+          "title": "In this guide:"
+        },
+        "sections": {
+          "dwellTime": {
+            "title": "Why mobile bars increase dwell time"
+          },
+          "logistics": {
+            "title": "Logistics: power, water and space requirements"
+          },
+          "menuEngineering": {
+            "title": "Menu engineering: your brand in a glass"
+          },
+          "roi": {
+            "title": "Budget & ROI: what really matters"
+          },
+          "conclusion": {
+            "title": "Let’s plan your event",
+            "description": "In a 20-minute call we’ll analyze your logistics options and create a no-obligation concept for your next event in Munich.",
+            "primaryButton": "Request a consultation",
+            "secondaryButton": "More about corporate events"
+          }
+        },
+        "proTip": {
+          "title": "Pro tip from the field"
+        },
+        "ctaMesse": {
+          "title": "Planning a trade show booth?",
+          "description": "Get our free logistics checklist for Messe München.",
+          "button": "Go to the trade show catering page"
+        },
+        "table": {
+          "classicCatering": "Classic catering",
+          "mobilePremiumBar": "Mobile premium bar"
+        }
+      }
+    },
+    "locationsIndex": {
+      "seo": {
+        "title": "Event venues in Munich | Mobile bar for any location",
+        "description": "Mobile cocktail bar for Munich event venues: Messe München, MOC, Zenith, Werk1 and more. Self-sufficient bar service without infrastructure."
+      },
+      "schema": {
+        "name": "Event venues in Munich for mobile bar service",
+        "description": "Overview of Munich event venues where Velo.Bar provides professional cocktail service."
+      },
+      "hero": {
+        "badge": "Munich event venues",
+        "titlePrefix": "Mobile bar for",
+        "titleAccent": "your venue",
+        "subtitle": "From Messe München to Schloss Schleißheim — we know the best venues and their specific requirements."
+      },
+      "sections": {
+        "messe": "Trade fairs & conventions",
+        "locations": "Event venues",
+        "historic": "Historic venues",
+        "corporate": "Startup & corporate hubs"
+      },
+      "cta": {
+        "title": "Is your venue missing?",
+        "description": "No problem. We’re flexible and can come anywhere — from an office rooftop to a mountain peak. Tell us about your venue.",
+        "button": "Send an individual request"
+      }
+    },
+    "district": {
+      "breadcrumbs": {
+        "corporateEvents": "Corporate events"
+      },
+      "notFound": {
+        "title": "District not found",
+        "description": "The requested district could not be found.",
+        "cta": "Go to corporate events"
+      },
+      "hero": {
+        "title": "Mobile cocktail bar for corporate events in {district}",
+        "eyebrow": "Your partner for business events in {district}",
+        "description": "Professional mobile cocktail bar for exclusive corporate events and business events in {district}, Munich. {districtDescription}",
+        "primaryCta": "Request a quote for {district}",
+        "secondaryCta": "Pricing & packages"
+      },
+      "stats": {
+        "population": "Population",
+        "partnerHotels": "Partner hotels",
+        "travelTime": "Travel time",
+        "travelTimeValue": "15 min",
+        "eventsDone": "Events delivered",
+        "eventsDoneValue": "500+"
+      },
+      "sections": {
+        "characteristics": {
+          "title": "Why {district} is perfect for your corporate event",
+          "subtitle": "Discover the unique advantages of this district for your business event",
+          "cardDescription": "Perfect conditions for unforgettable corporate events in the heart of {district}"
+        },
+        "localVenues": {
+          "title": "Premium venues in {district}",
+          "subtitle": "Exclusive partners for your corporate event in the district"
+        },
+        "transport": {
+          "title": "Getting there & connections in {district}",
+          "subtitle": "Great accessibility for your guests"
+        },
+        "businessFocus": {
+          "title": "Business focus in {district}",
+          "subtitle": "Ideal for companies from these industries"
+        },
+        "cta": {
+          "title": "Ready for your corporate event in {district}?",
+          "description": "Let’s create an unforgettable business event in your district together.",
+          "primary": "Request now",
+          "secondary": "Get in touch"
+        },
+        "nearby": {
+          "title": "Also available in nearby districts",
+          "subtitle": "We also operate in these nearby areas",
+          "population": "{population} residents"
+        }
+      },
+      "localVenues": {
+        "types": {
+          "hotel": "Hotel",
+          "eventSpace": "Event space"
+        },
+        "descriptions": {
+          "hotel": "High-end event spaces for your corporate event in {district}",
+          "eventSpace": "Unique venue for special business events in {district}"
+        }
+      },
+      "transport": {
+        "subwayTitle": "Subway",
+        "busTitle": "Bus",
+        "parkingTitle": "Parking",
+        "linePrefix": "Line {line}"
+      }
+    },
+    "venue": {
+      "notFound": {
+        "title": "Venue not found",
+        "description": "This venue is not yet in our database.",
+        "cta": "Send a request"
+      },
+      "seo": {
+        "title": "Mobile bar for {venue} | Catering & cocktail service",
+        "description": "Professional bar service for your event at {venue} in Munich. Self-sufficient mobile bar — no infrastructure needed. Request now!"
+      },
+      "schema": {
+        "name": "Mobile cocktail bar for {venue}",
+        "description": "Professional bar service for events at {venue} in Munich. Self-sufficient mobile bar without power or water connection."
+      },
+      "hero": {
+        "badge": "Venue · {district}",
+        "titlePrefix": "Mobile bar for",
+        "cta": "Request a quote"
+      },
+      "sections": {
+        "about": {
+          "title": "About {venue}"
+        },
+        "details": {
+          "title": "📍 Venue details",
+          "addressLabel": "Address:",
+          "capacityLabel": "Capacity:",
+          "districtLabel": "District:"
+        },
+        "highlights": {
+          "title": "✨ Highlights"
+        },
+        "eventTypes": {
+          "title": "Popular event types at {venue}"
+        },
+        "challenges": {
+          "title": "Challenges & our solutions",
+          "challengesTitle": "❌ Typical challenges",
+          "solutionsTitle": "✅ Velo.Bar solutions"
+        },
+        "why": {
+          "title": "Why Velo.Bar for {venue}?",
+          "cards": {
+            "autark": {
+              "title": "100% self-sufficient",
+              "description": "No power or water from the venue needed"
+            },
+            "setup": {
+              "title": "30 min setup",
+              "description": "Ready fast, gone fast"
+            },
+            "allInclusive": {
+              "title": "All-inclusive",
+              "description": "No hidden fees — transparent packages"
+            }
+          }
+        },
+        "cta": {
+          "title": "Planning an event at {venue}?",
+          "description": "We know the venue and its requirements. Let’s plan your event together.",
+          "primary": "Request a quote",
+          "secondary": "View pricing"
+        },
+        "related": {
+          "title": "Similar venues"
+        }
+      }
+    },
+    "services": {
+      "seo": {
+        "title": "Services | Mobile Cocktail Bar | Velo.Bar",
+        "description": "All services at a glance: corporate events, Christmas parties, trade show catering, team events, private parties and weddings in Munich & Coburg."
+      },
+      "hero": {
+        "eyebrow": "Our Services",
+        "title": "YOUR SERVICES AT A GLANCE",
+        "subtitle": "From corporate parties to weddings: choose the right service. We’ll send you a quote within minutes."
+      },
+      "schema": {
+        "serviceName": "Mobile cocktail bar services",
+        "serviceDescription": "Professional cocktail bar services for corporate events, weddings, trade shows, team events and private parties in Munich and Coburg.",
+        "areaServed": {
+          "munich": "Munich",
+          "coburg": "Coburg",
+          "bavaria": "Bavaria"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Services"
+        }
+      },
+      "cards": {
+        "corporate": {
+          "title": "Corporate Events",
+          "description": "Mobile cocktail bar for corporate events from 50–500 guests. Premium drinks, professional team and smooth operations – perfect for Christmas parties, summer events and kick-offs.",
+          "heading": "Corporate Events",
+          "bullets": {
+            "0": "Complete bar setup incl. equipment",
+            "1": "Custom cocktail menu in your corporate design",
+            "2": "2–4 bartenders depending on guest count",
+            "3": "Post-event reporting & invoicing"
+          }
+        },
+        "christmas": {
+          "title": "Christmas Parties",
+          "description": "Winter signature drinks, mulled-wine variations and atmospheric decoration – guaranteed festive vibes for teams and clients.",
+          "heading": "Seasonal Specials",
+          "bullets": {
+            "0": "Mulled wine, punch & alcohol-free alternatives",
+            "1": "Cinnamon, orange & spice essences for winter cocktails",
+            "2": "Atmospheric bar setup with warm lights",
+            "3": "Optional team challenges like cocktail workshops"
+          }
+        },
+        "trade": {
+          "title": "Trade Shows",
+          "description": "Compact bar for trade show booths, showrooms and product launches. Maximizes dwell time and conversation quality at your booth.",
+          "heading": "Trade show packages",
+          "bullets": {
+            "0": "Compact footprint (from 2×2 m)",
+            "1": "Branding options on bar & glassware",
+            "2": "Fast setup/teardown even with tight schedules",
+            "3": "Flexible time slots (e.g. booth happy hour)"
+          }
+        },
+        "team": {
+          "title": "Team Events",
+          "description": "Mixology workshops and interactive tastings that bring teams together and create new flavor experiences.",
+          "heading": "Mixology Sessions",
+          "bullets": {
+            "0": "Guided cocktail workshops with pro bartenders",
+            "1": "Team challenges & blind tastings",
+            "2": "Alcohol-free or classic recipes available",
+            "3": "Recipe documentation to take home"
+          }
+        },
+        "private": {
+          "title": "Private Parties",
+          "description": "Birthdays, garden parties, anniversaries – we bring the bar to your home or venue of choice.",
+          "heading": "Private Events",
+          "bullets": {
+            "0": "1–2 bartenders tailored to guest count",
+            "1": "Selection of classic & modern cocktails",
+            "2": "Optional: gin or cocktail tasting",
+            "3": "Optional mobile backbar & décor"
+          }
+        },
+        "weddings": {
+          "title": "Weddings",
+          "description": "Support for your wedding day from reception to midnight bar. Signature cocktails, stylish presentation and reliable service.",
+          "heading": "Wedding Bar",
+          "bullets": {
+            "0": "Welcome drinks & aperitifs for the reception",
+            "1": "Personalized wedding signatures",
+            "2": "Seamless coordination with witnesses & venue",
+            "3": "Optional alcohol-free menu pairing"
+          }
+        }
+      }
+    },
+    "faq": {
+      "seo": {
+        "title": "FAQ | Frequently asked questions",
+        "description": "Answers to frequently asked questions about our mobile cocktail bar services, bookings, pricing and more."
+      },
+      "hero": {
+        "eyebrow": "We’re happy to help",
+        "title": "Frequently asked questions",
+        "subtitle": "Find answers to the most common questions about our mobile cocktail bar services, bookings and pricing."
+      },
+      "snippetSection": {
+        "title": "Quick answers for your planning",
+        "subtitle": "Optimized for Google Assistant, Siri & more"
+      },
+      "items": {
+        "0": {
+          "question": "How far in advance should I book?",
+          "answer": "We recommend booking at least 4–6 weeks before your event. For weddings and large corporate events, plan 3–6 months ahead. For short-notice requests we’ll do our best to help."
+        },
+        "1": {
+          "question": "What’s included in the price?",
+          "answer": "Our packages include the mobile bar, professional bartenders, spirits, mixers, ice, garnishes and equipment. Glassware and napkins are also included."
+        },
+        "2": {
+          "question": "Do you offer non-alcoholic cocktails?",
+          "answer": "Absolutely. We offer a wide selection of mocktails and non-alcoholic alternatives. They can be the main offer or served alongside alcoholic cocktails."
+        },
+        "3": {
+          "question": "Which regions do you serve?",
+          "answer": "We operate in Munich, Coburg and across Bavaria. For events outside Bavaria, contact us for an individual offer."
+        },
+        "4": {
+          "question": "How many guests can you serve?",
+          "answer": "From intimate celebrations with 20 guests to large corporate events with 500+ people — we scale our setup to your guest count."
+        },
+        "5": {
+          "question": "Can I customize the cocktail menu?",
+          "answer": "Yes. We’re happy to create a tailored cocktail menu that matches your event theme, brand or taste preferences."
+        },
+        "6": {
+          "question": "Does the mobile bar need power or water?",
+          "answer": "No. Our Velo.Bar is fully self-sufficient — no power outlet and no water connection required. Perfect for trade shows, outdoor events and venues with limited infrastructure."
+        },
+        "7": {
+          "question": "How much does a mobile bar for 50 guests cost?",
+          "answer": "A mobile bar for 50 guests starts at €890 for 4 hours. This package includes professional bartenders, spirits, mixers, ice, garnishes, equipment and glassware. Pricing is transparent with no hidden costs."
+        },
+        "8": {
+          "question": "Can you handle last-minute requests?",
+          "answer": "Yes. Depending on availability we can realize events with as little as 48–72 hours notice. Give us a call — we’ll find a solution."
+        },
+        "9": {
+          "question": "Do you offer sustainable event options?",
+          "answer": "Yes. We work with regional Bavarian distilleries, use zero-waste garnishes and deliver carbon-neutral by cargo bike. After each event you’ll receive a sustainability certificate for your ESG reporting."
+        }
+      },
+      "snippets": {
+        "booking": {
+          "title": "Booking & planning",
+          "items": {
+            "0": {
+              "question": "How far in advance should I book a mobile cocktail bar?",
+              "answer": "We recommend booking at least 4–6 weeks before your event. For weddings and large corporate events, plan 3–6 months ahead. Last-minute bookings up to 1 week before are possible depending on availability."
+            },
+            "1": {
+              "question": "How much does a mobile bar for 50 guests cost?",
+              "answer": "A mobile bar for 50 guests starts at €890 for 4 hours. This includes professional bartenders, spirits, mixers, ice, garnishes, equipment and glassware. Transparent pricing with no hidden costs."
+            },
+            "2": {
+              "question": "Can I book last-minute catering in Munich?",
+              "answer": "Yes. Depending on availability we can realize events with as little as 48–72 hours notice. We respond within 2 hours, even on weekends. Call us at +49 160 94623196."
+            }
+          }
+        },
+        "logistics": {
+          "title": "Tech & logistics",
+          "items": {
+            "0": {
+              "question": "Does the mobile cocktail bar need power or water?",
+              "answer": "No — our bicycle bar is 100% self-sufficient. No power, no water connection required. Works anywhere: in the office, on terraces or outdoors. Perfect for locations with limited infrastructure."
+            },
+            "1": {
+              "question": "How much space does a mobile cocktail bar need?",
+              "answer": "Only about 2 square meters of space is required for our compact bicycle bar. It fits in any room or on any terrace — ideal for tight venues or as an extra eye-catcher."
+            },
+            "2": {
+              "question": "How long does setup take?",
+              "answer": "Setup takes only 30–45 minutes. We arrive 1–2 hours before the event. Teardown happens after the event and takes about 30 minutes."
+            }
+          }
+        },
+        "services": {
+          "title": "Services & offers",
+          "items": {
+            "0": {
+              "question": "Which cocktails work best for corporate events?",
+              "answer": "Popular corporate-event cocktails: Aperol Spritz, Gin & Tonic, prosecco with berries, mojito. These take 30–60 seconds per drink, enable high throughput and appeal to most guests. We can also create tailored signature drinks."
+            },
+            "1": {
+              "question": "Do you offer non-alcoholic cocktails?",
+              "answer": "Absolutely. We offer a wide range of mocktails and alcohol-free alternatives with premium non-alcoholic spirits. They can be the main offer or served alongside alcoholic cocktails."
+            },
+            "2": {
+              "question": "Do you offer trade show catering in Munich?",
+              "answer": "Yes. We specialize in trade show catering in Munich. Whether BAUMA, ISPO or EXPO REAL — our self-sufficient bar works without trade show infrastructure. You save €400–750 in power/water connection costs."
+            }
+          }
+        },
+        "sustainability": {
+          "title": "Sustainability & ESG",
+          "items": {
+            "0": {
+              "question": "Is Velo.Bar sustainable?",
+              "answer": "Yes. We are carbon-neutral: delivery by cargo bike, regional spirits, zero-waste garnishes and no water usage. After each event you receive a sustainability certificate for your ESG reporting."
+            },
+            "1": {
+              "question": "Do you work with regional products?",
+              "answer": "Absolutely. We use gin from the Chiemgau, whisky from Franconia and herbal liqueurs from the Alps. Short supply chains, local value creation and authentic Bavarian flavor."
+            }
+          }
+        },
+        "events": {
+          "title": "Event types",
+          "items": {
+            "0": {
+              "question": "Do you cater Christmas parties?",
+              "answer": "Yes. We offer special winter cocktails such as virgin mulled wine, hot apple cider and cranberry fizz. Book 8+ weeks in advance for Christmas parties in Munich — the season fills up fast."
+            },
+            "1": {
+              "question": "Can you handle outdoor events without power?",
+              "answer": "Perfect for us. Our battery setup enables 8+ hours of operation without an outlet. Summer festivals in the park, company outings by the lake, team events in nature — anywhere without infrastructure."
+            }
+          }
+        }
+      }
+    },
+    "about": {
+      "parallax": {
+        "hero": {
+          "title": "We are Velo Bar",
+          "subtitle": "Founded with the vision to bring premium cocktails on wheels. A passion for quality, craftsmanship and bar experiences that stick in your mind.",
+          "founder1": {
+            "aria": "Sebastian - Co-Founder",
+            "alt": "Sebastian - Co-Founder"
+          },
+          "founder2": {
+            "aria": "Lars Eggers - Co-Founder",
+            "alt": "Lars Eggers - Co-Founder"
+          }
+        },
+        "story1": {
+          "heading": "The story",
+          "p1": "What started as an idea — \"How do we bring bar-quality to trade shows and corporate events?\" — is now an established company with 500+ events for clients in Munich and Coburg.",
+          "p2": "If guests can’t come to the bar, we bring the bar to them. That vision made us what we are today: specialists in premium cocktail catering for corporate events.",
+          "imageAlt": "Velo Bar Our Story"
+        },
+        "story2": {
+          "heading": "Why we’re the right choice for your event",
+          "imageAlt": "Why Velo Bar",
+          "p1Strong": "You can relax — we take care of the bar & drinks.",
+          "p1": "Smooth operations, an experienced team, reliable service. You focus on your event — we deliver the bar experience.",
+          "p2Strong": "Your guests get premium cocktails, not standard mixes.",
+          "p2": "We invest in top spirits, trained bartenders and handcrafted drinks. Quality you can taste.",
+          "p3Strong": "Your event feels professional, but not stiff.",
+          "p3": "Lars brings 10 years of international bartender experience; Sebastian brings Bavarian hospitality and local Munich expertise. Together we’re the perfect duo."
+        },
+        "team": {
+          "heading": "The team",
+          "p1Strong": "Lars (North) + Sebastian (South) = the perfect duo for Munich",
+          "p2": "\"Moin\" meets \"Servus\" — international bartender experience meets local roots. Our different backgrounds complement each other and create a unique mix of professionalism and warmth.",
+          "p3": "With 500+ successful events for companies like BMW, Siemens and innovative startups, we’ve proven our vision works. Every event is a chance to show premium bar craftsmanship.",
+          "links": {
+            "corporate": "Learn more about our corporate events",
+            "middle": "or check out our",
+            "gallery": "gallery",
+            "suffix": "."
+          },
+          "imageAlt": "Velo Bar Team"
+        }
+      }
+    },
+    "gallery": {
+      "seo": {
+        "title": "Gallery",
+        "description": "Highlights from our events: cocktail bars for corporate events, weddings and private celebrations."
+      },
+      "hero": {
+        "eyebrow": "Event impressions",
+        "title": "Gallery",
+        "subtitle": "This is what it looks like when we make your event unforgettable."
+      }
+    },
+    "bookingMuc": {
+      "seo": {
+        "title": "Munich booking | Mobile bar Munich & area | Velo.Bar",
+        "description": "Book the mobile Velo.Bar for your event in Munich. Self-sufficient eco system, professional bartenders, gin tastings from €49."
+      },
+      "layout": {
+        "heroTitle": "VELO.BAR Munich",
+        "heroSubtitle": "Munich’s premium mobile bar for corporate events & celebrations. Book now for your next event.",
+        "heroImageAlt": "Velo.Bar Munich - bartender at the mobile bar bike",
+        "packagesTitle": "Our offers for Munich & area",
+        "faqTitle": "Frequently asked questions",
+        "testimonialsTitle": "What our Munich customers say",
+        "ctaTitle": "Ready for your mobile bar in Munich?",
+        "ctaSubtitle": "Contact us for a non-binding quote",
+        "ctaButtonText": "Request now!"
+      }
+    },
+    "bookingCoburg": {
+      "seo": {
+        "title": "Coburg booking | Mobile bar Coburg & area | Velo.Bar",
+        "description": "Book the mobile Velo.Bar for your event in Coburg. Cocktail bar and gin tastings for private and corporate events."
+      },
+      "layout": {
+        "heroTitle": "VELO.BAR Coburg",
+        "heroSubtitle": "Mobile cocktail bar & gin tastings for Coburg & area",
+        "packagesTitle": "Our offers for Coburg & area",
+        "faqTitle": "Frequently asked questions",
+        "testimonialsTitle": "What our Coburg customers say",
+        "ctaTitle": "Ready for your mobile bar in Coburg?",
+        "ctaSubtitle": "Contact us for a non-binding quote",
+        "ctaButtonText": "Request now!"
+      },
+      "coburgSection": {
+        "title": "Why Velo.Bar in Coburg?",
+        "description": "Whether it’s a gin tasting, birthday, corporate celebration or private party — we bring professional bar culture to Coburg. Our mobile bar is fully self-sufficient and can be used anywhere.",
+        "cards": {
+          "servus": {
+            "title": "Servus!",
+            "text": "Sebastian brings real bar expertise from Munich to Coburg"
+          },
+          "moin": {
+            "title": "Moin!",
+            "text": "Lars complements with northern German warmth and professionalism"
+          }
+        }
+      }
+    },
+    "contact": {
+      "seo": {
+        "title": "Inquiry | Mobile Cocktail Bar Munich | Velo.Bar",
+        "description": "Send us your event inquiry for mobile cocktail bar services in Munich and Coburg. Reply within 24 hours. ✓ Request now!"
+      },
+      "hero": {
+        "badge": "Non-binding inquiry",
+        "title": "Request your event now",
+        "subtitle": "In just 3 steps to the perfect cocktail bar for your event. We’ll get back to you within 24 hours with a tailored offer."
+      },
+      "kpis": {
+        "events": "Events delivered",
+        "guests": "Guests served",
+        "rating": "Customer rating"
+      },
+      "loading": "Loading...",
+      "bottomCta": {
+        "title": "Prefer to call us directly?",
+        "subtitle": "We’re happy to advise you personally about your event.",
+        "whatsapp": "WhatsApp chat"
+      }
+    },
+    "legal": {
+      "eyebrow": "Legal"
+    },
+    "impressum": {
+      "title": "Legal Notice",
+      "sections": {
+        "tmg": {
+          "title": "Information according to § 5 TMG",
+          "paragraphs": {
+            "0": "Velo.Bar",
+            "1": "Sebastian Reichstaller & Lars Eggers GbR, SelectONEdrink GbR",
+            "2": "Matthias-Mayer-Straße 5",
+            "3": "81379 Munich"
+          }
+        },
+        "representedBy": {
+          "title": "Represented by:",
+          "paragraphs": {
+            "0": "Sebastian Reichstaller",
+            "1": "Lars Eggers"
+          }
+        },
+        "contact": {
+          "title": "Contact",
+          "paragraphs": {
+            "0": "Phone: +49 160 94623196",
+            "1": "Email: hallo@velo-bar.com"
+          }
+        },
+        "euDispute": {
+          "title": "EU dispute resolution",
+          "paragraphs": {
+            "0": "The European Commission provides a platform for online dispute resolution (ODR):",
+            "1": "https://ec.europa.eu/consumers/odr.",
+            "2": "You can find our email address above in this legal notice."
+          }
+        },
+        "consumerDispute": {
+          "title": "Consumer dispute resolution / universal arbitration board",
+          "paragraphs": {
+            "0": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+          }
+        },
+        "liabilityContent": {
+          "title": "Liability for content",
+          "paragraphs": {
+            "0": "As a service provider, we are responsible for our own content on these pages in accordance with general laws (§ 7 para. 1 TMG). However, according to §§ 8 to 10 TMG, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected. Liability in this regard is only possible from the time of knowledge of a specific infringement. If we become aware of any such infringements, we will remove this content immediately."
+          }
+        },
+        "liabilityLinks": {
+          "title": "Liability for links",
+          "paragraphs": {
+            "0": "Our offer contains links to external third-party websites over whose content we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked pages is always responsible for the content. The linked pages were checked for possible legal violations at the time they were linked. Illegal content was not recognizable at the time of linking. Permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of an infringement. If we become aware of any infringements, we will remove such links immediately."
+          }
+        },
+        "copyright": {
+          "title": "Copyright",
+          "paragraphs": {
+            "0": "The content and works created by the site operators on these pages are subject to German copyright law. Reproduction, editing, distribution and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are permitted only for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of infringements, we will remove such content immediately."
+          }
+        },
+        "cancellationFees": {
+          "title": "Cancellation fees: cancellation:",
+          "paragraphs": {
+            "0": "The customer has the right to withdraw from the contract at any time. Unless further written agreements have been made between the customer and the Lars Eggers & Sebastian Reichstaller GbR, Lars Eggers & Sebastian Reichstaller GbR is entitled to reasonable compensation as follows:"
+          },
+          "listItems": {
+            "0": "1) For a cancellation up to ten full working days before the first day of the event, 20% of the final quotation amount will be charged.",
+            "1": "2) For a cancellation between ten and three full working days before the first day of the event, 90% of the final quotation amount will be charged.",
+            "2": "3) For a cancellation less than three full working days before the first day of the event, 100% of the final quotation amount will be charged."
+          }
+        }
+      }
+    },
+    "datenschutz": {
+      "title": "Privacy Policy",
+      "intro": {
+        "p1": "This website collects personal data that serves as the basis for our website analytics. This includes:",
+        "list1": {
+          "0": "Information about your browser, network and device",
+          "1": "Web pages you visited before coming to this website",
+          "2": "Your IP address"
+        },
+        "p2": "This information may also include details about your use of this website, including:",
+        "list2": {
+          "0": "Clicks",
+          "1": "Internal links",
+          "2": "Pages visited",
+          "3": "Scrolling",
+          "4": "Searches",
+          "5": "Timestamps"
+        },
+        "p3": "We share this information with Squarespace, our website analytics provider, to learn more about traffic and activity on this website."
+      },
+      "cookies": {
+        "heading": "Cookies",
+        "p1": "This website uses cookies and similar technologies, which are small files or short pieces of text downloaded to a device when a visitor accesses a website or app.",
+        "p2Prefix": "For information about viewing cookies placed on your device, see",
+        "linkText": "About the cookies Squarespace uses",
+        "p2Suffix": ".",
+        "li1": {
+          "linkText": "These functional and required cookies are always used",
+          "suffix": ", as they enable Squarespace, our hosting platform, to securely provide this website to you."
+        },
+        "li2": {
+          "linkText": "These analytics and performance cookies",
+          "suffix": "are only used on this website as described below if you confirm our cookie banner. We use analytics cookies to gain insight into website traffic, activity and other data."
+        }
+      },
+      "hosting": {
+        "heading": "Hosting",
+        "p1": "This website is hosted by Squarespace. Squarespace collects personal data when you visit this website. This includes:",
+        "list": {
+          "0": "Information about your browser, network and device",
+          "1": "Web pages you visited before coming to this website",
+          "2": "Your IP address"
+        },
+        "p2": "Squarespace needs the data to operate this website and to protect and improve its platform and services. Squarespace analyzes the data in a de-personalized form."
+      },
+      "fonts": {
+        "heading": "Fonts",
+        "p1": "This website uses font files from Google Fonts and Adobe Fonts. To display this website correctly, servers where font files are stored may receive personal data about you. This includes:",
+        "list": {
+          "0": "Information about your browser, network or device",
+          "1": "Your IP address"
+        }
+      },
+      "closing": "#Velo.Bar"
+    },
+    "firmenfeiern": {
+      "offer": {
+        "title": "Free quote in 2 hours",
+        "subtitleShort": "Tell us your requirements and you will receive a tailored quote – within 2 hours.",
+        "subtitleLong": "Tell us your requirements and you will receive a tailored quote – guaranteed within 2 hours during business hours."
+      },
+      "bicycleUsp": {
+        "title": "Why our bicycle bar makes the difference",
+        "subtitle": "Unique in Munich: sustainable, space-saving, and a real eye-catcher for your guests"
+      },
+      "snippets": {
+        "pricing": {
+          "title": "Cost & space requirements",
+          "intro": "Direct answers for budget planning",
+          "q1": {
+            "question": "How much does a mobile bar for a corporate event cost?",
+            "answer": "A mobile bar for corporate events starts at €1,190 for 4 hours (50 guests). Premium packages with signature drinks and branding start at €2,190. All prices include bartender, glassware, ingredients and equipment – fully self-sufficient without power."
+          },
+          "q2": {
+            "question": "How much space is needed for a mobile cocktail bar?",
+            "answer": "Only 2 m² of space is required for our bicycle bar. The compact mobile bar fits in any room or on any terrace. Ideal for limited locations or as an additional eye-catcher."
+          }
+        },
+        "planning": {
+          "title": "Booking & cocktail selection",
+          "intro": "Key tips for planning your corporate event",
+          "q1": {
+            "question": "How far in advance should you book a mobile bar for corporate events?",
+            "answer": "Book 4–6 weeks in advance for best availability. Last-minute bookings up to 1 week before are possible depending on capacity. Reserve earlier for peak season (Nov/Dec)."
+          },
+          "q2": {
+            "question": "Which cocktails work best for corporate events?",
+            "answer": "Popular corporate-event cocktails: Aperol Spritz, Gin & Tonic, prosecco with berries, mojito. These take 30–60 seconds per drink, enable high throughput and appeal to most guests."
+          }
+        },
+        "logistics": {
+          "title": "Technical requirements & capacity",
+          "intro": "Everything you need to know about location and guests",
+          "q1": {
+            "question": "Does the mobile bar need power or a water connection?",
+            "answer": "No. Our bicycle bar is 100% self-sufficient – no power, no water required. Works anywhere, whether in the office, on a parking deck or outdoors. Perfect for challenging locations."
+          },
+          "q2": {
+            "question": "How many guests can one mobile bar serve?",
+            "answer": "One bar serves up to 150 guests over 4 hours. For larger events we recommend a second bar. Our bartender mixes up to 120 cocktails per hour – no waiting times."
+          }
+        }
+      },
+      "story": {
+        "locationsTitle": "Munich & Coburg – dual-location advantage",
+        "emphasis": {
+          "premium": "Premium cocktails, sustainable and mobile – everywhere.",
+          "specialization": "Our specialization:"
+        }
+      },
+      "pricing": {
+        "title": "Mobile bar pricing for corporate events – transparent packages",
+        "subtitle": "All-inclusive pricing with no hidden costs. VAT shown on request.",
+        "mostPopular": "Most Popular",
+        "perGuestSuffix": "/ guest",
+        "serviceSuffix": "service",
+        "legalLine": "All prices exclude VAT (VAT can be shown/added on request). Custom packages available on request."
+      },
+      "relatedServices": {
+        "title": "More services for businesses"
+      },
+      "faqAccordion": {
+        "title": "Frequently asked questions about corporate events",
+        "subtitle": "All key information for your planning"
+      },
+      "schema": {
+        "serviceName": "Cocktail catering for corporate events",
+        "serviceDescription": "Premium mobile cocktail bar for corporate events in Munich. All-inclusive bartender service for 50–500+ guests. Self-sufficient without power or water connection.",
+        "areaServed": {
+          "munich": "Munich",
+          "coburg": "Coburg",
+          "bavaria": "Bavaria"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Corporate Events"
+        }
+      }
+    },
+    "weihnachtsfeiern": {
+      "pricing": {
+        "title": "Christmas party packages – transparent pricing",
+        "subtitle": "All-inclusive fixed prices for your Christmas party",
+        "perGuestSuffix": "/ guest",
+        "serviceSuffix": "service",
+        "ctaFallback": "Request a quote"
+      },
+      "faq": {
+        "title": "Frequently asked questions about Christmas parties"
+      },
+      "finalCta": {
+        "title": "Request your Christmas party",
+        "subtitle": "Secure your preferred date for the holiday season",
+        "button": "Request without obligation"
+      },
+      "schema": {
+        "serviceName": "Mobile bar for corporate Christmas parties",
+        "serviceDescription": "Festive mobile cocktail bar for your corporate Christmas party in Munich. Mulled wine, winter cocktails and professional bartender service.",
+        "areaServed": {
+          "munich": "Munich",
+          "coburg": "Coburg",
+          "bavaria": "Bavaria"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Christmas Parties"
+        }
+      }
+    },
+    "teamEvents": {
+      "seo": {
+        "title": "Cocktail workshops for team events in Munich",
+        "description": "Interactive cocktail workshops for team building in Munich & Coburg. Professional bartenders for groups of 10–40 participants. Book your workshop now!"
+      },
+      "hero": {
+        "title": "Team events & cocktail workshops",
+        "subtitle": "Mix cocktails together, learn and have fun – perfect for team building and corporate events"
+      },
+      "packagesTitle": "Our workshop packages",
+      "faqTitle": "Frequently asked questions about workshops",
+      "testimonialsTitle": "What participants say",
+      "cta": {
+        "title": "Ready for an unforgettable team experience?",
+        "subtitle": "Book your cocktail workshop for your next team event",
+        "button": "Book workshop now"
+      },
+      "schema": {
+        "serviceName": "Cocktail workshops & team events",
+        "serviceDescription": "Interactive cocktail workshops for team building in Munich. Professional bartender trainers for groups of 10–40 participants.",
+        "areaServed": {
+          "munich": "Munich",
+          "coburg": "Coburg",
+          "bavaria": "Bavaria"
+        },
+        "breadcrumb": {
+          "home": "Home",
+          "current": "Team Events & Workshops"
+        }
+      },
+      "suitableFor": {
+        "items": {
+          "0": "Interactive team-building workshops (10–40 participants)",
+          "1": "Department events with learning value & fun",
+          "2": "Onboarding programs for new employees",
+          "3": "Creativity workshops for marketing teams",
+          "4": "Leadership trainings: experience teamwork hands-on",
+          "5": "Incentive events with active participation instead of passive consumption"
+        }
+      },
+      "process": {
+        "steps": {
+          "0": {
+            "step": "1. Define team goals",
+            "description": "What should the workshop achieve? Better communication, creative problem-solving, building trust? We design the right workshop flow."
+          },
+          "1": {
+            "step": "2. Didactic workshop concept",
+            "description": "A structured agenda with learning objectives, practical exercises, team challenges and individual skill-building elements – didactically sound."
+          },
+          "2": {
+            "step": "3. Location & setup planning",
+            "description": "We come to your premises or recommend inspiring workshop locations. Flexible setup for groups of 6–40 participants."
+          },
+          "3": {
+            "step": "4. Professional workshop equipment",
+            "description": "Each participant gets their own workstation with pro gear: shaker, jigger, ingredients and recipe cards – like real bartenders."
+          },
+          "4": {
+            "step": "5. Hands-on workshop delivery",
+            "description": "Our experienced bartender trainer teaches techniques, moderates team challenges and creates ‘aha’ moments plus real team spirit."
+          },
+          "5": {
+            "step": "6. Takeaways & transfer",
+            "description": "Participants receive recipe cards (or certificates in the masterclass) and reflect together: what do we take back to the team?"
+          }
+        }
+      },
+      "learn": {
+        "title": "What you will learn in our workshops",
+        "items": {
+          "0": { "strong": "Cocktail basics:", "text": "shaking, stirring, muddling – the core techniques" },
+          "1": { "strong": "Spirits know-how:", "text": "how to use gin, rum, vodka and tequila properly" },
+          "2": { "strong": "Classic cocktails:", "text": "mix mojito, margarita and negroni perfectly" },
+          "3": { "strong": "Creative garnishes:", "text": "the perfect presentation" },
+          "4": { "strong": "Team challenges:", "text": "create your own signature drinks together" }
+        }
+      },
+      "occasions": {
+        "title": "Popular workshop occasions",
+        "items": {
+          "0": "Team-building events",
+          "1": "Company anniversaries",
+          "2": "Employee incentives",
+          "3": "Department outings",
+          "4": "Onboarding events",
+          "5": "Christmas parties (interactive)",
+          "6": "Client events"
+        },
+        "note": "Also for private groups: bachelor/ette parties, birthdays, friend groups!"
+      },
+      "packages": {
+        "items": {
+          "0": {
+            "name": "Cocktail taster workshop",
+            "price": "€50",
+            "priceDetail": "per person (min. 10 people)",
+            "features": {
+              "0": "2-hour workshop",
+              "1": "Introduction to cocktail basics",
+              "2": "Mix 3 cocktails yourself",
+              "3": "All ingredients & equipment included",
+              "4": "Professional bartender as trainer",
+              "5": "Recipe cards to take home"
+            }
+          },
+          "1": {
+            "name": "Team-building cocktail workshop",
+            "price": "€80",
+            "priceDetail": "per person (min. 12 people)",
+            "features": {
+              "0": "3-hour intensive workshop",
+              "1": "Team challenges & cocktail competition",
+              "2": "Mix 5 cocktails yourself",
+              "3": "Learn pro techniques",
+              "4": "Boost teamwork & communication",
+              "5": "Prize for the best team",
+              "6": "Snacks & finger food included"
+            }
+          },
+          "2": {
+            "name": "VIP bartender masterclass",
+            "price": "€120",
+            "priceDetail": "per person (min. 8 people)",
+            "features": {
+              "0": "4-hour professional training",
+              "1": "Advanced techniques",
+              "2": "8+ premium cocktails",
+              "3": "Create your own signature drinks",
+              "4": "Molecular cocktails & flair bartending",
+              "5": "Certificate",
+              "6": "Gourmet snacks & dinner"
+            }
+          }
+        }
+      },
+      "faqs": {
+        "items": {
+          "0": {
+            "question": "Do we need prior experience?",
+            "answer": "No — our workshops are designed for beginners. We start with the basics and adjust the level depending on the package. Everyone can join in, from complete beginners to hobby bartenders."
+          },
+          "1": {
+            "question": "Where do the workshops take place?",
+            "answer": "We come to you! Whether it’s your office, a rented venue, or your home — we bring all equipment. Alternatively, we also offer workshops at partner locations in Munich and Coburg."
+          },
+          "2": {
+            "question": "How many people can participate?",
+            "answer": "The ideal group size is 10–20 people. For larger teams (up to 40) we work with two trainers in parallel groups. Smaller groups (from 6 people) are possible on request."
+          },
+          "3": {
+            "question": "Is this suitable as a team-building activity?",
+            "answer": "Absolutely! Our team-building workshops strengthen communication, creativity and collaboration. With team challenges, cocktail competitions and shared wins we build team spirit in a fun way."
+          },
+          "4": {
+            "question": "Can participants mix non-alcoholic options too?",
+            "answer": "Yes — for every cocktail we also offer an alcohol-free mocktail version. Participants can decide whether they want to mix with alcohol or alcohol-free."
+          },
+          "5": {
+            "question": "Do participants receive a certificate?",
+            "answer": "In the VIP bartender masterclass all participants receive a Velobar certificate. For the other workshops you’ll get recipe cards to take home with all cocktails you learned."
+          }
+        }
+      },
+      "testimonials": {
+        "items": {
+          "0": {
+            "quote": "The best team event we’ve ever had! Everyone loved it and we laughed a lot. The cocktails were fantastic too!",
+            "author": "Julia Hoffmann",
+            "company": "IT startup, Munich"
+          },
+          "1": {
+            "quote": "Perfect team building. Our colleagues were still talking about the cocktail competition weeks later. Highly recommended!",
+            "author": "Markus Bauer",
+            "company": "Marketing agency, Coburg"
+          }
+        }
+      }
+    }
+  },
+  "servicePageLayout": {
+    "hero": {
+      "eyebrow": "Velo.Bar service",
+      "ctaText": "Get in touch"
+    },
+    "suitableFor": {
+      "title": "Who is it for?"
+    },
+    "process": {
+      "title": "Process & logistics"
+    },
+    "packages": {
+      "title": "Our packages",
+      "popularBadge": "Popular",
+      "cta": "Send inquiry"
+    },
+    "testimonials": {
+      "title": "What our customers say"
+    },
+    "faq": {
+      "title": "Frequently asked questions"
+    },
+    "cta": {
+      "title": "Ready for your event?",
+      "subtitle": "Contact us for a non-binding quote",
+      "button": "Get in touch"
+    }
+  },
   "common": {
     "perGuest": "per guest",
     "from": "from",
     "hours": "hours",
     "guests": "guests",
     "included": "Included",
-    "mostPopular": "Most Popular"
+    "mostPopular": "Most Popular",
+    "logoAlt": "Velo.Bar logo",
+    "loading": "Loading...",
+    "skipToContent": "Skip to content",
+    "loadingAuditTool": "Loading audit tool...",
+    "breadcrumbAria": "Breadcrumb"
+  },
+  "meta": {
+    "siteName": "Velo.Bar – Mobile Cocktail Bar & Event Catering",
+    "applicationName": "Velo.Bar – Mobile Cocktail Bar & Event Catering"
+  },
+  "cookieConsent": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to provide you with the best experience on our website. Essential cookies are required for basic functions. You can optionally allow analytics and marketing cookies.",
+    "learnMore": "Learn more",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "customize": "Customize",
+    "essential": {
+      "title": "Essential Cookies",
+      "description": "These cookies are required for basic website functions and cannot be disabled."
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "description": "These cookies help us analyze and improve website usage."
+    },
+    "marketing": {
+      "title": "Marketing Cookies",
+      "description": "These cookies are used to show you personalized advertising."
+    },
+    "save": "Save Settings",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "notFound": {
+    "seoTitle": "404 - Page Not Found",
+    "seoDescription": "The page you are looking for could not be found.",
+    "eyebrow": "404",
+    "title": "Page Not Found",
+    "subtitle": "The requested page does not exist or has been moved.",
+    "body": "The page you're looking for doesn't exist. Please check the URL or return to the home page.",
+    "cta": "Return to Home"
+  },
+  "heroHome": {
+    "badge": "Munich & Coburg",
+    "title": "Mobile Cocktail Bar for Your Event",
+    "subtitle": "Professional bartender service for events in Munich and Coburg."
+  },
+  "pricing": {
+    "seoTitle": "Pricing & Packages | Mobile Cocktail Bar | Velo.Bar",
+    "seoDescription": "Transparent pricing for mobile cocktail bar services in Munich and Coburg. All-inclusive packages from €500.",
+    "schema": {
+      "product": {
+        "name": "Mobile Cocktail Bar Event Catering",
+        "description": "Mobile cocktail bar with professional bartenders for corporate events, weddings and private parties"
+      },
+      "offers": {
+        "starter": {
+          "name": "Starter Package",
+          "description": "Up to 50 guests, 3 hours of service, 4 classic cocktails"
+        },
+        "professional": {
+          "name": "Professional Package",
+          "description": "Up to 150 guests, 5 hours of service, 8 cocktails"
+        }
+      }
+    },
+    "hero": {
+      "eyebrow": "Transparent Pricing",
+      "title": "Pricing & Packages",
+      "subtitle": "Transparent fixed prices. No hidden costs. Everything included."
+    },
+    "packages": {
+      "starter": {
+        "name": "Starter",
+        "price": "from €500",
+        "features": {
+          "0": "Up to 50 guests",
+          "1": "3 hours of service",
+          "2": "4 classic cocktails",
+          "3": "Professional bartenders",
+          "4": "Complete equipment",
+          "5": "Setup and teardown"
+        },
+        "cta": "Request Quote"
+      },
+      "professional": {
+        "name": "Professional",
+        "badge": "Most Popular",
+        "price": "from €1,200",
+        "features": {
+          "0": "Up to 150 guests",
+          "1": "5 hours of service",
+          "2": "8 cocktails to choose from",
+          "3": "Premium spirits",
+          "4": "Custom cocktails",
+          "5": "Elegant decoration"
+        },
+        "cta": "Request Quote"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "on request",
+        "features": {
+          "0": "150+ guests",
+          "1": "Flexible service hours",
+          "2": "Unlimited selection",
+          "3": "Multiple bar stations",
+          "4": "Corporate branding",
+          "5": "Dedicated event manager"
+        },
+        "cta": "Request Quote"
+      }
+    },
+    "included": {
+      "title": "What's always included?",
+      "items": {
+        "spirits": {
+          "title": "Premium Spirits",
+          "description": "High-quality ingredients for perfect cocktails"
+        },
+        "bartender": {
+          "title": "Prof. Bartenders",
+          "description": "Experienced bartenders with event expertise"
+        },
+        "equipment": {
+          "title": "Complete Equipment",
+          "description": "Glasses, ice, equipment - everything included"
+        },
+        "setup": {
+          "title": "Setup & Teardown",
+          "description": "We take care of everything"
+        }
+      }
+    }
+  },
+  "menu": {
+    "seoTitle": "Drinks & Cocktails | Velo.Bar",
+    "seoDescription": "Our cocktail selection for events: classics, longdrinks and non-alcoholic options.",
+    "hero": {
+      "eyebrow": "Our Cocktails",
+      "title": "Drinks",
+      "subtitle": "Our cocktail selection for inspiration. We create the perfect drinks for your event."
+    }
+  },
+  "stickyCta": {
+    "headline": "Free quote in 2 hours",
+    "subline": "Call now or contact via WhatsApp",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hello! I'm interested in an event with Velo.Bar.",
+    "close": "Close"
+  },
+  "stickyContact": {
+    "callNow": "Call Now",
+    "whatsappOffer": "Instant Quote via Chat",
+    "scrollToTop": "Scroll to top",
+    "whatsappMessage": "Hello! I'm interested in your mobile cocktail bar. Can you provide me with a quote?"
+  },
+  "map": {
+    "title": "Velo.Bar – Mobile Cocktail Bar in Munich",
+    "location": "Munich, Germany",
+    "openMap": "Open Map",
+    "planRoute": "Plan Route"
+  },
+  "messeCatering": {
+    "stats": {
+      "longerVisits": "Longer Booth Visits",
+      "moreBusinessCards": "More Business Cards",
+      "tradeShowEvents": "Trade Show Events",
+      "googleRating": "Google Rating"
+    }
+  },
+  "finalCta": {
+    "title": "Ready for your event?",
+    "subtitle": "Secure your mobile cocktail bar for your next event now!",
+    "description": "Whether Munich or Coburg — we bring the mobile cocktail bar to your event. Request a no-obligation quote now!",
+    "text": "We bring the mobile cocktail bar to your event — request a quote now!",
+    "button": "Request a no-obligation quote"
+  },
+  "testimonialsSection": {
+    "title": "What our customers say",
+    "subtitle": "32 five-star Google reviews — here are a few highlights",
+    "viewAll": "View all 32 reviews on Google"
+  },
+  "clientLogos": {
+    "title": "Trusted by leading companies",
+    "subtitle": "These companies have booked us for their events"
+  },
+  "successStories": {
+    "title": "Trusted by leading companies",
+    "subtitle": "We have delivered 500+ events — from global corporations to innovative startups.",
+    "featuredAt": "Featured at events for",
+    "metrics": {
+      "events": {
+        "label": "Events delivered",
+        "description": "since 2018"
+      },
+      "guests": {
+        "label": "Guests served",
+        "description": "in Munich & Coburg"
+      },
+      "rating": {
+        "label": "Customer rating",
+        "description": "from 87+ reviews"
+      },
+      "recommendation": {
+        "label": "Recommendation",
+        "description": "from our B2B customers"
+      }
+    }
+  },
+  "drinksShowcase": {
+    "sectionTitle": "Signature Drinks",
+    "signatureBadge": "Signature Drink",
+    "ingredientsHeading": "Ingredients",
+    "classicHighballsBadge": "Classic Highballs",
+    "cocktails": {
+      "raspberryHibiscusFizz": {
+        "name": "Raspberry Hibiscus Fizz",
+        "type": "Refreshing · Fruity",
+        "description": "An elegant fruit cocktail with floral notes and sparkling freshness. Perfect for summer."
+      },
+      "basilSmash": {
+        "name": "Basil Smash",
+        "type": "Fresh · Herbal",
+        "description": "Fresh basil meets citrus and a refined gin base – aromatic and lively."
+      },
+      "passionfruitMojito": {
+        "name": "Passionfruit Mojito",
+        "type": "Tropical · Refreshing",
+        "description": "The tropical variant of the classic with exotic passionfruit and fresh mint."
+      },
+      "mangoRosemaryMule": {
+        "name": "Mango Rosemary Mule",
+        "type": "Spicy · Aromatic",
+        "description": "Spicy mango meets aromatic rosemary and the bite of ginger beer."
+      }
+    }
+  },
+  "whyVeloBarSection": {
+    "title": "Why Velo.Bar?",
+    "subtitle": "Three very good reasons why we're the right partner for your event.",
+    "cards": {
+      "professional": {
+        "title": "Professional bartenders",
+        "description": "Experienced bartenders with a passion for first-class cocktails and service. We bring 10+ years of international bar experience to your event."
+      },
+      "flexible": {
+        "title": "Flexible booking",
+        "description": "From small celebrations to large events — we adapt to your needs. For 50–500+ guests, anywhere in Munich and Coburg."
+      },
+      "premium": {
+        "title": "Premium quality",
+        "description": "Handcrafted cocktails with top spirits. Your guests get bar quality you can taste — and remember."
+      }
+    }
   }
 }

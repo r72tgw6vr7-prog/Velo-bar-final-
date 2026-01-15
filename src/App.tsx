@@ -5,11 +5,11 @@ import { Suspense, useState, lazy, useEffect } from 'react';
 // Lazy load all page components for code splitting (default exports)
 const HomePage = lazy(() => import('./pages/HomePage.tsx'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage.tsx'));
+const PricingPage = lazy(() => import('./pages/PricingPage.tsx'));
 const MenuPage = lazy(() => import('./pages/MenuPage.tsx'));
 const BuchungMucPage = lazy(() => import('./pages/BuchungMucPage.tsx'));
 const VelobarcoPage = lazy(() => import('./pages/VelobarcoPage.tsx'));
 const AboutPage = lazy(() => import('./pages/AboutPage.tsx'));
-const PricingPage = lazy(() => import('./pages/PricingPage.tsx'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage.tsx'));
 const FAQPage = lazy(() => import('./pages/FAQPage.tsx'));
 const ImpressumPage = lazy(() => import('./pages/ImpressumPage.tsx'));
@@ -21,7 +21,7 @@ const CorporateEventCateringGuidePage = lazy(
 );
 const MessestandIdeenPage = lazy(() => import('./pages/blog/messestand-ideen-hospitality.tsx'));
 const ROIHospitalityEventsPage = lazy(() => import('./pages/blog/roi-hospitality-events.tsx'));
-const MessekateringKostenPage = lazy(() => import('./pages/blog/messekatering-kosten-2025.tsx'));
+const MessecateringKostenPage = lazy(() => import('./pages/blog/messecatering-kosten-2025.tsx'));
 const AlkoholfreieCocktailsPage = lazy(
   () => import('./pages/blog/alkoholfreie-cocktails-firmenevents.tsx'),
 );
@@ -31,8 +31,8 @@ const CateringOhneStromanschlussPage = lazy(
   () => import('./pages/blog/catering-ohne-stromanschluss.tsx'),
 );
 const DistrictPage = lazy(() => import('./pages/locations/DistrictPage.tsx'));
-const TokenVerificationPage = lazy(() => import('./pages/dev/TokenVerificationPage.tsx'));
-const UILabPreviewPage = lazy(() => import('./pages/UILabPreviewPage.tsx'));
+const DesignTokenReferencePage = lazy(() => import('./pages/dev/DesignTokenReferencePage.tsx'));
+const DesignSystemPreviewPage = lazy(() => import('./pages/DesignSystemPreviewPage.tsx'));
 
 // Venue-specific landing pages (Programmatic SEO)
 const MesseMuenchenPage = lazy(() => import('./pages/locations/messe-muenchen.tsx'));
@@ -47,7 +47,7 @@ const LocationsIndexPage = lazy(() => import('./pages/locations/LocationsIndexPa
 // Accessibility imports (keep eager - needed immediately)
 import { AccessibilityProvider, AccessibilityMenu } from './components/accessibility/index.ts';
 import './styles/accessibility.css';
-import { LanguageProvider } from '@/contexts/LanguageContext.tsx';
+import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext.tsx';
 import { AppProvider } from './core/state/AppContext.tsx';
 import Meta from '@/components/Meta.tsx';
 // Fix import path to match actual directory structure
@@ -60,6 +60,7 @@ import { PerformanceDashboard } from '@/components/debug/PerformanceDashboard.ts
 import { StickyCTABar } from '@/components/organisms/StickyCTABar.tsx';
 import ErrorBoundary from '@/components/layout/ErrorBoundary.tsx';
 import ProtectedRoute from '@/routes/ProtectedRoute.tsx';
+import { ConsentProvider } from '@/components/ConsentProvider.tsx';
 
 function App() {
   // State to toggle accessibility audit tool for developers
@@ -99,15 +100,17 @@ function App() {
     <BusinessProvider>
       <AppProvider initialLanguage='DE'>
         <LanguageProvider>
-          <AccessibilityProvider>
-            <BrowserRouter>
-              <AppRouterContent
-                isDev={isDev}
-                showA11yAudit={showA11yAudit}
-                setShowA11yAudit={setShowA11yAudit}
-              />
-            </BrowserRouter>
-          </AccessibilityProvider>
+          <ConsentProvider>
+            <AccessibilityProvider>
+              <BrowserRouter>
+                <AppRouterContent
+                  isDev={isDev}
+                  showA11yAudit={showA11yAudit}
+                  setShowA11yAudit={setShowA11yAudit}
+                />
+              </BrowserRouter>
+            </AccessibilityProvider>
+          </ConsentProvider>
         </LanguageProvider>
       </AppProvider>
     </BusinessProvider>
@@ -128,6 +131,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
   setShowA11yAudit,
 }) => {
   const location = useLocation();
+  const { t } = useLanguage();
   const isGalleryRoute = location.pathname === ROUTE_CONFIG[ROUTES.GALERIE].path;
 
   const routes = (
@@ -135,7 +139,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
       fallback={
         <div className='flex min-h-screen items-center justify-center'>
           <div className='text-center'>
-            <div className='u-spinner' role='status' aria-label='Loading' />
+            <div className='u-spinner' role='status' aria-label={t('common.loading')} />
           </div>
         </div>
       }
@@ -148,7 +152,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               isDev ? (
                 <ProtectedRoute>
-                  <TokenVerificationPage />
+                  <DesignTokenReferencePage />
                 </ProtectedRoute>
               ) : (
                 <Navigate to={ROUTE_CONFIG[ROUTES.HOME].path} replace />
@@ -157,7 +161,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           />
 
           {/* UI Lab Preview */}
-          <Route path='/ui-lab' element={<UILabPreviewPage />} />
+          <Route path='/ui-lab' element={<DesignSystemPreviewPage />} />
 
           {/* Main Routes */}
           <Route
@@ -165,8 +169,8 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='Velo.Bar – Mobile Cocktailbar für Events in München & Coburg'
-                  description='Mobile Cocktailbar für Firmenfeiern, Hochzeiten, Messen und private Events in München und Coburg. Professioneller Barkeeper-Service für 50-500+ Gäste.'
+                  title={t('pages.home.seo.title')}
+                  description={t('pages.home.seo.description')}
                   canonicalPath='/'
                 />
                 <ErrorBoundary>
@@ -182,8 +186,8 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='Sandbox Homepage | Velo.Bar'
-                  description='Sandbox version of the Velo.Bar homepage for testing and development.'
+                  title={t('pages.homeNew.seo.title')}
+                  description={t('pages.homeNew.seo.description')}
                   canonicalPath='/home-new'
                 />
                 <ErrorBoundary>
@@ -199,14 +203,17 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='Leistungen | Mobile Cocktailbar | Velobar München & Coburg'
-                  description='Alle Leistungen auf einen Blick: Firmenfeiern, Weihnachtsfeiern, Messe-Catering, Team-Events, Private Feiern und Hochzeiten in München & Coburg.'
+                  title={t('pages.services.seo.title')}
+                  description={t('pages.services.seo.description')}
                   canonicalPath={ROUTE_CONFIG[ROUTES.SERVICES].path}
                 />
                 <ServicesPage />
               </>
             }
           />
+
+          {/* Pricing */}
+          <Route path={ROUTE_CONFIG[ROUTES.PREISE].path} element={<PricingPage />} />
 
           {/* Legacy Service Routes (redirect into /leistungen sections) */}
           <Route
@@ -245,29 +252,13 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={<Navigate to={`${ROUTE_CONFIG[ROUTES.SERVICES].path}#hochzeiten`} replace />}
           />
 
-          {/* Pricing & Gallery Routes */}
-          <Route
-            path={ROUTE_CONFIG[ROUTES.PREISE].path}
-            element={
-              <>
-                <Meta
-                  title='Preise & Pakete | Mobile Cocktailbar | Velobar München & Coburg'
-                  description='Transparente Preise für mobile Cocktailbar-Services. Pakete für Firmenfeiern, Hochzeiten und private Events in München und Coburg.'
-                  canonicalPath={ROUTE_CONFIG[ROUTES.PREISE].path}
-                />
-                <ErrorBoundary>
-                  <PricingPage />
-                </ErrorBoundary>
-              </>
-            }
-          />
           <Route
             path={ROUTE_CONFIG[ROUTES.GALERIE].path}
             element={
               <>
                 <Meta
-                  title='Galerie | Event-Impressionen | Velobar München & Coburg'
-                  description='Eindrücke von unseren Events: Cocktailbars auf Firmenfeiern, Hochzeiten und privaten Feiern in München und Coburg.'
+                  title={t('pages.gallery.seo.title')}
+                  description={t('pages.gallery.seo.description')}
                   canonicalPath={ROUTE_CONFIG[ROUTES.GALERIE].path}
                 />
                 <ErrorBoundary>
@@ -283,8 +274,8 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='Drinks Menu | Cocktails & SESES Longdrinks | Velobar'
-                  description='Unsere Cocktail-Auswahl: SESES Longdrinks und klassische Cocktails für Ihr Event in München und Coburg.'
+                  title={t('menu.seoTitle')}
+                  description={t('menu.seoDescription')}
                   canonicalPath={ROUTE_CONFIG[ROUTES.MENU].path}
                 />
                 <MenuPage />
@@ -301,8 +292,8 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='München Booking | Mobile Bar München & Umgebung | Velobar'
-                  description='Buchen Sie die mobile Velo.Bar für Ihr Event in München. Selbstversorgendes Öko-System, professionelle Barkeeper, Gin-Tastings ab 49€.'
+                  title={t('pages.bookingMuc.seo.title')}
+                  description={t('pages.bookingMuc.seo.description')}
                   canonicalPath={ROUTE_CONFIG[ROUTES.BUCHUNG_MUC].path}
                 />
                 <ErrorBoundary>
@@ -316,8 +307,8 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='Coburg Booking | Mobile Bar Coburg & Umgebung | Velobar'
-                  description='Buchen Sie die mobile Velo.Bar für Ihr Event in Coburg. Cocktailbar und Gin-Tastings für private und Firmenfeiern.'
+                  title={t('pages.bookingCoburg.seo.title')}
+                  description={t('pages.bookingCoburg.seo.description')}
                   canonicalPath={ROUTE_CONFIG[ROUTES.VELOBARCO].path}
                 />
                 <VelobarcoPage />
@@ -334,8 +325,8 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               <>
                 <Meta
-                  title='Anfrage | Jetzt anfragen | Velobar München & Coburg'
-                  description='Senden Sie uns Ihre Event-Anfrage für mobile Cocktailbar-Services in München und Coburg. Wir melden uns innerhalb von 24 Stunden.'
+                  title={t('pages.contact.seo.title')}
+                  description={t('pages.contact.seo.description')}
                   canonicalPath={ROUTE_CONFIG[ROUTES.ANFRAGE].path}
                 />
                 <ErrorBoundary>
@@ -362,7 +353,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           />
           <Route path='/blog/messestand-ideen-hospitality' element={<MessestandIdeenPage />} />
           <Route path='/blog/roi-hospitality-events' element={<ROIHospitalityEventsPage />} />
-          <Route path='/blog/messekatering-kosten-2025' element={<MessekateringKostenPage />} />
+          <Route path='/blog/messecatering-kosten-2025' element={<MessecateringKostenPage />} />
           <Route
             path='/blog/alkoholfreie-cocktails-firmenevents'
             element={<AlkoholfreieCocktailsPage />}
@@ -426,7 +417,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
         href='#main-content'
         className='sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-(--brand-primary) focus:text-black'
       >
-        Zum Inhalt springen
+        {t('common.skipToContent')}
       </a>
       <ScrollToTop />
       <AnalyticsProvider>
@@ -452,7 +443,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           <React.Suspense
             fallback={
               <div className='fixed right-6 bottom-6 rounded bg-black p-8 text-white'>
-                Loading audit tool...
+                {t('common.loadingAuditTool')}
               </div>
             }
           >

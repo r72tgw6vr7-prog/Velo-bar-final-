@@ -65,3 +65,34 @@ dist/
 .env
 .env.local
 public/Velo Gallery/
+
+# Prevent accidental boilerplate re-introduction
+# ═══════════════════════════════════════════════════════════════════
+# VELO BAR - FORBIDDEN BOILERPLATE PATTERNS
+# ═══════════════════════════════════════════════════════════════════
+# Any file matching these patterns should be DELETED immediately
+# These are signs of generic templates that don't belong in production
+
+# Generic naming patterns (template artifacts)
+**/ProcessTimeline*
+**/Example*.tsx
+**/Demo*.tsx
+**/Template*.tsx
+**/Placeholder*.tsx
+**/*.clean.tsx
+**/*.backup.tsx
+
+# Non-business features (SaaS/Agency templates)
+**/PricingPage.tsx
+**/CheckoutButton.tsx
+**/NewsletterSection.tsx
+**/BlogPost*.tsx
+**/CMS*.tsx
+
+# Test/preview pages that sneak into production
+**/UILabPreviewPage.tsx  # Keep this one for now (you use it)
+**/ParallaxScrollDemo.tsx
+
+# Duplicate implementations (confusion sources)
+**/HeroSection.tsx  # Production uses HeroLocked.tsx
+**/TestimonialsCarousel.tsx  # Production uses TestimonialsSection.tsx

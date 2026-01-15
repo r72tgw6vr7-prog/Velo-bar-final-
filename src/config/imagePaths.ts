@@ -21,7 +21,7 @@ export const IMAGE_PATHS = {
   // Hero section
   hero: {
     // use an existing gallery hero as the default background
-    background: '/Velo Gallery/mobile-bar-hero-640w.webp',
+    background: '/Velo Gallery/mobile-bar-hero',
     trustBadge1: '/images/clients/client-01.svg',
     trustBadge2: '/images/clients/client-02.svg',
     trustBadge3: '/images/clients/client-03.svg',
@@ -30,7 +30,7 @@ export const IMAGE_PATHS = {
 
   // Background images
   backgrounds: {
-    cosmic: '/Velo Gallery/mobile-bar-hero-640w.webp',
+    cosmic: '/Velo Gallery/mobile-bar-hero',
   },
 
   // Partners logos

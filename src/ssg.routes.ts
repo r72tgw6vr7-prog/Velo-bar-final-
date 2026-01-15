@@ -27,7 +27,7 @@ export const routes = [
   '/resources/corporate-event-catering-guide',
   '/blog/messestand-ideen-hospitality',
   '/blog/roi-hospitality-events',
-  '/blog/messekatering-kosten-2025',
+  '/blog/messecatering-kosten-2025',
   '/blog/alkoholfreie-cocktails-firmenevents',
   '/blog/nachhaltige-firmenfeier',
   '/blog/last-minute-catering-muenchen',

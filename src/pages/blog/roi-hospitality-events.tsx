@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
@@ -14,7 +15,7 @@ const ROIHospitalityEventsPage: React.FC = () => {
     headline: 'Lohnt sich das? So messen Sie den ROI Ihrer Event-Bar',
     description:
       'Warum Hospitality keine Kostenstelle ist: Lernen Sie, wie Sie den ROI Ihrer mobilen Bar mit Cost Per Lead (CPL) und Verweildauer-Metriken berechnen.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -44,19 +45,20 @@ const ROIHospitalityEventsPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='Lohnt sich das? So messen Sie den ROI Ihrer Event-Bar | Velo.Bar'
-      description='Warum Hospitality keine Kostenstelle ist: Lernen Sie, wie Sie den ROI Ihrer mobilen Bar mit Cost Per Lead und Verweildauer-Metriken berechnen.'
-      canonicalPath='/blog/roi-hospitality-events'
-      structuredData={schemaData}
-      withContainer={false}
-      className='bg-navy'
-    >
-      <Section
-        container='narrow'
-        spacing='xl'
-        className='bg-navy-primary relative overflow-hidden text-white'
+    <SiteBackground>
+      <PageTemplate
+        title='Lohnt sich das? So messen Sie den ROI Ihrer Event-Bar | Velo.Bar'
+        description='Warum Hospitality keine Kostenstelle ist: Lernen Sie, wie Sie den ROI Ihrer mobilen Bar mit Cost Per Lead und Verweildauer-Metriken berechnen.'
+        canonicalPath='/blog/roi-hospitality-events'
+        structuredData={schemaData}
+        withContainer={false}
+        background='transparent'
       >
+        <Section
+          container='narrow'
+          spacing='xl'
+          className='bg-navy-primary relative overflow-hidden text-white'
+        >
         <div className='absolute inset-0 z-0 opacity-20'>
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(99,102,241,0.3),transparent_50%)]' />
         </div>
@@ -399,7 +401,8 @@ const ROIHospitalityEventsPage: React.FC = () => {
           </div>
         </Section>
       </Section>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

@@ -80,16 +80,23 @@ function pickDefaultVariant(variants) {
     }
   }
 
-  // Build TypeScript file
-  const lines = [];
-  lines.push('/* Auto-generated image manifest. Regenerate with scripts/generate-image-manifest.mjs */');
-  lines.push('export default {');
+  // Build TypeScript file - deduplicate entries
+  // Note: lowercase lookup is handled at runtime in resolvePublicPath.ts, no need to duplicate entries
+  const dedupedEntries = new Map();
   for (const e of entries) {
     const k = e.key.replace(/\\/g, '/');
     const v = e.val.replace(/\\/g, '/');
+    // Add normal case only (runtime handles case-insensitive matching)
+    if (!dedupedEntries.has(k)) {
+      dedupedEntries.set(k, v);
+    }
+  }
+
+  const lines = [];
+  lines.push('/* Auto-generated image manifest. Regenerate with scripts/generate-image-manifest.mjs */');
+  lines.push('export default {');
+  for (const [k, v] of dedupedEntries) {
     lines.push(`  "${k}": "${v}",`);
-    // also lower-cased version for robustness
-    lines.push(`  "${k.toLowerCase()}": "${v}",`);
   }
   lines.push('};');
 

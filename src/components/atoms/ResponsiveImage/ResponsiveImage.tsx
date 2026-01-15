@@ -156,8 +156,8 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   };
 
   // Default image (original size WebP)
-  const defaultSrc = `${baseSrc}.webp`;
-  const fallbackSrc = `${baseSrc}.${computedFallbackFormat}`;
+  const defaultSrc = baseSrc;
+  const fallbackSrc = baseSrc;
 
   // Handle load
   const handleLoad = () => {
@@ -233,7 +233,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
           return (
             <picture>
               {candidates.map((c) => (
-                <source key={c.url} type={c.type} srcSet={c.url} sizes={sizes} />
+                <source key={c.url} type={c.type} srcSet={encodeURI(c.url)} sizes={sizes} />
               ))}
 
               <img
@@ -241,7 +241,6 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
                 alt={alt}
                 loading={computedLoading}
                 decoding={computedDecoding}
-                fetchPriority={computedFetchPriority}
                 onLoad={handleLoad}
                 onError={handleError}
                 style={imageStyle}
@@ -250,6 +249,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
                   isLoaded ? 'opacity-100' : 'opacity-0',
                 )}
                 {...imgProps}
+                {...{ fetchpriority: computedFetchPriority }}
               />
             </picture>
           );
@@ -262,7 +262,9 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
               RESPONSIVE_WIDTHS.map((width) => {
                 const candidate = `${baseSrc}-${width}w${ext}`;
                 const url = resolvePublicPath(candidate);
-                return publicHas(url) ? `${url} ${width}w` : null;
+                if (!publicHas(url)) return null;
+                const encodedUrl = encodeURI(url);
+                return `${encodedUrl} ${width}w`;
               })
                 .filter(Boolean)
                 .join(', ');
@@ -292,7 +294,6 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
             alt={alt}
             loading={computedLoading}
             decoding={computedDecoding}
-            fetchPriority={computedFetchPriority}
             onLoad={handleLoad}
             onError={handleError}
             style={imageStyle}
@@ -301,6 +302,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
               isLoaded ? 'opacity-100' : 'opacity-0',
             )}
             {...imgProps}
+            {...{ fetchpriority: computedFetchPriority }}
           />
         </picture>
       )}

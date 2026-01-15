@@ -10,32 +10,32 @@
  * Features:
  * - Progress bar with "Schritt X/4 – Fast fertig!"
  * - Inline validation with focus on first invalid field
- * - Formal "Sie" tone throughout
+ * - Informal "du" tone throughout
  * - Brand colors: accent-primary (orange)
  */
 
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  ArrowRight,
-  ArrowLeft,
-  Check,
-  Users,
-  Calendar,
-  Euro,
-  Mail,
-  Phone,
-  Building2,
-  User,
-  Clock,
-  Wine,
-  Briefcase,
-  Gift,
-  MapPin,
-} from 'lucide-react';
+import { z } from 'zod';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
+import Check from 'lucide-react/dist/esm/icons/check';
+import Users from 'lucide-react/dist/esm/icons/users';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Euro from 'lucide-react/dist/esm/icons/euro';
+import Mail from 'lucide-react/dist/esm/icons/mail';
+import Phone from 'lucide-react/dist/esm/icons/phone';
+import Building2 from 'lucide-react/dist/esm/icons/building-2';
+import User from 'lucide-react/dist/esm/icons/user';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import Wine from 'lucide-react/dist/esm/icons/wine';
+import Briefcase from 'lucide-react/dist/esm/icons/briefcase';
+import Gift from 'lucide-react/dist/esm/icons/gift';
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';;
 import { Button } from '@/components/atoms/Button/index.ts';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   trackBookingStepView,
   trackBookingSubmitError,
@@ -69,6 +69,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
   defaultGuestCount,
   source = 'booking-wizard',
 }) => {
+  const { t } = useLanguage();
   const [searchParams] = useSearchParams();
   const {
     currentStep,
@@ -197,9 +198,14 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
 
   // Track step views for the booking wizard
   useEffect(() => {
-    const currentTitle = stepTitles[currentStep - 1]?.title;
+    const currentTitle = t(`bookingWizard.steps.${currentStep}.title`);
     trackBookingStepView(currentStep, currentTitle);
-  }, [currentStep]);
+  }, [currentStep, t]);
+
+  const guestRangeKey = (id: string) => {
+    if (id === '200+') return '200_plus';
+    return id.replace('-', '_');
+  };
 
   const canProceed = (step: number): boolean => {
     switch (step) {
@@ -314,7 +320,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
 
       console.error('Booking wizard error:', error);
       setSubmitError(
-        'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder rufen Sie uns an.',
+        'Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder rufe uns an.',
       );
     } finally {
       setIsSubmitting(false);
@@ -325,7 +331,8 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     <div className='mb-8'>
       <div className='mb-2 flex items-center justify-between'>
         <span className='font-(--typography-font-weight-medium) text-(--typography-body-small) text-[#fff8ec]/80'>
-          Schritt {currentStep}/4 {currentStep === 3 ? '– Fast fertig!' : ''}
+          {t('bookingWizard.progress.step')} {currentStep}/4{' '}
+          {currentStep === 3 ? t('bookingWizard.progress.almostDone') : ''}
         </span>
         <span className='text-(--typography-body-small) text-[#fff8ec]/60'>
           {Math.round((currentStep / 4) * 100)}%
@@ -360,7 +367,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 {s.step}
               </span>
             )}
-            <span className='hidden sm:inline'>{s.title}</span>
+            <span className='hidden sm:inline'>{t(`bookingWizard.steps.${s.step}.title`)}</span>
           </div>
         ))}
       </div>
@@ -371,7 +378,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     <div className='space-y-8'>
       <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
         <MapPin className='mr-2 inline' size={20} />
-        Bitte wählen Sie Ihren Standort
+        {t('bookingWizard.step1.heading')}
       </h3>
       <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
         {locations.map((loc) => (
@@ -400,14 +407,14 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                   location === loc.id ? 'text-[#fff8ec]' : 'text-[#003141]'
                 }`}
               >
-                {loc.label}
+                {t(`bookingWizard.locations.${loc.id}.label`)}
               </div>
               <div
                 className={`text-(--typography-body) ${
                   location === loc.id ? 'text-[#fff8ec]/90' : 'text-[#003141]/70'
                 }`}
               >
-                {loc.description}
+                {t(`bookingWizard.locations.${loc.id}.description`)}
               </div>
             </div>
           </button>
@@ -420,7 +427,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     <div className='space-y-8'>
       <div>
         <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
-          Welche Art von Event planen Sie?
+          {t('bookingWizard.step2.eventTypeQuestion')}
         </h3>
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
           {eventTypes.map((type) => (
@@ -449,14 +456,14 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                     eventType === type.id ? 'text-[#fff8ec]' : 'text-[#003141]'
                   }`}
                 >
-                  {type.label}
+                  {t(`bookingWizard.eventTypes.${type.id}.label`)}
                 </div>
                 <div
                   className={`text-(--typography-body-small) ${
                     eventType === type.id ? 'text-[#fff8ec]/90' : 'text-[#003141]/70'
                   }`}
                 >
-                  {type.description}
+                  {t(`bookingWizard.eventTypes.${type.id}.description`)}
                 </div>
               </div>
             </button>
@@ -467,7 +474,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
       <div>
         <h3 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#fff8ec]'>
           <Users className='mr-2 inline' size={20} />
-          Wie viele Gäste erwarten Sie?
+          {t('bookingWizard.step2.guestCountQuestion')}
         </h3>
         <div className='grid grid-cols-2 gap-8 sm:grid-cols-4'>
           {guestRanges.map((range) => (
@@ -492,7 +499,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                   guestCount === range.id ? 'text-[#fff8ec]' : 'text-[#003141]'
                 }`}
               >
-                {range.label}
+                {t(`bookingWizard.guestRanges.${guestRangeKey(range.id)}`)}
               </div>
             </button>
           ))}
@@ -502,11 +509,11 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
       <div>
         <label className='mb-0 block font-(--typography-font-weight-medium) text-(--typography-body-small) text-[#fff8ec]'>
           <Calendar className='mr-2 inline' size={16} />
-          Wann findet Ihr Event statt? *
+          {t('bookingWizard.step2.dateLabel')} *
         </label>
         <input
           type='date'
-          {...register('eventDate', { required: 'Bitte wählen Sie ein Datum' })}
+          {...register('eventDate', { required: t('bookingWizard.step2.dateRequired') })}
           className={`w-full rounded-xl border-2 bg-[#fff8ec] px-4 py-4 text-[#003141] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none ${
             errors.eventDate ? 'border-red-500' : 'border-[#003141] focus:border-[#ee7868]'
           }`}
@@ -531,7 +538,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
         <input
           type='text'
           {...register('company', { required: 'Unternehmen ist erforderlich' })}
-          placeholder='Ihr Firmenname'
+          placeholder={t('form.placeholders.company')}
           className={`w-full rounded-xl border-2 bg-[#fff8ec] px-4 py-4 text-[#003141] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none ${
             errors.company ? 'border-red-500' : 'border-[#003141] focus:border-[#ee7868]'
           }`}
@@ -652,7 +659,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
         <textarea
           {...register('message')}
           rows={3}
-          placeholder='Besondere Wünsche, Fragen, Details zu Ihrem Event...'
+          placeholder={t('form.placeholders.eventDetails')}
           className='w-full resize-none rounded-xl border-2 border-[#003141] bg-[#fff8ec] px-8 py-4 text-[#003141] focus:border-[#ee7868] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none'
         />
       </div>
@@ -662,7 +669,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           type='checkbox'
           id='privacy'
           {...register('privacyAccepted', {
-            required: 'Bitte akzeptieren Sie die Datenschutzerklärung',
+            required: 'Bitte akzeptiere die Datenschutzerklärung',
           })}
           className='mt-1 h-5 w-5 shrink-0 rounded border-[#003141]/20 text-[#ee7868] focus:ring-[#ee7868]'
         />
@@ -705,39 +712,45 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
             <Check className='text-green-600' size={40} />
           </div>
           <h3 className='mb-8 font-(--typography-font-weight-bold) text-(--typography-headline-lg) text-[#fff8ec]'>
-            {isSubmitting ? 'Anfrage wird gesendet...' : 'Vielen Dank für Ihre Anfrage!'}
+            {isSubmitting ? t('bookingWizard.step4.submittingTitle') : t('bookingWizard.step4.successTitle')}
           </h3>
           <p className='mx-auto mb-8 max-w-md text-(--typography-body-standard) text-[#fff8ec]/80'>
-            {isSubmitting ? 'Bitte haben Sie einen Moment Geduld...' : 'Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.'}
+            {isSubmitting ? t('bookingWizard.step4.submittingDetail') : t('bookingWizard.step4.successDetail')}
           </p>
 
           {isComplete && (
             <>
               <div className='mx-auto max-w-md rounded-xl bg-[#fff8ec] p-8 text-left'>
                 <h4 className='mb-0 font-(--typography-font-weight-semibold) text-[#003141]'>
-                  Zusammenfassung:
+                  {t('bookingWizard.step4.summary.heading')}
                 </h4>
                 <div className='space-y-0 text-(--typography-body-small) text-[#003141]/80'>
                   <div>
-                    <strong>Standort:</strong> {locations.find((l) => l.id === watch('location'))?.label}
+                    <strong>{t('bookingWizard.summary.location')}:</strong>{' '}
+                    {watch('location') ? t(`bookingWizard.locations.${watch('location')}.label`) : '—'}
                   </div>
                   <div>
-                    <strong>Event:</strong> {eventTypes.find((t) => t.id === watch('eventType'))?.label}
+                    <strong>{t('bookingWizard.summary.event')}:</strong>{' '}
+                    {watch('eventType') ? t(`bookingWizard.eventTypes.${watch('eventType')}.label`) : '—'}
                   </div>
                   <div>
-                    <strong>Gäste:</strong> {guestRanges.find((g) => g.id === watch('guestCount'))?.label}
+                    <strong>{t('bookingWizard.summary.guests')}:</strong>{' '}
+                    {watch('guestCount')
+                      ? t(`bookingWizard.guestRanges.${guestRangeKey(watch('guestCount'))}`)
+                      : '—'}
                   </div>
                   <div>
-                    <strong>Datum:</strong> {watch('eventDate')}
+                    <strong>{t('bookingWizard.summary.date')}:</strong> {watch('eventDate')}
                   </div>
                   <div>
-                    <strong>Unternehmen:</strong> {watch('company')}
+                    <strong>{t('bookingWizard.summary.company')}:</strong> {watch('company')}
                   </div>
                   <div>
-                    <strong>Kontakt:</strong> {watch('firstName')} {watch('lastName')}
+                    <strong>{t('bookingWizard.summary.contact')}:</strong> {watch('firstName')}{' '}
+                    {watch('lastName')}
                   </div>
                   <div>
-                    <strong>E-Mail:</strong> {watch('email')}
+                    <strong>{t('bookingWizard.summary.email')}:</strong> {watch('email')}
                   </div>
                 </div>
               </div>
@@ -748,7 +761,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                   className='inline-flex items-center justify-center gap-0 rounded-xl border border-[#003141] bg-[#fff8ec] px-8 py-4 font-(--typography-font-weight-medium) text-[#003141] transition-colors duration-200 ease-out hover:bg-[#003141] hover:text-[#fff8ec]'
                 >
                   <Phone size={18} />
-                  Jetzt anrufen
+                  {t('bookingWizard.actions.callNow')}
                 </a>
               </div>
             </>
@@ -761,57 +774,60 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
       <div className='space-y-8'>
         <div className='rounded-xl bg-[#fff8ec] p-8'>
           <h4 className='mb-8 font-(--typography-font-weight-semibold) text-(--typography-headline-md) text-[#003141]'>
-            Bitte überprüfen Sie Ihre Angaben:
+            {t('bookingWizard.review.heading')}
           </h4>
 
           <div className='space-y-8'>
             <div className='border-b border-[#003141]/20 pb-8'>
               <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
-                Standort
+                {t('bookingWizard.review.sections.location')}
               </h5>
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
-                  <strong>Standort:</strong>{' '}
-                  {locations.find((l) => l.id === watch('location'))?.label || '—'}
+                  <strong>{t('bookingWizard.review.fields.location')}:</strong>{' '}
+                  {watch('location') ? t(`bookingWizard.locations.${watch('location')}.label`) : '—'}
                 </div>
               </div>
             </div>
             
             <div className='border-b border-[#003141]/20 pb-8'>
               <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
-                Event-Details
+                {t('bookingWizard.review.sections.eventDetails')}
               </h5>
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
-                  <strong>Event-Typ:</strong>{' '}
-                  {eventTypes.find((t) => t.id === watch('eventType'))?.label || '—'}
+                  <strong>{t('bookingWizard.review.fields.eventType')}:</strong>{' '}
+                  {watch('eventType') ? t(`bookingWizard.eventTypes.${watch('eventType')}.label`) : '—'}
                 </div>
                 <div>
-                  <strong>Gästezahl:</strong>{' '}
-                  {guestRanges.find((g) => g.id === watch('guestCount'))?.label || '—'}
+                  <strong>{t('bookingWizard.review.fields.guestCount')}:</strong>{' '}
+                  {watch('guestCount')
+                    ? t(`bookingWizard.guestRanges.${guestRangeKey(watch('guestCount'))}`)
+                    : '—'}
                 </div>
                 <div>
-                  <strong>Datum:</strong> {watch('eventDate') || '—'}
+                  <strong>{t('bookingWizard.review.fields.date')}:</strong> {watch('eventDate') || '—'}
                 </div>
               </div>
             </div>
 
             <div className='border-b border-[#003141]/20 pb-8'>
               <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
-                Kontaktdaten
+                {t('bookingWizard.review.sections.contactDetails')}
               </h5>
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
-                  <strong>Unternehmen:</strong> {watch('company') || '—'}
+                  <strong>{t('bookingWizard.review.fields.company')}:</strong> {watch('company') || '—'}
                 </div>
                 <div>
-                  <strong>Name:</strong> {watch('firstName')} {watch('lastName')}
+                  <strong>{t('bookingWizard.review.fields.name')}:</strong> {watch('firstName')}{' '}
+                  {watch('lastName')}
                 </div>
                 <div>
-                  <strong>E-Mail:</strong> {watch('email') || '—'}
+                  <strong>{t('bookingWizard.review.fields.email')}:</strong> {watch('email') || '—'}
                 </div>
                 <div>
-                  <strong>Telefon:</strong> {watch('phone') || '—'}
+                  <strong>{t('bookingWizard.review.fields.phone')}:</strong> {watch('phone') || '—'}
                 </div>
               </div>
             </div>
@@ -819,7 +835,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
             {watch('message') && (
               <div>
                 <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
-                  Nachricht
+                  {t('bookingWizard.review.sections.message')}
                 </h5>
                 <div className='text-(--typography-body-small) text-[#003141]/80'>
                   {watch('message')}
@@ -862,10 +878,10 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
 
       <div className='mb-8'>
         <h2 className='font-(--typography-font-weight-bold) text-(--typography-headline-lg) text-[#fff8ec]'>
-          {stepTitles[currentStep - 1].title}
+          {t(`bookingWizard.steps.${currentStep}.title`)}
         </h2>
         <p className='text-(--typography-body-standard) text-[#fff8ec]/80'>
-          {stepTitles[currentStep - 1].subtitle}
+          {t(`bookingWizard.steps.${currentStep}.subtitle`)}
         </p>
       </div>
 
@@ -893,7 +909,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 className='min-w-[120px]'
               >
                 <ArrowLeft className='mr-2' size={16} />
-                Zurück
+                {t('bookingWizard.actions.back')}
               </Button>
             )}
 
@@ -906,7 +922,9 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 disabled={!canProceed(currentStep)}
                 className='min-w-[120px]'
               >
-                {currentStep === 3 ? 'Zur Zusammenfassung' : 'Weiter'}
+                {currentStep === 3
+                  ? t('bookingWizard.actions.toSummary')
+                  : t('bookingWizard.actions.next')}
                 <ArrowRight className='ml-2' size={16} />
               </Button>
             ) : (
@@ -917,7 +935,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 disabled={isSubmitting}
                 className='min-w-[140px]'
               >
-                {isSubmitting ? 'Wird gesendet...' : 'Anfrage absenden'}
+                {isSubmitting ? t('bookingWizard.actions.sending') : t('bookingWizard.actions.submit')}
                 <ArrowRight className='ml-2' size={16} />
               </Button>
             )}

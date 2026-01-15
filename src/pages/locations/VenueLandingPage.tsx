@@ -1,10 +1,16 @@
 import React from 'react';
 import { SITE_URL } from '@/lib/site.ts';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
+
+function formatTemplate(template: string, vars: Record<string, string>): string {
+  return template.replace(/\{(\w+)\}/g, (_, key) => vars[key] ?? '');
+}
 
 // Venue data structure for programmatic SEO
 export interface VenueData {
@@ -280,23 +286,183 @@ export const venueDatabase: Record<string, VenueData> = {
   },
 };
 
+type VenueOverride = Partial<Pick<VenueData, 'description' | 'highlights' | 'eventTypes' | 'challenges' | 'solutions' | 'capacity'>>;
+
+const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
+  'messe-muenchen': {
+    en: {
+      description:
+        "Europe's largest trade fair site with over 200,000 m² of exhibition space. Home of BAUMA, ISPO, EXPO REAL and 40+ international trade shows each year.",
+      highlights: [
+        '40+ international trade fairs per year',
+        'BAUMA: 500,000+ visitors',
+        'ISPO: 80,000+ trade visitors',
+        'EXPO REAL: 46,000+ real estate professionals',
+        'Direct subway connection (Messestadt West/East)',
+      ],
+      capacity: '50,000+ visitors per day',
+      eventTypes: ['Booth party', 'Client reception', 'Networking event', 'Product launch', 'VIP lounge'],
+      challenges: [
+        'Power connections cost €150–300 extra',
+        'Water connections cost €200–350 extra',
+        'Long distances from parking areas',
+        'Short setup/teardown windows',
+        'Strict trade fair regulations',
+      ],
+      solutions: [
+        'Self-sufficient bar without power/water connection',
+        'Compact setup in 30 minutes',
+        'Cargo bike delivery directly to the booth',
+        'Trade fair logistics experience since 2018',
+        'All-inclusive packages without hidden costs',
+      ],
+    },
+  },
+  'moc-muenchen': {
+    en: {
+      description:
+        "MOC is one of Bavaria's largest event centers with 85,000 m² of space — home to Munich Fashion Week and numerous B2B trade shows.",
+      highlights: [
+        '85,000 m² event space',
+        'Munich Fashion Week',
+        'Direct subway connection',
+        'Flexible room concepts',
+        'Modern technical infrastructure',
+      ],
+      capacity: '20,000+ visitors',
+      eventTypes: ['Fashion events', 'B2B trade shows', 'Product presentations', 'Gala dinners', 'Conferences'],
+      challenges: ['Large areas require mobile solutions', 'Parallel events = high utilization', 'Tight changeover schedules'],
+      solutions: ['Flexible mobile bar concepts', 'Fast setup/teardown', 'Independent from venue infrastructure'],
+    },
+  },
+  'ballhausforum-infinity': {
+    en: {
+      description:
+        'Premium event venue with a 360° panoramic view over Munich. Ideal for exclusive corporate events, product launches and gala dinners.',
+      highlights: [
+        '360° panoramic view over Munich',
+        'Modern architectural design',
+        'Premium atmosphere',
+        'Flexible layout options',
+        'High-end AV & event tech',
+      ],
+      capacity: '500–1,500 guests',
+      challenges: ['Premium setting requires premium service', 'High guest expectations', 'Aesthetic integration matters'],
+      solutions: ['Design bar matching the venue', 'Highly trained bartenders in formal attire', 'Signature drinks in corporate design'],
+    },
+  },
+  'werk1-muenchen': {
+    en: {
+      description:
+        "Munich's biggest startup hub in the trendy Werksviertel district. Perfect for tech events, startup pitches and innovative corporate gatherings.",
+      highlights: [
+        "Munich's largest startup hub",
+        'Industrial loft vibe',
+        'Right at Ostbahnhof station',
+        'Rooftop terrace available',
+        'Creative atmosphere',
+      ],
+      capacity: '200–800 guests',
+      eventTypes: ['Startup event', 'Tech conference', 'Pitch night', 'Team event', 'After-work'],
+      challenges: ['Industrial vibe = variable infrastructure', 'Young crowd = high drink throughput', 'Creative setting = creative drinks expected'],
+      solutions: ['Trendy craft cocktails', 'Fast service for high volume', 'Industrial look matches the bike bar'],
+    },
+  },
+  'schloss-schleissheim': {
+    en: {
+      description:
+        "Bavaria's most magnificent baroque palace complex with three palaces and expansive gardens — an exceptional venue for unforgettable corporate events.",
+      highlights: [
+        'UNESCO World Heritage candidate',
+        'Magnificent baroque gardens',
+        'Historic halls & gallery',
+        'Exclusive ambience',
+        'Photogenic backdrop',
+      ],
+      capacity: '100–500 guests',
+      challenges: ['Monument protection = strict requirements', 'No modern infrastructure', 'Long logistics routes for equipment'],
+      solutions: ['100% self-sufficient bar without interventions', 'Elegant presentation matching the setting', 'Experience with historic venues'],
+    },
+  },
+  'zenith-muenchen': {
+    en: {
+      description:
+        'Iconic culture hall in a former locomotive shed. Raw industrial charm at epic scale — perfect for large corporate events.',
+      highlights: [
+        'Legendary venue since 1996',
+        '7,000 m² main hall',
+        'Unique industrial atmosphere',
+        'Known for top concerts & events',
+        'Flexible setups possible',
+      ],
+      capacity: '1,000–5,000+ guests',
+      eventTypes: ['Large corporate party', 'Product launch', 'Trade fair party', 'Festival', 'Concert'],
+      challenges: ['Huge space = multiple service points', 'Loud environment during events', 'High guest count = high throughput'],
+      solutions: ['Multiple mobile bar stations', 'Fast, efficient service', 'Experience with large-scale events'],
+    },
+  },
+  'alte-utting': {
+    en: {
+      description:
+        "A real steamboat on a railway bridge — Munich's most unusual venue for creative corporate events with a real wow factor.",
+      highlights: [
+        'Real steamboat on a bridge',
+        "Munich's most creative venue",
+        'Panoramic city view',
+        'Unique wow factor',
+        'Restaurant + event deck',
+      ],
+      capacity: '50–200 guests',
+      eventTypes: ['Creative corporate event', 'Team event', 'Product launch', 'After-work', 'VIP dinner'],
+      challenges: ['Limited space on the ship', 'No heavy equipment possible', 'Special logistics required'],
+      solutions: ['Ultra-compact bike bar is perfect', 'Lightweight setup', 'Matches the unconventional atmosphere'],
+    },
+  },
+};
+
+export function getVenueBySlug(venueSlug: string, language: 'de' | 'en' = 'de'): VenueData | undefined {
+  const venue = venueDatabase[venueSlug];
+  if (!venue) return undefined;
+  if (language === 'de') return venue;
+
+  const override = VENUE_OVERRIDES[venueSlug]?.en;
+  if (!override) return venue;
+
+  return {
+    ...venue,
+    description: override.description ?? venue.description,
+    highlights: override.highlights ?? venue.highlights,
+    eventTypes: override.eventTypes ?? venue.eventTypes,
+    challenges: override.challenges ?? venue.challenges,
+    solutions: override.solutions ?? venue.solutions,
+    capacity: override.capacity ?? venue.capacity,
+  };
+}
+
+export function getAllVenues(language: 'de' | 'en' = 'de'): VenueData[] {
+  return Object.keys(venueDatabase)
+    .map((slug) => getVenueBySlug(slug, language))
+    .filter((v): v is VenueData => Boolean(v));
+}
+
 interface VenueLandingPageProps {
   venueSlug: string;
 }
 
 const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
-  const venue = venueDatabase[venueSlug];
+  const { language, t } = useLanguage();
+  const venue = getVenueBySlug(venueSlug, language);
 
   if (!venue) {
     return (
-      <PageTemplate title='Location nicht gefunden'>
+      <PageTemplate title={t('pages.venue.notFound.title')}>
         <div className='mx-auto max-w-3xl py-16 text-center'>
-          <h1 className='text-3xl font-bold'>Location nicht gefunden</h1>
+          <h1 className='text-3xl font-bold'>{t('pages.venue.notFound.title')}</h1>
           <p className='mt-8 text-(--color-text-on-light-secondary)'>
-            Diese Location ist noch nicht in unserer Datenbank.
+            {t('pages.venue.notFound.description')}
           </p>
           <Link to='/anfrage' className='mt-8 inline-block'>
-            <Button>Anfrage stellen</Button>
+            <Button>{t('pages.venue.notFound.cta')}</Button>
           </Link>
         </div>
       </PageTemplate>
@@ -304,11 +470,13 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
   }
 
   // Generate JSON-LD Schema
+  const schemaName = formatTemplate(t('pages.venue.schema.name'), { venue: venue.name });
+  const schemaDescription = formatTemplate(t('pages.venue.schema.description'), { venue: venue.name });
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `Mobile Cocktailbar für ${venue.name}`,
-    description: `Professioneller Bar-Service für Events in ${venue.name}, München. Autarke mobile Bar ohne Strom- oder Wasseranschluss.`,
+    name: schemaName,
+    description: schemaDescription,
     provider: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -332,14 +500,15 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
   const colors = typeColors[venue.type];
 
   return (
-    <PageTemplate
-      title={`Mobile Bar für ${venue.name} | Catering & Cocktailservice | Velo.Bar`}
-      description={`Professioneller Bar-Service für Ihr Event in ${venue.name}, München. Autarke mobile Bar, keine Infrastruktur nötig. Jetzt anfragen!`}
-      canonicalPath={`/locations/${venue.slug}`}
-      structuredData={schemaData}
-    >
-      <main className='bg-navy'>
-        {/* Hero Section */}
+    <SiteBackground>
+      <PageTemplate
+        title={formatTemplate(t('pages.venue.seo.title'), { venue: venue.name })}
+        description={formatTemplate(t('pages.venue.seo.description'), { venue: venue.name })}
+        canonicalPath={`/locations/${venue.slug}`}
+        structuredData={schemaData}
+      >
+        <main className='w-full'>
+          {/* Hero Section */}
         <Section
           container='narrow'
           spacing='xl'
@@ -350,10 +519,10 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
           </div>
           <div className='relative z-10 text-center'>
             <span className='mb-8 inline-block rounded-full border border-white/20 bg-white/10 px-0 py-0 text-sm font-semibold text-(--color-text-on-dark-secondary)'>
-              Location · {venue.district}
+              {formatTemplate(t('pages.venue.hero.badge'), { district: venue.district })}
             </span>
             <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
-              Mobile Bar für <br className='hidden sm:block' />
+              {t('pages.venue.hero.titlePrefix')} <br className='hidden sm:block' />
               <span className='text-white/90'>{venue.shortName}</span>
             </h1>
             <p className='mx-auto mb-8 max-w-2xl text-xl text-(--color-text-on-dark-secondary)'>
@@ -364,7 +533,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
                 size='lg'
                 className='text-on-light border-none bg-white transition duration-200 ease-out hover:bg-white/90'
               >
-                Jetzt Angebot anfordern
+                {t('pages.venue.hero.cta')}
               </Button>
             </Link>
           </div>
@@ -373,24 +542,26 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
         <Section container='narrow' spacing='xl'>
           {/* Venue Highlights */}
           <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-3xl font-bold'>Über {venue.name}</h2>
+            <h2 className='text-on-light mb-8 text-3xl font-bold'>
+              {formatTemplate(t('pages.venue.sections.about.title'), { venue: venue.name })}
+            </h2>
             <div className='grid gap-8 md:grid-cols-2'>
               <div className='bg-surface-tinted flex h-full flex-col rounded-xl p-8'>
-                <h3 className='text-on-light mb-8 font-bold'>📍 Location Details</h3>
+                <h3 className='text-on-light mb-8 font-bold'>{t('pages.venue.sections.details.title')}</h3>
                 <ul className='space-y-0 text-sm text-(--color-text-on-light-secondary)'>
                   <li>
-                    <strong>Adresse:</strong> {venue.address}
+                    <strong>{t('pages.venue.sections.details.addressLabel')}</strong> {venue.address}
                   </li>
                   <li>
-                    <strong>Kapazität:</strong> {venue.capacity}
+                    <strong>{t('pages.venue.sections.details.capacityLabel')}</strong> {venue.capacity}
                   </li>
                   <li>
-                    <strong>Bezirk:</strong> {venue.district}
+                    <strong>{t('pages.venue.sections.details.districtLabel')}</strong> {venue.district}
                   </li>
                 </ul>
               </div>
               <div className='bg-surface-tinted flex h-full flex-col rounded-xl p-8'>
-                <h3 className='text-on-light mb-8 font-bold'>✨ Highlights</h3>
+                <h3 className='text-on-light mb-8 font-bold'>{t('pages.venue.sections.highlights.title')}</h3>
                 <ul className='space-y-0 text-sm text-(--color-text-on-light-secondary)'>
                   {venue.highlights.slice(0, 4).map((highlight, i) => (
                     <li
@@ -408,7 +579,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
           {/* Event Types */}
           <section className='mb-16'>
             <h2 className='text-on-light mb-8 text-3xl font-bold'>
-              Beliebte Event-Typen in {venue.shortName}
+              {formatTemplate(t('pages.venue.sections.eventTypes.title'), { venue: venue.shortName })}
             </h2>
             <div className='flex flex-wrap gap-0'>
               {venue.eventTypes.map((type, i) => (
@@ -424,13 +595,11 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
 
           {/* Challenges & Solutions */}
           <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-3xl font-bold'>
-              Herausforderungen & Unsere Lösungen
-            </h2>
+            <h2 className='text-on-light mb-8 text-3xl font-bold'>{t('pages.venue.sections.challenges.title')}</h2>
 
             <div className='grid gap-8 md:grid-cols-2'>
               <div className='flex h-full flex-col rounded-xl border border-red-100 bg-red-50 p-8'>
-                <h3 className='mb-8 font-bold text-red-900'>❌ Typische Herausforderungen</h3>
+                <h3 className='mb-8 font-bold text-red-900'>{t('pages.venue.sections.challenges.challengesTitle')}</h3>
                 <ul className='space-y-0 text-sm text-red-800'>
                   {venue.challenges.map((challenge, i) => (
                     <li
@@ -444,7 +613,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
               </div>
 
               <div className='flex h-full flex-col rounded-xl border border-emerald-100 bg-emerald-50 p-8'>
-                <h3 className='mb-8 font-bold text-emerald-900'>✅ Velo.Bar Lösungen</h3>
+                <h3 className='mb-8 font-bold text-emerald-900'>{t('pages.venue.sections.challenges.solutionsTitle')}</h3>
                 <ul className='space-y-0 text-sm text-emerald-800'>
                   {venue.solutions.map((solution, i) => (
                     <li
@@ -462,28 +631,30 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
           {/* Why Us for This Venue */}
           <section className='mb-16'>
             <div className='from-navy to-navy-dark rounded-2xl bg-linear-to-br p-8 text-white'>
-              <h2 className='mb-8 text-2xl font-bold'>Warum Velo.Bar für {venue.shortName}?</h2>
+              <h2 className='mb-8 text-2xl font-bold'>
+                {formatTemplate(t('pages.venue.sections.why.title'), { venue: venue.shortName })}
+              </h2>
 
               <div className='grid gap-8 md:grid-cols-3'>
                 <div className='text-center'>
                   <div className='mb-0 text-4xl'>🔌</div>
-                  <h3 className='mb-0 font-bold'>100% Autark</h3>
+                  <h3 className='mb-0 font-bold'>{t('pages.venue.sections.why.cards.autark.title')}</h3>
                   <p className='text-sm text-(--color-text-on-dark-secondary)'>
-                    Kein Strom, kein Wasser von der Location nötig
+                    {t('pages.venue.sections.why.cards.autark.description')}
                   </p>
                 </div>
                 <div className='text-center'>
                   <div className='mb-0 text-4xl'>⚡</div>
-                  <h3 className='mb-0 font-bold'>30 Min Aufbau</h3>
+                  <h3 className='mb-0 font-bold'>{t('pages.venue.sections.why.cards.setup.title')}</h3>
                   <p className='text-sm text-(--color-text-on-dark-secondary)'>
-                    Schnell einsatzbereit, schnell wieder weg
+                    {t('pages.venue.sections.why.cards.setup.description')}
                   </p>
                 </div>
                 <div className='text-center'>
                   <div className='mb-0 text-4xl'>💰</div>
-                  <h3 className='mb-0 font-bold'>All-Inclusive</h3>
+                  <h3 className='mb-0 font-bold'>{t('pages.venue.sections.why.cards.allInclusive.title')}</h3>
                   <p className='text-sm text-(--color-text-on-dark-secondary)'>
-                    Keine versteckten Kosten, transparente Pakete
+                    {t('pages.venue.sections.why.cards.allInclusive.description')}
                   </p>
                 </div>
               </div>
@@ -495,10 +666,11 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
 
           {/* CTA Section */}
           <section className='from-accent-primary to-accent-primary-hover rounded-2xl bg-linear-to-br p-8 text-center text-white md:p-16'>
-            <h2 className='mb-8 text-3xl font-bold'>Event in {venue.shortName} geplant?</h2>
+            <h2 className='mb-8 text-3xl font-bold'>
+              {formatTemplate(t('pages.venue.sections.cta.title'), { venue: venue.shortName })}
+            </h2>
             <p className='mx-auto mb-8 max-w-2xl text-lg opacity-90'>
-              Wir kennen die Location und ihre Anforderungen. Lassen Sie uns gemeinsam Ihr Event
-              perfekt planen.
+              {t('pages.venue.sections.cta.description')}
             </p>
             <div className='flex flex-col justify-center gap-8 sm:flex-row'>
               <Link to={`/anfrage?source=${venue.slug}&eventType=firmenfeier`}>
@@ -507,7 +679,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
                   variant='secondary'
                   className='text-accent-primary border-none transition duration-200 ease-out'
                 >
-                  Jetzt Angebot anfordern
+                  {t('pages.venue.sections.cta.primary')}
                 </Button>
               </Link>
               <Link to='/preise'>
@@ -516,7 +688,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
                   variant='outline'
                   className='border-white text-white transition duration-200 ease-out hover:bg-white/10'
                 >
-                  Preise ansehen
+                  {t('pages.venue.sections.cta.secondary')}
                 </Button>
               </Link>
             </div>
@@ -525,10 +697,10 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
           {/* Related Venues */}
           {venue.relatedVenues.length > 0 && (
             <section className='mt-16'>
-              <h2 className='text-on-light mb-8 text-2xl font-bold'>Ähnliche Locations</h2>
+              <h2 className='text-on-light mb-8 text-2xl font-bold'>{t('pages.venue.sections.related.title')}</h2>
               <div className='grid gap-8 md:grid-cols-3'>
                 {venue.relatedVenues.map((relatedSlug) => {
-                  const related = venueDatabase[relatedSlug];
+                  const related = getVenueBySlug(relatedSlug, language);
                   if (!related) return null;
                   return (
                     <Link
@@ -547,8 +719,9 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
             </section>
           )}
         </Section>
-      </main>
-    </PageTemplate>
+        </main>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

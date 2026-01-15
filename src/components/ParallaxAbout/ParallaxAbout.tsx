@@ -7,6 +7,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 import './ParallaxAbout.css';
 
 interface ParallaxAboutProps {
@@ -14,6 +16,7 @@ interface ParallaxAboutProps {
 }
 
 export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) => {
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const heroImageLeftRef = useRef<HTMLDivElement>(null);
   const heroImageRightRef = useRef<HTMLDivElement>(null);
@@ -173,10 +176,9 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
       {/* Hero Section with Two Founder Photos */}
       <section className='about-hero' ref={heroRef}>
         <div className='about-hero__content' ref={heroContentRef}>
-          <h1 className='about-hero__title'>Wir sind Velo.Bar</h1>
+          <h1 className='about-hero__title'>{t('pages.about.parallax.hero.title')}</h1>
           <p className='about-hero__subtitle'>
-            Gegründet mit der Vision, Premium-Cocktails auf Rädern zu bringen. Leidenschaft für
-            Qualität, Handwerk und Bar-Erlebnisse, die im Kopf bleiben.
+            {t('pages.about.parallax.hero.subtitle')}
           </p>
         </div>
 
@@ -184,84 +186,87 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
           <div
             ref={heroImageLeftRef}
             className='about-hero__image about-hero__image--left'
-            style={{
-              backgroundImage: 'url(/Velo%20Gallery/gallery-carousel/sebi.JPG)',
-              backgroundSize: '150%',
-              backgroundPosition: 'center 20%',
-            }}
             role='img'
-            aria-label='Sebastian - Co-Founder'
-          />
+            aria-label={t('pages.about.parallax.hero.founder1.aria')}
+          >
+            <ResponsiveImage
+              src='/Velo Gallery/gallery-carousel/sebi'
+              alt={t('pages.about.parallax.hero.founder1.alt')}
+              className='h-full w-full'
+              objectFit='cover'
+              objectPosition='center 20%'
+              sizes='(max-width: 768px) 50vw, 33vw'
+            />
+          </div>
           <div
             ref={heroImageRightRef}
             className='about-hero__image about-hero__image--right'
-            style={{
-              backgroundImage: 'url(/Velo%20Gallery/gallery-carousel/Team%20Lars.JPG)',
-              backgroundSize: '150%',
-              backgroundPosition: 'center 20%',
-            }}
             role='img'
-            aria-label='Lars Eggers - Co-Founder'
-          />
+            aria-label={t('pages.about.parallax.hero.founder2.aria')}
+          >
+            <ResponsiveImage
+              src='/Velo Gallery/gallery-carousel/Team Lars'
+              alt={t('pages.about.parallax.hero.founder2.alt')}
+              className='h-full w-full'
+              objectFit='cover'
+              objectPosition='center 20%'
+              sizes='(max-width: 768px) 50vw, 33vw'
+            />
+          </div>
         </div>
       </section>
 
       {/* Story Section 1: Text Left, Image Right */}
       <section className='about-story about-story--text-left'>
         <div className='about-story__text'>
-          <h2 className='about-story__heading'>Die Geschichte</h2>
+          <h2 className='about-story__heading'>{t('pages.about.parallax.story1.heading')}</h2>
           <p className='about-story__paragraph'>
-            Was mit einer Idee begann – "Wie bringen wir Bar-Qualität zu Messen und Firmenfeiern?" –
-            ist heute ein etabliertes Unternehmen mit über 500 Events für Kunden in München und
-            Coburg.
+            {t('pages.about.parallax.story1.p1')}
           </p>
           <p className='about-story__paragraph'>
-            Wenn die Gäste nicht in die Bar kommen können, bringen wir die Bar zu ihnen. Diese
-            Vision hat uns zu dem gemacht, was wir heute sind: Spezialisten für
-            Premium-Cocktail-Catering bei Corporate Events.
+            {t('pages.about.parallax.story1.p2')}
           </p>
         </div>
 
-        <div
-          className='about-story__image'
-          style={{
-            backgroundImage: 'url(/Velo%20Gallery/gallery-carousel/our%20story%20.JPG)',
-          }}
-          role='img'
-          aria-label='Velo Bar Our Story'
-        />
+        <div className='about-story__image'>
+          <ResponsiveImage
+            src='/Velo Gallery/gallery-carousel/our story '
+            alt={t('pages.about.parallax.story1.imageAlt')}
+            className='h-full w-full'
+            objectFit='cover'
+            sizes='(max-width: 768px) 100vw, 50vw'
+          />
+        </div>
       </section>
 
       {/* Story Section 2: Image Left, Text Right */}
       <section className='about-story about-story--text-right'>
-        <div
-          className='about-story__image'
-          style={{
-            backgroundImage: 'url(/Velo%20Gallery/gallery-carousel/why%20us%20.jpg)',
-          }}
-          role='img'
-          aria-label='Why Velo Bar'
-        />
+        <div className='about-story__image'>
+          <ResponsiveImage
+            src='/Velo Gallery/gallery-carousel/why us '
+            alt={t('pages.about.parallax.story2.imageAlt')}
+            className='h-full w-full'
+            objectFit='cover'
+            sizes='(max-width: 768px) 100vw, 50vw'
+          />
+        </div>
 
         <div className='about-story__text'>
-          <h2 className='about-story__heading'>Warum wir die Richtigen für dein Event sind</h2>
+          <h2 className='about-story__heading'>{t('pages.about.parallax.story2.heading')}</h2>
           <p className='about-story__paragraph'>
-            <strong>Du kannst dich entspannen – wir kümmern uns um Bar & Drinks.</strong>
+            <strong>{t('pages.about.parallax.story2.p1Strong')}</strong>
             <br />
-            Saubere Abläufe, erfahrenes Team, zuverlässiger Service. Du konzentrierst dich auf dein
-            Event, wir liefern das Bar-Erlebnis.
+            {t('pages.about.parallax.story2.p1')}
           </p>
           <p className='about-story__paragraph'>
-            <strong>Deine Gäste bekommen Premium-Cocktails, keine Standard-Mischungen.</strong>
+            <strong>{t('pages.about.parallax.story2.p2Strong')}</strong>
             <br />
-            Wir investieren in die besten Spirituosen, trainierte Barkeeper und handgemachte Drinks.
-            Qualität, die man schmeckt.
+            {t('pages.about.parallax.story2.p2')}
           </p>
           <p className='about-story__paragraph'>
-            <strong>Dein Event wirkt professionell, aber nicht steif.</strong>
+            <strong>{t('pages.about.parallax.story2.p3Strong')}</strong>
             <br />
-            Lars bringt 10 Jahre internationale Barkeeper-Erfahrung mit, Sebastian die süddeutsche
-            Gastfreundschaft und lokale München-Expertise. Zusammen bilden wir das perfekte Gespann.
+            {t('pages.about.parallax.story2.p3')}
           </p>
         </div>
       </section>
@@ -269,46 +274,43 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
       {/* Additional Story Section: Team Chemistry */}
       <section className='about-story about-story--text-left'>
         <div className='about-story__text'>
-          <h2 className='about-story__heading'>Das Team</h2>
+          <h2 className='about-story__heading'>{t('pages.about.parallax.team.heading')}</h2>
           <p className='about-story__paragraph'>
-            <strong>Lars (Nord) + Sebastian (Süd) = Perfektes Gespann für München</strong>
+            <strong>{t('pages.about.parallax.team.p1Strong')}</strong>
           </p>
           <p className='about-story__paragraph'>
-            "Moin" trifft auf "Servus" – internationale Barkeeper-Erfahrung trifft auf lokale
-            Verwurzelung. Unsere unterschiedlichen Hintergründe ergänzen sich perfekt und schaffen
-            eine einzigartige Mischung aus Professionalität und Herzlichkeit.
+            {t('pages.about.parallax.team.p2')}
           </p>
           <p className='about-story__paragraph'>
-            Mit über 500 erfolgreich durchgeführten Events für Unternehmen wie BMW, Siemens und
-            innovative Startups haben wir bewiesen: Unsere Vision funktioniert. Jedes Event ist für
-            uns eine Chance, Premium-Bar-Handwerk zu zeigen.
+            {t('pages.about.parallax.team.p3')}
           </p>
           <p className='about-story__paragraph'>
             <Link
               to='/firmenfeiern'
               className='text-accent-primary font-medium transition-colors duration-200 hover:underline'
             >
-              Erfahre mehr über unsere Firmenfeiern
+              {t('pages.about.parallax.team.links.corporate')}
             </Link>{' '}
-            oder sieh dir unsere{' '}
+            {t('pages.about.parallax.team.links.middle')}{' '}
             <Link
               to='/galerie'
               className='text-accent-primary font-medium transition-colors duration-200 hover:underline'
             >
-              Galerie
+              {t('pages.about.parallax.team.links.gallery')}
             </Link>{' '}
-            an.
+            {t('pages.about.parallax.team.links.suffix')}
           </p>
         </div>
 
-        <div
-          className='about-story__image'
-          style={{
-            backgroundImage: 'url(/Velo%20Gallery/gallery-carousel/Team.JPG)',
-          }}
-          role='img'
-          aria-label='Velo Bar Team'
-        />
+        <div className='about-story__image'>
+          <ResponsiveImage
+            src='/Velo Gallery/gallery-carousel/Team'
+            alt={t('pages.about.parallax.team.imageAlt')}
+            className='h-full w-full'
+            objectFit='cover'
+            sizes='(max-width: 768px) 100vw, 50vw'
+          />
+        </div>
       </section>
     </div>
   );

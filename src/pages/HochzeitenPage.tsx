@@ -4,17 +4,46 @@
  * Premium service page for wedding cocktail bar services
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
 import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout.tsx';
 import { PageTemplate } from '@/templates/PageTemplate';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { getServicePagePackages } from '@/content/servicePagePackages.ts';
 import { serviceFAQs, serviceTestimonials } from '@/data/services.ts';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/seo/schema.ts';
+
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.velo-bar.com';
 
 const HochzeitenPage: React.FC = () => {
   const packages = getServicePagePackages('hochzeiten');
   const faqs: FAQ[] = serviceFAQs.hochzeiten;
   const testimonials: Testimonial[] = serviceTestimonials.hochzeiten;
+
+  // SEO: Structured data for Hochzeiten service page
+  const structuredData = useMemo(() => {
+    return combineSchemas(
+      getServiceSchema({
+        name: 'Mobile Cocktailbar für Hochzeiten',
+        description:
+          'Traumhafte mobile Cocktailbar für deine Hochzeit in München und Coburg. Vom Sektempfang bis zur Mitternachtsbar – professioneller Service für den schönsten Tag im Leben.',
+        url: `${SITE_URL}/hochzeiten`,
+        image: `${SITE_URL}/images/services/hochzeit-cocktailbar.webp`,
+        areaServed: ['München', 'Coburg', 'Bayern'],
+        serviceType: 'WeddingCatering',
+      }),
+      getBreadcrumbSchema([
+        { name: 'Home', url: SITE_URL },
+        { name: 'Hochzeiten', url: `${SITE_URL}/hochzeiten` },
+      ]),
+      getFAQSchema(
+        faqs.map((faq) => ({
+          question: faq.question,
+          answer: faq.answer,
+        }))
+      )
+    );
+  }, [faqs]);
 
   const suitableFor = {
     items: [
@@ -32,45 +61,47 @@ const HochzeitenPage: React.FC = () => {
       {
         step: '1. Persönliche Hochzeitsberatung',
         description:
-          'Kostenloses Beratungsgespräch, in dem wir Ihren großen Tag verstehen: Hochzeitsstil, Farbkonzept, Gästezahl und besondere Wünsche fürs Brautpaar.',
+          'Kostenloses Beratungsgespräch, in dem wir deinen großen Tag verstehen: Hochzeitsstil, Farbkonzept, Gästezahl und besondere Wünsche fürs Brautpaar.',
       },
       {
         step: '2. Maßgeschneidertes Hochzeitspaket',
         description:
-          'Detailliertes Angebot mit personalisierten Cocktails, romantischer Dekoration und optionalem Signature-Drink mit Ihrem Namen.',
+          'Detailliertes Angebot mit personalisierten Cocktails, romantischer Dekoration und optionalem Signature-Drink mit deinem Namen.',
       },
       {
         step: '3. Vorab-Verkostung (Premium/VIP)',
         description:
-          'Bei Premium-Paketen laden wir Sie zu einer Cocktail-Verkostung ein. Sie probieren Ihre Favoriten und entscheiden gemeinsam.',
+          'Bei Premium-Paketen laden wir dich zu einer Cocktail-Verkostung ein. Du probierst deine Favoriten und entscheidest gemeinsam.',
       },
       {
         step: '4. Eleganter Aufbau am Hochzeitstag',
         description:
-          '2-3 Stunden vor Gästeankunft bauen wir die Bar in Ihren Hochzeitsfarben auf – perfekt abgestimmt auf Ihre Location-Dekoration.',
+          '2-3 Stunden vor Gästeankunft bauen wir die Bar in deinen Hochzeitsfarben auf – perfekt abgestimmt auf deine Location-Dekoration.',
       },
       {
         step: '5. Diskreter Premium-Service',
         description:
-          'Während Sie und Ihre Gäste feiern, servieren unsere Barkeeper unauffällig erstklassige Cocktails – vom Sektempfang bis zur letzten Mitternachtsrunde.',
+          'Während du und deine Gäste feiern, servieren unsere Barkeeper unauffällig erstklassige Cocktails – vom Sektempfang bis zur letzten Mitternachtsrunde.',
       },
       {
         step: '6. Stressfreier Abbau',
         description:
-          'Nach der Feier kümmern wir uns um den vollständigen Abbau und die Reinigung. Sie können einfach weiterfeiern oder den Abend entspannt ausklingen lassen!',
+          'Nach der Feier kümmern wir uns um den vollständigen Abbau und die Reinigung. Du kannst einfach weiterfeiern oder den Abend entspannt ausklingen lassen!',
       },
     ],
   };
 
   return (
     <PageTemplate
-      title='Hochzeiten | Mobile Cocktailbar | Velobar München & Coburg'
-      description='Traumhafte Cocktailbar für Ihre Hochzeit in München und Coburg. Vom Sektempfang bis zur Mitternachtsbar – professioneller Service für den schönsten Tag im Leben.'
+      title='Hochzeit Bar München: Mobile Cocktailbar | 500+ Events ✨'
+      description='Traumhafte Cocktailbar für deine Hochzeit in München und Coburg. Vom Sektempfang bis zur Mitternachtsbar – professioneller Service für den schönsten Tag im Leben.'
+      canonicalPath='/hochzeiten'
+      structuredData={structuredData}
       withContainer={false}
     >
       <ServicePageLayout
         heroTitle='Hochzeiten'
-        heroSubtitle='Unvergessliche Cocktails für den schönsten Tag in Ihrem Leben – von Sektempfang bis Mitternachtsbar'
+        heroSubtitle='Unvergessliche Cocktails für den schönsten Tag in deinem Leben – von Sektempfang bis Mitternachtsbar'
         suitableFor={suitableFor}
         processSteps={processSteps}
         packages={packages}
@@ -80,31 +111,31 @@ const HochzeitenPage: React.FC = () => {
         testimonials={testimonials}
         testimonialsTitle='Was unsere Brautpaare sagen'
         ctaTitle='Bereit für eine traumhafte Hochzeit?'
-        ctaSubtitle='Lassen Sie uns Teil Ihres besonderen Tages werden – mit Cocktails, die in Erinnerung bleiben'
+        ctaSubtitle='Lass uns Teil deines besonderen Tages werden – mit Cocktails, die in Erinnerung bleiben'
         ctaButtonText='Jetzt Beratungsgespräch vereinbaren'
         ctaButtonLink='/anfrage'
       >
         <div className='grid items-center gap-16 md:grid-cols-2'>
           <div>
             <h3 className='text-accent-primary mb-8 text-3xl font-bold'>
-              Warum Velobar für Ihre Hochzeit?
+              Warum Velobar für deine Hochzeit?
             </h3>
             <ul className='space-y-8 text-white/80'>
               <li>
                 <strong>Hochzeitserfahrung:</strong> Über 50 Hochzeiten erfolgreich betreut
               </li>
               <li>
-                <strong>Personalisierung:</strong> Signature-Drinks mit Ihren Namen oder Ihrem
+                <strong>Personalisierung:</strong> Signature-Drinks mit deinem Namen oder deinem
                 Branding
               </li>
               <li>
-                <strong>Eleganz:</strong> Stilvolle Präsentation passend zu Ihrem Hochzeitskonzept
+                <strong>Eleganz:</strong> Stilvolle Präsentation passend zu deinem Hochzeitskonzept
               </li>
               <li>
                 <strong>Zuverlässigkeit:</strong> Pünktlich, diskret, professionell
               </li>
               <li>
-                <strong>All-Inclusive:</strong> Von Planung bis Abbau – Sie müssen sich um nichts
+                <strong>All-Inclusive:</strong> Von Planung bis Abbau – du musst dich um nichts
                 kümmern
               </li>
             </ul>

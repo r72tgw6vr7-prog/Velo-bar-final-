@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
+import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
@@ -14,7 +15,7 @@ const CateringOhneStromanschlussPage: React.FC = () => {
     headline: 'Catering ohne Stromanschluss: Die perfekte Lösung für Messen & Outdoor-Events',
     description:
       'Kein Strom? Kein Problem! Wie autarke Bar-Systeme auf Messen, Terrassen und Outdoor-Events funktionieren – ohne teure Infrastruktur.',
-    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.jpg`,
+    image: `${SITE_URL}/assets/backgrounds/cosmic-unified.webp`,
     author: {
       '@type': 'Organization',
       name: 'Velo.Bar',
@@ -45,20 +46,21 @@ const CateringOhneStromanschlussPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
-      title='Catering ohne Stromanschluss: Autarke Bar-Lösungen | Velo.Bar'
-      description='Kein Strom, kein Wasser – kein Problem! Wie autarke mobile Bars auf Messen, Terrassen und Events funktionieren. Sparen Sie €200-500 Infrastrukturkosten.'
-      canonicalPath='/blog/catering-ohne-stromanschluss'
-      structuredData={schemaData}
-      withContainer={false}
-      className='bg-navy'
-    >
-      {/* Hero Section */}
-      <Section
-        container='narrow'
-        spacing='xl'
-        className='bg-navy-primary relative overflow-hidden text-white'
+    <SiteBackground>
+      <PageTemplate
+        title='Catering ohne Stromanschluss: Autarke Bar-Lösungen | Velo.Bar'
+        description='Kein Strom, kein Wasser – kein Problem! Wie autarke mobile Bars auf Messen, Terrassen und Events funktionieren. Sparen Sie €200-500 Infrastrukturkosten.'
+        canonicalPath='/blog/catering-ohne-stromanschluss'
+        structuredData={schemaData}
+        withContainer={false}
+        background='transparent'
       >
+        {/* Hero Section */}
+        <Section
+          container='narrow'
+          spacing='xl'
+          className='bg-navy-primary relative overflow-hidden text-white'
+        >
         <div className='absolute inset-0 z-0 opacity-20'>
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.4),transparent_50%)]' />
         </div>
@@ -396,10 +398,10 @@ const CateringOhneStromanschlussPage: React.FC = () => {
           <h2 className='mb-8 text-2xl font-bold text-gray-900'>Weiterführende Artikel</h2>
           <div className='grid gap-8 md:grid-cols-2'>
             <Link
-              to='/blog/messekatering-kosten-2025'
+              to='/blog/messecatering-kosten-2025'
               className='hover:border-accent-primary block flex h-full flex-col rounded-xl border border-gray-200 bg-gray-50 p-8 transition duration-200 ease-out hover:shadow-md'
             >
-              <h3 className='mb-0 font-bold text-gray-900'>💰 Messekatering-Kosten 2025</h3>
+              <h3 className='mb-0 font-bold text-gray-900'>💰 Messecatering-Kosten 2025</h3>
               <p className='text-sm text-gray-600'>Transparente Preise für Münchner Messen.</p>
             </Link>
             <Link
@@ -444,7 +446,8 @@ const CateringOhneStromanschlussPage: React.FC = () => {
           </div>
         </section>
       </Section>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

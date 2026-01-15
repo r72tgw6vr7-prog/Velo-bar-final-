@@ -145,9 +145,9 @@ export const CosmicNav: React.FC = () => {
           <Link
             to='/'
             className='col-start-2 flex shrink-0 items-center justify-center justify-self-center'
-            aria-label='Velo.Bar Home'
+            aria-label={t('nav.homeAria')}
           >
-            <img src='/velo.svg' alt='Velo.Bar Logo' className={logoClassName} loading='lazy' />
+            <img src='/velo.svg' alt={t('common.logoAlt')} className={logoClassName} loading='lazy' />
           </Link>
 
           {/* Right Side: Navigation Items + Calendar (symmetric) */}
@@ -184,7 +184,7 @@ export const CosmicNav: React.FC = () => {
             type='button'
             onClick={() => setMenuOpen(!menuOpen)}
             className='text-offwhite-primary hover:text-accent-primary col-start-3 inline-flex items-center justify-center justify-self-end p-0 transition-colors duration-200 ease-out md:hidden'
-            aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
+            aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
           >
             <svg
               width='24'
@@ -198,7 +198,8 @@ export const CosmicNav: React.FC = () => {
             >
               {menuOpen ? <path d='M6 18L18 6M6 6l12 12' /> : <path d='M3 12h18M3 6h18M3 18h18' />}
             </svg>
-            <span className='sr-only'>{menuOpen ? 'Menü schließen' : 'Menü öffnen'}</span>
+            <span className='sr-only'>{menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+            </span>
           </button>
         </div>
       </Container>
