@@ -23,5 +23,14 @@ async function walk(dir) {
 
 (async () => {
   console.log('Large images (>200KB) in public/Velo Gallery:');
-  await walk(ROOT);
+  try {
+    await fs.access(ROOT);
+    await walk(ROOT);
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      console.log('Directory public/Velo Gallery does not exist, skipping check.');
+    } else {
+      throw err;
+    }
+  }
 })();
