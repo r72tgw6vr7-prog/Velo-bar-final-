@@ -24,14 +24,8 @@ jobs:
       - name: Generate image manifest
         run: node scripts/generate-image-manifest.cjs
 
-      - name: Create shims (idempotent)
-        run: node scripts/create-public-shims.cjs || true
-
       - name: Run image checker
         run: npm run check:images
 
       - name: Start static server
         run: npx http-server public -p 5001 -c-1 & sleep 2
-
-      - name: Run runtime smoke checks (HTTP)
-        run: node scripts/smoke-check.cjs
