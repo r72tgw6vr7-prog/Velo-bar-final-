@@ -182,7 +182,7 @@ export async function sendBookingEmail(data: BookingPayload): Promise<void> {
   }
 
   // Create transporter
-  const transporter = nodemailer.createTransporter({
+  const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     secure: false, // TLS

@@ -161,9 +161,9 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       React.HTMLAttributes<HTMLDivElement>,
       'onClick' | 'role' | 'tabIndex' | 'onKeyDown'
     > =
-      isClickable && onClick
+      isClickable
         ? {
-            onClick,
+            onClick: onClick!,
             role: cardRole,
             tabIndex: cardTabIndex,
             onKeyDown: handleKeyDown,

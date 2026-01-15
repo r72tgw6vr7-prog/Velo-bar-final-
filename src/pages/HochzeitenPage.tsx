@@ -9,14 +9,13 @@ import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx'
 import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout.tsx';
 import { PageTemplate } from '@/templates/PageTemplate';
 import { SiteBackground } from '@/components/layout/SiteBackground';
-import { getServicePagePackages } from '@/content/servicePagePackages.ts';
-import { serviceFAQs, serviceTestimonials } from '@/data/services.ts';
+import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/seo/schema.ts';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.velo-bar.com';
 
 const HochzeitenPage: React.FC = () => {
-  const packages = getServicePagePackages('hochzeiten');
+  const packages = servicePackages.hochzeiten;
   const faqs: FAQ[] = serviceFAQs.hochzeiten;
   const testimonials: Testimonial[] = serviceTestimonials.hochzeiten;
 
@@ -92,7 +91,8 @@ const HochzeitenPage: React.FC = () => {
   };
 
   return (
-    <PageTemplate
+    <SiteBackground>
+      <PageTemplate
       title='Hochzeit Bar München: Mobile Cocktailbar | 500+ Events ✨'
       description='Traumhafte Cocktailbar für deine Hochzeit in München und Coburg. Vom Sektempfang bis zur Mitternachtsbar – professioneller Service für den schönsten Tag im Leben.'
       canonicalPath='/hochzeiten'
@@ -166,7 +166,8 @@ const HochzeitenPage: React.FC = () => {
           </div>
         </div>
       </ServicePageLayout>
-    </PageTemplate>
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 
