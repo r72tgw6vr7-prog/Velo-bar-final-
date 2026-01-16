@@ -12,7 +12,7 @@
     "build": "npm run build:force",
     "ssg:build": "vite build",
     "build:local": "npm run optimize:gallery && vite build",
-    "build:force": "echo 'Starting build...' && SKIP_VERIFY=true SKIP_IMAGE_OPTIMIZATION=true vite build",
+    "build:force": "node scripts/ensure-public-assets.mjs && echo 'Starting build...' && SKIP_VERIFY=true SKIP_IMAGE_OPTIMIZATION=true vite build",
     "preview": "vite preview",
     "start": "vite dev",
     "test": "vitest",

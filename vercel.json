@@ -11,12 +11,12 @@
     }
   ],
   "redirects": [
-    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velobar.de"}]},
-    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.de"}]},
-    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velobar.com"}]},
-    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.de"}]},
-    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.com"}]},
-    {"source": "/(.*)", "destination": "https://www.velo-bar.com/:splat", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.com"}]},
+    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velobar.de"}]},
+    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.de"}]},
+    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velobar.com"}]},
+    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.de"}]},
+    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.com"}]},
+    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.com"}]},
 
     {"source": "/messen", "destination": "/messe-catering", "statusCode": 301},
     {"source": "/team-events", "destination": "/leistungen#team-events-workshops", "statusCode": 301},
