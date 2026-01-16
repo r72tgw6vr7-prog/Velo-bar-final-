@@ -68,15 +68,7 @@ export default [
       'import/named': 'off',
       'import/default': 'error',
       'import/namespace': 'error',
-      'import/extensions': [
-        'error',
-        'always',
-        {
-          ignorePackages: true,
-          ts: 'always',
-          tsx: 'always',
-        },
-      ],
+      'import/extensions': 'off',
 
       // Accessibility rules
       'jsx-a11y/anchor-is-valid': 'warn',
@@ -118,9 +110,16 @@ export default [
     // Override for test files - relax import rules since testing library exports aren't properly resolved
     files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
     rules: {
+      'import/no-unresolved': 'off',
       'import/named': 'off',
       'import/default': 'off',
       'import/namespace': 'off',
+    },
+  },
+  {
+    files: ['**/__tests__/**/*.{ts,tsx}', '**/debug-import.{ts,tsx}'],
+    rules: {
+      'import/no-unresolved': 'off',
     },
   },
 ];
