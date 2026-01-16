@@ -96,19 +96,15 @@ export interface SectionProps {
 // Design System Tokens from our centralized design tokens
 // ============================================
 
-/**
- * Spacing values map in Tailwind units (all multiples of 8px)
- * We use our centralized design token spacing values
- */
-const SPACING_VALUE_MAP: Record<SectionSpacing, string> = {
-  none: '0',
-  xs: '4', // 16px = 2×8
-  sm: '8', // 32px = 4×8
-  md: '16', // 64px = 8×8
-  lg: '24', // 96px = 12×8
-  xl: '32', // 128px = 16×8
-  '2xl': '48', // 192px = 24×8
-  '3xl': '64', // 256px = 32×8
+const SPACING_CLASS_MAP: Record<SectionSpacing, { base: string; md: string; lg: string }> = {
+  none: { base: 'py-0', md: 'md:py-0', lg: 'lg:py-0' },
+  xs: { base: 'py-4', md: 'md:py-4', lg: 'lg:py-4' },
+  sm: { base: 'py-8', md: 'md:py-8', lg: 'lg:py-8' },
+  md: { base: 'py-16', md: 'md:py-16', lg: 'lg:py-16' },
+  lg: { base: 'py-24', md: 'md:py-24', lg: 'lg:py-24' },
+  xl: { base: 'py-32', md: 'md:py-32', lg: 'lg:py-32' },
+  '2xl': { base: 'py-48', md: 'md:py-48', lg: 'lg:py-48' },
+  '3xl': { base: 'py-64', md: 'md:py-64', lg: 'lg:py-64' },
 };
 
 /**
@@ -168,14 +164,14 @@ const BACKGROUND_STYLES: Record<SectionBackground, string> = {
 const getSpacingClasses = (spacing: ResponsiveValue<SectionSpacing>): string => {
   // If spacing is a simple string value
   if (typeof spacing === 'string') {
-    return `py-${SPACING_VALUE_MAP[spacing]}`;
+    return SPACING_CLASS_MAP[spacing].base;
   }
 
   // If spacing is responsive object
   return [
-    spacing.mobile && `py-${SPACING_VALUE_MAP[spacing.mobile]}`,
-    spacing.tablet && `md:py-${SPACING_VALUE_MAP[spacing.tablet]}`,
-    spacing.desktop && `lg:py-${SPACING_VALUE_MAP[spacing.desktop]}`,
+    spacing.mobile && SPACING_CLASS_MAP[spacing.mobile].base,
+    spacing.tablet && SPACING_CLASS_MAP[spacing.tablet].md,
+    spacing.desktop && SPACING_CLASS_MAP[spacing.desktop].lg,
   ]
     .filter(Boolean)
     .join(' ');

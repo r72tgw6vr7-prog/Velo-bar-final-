@@ -134,7 +134,7 @@
   }
 
   .home-new .service-card__content {
-    padding: var(--space-xl) !important;
+    padding: var(--space-xl, 32px) !important;
     position: absolute !important;
     inset: 0 !important;
     display: flex !important;
@@ -144,6 +144,10 @@
   .home-new .service-card__title {
     font-size: var(--font-size-h3) !important;
     line-height: var(--line-height-heading) !important;
+    padding-right: 2px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .home-new .service-card__description {
@@ -189,7 +193,7 @@
   }
 
   .home-new .location-card__content {
-    padding: var(--space-xl) !important;
+    padding: var(--space-xl, 32px) !important;
     position: absolute !important;
     inset: 0 !important;
     display: flex !important;
