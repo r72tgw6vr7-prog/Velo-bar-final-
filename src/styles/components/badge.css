@@ -119,6 +119,11 @@
   border: 1px solid rgba(238,125,105,0.08);
 }
 
+/* increase specificity for anchor CTAs to make border visible over utility borders */
+a.badge-cta {
+  border-color: rgba(238,125,105,0.08);
+}
+
 .badge-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.16);
@@ -155,6 +160,13 @@
   border: 1px solid rgba(238,125,105,0.12);
   padding: 1rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Higher specificity to override base .card rules when both classes are present */
+.card.badge-card {
+  background: var(--offwhite-primary, #fff8ec);
+  border: 1px solid rgba(238,125,105,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 .badge-card:hover {
