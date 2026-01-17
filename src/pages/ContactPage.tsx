@@ -54,7 +54,7 @@ export const ContactPage: React.FC = () => {
             <div className='mx-auto rounded-3xl bg-(--offwhite-primary) p-4 md:p-6'>
               <div className='grid grid-cols-1 gap-4 text-center md:grid-cols-3 md:text-left'>
                 {/* Badge 1 */}
-                <div className='bg-offwhite-primary text-navy-dark shadow-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
+                <div className='bg-offwhite-primary text-navy-dark shadow-card badge-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
                   <div className='badge-icon'>
                     <Calendar className='text-navy-dark h-6 w-6' />
                   </div>
@@ -65,7 +65,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 {/* Badge 2 */}
-                <div className='bg-offwhite-primary text-navy-dark shadow-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
+                <div className='bg-offwhite-primary text-navy-dark shadow-card badge-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
                   <div className='badge-icon'>
                     <Users className='text-navy-dark h-6 w-6' />
                   </div>
@@ -76,7 +76,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 {/* Badge 3 */}
-                <div className='bg-offwhite-primary text-navy-dark shadow-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
+                <div className='bg-offwhite-primary text-navy-dark shadow-card badge-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
                   <div className='badge-icon'>
                     <Star className='text-navy-dark h-6 w-6' />
                   </div>
@@ -119,7 +119,7 @@ export const ContactPage: React.FC = () => {
               <div className='flex flex-col flex-wrap justify-center gap-8 sm:flex-row'>
                 <a
                   href='tel:+4916094623196'
-                  className='u-cta-padding bg-accent-primary hover:bg-accent-primary-hover text-navy-dark inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors duration-200 ease-out'
+                  className='u-cta-padding bg-accent-primary hover:bg-accent-primary-hover text-navy-dark inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors duration-200 ease-out badge-cta'
                 >
                   <Phone size={20} />
                   +49 160 94623196
@@ -128,7 +128,7 @@ export const ContactPage: React.FC = () => {
                   href='https://wa.me/4916094623196'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='u-cta-padding inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 font-semibold text-white transition-colors duration-200 ease-out hover:bg-green-600'
+                  className='u-cta-padding inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 font-semibold text-white transition-colors duration-200 ease-out hover:bg-green-600 badge-cta'
                 >
                   <MessageCircle size={20} />
                   {t('pages.contact.bottomCta.whatsapp')}

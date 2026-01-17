@@ -32,7 +32,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
 
   return (
     <div
-      className={`card flex w-[340px] flex-col items-start rounded-2xl border border-solid py-[25px] ${className}`}
+      className={`badge-card card flex w-[340px] flex-col items-start rounded-2xl py-[25px] ${className}`}
     >
       <div className='mx-8 mb-1 flex'>{renderStars()}</div>
       <div className='mx-8 mb-8 flex flex-col items-center self-stretch'>
