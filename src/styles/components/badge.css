@@ -165,12 +165,33 @@ a.badge-cta {
 /* Higher specificity to override base .card rules when both classes are present */
 .card.badge-card {
   background: var(--offwhite-primary, #fff8ec);
-  border: 1px solid rgba(238,125,105,0.12);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border: 1px solid rgba(238,125,105,0.12) !important;
+  box-shadow: 0 8px 24px rgba(238,120,104,0.08) !important;
+}
+
+/* Home KPI banner block (top metrics) should use same coral border + offwhite plate */
+.home-new-card,
+.card.home-new-card {
+  background: var(--offwhite-primary, #fff8ec) !important;
+  border: 1px solid rgba(238,125,105,0.12) !important;
+  box-shadow: 0 8px 24px rgba(238,120,104,0.06) !important;
+  border-radius: var(--radius-2xl) !important;
 }
 
 .badge-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-card-hover);
+}
+
+/* Make testimonial card coral border more visible on dark backgrounds */
+.testimonials-grid .card.badge-card {
+  border-color: rgba(238,125,105,0.14) !important;
+  box-shadow: 0 8px 24px rgba(238,120,104,0.08) !important;
+}
+
+/* Slightly stronger hover for visual confirmation */
+.testimonials-grid .card.badge-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(238,120,104,0.12) !important;
 }
 
