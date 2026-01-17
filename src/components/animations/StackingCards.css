@@ -32,8 +32,6 @@
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   margin-top: -12px;
-  border: 3px solid red !important; /* DEBUG: Obvious border */
-  background: yellow !important; /* DEBUG: Obvious background */
 }
 
 .why-card:first-child {

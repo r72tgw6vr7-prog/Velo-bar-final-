@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils/classname.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 export interface HeroHeadingProps {
   eyebrow?: string;
@@ -28,11 +29,7 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({
         <div className='flex w-full flex-col items-center gap-4'>
           {/* Eyebrow badge */}
           {eyebrow && (
-            <div className='inline-flex items-center rounded-full bg-[rgba(255,248,236,0.95)] px-6 py-2 shadow-sm'>
-              <span className='text-sm font-semibold tracking-wide text-[rgb(238,120,104)]'>
-                {eyebrow}
-              </span>
-            </div>
+            <EyebrowBadge>{eyebrow}</EyebrowBadge>
           )}
 
           {/* Main title */}

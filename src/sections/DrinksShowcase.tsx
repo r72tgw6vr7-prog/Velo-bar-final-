@@ -2,6 +2,7 @@ import { Section } from '@/components/atoms/Section/Section.tsx';
 import { ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
 import type { FC } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const signatureCocktails = [
   {
@@ -72,11 +73,7 @@ export const DrinksShowcase: FC = () => {
                 <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                   <div className='space-y-6 rounded-2xl border border-(--color-coral)/10 bg-(--color-bg-surface)/90 p-6 backdrop-blur-sm overflow-hidden md:space-y-7 md:bg-(--offwhite-primary)/70 md:p-8'>
                     <div className='space-y-3'>
-                      <div className='inline-flex items-center rounded-full bg-(--color-coral) px-4 py-2 shadow-sm'>
-                        <span className='text-xs font-semibold tracking-wide text-(--offwhite-primary)'>
-                          {t('drinksShowcase.signatureBadge')}
-                        </span>
-                      </div>
+                      <EyebrowBadge>{t('drinksShowcase.signatureBadge')}</EyebrowBadge> 
 
                       <h3 className='text-3xl font-bold tracking-tight text-(--color-teal) md:text-4xl'>
                         {t(`drinksShowcase.cocktails.${cocktail.key}.name`)}
@@ -121,13 +118,8 @@ export const DrinksShowcase: FC = () => {
       {/* Classic Highballs - Pricing Card Style Grid */}
       <Section container='wide' spacing='xl' background='light'>
         <div className='mb-12 text-center'>
-          <div className='inline-flex items-center rounded-full border border-(--orange-primary)/20 bg-(--offwhite-primary) px-6 py-2 shadow-sm'>
-            <span className='text-sm font-semibold tracking-wide text-(--orange-primary) uppercase'>
-              {t('drinksShowcase.classicHighballsBadge')}
-            </span>
+            <EyebrowBadge>{t('drinksShowcase.classicHighballsBadge')}</EyebrowBadge>
           </div>
-        </div>
-
         <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {classicHighballs.map((name) => (
             <div

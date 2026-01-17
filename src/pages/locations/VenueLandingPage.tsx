@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 function formatTemplate(template: string, vars: Record<string, string>): string {
   return template.replace(/\{(\w+)\}/g, (_, key) => vars[key] ?? '');
@@ -518,9 +519,7 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
             <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]' />
           </div>
           <div className='relative z-10 text-center'>
-            <span className='mb-8 inline-block rounded-full border border-white/20 bg-white/10 px-0 py-0 text-sm font-semibold text-(--color-text-on-dark-secondary)'>
-              {formatTemplate(t('pages.venue.hero.badge'), { district: venue.district })}
-            </span>
+            <EyebrowBadge className='mb-8'>{formatTemplate(t('pages.venue.hero.badge'), { district: venue.district })}</EyebrowBadge>
             <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
               {t('pages.venue.hero.titlePrefix')} <br className='hidden sm:block' />
               <span className='text-white/90'>{venue.shortName}</span>

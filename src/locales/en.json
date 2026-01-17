@@ -78,7 +78,7 @@
     "subtitle": "We'll respond within 24 hours with a customized offer",
     "trustBadge1": "Response in 24h",
     "trustBadge2": "500+ Events",
-    "trustBadge3": "4.9/5 Stars"
+    "trustBadge3": "5/5 Stars"
   },
   "bookingWizard": {
     "progress": {
@@ -895,7 +895,7 @@
       },
       "snippetSection": {
         "title": "Quick answers for your planning",
-        "subtitle": "Optimized for Google Assistant, Siri & more"
+        "subtitle": "Quick answers for booking, pricing and logistics"
       },
       "items": {
         "0": {
@@ -1747,7 +1747,7 @@
     }
   },
   "stickyCta": {
-    "headline": "Free quote in 2 hours",
+    "headline": "Request a free quote",
     "subline": "Call now or contact via WhatsApp",
     "call": "Call",
     "whatsapp": "WhatsApp",

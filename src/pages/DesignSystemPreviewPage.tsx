@@ -329,11 +329,7 @@ const DesignSystemPreviewPage: React.FC = () => {
           />
 
           <div className='mb-8 flex justify-center'>
-            <div className='inline-flex items-center rounded-full bg-[rgba(255,248,236,0.95)] px-6 py-2 shadow-sm'>
-              <span className='text-sm font-semibold tracking-wide text-[rgb(238,120,104)]'>
-                Signature Drinks
-              </span>
-            </div>
+            <EyebrowBadge>Signature Drinks</EyebrowBadge>
           </div>
 
           <div className='grid gap-8 md:grid-cols-2'>
@@ -351,11 +347,7 @@ const DesignSystemPreviewPage: React.FC = () => {
 
           <div className='mt-16 text-center'>
             <div className='flex justify-center'>
-              <div className='items_center inline-flex rounded-full bg-[rgba(255,248,236,0.95)] px-6 py-2 shadow-sm'>
-                <span className='text-sm font-semibold tracking-wide text-[rgb(238,120,104)]'>
-                  Classic Highballs
-                </span>
-              </div>
+              <EyebrowBadge>Classic Highballs</EyebrowBadge>
             </div>
           </div>
           <div className='mt-8 grid gap-8 md:grid-cols-3'>

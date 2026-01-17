@@ -335,9 +335,6 @@
 /* ============================================
    RESPONSIVE ADJUSTMENTS
    ============================================ */
-@media (max-width: 1024px) {
-  /* Tablet */
-}
 
 @media (min-width: 769px) {
   /* Desktop/Tablet: remove extra top padding */

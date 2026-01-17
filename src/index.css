@@ -67,6 +67,33 @@ body {
   background-color: transparent;
 }
 
+/* Fixed background animation layer (mounted in main.tsx) */
+.vb-fixed-bg {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* iOS Safari/WebKit: stabilize viewport sizing and compositing for fixed+filter+blend */
+@supports (-webkit-touch-callout: none) {
+  .vb-fixed-bg {
+    height: 100dvh;
+  }
+
+  .vb-fixed-bg,
+  .vb-fixed-bg .gradients-container {
+    isolation: isolate;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  /* Safari mitigation: avoid SVG filter url(#goo) artifacts on fixed layers.
+     Keep a visually similar blur. */
+  .vb-fixed-bg .gradients-container {
+    filter: blur(40px) !important;
+  }
+}
+
 /* Aceternity Background Gradient Animation keyframes */
 @keyframes first {
   0% {

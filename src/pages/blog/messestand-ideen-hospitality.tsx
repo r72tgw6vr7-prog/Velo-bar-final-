@@ -48,8 +48,7 @@ const MessestandIdeenHospitalityPage: React.FC = () => {
         {/* Blog Header */}
         <header className='mb-16 text-center'>
           <div className='mb-8'>
-            <span className='mb-8 inline-block rounded-full border border-(--brand-accent)/30 bg-(--brand-accent)/10 px-8 py-0 text-sm font-semibold text-(--brand-accent) transition-colors duration-200 hover:bg-(--brand-accent)/20'>
-              Blog • Messe Marketing
+            <EyebrowBadge className='mb-8'>              Blog • Messe Marketing
             </span>
           </div>
           <h1 className='mb-8 text-4xl font-bold text-gray-900 lg:text-5xl'>

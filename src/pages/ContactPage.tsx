@@ -21,6 +21,7 @@ import MessageCircle from 'lucide-react/dist/esm/icons/message-circle';
 import Calendar from 'lucide-react/dist/esm/icons/calendar';
 import Users from 'lucide-react/dist/esm/icons/users';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const BookingWizard = React.lazy(() => 
   import('@/components/organisms/BookingWizard/BookingWizard.tsx')
@@ -41,9 +42,7 @@ export const ContactPage: React.FC = () => {
         {/* Hero Section */}
         <Section as='header' container='default' spacing='lg' background='dark'>
           <div className='mx-auto max-w-5xl text-center'>
-            <span className='text-accent-primary mb-6 inline-block rounded-full bg-(--color-bg-surface-tinted) px-8 py-2 text-sm font-semibold'>
-              {t('pages.contact.hero.badge')}
-            </span>
+            <EyebrowBadge className='mb-6'>{t('pages.contact.hero.badge')}</EyebrowBadge>
             <h1 className='text-white mb-6 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
               {t('pages.contact.hero.title')}
             </h1>
@@ -82,7 +81,7 @@ export const ContactPage: React.FC = () => {
                     <Star className='text-navy-dark h-6 w-6' />
                   </div>
                   <div>
-                    <div className='text-accent-primary text-xl font-bold md:text-2xl'>4.9/5</div>
+                    <div className='text-accent-primary text-xl font-bold md:text-2xl'>5/5</div>
                     <div className='text-navy-dark/80 text-sm'>{t('pages.contact.kpis.rating')}</div>
                   </div>
                 </div>

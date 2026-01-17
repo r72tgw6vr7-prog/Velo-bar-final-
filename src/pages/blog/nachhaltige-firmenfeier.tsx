@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const NachhaltigeFirmenfeierPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting
@@ -65,8 +66,7 @@ const NachhaltigeFirmenfeierPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.4),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <span className='mb-8 inline-block rounded-full border border-emerald-400/30 bg-emerald-500/20 px-0 py-0 text-sm font-semibold text-emerald-300'>
-            Blog · Nachhaltigkeit & ESG
+          <EyebrowBadge className='mb-8'>            Blog · Nachhaltigkeit & ESG
           </span>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Nachhaltige Firmenfeier <br className='hidden sm:block' />

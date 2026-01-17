@@ -32,11 +32,11 @@ export const HeroLocked: React.FC = () => {
         className='relative z-10 flex items-center justify-center py-0 sm:py-1 md:py-5'
       >
         <div className='w-full max-w-2xl text-center'>
-          {/* Eyebrow Badge */}
+          {/* Eyebrow Badge - unified style with teal border glow */}
           <div className='mb-6 flex justify-center'>
-            <div className='inline-flex items-center gap-2 rounded-full border border-[#003141]/20 bg-[#003141] px-4 py-2'>
-              <MapPin size={16} className='text-[#fff8ec]' />
-              <span className='text-sm font-medium text-[#fff8ec]'>{t('heroHome.badge')}</span>
+            <div className='badge-eyebrow'>
+              <MapPin size={16} className='badge-eyebrow__icon' />
+              <span className='badge-eyebrow__text'>{t('heroHome.badge')}</span>
             </div>
           </div>
 

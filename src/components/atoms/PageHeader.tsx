@@ -7,6 +7,7 @@
 
 import React from 'react';
 import { cn } from '@/utils/classname.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 export interface PageHeaderProps {
   /** Main page title (h1) */
@@ -51,7 +52,7 @@ export function PageHeader({
       <div className={cn('mx-auto flex max-w-4xl flex-col px-4 sm:px-6 lg:px-8', alignClass)}>
         {eyebrow && (
           // Eyebrow → H1: 8px gap (mb-2)
-          <span className='mb-0 text-sm font-semibold text-[rgb(238,120,104)]'>{eyebrow}</span>
+          <EyebrowBadge className='mb-2'>{eyebrow}</EyebrowBadge>
         )}
 
         {/* H1 → Subtitle: 16px gap (mb-4) */}

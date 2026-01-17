@@ -14,8 +14,8 @@ export interface TrustBadgeItem {
 export const TRUST_BADGES: TrustBadgeItem[] = [
   {
     svg: <Star className='text-accent-primary fill-accent-primary h-6 w-6 md:h-8 md:w-8' />,
-    text: '4.9/5 Google Bewertungen',
-    altText: 'Ausgezeichnet mit 4.9 von 5 Sternen bei Google',
+    text: '5/5 Google Bewertungen',
+    altText: 'Ausgezeichnet mit 5 von 5 Sternen bei Google',
     id: 'rating-badge',
   },
   {

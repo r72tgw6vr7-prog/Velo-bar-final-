@@ -6,6 +6,7 @@ import { getAllVenues } from './VenueLandingPage.tsx';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { SITE_URL } from '@/lib/site.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const LocationsIndexPage: React.FC = () => {
   const { t, language } = useLanguage();
@@ -62,9 +63,7 @@ const LocationsIndexPage: React.FC = () => {
             <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(var(--orange-rgb),0.4),transparent_50%)]' />
           </div>
           <div className='relative z-10 mx-auto max-w-4xl px-8 text-center sm:px-8 lg:px-8'>
-            <span className='mb-8 inline-block rounded-full border border-white/20 bg-white/10 px-0 py-0 text-sm font-semibold text-white/80'>
-              {t('pages.locationsIndex.hero.badge')}
-            </span>
+            <EyebrowBadge className='mb-8'>{t('pages.locationsIndex.hero.badge')}</EyebrowBadge>
             <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
               {t('pages.locationsIndex.hero.titlePrefix')} <br className='hidden sm:block' />
               <span className='text-accent-primary'>{t('pages.locationsIndex.hero.titleAccent')}</span>

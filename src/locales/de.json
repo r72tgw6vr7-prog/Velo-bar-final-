@@ -78,7 +78,7 @@
     "subtitle": "Wir melden uns innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot",
     "trustBadge1": "Antwort in 24h",
     "trustBadge2": "500+ Events",
-    "trustBadge3": "4.9/5 Sterne"
+    "trustBadge3": "5/5 Sterne"
   },
   "bookingWizard": {
     "progress": {
@@ -895,7 +895,7 @@
       },
       "snippetSection": {
         "title": "Direkte Antworten für deine Planung",
-        "subtitle": "Optimiert für Google Assistant, Siri & Co."
+        "subtitle": "Schnelle Antworten zu Buchung, Preisen und Logistik"
       },
       "items": {
         "0": {
@@ -1747,7 +1747,7 @@
     }
   },
   "stickyCta": {
-    "headline": "Kostenloses Angebot in 2 Stunden",
+    "headline": "Kostenloses Angebot anfordern",
     "subline": "Jetzt anrufen oder per WhatsApp kontaktieren",
     "call": "Anrufen",
     "whatsapp": "WhatsApp",

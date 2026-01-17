@@ -26,7 +26,7 @@ const aboutContentDE: AboutPageContent = {
         '500+ erfolgreich durchgeführte Events für Unternehmen wie BMW, Siemens und innovative Startups.',
         '2 Standorte in München und Coburg für optimale Abdeckung in Bayern und darüber hinaus.',
         '40+ Premium-Gin-Sorten in unserem Sortiment – wir sind Spezialisten für anspruchsvolle Gaumen.',
-        '4.9/5 Sterne bei Google mit über 87 Bewertungen von zufriedenen Geschäftskunden.',
+        '5/5 Sterne bei Google mit über 87 Bewertungen von zufriedenen Geschäftskunden.',
       ],
     },
     {
@@ -84,7 +84,7 @@ export const aboutContentEN: AboutPageContent = {
         '500+ successfully delivered events for companies like BMW, Siemens and innovative startups.',
         '2 locations in Munich and Coburg for optimal coverage in Bavaria and beyond.',
         '40+ premium gin varieties in our portfolio — we’re specialists for discerning palates.',
-        '4.9/5 stars on Google with 87+ reviews from satisfied business clients.',
+        '5/5 stars on Google with 87+ reviews from satisfied business clients.',
       ],
     },
     {

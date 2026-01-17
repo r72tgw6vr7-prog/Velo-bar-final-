@@ -11,13 +11,12 @@ export interface EyebrowBadgeProps {
  * EyebrowBadge
  * ------------
  * Generic pill-shaped badge used above section/hero headings.
- * Re-uses the global `.badge-solid` utility styles so any design
- * tweaks are centralized in `badge.css`.
+ * Uses the unified `.badge-eyebrow` styles defined in `badge.css`.
  */
 export const EyebrowBadge: React.FC<EyebrowBadgeProps> = ({ icon, children, className }) => (
-  <span className={cn('badge-solid inline-flex items-center justify-center', className)}>
-    {icon && <span className='shrink-0'>{icon}</span>}
-    <span className='leading-none'>{children}</span>
+  <span className={cn('badge-eyebrow inline-flex items-center', className)}>
+    {icon && <span className='badge-eyebrow__icon shrink-0'>{icon}</span>}
+    <span className='badge-eyebrow__text leading-none'>{children}</span>
   </span>
 );
 

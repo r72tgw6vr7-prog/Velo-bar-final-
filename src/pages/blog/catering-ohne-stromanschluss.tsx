@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const CateringOhneStromanschlussPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting
@@ -65,9 +66,7 @@ const CateringOhneStromanschlussPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(99,102,241,0.4),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <span className='bg-accent-primary/20 border-accent-primary/30 text-accent-primary mb-8 inline-block rounded-full border px-0 py-0 text-sm font-semibold'>
-            Blog · Technik & Logistik
-          </span>
+          <EyebrowBadge className='mb-8'>Blog · Technik & Logistik</EyebrowBadge>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Catering ohne <br className='hidden sm:block' />
             <span className='text-accent-primary'>Stromanschluss</span>

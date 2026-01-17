@@ -220,12 +220,12 @@ export const CosmicNav: React.FC = () => {
                 />
               </div>
 
-              {/* Mobile Nav */}
-              <div className='mb-8 space-y-0'>
+              {/* Mobile Nav - py-3 for accessible touch targets (44px min) */}
+              <div className='mb-8 space-y-1'>
                 <Link
                   to='/leistungen'
                   onClick={() => setMenuOpen(false)}
-                  className='text-offwhite-primary hover:text-accent-primary block py-0 text-base font-semibold no-underline transition-colors duration-200 ease-out'
+                  className='text-offwhite-primary hover:text-accent-primary block py-3 text-base font-semibold no-underline transition-colors duration-200 ease-out'
                 >
                   {t('nav.services')}
                 </Link>
@@ -234,7 +234,7 @@ export const CosmicNav: React.FC = () => {
                     key={route.id}
                     to={route.path}
                     onClick={() => setMenuOpen(false)}
-                    className='text-offwhite-primary hover:text-accent-primary block py-0 text-base font-semibold no-underline transition-colors duration-200 ease-out'
+                    className='text-offwhite-primary hover:text-accent-primary block py-3 text-base font-semibold no-underline transition-colors duration-200 ease-out'
                   >
                     {route.label}
                   </Link>

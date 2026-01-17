@@ -48,7 +48,7 @@ body {
 .nav-sticky {
   position: sticky;
   top: 0;
-  z-index: 1100;
+  z-index: var(--z-navigation);
 }
 
 /* ============================================

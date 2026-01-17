@@ -64,10 +64,10 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
           <div className='flex items-center justify-between gap-8'>
             {/* Left: Message */}
             <div className='min-w-0 flex-1'>
-              <p className='truncate text-sm font-semibold text-offwhite-primary sm:text-base'>
+              <p className='truncate text-sm font-semibold text-white sm:text-base'>
                 {t('stickyCta.headline')}
               </p>
-              <p className='hidden text-xs text-offwhite-primary sm:block sm:text-sm'>
+              <p className='hidden text-xs text-white/90 sm:block sm:text-sm'>
                 {t('stickyCta.subline')}
               </p>
             </div>
@@ -115,9 +115,9 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
                 onClick={() => setIsVisible(false)}
                 className={cn(
                   'rounded-full p-2',
-                  'text-gray-400 hover:bg-gray-100 hover:text-gray-600',
+                  'text-white/60 hover:bg-white/10 hover:text-white',
                   'transition-colors duration-200',
-                  'focus:ring-2 focus:ring-gray-300 focus:outline-none',
+                  'focus:ring-2 focus:ring-white/30 focus:outline-none',
                 )}
                 aria-label={t('stickyCta.close')}
               >

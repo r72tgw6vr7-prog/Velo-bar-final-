@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const LastMinuteCateringPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting
@@ -63,8 +64,7 @@ const LastMinuteCateringPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(251,146,60,0.4),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <span className='bg-accent-primary/20 border-accent-primary/30 text-accent-primary mb-8 inline-block rounded-full border px-0 py-0 text-sm font-semibold'>
-            Blog · Notfall-Planung
+          <EyebrowBadge className='mb-8'>            Blog · Notfall-Planung
           </span>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Last-Minute Catering <br className='hidden sm:block' />

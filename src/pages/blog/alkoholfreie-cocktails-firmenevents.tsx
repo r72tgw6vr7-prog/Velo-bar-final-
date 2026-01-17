@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { Section } from '@/components/atoms/index.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const AlkoholfreieCocktailsPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting
@@ -64,8 +65,7 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(var(--orange-rgb),0.4),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <span className='text-accent-primary-light mb-8 inline-block rounded-full border border-white/20 bg-white/10 px-0 py-0 text-sm font-semibold'>
-            Blog · Trends 2025
+          <EyebrowBadge className='mb-8'>            Blog · Trends 2025
           </span>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Alkoholfreie Cocktails <br className='hidden sm:block' />

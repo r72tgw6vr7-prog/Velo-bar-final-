@@ -45,7 +45,7 @@ const metrics = [
   },
   {
     icon: Star,
-    value: '4.9/5',
+    value: '5/5',
     labelKey: 'successStories.metrics.rating.label',
     descriptionKey: 'successStories.metrics.rating.description',
   },

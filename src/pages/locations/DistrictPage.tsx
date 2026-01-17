@@ -27,6 +27,7 @@ import Shield from 'lucide-react/dist/esm/icons/shield';;
 import { getDistrictBySlug, generateDistrictSchema } from '@/data/munich-districts.ts';
 import { Section } from '@/components/atoms/index.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 function formatTemplate(template: string, vars: Record<string, string>): string {
   return template.replace(/\{(\w+)\}/g, (_, key) => vars[key] ?? '');
@@ -150,9 +151,7 @@ const DistrictPage: React.FC = () => {
         className='from-navy-primary to-navy-dark bg-linear-to-br text-white'
       >
         <div className='text-center'>
-          <span className='mb-8 inline-block rounded-full border border-(--brand-accent)/30 bg-(--brand-accent)/10 px-8 py-0 text-sm font-semibold text-(--brand-accent) transition-colors duration-200 hover:bg-(--brand-accent)/20'>
-            {customContent.hero.eyebrow}
-          </span>
+          <EyebrowBadge className='mb-8'>{customContent.hero.eyebrow}</EyebrowBadge>
           <h1 className='mb-8 text-4xl font-bold lg:text-5xl'>
             {customContent.hero.title}
           </h1>

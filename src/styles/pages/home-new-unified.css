@@ -157,10 +157,11 @@
   }
 
   /* Location Cards Mobile Styling */
+  /* Fix: extend overlay beyond section bounds to prevent dark seams on iOS */
   .home-new .home-locations::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
     background: linear-gradient(
       180deg,
       rgba(var(--navy-primary-rgb), 0.55) 0%,

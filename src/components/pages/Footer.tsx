@@ -174,7 +174,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
       </div>
 
       {/* Bottom Bar */}
-      <div className='md:border-opacity-20 flex flex-col items-center justify-between gap-8 border-t border-(--navy-light) pt-8 text-center md:flex-row md:border-(--orange-primary) md:text-left'>
+      <div className='md:border-opacity-20 mx-auto max-w-6xl flex flex-col items-center justify-between gap-8 border-t border-(--navy-light) px-4 pb-8 pt-8 text-center md:flex-row md:border-(--orange-primary) md:px-8 md:text-left'>
         <p className='text-sm text-(--color-text-on-dark) md:text-(--navy-primary)'>
           © {new Date().getFullYear()} Velo.Bar. {t('footer.rightsReserved')}
         </p>
