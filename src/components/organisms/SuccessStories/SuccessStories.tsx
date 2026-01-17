@@ -121,13 +121,7 @@ export const SuccessStories: React.FC<SuccessStoriesProps> = ({
         <div className='grid grid-cols-2 gap-8 md:grid-cols-4'>
           {metrics.map((metric, index) => (
             <div key={index} className='text-center'>
-              <div className='bg-accent-primary/10 mb-0 inline-flex h-12 h-full w-12 flex-col items-center justify-center rounded-full'>
-                <metric.icon className='text-accent-primary h-6 w-6' />
-              </div>
-              <div className='text-on-light text-2xl font-bold md:text-3xl'>{metric.value}</div>
-              <div className='text-sm font-medium text-black/80'>{t(metric.labelKey)}</div>
-              <div className='text-xs text-black/60'>{t(metric.descriptionKey)}</div>
-            </div>
+              <div className='badge-metric-circle h-12 w-12 inline-flex items-center justify-center mb-0'>
           ))}
         </div>
       </div>

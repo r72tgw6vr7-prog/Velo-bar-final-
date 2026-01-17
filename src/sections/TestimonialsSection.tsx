@@ -113,7 +113,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ classN
             href='https://www.google.com/maps/place/Velo.Bar/@48.1103564,11.5341077,17z/data=!4m8!3m7!1s0x479ddf6e8e8e8e8e:0x1234567890abcdef!8m2!3d48.1103564!4d11.5366826!9m1!1b1!16s%2Fg%2F11y3y3y3y3y'
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-base font-semibold text-white backdrop-blur transition duration-200 hover:border-white/30 hover:bg-white/10'
+            className='inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-base font-semibold text-white backdrop-blur transition duration-200 hover:border-white/30 hover:bg-white/10 badge-cta'
           >
             <span>{t('testimonialsSection.viewAll')}</span>
             <ExternalLink className='h-5 w-5' />

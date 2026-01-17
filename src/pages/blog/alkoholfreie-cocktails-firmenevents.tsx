@@ -177,7 +177,7 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
             <div className='rounded-xl border border-gray-200 p-8 transition-colors duration-200 ease-out hover:border-orange-300'>
               <div className='mb-0 flex items-start justify-between'>
                 <h3 className='text-xl font-bold text-gray-900'>1. Virgin Aperol Spritz</h3>
-                <span className='rounded-full bg-orange-100 px-0 py-0 text-xs text-orange-700'>
+                <span className='badge-small bg-orange-100 text-orange-700'>
                   Bestseller
                 </span>
               </div>
@@ -186,15 +186,15 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
                 Sommerevents und After-Work.
               </p>
               <div className='flex gap-0 text-sm text-gray-500'>
-                <span className='rounded bg-gray-100 px-0 py-0'>Erfrischend</span>
-                <span className='rounded bg-gray-100 px-0 py-0'>Niedrig-Kalorien</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Erfrischend</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Niedrig-Kalorien</span>
               </div>
             </div>
 
             <div className='rounded-xl border border-gray-200 p-8 transition-colors duration-200 ease-out hover:border-purple-300'>
               <div className='mb-0 flex items-start justify-between'>
                 <h3 className='text-xl font-bold text-gray-900'>2. Seedlip Garden Tonic</h3>
-                <span className='rounded-full bg-green-100 px-0 py-0 text-xs text-green-700'>
+                <span className='badge-small bg-green-100 text-green-700'>
                   Vegan
                 </span>
               </div>
@@ -203,15 +203,15 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
                 ein echter Gin & Tonic.
               </p>
               <div className='flex gap-0 text-sm text-gray-500'>
-                <span className='rounded bg-gray-100 px-0 py-0'>Premium</span>
-                <span className='rounded bg-gray-100 px-0 py-0'>Kräuterig</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Premium</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Kräuterig</span>
               </div>
             </div>
 
             <div className='rounded-xl border border-gray-200 p-8 transition-colors duration-200 ease-out hover:border-purple-300'>
               <div className='mb-0 flex items-start justify-between'>
                 <h3 className='text-xl font-bold text-gray-900'>3. Spicy Ginger Mule</h3>
-                <span className='rounded-full bg-orange-100 px-0 py-0 text-xs text-orange-700'>
+                <span className='badge-small bg-orange-100 text-orange-700'>
                   Würzig
                 </span>
               </div>
@@ -220,15 +220,15 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
                 mit echtem Kick.
               </p>
               <div className='flex gap-0 text-sm text-gray-500'>
-                <span className='rounded bg-gray-100 px-0 py-0'>Belebend</span>
-                <span className='rounded bg-gray-100 px-0 py-0'>Winterfavorit</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Belebend</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Winterfavorit</span>
               </div>
             </div>
 
             <div className='rounded-xl border border-gray-200 p-8 transition-colors duration-200 ease-out hover:border-orange-300'>
               <div className='mb-0 flex items-start justify-between'>
                 <h3 className='text-xl font-bold text-gray-900'>4. Berry Bramble</h3>
-                <span className='rounded-full bg-red-100 px-0 py-0 text-xs text-red-700'>
+                <span className='badge-small bg-red-100 text-red-700'>
                   Fruchtig
                 </span>
               </div>
@@ -236,8 +236,8 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
                 Brombeeren, Zitrus und Lyre's Dry London – süß-sauer mit Instagram-würdiger Optik.
               </p>
               <div className='flex gap-0 text-sm text-gray-500'>
-                <span className='rounded bg-gray-100 px-0 py-0'>Fotogen</span>
-                <span className='rounded bg-gray-100 px-0 py-0'>Sommerlich</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Fotogen</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Sommerlich</span>
               </div>
             </div>
 
@@ -252,8 +252,8 @@ const AlkoholfreieCocktailsPage: React.FC = () => {
                 Kalter Espresso, Vanille und Soda – der perfekte Pick-Me-Up für lange Messetage.
               </p>
               <div className='flex gap-0 text-sm text-gray-500'>
-                <span className='rounded bg-gray-100 px-0 py-0'>Koffeinhaltig</span>
-                <span className='rounded bg-gray-100 px-0 py-0'>Nachmittags</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Koffeinhaltig</span>
+                <span className='badge-chip bg-gray-100 text-gray-800'>Nachmittags</span>
               </div>
             </div>
           </div>

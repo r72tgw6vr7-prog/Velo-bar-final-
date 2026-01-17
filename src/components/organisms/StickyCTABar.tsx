@@ -78,7 +78,7 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
               <a
                 href={phoneLink}
                 className={cn(
-                  'inline-flex items-center justify-center gap-2',
+                  'inline-flex items-center justify-center gap-2 badge-cta',
                   'rounded-full px-4 py-2',
                   'bg-accent-primary hover:bg-accent-primary-hover text-navy-dark shadow-brand hover:shadow-brand-hover',
                   'text-sm font-medium',
@@ -97,7 +97,7 @@ export const StickyCTABar: React.FC<StickyCTABarProps> = ({
                 target='_blank'
                 rel='noopener noreferrer'
                 className={cn(
-                  'inline-flex items-center justify-center gap-2',
+                  'inline-flex items-center justify-center gap-2 badge-cta',
                   'rounded-full px-4 py-2',
                   'bg-[#25D366] text-white hover:bg-[#20BD5A]',
                   'text-sm font-medium',

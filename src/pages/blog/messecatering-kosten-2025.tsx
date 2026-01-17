@@ -232,7 +232,7 @@ const MessecateringKostenPage: React.FC = () => {
               <h3 className='mb-0 text-lg font-bold text-gray-900'>Standard-Messeevent</h3>
               <p className='mb-0 text-3xl font-bold text-emerald-600'>ab €1.490</p>
               <p className='text-sm text-gray-600'>50–100 Gäste • 8 Stunden</p>
-              <span className='mt-0 inline-block rounded-full bg-emerald-600 px-0 py-0 text-xs text-white'>
+              <span className='badge-small bg-emerald-600 text-white'>
                 Beliebteste Wahl
               </span>
             </div>

@@ -55,7 +55,7 @@ export const ContactPage: React.FC = () => {
               <div className='grid grid-cols-1 gap-4 text-center md:grid-cols-3 md:text-left'>
                 {/* Badge 1 */}
                 <div className='bg-offwhite-primary text-navy-dark shadow-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
-                  <div className='bg-accent-primary/20 shrink-0 rounded-lg p-2'>
+                  <div className='badge-icon'>
                     <Calendar className='text-navy-dark h-6 w-6' />
                   </div>
                   <div>
@@ -66,7 +66,7 @@ export const ContactPage: React.FC = () => {
 
                 {/* Badge 2 */}
                 <div className='bg-offwhite-primary text-navy-dark shadow-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
-                  <div className='bg-accent-primary/20 shrink-0 rounded-lg p-2'>
+                  <div className='badge-icon'>
                     <Users className='text-navy-dark h-6 w-6' />
                   </div>
                   <div>
@@ -77,7 +77,7 @@ export const ContactPage: React.FC = () => {
 
                 {/* Badge 3 */}
                 <div className='bg-offwhite-primary text-navy-dark shadow-card flex h-full flex-col items-center gap-3 rounded-2xl p-4 text-center sm:flex-row sm:text-left'>
-                  <div className='bg-accent-primary/20 shrink-0 rounded-lg p-2'>
+                  <div className='badge-icon'>
                     <Star className='text-navy-dark h-6 w-6' />
                   </div>
                   <div>

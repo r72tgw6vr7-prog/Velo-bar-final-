@@ -98,10 +98,7 @@ export const DrinksShowcase: FC = () => {
                       </h4>
                       <div className='flex flex-wrap gap-2'>
                         {cocktail.ingredients.map((ingredient) => (
-                          <span
-                            key={ingredient}
-                            className='inline-flex items-center rounded-full border border-(--color-coral)/25 bg-(--offwhite-primary) px-3 py-1 text-xs font-medium text-(--text-dark-tea)'
-                          >
+                          <span key={ingredient} className='badge-chip border-(--color-coral)/25 text-(--text-dark-tea)'>
                             {ingredient}
                           </span>
                         ))}
