@@ -35,8 +35,13 @@
 
 .card--brand {
   background: var(--color-cream);
-  border: 2px solid var(--color-coral);
+  border: 2px solid var(--border-coral-subtle);
   color: var(--text-dark-tea);
+  box-shadow: var(--shadow-eyebrow);
+}
+
+.card--brand:hover {
+  box-shadow: var(--shadow-eyebrow-hover);
 }
 
 .card--brand .card__title {

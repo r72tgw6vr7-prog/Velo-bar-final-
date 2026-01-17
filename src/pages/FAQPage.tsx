@@ -183,7 +183,7 @@ const FAQPage: React.FC = () => {
         {/* Voice Search Optimized FAQ Snippets */}
         <Section container='narrow' spacing='md' background='light'>
           <div className='mb-16 text-center'>
-            <h2 className='vb-heading-1 mb-8 text-center text-[rgb(238,120,104)]'>
+            <h2 className='vb-heading-1 mb-8 text-center text-accent-primary'>
               {t('pages.faq.snippetSection.title')}
             </h2>
             <p className='vb-lead text-center'>{t('pages.faq.snippetSection.subtitle')}</p>

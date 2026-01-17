@@ -47,8 +47,7 @@ const CorporateEventCateringGuidePage: React.FC = () => {
           {/* Custom Hero for the Guide */}
         <div className='bg-navy-primary relative overflow-hidden py-24 text-white lg:py-32'>
           <div className='relative z-10 mx-auto max-w-4xl px-8 text-center sm:px-8 lg:px-8'>
-            <EyebrowBadge className='mb-8'>              {t('pages.resources.corporateEventCateringGuide.hero.badge')}
-            </span>
+            <EyebrowBadge className='mb-8'>{t('pages.resources.corporateEventCateringGuide.hero.badge')}</EyebrowBadge>
             <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
               {t('pages.resources.corporateEventCateringGuide.hero.titleLine1')} <br />
               {t('pages.resources.corporateEventCateringGuide.hero.titleLine2')}

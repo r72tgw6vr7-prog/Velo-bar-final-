@@ -48,8 +48,7 @@ const MessestandIdeenHospitalityPage: React.FC = () => {
         {/* Blog Header */}
         <header className='mb-16 text-center'>
           <div className='mb-8'>
-            <EyebrowBadge className='mb-8'>              Blog • Messe Marketing
-            </span>
+            <EyebrowBadge className='mb-8'>Blog • Messe Marketing</EyebrowBadge>
           </div>
           <h1 className='mb-8 text-4xl font-bold text-gray-900 lg:text-5xl'>
             5 kreative Messestand-Ideen, die Besucher magnetisch anziehen

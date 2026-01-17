@@ -64,8 +64,7 @@ const LastMinuteCateringPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(251,146,60,0.4),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <EyebrowBadge className='mb-8'>            Blog · Notfall-Planung
-          </span>
+          <EyebrowBadge className='mb-8'>Blog · Notfall-Planung</EyebrowBadge>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Last-Minute Catering <br className='hidden sm:block' />
             <span className='text-accent-primary'>München</span>

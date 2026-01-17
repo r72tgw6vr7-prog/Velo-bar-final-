@@ -8,6 +8,7 @@ export interface HeroHeadingProps {
   subtitle?: string;
   className?: string;
   titleClassName?: string;
+  subtitleClassName?: string;
 }
 
 export const HeroHeading: React.FC<HeroHeadingProps> = ({
@@ -16,6 +17,7 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({
   subtitle,
   className,
   titleClassName,
+  subtitleClassName,
 }) => {
   return (
     <header
@@ -35,7 +37,7 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({
           {/* Main title */}
           <h1
             className={cn(
-              'text-3xl font-bold text-[rgb(238,120,104)] md:text-5xl lg:text-6xl',
+              'text-3xl font-bold text-accent-primary md:text-5xl lg:text-6xl',
               titleClassName,
             )}
           >
@@ -44,7 +46,12 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({
 
           {/* Optional subtitle */}
           {subtitle && (
-            <p className='max-w-2xl text-base font-bold text-[rgb(255,248,236)] md:text-lg'>
+            <p
+              className={cn(
+                'max-w-2xl text-base font-bold text-white/90 md:text-lg',
+                subtitleClassName,
+              )}
+            >
               {subtitle}
             </p>
           )}

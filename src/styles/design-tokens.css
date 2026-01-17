@@ -76,6 +76,12 @@
   --surface-card-border: rgba(0, 49, 65, 0.08);
   --surface-card-hover-border: rgba(238, 120, 104, 0.15);
 
+  /* Coral border styling - matches eyebrow badge */
+  --border-coral: rgba(238, 125, 105, 0.86);
+  --border-coral-subtle: rgba(238, 125, 105, 0.25);
+  --shadow-eyebrow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-eyebrow-hover: 0px 6px 8px rgba(0, 0, 0, 0.2);
+
   /* Focus ring (accessibility) */
   --focus-ring-color: rgb(238, 120, 104); /* coral */
   --focus-ring-offset: 3px;

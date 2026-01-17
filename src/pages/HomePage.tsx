@@ -182,7 +182,7 @@ export const HomePage = () => {
               <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
                 {t('pages.home.locations.title')}
               </h2>
-              <p className='mt-4 text-base font-semibold text-white md:text-lg'>
+              <p className='mt-4 text-base font-semibold text-white/90 md:text-lg'>
                 {t('pages.home.locations.subtitle')}
               </p>
             </div>
@@ -244,7 +244,7 @@ export const HomePage = () => {
               <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
                 {t('pages.home.services.title')}
               </h2>
-              <p className='mt-4 text-base font-semibold text-white md:text-lg'>
+              <p className='mt-4 text-base font-semibold text-white/90 md:text-lg'>
                 {t('pages.home.services.subtitle')}
               </p>
             </div>
@@ -327,11 +327,11 @@ export const HomePage = () => {
               <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
                 {t('pages.home.stats.title')}
               </h2>
-              <p className='mt-4 text-base font-semibold text-white md:text-lg'>
+              <p className='mt-4 text-base font-semibold text-white/90 md:text-lg'>
                 {t('pages.home.stats.subtitle')}
               </p>
             </div>
-            <div className='home-new-card border-accent/20 rounded-2xl border-2 p-6 shadow-lg'>
+            <div className='home-new-card p-6'>
               <GridClean cols={4} gap='lg'>
                 <div className='text-center'>
                   <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.0')}</div>

@@ -137,15 +137,17 @@ const LocationsIndexPage: React.FC = () => {
 
           {/* CTA Section */}
           <section className='rounded-2xl bg-gray-50 p-8 text-center md:p-16'>
-            <h2 className='mb-8 text-2xl font-bold text-[#ee7868]'>{t('pages.locationsIndex.cta.title')}</h2>
-            <p className='mx-auto mb-8 max-w-2xl text-[#003141]'>
+            <h2 className='mb-8 text-2xl font-bold text-accent-primary'>
+              {t('pages.locationsIndex.cta.title')}
+            </h2>
+            <p className='mx-auto mb-8 max-w-2xl text-body-light'>
               {t('pages.locationsIndex.cta.description')}
             </p>
             <Link to='/anfrage'>
               <Button
                 variant='primary'
                 size='lg'
-                className='bg-[#ee7868] text-white transition-colors duration-200 hover:bg-[#ee7868]/90'
+                className='bg-accent-primary text-white transition-colors duration-200 hover:bg-accent-primary-hover'
               >
                 {t('pages.locationsIndex.cta.button')}
               </Button>

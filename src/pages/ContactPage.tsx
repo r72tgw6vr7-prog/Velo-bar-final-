@@ -43,10 +43,10 @@ export const ContactPage: React.FC = () => {
         <Section as='header' container='default' spacing='lg' background='dark'>
           <div className='mx-auto max-w-5xl text-center'>
             <EyebrowBadge className='mb-6'>{t('pages.contact.hero.badge')}</EyebrowBadge>
-            <h1 className='text-white mb-6 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
+            <h1 className='mb-6 text-3xl font-bold tracking-tight text-accent-primary md:text-5xl lg:text-6xl'>
               {t('pages.contact.hero.title')}
             </h1>
-            <p className='text-white/90 mb-6 text-base leading-relaxed md:text-lg'>
+            <p className='mb-6 text-base font-bold leading-relaxed text-white/90 md:text-lg'>
               {t('pages.contact.hero.subtitle')}
             </p>
 

@@ -27,16 +27,16 @@
   display: none; /* Chrome, Safari, Edge */
 }
 
-/* Card Styling */
+/* Card Styling - matches eyebrow badge */
 .included-card {
   flex: 0 0 calc(50% - 8px); /* 2 cards visible on mobile (48% each + gap) */
   scroll-snap-align: center;
   border-radius: 16px;
-  background: #fff8ec;
-  border: 2px solid rgba(238, 120, 104, 0.2);
+  background: var(--offwhite-primary, #fff8ec);
+  border: 2px solid var(--border-coral);
   padding: 16px 14px 18px;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-eyebrow);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -44,7 +44,7 @@
 
 .included-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-eyebrow-hover);
 }
 
 /* Icon Container */

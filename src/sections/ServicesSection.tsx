@@ -73,7 +73,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className='flex flex-col items-center px-64 py-16'>
           {(title || subtitle) && (
             <div className='mx-auto mb-16 inline-block rounded-2xl bg-[rgba(255,248,236,0.85)] px-4 py-3 text-center backdrop-blur-sm md:px-6 md:py-4'>
-              {title && <h2 className='vb-heading-1 text-[rgb(238,120,104)]'>{title}</h2>}
+              {title && <h2 className='vb-heading-1 text-accent-primary'>{title}</h2>}
               {subtitle && <p className='vb-lead mt-2'>{subtitle}</p>}
             </div>
           )}

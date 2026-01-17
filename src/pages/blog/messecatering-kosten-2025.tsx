@@ -65,8 +65,7 @@ const MessecateringKostenPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.3),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <EyebrowBadge className='mb-8'>            Blog · Budget & Planung
-          </span>
+          <EyebrowBadge className='mb-8'>Blog · Budget & Planung</EyebrowBadge>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Messecatering München: <br className='hidden sm:block' />
             <span className='text-emerald-400'>Kosten vs. ROI</span>

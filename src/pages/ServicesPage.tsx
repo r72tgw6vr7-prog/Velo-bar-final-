@@ -25,11 +25,11 @@ const ServicesPage: React.FC = () => {
       title: t('pages.services.cards.corporate.title'),
       description: t('pages.services.cards.corporate.description'),
       content: (
-        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+        <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
           <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
             {t('pages.services.cards.corporate.heading')}
           </h3>
-          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+          <ul className='space-y-2 text-base text-(--navy-primary)'>
             <li>✓ {t('pages.services.cards.corporate.bullets.0')}</li>
             <li>✓ {t('pages.services.cards.corporate.bullets.1')}</li>
             <li>✓ {t('pages.services.cards.corporate.bullets.2')}</li>
@@ -43,11 +43,11 @@ const ServicesPage: React.FC = () => {
       title: t('pages.services.cards.christmas.title'),
       description: t('pages.services.cards.christmas.description'),
       content: (
-        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+        <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
           <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
             {t('pages.services.cards.christmas.heading')}
           </h3>
-          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+          <ul className='space-y-2 text-base text-(--navy-primary)'>
             <li>✓ {t('pages.services.cards.christmas.bullets.0')}</li>
             <li>✓ {t('pages.services.cards.christmas.bullets.1')}</li>
             <li>✓ {t('pages.services.cards.christmas.bullets.2')}</li>
@@ -61,11 +61,11 @@ const ServicesPage: React.FC = () => {
       title: t('pages.services.cards.trade.title'),
       description: t('pages.services.cards.trade.description'),
       content: (
-        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+        <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
           <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
             {t('pages.services.cards.trade.heading')}
           </h3>
-          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+          <ul className='space-y-2 text-base text-(--navy-primary)'>
             <li>✓ {t('pages.services.cards.trade.bullets.0')}</li>
             <li>✓ {t('pages.services.cards.trade.bullets.1')}</li>
             <li>✓ {t('pages.services.cards.trade.bullets.2')}</li>
@@ -79,11 +79,11 @@ const ServicesPage: React.FC = () => {
       title: t('pages.services.cards.team.title'),
       description: t('pages.services.cards.team.description'),
       content: (
-        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+        <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
           <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
             {t('pages.services.cards.team.heading')}
           </h3>
-          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+          <ul className='space-y-2 text-base text-(--navy-primary)'>
             <li>✓ {t('pages.services.cards.team.bullets.0')}</li>
             <li>✓ {t('pages.services.cards.team.bullets.1')}</li>
             <li>✓ {t('pages.services.cards.team.bullets.2')}</li>
@@ -97,11 +97,11 @@ const ServicesPage: React.FC = () => {
       title: t('pages.services.cards.private.title'),
       description: t('pages.services.cards.private.description'),
       content: (
-        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+        <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
           <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
             {t('pages.services.cards.private.heading')}
           </h3>
-          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+          <ul className='space-y-2 text-base text-(--navy-primary)'>
             <li>✓ {t('pages.services.cards.private.bullets.0')}</li>
             <li>✓ {t('pages.services.cards.private.bullets.1')}</li>
             <li>✓ {t('pages.services.cards.private.bullets.2')}</li>
@@ -115,11 +115,11 @@ const ServicesPage: React.FC = () => {
       title: t('pages.services.cards.weddings.title'),
       description: t('pages.services.cards.weddings.description'),
       content: (
-        <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl border border-(--color-bg-surface) bg-(--color-bg-surface) px-10 py-12 text-(--color-text-on-light)'>
+        <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
           <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
             {t('pages.services.cards.weddings.heading')}
           </h3>
-          <ul className='space-y-2 text-base text-(--color-text-on-light-secondary)'>
+          <ul className='space-y-2 text-base text-(--navy-primary)'>
             <li>✓ {t('pages.services.cards.weddings.bullets.0')}</li>
             <li>✓ {t('pages.services.cards.weddings.bullets.1')}</li>
             <li>✓ {t('pages.services.cards.weddings.bullets.2')}</li>
@@ -198,11 +198,11 @@ const ServicesPage: React.FC = () => {
                     delay={index * 0.15}
                     className='service-card-mobile'
                   >
-                    <div className='flex h-full w-full flex-col justify-center gap-4 rounded-3xl bg-(--color-bg-surface) px-10 py-12'>
-                      <h3 className='text-2xl font-semibold tracking-tight text-accent-primary'>
+                    <div className='service-scroll-card flex h-full w-full flex-col justify-center gap-4 rounded-2xl px-8 py-10'>
+                      <h3 className='text-2xl font-semibold tracking-tight text-(--color-coral)'>
                         {service.title}
                       </h3>
-                      <p className='text-base leading-relaxed text-(--color-text-on-light-secondary)'>
+                      <p className='text-base leading-relaxed text-(--navy-primary)'>
                         {service.description}
                       </p>
                     </div>

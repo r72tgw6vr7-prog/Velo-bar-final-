@@ -130,8 +130,8 @@ export const PricingPage: React.FC = () => {
       {/* What's Included */}
       <Section container='default' spacing='md' background='light' className='pt-0'>
         <h2 className='mb-16 flex justify-center'>
-          <span className='inline-flex items-center rounded-full bg-[rgba(255,248,236,0.95)] px-6 py-2 shadow-sm'>
-            <span className='text-sm font-semibold tracking-wide text-[rgb(238,120,104)]'>
+          <span className='badge-inline inline-flex items-center rounded-full px-6 py-2'>
+            <span className='text-sm font-semibold tracking-wide text-accent-primary'>
               {t('pricing.included.title')}
             </span>
           </span>

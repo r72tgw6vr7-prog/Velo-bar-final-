@@ -57,14 +57,14 @@
   font-size: var(--font-size-small);
   font-weight: 600;
   border-radius: var(--radius-badge);
-  background: #FAF4E8;
-  border: 2px solid rgba(238, 125, 105, 0.86);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var(--surface-card, #FAF4E8);
+  border: 2px solid var(--border-coral);
+  box-shadow: var(--shadow-eyebrow);
   transition: all 0.2s ease;
 }
 
 .badge-eyebrow:hover {
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-eyebrow-hover);
   transform: translateY(-1px);
 }
 
@@ -85,8 +85,8 @@
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 9999px;
-  background: #FAF4E8;
-  border: 1px solid rgba(238, 125, 105, 0.86);
+  background: var(--surface-card, #FAF4E8);
+  border: 1px solid var(--border-coral);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08);
   color: var(--navy-primary);
   transition: all 0.18s ease;
@@ -112,21 +112,58 @@
   color: var(--navy-primary);
 }
 
-/* CTA-style badge applied to buttons/links (keeps existing bg color but adds unified shadow) */
+/* CTA-style badge applied to buttons/links - styled to match eyebrow badge */
 .badge-cta {
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-eyebrow) !important;
   transition: box-shadow 0.18s ease, transform 0.18s ease;
-  border: 1px solid rgba(238,125,105,0.08);
+  border: 2px solid var(--border-coral) !important;
 }
 
 /* increase specificity for anchor CTAs to make border visible over utility borders */
 a.badge-cta {
-  border-color: rgba(238,125,105,0.08);
+  border: 2px solid var(--border-coral) !important;
 }
 
 .badge-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--shadow-eyebrow-hover) !important;
+}
+
+/* Inline pill badge (section eyebrows with cream bg) - styled to match eyebrow badge */
+.badge-inline {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-badge);
+  background: var(--offwhite-primary, #fff8ec) !important;
+  border: 2px solid var(--border-coral) !important;
+  box-shadow: var(--shadow-eyebrow) !important;
+  transition: all 0.2s ease;
+}
+
+.badge-inline:hover {
+  box-shadow: var(--shadow-eyebrow-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Service scroll cards - styled to match eyebrow badges */
+.service-scroll-card {
+  background: var(--offwhite-primary, #fff8ec) !important;
+  border: 2px solid var(--border-coral) !important;
+  box-shadow: var(--shadow-eyebrow) !important;
+  border-radius: var(--radius-card) !important;
+}
+
+.service-scroll-card:hover {
+  box-shadow: var(--shadow-eyebrow-hover) !important;
+}
+
+/* Inactive service scroll card - dimmed version */
+.service-scroll-card-inactive {
+  background: rgba(255, 248, 236, 0.6) !important;
+  border: 2px solid var(--border-coral-subtle) !important;
+  box-shadow: none !important;
+  border-radius: var(--radius-card) !important;
+  opacity: 0.7;
 }
 
 /* Square icon badge used in KPI cards */
@@ -151,47 +188,59 @@ a.badge-cta {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Card-like badge (KPI cards) */
+/* Card-like badge (KPI cards) - styled to match eyebrow badges */
 .badge-card {
-  background: var(--offwhite-primary, #fff8ec);
+  background: var(--offwhite-primary, #fff8ec) !important;
   color: var(--navy-primary, #003141);
-  border-radius: 16px;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(238,125,105,0.12);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-eyebrow) !important;
+  border: 2px solid var(--border-coral) !important;
   padding: 1rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
+.badge-card:hover {
+  box-shadow: var(--shadow-eyebrow-hover) !important;
+  transform: translateY(-2px);
+}
+
 /* Higher specificity to override base .card rules when both classes are present */
-.card.badge-card {
-  background: var(--offwhite-primary, #fff8ec);
-  border: 1px solid rgba(238,125,105,0.12) !important;
-  box-shadow: 0 8px 24px rgba(238,120,104,0.08) !important;
+.card.badge-card,
+.badge-card.card {
+  background: var(--offwhite-primary, #fff8ec) !important;
+  border: 2px solid var(--border-coral) !important;
+  box-shadow: var(--shadow-eyebrow) !important;
+}
+
+.card.badge-card:hover,
+.badge-card.card:hover {
+  box-shadow: var(--shadow-eyebrow-hover) !important;
 }
 
 /* Home KPI banner block (top metrics) should use same coral border + offwhite plate */
 .home-new-card,
 .card.home-new-card {
   background: var(--offwhite-primary, #fff8ec) !important;
-  border: 1px solid rgba(238,125,105,0.12) !important;
-  box-shadow: 0 8px 24px rgba(238,120,104,0.06) !important;
+  border: 2px solid var(--border-coral) !important;
+  box-shadow: var(--shadow-eyebrow) !important;
   border-radius: var(--radius-2xl) !important;
 }
 
-.badge-card:hover {
+.home-new-card:hover,
+.card.home-new-card:hover {
+  box-shadow: var(--shadow-eyebrow-hover) !important;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
 }
 
 /* Make testimonial card coral border more visible on dark backgrounds */
 .testimonials-grid .card.badge-card {
-  border-color: rgba(238,125,105,0.14) !important;
-  box-shadow: 0 8px 24px rgba(238,120,104,0.08) !important;
+  border: 2px solid var(--border-coral) !important;
+  box-shadow: var(--shadow-eyebrow) !important;
 }
 
 /* Slightly stronger hover for visual confirmation */
 .testimonials-grid .card.badge-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(238,120,104,0.12) !important;
+  box-shadow: var(--shadow-eyebrow-hover) !important;
 }
 

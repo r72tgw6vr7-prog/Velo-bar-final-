@@ -56,9 +56,9 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
       <div className='site-footer__content mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-16 lg:py-20'>
         {/* Completely restructured footer layout */}
         <div className='flex flex-col items-center text-center md:flex-row md:items-start md:justify-between md:text-left'>
-          {/* LEFT: large logo only - standalone */}
-          <div className='mb-12 flex flex-col justify-center md:mb-0 md:w-1/4 md:justify-start'>
-            <Link to='/' className='inline-flex mb-6'>
+          {/* LEFT: large logo with contact info centered underneath */}
+          <div className='mb-12 flex flex-col items-center md:mb-0 md:w-1/4 md:items-center'>
+            <Link to='/' className='inline-flex justify-center md:justify-center'>
               <img
                 src='/velo.svg'
                 alt={t('common.logoAlt')}
@@ -67,7 +67,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
               />
             </Link>
             {/* SEO: LocalBusiness microdata in footer */}
-            <div className='text-xs md:text-sm space-y-2'>
+            <div className='mt-6 text-xs md:text-sm space-y-2 text-center md:text-center'>
               <div itemProp='name' className='font-semibold hidden'>
                 {t('footer.businessName')}
               </div>

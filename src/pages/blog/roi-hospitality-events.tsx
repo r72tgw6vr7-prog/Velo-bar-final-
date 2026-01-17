@@ -64,8 +64,7 @@ const ROIHospitalityEventsPage: React.FC = () => {
           <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(99,102,241,0.3),transparent_50%)]' />
         </div>
         <div className='relative z-10 text-center'>
-          <EyebrowBadge className='mb-8'>            Blog · ROI & Strategie
-          </span>
+          <EyebrowBadge className='mb-8'>Blog · ROI & Strategie</EyebrowBadge>
           <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
             Lohnt sich das? <br className='hidden sm:block' />
             <span className='text-accent-primary'>So messen Sie den ROI Ihrer Event-Bar</span>

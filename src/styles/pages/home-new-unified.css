@@ -11,11 +11,11 @@
 
 /* Unified card styling for all home-new cards */
 .home-new .home-new-card {
-  background: var(--surface-card-translucent) !important;
-  border: 1px solid var(--surface-card-border) !important;
+  background: var(--offwhite-primary, #fff8ec) !important;
+  border: 2px solid var(--border-coral) !important;
   border-radius: var(--radius-card) !important;
   padding: var(--space-xl) !important;
-  box-shadow: var(--shadow-card) !important;
+  box-shadow: var(--shadow-eyebrow) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
@@ -26,8 +26,8 @@
 
 .home-new .home-new-card:hover {
   transform: translateY(-2px) !important;
-  box-shadow: var(--shadow-card-hover) !important;
-  border-color: var(--surface-card-hover-border) !important;
+  box-shadow: var(--shadow-eyebrow-hover) !important;
+  border-color: var(--border-coral) !important;
 }
 
 /* Improved typography scale */
