@@ -537,12 +537,12 @@
   "pages": {
     "home": {
       "seo": {
-        "title": " Mobile Cocktailbar München | Premium Bar ab 890€",
-        "description": "Premium mobile Cocktailbar für Firmenfeiern, Hochzeiten & Events in München. Professioneller Barkeeper-Service für 50-500+ Gäste. Jetzt anfragen!"
+        "title": "Mobile Cocktailbar München | Premium Bar ab 890€",
+        "description": "Premium mobile Cocktailbar für Firmenfeiern, Hochzeiten & Partys in München. Professioneller Barkeeper-Service für 50–500+ Gäste. Jetzt anfragen!"
       },
       "locations": {
-        "title": "München & Coburg – wir kommen überall hin",
-        "subtitle": "Zwei feste Standorte in Bayern plus deutschlandweite Einsätze auf Anfrage."
+        "title": "München & Coburg — wir kommen zu dir",
+        "subtitle": "Zwei Standorte in Bayern plus deutschlandweite Events auf Anfrage."
       },
       "services": {
         "title": "Von Cocktail-Catering bis Gin-Tasting",
@@ -962,7 +962,7 @@
           "items": {
             "0": {
               "question": "Benötigt die mobile Cocktailbar Strom oder Wasser?",
-              "answer": "Nein, unsere Fahrrad-Bar ist 100% autark. Kein Strom, kein Wasseranschluss nötig. Funktioniert überall - im Büro, auf Terrassen oder im Freien. Perfekt für Locations mit beschränkten Anschlüssen."
+              "answer": "Nein, unsere Fahrrad-Bar ist 100% autark. Kein Strom, kein Wasseranschluss nötig. Funktioniert überall — im Büro, auf Terrassen oder im Freien. Perfekt für Locations mit beschränkten Anschlüssen."
             },
             "1": {
               "question": "Wie viel Platz benötigt eine mobile Cocktailbar?",
@@ -987,7 +987,7 @@
             },
             "2": {
               "question": "Bieten Sie Messecatering in München an?",
-              "answer": "Ja! Wir sind Spezialisten für Messe-Catering in München. Ob BAUMA, ISPO oder EXPO REAL – unsere autarke Bar funktioniert ohne Messe-Infrastruktur. Du sparst €400-750 an Strom-/Wasseranschlusskosten."
+              "answer": "Ja! Wir sind Spezialisten für Messe-Catering in München. Ob BAUMA, ISPO oder EXPO REAL — unsere autarke Bar funktioniert ohne Messe-Infrastruktur. Du sparst €400-750 an Strom-/Wasseranschlusskosten."
             }
           }
         },
@@ -1009,11 +1009,11 @@
           "items": {
             "0": {
               "question": "Bieten Sie Catering für Weihnachtsfeiern an?",
-              "answer": "Ja! Wir haben spezielle Wintercocktails: Virgin Glühwein, Hot Apple Cider, Cranberry Fizz. Buche 8+ Wochen vorher für Weihnachtsfeiern in München – die Saison ist schnell ausgebucht."
+              "answer": "Ja! Wir haben spezielle Wintercocktails: Virgin Glühwein, Hot Apple Cider, Cranberry Fizz. Buche 8+ Wochen vorher für Weihnachtsfeiern in München — die Saison ist schnell ausgebucht."
             },
             "1": {
               "question": "Können Sie Outdoor-Events ohne Strom bedienen?",
-              "answer": "Perfekt für uns! Unsere Akku-Technik ermöglicht 8+ Stunden Betrieb ohne Steckdose. Sommerfeste im Park, Betriebsausflüge am See, Teamevents in der Natur – überall wo es keine Infrastruktur gibt."
+              "answer": "Perfekt für uns! Unsere Akku-Technik ermöglicht 8+ Stunden Betrieb ohne Steckdose. Sommerfeste im Park, Betriebsausflüge am See, Teamevents in der Natur — überall wo es keine Infrastruktur gibt."
             }
           }
         }
@@ -1025,24 +1025,24 @@
           "title": "Wir sind die Velo Bar",
           "subtitle": "Gegründet mit der Vision, Premium-Cocktails auf Rädern zu bringen. Leidenschaft für Qualität, Handwerk und Bar-Erlebnisse, die im Kopf bleiben.",
           "founder1": {
-            "aria": "Sebastian - Co-Founder",
-            "alt": "Sebastian - Co-Founder"
+            "aria": "Sebastian — Co-Founder",
+            "alt": "Sebastian — Co-Founder"
           },
           "founder2": {
-            "aria": "Lars Eggers - Co-Founder",
-            "alt": "Lars Eggers - Co-Founder"
+            "aria": "Lars Eggers — Co-Founder",
+            "alt": "Lars Eggers — Co-Founder"
           }
         },
         "story1": {
           "heading": "Die Geschichte",
-          "p1": "Was mit einer Idee begann – \"Wie bringen wir Bar-Qualität zu Messen und Firmenfeiern?\" – ist heute ein etabliertes Unternehmen mit über 500 Events für Kunden in München und Coburg.",
+          "p1": "Was mit einer Idee begann — „Wie bringen wir Bar-Qualität zu Messen und Firmenfeiern?“ — ist heute ein etabliertes Unternehmen mit über 500 Events für Kunden in München und Coburg.",
           "p2": "Wenn die Gäste nicht in die Bar kommen können, bringen wir die Bar zu ihnen. Diese Vision hat uns zu dem gemacht, was wir heute sind: Spezialisten für Premium-Cocktail-Catering bei Corporate Events.",
           "imageAlt": "Velo Bar Our Story"
         },
         "story2": {
           "heading": "Warum wir die Richtigen für dein Event sind",
           "imageAlt": "Why Velo Bar",
-          "p1Strong": "Du kannst dich entspannen – wir kümmern uns um Bar & Drinks.",
+          "p1Strong": "Du kannst dich entspannen — wir kümmern uns um Bar & Drinks.",
           "p1": "Saubere Abläufe, erfahrenes Team, zuverlässiger Service. Du konzentrierst dich auf dein Event, wir liefern das Bar-Erlebnis.",
           "p2Strong": "Deine Gäste bekommen Premium-Cocktails, keine Standard-Mischungen.",
           "p2": "Wir investieren in die besten Spirituosen, trainierte Barkeeper und handgemachte Drinks. Qualität, die man schmeckt.",
@@ -1052,7 +1052,7 @@
         "team": {
           "heading": "Das Team",
           "p1Strong": "Lars (Nord) + Sebastian (Süd) = Perfektes Gespann für München",
-          "p2": "\"Moin\" trifft auf \"Servus\" – internationale Barkeeper-Erfahrung trifft auf lokale Verwurzelung. Unsere unterschiedlichen Hintergründe ergänzen sich perfekt und schaffen eine einzigartige Mischung aus Professionalität und Herzlichkeit.",
+          "p2": "„Moin“ trifft auf „Servus“ — internationale Barkeeper-Erfahrung trifft auf lokale Verwurzelung. Unsere unterschiedlichen Hintergründe ergänzen sich perfekt und schaffen eine einzigartige Mischung aus Professionalität und Herzlichkeit.",
           "p3": "Mit über 500 erfolgreich durchgeführten Events für Unternehmen wie BMW, Siemens und innovative Startups haben wir bewiesen: Unsere Vision funktioniert. Jedes Event ist für uns eine Chance, Premium-Bar-Handwerk zu zeigen.",
           "links": {
             "corporate": "Erfahre mehr über unsere Firmenfeiern",
@@ -1082,12 +1082,12 @@
       },
       "layout": {
         "heroTitle": "VELO.BAR München",
-        "heroSubtitle": "Münchens Premium Mobile Bar für Firmenfeiern & Events. Buchen Sie jetzt für Ihr nächstes Event.",
-        "heroImageAlt": "Velo.Bar München - Bartender am mobilen Bar-Fahrrad",
+        "heroSubtitle": "Münchens Premium Mobile Bar für Firmenfeiern & Events. Jetzt unverbindlich anfragen.",
+        "heroImageAlt": "Velo.Bar München — Bartender am mobilen Bar-Fahrrad",
         "packagesTitle": "Unsere Angebote für München & Umgebung",
-        "faqTitle": "Häufig gestellte Fragen",
+        "faqTitle": "Häufige Fragen",
         "testimonialsTitle": "Was unsere Münchner Kunden sagen",
-        "ctaTitle": "Bereit für Ihre mobile Bar in München?",
+        "ctaTitle": "Bereit für deine mobile Bar in München?",
         "ctaSubtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
         "ctaButtonText": "Jetzt anfragen!"
       }
@@ -1109,7 +1109,7 @@
       },
       "coburgSection": {
         "title": "Warum Velo.Bar in Coburg?",
-        "description": "Egal ob Gin-Tasting, Geburtstag, Firmenfeier oder private Feier - wir bringen professionelle Bar-Kultur nach Coburg. Unsere mobile Bar ist vollständig autark und kann überall eingesetzt werden.",
+        "description": "Egal ob Gin-Tasting, Geburtstag, Firmenfeier oder private Feier — wir bringen professionelle Bar-Kultur nach Coburg. Unsere mobile Bar ist vollständig autark und kann überall eingesetzt werden.",
         "cards": {
           "servus": {
             "title": "Servus!",
@@ -1636,7 +1636,7 @@
     "close": "Schließen"
   },
   "notFound": {
-    "seoTitle": "404 - Seite nicht gefunden",
+    "seoTitle": "404: Seite nicht gefunden",
     "seoDescription": "Die gesuchte Seite konnte nicht gefunden werden.",
     "eyebrow": "404",
     "title": "Seite nicht gefunden",
@@ -1676,41 +1676,41 @@
     "packages": {
       "starter": {
         "name": "Starter",
-        "price": "ab 500€",
+        "price": "ab 500 €",
         "features": {
-          "0": "Bis zu 50 Gäste",
-          "1": "3 Stunden Service",
-          "2": "4 Cocktail-Klassiker",
-          "3": "Professionelle Barkeeper",
-          "4": "Komplette Ausstattung",
-          "5": "Auf- und Abbau"
+          "0": "An- und Abfahrt",
+          "1": "Auf- und Abbau",
+          "2": "Unterweisung",
+          "3": "Rezepte und Equipment",
+          "4": "Velo.Bar Miete (mit bzw. ohne Drinks)",
+          "5": "für 4 Std."
         },
         "cta": "Anfragen"
       },
       "professional": {
         "name": "Professional",
         "badge": "Beliebtestes",
-        "price": "ab 1.200€",
+        "price": "ab 1.500 €",
         "features": {
-          "0": "Bis zu 150 Gäste",
-          "1": "5 Stunden Service",
-          "2": "8 Cocktails zur Auswahl",
-          "3": "Premium-Spirituosen",
-          "4": "Individuelle Cocktails",
-          "5": "Elegante Dekoration"
+          "0": "An- und Abfahrt",
+          "1": "Auf- und Abbau",
+          "2": "ab 150 Drinks – jeder weitere Drink 6,- €",
+          "3": "Auswahl von bis zu 5 Drinks",
+          "4": "1 Barkeeper inkl. (4 Std.)",
+          "5": "Reinigung inkl."
         },
         "cta": "Anfragen"
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "auf Anfrage",
+        "price": "ab 3.000 €",
         "features": {
-          "0": "150+ Gäste",
-          "1": "Flexible Servicezeiten",
-          "2": "Unbegrenzte Auswahl",
-          "3": "Mehrere Barstationen",
-          "4": "Corporate Branding",
-          "5": "Dedizierter Eventmanager"
+          "0": "An- und Abfahrt",
+          "1": "Auf- und Abbau",
+          "2": "ab 300 Drinks – jeder weitere Drink 5,- €",
+          "3": "Auswahl von bis zu 5 Drinks",
+          "4": "2 Barkeeper inkl. (4 Std.)",
+          "5": "Reinigung inkl."
         },
         "cta": "Anfragen"
       }
@@ -1728,7 +1728,7 @@
         },
         "equipment": {
           "title": "Komplette Ausstattung",
-          "description": "Gläser, Eis, Equipment - alles dabei"
+          "description": "Gläser, Eis, Equipment — alles dabei"
         },
         "setup": {
           "title": "Auf- und Abbau",
