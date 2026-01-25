@@ -28,7 +28,7 @@ function checkRateLimit(key: string): boolean {
 const bookingPayloadSchema = z.object({
   location: z.enum(['munich', 'coburg']),
   eventType: z.enum(['corporate', 'wedding', 'birthday', 'christmas', 'other']),
-  guestCount: z.number().min(1).max(1000),
+  guestCount: z.string().min(1), // Guest range string like "50-100"
   eventDate: z.string().min(1),
   company: z.string().min(1),
   customerName: z.string().min(1),
@@ -110,7 +110,7 @@ function generateInternalHtml(data: BookingPayload): string {
       </div>
       <div class="field">
         <div class="label">Gästeanzahl</div>
-        <div class="value">${data.guestCount}</div>
+        <div class="value">${data.guestCount} Gäste</div>
       </div>
       <div class="field">
         <div class="label">Wunschtermin</div>
