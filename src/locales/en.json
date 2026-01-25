@@ -1374,12 +1374,12 @@
     "bookingMuc": {
       "seo": {
         "title": "Munich booking | Mobile bar Munich & area | Velo.Bar",
-        "description": "Book the mobile Velo.Bar for your event in Munich. Self-sufficient eco system, professional bartenders, gin tastings from €49."
+        "description": "Book the mobile Velo.Bar for your event in Munich. Self-contained system, professional bartenders, gin tastings from €49."
       },
       "layout": {
         "heroTitle": "VELO.BAR Munich",
         "heroSubtitle": "Munich’s premium mobile bar for corporate events & celebrations. Book now for your next event.",
-        "heroImageAlt": "Velo.Bar Munich — bartender at the mobile bar bike",
+        "heroImageAlt": "Velo.Bar Munich — bartender at our mobile bar",
         "packagesTitle": "Our offers for Munich & area",
         "faqTitle": "Frequently asked questions",
         "testimonialsTitle": "What our Munich customers say",
@@ -1405,15 +1405,15 @@
       },
       "coburgSection": {
         "title": "Why Velo.Bar in Coburg?",
-        "description": "Whether it’s a gin tasting, birthday, corporate celebration or private party — we bring professional bar culture to Coburg. Our mobile bar is fully self-sufficient and can be used anywhere.",
+        "description": "Whether it’s a gin tasting, birthday, corporate celebration or private party — we bring professional bartending to Coburg. Our mobile bar is fully self-contained and can be set up anywhere.",
         "cards": {
           "servus": {
-            "title": "Servus!",
-            "text": "Sebastian brings real bar expertise from Munich to Coburg"
+            "title": "Hello!",
+            "text": "Sebastian brings bar expertise from Munich to Coburg."
           },
           "moin": {
-            "title": "Moin!",
-            "text": "Lars complements with northern German warmth and professionalism"
+            "title": "Welcome",
+            "text": "Lars brings northern German warmth and professionalism"
           }
         }
       }

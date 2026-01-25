@@ -1,4 +1,18 @@
 {
     "snyk.advanced.organization": "59706c3e-5a3b-4924-b868-a1b9497e755d",
-    "snyk.advanced.autoSelectOrganization": true
+    "snyk.advanced.autoSelectOrganization": true,
+    "chat.tools.terminal.autoApprove": {
+        "/^node -e \"const fs=require\\('fs'\\); const s=fs\\.readFileSync\\('src/locales/de\\.json','utf8'\\); console\\.log\\(s\\.slice\\(4920,4975\\)\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"const fs=require\\('fs'\\); try\\{JSON\\.parse\\(fs\\.readFileSync\\('src/locales/de\\.json','utf8'\\)\\); console\\.log\\('parsed ok'\\);\\} catch\\(e\\)\\{console\\.error\\(e\\.stack\\)\\}\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^awk '/\\\\\\\\\\$/ \\{print NR\":\" \\$0\\}' src/locales/de\\.json \\|\\| true$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }

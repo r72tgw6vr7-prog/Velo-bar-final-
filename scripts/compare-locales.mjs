@@ -1,6 +1,7 @@
 import fs from 'fs';
-const en = JSON.parse(fs.readFileSync('src/locales/en.json'));
-const de = JSON.parse(fs.readFileSync('src/locales/de.json'));
+const en = JSON.parse(fs.readFileSync('src/locales/en.json','utf8'));
+const de = JSON.parse(fs.readFileSync('src/locales/de.json','utf8'));
+
 function collect(obj, prefix = '') {
   let keys = [];
   for (const k of Object.keys(obj)) {
