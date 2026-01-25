@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ResponsiveImage, ResponsiveImageProps } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
 import { getImageMeta } from '@/utils/image-metadata.ts';
+import { resolvePublicPath } from '@/utils/resolvePublicPath.ts';
 
 interface ResponsiveImageWithMetadataProps extends Omit<ResponsiveImageProps, 'placeholder'> {
   src: string;
@@ -22,7 +23,9 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
       if (isVeloGallery && sizeSuffixMatch) {
         const stripped = src.replace(sizeSuffixRegex, '');
         try {
-          const head = await fetch(`${stripped}.meta.json`, { method: 'HEAD' });
+          // Use resolvePublicPath to get Cloudinary URL for meta.json
+          const metaUrl = resolvePublicPath(`${stripped}.meta.json`);
+          const head = await fetch(metaUrl, { method: 'HEAD' });
           if (head.ok) {
             const m = await getImageMeta(stripped);
             setMeta(m);
