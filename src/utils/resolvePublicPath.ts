@@ -1,4 +1,5 @@
 import manifest from '@/generated/imageManifest.ts';
+import { cloudinaryManifest } from '@/generated/cloudinaryManifest.ts';
 
 function norm(u: string) {
   try {
@@ -15,6 +16,12 @@ export function resolvePublicPath(src: string): string {
 
   const candidates = new Set<string>([src, src.toLowerCase(), norm(src), norm(src).toLowerCase()]);
 
+  // First check Cloudinary manifest (CDN hosted images)
+  for (const c of candidates) {
+    if (c in cloudinaryManifest) return cloudinaryManifest[c];
+  }
+
+  // Then check local manifest
   for (const c of candidates) {
     if (c in manifest) return manifest[c as keyof typeof manifest] as string;
   }
@@ -32,6 +39,8 @@ export function resolvePublicPath(src: string): string {
   for (const ne of noextCandidates) {
     for (const e of exts) {
       const key = ne + e;
+      // Check Cloudinary first
+      if (key in cloudinaryManifest) return cloudinaryManifest[key];
       if (key in manifest) return manifest[key as keyof typeof manifest] as string;
     }
   }
@@ -43,8 +52,11 @@ export function publicHas(src: string): boolean {
   const resolved = resolvePublicPath(src);
   return (
     resolved !== src ||
+    src in cloudinaryManifest ||
     src in manifest ||
+    src.toLowerCase() in cloudinaryManifest ||
     src.toLowerCase() in manifest ||
+    decodeURIComponent(src) in cloudinaryManifest ||
     decodeURIComponent(src) in manifest
   );
 }
