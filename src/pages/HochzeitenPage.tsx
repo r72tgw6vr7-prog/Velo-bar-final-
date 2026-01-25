@@ -11,10 +11,12 @@ import { PageTemplate } from '@/templates/PageTemplate';
 import { SiteBackground } from '@/components/layout/SiteBackground';
 import { servicePackages, getServiceFAQs, getServiceTestimonials } from '@/data/services.ts';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/seo/schema.ts';
+import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.velo-bar.com';
 
 const HochzeitenPage: React.FC = () => {
+  const { t } = useLanguage();
   const packages = servicePackages.hochzeiten;
   const faqs: FAQ[] = getServiceFAQs(t).hochzeiten;
   const testimonials: Testimonial[] = getServiceTestimonials(t).hochzeiten;

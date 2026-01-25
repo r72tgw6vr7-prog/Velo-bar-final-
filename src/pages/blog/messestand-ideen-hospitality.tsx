@@ -4,6 +4,7 @@ import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site.ts';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const MessestandIdeenHospitalityPage: React.FC = () => {
   // JSON-LD Schema for BlogPosting

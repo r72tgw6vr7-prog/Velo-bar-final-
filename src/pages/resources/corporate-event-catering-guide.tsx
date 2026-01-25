@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { SuccessStories } from '@/components/organisms/SuccessStories/SuccessStories.tsx';
 import { SITE_URL } from '@/lib/site.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
+import { EyebrowBadge } from '@/components/atoms/EyebrowBadge.tsx';
 
 const CorporateEventCateringGuidePage: React.FC = () => {
   const { t } = useLanguage();
