@@ -26,35 +26,6 @@
     "cta": "Angebot anfordern",
     "ctaSecondary": "Pakete ansehen"
   },
-  "services": {
-    "title": "Unsere Leistungen",
-    "subtitle": "Von Firmenfeiern über Messen bis hin zu privaten Events – wir bringen die Bar zu dir",
-    "learnMore": "Mehr erfahren",
-    "firmenfeiern": {
-      "title": "Firmenfeiern",
-      "description": "Mobile Cocktailbar für Corporate Events, Afterworks und Sommerfeste."
-    },
-    "messe": {
-      "title": "Messe-Catering",
-      "description": "Autarke Bar-Konzepte für Messestände – ohne Strom- oder Wasseranschluss."
-    },
-    "hochzeiten": {
-      "title": "Hochzeiten",
-      "description": "Signature Drinks & Premium-Service für Trauungen und Abendempfänge."
-    },
-    "weihnachtsfeiern": {
-      "title": "Weihnachtsfeiern",
-      "description": "Winterliche Cocktail-Kreationen und Glühwein-Varianten für Teams."
-    },
-    "teamEvents": {
-      "title": "Team-Events & Workshops",
-      "description": "Cocktailkurse & Gin Tastings als interaktives Teamerlebnis."
-    },
-    "privateFeiern": {
-      "title": "Private Feiern",
-      "description": "Geburtstage, Jubiläen oder Rooftop-Partys – wir bringen die Bar."
-    }
-  },
   "stats": {
     "events": "Events durchgeführt",
     "guests": "Gäste pro Event",
@@ -128,7 +99,16 @@
   },
 
   "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Von Firmenfeiern über Messen bis hin zu privaten Events – wir bringen die Bar zu dir",
+    "learnMore": "Mehr erfahren",
+    "messe": {
+      "title": "Messe-Catering",
+      "description": "Autarke Bar-Konzepte für Messestände – ohne Strom- oder Wasseranschluss."
+    },
     "hochzeiten": {
+      "title": "Hochzeiten",
+      "description": "Signature Drinks & Premium-Service für Trauungen und Abendempfänge.",
       "faq": {
         "0": {
           "question": "Wann ist der beste Zeitpunkt für die Cocktailbar bei einer Hochzeit?",
@@ -166,6 +146,8 @@
     },
 
     "firmenfeiern": {
+      "title": "Firmenfeiern",
+      "description": "Mobile Cocktailbar für Corporate Events, Afterworks und Sommerfeste.",
       "faq": {
         "0": {
           "question": "Wie viel Vorlauf benötigt ihr für eine Firmenfeier?",
@@ -191,6 +173,8 @@
     },
 
     "weihnachtsfeiern": {
+      "title": "Weihnachtsfeiern",
+      "description": "Winterliche Cocktail-Kreationen und Glühwein-Varianten für Teams.",
       "faq": {
         "0": {
           "question": "Wann sollte ich für die Weihnachtsfeier buchen?",
@@ -247,6 +231,8 @@
     },
 
     "teamEvents": {
+      "title": "Team-Events & Workshops",
+      "description": "Cocktailkurse & Gin Tastings als interaktives Teamerlebnis.",
       "faq": {
         "0": {
           "question": "Sind Vorkenntnisse für Workshops nötig?",
@@ -278,6 +264,8 @@
     },
 
     "privateFeiern": {
+      "title": "Private Feiern",
+      "description": "Geburtstage, Jubiläen oder Rooftop-Partys – wir bringen die Bar.",
       "faq": {
         "0": {
           "question": "Für welche privaten Anlässe ist Velo.Bar geeignet?",

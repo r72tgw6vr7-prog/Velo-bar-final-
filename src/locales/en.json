@@ -26,35 +26,6 @@
     "cta": "Request a Quote",
     "ctaSecondary": "View Packages"
   },
-  "services": {
-    "title": "Our Services",
-    "subtitle": "From corporate events and trade shows to private parties, we bring the bar to you",
-    "learnMore": "Learn more",
-    "firmenfeiern": {
-      "title": "Corporate Events",
-      "description": "Mobile cocktail bar for corporate events, after-work parties, and summer festivals."
-    },
-    "messe": {
-      "title": "Trade Show Catering",
-      "description": "Self-sufficient bar concepts for trade show booths — no power or water connection required."
-    },
-    "hochzeiten": {
-      "title": "Weddings",
-      "description": "Signature drinks and premium service for ceremonies and evening receptions."
-    },
-    "weihnachtsfeiern": {
-      "title": "Christmas Parties",
-      "description": "Winter cocktail creations and mulled wine variations for teams."
-    },
-    "teamEvents": {
-      "title": "Team Events & Workshops",
-      "description": "Interactive cocktail workshops and gin tastings for engaging team experiences."
-    },
-    "privateFeiern": {
-      "title": "Private Parties",
-      "description": "Birthdays, anniversaries, and rooftop parties — we bring the bar to you."
-    }
-  },
   "stats": {
     "events": "Events completed",
     "guests": "Guests per event",
@@ -128,7 +99,16 @@
   },
 
   "services": {
+    "title": "Our Services",
+    "subtitle": "From corporate events and trade shows to private parties, we bring the bar to you",
+    "learnMore": "Learn more",
+    "messe": {
+      "title": "Trade Show Catering",
+      "description": "Self-sufficient bar concepts for trade show booths — no power or water connection required."
+    },
     "hochzeiten": {
+      "title": "Weddings",
+      "description": "Signature drinks and premium service for ceremonies and evening receptions.",
       "faq": {
         "0": {
           "question": "When is the best time to have the cocktail bar at a wedding?",
@@ -166,6 +146,8 @@
     },
 
     "firmenfeiern": {
+      "title": "Corporate Events",
+      "description": "Mobile cocktail bar for corporate events, after-work parties, and summer festivals.",
       "faq": {
         "0": {
           "question": "How much lead time do you need for a company event?",
@@ -191,6 +173,8 @@
     },
 
     "weihnachtsfeiern": {
+      "title": "Christmas Parties",
+      "description": "Winter cocktail creations and mulled wine variations for teams.",
       "faq": {
         "0": {
           "question": "When should I book a Christmas party?",
@@ -247,6 +231,8 @@
     },
 
     "teamEvents": {
+      "title": "Team Events & Workshops",
+      "description": "Interactive cocktail workshops and gin tastings for engaging team experiences.",
       "faq": {
         "0": {
           "question": "Are prior skills required for workshops?",
@@ -278,6 +264,8 @@
     },
 
     "privateFeiern": {
+      "title": "Private Parties",
+      "description": "Birthdays, anniversaries, and rooftop parties — we bring the bar to you.",
       "faq": {
         "0": {
           "question": "What private occasions are suitable for Velo.Bar?",
