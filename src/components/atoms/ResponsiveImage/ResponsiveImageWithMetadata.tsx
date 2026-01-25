@@ -13,12 +13,14 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
   const [meta, setMeta] = useState({ placeholder: '', aspectRatio: undefined });
 
   useEffect(() => {
-    const sizeSuffixMatch = src.match(/-\d+w\.(webp|jpg|jpeg|png)$/i);
+    // recognize size suffixes whether or not an extension is present (e.g., "-640w" or "-640w.webp")
+    const sizeSuffixRegex = /-\d+w(?:\.(webp|jpg|jpeg|png|avif))?$/i;
+    const sizeSuffixMatch = src.match(sizeSuffixRegex);
     const isVeloGallery = src.includes('/Velo Gallery/');
 
     (async () => {
       if (isVeloGallery && sizeSuffixMatch) {
-        const stripped = src.replace(/-\d+w\.(webp|jpg|jpeg|png)$/i, '');
+        const stripped = src.replace(sizeSuffixRegex, '');
         try {
           const head = await fetch(`${stripped}.meta.json`, { method: 'HEAD' });
           if (head.ok) {
@@ -29,14 +31,14 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
         } catch {
           // ignore and fallthrough to fallback
         }
-        // If no meta exists for stripped, fetch metadata for the stripped base (not the size-suffixed file)
+        // If no meta exists for stripped, fetch metadata for the stripped base
         const m = await getImageMeta(stripped);
         setMeta(m);
         return;
       }
 
       // default behavior: strip size suffix when present, otherwise use src
-      const basePath = src.replace(/-\d+w\.(webp|jpg|jpeg|png)$/i, '');
+      const basePath = src.replace(sizeSuffixRegex, '');
       const m = await getImageMeta(basePath);
       setMeta(m);
     })();
