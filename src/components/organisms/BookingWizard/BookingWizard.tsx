@@ -306,7 +306,8 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
         company: data.company,
         phone: data.phone || undefined,
         eventType: apiEventType,
-        guestCount: parseGuestCount(data.guestCount),
+        // Keep guestCount as the original range string (server expects string like "50-100")
+        guestCount: data.guestCount,
         eventDate: data.eventDate,
         message: data.message || undefined,
         vatId: data.vatId || undefined,
