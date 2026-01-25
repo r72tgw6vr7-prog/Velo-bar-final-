@@ -29,8 +29,8 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
         } catch {
           // ignore and fallthrough to fallback
         }
-        // If no meta exists for stripped, use full src as base
-        const m = await getImageMeta(src);
+        // If no meta exists for stripped, fetch metadata for the stripped base (not the size-suffixed file)
+        const m = await getImageMeta(stripped);
         setMeta(m);
         return;
       }

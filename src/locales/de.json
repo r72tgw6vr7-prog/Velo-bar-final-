@@ -71,8 +71,305 @@
     "sustainableDesc": "CO₂-neutrale Fahrrad-Bar – ideal für ESG-bewusste Unternehmen"
   },
   "testimonials": {
-    "title": "Was unsere Kunden sagen"
+    "title": "Was unsere Kunden sagen",
+    "0": {
+      "quote": "Die mobile Bar Velo.Bar war das absolute Highlight unserer Hochzeit! Die Drinks kamen bei unseren Gästen unglaublich gut an. Die unkomplizierte Kommunikation mit Lars und seinem Team hat uns die Planung erheblich erleichtert.",
+      "author": "Xenia Davidoff",
+      "role": "Brautkundin",
+      "rating": "5",
+      "date": "2023-01-15",
+      "verified": "true"
+    },
+    "1": {
+      "quote": "Sebastian und seine Velo.Bar haben für 50 Gäste auf meiner Gartenparty Cocktails zubereitet. Sehr empfehlenswert – tolle Bar, leckere Cocktails und professioneller Service. Alles lief zuverlässig und entspannt.",
+      "author": "Angela Samberger",
+      "role": "Gartenparty-Veranstalterin",
+      "rating": "5",
+      "date": "2024-07-20",
+      "verified": "true"
+    },
+    "2": {
+      "quote": "Sebastian und die Velo.Bar waren nach unserer standesamtlichen Hochzeit ein voller Erfolg. Nicht mal der Regen hat die Stimmung getrübt. Tolles Konzept, hervorragender Service und absolut stressfrei.",
+      "author": "Arlind Maurer",
+      "role": "Brautkunde",
+      "rating": "5",
+      "date": "2024-01-10",
+      "verified": "true"
+    },
+    "3": {
+      "quote": "Wir haben die Velo.Bar für den Sektempfang im Englischen Garten gebucht. Trotz Regen lief alles perfekt. Vielen Dank an Lars Eggers für die unkomplizierte Planung und Umsetzung.",
+      "author": "Ruth Gaspar",
+      "role": "Veranstaltung: Englischer Garten",
+      "rating": "5",
+      "date": "2024-01-05",
+      "verified": "true"
+    },
+    "4": {
+      "quote": "Absolut empfehlenswert! Wir hatten einen Sektempfang nach unserer standesamtlichen Hochzeit in München und es war einfach perfekt. Nette Leute, fairer Preis und schnelle Erreichbarkeit.",
+      "author": "Viktoria O.",
+      "role": "Sektempfang",
+      "rating": "5",
+      "date": "2024-01-08",
+      "verified": "true"
+    },
+      "5": {
+        "quote": "Einfach großartig! Das Velo.Bar-Team hat uns beim Sektempfang am Standesamt München bestens unterstützt. Von der Planung bis zum Event professionell und freundlich — alle Gäste waren begeistert.",
+        "author": "Radu Lupoaie",
+        "role": "Standesamt-Event München",
+        "rating": "5",
+        "date": "2021-06-15",
+        "verified": "true"
+      }
+    }
   },
+  "testimonialsSection": {
+    "title": "Was unsere Kund:innen sagen",
+    "subtitle": "Verifizierte Google-Bewertungen unserer Kund:innen.",
+    "viewAll": "Alle Bewertungen ansehen"
+  },
+
+  "services": {
+    "hochzeiten": {
+      "faq": {
+        "0": {
+          "question": "Wann ist der beste Zeitpunkt für die Cocktailbar bei einer Hochzeit?",
+          "answer": "Die beliebtesten Zeitpunkte sind der Sektempfang (nach der Trauung), während der Fotosession des Brautpaars oder als Mitternachtsbar. Viele Paare buchen uns auch für den ganzen Tag – vom Empfang bis Mitternacht."
+        },
+        "1": {
+          "question": "Könnt ihr Cocktails in unseren Hochzeitsfarben kreieren?",
+          "answer": "Ja, absolut! Wir können Farben, Garnituren und sogar die Drinks an eure Hochzeitsfarben anpassen. Blush Pink, Gold, Smaragdgrün – alles ist möglich. Personalisierte Cocktailnamen sind ebenfalls sehr beliebt."
+        },
+        "2": {
+          "question": "Wie viele Cocktails sollte ich pro Gast einplanen?",
+          "answer": "Für einen drei‑stündigen Empfang empfehlen wir etwa 2–3 Drinks pro Gast. Bei Ganztags-Service rechnet man mit 4–6 Drinks pro Gast. Wir passen die Mengen an eure Gästezahl und Dauer an."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Unsere Hochzeit wäre ohne Velobar nicht komplett gewesen! Die Cocktails waren ein Traum und die Barkeeper so professionell und herzlich. Alle Gäste schwärmen noch davon!",
+          "author": "Lisa & Markus",
+          "company": "Hochzeit in München",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Von der Planung bis zur Umsetzung war alles perfekt. Die personalisierten Cocktails mit unseren Namen und in unseren Hochzeitsfarben waren das Highlight des Abends!",
+          "author": "Anna & Thomas",
+          "company": "Hochzeit Schloss Ehrenburg, Coburg",
+          "rating": "5"
+        },
+        "2": {
+          "quote": "Wir hatten den Ganztags-Service und es war jeden Cent wert. Die Mitternachtsbar war der absolute Knaller! Danke für diesen unvergesslichen Tag!",
+          "author": "Sophie & Michael",
+          "company": "Sommerhochzeit im Biergarten",
+          "rating": "5"
+        }
+      }
+    },
+
+    "firmenfeiern": {
+      "faq": {
+        "0": {
+          "question": "Wie viel Vorlauf benötigt ihr für eine Firmenfeier?",
+          "answer": "Idealerweise solltet ihr 4–6 Wochen im Voraus buchen, besonders während der Hauptsaison (Sommer und Weihnachtszeit). Für kurzfristige Anfragen kontaktiert uns bitte direkt – oft können wir auch bei kürzerer Vorlaufzeit helfen."
+        },
+        "1": {
+          "question": "Könnt ihr Cocktails an unser Corporate Design anpassen?",
+          "answer": "Ja! Wir können Farben, Garnituren und die Namensgebung der Cocktails an euer Branding anpassen. Personalisierte Cocktail‑Menükarten im CI sind ebenfalls möglich."
+        },
+        "2": {
+          "question": "Bietet ihr auch alkoholfreie Optionen an?",
+          "answer": "Selbstverständlich! Zu jedem Cocktail bieten wir eine alkoholfreie Alternative. Wir können auch komplett alkoholfreie Events betreuen."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Die mobile Cocktailbar war das absolute Highlight unserer Sommerfeier. Professionell, freundlich und die Cocktails waren erstklassig!",
+          "author": "Thomas Müller",
+          "company": "Tech-Unternehmen München",
+          "rating": "5"
+        }
+      }
+    },
+
+    "weihnachtsfeiern": {
+      "faq": {
+        "0": {
+          "question": "Wann sollte ich für die Weihnachtsfeier buchen?",
+          "answer": "Die Weihnachtssaison (November bis Ende Dezember) ist unsere Hochsaison. Wir empfehlen eine Buchung bereits im September oder Oktober, um euren Wunschtermin zu sichern. Kurzfristige Anfragen sind manchmal möglich – kontaktiert uns!"
+        },
+        "1": {
+          "question": "Welche typischen Weihnachtscocktails bietet ihr an?",
+          "answer": "Unsere Winter‑Klassiker umfassen Glühwein Martini, Winter Spice Mojito, Christmas Mule, White Russian, Cranberry Gin Fizz und alkoholfreie Varianten wie Winterpunsch und Apfel‑Zimt‑Mocktail."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Die Weihnachtsfeier war dank Velobar ein voller Erfolg. Die winterlichen Cocktails und die festliche Atmosphäre haben unsere Mitarbeiter begeistert!",
+          "author": "Klaus Schneider",
+          "company": "Automotive-Unternehmen Coburg",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfekte Organisation und wunderschöne weihnachtliche Dekoration. Unsere Gäste schwärmen noch immer von den Glühwein-Cocktails!",
+          "author": "Anna Meier",
+          "company": "Versicherung München",
+          "rating": "5"
+        }
+      }
+    },
+
+    "messeCatering": {
+      "faq": {
+        "0": {
+          "question": "Wie integrieren wir euer Branding am Messestand?",
+          "answer": "Wir können euer Logo auf der Bar anbringen, Cocktailnamen an eure Produkte anpassen und die Dekoration in euren Unternehmensfarben gestalten. Auf Wunsch liefern wir gebrandete Gläser, Servietten und Menükarten."
+        },
+        "1": {
+          "question": "Wie viele Getränke könnt ihr pro Stunde servieren?",
+          "answer": "Auf stark frequentierten Messen serviert ein Barkeeper etwa 30–50 einfache Cocktails pro Stunde. Bei aufwendigeren Drinks rechnen wir mit 20–30 Cocktails pro Stunde und setzen zusätzliches Personal ein."
+        },
+        "2": {
+          "question": "Könnt ihr auf allen Messen in München arbeiten?",
+          "answer": "Ja, wir sind auf allen großen Messen in München erprobt und übernehmen die Abstimmung mit dem Veranstalter."
+        },
+        "3": {
+          "question": "Welche Kosten sind bei mehrtägigen Messen zu erwarten?",
+          "answer": "Für einen dreitägigen Einsatz liegen die Paketpreise in der Regel zwischen 4.500 € und 6.000 €, abhängig von Besucherzahl und Leistungsumfang. Gerne erstellen wir ein individuelles Angebot."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Die Cocktailbar war der Publikumsmagnet an unserem Messestand — drei Tage Top‑Service und über 1.200 servierte Drinks!",
+          "author": "Marketing Leitung",
+          "company": "Sporthersteller",
+          "rating": "5"
+        }
+      }
+    },
+
+    "teamEvents": {
+      "faq": {
+        "0": {
+          "question": "Sind Vorkenntnisse für Workshops nötig?",
+          "answer": "Nein — unsere Workshops sind für Einsteiger konzipiert. Wir fangen bei den Grundlagen an und passen die Inhalte an eure Gruppe an."
+        },
+        "1": {
+          "question": "Wo finden die Workshops statt?",
+          "answer": "Wir kommen zu euch — ins Büro, in angemietete Räume oder zu euch nach Hause. Außerdem arbeiten wir mit Partner‑Locations in München und Coburg zusammen."
+        },
+        "2": {
+          "question": "Wie viele Teilnehmer passen in einen Workshop?",
+          "answer": "Optimal sind 10–20 Teilnehmer. Für größere Teams setzen wir parallel Trainer ein; kleinere Gruppen (ab 6 Personen) sind ebenfalls möglich."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Der beste Team‑Event, den wir je hatten! Alle waren begeistert und wir haben viel gelacht. Die Cocktails waren natürlich auch top!",
+          "author": "Julia Hoffmann",
+          "company": "IT‑Startup München",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfektes Team‑Building. Unsere Mitarbeiter reden noch Wochen später über den Cocktail‑Wettbewerb. Absolute Empfehlung!",
+          "author": "Markus Bauer",
+          "company": "Marketing‑Agentur Coburg",
+          "rating": "5"
+        }
+      }
+    },
+
+    "privateFeiern": {
+      "faq": {
+        "0": {
+          "question": "Für welche privaten Anlässe ist Velo.Bar geeignet?",
+          "answer": "Perfekt für Geburtstage, Jubiläen, Verlobungen, Gartenpartys, Junggesellenabschiede und Taufen — überall dort, wo du deine Gäste mit erstklassigen Cocktails überraschen möchtest."
+        },
+        "1": {
+          "question": "Wie viel Platz benötigt die mobile Bar?",
+          "answer": "Die Basisbar benötigt etwa 2×2 Meter; die Premium‑Bar etwa 3×2,5 Meter. Wir bauen sowohl drinnen als auch draußen auf. Für Außenaufstellen ist ein Stromanschluss in der Nähe hilfreich — wir bringen ein 20 m Verlängerungskabel mit."
+        },
+        "2": {
+          "question": "Können wir die Getränkekarte selbst zusammenstellen?",
+          "answer": "Ja — wähle Lieblingsdrinks aus unserer Karte oder sende uns Wünsche. Wir beraten, welche Cocktails zu deinem Anlass passen und erstellen bei Premiumpaketen gerne Signature‑Drinks."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Mein 40. Geburtstag war dank Velobar unvergesslich! Alle Gäste waren begeistert von den Cocktails und der professionellen Atmosphäre.",
+          "author": "Sandra M.",
+          "company": "Private Geburtstagsfeier",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfekt für unsere Gartenparty! Die Barkeeper waren super sympathisch und die Bar war ein echter Hingucker. Absolute Empfehlung!",
+          "author": "Familie Richter",
+          "company": "Hochzeitstag-Feier",
+          "rating": "5"
+        }
+      }
+    },
+
+    "buchungMuc": {
+      "faq": {
+        "0": {
+          "question": "Wie funktioniert die Velo.Bar ohne Strom‑ und Wasseranschluss?",
+          "answer": "Die Velo.Bar ist ein autarkes System mit zwei Wassertanks (Frisch‑ und Abwasser), einer eingebauten Pumpe und akkubetriebener Kühlung; externer Strom oder Wasser ist nicht erforderlich."
+        },
+        "1": {
+          "question": "Für welche Events eignet sich die mobile Bar?",
+          "answer": "Die mobile Bar ist ideal für Hochzeiten, Firmenfeiern, Messen, private Partys und Gin‑Tastings — besonders an Orten ohne feste Bar oder im Außenbereich."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Einfacher war es noch nie, unsere Gäste mit einer professionellen mobilen Bar zu bewirten!",
+          "author": "Event-Kunde",
+          "company": "München",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Das Gin-Tasting war ein absolutes Highlight! Professionell, unterhaltsam und mit unglaublicher Gin-Auswahl.",
+          "author": "Tasting-Teilnehmer",
+          "company": "München",
+          "rating": "5"
+        },
+        "2": {
+          "quote": "Die perfekte Lösung für unsere Hochzeit. Kein Stress mit Getränken, alles lief perfekt!",
+          "author": "Hochzeitspaar",
+          "company": "München & Umgebung",
+          "rating": "5"
+        }
+      }
+    },
+
+    "velobarco": {
+      "faq": {
+        "0": {
+          "question": "Wo in Coburg seid ihr tätig?",
+          "answer": "Wir bedienen Coburg und die umliegende Region. Dank des autarken Systems mit Wassertanks und Akku‑Kühlung kann die mobile Velo.Bar nahezu überall aufgebaut werden."
+        },
+        "1": {
+          "question": "Was zeichnet Gin‑Tastings in Coburg aus?",
+          "answer": "Wir bieten mobile Gin‑Tastings mit bis zu 50 unterschiedlichen Gins an Ihrem Wunschort — ideal für private Gruppen, Firmenveranstaltungen und besondere Anlässe. Preise ab 49 € pro Person."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Das Gin‑Tasting in Coburg war einzigartig! Tolle Atmosphäre und exzellente Gin‑Auswahl.",
+          "author": "Tasting‑Kunde",
+          "company": "Coburg",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfekt für unsere Gartenparty! Professioneller Service und die Bar sieht einfach klasse aus.",
+          "author": "Event‑Kunde",
+          "company": "Coburg & Umgebung",
+          "rating": "5"
+        }
+      }
+    }
+  },
+
   "contact": {
     "title": "Jetzt dein Event anfragen",
     "subtitle": "Wir melden uns innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot",

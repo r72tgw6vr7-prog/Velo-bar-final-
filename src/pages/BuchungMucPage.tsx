@@ -8,15 +8,15 @@ import React from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout';
 import { PageTemplate } from '@/templates/PageTemplate';
 import { SiteBackground } from '@/components/layout/SiteBackground';
-import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services';
+import { servicePackages, getServiceFAQs, getServiceTestimonials } from '@/data/services.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const BuchungMucPage: React.FC = () => {
   const { t } = useLanguage();
 
   const packages = servicePackages.buchungMuc;
-  const faqs = serviceFAQs.buchungMuc;
-  const testimonials = serviceTestimonials.buchungMuc;
+  const faqs = getServiceFAQs(t).buchungMuc;
+  const testimonials = getServiceTestimonials(t).buchungMuc;
 
   return (
     <SiteBackground>

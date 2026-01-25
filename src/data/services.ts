@@ -728,114 +728,253 @@ export const serviceTestimonials = {
     },
   ] as Testimonial[],
 
-  weihnachtsfeiern: [
-    {
-      quote:
-        'Die Weihnachtsfeier war dank Velobar ein voller Erfolg. Die winterlichen Cocktails und die festliche Atmosphäre haben unsere Mitarbeiter begeistert!',
-      author: 'Klaus Schneider',
-      company: 'Automotive-Unternehmen Coburg',
-      rating: 5,
-    },
-    {
-      quote:
-        'Perfekte Organisation und wunderschöne weihnachtliche Dekoration. Unsere Gäste schwärmen noch immer von den Glühwein-Cocktails!',
-      author: 'Anna Meier',
-      company: 'Versicherung München',
-      rating: 5,
-    },
-  ] as Testimonial[],
+};
 
-  messeCatering: [
-    {
-      quote:
-        'Unsere Cocktailbar war der absolute Besuchermagnet auf der ISPO. Drei Tage lang Top-Service und über 1.200 servierte Drinks!',
-      author: 'Marketing Director',
-      company: 'Sportartikel-Hersteller',
-      rating: 5,
-    },
-    {
-      quote:
-        'Professionelle Abwicklung von Anfang bis Ende. Die Barkeeper waren freundlich, schnell und haben perfekt unser Brand-Image repräsentiert.',
-      author: 'Stephanie Keller',
-      company: 'Tech-Startup auf der BITS',
-      rating: 5,
-    },
-  ] as Testimonial[],
+// New: getters that build localized content using t()
+export function getServiceFAQs(t: (key: string) => string): Record<string, FAQ[]> {
+  return {
+    hochzeiten: [
+      {
+        question: t('services.hochzeiten.faq.0.question'),
+        answer: t('services.hochzeiten.faq.0.answer'),
+      },
+      {
+        question: t('services.hochzeiten.faq.1.question'),
+        answer: t('services.hochzeiten.faq.1.answer'),
+      },
+      {
+        question: t('services.hochzeiten.faq.2.question'),
+        answer: t('services.hochzeiten.faq.2.answer'),
+      },
+    ],
 
-  teamEvents: [
-    {
-      quote:
-        'Der beste Team-Event, den wir je hatten! Alle waren begeistert und wir haben viel gelacht. Die Cocktails waren natürlich auch top!',
-      author: 'Julia Hoffmann',
-      company: 'IT-Startup München',
-      rating: 5,
-    },
-    {
-      quote:
-        'Perfektes Team-Building. Unsere Mitarbeiter reden noch Wochen später über den Cocktail-Wettbewerb. Absolute Empfehlung!',
-      author: 'Markus Bauer',
-      company: 'Marketing-Agentur Coburg',
-      rating: 5,
-    },
-  ] as Testimonial[],
+    firmenfeiern: [
+      {
+        question: t('services.firmenfeiern.faq.0.question'),
+        answer: t('services.firmenfeiern.faq.0.answer'),
+      },
+      {
+        question: t('services.firmenfeiern.faq.1.question'),
+        answer: t('services.firmenfeiern.faq.1.answer'),
+      },
+      {
+        question: t('services.firmenfeiern.faq.2.question'),
+        answer: t('services.firmenfeiern.faq.2.answer'),
+      },
+    ],
 
-  privateFeiern: [
-    {
-      quote:
-        'Mein 40. Geburtstag war dank Velobar unvergesslich! Alle Gäste waren begeistert von den Cocktails und der professionellen Atmosphäre.',
-      author: 'Sandra M.',
-      company: 'Private Geburtstagsfeier',
-      rating: 5,
-    },
-    {
-      quote:
-        'Perfekt für unsere Gartenparty! Die Barkeeper waren super sympathisch und die Bar war ein echter Hingucker. Absolute Empfehlung!',
-      author: 'Familie Richter',
-      company: 'Hochzeitstag-Feier',
-      rating: 5,
-    },
-  ] as Testimonial[],
+    weihnachtsfeiern: [
+      {
+        question: t('services.weihnachtsfeiern.faq.0.question'),
+        answer: t('services.weihnachtsfeiern.faq.0.answer'),
+      },
+      {
+        question: t('services.weihnachtsfeiern.faq.1.question'),
+        answer: t('services.weihnachtsfeiern.faq.1.answer'),
+      },
+    ],
 
-  buchungMuc: [
-    {
-      quote:
-        'Einfacher war es noch nie, unsere Gäste mit einer professionellen mobilen Bar zu bewirten!',
-      author: 'Event-Kunde',
-      company: 'München',
-      rating: 5,
-    },
-    {
-      quote:
-        'Das Gin-Tasting war ein absolutes Highlight! Professionell, unterhaltsam und mit unglaublicher Gin-Auswahl.',
-      author: 'Tasting-Teilnehmer',
-      company: 'München',
-      rating: 5,
-    },
-    {
-      quote:
-        'Die perfekte Lösung für unsere Hochzeit. Kein Stress mit Getränken, alles lief perfekt!',
-      author: 'Hochzeitspaar',
-      company: 'München & Umgebung',
-      rating: 5,
-    },
-  ] as Testimonial[],
+    messeCatering: [
+      {
+        question: t('services.messeCatering.faq.0.question'),
+        answer: t('services.messeCatering.faq.0.answer'),
+      },
+      {
+        question: t('services.messeCatering.faq.1.question'),
+        answer: t('services.messeCatering.faq.1.answer'),
+      },
+      {
+        question: t('services.messeCatering.faq.2.question'),
+        answer: t('services.messeCatering.faq.2.answer'),
+      },
+      {
+        question: t('services.messeCatering.faq.3.question'),
+        answer: t('services.messeCatering.faq.3.answer'),
+      },
+    ],
 
-  velobarco: [
-    {
-      quote:
-        'Das Gin-Tasting in Coburg war einzigartig! Tolle Atmosphäre und exzellente Gin-Auswahl.',
-      author: 'Tasting-Kunde',
-      company: 'Coburg',
-      rating: 5,
-    },
-    {
-      quote:
-        'Perfekt für unsere Gartenparty! Professioneller Service und die Bar sieht einfach klasse aus.',
-      author: 'Event-Kunde',
-      company: 'Coburg & Umgebung',
-      rating: 5,
-    },
-  ] as Testimonial[],
+    teamEvents: [
+      {
+        question: t('services.teamEvents.faq.0.question'),
+        answer: t('services.teamEvents.faq.0.answer'),
+      },
+      {
+        question: t('services.teamEvents.faq.1.question'),
+        answer: t('services.teamEvents.faq.1.answer'),
+      },
+      {
+        question: t('services.teamEvents.faq.2.question'),
+        answer: t('services.teamEvents.faq.2.answer'),
+      },
+    ],
+
+    privateFeiern: [
+      {
+        question: t('services.privateFeiern.faq.0.question'),
+        answer: t('services.privateFeiern.faq.0.answer'),
+      },
+      {
+        question: t('services.privateFeiern.faq.1.question'),
+        answer: t('services.privateFeiern.faq.1.answer'),
+      },
+      {
+        question: t('services.privateFeiern.faq.2.question'),
+        answer: t('services.privateFeiern.faq.2.answer'),
+      },
+    ],
+
+    buchungMuc: [
+      {
+        question: t('services.buchungMuc.faq.0.question'),
+        answer: t('services.buchungMuc.faq.0.answer'),
+      },
+      {
+        question: t('services.buchungMuc.faq.1.question'),
+        answer: t('services.buchungMuc.faq.1.answer'),
+      },
+    ],
+
+    velobarco: [
+      {
+        question: t('services.velobarco.faq.0.question'),
+        answer: t('services.velobarco.faq.0.answer'),
+      },
+      {
+        question: t('services.velobarco.faq.1.question'),
+        answer: t('services.velobarco.faq.1.answer'),
+      },
+    ],
+  };
+}
+
+export function getServiceTestimonials(t: (key: string) => string): Record<string, Testimonial[]> {
+  return {
+    hochzeiten: [
+      {
+        quote: t('services.hochzeiten.testimonials.0.quote'),
+        author: t('services.hochzeiten.testimonials.0.author'),
+        company: t('services.hochzeiten.testimonials.0.company'),
+        rating: Number(t('services.hochzeiten.testimonials.0.rating')) || 5,
+      },
+      {
+        quote: t('services.hochzeiten.testimonials.1.quote'),
+        author: t('services.hochzeiten.testimonials.1.author'),
+        company: t('services.hochzeiten.testimonials.1.company'),
+        rating: Number(t('services.hochzeiten.testimonials.1.rating')) || 5,
+      },
+      {
+        quote: t('services.hochzeiten.testimonials.2.quote'),
+        author: t('services.hochzeiten.testimonials.2.author'),
+        company: t('services.hochzeiten.testimonials.2.company'),
+        rating: Number(t('services.hochzeiten.testimonials.2.rating')) || 5,
+      },
+    ],
+
+    firmenfeiern: [
+      {
+        quote: t('services.firmenfeiern.testimonials.0.quote'),
+        author: t('services.firmenfeiern.testimonials.0.author'),
+        company: t('services.firmenfeiern.testimonials.0.company'),
+        rating: Number(t('services.firmenfeiern.testimonials.0.rating')) || 5,
+      },
+    ],
+
+    weihnachtsfeiern: [
+      {
+        quote: t('services.weihnachtsfeiern.testimonials.0.quote'),
+        author: t('services.weihnachtsfeiern.testimonials.0.author'),
+        company: t('services.weihnachtsfeiern.testimonials.0.company'),
+        rating: Number(t('services.weihnachtsfeiern.testimonials.0.rating')) || 5,
+      },
+      {
+        quote: t('services.weihnachtsfeiern.testimonials.1.quote'),
+        author: t('services.weihnachtsfeiern.testimonials.1.author'),
+        company: t('services.weihnachtsfeiern.testimonials.1.company'),
+        rating: Number(t('services.weihnachtsfeiern.testimonials.1.rating')) || 5,
+      },
+    ],
+
+    messeCatering: [
+      {
+        quote: t('services.messeCatering.testimonials.0.quote'),
+        author: t('services.messeCatering.testimonials.0.author'),
+        company: t('services.messeCatering.testimonials.0.company'),
+        rating: Number(t('services.messeCatering.testimonials.0.rating')) || 5,
+      },
+    ],
+
+    teamEvents: [
+      {
+        quote: t('services.teamEvents.testimonials.0.quote'),
+        author: t('services.teamEvents.testimonials.0.author'),
+        company: t('services.teamEvents.testimonials.0.company'),
+        rating: Number(t('services.teamEvents.testimonials.0.rating')) || 5,
+      },
+      {
+        quote: t('services.teamEvents.testimonials.1.quote'),
+        author: t('services.teamEvents.testimonials.1.author'),
+        company: t('services.teamEvents.testimonials.1.company'),
+        rating: Number(t('services.teamEvents.testimonials.1.rating')) || 5,
+      },
+    ],
+
+    privateFeiern: [
+      {
+        quote: t('services.privateFeiern.testimonials.0.quote'),
+        author: t('services.privateFeiern.testimonials.0.author'),
+        company: t('services.privateFeiern.testimonials.0.company'),
+        rating: Number(t('services.privateFeiern.testimonials.0.rating')) || 5,
+      },
+      {
+        quote: t('services.privateFeiern.testimonials.1.quote'),
+        author: t('services.privateFeiern.testimonials.1.author'),
+        company: t('services.privateFeiern.testimonials.1.company'),
+        rating: Number(t('services.privateFeiern.testimonials.1.rating')) || 5,
+      },
+    ],
+
+    buchungMuc: [
+      {
+        quote: t('services.buchungMuc.testimonials.0.quote'),
+        author: t('services.buchungMuc.testimonials.0.author'),
+        company: t('services.buchungMuc.testimonials.0.company'),
+        rating: Number(t('services.buchungMuc.testimonials.0.rating')) || 5,
+      },
+      {
+        quote: t('services.buchungMuc.testimonials.1.quote'),
+        author: t('services.buchungMuc.testimonials.1.author'),
+        company: t('services.buchungMuc.testimonials.1.company'),
+        rating: Number(t('services.buchungMuc.testimonials.1.rating')) || 5,
+      },
+      {
+        quote: t('services.buchungMuc.testimonials.2.quote'),
+        author: t('services.buchungMuc.testimonials.2.author'),
+        company: t('services.buchungMuc.testimonials.2.company'),
+        rating: Number(t('services.buchungMuc.testimonials.2.rating')) || 5,
+      },
+    ],
+
+    velobarco: [
+      {
+        quote: t('services.velobarco.testimonials.0.quote'),
+        author: t('services.velobarco.testimonials.0.author'),
+        company: t('services.velobarco.testimonials.0.company'),
+        rating: Number(t('services.velobarco.testimonials.0.rating')) || 5,
+      },
+      {
+        quote: t('services.velobarco.testimonials.1.quote'),
+        author: t('services.velobarco.testimonials.1.author'),
+        company: t('services.velobarco.testimonials.1.company'),
+        rating: Number(t('services.velobarco.testimonials.1.rating')) || 5,
+      },
+    ],
+  };
+}
+
+  // Testimonials moved to locales (de.json / en.json). Use `getServiceTestimonials(t)` for locale-driven content.
+
+  // (static German testimonial content removed — moved to `src/locales/de.json` and translated manually into `src/locales/en.json`)
+
 };
 
 // Helper function to get all testimonials for a service (shared + specific)

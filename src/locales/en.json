@@ -71,8 +71,304 @@
     "sustainableDesc": "Carbon-neutral bicycle bar – ideal for ESG-conscious companies"
   },
   "testimonials": {
-    "title": "What Our Clients Say"
+    "title": "What Our Clients Say",
+    "0": {
+      "quote": "The mobile bar Velo.Bar was the absolute highlight of our wedding! The drinks they prepared were incredibly well-received by our guests. The seamless communication with Lars and his team made our lives easier during the wedding preparations.",
+      "author": "Xenia Davidoff",
+      "role": "Wedding Client",
+      "rating": "5",
+      "date": "2023-01-15",
+      "verified": "true"
+    },
+    "1": {
+      "quote": "Sebastian and his Velo.Bar catered for 50 guests at my garden party with cocktails. I highly recommend him. Great bar, delicious cocktails, professional service, and a fantastic guy! Everything was straightforward, reliable, and a truly memorable experience.",
+      "author": "Angela Samberger",
+      "role": "Garden Party Host",
+      "rating": "5",
+      "date": "2024-07-20",
+      "verified": "true"
+    },
+    "2": {
+      "quote": "Sebastian and the Velo.Bar were an absolute hit after our civil wedding. Not even the pouring rain could dampen that. A great concept, outstanding service, and a hassle-free experience.",
+      "author": "Arlind Maurer",
+      "role": "Wedding Client",
+      "rating": "5",
+      "date": "2024-01-10",
+      "verified": "true"
+    },
+    "3": {
+      "quote": "We booked the VeloBar for the champagne reception in the English Garden after our civil ceremony. Everything worked out perfectly, and despite the rain, it was a very successful event. Many thanks to Lars Eggers for the uncomplicated planning and execution.",
+      "author": "Ruth Gaspar",
+      "role": "English Garden Event",
+      "rating": "5",
+      "date": "2024-01-05",
+      "verified": "true"
+    },
+    "4": {
+      "quote": "Absolutely recommendable! We booked a champagne reception after our civil wedding in Munich, and it was simply perfect! Nice guys, fair price, and easy to contact. Definitely book them, and you can celebrate and relax without worry.",
+      "author": "Viktoria O.",
+      "role": "Champagne Reception",
+      "rating": "5",
+      "date": "2024-01-08",
+      "verified": "true"
+    },
+    "5": {
+      "quote": "Pure awesomeness! Velo Bar team helped us organize a champagne reception at Standesamt Munich. Everything was great, from the initial communication and planning until the main day. They are very friendly and professional and all the guests loved it!",
+      "author": "Radu Lupoaie",
+      "role": "Standesamt Munich Event",
+      "rating": "5",
+      "date": "2021-06-15",
+      "verified": "true"
+    }
   },
+  "testimonialsSection": {
+    "title": "What Our Clients Say",
+    "subtitle": "Verified Google reviews from our clients.",
+    "viewAll": "View all reviews"
+  },
+
+  "services": {
+    "hochzeiten": {
+      "faq": {
+        "0": {
+          "question": "When is the best time to have the cocktail bar at a wedding?",
+          "answer": "The most popular times are the champagne reception (after the ceremony), during the couple's photo session, or as a late‑night bar. Many couples also book us for the full day — from the reception through midnight."
+        },
+        "1": {
+          "question": "Can you create cocktails in our wedding colors?",
+          "answer": "Yes — we can match colors, garnishes and even the drinks to your wedding colors. Blush pink, gold or emerald — it’s all possible. Personalized cocktail names are also a popular option."
+        },
+        "2": {
+          "question": "How many cocktails should we plan per guest?",
+          "answer": "For a three‑hour reception we recommend about 2–3 drinks per guest. For a full‑day service expect 4–6 drinks per guest. We’ll tailor the quantities to your guest count and duration."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Our wedding wouldn't have been complete without Velo.Bar! The cocktails were a dream and the bartenders were professional and warm. All our guests are still raving about it!",
+          "author": "Lisa & Markus",
+          "company": "Wedding in Munich",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "From planning to execution everything was perfect. The personalized cocktails with our names and in our wedding colors were the highlight of the evening!",
+          "author": "Anna & Thomas",
+          "company": "Wedding Schloss Ehrenburg, Coburg",
+          "rating": "5"
+        },
+        "2": {
+          "quote": "We booked the full‑day service and it was worth every cent. The midnight bar was the absolute hit! Thank you for an unforgettable day!",
+          "author": "Sophie & Michael",
+          "company": "Summer wedding in a beer garden",
+          "rating": "5"
+        }
+      }
+    },
+
+    "firmenfeiern": {
+      "faq": {
+        "0": {
+          "question": "How much lead time do you need for a company event?",
+          "answer": "Ideally, book 4–6 weeks in advance, especially in high season (summer and the Christmas period). For short‑notice requests please contact us directly — we can often accommodate shorter lead times."
+        },
+        "1": {
+          "question": "Can you adapt cocktails to our corporate design?",
+          "answer": "Yes — we can match colors, garnish and cocktail names to your branding. Personalized drink menus in your corporate design are available as well."
+        },
+        "2": {
+          "question": "Are non‑alcoholic options available?",
+          "answer": "Absolutely. We offer a non‑alcoholic alternative to every cocktail and can provide a fully alcohol‑free event if required."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "The mobile cocktail bar was the absolute highlight of our summer party. Professional, friendly and the cocktails were first‑class!",
+          "author": "Thomas Müller",
+          "company": "Tech Company Munich",
+          "rating": "5"
+        }
+      }
+    },
+
+    "weihnachtsfeiern": {
+      "faq": {
+        "0": {
+          "question": "When should I book a Christmas party?",
+          "answer": "The Christmas season (November to end of December) is our busiest period. We recommend booking in September or October to secure your preferred date. Short‑notice requests may be possible — contact us."
+        },
+        "1": {
+          "question": "What classic winter cocktails do you offer?",
+          "answer": "Our winter classics include Mulled Wine Martini, Winter Spice Mojito, Christmas Mule, White Russian, Cranberry Gin Fizz and non‑alcoholic options like winter punch and apple‑cinnamon mocktails."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "The Christmas party was a complete success thanks to Velo.Bar. The winter cocktails and the festive atmosphere thrilled our employees!",
+          "author": "Klaus Schneider",
+          "company": "Automotive Company Coburg",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfect organisation and beautiful festive decoration. Our guests are still raving about the mulled wine cocktails!",
+          "author": "Anna Meier",
+          "company": "Insurance Munich",
+          "rating": "5"
+        }
+      }
+    },
+
+    "messeCatering": {
+      "faq": {
+        "0": {
+          "question": "How does branding integration at trade show booths work?",
+          "answer": "We can incorporate your logo on the bar, tie cocktail names to your products, and style the decor in your corporate colors. Branded glasses, napkins and menus are available on request."
+        },
+        "1": {
+          "question": "How many drinks can you serve per hour?",
+          "answer": "At busy trade shows we typically serve around 30–50 drinks per bartender per hour for simple cocktails. For more complex cocktails expect 20–30 drinks per hour; we adjust the number of bartenders accordingly."
+        },
+        "2": {
+          "question": "Can you operate at all trade shows in Munich?",
+          "answer": "Yes; we have experience at all major fairs in Munich and handle the required coordination with show management."
+        },
+        "3": {
+          "question": "What are typical costs for multi‑day trade shows?",
+          "answer": "For a three‑day event, expect package prices in the €4,500–€6,000 range depending on footfall and service level. Contact us for a tailored offer."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "Our cocktail bar was the main attraction at our ISPO stand — three days of top service and over 1,200 drinks served!",
+          "author": "Marketing Director",
+          "company": "Sports Manufacturer",
+          "rating": "5"
+        }
+      }
+    },
+
+    "teamEvents": {
+      "faq": {
+        "0": {
+          "question": "Are prior skills required for workshops?",
+          "answer": "No — our workshops are designed for beginners. We start with the basics and scale the difficulty to the group."
+        },
+        "1": {
+          "question": "Where do the workshops take place?",
+          "answer": "We come to you — in your offices, a hired venue, or at your home. We also run workshops in partner venues in Munich and Coburg."
+        },
+        "2": {
+          "question": "How many participants can take part?",
+          "answer": "The optimal group size is 10–20 people. For larger teams we run parallel sessions with two trainers. Smaller groups (from 6 people) available on request."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "The best team event we’ve ever had! Everyone loved it and we had a great time. The cocktails were excellent too!",
+          "author": "Julia Hoffmann",
+          "company": "IT Startup Munich",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfect team-building. Our employees are still talking about the cocktail competition weeks later. Highly recommended!",
+          "author": "Markus Bauer",
+          "company": "Marketing Agency Coburg",
+          "rating": "5"
+        }
+      }
+    },
+
+    "privateFeiern": {
+      "faq": {
+        "0": {
+          "question": "What private occasions are suitable for Velo.Bar?",
+          "answer": "Perfect for birthdays, anniversaries, engagements, garden parties, stag/hen parties, christenings and any celebration where you want to delight guests with first‑class cocktails."
+        },
+        "1": {
+          "question": "How much space does the mobile bar need?",
+          "answer": "The base bar requires about 2x2 meters; the premium bar needs roughly 3x2.5 meters. We can set up indoors and outdoors. For outdoor events a nearby power outlet is helpful — we bring a 20m extension cable."
+        },
+        "2": {
+          "question": "Can we assemble the drink menu ourselves?",
+          "answer": "Yes — you can choose favorites from our menu or give us requests. We advise which cocktails suit your event and guests; for premium packages we create personalized signature drinks."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "My 40th birthday was unforgettable thanks to Velo.Bar! All guests loved the cocktails and the professional atmosphere.",
+          "author": "Sandra M.",
+          "company": "Private Birthday",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfect for our garden party! The bartenders were super friendly and the bar looked fantastic. Highly recommended!",
+          "author": "The Richter Family",
+          "company": "Anniversary Celebration",
+          "rating": "5"
+        }
+      }
+    },
+
+    "buchungMuc": {
+      "faq": {
+        "0": {
+          "question": "How does the Velo.Bar work without power and water hookups?",
+          "answer": "The Velo.Bar is a self‑contained system with two water tanks (fresh and waste), an integrated pump and battery‑powered cooling; no external power or water hookup is required."
+        },
+        "1": {
+          "question": "What events suit the mobile bar?",
+          "answer": "Our mobile bar is ideal for weddings, corporate events, trade shows, private parties, and Gin Tastings — in venues without an integrated bar or outdoors."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "It has never been easier to serve our guests with a professional mobile bar!",
+          "author": "Event Customer",
+          "company": "Munich",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "The gin tasting was an absolute highlight! Professional, entertaining and with an incredible gin selection.",
+          "author": "Tasting Participant",
+          "company": "Munich",
+          "rating": "5"
+        },
+        "2": {
+          "quote": "The perfect solution for our wedding. No stress with drinks, everything ran perfectly!",
+          "author": "Wedding Couple",
+          "company": "Munich & Surroundings",
+          "rating": "5"
+        }
+      }
+    },
+
+    "velobarco": {
+      "faq": {
+        "0": {
+          "question": "Where in Coburg do you provide services?",
+          "answer": "We serve Coburg and the surrounding area. The mobile Velo.Bar can be set up anywhere thanks to its self‑contained system with water tanks and battery cooling."
+        },
+        "1": {
+          "question": "What makes Gin Tastings in Coburg special?",
+          "answer": "We offer mobile Gin Tastings with up to 50 different gins at a location of your choice. Perfect for private groups, corporate events or special occasions. Prices start at €49 per person."
+        }
+      },
+      "testimonials": {
+        "0": {
+          "quote": "The gin tasting in Coburg was unique! Great atmosphere and an excellent gin selection.",
+          "author": "Tasting Customer",
+          "company": "Coburg",
+          "rating": "5"
+        },
+        "1": {
+          "quote": "Perfect for our garden party! Professional service and the bar looks fantastic.",
+          "author": "Event Customer",
+          "company": "Coburg & Surroundings",
+          "rating": "5"
+        }
+      }
+    }
+  },
+
   "contact": {
     "title": "Request Your Event Quote",
     "subtitle": "We'll respond within 24 hours with a customized offer",

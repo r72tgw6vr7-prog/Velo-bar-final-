@@ -9,15 +9,15 @@ import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx'
 import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout.tsx';
 import { PageTemplate } from '@/templates/PageTemplate';
 import { SiteBackground } from '@/components/layout/SiteBackground';
-import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
+import { servicePackages, getServiceFAQs, getServiceTestimonials } from '@/data/services.ts';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/seo/schema.ts';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.velo-bar.com';
 
 const HochzeitenPage: React.FC = () => {
   const packages = servicePackages.hochzeiten;
-  const faqs: FAQ[] = serviceFAQs.hochzeiten;
-  const testimonials: Testimonial[] = serviceTestimonials.hochzeiten;
+  const faqs: FAQ[] = getServiceFAQs(t).hochzeiten;
+  const testimonials: Testimonial[] = getServiceTestimonials(t).hochzeiten;
 
   // SEO: Structured data for Hochzeiten service page
   const structuredData = useMemo(() => {

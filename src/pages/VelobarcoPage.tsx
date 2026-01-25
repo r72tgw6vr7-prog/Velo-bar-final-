@@ -8,15 +8,15 @@ import React from 'react';
 import { ServicePageLayout } from '@/components/templates/ServicePageLayout.tsx';
 import { PageTemplate } from '@/templates/PageTemplate';
 import { SiteBackground } from '@/components/layout/SiteBackground';
-import { servicePackages, serviceFAQs, serviceTestimonials } from '@/data/services.ts';
+import { servicePackages, getServiceFAQs, getServiceTestimonials } from '@/data/services.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const VelobarcoPage: React.FC = () => {
   const { t } = useLanguage();
 
   const packages = servicePackages.velobarco;
-  const faqs = serviceFAQs.velobarco;
-  const testimonials = serviceTestimonials.velobarco;
+  const faqs = getServiceFAQs(t).velobarco;
+  const testimonials = getServiceTestimonials(t).velobarco;
 
   return (
     <SiteBackground>

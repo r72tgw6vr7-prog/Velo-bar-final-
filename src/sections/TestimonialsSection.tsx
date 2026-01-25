@@ -19,63 +19,30 @@ interface Testimonial {
   verified: boolean;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    name: 'Xenia Davidoff',
-    role: 'Wedding Client',
-    text: 'The mobile bar Velo.Bar was the absolute highlight of our wedding! The drinks they prepared were incredibly well-received by our guests. The seamless communication with Lars and his team made our lives easier during the wedding preparations.',
-    rating: 5,
-    date: '2023-01-15',
-    verified: true,
-  },
-  {
-    name: 'Angela Samberger',
-    role: 'Garden Party Host',
-    text: 'Sebastian and his Velo.Bar catered for 50 guests at my garden party with cocktails. I highly recommend him. Great bar, delicious cocktails, professional service, and a fantastic guy! Everything was straightforward, reliable, and a truly memorable experience.',
-    rating: 5,
-    date: '2024-07-20',
-    verified: true,
-  },
-  {
-    name: 'Arlind Maurer',
-    role: 'Wedding Client',
-    text: 'Sebastian and the Velo.Bar were an absolute hit after our civil wedding. Not even the pouring rain could dampen that. A great concept, outstanding service, and a hassle-free experience.',
-    rating: 5,
-    date: '2024-01-10',
-    verified: true,
-  },
-  {
-    name: 'Ruth Gaspar',
-    role: 'English Garden Event',
-    text: 'We booked the VeloBar for the champagne reception in the English Garden after our civil ceremony. Everything worked out perfectly, and despite the rain, it was a very successful event. Many thanks to Lars Eggers for the uncomplicated planning and execution.',
-    rating: 5,
-    date: '2024-01-05',
-    verified: true,
-  },
-  {
-    name: 'Viktoria O.',
-    role: 'Champagne Reception',
-    text: 'Absolutely recommendable! We booked a champagne reception after our civil wedding in Munich, and it was simply perfect! Nice guys, fair price, and easy to contact. Definitely book them, and you can celebrate and relax without worry.',
-    rating: 5,
-    date: '2024-01-08',
-    verified: true,
-  },
-  {
-    name: 'Radu Lupoaie',
-    role: 'Standesamt Munich Event',
-    text: 'Pure awesomeness! Velo Bar team helped us organize a champagne reception at Standesamt Munich. Everything was great, from the initial communication and planning until the main day. They are very friendly and professional and all the guests loved it!',
-    rating: 5,
-    date: '2021-06-15',
-    verified: true,
-  },
-];
-
 interface TestimonialsSectionProps {
   className?: string;
 }
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = '' }) => {
   const { t } = useLanguage();
+
+  // Build testimonials from locale keys: testimonials.{index}.{quote,author,role,rating,date,verified}
+  const testimonials = React.useMemo(() => {
+    const items: Testimonial[] = [];
+    const count = 6; // NOTE: current hard-coded data contains 6 testimonials — adjust if you add more in locales
+    for (let i = 0; i < count; i++) {
+      const base = `testimonials.${i}`;
+      items.push({
+        name: t(`${base}.author`),
+        role: t(`${base}.role`),
+        text: t(`${base}.quote`),
+        rating: Number(t(`${base}.rating`)) || 5,
+        date: t(`${base}.date`),
+        verified: t(`${base}.verified`) === 'true',
+      });
+    }
+    return items;
+  }, [t]);
 
   return (
     <Section container='default' spacing='xl' background='transparent' className={className}>
