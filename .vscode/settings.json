@@ -13,6 +13,10 @@
         "/^awk '/\\\\\\\\\\$/ \\{print NR\":\" \\$0\\}' src/locales/de\\.json \\|\\| true$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^lsof -iTCP -sTCP:LISTEN -P -n \\| grep 5173 \\|\\| true$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }

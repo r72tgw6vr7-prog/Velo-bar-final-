@@ -261,8 +261,8 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
             const makeSrcSet = (ext: string) =>
               RESPONSIVE_WIDTHS.map((width) => {
                 const candidate = `${baseSrc}-${width}w${ext}`;
+                if (!publicHas(candidate)) return null;
                 const url = resolvePublicPath(candidate);
-                if (!publicHas(url)) return null;
                 const encodedUrl = encodeURI(url);
                 return `${encodedUrl} ${width}w`;
               })
