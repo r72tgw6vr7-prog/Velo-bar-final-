@@ -279,14 +279,34 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
     setSubmitError(null);
 
     try {
+      // Normalize eventType and guestCount for API (server expects English enum + numeric guestCount)
+      const EVENT_TYPE_MAP: Record<string, 'corporate' | 'wedding' | 'birthday' | 'christmas' | 'other'> = {
+        firmenfeier: 'corporate',
+        hochzeit: 'wedding',
+        weihnachtsfeier: 'christmas',
+        privat: 'other',
+        'gin-tasting': 'other',
+        messe: 'other',
+      };
+
+      const apiEventType = (EVENT_TYPE_MAP as Record<string, string>)[data.eventType] ?? 'other';
+
+      const parseGuestCount = (g: string) => {
+        if (!g || typeof g !== 'string') return 0;
+        if (g === '200+') return 200;
+        const parts = g.split('-');
+        const n = parseInt(parts[0].replace(/[^0-9]/g, ''), 10);
+        return Number.isNaN(n) ? 0 : n;
+      };
+
       const bookingPayload = {
         location: data.location,
         customerName: `${data.firstName} ${data.lastName}`.trim(),
         customerEmail: data.email,
         company: data.company,
         phone: data.phone || undefined,
-        eventType: data.eventType,
-        guestCount: data.guestCount,
+        eventType: apiEventType,
+        guestCount: parseGuestCount(data.guestCount),
         eventDate: data.eventDate,
         message: data.message || undefined,
         vatId: data.vatId || undefined,
