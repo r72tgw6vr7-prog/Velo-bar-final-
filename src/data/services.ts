@@ -975,8 +975,6 @@ export function getServiceTestimonials(t: (key: string) => string): Record<strin
 
   // (static German testimonial content removed — moved to `src/locales/de.json` and translated manually into `src/locales/en.json`)
 
-};
-
 // Helper function to get all testimonials for a service (shared + specific)
 export const getTestimonialsFor = (service: keyof typeof serviceTestimonials): Testimonial[] => {
   return [
