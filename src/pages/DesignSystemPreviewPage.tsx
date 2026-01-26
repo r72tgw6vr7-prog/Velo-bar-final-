@@ -38,13 +38,6 @@ import { ClientLogos } from '@/sections/ClientLogos.tsx';
 // Menu/Drinks content (simplified version)
 import { HeroHeading } from '@/components/ui/HeroHeading.tsx';
 
-// Pricing components
-import { IncludedItemCard } from '@/components/molecules/IncludedItemCard.tsx';
-
-// Location components
-import VenueLandingPage from '@/pages/locations/VenueLandingPage.tsx';
-import LocationsIndexPage from '@/pages/locations/LocationsIndexPage.tsx';
-
 // Icons
 import MapPin from 'lucide-react/dist/esm/icons/map-pin';
 import Users from 'lucide-react/dist/esm/icons/users';
@@ -103,9 +96,10 @@ const DesignSystemPreviewPage: React.FC = () => {
   return (
     <SiteBackground>
     <PageTemplate
-      title='UI Lab Preview | Velo.Bar'
+      title='UI Lab Preview'
       description='Preview of all latest UI surfaces'
       canonicalPath='/ui-lab'
+      robots='noindex,nofollow'
       withContainer={false}
     >
       {/* Hero Section - Using canonical HeroLocked component */}

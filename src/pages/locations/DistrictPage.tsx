@@ -8,7 +8,6 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PageTemplate } from '@/templates/PageTemplate.tsx';
-import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Button } from '@/components/atoms/Button/Button.tsx';
 import { Breadcrumbs } from '@/components/atoms/Breadcrumbs.tsx';
 import MapPin from 'lucide-react/dist/esm/icons/map-pin';
@@ -129,14 +128,14 @@ const DistrictPage: React.FC = () => {
   const breadcrumbs = [
     { label: t('nav.home'), path: '/' },
     { label: t('pages.district.breadcrumbs.corporateEvents'), path: '/firmenfeiern' },
-    { label: districtData.name, path: `/firmenfeieren/${districtData.slug}` },
+    { label: districtData.name, path: `/firmenfeiern/${districtData.slug}` },
   ];
 
   return (
     <PageTemplate
       title={customContent.hero.title}
       description={customContent.hero.description}
-      canonicalPath={`/firmenfeieren/${districtData.slug}`}
+      canonicalPath={`/firmenfeiern/${districtData.slug}`}
       structuredData={schemaData || undefined}
     >
       {/* Breadcrumbs */}
@@ -382,7 +381,7 @@ const DistrictPage: React.FC = () => {
               return (
                 <Link
                   key={index}
-                  to={`/firmenfeieren/${nearbyDistrict.slug}`}
+                  to={`/firmenfeiern/${nearbyDistrict.slug}`}
                   className='card bg-navy-light flex h-full flex-col rounded-lg p-8 duration-200'
                 >
                   <div className='flex items-center justify-between'>

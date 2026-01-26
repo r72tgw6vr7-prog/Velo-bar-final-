@@ -48,6 +48,8 @@ interface PageTemplateProps {
   description?: string;
   /** Canonical URL path for SEO */
   canonicalPath?: string;
+  /** Robots directive for SEO (indexing control) */
+  robots?: string;
   /** JSON-LD structured data for SEO rich results */
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
   /** Whether to wrap content in a Section component */
@@ -71,6 +73,7 @@ export function PageTemplate({
   title = 'Velo.Bar - Mobile Cocktailbar',
   description = 'Mobile Cocktailbar für Firmenevents, Hochzeiten & private Feiern in München & Coburg',
   canonicalPath = '',
+  robots,
   structuredData,
   withContainer = true,
   containerSize = 'default',
@@ -88,7 +91,7 @@ export function PageTemplate({
   const childrenArray = React.Children.toArray(children);
   const hasMain = childrenArray.some((child) => {
     if (!React.isValidElement(child)) return false;
-    const childType: any = child.type;
+    const childType = child.type;
     // For intrinsic elements like <main> the type is a string 'main'
     if (typeof childType === 'string' && childType === 'main') return true;
     // Also check for explicit id prop used across pages
@@ -109,6 +112,7 @@ export function PageTemplate({
           title={`${title} | Velo.Bar`}
           description={description}
           canonicalPath={canonicalPath}
+          robots={robots}
           structuredData={structuredData}
         />
       )}

@@ -72,13 +72,7 @@ function App() {
   // Register service worker in production
   useEffect(() => {
     if ('serviceWorker' in navigator && import.meta.env.PROD) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          console.log('SW registered: ', registration);
-        })
-        .catch((registrationError) => {
-          console.log('SW registration failed: ', registrationError);
-        });
+      navigator.serviceWorker.register('/sw.js').catch(() => undefined);
     }
   }, []);
 
@@ -134,6 +128,12 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
   const { t } = useLanguage();
   const isGalleryRoute = location.pathname === ROUTE_CONFIG[ROUTES.GALERIE].path;
 
+  const LegacyDistrictRedirect: React.FC = () => {
+    const legacyPath = useLocation().pathname;
+    const districtSlug = legacyPath.split('/').filter(Boolean).pop();
+    return <Navigate to={`/firmenfeiern/${districtSlug ?? ''}`} replace />;
+  };
+
   const routes = (
     <Suspense
       fallback={
@@ -152,7 +152,15 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
             element={
               isDev ? (
                 <ProtectedRoute>
-                  <DesignTokenReferencePage />
+                  <>
+                    <Meta
+                      title='Dev Tokens'
+                      description='Dev-only design token reference page.'
+                      canonicalPath='/dev/tokens'
+                      robots='noindex,nofollow'
+                    />
+                    <DesignTokenReferencePage />
+                  </>
                 </ProtectedRoute>
               ) : (
                 <Navigate to={ROUTE_CONFIG[ROUTES.HOME].path} replace />
@@ -167,48 +175,23 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           <Route
             path={ROUTE_CONFIG[ROUTES.HOME].path}
             element={
-              <>
-                <Meta
-                  title={t('pages.home.seo.title')}
-                  description={t('pages.home.seo.description')}
-                  canonicalPath='/'
-                />
-                <ErrorBoundary>
-                  <HomePage />
-                </ErrorBoundary>
-              </>
+              <ErrorBoundary>
+                <HomePage />
+              </ErrorBoundary>
             }
           />
 
           {/* Sandbox Homepage Route */}
           <Route
             path='/home-new'
-            element={
-              <>
-                <Meta
-                  title={t('pages.homeNew.seo.title')}
-                  description={t('pages.homeNew.seo.description')}
-                  canonicalPath='/home-new'
-                />
-                <ErrorBoundary>
-                  <HomePage />
-                </ErrorBoundary>
-              </>
-            }
+            element={<Navigate to={ROUTE_CONFIG[ROUTES.HOME].path} replace />}
           />
 
           {/* Services (single consolidated page) */}
           <Route
             path={ROUTE_CONFIG[ROUTES.SERVICES].path}
             element={
-              <>
-                <Meta
-                  title={t('pages.services.seo.title')}
-                  description={t('pages.services.seo.description')}
-                  canonicalPath={ROUTE_CONFIG[ROUTES.SERVICES].path}
-                />
-                <ServicesPage />
-              </>
+              <ServicesPage />
             }
           />
 
@@ -255,16 +238,9 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           <Route
             path={ROUTE_CONFIG[ROUTES.GALERIE].path}
             element={
-              <>
-                <Meta
-                  title={t('pages.gallery.seo.title')}
-                  description={t('pages.gallery.seo.description')}
-                  canonicalPath={ROUTE_CONFIG[ROUTES.GALERIE].path}
-                />
-                <ErrorBoundary>
-                  <GalleryPage />
-                </ErrorBoundary>
-              </>
+              <ErrorBoundary>
+                <GalleryPage />
+              </ErrorBoundary>
             }
           />
 
@@ -272,14 +248,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           <Route
             path={ROUTE_CONFIG[ROUTES.MENU].path}
             element={
-              <>
-                <Meta
-                  title={t('menu.seoTitle')}
-                  description={t('menu.seoDescription')}
-                  canonicalPath={ROUTE_CONFIG[ROUTES.MENU].path}
-                />
-                <MenuPage />
-              </>
+              <MenuPage />
             }
           />
 
@@ -290,29 +259,15 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           <Route
             path={ROUTE_CONFIG[ROUTES.BUCHUNG_MUC].path}
             element={
-              <>
-                <Meta
-                  title={t('pages.bookingMuc.seo.title')}
-                  description={t('pages.bookingMuc.seo.description')}
-                  canonicalPath={ROUTE_CONFIG[ROUTES.BUCHUNG_MUC].path}
-                />
-                <ErrorBoundary>
-                  <BuchungMucPage />
-                </ErrorBoundary>
-              </>
+              <ErrorBoundary>
+                <BuchungMucPage />
+              </ErrorBoundary>
             }
           />
           <Route
             path={ROUTE_CONFIG[ROUTES.VELOBARCO].path}
             element={
-              <>
-                <Meta
-                  title={t('pages.bookingCoburg.seo.title')}
-                  description={t('pages.bookingCoburg.seo.description')}
-                  canonicalPath={ROUTE_CONFIG[ROUTES.VELOBARCO].path}
-                />
-                <VelobarcoPage />
-              </>
+              <VelobarcoPage />
             }
           />
 
@@ -323,16 +278,9 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           <Route
             path={ROUTE_CONFIG[ROUTES.ANFRAGE].path}
             element={
-              <>
-                <Meta
-                  title={t('pages.contact.seo.title')}
-                  description={t('pages.contact.seo.description')}
-                  canonicalPath={ROUTE_CONFIG[ROUTES.ANFRAGE].path}
-                />
-                <ErrorBoundary>
-                  <ContactPage />
-                </ErrorBoundary>
-              </>
+              <ErrorBoundary>
+                <ContactPage />
+              </ErrorBoundary>
             }
           />
           {/* Redirect /contact to /anfrage */}
@@ -366,7 +314,11 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           />
 
           {/* Programmatic SEO - Munich Districts */}
-          <Route path='/firmenfeieren/:district' element={<DistrictPage />} />
+          <Route
+            path='/firmenfeieren/:district'
+            element={<LegacyDistrictRedirect />}
+          />
+          <Route path='/firmenfeiern/:district' element={<DistrictPage />} />
 
           {/* Programmatic SEO - Venue-Specific Landing Pages */}
           <Route path='/locations' element={<LocationsIndexPage />} />

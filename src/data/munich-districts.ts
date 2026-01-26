@@ -692,7 +692,7 @@ export const generateDistrictSchema = (district: MunichDistrict, language: 'de' 
     '@type': 'LocalBusiness',
     name,
     description,
-    url: `https://www.velo-bar.com/firmenfeieren/${district.slug}`,
+    url: `https://www.velo-bar.com/firmenfeiern/${district.slug}`,
     telephone: '+49 160 94623196',
     email: 'info@velo-bar.com',
     address: {

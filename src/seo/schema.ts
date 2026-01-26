@@ -26,6 +26,21 @@ const BUSINESS_INFO = {
     postalCode: '81379',
     addressCountry: 'DE',
   },
+  // Explicit service locations (München + Coburg)
+  locations: {
+    muenchen: {
+      addressLocality: 'München',
+      addressRegion: 'Bayern',
+      postalCode: '81379',
+      addressCountry: 'DE',
+      streetAddress: 'Matthias-Mayer-Straße 5',
+    },
+    coburg: {
+      addressLocality: 'Coburg',
+      addressRegion: 'Bayern',
+      addressCountry: 'DE',
+    },
+  },
   // Service areas
   areaServed: [
     {
@@ -83,6 +98,32 @@ export function getLocalBusinessSchema() {
       '@type': 'PostalAddress',
       ...BUSINESS_INFO.address,
     },
+    department: [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${BUSINESS_INFO.url}/#location-muenchen`,
+        name: 'Velo.Bar München',
+        url: BUSINESS_INFO.url,
+        telephone: BUSINESS_INFO.telephone,
+        email: BUSINESS_INFO.email,
+        address: {
+          '@type': 'PostalAddress',
+          ...BUSINESS_INFO.locations.muenchen,
+        },
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${BUSINESS_INFO.url}/#location-coburg`,
+        name: 'Velo.Bar Coburg',
+        url: BUSINESS_INFO.url,
+        telephone: BUSINESS_INFO.telephone,
+        email: BUSINESS_INFO.email,
+        address: {
+          '@type': 'PostalAddress',
+          ...BUSINESS_INFO.locations.coburg,
+        },
+      },
+    ],
     areaServed: BUSINESS_INFO.areaServed,
     sameAs: BUSINESS_INFO.sameAs,
     openingHoursSpecification: BUSINESS_INFO.openingHoursSpecification,

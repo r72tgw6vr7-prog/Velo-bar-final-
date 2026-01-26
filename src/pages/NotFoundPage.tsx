@@ -18,12 +18,12 @@ export const NotFoundPage: React.FC = () => {
         spacing='lg'
       >
         <div className='flex flex-col items-center justify-center text-center'>
-          <h1 className='mb-8 text-4xl font-(--font-heading) text-(--color-coral) md:text-5xl lg:text-6xl'>
+          <p className='mb-8 text-xl font-(--font-heading) text-(--brand-white) md:text-2xl'>
             {t('notFound.eyebrow')}
-          </h1>
-          <h2 className='mb-8 text-xl font-(--font-heading) text-(--brand-white) md:text-2xl'>
+          </p>
+          <h1 className='mb-8 text-4xl font-(--font-heading) text-(--color-coral) md:text-5xl lg:text-6xl'>
             {t('notFound.title')}
-          </h2>
+          </h1>
           <p className='mx-auto mb-8 max-w-md text-base text-(--chrome-silver) md:text-lg'>
             {t('notFound.body')}
           </p>

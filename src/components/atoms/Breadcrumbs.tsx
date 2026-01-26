@@ -29,7 +29,7 @@ interface BreadcrumbsProps {
 const EXTRA_ROUTE_LABELS: Record<string, { de: string; en: string }> = {
   '/agb': { de: 'AGB', en: 'Terms & Conditions' },
   '/locations': { de: 'Event-Locations', en: 'Event Venues' },
-  '/firmenfeieren': { de: 'Firmenfeiern München', en: 'Corporate Events Munich' },
+  '/firmenfeiern': { de: 'Firmenfeiern München', en: 'Corporate Events Munich' },
 };
 
 const SAFE_ROUTES = new Set([
@@ -64,11 +64,11 @@ function sanitizeBreadcrumbItems(items: BreadcrumbItem[]): BreadcrumbItem[] {
 
     if (SAFE_ROUTES.has(item.path)) return true;
 
-    const match = item.path.match(/^\/(locations|firmenfeieren)\/([a-zA-Z0-9-]{1,50})$/);
+    const match = item.path.match(/^\/(locations|firmenfeiern)\/([a-zA-Z0-9-]{1,50})$/);
     if (!match) return false;
 
     // Programmatic routes (validated by strict regex above)
-    return match[1] === 'locations' || match[1] === 'firmenfeieren';
+    return match[1] === 'locations' || match[1] === 'firmenfeiern';
   });
 }
 
