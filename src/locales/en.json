@@ -1935,7 +1935,7 @@
   },
   "pricing": {
     "seoTitle": "Pricing & Packages | Mobile Cocktail Bar | Velo.Bar",
-    "seoDescription": "Transparent pricing for mobile cocktail bar services in Munich and Coburg. All-inclusive packages from €500.",
+    "seoDescription": "Transparent pricing for mobile cocktail bar services in Munich and Coburg. All-inclusive packages from €499.",
     "schema": {
       "product": {
         "name": "Mobile Cocktail Bar Event Catering",
@@ -1960,7 +1960,7 @@
     "packages": {
       "starter": {
         "name": "Starter",
-        "price": "from €500",
+        "price": "from €499",
         "features": {
           "0": "Travel to and from your venue",
           "1": "Setup and teardown",
@@ -1974,7 +1974,7 @@
       "professional": {
         "name": "Professional",
         "badge": "Most Popular",
-        "price": "from €1,500",
+        "price": "from €1,499",
         "features": {
           "0": "Travel to and from your venue",
           "1": "Setup and teardown",
@@ -1987,7 +1987,7 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "from €3,000",
+        "price": "from €2,999",
         "features": {
           "0": "Travel to and from your venue",
           "1": "Setup and teardown",

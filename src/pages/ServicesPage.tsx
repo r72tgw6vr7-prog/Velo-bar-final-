@@ -207,15 +207,6 @@ const ServicesPage: React.FC = () => {
                       </p>
                     </div>
                   </ScrollReveal>
-
-                  {/* Associated Info Card */}
-                  <ScrollReveal
-                    variant='fadeUp'
-                    delay={index * 0.15 + 0.1}
-                    className='info-card-mobile'
-                  >
-                    {service.content}
-                  </ScrollReveal>
                 </div>
               ))}
             </div>

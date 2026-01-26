@@ -3,12 +3,12 @@
     "home": "Startseite",
     "homeAria": "Velo.Bar Startseite",
     "services": "Leistungen",
-    "corporateEvents": "Firmenfeiern",
-    "christmasParties": "Weihnachtsfeiern",
-    "tradeShows": "Messe & Promotions",
+    "corporateEvents": "Firmenfeier",
+    "christmasParties": "Weihnachtsfeier",
+    "tradeShows": "Messe",
     "teamEvents": "Team-Events",
     "weddings": "Hochzeiten",
-    "privateEvents": "Private Feiern",
+    "privateEvents": "Private Parties",
     "pricing": "Preise",
     "gallery": "Galerie",
     "drinks": "Drinks",
@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "Mobile Cocktailbar für Firmenevents",
-    "subtitle": "Premium Cocktail-Catering für Firmenfeiern, Messen und Corporate Events in München & Coburg",
+    "subtitle": "Premium Cocktail-Catering für Firmenfeier, Messen und Corporate Events in München & Coburg",
     "tagline": "Zuverlässig • Nachhaltig • Premium",
     "cta": "Angebot anfordern",
     "ctaSecondary": "Pakete ansehen"
@@ -83,24 +83,18 @@
       "date": "2024-01-08",
       "verified": "true"
     },
-      "5": {
-        "quote": "Einfach großartig! Das Velo.Bar-Team hat uns beim Sektempfang am Standesamt München bestens unterstützt. Von der Planung bis zum Event professionell und freundlich — alle Gäste waren begeistert.",
-        "author": "Radu Lupoaie",
-        "role": "Standesamt-Event München",
-        "rating": "5",
-        "date": "2021-06-15",
-        "verified": "true"
-      }
+    "5": {
+      "quote": "Einfach großartig! Das Velo.Bar-Team hat uns beim Sektempfang am Standesamt München bestens unterstützt. Von der Planung bis zum Event professionell und freundlich — alle Gäste waren begeistert.",
+      "author": "Radu Lupoaie",
+      "role": "Standesamt-Event München",
+      "rating": "5",
+      "date": "2021-06-15",
+      "verified": "true"
+    }
   },
-  "testimonialsSection": {
-    "title": "Was unsere Kund:innen sagen",
-    "subtitle": "Verifizierte Google-Bewertungen unserer Kund:innen.",
-    "viewAll": "Alle Bewertungen ansehen"
-  },
-
   "services": {
     "title": "Unsere Leistungen",
-    "subtitle": "Von Firmenfeiern über Messen bis hin zu privaten Events – wir bringen die Bar zu dir",
+    "subtitle": "Von Firmenfeier über Messen bis hin zu privaten Events – wir bringen die Bar zu dir",
     "learnMore": "Mehr erfahren",
     "messe": {
       "title": "Messe-Catering",
@@ -146,7 +140,7 @@
     },
 
     "firmenfeiern": {
-      "title": "Firmenfeiern",
+      "title": "Firmenfeier",
       "description": "Mobile Cocktailbar für Corporate Events, Afterworks und Sommerfeste.",
       "faq": {
         "0": {
@@ -173,7 +167,7 @@
     },
 
     "weihnachtsfeiern": {
-      "title": "Weihnachtsfeiern",
+      "title": "Weihnachtsfeier",
       "description": "Winterliche Cocktail-Kreationen und Glühwein-Varianten für Teams.",
       "faq": {
         "0": {
@@ -264,7 +258,7 @@
     },
 
     "privateFeiern": {
-      "title": "Private Feiern",
+      "title": "Private Parties",
       "description": "Geburtstage, Jubiläen oder Rooftop-Partys – wir bringen die Bar.",
       "faq": {
         "0": {
@@ -304,7 +298,7 @@
         },
         "1": {
           "question": "Für welche Events eignet sich die mobile Bar?",
-          "answer": "Die mobile Bar ist ideal für Hochzeiten, Firmenfeiern, Messen, private Partys und Gin‑Tastings — besonders an Orten ohne feste Bar oder im Außenbereich."
+          "answer": "Die mobile Bar ist ideal für Hochzeiten, Firmenfeier, Messen, private Partys und Gin‑Tastings — besonders an Orten ohne feste Bar oder im Außenbereich."
         }
       },
       "testimonials": {
@@ -416,7 +410,7 @@
         "description": "Festliche Cocktails & Glühwein"
       },
       "messe": {
-        "label": "Messe / Promotion",
+        "label": "Messe",
         "description": "Messestand, Product Launch"
       },
       "hochzeit": {
@@ -734,7 +728,7 @@
     "serviceOptions": {
       "firmenfeier": "Firmenfeier",
       "weihnachtsfeier": "Weihnachtsfeier",
-      "messe": "Messe / Promotion",
+      "messe": "Messe",
       "hochzeit": "Hochzeit",
       "ginTasting": "Gin-Tasting / Workshop"
     },
@@ -805,7 +799,7 @@
     "title": "Unsere Standorte",
     "subtitle": "Mobile Cocktailbar für Events in München & Coburg",
     "munich": "München & Umgebung",
-    "munichDesc": "Perfekte mobile Cocktailbar für Firmenfeiern, Messen und Privat-Events im Großraum München.",
+    "munichDesc": "Perfekte mobile Cocktailbar für Firmenfeier, Messen und Privat-Events im Großraum München.",
     "munichCta": "Events in München anfragen",
     "coburg": "Coburg & Umgebung",
     "coburgDesc": "Velobar für Hochzeiten, Sommerfeste und Unternehmens-Events im Raum Coburg.",
@@ -822,7 +816,7 @@
     "home": {
       "seo": {
         "title": "Mobile Cocktailbar München | Premium Bar ab 890€",
-        "description": "Premium mobile Cocktailbar für Firmenfeiern, Hochzeiten & Partys in München. Professioneller Barkeeper-Service für 50–500+ Gäste. Jetzt anfragen!"
+        "description": "Premium mobile Cocktailbar für Firmenfeier, Hochzeiten & Partys in München. Professioneller Barkeeper-Service für 50–500+ Gäste. Jetzt anfragen!"
       },
       "locations": {
         "title": "München & Coburg — wir kommen zu dir",
@@ -892,7 +886,7 @@
             "title": "Lassen Sie uns Ihr Event planen",
             "description": "In einem 20-minütigen Gespräch analysieren wir Ihre Logistik-Möglichkeiten und erstellen ein unverbindliches Konzept für Ihren nächsten Auftritt in München.",
             "primaryButton": "Jetzt Beratung anfragen",
-            "secondaryButton": "Mehr zu Firmenfeiern"
+            "secondaryButton": "Mehr zur Firmenfeier"
           }
         },
         "proTip": {
@@ -938,17 +932,17 @@
     },
     "district": {
       "breadcrumbs": {
-        "corporateEvents": "Firmenfeiern"
+        "corporateEvents": "Firmenfeier"
       },
       "notFound": {
         "title": "Bezirk nicht gefunden",
         "description": "Der gesuchte Stadtteil wurde nicht gefunden.",
-        "cta": "Zu den Firmenfeiern"
+        "cta": "Zur Firmenfeier"
       },
       "hero": {
-        "title": "Mobile Cocktailbar für Firmenfeiern in {district}",
+        "title": "Mobile Cocktailbar für Firmenfeier in {district}",
         "eyebrow": "Ihre Partner für Business Events in {district}",
-        "description": "Professionelle mobile Cocktailbar für exklusive Firmenfeiern und Business Events in {district}, München. {districtDescription}",
+        "description": "Professionelle mobile Cocktailbar für exklusive Firmenfeier und Business Events in {district}, München. {districtDescription}",
         "primaryCta": "Firmenfeier in {district} anfragen",
         "secondaryCta": "Preise & Pakete"
       },
@@ -964,7 +958,7 @@
         "characteristics": {
           "title": "Warum {district} perfekt für Ihre Firmenfeier ist",
           "subtitle": "Entdecken Sie die einzigartigen Vorteile des Stadtteils für Ihr Business Event",
-          "cardDescription": "Perfekte Bedingungen für unvergessliche Firmenfeiern im Herzen von {district}"
+          "cardDescription": "Perfekte Bedingungen für unvergessliche Firmenfeier im Herzen von {district}"
         },
         "localVenues": {
           "title": "Premium Event-Locations in {district}",
@@ -979,8 +973,8 @@
           "subtitle": "Perfekt für Unternehmen aus diesen Branchen"
         },
         "cta": {
-          "title": "Bereit für Ihre Firmenfeier in {district}?",
-          "description": "Lassen Sie uns gemeinsam ein unvergessliches Business Event in Ihrem Stadtteil gestalten.",
+          "title": "Bereit für deine Firmenfeier in {district}?",
+          "description": "Lass uns gemeinsam ein unvergessliches Business Event in deinem Stadtteil gestalten.",
           "primary": "Jetzt anfragen",
           "secondary": "Kontakt aufnehmen"
         },
@@ -1078,7 +1072,7 @@
     "services": {
       "seo": {
         "title": "Leistungen | Mobile Cocktailbar | Velo.Bar",
-        "description": "Alle Leistungen auf einen Blick: Firmenfeiern, Weihnachtsfeiern, Messe-Catering, Team-Events, Private Feiern und Hochzeiten in München & Coburg."
+        "description": "Alle Leistungen auf einen Blick: Firmenfeier, Weihnachtsfeier, Messe-Catering, Team-Events, Private Parties und Hochzeiten in München & Coburg."
       },
       "hero": {
         "eyebrow": "Unsere Leistungen",
@@ -1087,7 +1081,7 @@
       },
       "schema": {
         "serviceName": "Mobile Cocktailbar Services",
-        "serviceDescription": "Professionelle Cocktailbar-Services für Firmenfeiern, Hochzeiten, Messen, Team-Events und private Feiern in München und Coburg.",
+        "serviceDescription": "Professionelle Cocktailbar-Services für Firmenfeier, Hochzeiten, Messen, Team-Events und private Feiern in München und Coburg.",
         "areaServed": {
           "munich": "München",
           "coburg": "Coburg",
@@ -1100,9 +1094,9 @@
       },
       "cards": {
         "corporate": {
-          "title": "Firmenfeiern",
-          "description": "Mobile Cocktailbar für Firmenfeiern von 50–500 Gästen. Premium-Drinks, professionelles Team und reibungslose Abläufe – perfekt für Weihnachtsfeiern, Sommerfeste und Kick-offs.",
-          "heading": "Firmenfeiern",
+          "title": "Firmenfeier",
+          "description": "Mobile Cocktailbar für Firmenfeier von 50–500 Gästen. Premium-Drinks, professionelles Team und reibungslose Abläufe – perfekt für Weihnachtsfeier, Sommerfeste und Kick-offs.",
+          "heading": "Firmenfeier",
           "bullets": {
             "0": "Komplettes Bar-Setup inkl. Equipment",
             "1": "Individuelle Cocktailkarte im CI des Unternehmens",
@@ -1111,7 +1105,7 @@
           }
         },
         "christmas": {
-          "title": "Weihnachtsfeiern",
+          "title": "Weihnachtsfeier",
           "description": "Winterliche Signature-Drinks, Glühwein-Varianten und stimmungsvolle Dekoration – garantiert festliche Atmosphäre für Teams und Kund:innen.",
           "heading": "Winter Specials",
           "bullets": {
@@ -1122,9 +1116,9 @@
           }
         },
         "trade": {
-          "title": "Messen & Trade Shows",
+          "title": "Messe",
           "description": "Kompakte Bar für Messestände, Showrooms und Produktlaunches. Maximiert Verweildauer und Gesprächsqualität an deinem Stand.",
-          "heading": "Messepakete",
+          "heading": "Messe",
           "bullets": {
             "0": "Kompakte Fläche (ab 2×2 m)",
             "1": "Branding-Optionen an Bar & Gläsern",
@@ -1144,9 +1138,9 @@
           }
         },
         "private": {
-          "title": "Private Feiern",
+          "title": "Private Parties",
           "description": "Geburtstage, Gartenfeste, Jubiläen – wir bringen die Bar zu dir nach Hause oder in deine Wunschlocation.",
-          "heading": "Private Feiern",
+          "heading": "Private Parties",
           "bullets": {
             "0": "1–2 Barkeeper abgestimmt auf Gästezahl",
             "1": "Auswahl klassischer & moderner Cocktails",
@@ -1262,7 +1256,7 @@
           "title": "Services & Angebote",
           "items": {
             "0": {
-              "question": "Welche Cocktails eignen sich für Firmenfeiern?",
+              "question": "Welche Cocktails eignen sich für Firmenfeier?",
               "answer": "Beliebte Firmenfeier-Cocktails: Aperol Spritz, Gin Tonic, Prosecco mit Beeren, Mojito. Diese benötigen 30-60 Sekunden pro Drink, ermöglichen hohen Durchsatz und gefallen den meisten Gästen. Wir erstellen auch maßgeschneiderte Signature-Drinks."
             },
             "1": {
@@ -1292,8 +1286,8 @@
           "title": "Event-Typen",
           "items": {
             "0": {
-              "question": "Bieten Sie Catering für Weihnachtsfeiern an?",
-              "answer": "Ja! Wir haben spezielle Wintercocktails: Virgin Glühwein, Hot Apple Cider, Cranberry Fizz. Buche 8+ Wochen vorher für Weihnachtsfeiern in München — die Saison ist schnell ausgebucht."
+              "question": "Bieten Sie Catering für Weihnachtsfeier an?",
+              "answer": "Ja! Wir haben spezielle Wintercocktails: Virgin Glühwein, Hot Apple Cider, Cranberry Fizz. Buche 8+ Wochen vorher für Weihnachtsfeier in München — die Saison ist schnell ausgebucht."
             },
             "1": {
               "question": "Können Sie Outdoor-Events ohne Strom bedienen?",
@@ -1319,7 +1313,7 @@
         },
         "story1": {
           "heading": "Die Geschichte",
-          "p1": "Was mit einer Idee begann — „Wie bringen wir Bar-Qualität zu Messen und Firmenfeiern?“ — ist heute ein etabliertes Unternehmen mit über 500 Events für Kunden in München und Coburg.",
+          "p1": "Was mit einer Idee begann — „Wie bringen wir Bar-Qualität zu Messen und Firmenfeier?“ — ist heute ein etabliertes Unternehmen mit über 500 Events für Kunden in München und Coburg.",
           "p2": "Wenn die Gäste nicht in die Bar kommen können, bringen wir die Bar zu ihnen. Diese Vision hat uns zu dem gemacht, was wir heute sind: Spezialisten für Premium-Cocktail-Catering bei Corporate Events.",
           "imageAlt": "Velo Bar Our Story"
         },
@@ -1339,7 +1333,7 @@
           "p2": "„Moin“ trifft auf „Servus“ — internationale Barkeeper-Erfahrung trifft auf lokale Verwurzelung. Unsere unterschiedlichen Hintergründe ergänzen sich perfekt und schaffen eine einzigartige Mischung aus Professionalität und Herzlichkeit.",
           "p3": "Mit über 500 erfolgreich durchgeführten Events für Unternehmen wie BMW, Siemens und innovative Startups haben wir bewiesen: Unsere Vision funktioniert. Jedes Event ist für uns eine Chance, Premium-Bar-Handwerk zu zeigen.",
           "links": {
-            "corporate": "Erfahre mehr über unsere Firmenfeiern",
+            "corporate": "Erfahre mehr über unsere Firmenfeier",
             "middle": "oder sieh dir unsere",
             "gallery": "Galerie",
             "suffix": "an."
@@ -1351,7 +1345,7 @@
     "gallery": {
       "seo": {
         "title": "Galerie",
-        "description": "Eindrücke von unseren Events: Cocktailbars auf Firmenfeiern, Hochzeiten und privaten Feiern."
+        "description": "Eindrücke von unseren Events: Cocktailbars auf Firmenfeier, Hochzeiten und privaten Feiern."
       },
       "hero": {
         "eyebrow": "Event Impressionen",
@@ -1366,20 +1360,20 @@
       },
       "layout": {
         "heroTitle": "VELO.BAR München",
-        "heroSubtitle": "Münchens Premium Mobile Bar für Firmenfeiern & Events. Jetzt unverbindlich anfragen.",
+        "heroSubtitle": "Münchens Premium Mobile Bar für Firmenfeier & Events. Jetzt unverbindlich anfragen.",
         "heroImageAlt": "Velo.Bar München — Bartender am mobilen Bar-Fahrrad",
         "packagesTitle": "Unsere Angebote für München & Umgebung",
         "faqTitle": "Häufige Fragen",
         "testimonialsTitle": "Was unsere Münchner Kunden sagen",
         "ctaTitle": "Bereit für deine mobile Bar in München?",
-        "ctaSubtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
+        "ctaSubtitle": "Kontaktiere uns für ein unverbindliches Angebot",
         "ctaButtonText": "Jetzt anfragen!"
       }
     },
     "bookingCoburg": {
       "seo": {
         "title": "Coburg Buchung | Mobile Bar Coburg & Umgebung | Velo.Bar",
-        "description": "Buchen Sie die mobile Velo.Bar für Ihr Event in Coburg. Cocktailbar und Gin-Tastings für private und Firmenfeiern."
+        "description": "Buchen Sie die mobile Velo.Bar für Ihr Event in Coburg. Cocktailbar und Gin-Tastings für private und Firmenfeier."
       },
       "layout": {
         "heroTitle": "VELO.BAR Coburg",
@@ -1387,8 +1381,8 @@
         "packagesTitle": "Unsere Angebote für Coburg & Umgebung",
         "faqTitle": "Häufig gestellte Fragen",
         "testimonialsTitle": "Was unsere Coburger Kunden sagen",
-        "ctaTitle": "Bereit für Ihre mobile Bar in Coburg?",
-        "ctaSubtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
+        "ctaTitle": "Bereit für deine mobile Bar in Coburg?",
+        "ctaSubtitle": "Kontaktiere uns für ein unverbindliches Angebot",
         "ctaButtonText": "Jetzt anfragen!"
       },
       "coburgSection": {
@@ -1573,7 +1567,7 @@
           "intro": "Direkte Antworten zur Budgetplanung",
           "q1": {
             "question": "Was kostet eine mobile Bar für eine Firmenfeier?",
-            "answer": "Eine mobile Bar für Firmenfeiern kostet ab 1.190€ für 4 Stunden (50 Gäste). Premium-Pakete mit Signature-Drinks und Branding ab 2.190€. Alle Preise inklusive Barkeeper, Glas, Zutaten und Equipment – vollständig autark ohne Strom."
+            "answer": "Eine mobile Bar für Firmenfeier kostet ab 1.190€ für 4 Stunden (50 Gäste). Premium-Pakete mit Signature-Drinks und Branding ab 2.190€. Alle Preise inklusive Barkeeper, Glas, Zutaten und Equipment – vollständig autark ohne Strom."
           },
           "q2": {
             "question": "Wie viel Platz wird für eine mobile Cocktailbar benötigt?",
@@ -1584,11 +1578,11 @@
           "title": "Buchung & Cocktail-Auswahl",
           "intro": "Wichtige Tipps für Ihre Firmenfeier-Planung",
           "q1": {
-            "question": "Wie lange vorher sollte man eine mobile Bar für Firmenfeiern buchen?",
+            "question": "Wie lange vorher sollte man eine mobile Bar für Firmenfeier buchen?",
             "answer": "Buchen Sie 4-6 Wochen im Voraus für beste Verfügbarkeit. Kurzfristige Buchungen bis 1 Woche vorher möglich, abhängig von Kapazität. Saisonhochpunkte (November/Dezember) früher reservieren."
           },
           "q2": {
-            "question": "Welche Cocktails eignen sich am besten für Firmenfeiern?",
+            "question": "Welche Cocktails eignen sich am besten für Firmenfeier?",
             "answer": "Beliebte Firmenfeier-Cocktails: Aperol Spritz, Gin Tonic, Prosecco mit Beeren, Mojito. Diese benötigen 30-60 Sekunden pro Drink, ermöglichen hohen Durchsatz und gefallen den meisten Gästen."
           }
         },
@@ -1624,12 +1618,12 @@
         "title": "Weitere Services für Unternehmen"
       },
       "faqAccordion": {
-        "title": "Häufige Fragen zu Firmenfeiern",
+        "title": "Häufige Fragen zur Firmenfeier",
         "subtitle": "Alle wichtigen Informationen für Ihre Planung"
       },
       "schema": {
-        "serviceName": "Cocktail-Catering für Firmenfeiern",
-        "serviceDescription": "Premium mobile Cocktailbar für Firmenfeiern in München. All-inclusive Barkeeper-Service für 50-500+ Gäste. Autark ohne Strom oder Wasseranschluss.",
+        "serviceName": "Cocktail-Catering für Firmenfeier",
+        "serviceDescription": "Premium mobile Cocktailbar für Firmenfeier in München. All-inclusive Barkeeper-Service für 50-500+ Gäste. Autark ohne Strom oder Wasseranschluss.",
         "areaServed": {
           "munich": "München",
           "coburg": "Coburg",
@@ -1637,7 +1631,7 @@
         },
         "breadcrumb": {
           "home": "Home",
-          "current": "Firmenfeiern"
+          "current": "Firmenfeier"
         }
       }
     },
@@ -1650,11 +1644,11 @@
         "ctaFallback": "Angebot anfordern"
       },
       "faq": {
-        "title": "Häufige Fragen zu Weihnachtsfeiern"
+        "title": "Häufige Fragen zur Weihnachtsfeier"
       },
       "finalCta": {
         "title": "Jetzt Weihnachtsfeier anfragen",
-        "subtitle": "Sichern Sie sich Ihren Wunschtermin für die Weihnachtssaison",
+        "subtitle": "Sichere dir deinen Wunschtermin für die Weihnachtssaison",
         "button": "Unverbindlich anfragen"
       },
       "schema": {
@@ -1667,7 +1661,7 @@
         },
         "breadcrumb": {
           "home": "Home",
-          "current": "Weihnachtsfeiern"
+          "current": "Weihnachtsfeier"
         }
       }
     },
@@ -1757,7 +1751,7 @@
           "2": "Mitarbeiter-Incentives",
           "3": "Abteilungs-Ausflüge",
           "4": "Onboarding-Events",
-          "5": "Weihnachtsfeiern (interaktiv)",
+          "5": "Weihnachtsfeier (interaktiv)",
           "6": "Kundenevents"
         },
         "note": "Auch für private Gruppen: JGA, Geburtstage, Freundeskreise!"
@@ -1874,9 +1868,9 @@
       "title": "Häufig gestellte Fragen"
     },
     "cta": {
-      "title": "Bereit für Ihr Event?",
-      "subtitle": "Kontaktieren Sie uns für ein unverbindliches Angebot",
-      "button": "Jetzt anfragen"
+      "title": "Bereit für dein Event:",
+      "subtitle": "Sichere dir jetzt deine mobile Cocktailbar für dein nächstes Event! Egal ob München oder Coburg – wir bringen die mobile Cocktailbar zu deinem Event.",
+      "button": "Jetzt unverbindlich anfragen"
     }
   },
   "common": {
@@ -1935,11 +1929,11 @@
   },
   "pricing": {
     "seoTitle": "Preise & Pakete | Mobile Cocktailbar | Velo.Bar",
-    "seoDescription": "Transparente Preise für mobile Cocktailbar-Services in München und Coburg. All-inclusive Pakete ab 500€.",
+    "seoDescription": "Transparente Preise für mobile Cocktailbar-Services in München und Coburg. All-inclusive Pakete ab 499€.",
     "schema": {
       "product": {
         "name": "Mobile Cocktailbar Event Catering",
-        "description": "Mobile Cocktailbar mit professionellen Barkeepern für Firmenfeiern, Hochzeiten und Events"
+        "description": "Mobile Cocktailbar mit professionellen Barkeepern für Firmenfeier, Hochzeiten und Events"
       },
       "offers": {
         "starter": {
@@ -1960,7 +1954,7 @@
     "packages": {
       "starter": {
         "name": "Starter",
-        "price": "ab 500 €",
+        "price": "ab 499 €",
         "features": {
           "0": "An- und Abfahrt",
           "1": "Auf- und Abbau",
@@ -1974,7 +1968,7 @@
       "professional": {
         "name": "Professional",
         "badge": "Beliebtestes",
-        "price": "ab 1.500 €",
+        "price": "ab 1.499 €",
         "features": {
           "0": "An- und Abfahrt",
           "1": "Auf- und Abbau",
@@ -1987,7 +1981,7 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "ab 3.000 €",
+        "price": "ab 2.999 €",
         "features": {
           "0": "An- und Abfahrt",
           "1": "Auf- und Abbau",
@@ -2000,7 +1994,7 @@
       }
     },
     "included": {
-      "title": "Was ist immer inklusive?",
+      "title": "Was du bekommst",
       "items": {
         "spirits": {
           "title": "Premium Spirituosen",
@@ -2087,10 +2081,10 @@
     }
   },
   "finalCta": {
-    "title": "Bereit für Ihr Event?",
-    "subtitle": "Sichern Sie sich jetzt Ihre mobile Cocktailbar für Ihr nächstes Event!",
-    "description": "Egal ob München oder Coburg – wir bringen die mobile Cocktailbar zu Ihrem Event. Jetzt unverbindlich anfragen!",
-    "text": "Wir bringen die mobile Cocktailbar zu Ihrem Event – jetzt Angebot anfordern!",
+    "title": "Bereit für dein Event:",
+    "subtitle": "Sichere dir jetzt deine mobile Cocktailbar für dein nächstes Event!",
+    "description": "Egal ob München oder Coburg – wir bringen die mobile Cocktailbar zu deinem Event.",
+    "text": "Egal ob München oder Coburg – wir bringen die mobile Cocktailbar zu deinem Event. Jetzt unverbindlich anfragen!",
     "button": "Jetzt unverbindlich anfragen"
   },
   "testimonialsSection": {
