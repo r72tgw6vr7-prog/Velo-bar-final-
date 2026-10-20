@@ -143,7 +143,7 @@ export const ServiceCards: React.FC<ServiceCardsProps> = ({ services = DEFAULT_S
                   <h3
                     className={cn(
                       'font-headline text-2xl font-bold md:text-4xl',
-                      'mb-6 leading-tight text-text-strong',
+                      'text-text-strong mb-6 leading-tight',
                     )}
                   >
                     {service.mainTitle}
@@ -155,7 +155,7 @@ export const ServiceCards: React.FC<ServiceCardsProps> = ({ services = DEFAULT_S
                       <li
                         key={index}
                         className={cn(
-                          'font-body text-sm text-text-body',
+                          'font-body text-text-body text-sm',
                           'flex items-center justify-center gap-2',
                           'before:text-color-coral before:text-lg before:content-["•"]',
                         )}
@@ -176,10 +176,7 @@ export const ServiceCards: React.FC<ServiceCardsProps> = ({ services = DEFAULT_S
                       {service.price}
                     </span>
 
-                    <a 
-                      href={service.ctaHref} 
-                      className='btn-primary w-full justify-center'
-                    >
+                    <a href={service.ctaHref} className='btn-primary w-full justify-center'>
                       {service.ctaText}
                     </a>
                   </div>

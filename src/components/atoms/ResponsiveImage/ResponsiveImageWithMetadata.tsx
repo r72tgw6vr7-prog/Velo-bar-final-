@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ResponsiveImage, ResponsiveImageProps } from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
+import {
+  ResponsiveImage,
+  ResponsiveImageProps,
+} from '@/components/atoms/ResponsiveImage/ResponsiveImage.tsx';
 import { getImageMeta } from '@/utils/image-metadata.ts';
 import { resolvePublicPath } from '@/utils/resolvePublicPath.ts';
 
@@ -47,5 +50,12 @@ export const ResponsiveImageWithMetadata: React.FC<ResponsiveImageWithMetadataPr
     })();
   }, [src]);
 
-  return <ResponsiveImage src={src} placeholder={meta.placeholder} aspectRatio={meta.aspectRatio} {...props} />;
+  return (
+    <ResponsiveImage
+      src={src}
+      placeholder={meta.placeholder}
+      aspectRatio={meta.aspectRatio}
+      {...props}
+    />
+  );
 };

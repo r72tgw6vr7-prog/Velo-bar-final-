@@ -226,7 +226,10 @@ export const HeroParallax = ({ className = '' }: HeroParallaxProps) => {
         const rowOffset = rowIndex * 2;
 
         return (
-          <div key={`row-${rowIndex}`} className={`hero-parallax-track ${rowIndex % 2 === 1 ? 'scroll-right' : ''}`}>
+          <div
+            key={`row-${rowIndex}`}
+            className={`hero-parallax-track ${rowIndex % 2 === 1 ? 'scroll-right' : ''}`}
+          >
             <div className='hero-parallax-group'>
               {repeatedRow.map((photo, index) => (
                 <div

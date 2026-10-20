@@ -58,7 +58,10 @@ export function BackgroundGradientAnimation() {
 
   return (
     <div
-      className={cn('vb-fixed-bg fixed top-0 left-0 z-0 overflow-hidden pointer-events-none', 'bg-guardian-hero')}
+      className={cn(
+        'vb-fixed-bg pointer-events-none fixed top-0 left-0 z-0 overflow-hidden',
+        'bg-guardian-hero',
+      )}
       style={{ backgroundColor: 'rgba(0, 49, 65, 0.15)' }}
       aria-hidden='true'
     >

@@ -231,9 +231,7 @@ function CookieSettings() {
           <div className='flex items-center justify-between'>
             <div>
               <h3 className='font-medium text-white'>{t('cookieConsent.essential.title')}</h3>
-              <p className='text-sm text-neutral-400'>
-                {t('cookieConsent.essential.description')}
-              </p>
+              <p className='text-sm text-neutral-400'>{t('cookieConsent.essential.description')}</p>
             </div>
             <input
               type='checkbox'
@@ -247,9 +245,7 @@ function CookieSettings() {
           <div className='flex items-center justify-between'>
             <div>
               <h3 className='font-medium text-white'>{t('cookieConsent.analytics.title')}</h3>
-              <p className='text-sm text-neutral-400'>
-                {t('cookieConsent.analytics.description')}
-              </p>
+              <p className='text-sm text-neutral-400'>{t('cookieConsent.analytics.description')}</p>
             </div>
             <input
               type='checkbox'
@@ -263,9 +259,7 @@ function CookieSettings() {
           <div className='flex items-center justify-between'>
             <div>
               <h3 className='font-medium text-white'>{t('cookieConsent.marketing.title')}</h3>
-              <p className='text-sm text-neutral-400'>
-                {t('cookieConsent.marketing.description')}
-              </p>
+              <p className='text-sm text-neutral-400'>{t('cookieConsent.marketing.description')}</p>
             </div>
             <input
               type='checkbox'

@@ -202,7 +202,10 @@ export function TestimonialsCarousel({
               className={cn('hidden md:flex')}
               aria-label={t('testimonialsCarousel.aria.previous')}
             />
-            <CarouselNext className={cn('hidden md:flex')} aria-label={t('testimonialsCarousel.aria.next')} />
+            <CarouselNext
+              className={cn('hidden md:flex')}
+              aria-label={t('testimonialsCarousel.aria.next')}
+            />
           </Carousel>
         </div>
       </Container>

@@ -1,6 +1,7 @@
 import { useEffect, useState, useLayoutEffect } from 'react';
 
 // Add type declaration for Vite's import.meta.env
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface ImportMetaEnv {
   DEV: boolean;
   PROD: boolean;

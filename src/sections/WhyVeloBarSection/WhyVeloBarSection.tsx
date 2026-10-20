@@ -53,10 +53,7 @@ export interface WhyVeloBarSectionProps {
   }>;
 }
 
-export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({
-  className,
-  cards,
-}) => {
+export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({ className, cards }) => {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -127,7 +124,9 @@ export const WhyVeloBarSection: React.FC<WhyVeloBarSectionProps> = ({
       <Container size='default'>
         {/* Section Header */}
         <div className='mx-auto mb-12 max-w-3xl text-center'>
-          <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>{t('whyVeloBarSection.title')}</h2>
+          <h2 className='text-accent mt-4 text-3xl font-bold md:text-4xl'>
+            {t('whyVeloBarSection.title')}
+          </h2>
           <p className='mt-4 text-base font-semibold text-white md:text-lg'>
             {t('whyVeloBarSection.subtitle')}
           </p>

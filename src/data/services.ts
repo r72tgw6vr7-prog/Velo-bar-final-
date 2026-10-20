@@ -12,7 +12,11 @@
  * @see {@link ../schemas/service.ts} for validation schemas
  */
 
-import type { ServicePackage, FAQ, Testimonial } from '@/components/templates/ServicePageLayout.tsx';
+import type {
+  ServicePackage,
+  FAQ,
+  Testimonial,
+} from '@/components/templates/ServicePageLayout.tsx';
 import {
   validateServicePackages,
   validateFAQs,
@@ -727,7 +731,6 @@ export const serviceTestimonials = {
       rating: 5,
     },
   ] as Testimonial[],
-
 };
 
 // New: getters that build localized content using t()
@@ -971,9 +974,9 @@ export function getServiceTestimonials(t: (key: string) => string): Record<strin
   };
 }
 
-  // Testimonials moved to locales (de.json / en.json). Use `getServiceTestimonials(t)` for locale-driven content.
+// Testimonials moved to locales (de.json / en.json). Use `getServiceTestimonials(t)` for locale-driven content.
 
-  // (static German testimonial content removed — moved to `src/locales/de.json` and translated manually into `src/locales/en.json`)
+// (static German testimonial content removed — moved to `src/locales/de.json` and translated manually into `src/locales/en.json`)
 
 // Helper function to get all testimonials for a service (shared + specific)
 export const getTestimonialsFor = (service: keyof typeof serviceTestimonials): Testimonial[] => {

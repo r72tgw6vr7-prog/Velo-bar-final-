@@ -3,7 +3,6 @@ import {
   validEventTypes,
   validGuestRanges,
 } from '@/components/organisms/BookingWizard/constants.ts';
-import { LocationId } from '@/lib/locations';
 
 /**
  * Single-step booking form (BookingForm.ts schema

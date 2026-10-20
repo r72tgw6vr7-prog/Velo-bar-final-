@@ -5,9 +5,18 @@ let inStr = false;
 let esc = false;
 for (let i = 0; i < s.length; i++) {
   const c = s[i];
-  if (esc) { esc = false; continue; }
-  if (c === '\\') { esc = true; continue; }
-  if (c === '"') { inStr = !inStr; continue; }
+  if (esc) {
+    esc = false;
+    continue;
+  }
+  if (c === '\\') {
+    esc = true;
+    continue;
+  }
+  if (c === '"') {
+    inStr = !inStr;
+    continue;
+  }
   if (!inStr) {
     if (c === '{') depth++;
     else if (c === '}') {

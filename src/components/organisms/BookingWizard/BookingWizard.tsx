@@ -33,9 +33,10 @@ import Clock from 'lucide-react/dist/esm/icons/clock';
 import Wine from 'lucide-react/dist/esm/icons/wine';
 import Briefcase from 'lucide-react/dist/esm/icons/briefcase';
 import Gift from 'lucide-react/dist/esm/icons/gift';
-import MapPin from 'lucide-react/dist/esm/icons/map-pin';;
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';
 import { Button } from '@/components/atoms/Button/index.ts';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { csrfFetch } from '@/lib/csrfHelper.ts';
 import {
   trackBookingStepView,
   trackBookingSubmitError,
@@ -280,7 +281,10 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
 
     try {
       // Normalize eventType and guestCount for API (server expects English enum + numeric guestCount)
-      const EVENT_TYPE_MAP: Record<string, 'corporate' | 'wedding' | 'birthday' | 'christmas' | 'other'> = {
+      const EVENT_TYPE_MAP: Record<
+        string,
+        'corporate' | 'wedding' | 'birthday' | 'christmas' | 'other'
+      > = {
         firmenfeier: 'corporate',
         hochzeit: 'wedding',
         weihnachtsfeier: 'christmas',
@@ -313,9 +317,10 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
         vatId: data.vatId || undefined,
         costCenter: data.costCenter || undefined,
         source: urlSource,
+        website: data.website || undefined,
       };
 
-      const response = await fetch(ep.booking(), {
+      const response = await csrfFetch(ep.booking(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookingPayload),
@@ -340,9 +345,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
       trackBookingSubmitError(errorMessage, urlSource);
 
       console.error('Booking wizard error:', error);
-      setSubmitError(
-        'Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder rufe uns an.',
-      );
+      setSubmitError('Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder rufe uns an.');
     } finally {
       setIsSubmitting(false);
     }
@@ -415,16 +418,14 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           >
             <div
               className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-lg ${
-                location === loc.id
-                  ? 'bg-[#fff8ec] text-[#003141]'
-                  : 'bg-[#003141] text-[#fff8ec]'
+                location === loc.id ? 'bg-[#fff8ec] text-[#003141]' : 'bg-[#003141] text-[#fff8ec]'
               }`}
             >
               <loc.icon size={28} />
             </div>
             <div>
               <div
-                className={`font-(--typography-font-weight-bold) text-xl ${
+                className={`text-xl font-(--typography-font-weight-bold) ${
                   location === loc.id ? 'text-[#fff8ec]' : 'text-[#003141]'
                 }`}
               >
@@ -672,7 +673,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           className='w-full rounded-xl border-2 border-[#003141] bg-[#fff8ec] px-8 py-4 text-[#003141] focus:border-[#ee7868] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none'
         />
       </div>
-      
+
       <div>
         <label className='mb-0 block font-(--typography-font-weight-medium) text-(--typography-body-small) text-[#fff8ec]'>
           Weitere Informationen (optional)
@@ -684,7 +685,7 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
           className='w-full resize-none rounded-xl border-2 border-[#003141] bg-[#fff8ec] px-8 py-4 text-[#003141] focus:border-[#ee7868] focus:ring-2 focus:ring-[#ee7868]/20 focus:outline-none'
         />
       </div>
-      
+
       <div className='flex items-start gap-3'>
         <input
           type='checkbox'
@@ -733,10 +734,14 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
             <Check className='text-green-600' size={40} />
           </div>
           <h3 className='mb-8 font-(--typography-font-weight-bold) text-(--typography-headline-lg) text-[#fff8ec]'>
-            {isSubmitting ? t('bookingWizard.step4.submittingTitle') : t('bookingWizard.step4.successTitle')}
+            {isSubmitting
+              ? t('bookingWizard.step4.submittingTitle')
+              : t('bookingWizard.step4.successTitle')}
           </h3>
           <p className='mx-auto mb-8 max-w-md text-(--typography-body-standard) text-[#fff8ec]/80'>
-            {isSubmitting ? t('bookingWizard.step4.submittingDetail') : t('bookingWizard.step4.successDetail')}
+            {isSubmitting
+              ? t('bookingWizard.step4.submittingDetail')
+              : t('bookingWizard.step4.successDetail')}
           </p>
 
           {isComplete && (
@@ -748,11 +753,15 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 <div className='space-y-0 text-(--typography-body-small) text-[#003141]/80'>
                   <div>
                     <strong>{t('bookingWizard.summary.location')}:</strong>{' '}
-                    {watch('location') ? t(`bookingWizard.locations.${watch('location')}.label`) : '—'}
+                    {watch('location')
+                      ? t(`bookingWizard.locations.${watch('location')}.label`)
+                      : '—'}
                   </div>
                   <div>
                     <strong>{t('bookingWizard.summary.event')}:</strong>{' '}
-                    {watch('eventType') ? t(`bookingWizard.eventTypes.${watch('eventType')}.label`) : '—'}
+                    {watch('eventType')
+                      ? t(`bookingWizard.eventTypes.${watch('eventType')}.label`)
+                      : '—'}
                   </div>
                   <div>
                     <strong>{t('bookingWizard.summary.guests')}:</strong>{' '}
@@ -806,11 +815,13 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
                   <strong>{t('bookingWizard.review.fields.location')}:</strong>{' '}
-                  {watch('location') ? t(`bookingWizard.locations.${watch('location')}.label`) : '—'}
+                  {watch('location')
+                    ? t(`bookingWizard.locations.${watch('location')}.label`)
+                    : '—'}
                 </div>
               </div>
             </div>
-            
+
             <div className='border-b border-[#003141]/20 pb-8'>
               <h5 className='mb-8 font-(--typography-font-weight-medium) text-[#003141]'>
                 {t('bookingWizard.review.sections.eventDetails')}
@@ -818,7 +829,9 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
                   <strong>{t('bookingWizard.review.fields.eventType')}:</strong>{' '}
-                  {watch('eventType') ? t(`bookingWizard.eventTypes.${watch('eventType')}.label`) : '—'}
+                  {watch('eventType')
+                    ? t(`bookingWizard.eventTypes.${watch('eventType')}.label`)
+                    : '—'}
                 </div>
                 <div>
                   <strong>{t('bookingWizard.review.fields.guestCount')}:</strong>{' '}
@@ -827,7 +840,8 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                     : '—'}
                 </div>
                 <div>
-                  <strong>{t('bookingWizard.review.fields.date')}:</strong> {watch('eventDate') || '—'}
+                  <strong>{t('bookingWizard.review.fields.date')}:</strong>{' '}
+                  {watch('eventDate') || '—'}
                 </div>
               </div>
             </div>
@@ -838,7 +852,8 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
               </h5>
               <div className='grid grid-cols-1 gap-8 text-(--typography-body-small) text-[#003141]/80 sm:grid-cols-2'>
                 <div>
-                  <strong>{t('bookingWizard.review.fields.company')}:</strong> {watch('company') || '—'}
+                  <strong>{t('bookingWizard.review.fields.company')}:</strong>{' '}
+                  {watch('company') || '—'}
                 </div>
                 <div>
                   <strong>{t('bookingWizard.review.fields.name')}:</strong> {watch('firstName')}{' '}
@@ -956,7 +971,9 @@ export const BookingWizard: React.FC<BookingWizardProps> = ({
                 disabled={isSubmitting}
                 className='min-w-[140px]'
               >
-                {isSubmitting ? t('bookingWizard.actions.sending') : t('bookingWizard.actions.submit')}
+                {isSubmitting
+                  ? t('bookingWizard.actions.sending')
+                  : t('bookingWizard.actions.submit')}
                 <ArrowRight className='ml-2' size={16} />
               </Button>
             )}

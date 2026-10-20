@@ -1,5 +1,9 @@
 import React from 'react';
-import { useAnalytics, useScrollDepthTracking, useTimeOnPageTracking } from '../hooks/useAnalytics.ts';
+import {
+  useAnalytics,
+  useScrollDepthTracking,
+  useTimeOnPageTracking,
+} from '../hooks/useAnalytics.ts';
 import { useWebVitals } from '../hooks/useWebVitals.ts';
 
 interface AnalyticsProviderProps {

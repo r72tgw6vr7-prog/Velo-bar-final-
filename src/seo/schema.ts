@@ -523,7 +523,6 @@ export function getMesseCateringPillarSchema() {
             name: 'Messe-Catering',
             item: `${SITE_URL}/messe-catering`,
           },
-
         ],
       },
     ],

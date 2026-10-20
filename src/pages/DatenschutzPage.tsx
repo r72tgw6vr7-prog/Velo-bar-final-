@@ -30,17 +30,13 @@ export function DatenschutzPage({ language: _language = 'DE' }: DatenschutzPageP
         <div className='mx-auto max-w-4xl px-8 py-16 sm:px-8 lg:px-8'>
           {/* Introduction */}
           <section className='mb-16'>
-            <p className='mb-8 leading-relaxed text-white/70'>
-              {t('pages.datenschutz.intro.p1')}
-            </p>
+            <p className='mb-8 leading-relaxed text-white/70'>{t('pages.datenschutz.intro.p1')}</p>
             <ul className='mb-8 list-disc space-y-0 pl-8 text-white/70'>
               <li>{t('pages.datenschutz.intro.list1.0')}</li>
               <li>{t('pages.datenschutz.intro.list1.1')}</li>
               <li>{t('pages.datenschutz.intro.list1.2')}</li>
             </ul>
-            <p className='mb-8 leading-relaxed text-white/70'>
-              {t('pages.datenschutz.intro.p2')}
-            </p>
+            <p className='mb-8 leading-relaxed text-white/70'>{t('pages.datenschutz.intro.p2')}</p>
             <ul className='mb-8 list-disc space-y-0 pl-8 text-white/70'>
               <li>{t('pages.datenschutz.intro.list2.0')}</li>
               <li>{t('pages.datenschutz.intro.list2.1')}</li>
@@ -49,14 +45,14 @@ export function DatenschutzPage({ language: _language = 'DE' }: DatenschutzPageP
               <li>{t('pages.datenschutz.intro.list2.4')}</li>
               <li>{t('pages.datenschutz.intro.list2.5')}</li>
             </ul>
-            <p className='mb-8 leading-relaxed text-white/70'>
-              {t('pages.datenschutz.intro.p3')}
-            </p>
+            <p className='mb-8 leading-relaxed text-white/70'>{t('pages.datenschutz.intro.p3')}</p>
           </section>
 
           {/* Definitions */}
           <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-2xl font-bold'>{t('pages.datenschutz.cookies.heading')}</h2>
+            <h2 className='text-on-light mb-8 text-2xl font-bold'>
+              {t('pages.datenschutz.cookies.heading')}
+            </h2>
             <p className='mb-8 leading-relaxed text-white/70'>
               {t('pages.datenschutz.cookies.p1')}
             </p>
@@ -100,7 +96,9 @@ export function DatenschutzPage({ language: _language = 'DE' }: DatenschutzPageP
 
           {/* Sections */}
           <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-2xl font-bold'>{t('pages.datenschutz.hosting.heading')}</h2>
+            <h2 className='text-on-light mb-8 text-2xl font-bold'>
+              {t('pages.datenschutz.hosting.heading')}
+            </h2>
             <p className='mb-8 leading-relaxed text-white/70'>
               {t('pages.datenschutz.hosting.p1')}
             </p>
@@ -113,10 +111,10 @@ export function DatenschutzPage({ language: _language = 'DE' }: DatenschutzPageP
               {t('pages.datenschutz.hosting.p2')}
             </p>
 
-            <h2 className='text-on-light mb-8 text-2xl font-bold'>{t('pages.datenschutz.fonts.heading')}</h2>
-            <p className='mb-8 leading-relaxed text-white/70'>
-              {t('pages.datenschutz.fonts.p1')}
-            </p>
+            <h2 className='text-on-light mb-8 text-2xl font-bold'>
+              {t('pages.datenschutz.fonts.heading')}
+            </h2>
+            <p className='mb-8 leading-relaxed text-white/70'>{t('pages.datenschutz.fonts.p1')}</p>
             <ul className='mb-8 list-disc space-y-0 pl-8 text-white/70'>
               <li>{t('pages.datenschutz.fonts.list.0')}</li>
               <li>{t('pages.datenschutz.fonts.list.1')}</li>

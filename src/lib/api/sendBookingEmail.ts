@@ -14,9 +14,29 @@ const EVENT_TYPE_LABELS: Record<string, string> = {
   other: 'Sonstiges',
 };
 
+function escapeHtml(value: string | undefined | null): string {
+  if (value == null) return '';
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function generateInternalHtml(data: BookingPayload): string {
-  const locationLabel = LOCATION_LABELS[data.location] || data.location;
-  const eventTypeLabel = EVENT_TYPE_LABELS[data.eventType] || data.eventType;
+  const locationLabel = escapeHtml(LOCATION_LABELS[data.location] || data.location);
+  const eventTypeLabel = escapeHtml(EVENT_TYPE_LABELS[data.eventType] || data.eventType);
+  const company = escapeHtml(data.company);
+  const customerName = escapeHtml(data.customerName);
+  const customerEmail = escapeHtml(data.customerEmail);
+  const phone = escapeHtml(data.phone);
+  const guestCount = escapeHtml(data.guestCount);
+  const eventDate = escapeHtml(data.eventDate);
+  const vatId = escapeHtml(data.vatId);
+  const costCenter = escapeHtml(data.costCenter);
+  const source = escapeHtml(data.source);
+  const message = data.message ? escapeHtml(data.message).replace(/\n/g, '<br>') : '';
 
   return `
 <!DOCTYPE html>
@@ -47,58 +67,78 @@ function generateInternalHtml(data: BookingPayload): string {
     <div class="content">
       <div class="field">
         <div class="label">Unternehmen</div>
-        <div class="value">${data.company}</div>
+        <div class="value">${company}</div>
       </div>
       <div class="field">
         <div class="label">Kontaktperson</div>
-        <div class="value">${data.customerName}</div>
+        <div class="value">${customerName}</div>
       </div>
       <div class="field">
         <div class="label">E-Mail</div>
-        <div class="value"><a href="mailto:${data.customerEmail}">${data.customerEmail}</a></div>
+        <div class="value"><a href="mailto:${customerEmail}">${customerEmail}</a></div>
       </div>
-      ${data.phone ? `
+      ${
+        phone
+          ? `
       <div class="field">
         <div class="label">Telefon</div>
-        <div class="value"><a href="tel:${data.phone}">${data.phone}</a></div>
+        <div class="value"><a href="tel:${phone}">${phone}</a></div>
       </div>
-      ` : ''}
+      `
+          : ''
+      }
       <div class="field">
         <div class="label">Event-Typ</div>
         <div class="value">${eventTypeLabel}</div>
       </div>
       <div class="field">
         <div class="label">Gästeanzahl</div>
-        <div class="value">${data.guestCount}</div>
+        <div class="value">${guestCount}</div>
       </div>
       <div class="field">
         <div class="label">Wunschtermin</div>
-        <div class="value">${data.eventDate}</div>
+        <div class="value">${eventDate}</div>
       </div>
-      ${data.vatId ? `
+      ${
+        vatId
+          ? `
       <div class="field">
         <div class="label">USt-ID</div>
-        <div class="value">${data.vatId}</div>
+        <div class="value">${vatId}</div>
       </div>
-      ` : ''}
-      ${data.costCenter ? `
+      `
+          : ''
+      }
+      ${
+        costCenter
+          ? `
       <div class="field">
         <div class="label">Kostenstelle</div>
-        <div class="value">${data.costCenter}</div>
+        <div class="value">${costCenter}</div>
       </div>
-      ` : ''}
-      ${data.message ? `
+      `
+          : ''
+      }
+      ${
+        message
+          ? `
       <div class="field">
         <div class="label">Nachricht</div>
-        <div class="message-box">${data.message.replace(/\n/g, '<br>')}</div>
+        <div class="message-box">${message}</div>
       </div>
-      ` : ''}
-      ${data.source ? `
+      `
+          : ''
+      }
+      ${
+        source
+          ? `
       <div class="field">
         <div class="label">Quelle</div>
-        <div class="value" style="font-size: 12px; color: #666;">${data.source}</div>
+        <div class="value" style="font-size: 12px; color: #666;">${source}</div>
       </div>
-      ` : ''}
+      `
+          : ''
+      }
     </div>
   </div>
 </body>
@@ -107,8 +147,11 @@ function generateInternalHtml(data: BookingPayload): string {
 }
 
 function generateCustomerHtml(data: BookingPayload): string {
-  const locationLabel = LOCATION_LABELS[data.location] || data.location;
-  const eventTypeLabel = EVENT_TYPE_LABELS[data.eventType] || data.eventType;
+  const locationLabel = escapeHtml(LOCATION_LABELS[data.location] || data.location);
+  const eventTypeLabel = escapeHtml(EVENT_TYPE_LABELS[data.eventType] || data.eventType);
+  const customerName = escapeHtml(data.customerName);
+  const guestCount = escapeHtml(data.guestCount);
+  const eventDate = escapeHtml(data.eventDate);
 
   return `
 <!DOCTYPE html>
@@ -138,7 +181,7 @@ function generateCustomerHtml(data: BookingPayload): string {
       <h1>Vielen Dank für Ihre Anfrage!</h1>
     </div>
     <div class="content">
-      <p>Sehr geehrte/r ${data.customerName},</p>
+      <p>Sehr geehrte/r ${customerName},</p>
       <p>wir haben Ihre Buchungsanfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
       
       <div class="summary">
@@ -152,11 +195,11 @@ function generateCustomerHtml(data: BookingPayload): string {
         </div>
         <div class="summary-item">
           <span class="summary-label">Gästeanzahl</span>
-          <span class="summary-value">${data.guestCount}</span>
+          <span class="summary-value">${guestCount}</span>
         </div>
         <div class="summary-item">
           <span class="summary-label">Wunschtermin</span>
-          <span class="summary-value">${data.eventDate}</span>
+          <span class="summary-value">${eventDate}</span>
         </div>
       </div>
 
@@ -193,9 +236,10 @@ export async function sendBookingEmail(data: BookingPayload): Promise<void> {
   });
 
   // Route based on location
-  const internalEmail = data.location === 'munich' 
-    ? process.env.BOOKING_TO_MUNICH || 'Muenchen@velo-bar.com'
-    : process.env.BOOKING_TO_COBURG || 'coburg@velo-bar.com';
+  const internalEmail =
+    data.location === 'munich'
+      ? process.env.BOOKING_TO_MUNICH || 'Muenchen@velo-bar.com'
+      : process.env.BOOKING_TO_COBURG || 'coburg@velo-bar.com';
 
   const fromEmail = process.env.BOOKING_FROM_EMAIL || 'Velo Bar Booking <booking@velo-bar.com>';
   const replyTo = process.env.BOOKING_REPLY_TO_EMAIL || 'booking@velo-bar.com';
@@ -210,7 +254,7 @@ export async function sendBookingEmail(data: BookingPayload): Promise<void> {
       subject: `Neue Buchungsanfrage: ${data.company} – ${data.eventDate}`,
       html: generateInternalHtml(data),
     }),
-    
+
     // 2) Customer confirmation
     transporter.sendMail({
       from: fromEmail,

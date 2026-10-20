@@ -183,7 +183,7 @@ const FAQPage: React.FC = () => {
         {/* Voice Search Optimized FAQ Snippets */}
         <Section container='narrow' spacing='md' background='light'>
           <div className='mb-16 text-center'>
-            <h2 className='vb-heading-1 mb-8 text-center text-accent-primary'>
+            <h2 className='vb-heading-1 text-accent-primary mb-8 text-center'>
               {t('pages.faq.snippetSection.title')}
             </h2>
             <p className='vb-lead text-center'>{t('pages.faq.snippetSection.subtitle')}</p>
@@ -201,7 +201,7 @@ const FAQPage: React.FC = () => {
                       key={index}
                       className='snippet-block flex h-full flex-col rounded-r-lg bg-(--color-bg-surface) p-8'
                     >
-                      <h4 className='mb-8 text-base font-semibold text-accent-primary'>
+                      <h4 className='text-accent-primary mb-8 text-base font-semibold'>
                         {faq.question}
                       </h4>
                       <p className='text-sm leading-relaxed text-(--color-text-on-light-secondary)'>
@@ -210,15 +210,15 @@ const FAQPage: React.FC = () => {
                     </article>
                   ))}
                 </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+              </div>
+            ))}
+          </div>
+        </Section>
 
-      {/* Traditional FAQ Grid */}
-      <FAQSection items={faqItems} className='pt-0' />
-    </PageTemplate>
-  </SiteBackground>
+        {/* Traditional FAQ Grid */}
+        <FAQSection items={faqItems} className='pt-0' />
+      </PageTemplate>
+    </SiteBackground>
   );
 };
 

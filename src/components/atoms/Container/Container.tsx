@@ -44,8 +44,7 @@ const containerVariants = cva(
 );
 
 export interface ContainerProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'as'>,
-    VariantProps<typeof containerVariants> {
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'as'>, VariantProps<typeof containerVariants> {
   children: React.ReactNode;
   as?: React.ElementType; // Changed to React.ElementType for broader compatibility
   fluid?: boolean;

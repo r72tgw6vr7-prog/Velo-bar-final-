@@ -10,7 +10,12 @@ import type { FAQ, Testimonial } from '@/components/templates/ServicePageLayout.
 import { PageTemplate } from '@/templates/PageTemplate';
 import { SiteBackground } from '@/components/layout/SiteBackground';
 import { servicePackages, getServiceFAQs, getServiceTestimonials } from '@/data/services.ts';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, combineSchemas } from '@/seo/schema.ts';
+import {
+  getServiceSchema,
+  getBreadcrumbSchema,
+  getFAQSchema,
+  combineSchemas,
+} from '@/seo/schema.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.velo-bar.com';
@@ -41,8 +46,8 @@ const HochzeitenPage: React.FC = () => {
         faqs.map((faq) => ({
           question: faq.question,
           answer: faq.answer,
-        }))
-      )
+        })),
+      ),
     );
   }, [faqs]);
 
@@ -95,79 +100,80 @@ const HochzeitenPage: React.FC = () => {
   return (
     <SiteBackground>
       <PageTemplate
-      title='Hochzeit Bar München: Mobile Cocktailbar | 500+ Events ✨'
-      description='Traumhafte Cocktailbar für deine Hochzeit in München und Coburg. Vom Sektempfang bis zur Mitternachtsbar – professioneller Service für den schönsten Tag im Leben.'
-      canonicalPath='/hochzeiten'
-      structuredData={structuredData}
-      withContainer={false}
-    >
-      <ServicePageLayout
-        heroTitle='Hochzeiten'
-        heroSubtitle='Unvergessliche Cocktails für den schönsten Tag in deinem Leben – von Sektempfang bis Mitternachtsbar'
-        suitableFor={suitableFor}
-        processSteps={processSteps}
-        packages={packages}
-        packagesTitle='Unsere Hochzeits-Pakete'
-        faqs={faqs}
-        faqTitle='Häufig gestellte Fragen zu Hochzeiten'
-        testimonials={testimonials}
-        testimonialsTitle='Was unsere Brautpaare sagen'
-        ctaTitle='Bereit für eine traumhafte Hochzeit?'
-        ctaSubtitle='Lass uns Teil deines besonderen Tages werden – mit Cocktails, die in Erinnerung bleiben'
-        ctaButtonText='Jetzt Beratungsgespräch vereinbaren'
-        ctaButtonLink='/anfrage'
+        title='Hochzeit Bar München: Mobile Cocktailbar | 500+ Events ✨'
+        description='Traumhafte Cocktailbar für deine Hochzeit in München und Coburg. Vom Sektempfang bis zur Mitternachtsbar – professioneller Service für den schönsten Tag im Leben.'
+        canonicalPath='/hochzeiten'
+        structuredData={structuredData}
+        withContainer={false}
       >
-        <div className='grid items-center gap-16 md:grid-cols-2'>
-          <div>
-            <h3 className='text-accent-primary mb-8 text-3xl font-bold'>
-              Warum Velobar für deine Hochzeit?
-            </h3>
-            <ul className='space-y-8 text-white/80'>
-              <li>
-                <strong>Hochzeitserfahrung:</strong> Über 50 Hochzeiten erfolgreich betreut
-              </li>
-              <li>
-                <strong>Personalisierung:</strong> Signature-Drinks mit deinem Namen oder deinem
-                Branding
-              </li>
-              <li>
-                <strong>Eleganz:</strong> Stilvolle Präsentation passend zu deinem Hochzeitskonzept
-              </li>
-              <li>
-                <strong>Zuverlässigkeit:</strong> Pünktlich, diskret, professionell
-              </li>
-              <li>
-                <strong>All-Inclusive:</strong> Von Planung bis Abbau – du musst dich um nichts
-                kümmern
-              </li>
-            </ul>
-          </div>
-
-          <div className='space-y-8'>
-            <div className='bg-navy-primary border-accent-primary/15 flex h-full flex-col rounded-2xl border p-6'>
-              <h4 className='text-accent-primary mb-8 text-2xl font-bold'>
-                Beliebte Hochzeits-Cocktails
-              </h4>
-              <ul className='list-inside list-disc space-y-0 text-white/80'>
-                <li>Champagne Cocktails (Bellini, French 75)</li>
-                <li>Romantic Rosé Spritz</li>
-                <li>Strawberry Daiquiri</li>
-                <li>Elderflower Gin Fizz</li>
-                <li>Personalisierter Signature-Drink</li>
-                <li>Alkoholfreie Bridal Mocktails</li>
+        <ServicePageLayout
+          heroTitle='Hochzeiten'
+          heroSubtitle='Unvergessliche Cocktails für den schönsten Tag in deinem Leben – von Sektempfang bis Mitternachtsbar'
+          suitableFor={suitableFor}
+          processSteps={processSteps}
+          packages={packages}
+          packagesTitle='Unsere Hochzeits-Pakete'
+          faqs={faqs}
+          faqTitle='Häufig gestellte Fragen zu Hochzeiten'
+          testimonials={testimonials}
+          testimonialsTitle='Was unsere Brautpaare sagen'
+          ctaTitle='Bereit für eine traumhafte Hochzeit?'
+          ctaSubtitle='Lass uns Teil deines besonderen Tages werden – mit Cocktails, die in Erinnerung bleiben'
+          ctaButtonText='Jetzt Beratungsgespräch vereinbaren'
+          ctaButtonLink='/anfrage'
+        >
+          <div className='grid items-center gap-16 md:grid-cols-2'>
+            <div>
+              <h3 className='text-accent-primary mb-8 text-3xl font-bold'>
+                Warum Velobar für deine Hochzeit?
+              </h3>
+              <ul className='space-y-8 text-white/80'>
+                <li>
+                  <strong>Hochzeitserfahrung:</strong> Über 50 Hochzeiten erfolgreich betreut
+                </li>
+                <li>
+                  <strong>Personalisierung:</strong> Signature-Drinks mit deinem Namen oder deinem
+                  Branding
+                </li>
+                <li>
+                  <strong>Eleganz:</strong> Stilvolle Präsentation passend zu deinem
+                  Hochzeitskonzept
+                </li>
+                <li>
+                  <strong>Zuverlässigkeit:</strong> Pünktlich, diskret, professionell
+                </li>
+                <li>
+                  <strong>All-Inclusive:</strong> Von Planung bis Abbau – du musst dich um nichts
+                  kümmern
+                </li>
               </ul>
             </div>
 
-            <div className='from-accent-primary/10 border-accent-primary/20 flex h-full flex-col rounded-2xl border bg-linear-to-br to-black p-8'>
-              <h4 className='text-accent-primary mb-0 text-xl font-bold'>Hochzeits-Tipp</h4>
-              <p className='text-sm text-white/80'>
-                Buchen Sie früh! Hochzeiten im Mai-September sind sehr gefragt. Für Ihre
-                Traumhochzeit empfehlen wir eine Buchung 6-12 Monate im Voraus.
-              </p>
+            <div className='space-y-8'>
+              <div className='bg-navy-primary border-accent-primary/15 flex h-full flex-col rounded-2xl border p-6'>
+                <h4 className='text-accent-primary mb-8 text-2xl font-bold'>
+                  Beliebte Hochzeits-Cocktails
+                </h4>
+                <ul className='list-inside list-disc space-y-0 text-white/80'>
+                  <li>Champagne Cocktails (Bellini, French 75)</li>
+                  <li>Romantic Rosé Spritz</li>
+                  <li>Strawberry Daiquiri</li>
+                  <li>Elderflower Gin Fizz</li>
+                  <li>Personalisierter Signature-Drink</li>
+                  <li>Alkoholfreie Bridal Mocktails</li>
+                </ul>
+              </div>
+
+              <div className='from-accent-primary/10 border-accent-primary/20 flex h-full flex-col rounded-2xl border bg-linear-to-br to-black p-8'>
+                <h4 className='text-accent-primary mb-0 text-xl font-bold'>Hochzeits-Tipp</h4>
+                <p className='text-sm text-white/80'>
+                  Buchen Sie früh! Hochzeiten im Mai-September sind sehr gefragt. Für Ihre
+                  Traumhochzeit empfehlen wir eine Buchung 6-12 Monate im Voraus.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </ServicePageLayout>
+        </ServicePageLayout>
       </PageTemplate>
     </SiteBackground>
   );

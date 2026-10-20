@@ -13,7 +13,7 @@ type ServicesContentItem = {
   title: string;
   description: string;
   content: React.ReactNode;
- };
+};
 
 const ServicesPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);

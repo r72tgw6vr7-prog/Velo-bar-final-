@@ -287,7 +287,12 @@ export const venueDatabase: Record<string, VenueData> = {
   },
 };
 
-type VenueOverride = Partial<Pick<VenueData, 'description' | 'highlights' | 'eventTypes' | 'challenges' | 'solutions' | 'capacity'>>;
+type VenueOverride = Partial<
+  Pick<
+    VenueData,
+    'description' | 'highlights' | 'eventTypes' | 'challenges' | 'solutions' | 'capacity'
+  >
+>;
 
 const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
   'messe-muenchen': {
@@ -302,7 +307,13 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
         'Direct subway connection (Messestadt West/East)',
       ],
       capacity: '50,000+ visitors per day',
-      eventTypes: ['Booth party', 'Client reception', 'Networking event', 'Product launch', 'VIP lounge'],
+      eventTypes: [
+        'Booth party',
+        'Client reception',
+        'Networking event',
+        'Product launch',
+        'VIP lounge',
+      ],
       challenges: [
         'Power connections cost €150–300 extra',
         'Water connections cost €200–350 extra',
@@ -331,9 +342,23 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
         'Modern technical infrastructure',
       ],
       capacity: '20,000+ visitors',
-      eventTypes: ['Fashion events', 'B2B trade shows', 'Product presentations', 'Gala dinners', 'Conferences'],
-      challenges: ['Large areas require mobile solutions', 'Parallel events = high utilization', 'Tight changeover schedules'],
-      solutions: ['Flexible mobile bar concepts', 'Fast setup/teardown', 'Independent from venue infrastructure'],
+      eventTypes: [
+        'Fashion events',
+        'B2B trade shows',
+        'Product presentations',
+        'Gala dinners',
+        'Conferences',
+      ],
+      challenges: [
+        'Large areas require mobile solutions',
+        'Parallel events = high utilization',
+        'Tight changeover schedules',
+      ],
+      solutions: [
+        'Flexible mobile bar concepts',
+        'Fast setup/teardown',
+        'Independent from venue infrastructure',
+      ],
     },
   },
   'ballhausforum-infinity': {
@@ -348,8 +373,16 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
         'High-end AV & event tech',
       ],
       capacity: '500–1,500 guests',
-      challenges: ['Premium setting requires premium service', 'High guest expectations', 'Aesthetic integration matters'],
-      solutions: ['Design bar matching the venue', 'Highly trained bartenders in formal attire', 'Signature drinks in corporate design'],
+      challenges: [
+        'Premium setting requires premium service',
+        'High guest expectations',
+        'Aesthetic integration matters',
+      ],
+      solutions: [
+        'Design bar matching the venue',
+        'Highly trained bartenders in formal attire',
+        'Signature drinks in corporate design',
+      ],
     },
   },
   'werk1-muenchen': {
@@ -365,8 +398,16 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
       ],
       capacity: '200–800 guests',
       eventTypes: ['Startup event', 'Tech conference', 'Pitch night', 'Team event', 'After-work'],
-      challenges: ['Industrial vibe = variable infrastructure', 'Young crowd = high drink throughput', 'Creative setting = creative drinks expected'],
-      solutions: ['Trendy craft cocktails', 'Fast service for high volume', 'Industrial look matches the bike bar'],
+      challenges: [
+        'Industrial vibe = variable infrastructure',
+        'Young crowd = high drink throughput',
+        'Creative setting = creative drinks expected',
+      ],
+      solutions: [
+        'Trendy craft cocktails',
+        'Fast service for high volume',
+        'Industrial look matches the bike bar',
+      ],
     },
   },
   'schloss-schleissheim': {
@@ -381,8 +422,16 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
         'Photogenic backdrop',
       ],
       capacity: '100–500 guests',
-      challenges: ['Monument protection = strict requirements', 'No modern infrastructure', 'Long logistics routes for equipment'],
-      solutions: ['100% self-sufficient bar without interventions', 'Elegant presentation matching the setting', 'Experience with historic venues'],
+      challenges: [
+        'Monument protection = strict requirements',
+        'No modern infrastructure',
+        'Long logistics routes for equipment',
+      ],
+      solutions: [
+        '100% self-sufficient bar without interventions',
+        'Elegant presentation matching the setting',
+        'Experience with historic venues',
+      ],
     },
   },
   'zenith-muenchen': {
@@ -397,9 +446,23 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
         'Flexible setups possible',
       ],
       capacity: '1,000–5,000+ guests',
-      eventTypes: ['Large corporate party', 'Product launch', 'Trade fair party', 'Festival', 'Concert'],
-      challenges: ['Huge space = multiple service points', 'Loud environment during events', 'High guest count = high throughput'],
-      solutions: ['Multiple mobile bar stations', 'Fast, efficient service', 'Experience with large-scale events'],
+      eventTypes: [
+        'Large corporate party',
+        'Product launch',
+        'Trade fair party',
+        'Festival',
+        'Concert',
+      ],
+      challenges: [
+        'Huge space = multiple service points',
+        'Loud environment during events',
+        'High guest count = high throughput',
+      ],
+      solutions: [
+        'Multiple mobile bar stations',
+        'Fast, efficient service',
+        'Experience with large-scale events',
+      ],
     },
   },
   'alte-utting': {
@@ -414,14 +477,31 @@ const VENUE_OVERRIDES: Record<string, { en: VenueOverride }> = {
         'Restaurant + event deck',
       ],
       capacity: '50–200 guests',
-      eventTypes: ['Creative corporate event', 'Team event', 'Product launch', 'After-work', 'VIP dinner'],
-      challenges: ['Limited space on the ship', 'No heavy equipment possible', 'Special logistics required'],
-      solutions: ['Ultra-compact bike bar is perfect', 'Lightweight setup', 'Matches the unconventional atmosphere'],
+      eventTypes: [
+        'Creative corporate event',
+        'Team event',
+        'Product launch',
+        'After-work',
+        'VIP dinner',
+      ],
+      challenges: [
+        'Limited space on the ship',
+        'No heavy equipment possible',
+        'Special logistics required',
+      ],
+      solutions: [
+        'Ultra-compact bike bar is perfect',
+        'Lightweight setup',
+        'Matches the unconventional atmosphere',
+      ],
     },
   },
 };
 
-export function getVenueBySlug(venueSlug: string, language: 'de' | 'en' = 'de'): VenueData | undefined {
+export function getVenueBySlug(
+  venueSlug: string,
+  language: 'de' | 'en' = 'de',
+): VenueData | undefined {
   const venue = venueDatabase[venueSlug];
   if (!venue) return undefined;
   if (language === 'de') return venue;
@@ -472,7 +552,9 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
 
   // Generate JSON-LD Schema
   const schemaName = formatTemplate(t('pages.venue.schema.name'), { venue: venue.name });
-  const schemaDescription = formatTemplate(t('pages.venue.schema.description'), { venue: venue.name });
+  const schemaDescription = formatTemplate(t('pages.venue.schema.description'), {
+    venue: venue.name,
+  });
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -510,214 +592,239 @@ const VenueLandingPage: React.FC<VenueLandingPageProps> = ({ venueSlug }) => {
       >
         <main className='w-full'>
           {/* Hero Section */}
-        <Section
-          container='narrow'
-          spacing='xl'
-          className={`relative bg-linear-to-br ${colors.bg} overflow-hidden text-white`}
-        >
-          <div className='absolute inset-0 z-0 opacity-30'>
-            <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]' />
-          </div>
-          <div className='relative z-10 text-center'>
-            <EyebrowBadge className='mb-8'>{formatTemplate(t('pages.venue.hero.badge'), { district: venue.district })}</EyebrowBadge>
-            <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
-              {t('pages.venue.hero.titlePrefix')} <br className='hidden sm:block' />
-              <span className='text-white/90'>{venue.shortName}</span>
-            </h1>
-            <p className='mx-auto mb-8 max-w-2xl text-xl text-(--color-text-on-dark-secondary)'>
-              {venue.description}
-            </p>
-            <Link to={`/anfrage?source=${venue.slug}`}>
-              <Button
-                size='lg'
-                className='text-on-light border-none bg-white transition duration-200 ease-out hover:bg-white/90'
-              >
-                {t('pages.venue.hero.cta')}
-              </Button>
-            </Link>
-          </div>
-        </Section>
-
-        <Section container='narrow' spacing='xl'>
-          {/* Venue Highlights */}
-          <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-3xl font-bold'>
-              {formatTemplate(t('pages.venue.sections.about.title'), { venue: venue.name })}
-            </h2>
-            <div className='grid gap-8 md:grid-cols-2'>
-              <div className='bg-surface-tinted flex h-full flex-col rounded-xl p-8'>
-                <h3 className='text-on-light mb-8 font-bold'>{t('pages.venue.sections.details.title')}</h3>
-                <ul className='space-y-0 text-sm text-(--color-text-on-light-secondary)'>
-                  <li>
-                    <strong>{t('pages.venue.sections.details.addressLabel')}</strong> {venue.address}
-                  </li>
-                  <li>
-                    <strong>{t('pages.venue.sections.details.capacityLabel')}</strong> {venue.capacity}
-                  </li>
-                  <li>
-                    <strong>{t('pages.venue.sections.details.districtLabel')}</strong> {venue.district}
-                  </li>
-                </ul>
-              </div>
-              <div className='bg-surface-tinted flex h-full flex-col rounded-xl p-8'>
-                <h3 className='text-on-light mb-8 font-bold'>{t('pages.venue.sections.highlights.title')}</h3>
-                <ul className='space-y-0 text-sm text-(--color-text-on-light-secondary)'>
-                  {venue.highlights.slice(0, 4).map((highlight, i) => (
-                    <li
-                      key={i}
-                      className='font-body text-text-body before:text-color-coral flex items-center justify-center gap-2 text-sm before:text-lg before:content-["•"]'
-                    >
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <Section
+            container='narrow'
+            spacing='xl'
+            className={`relative bg-linear-to-br ${colors.bg} overflow-hidden text-white`}
+          >
+            <div className='absolute inset-0 z-0 opacity-30'>
+              <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]' />
             </div>
-          </section>
-
-          {/* Event Types */}
-          <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-3xl font-bold'>
-              {formatTemplate(t('pages.venue.sections.eventTypes.title'), { venue: venue.shortName })}
-            </h2>
-            <div className='flex flex-wrap gap-0'>
-              {venue.eventTypes.map((type, i) => (
-                <span
-                  key={i}
-                  className='bg-surface-tinted rounded-full px-8 py-0 text-sm font-medium text-black/80'
+            <div className='relative z-10 text-center'>
+              <EyebrowBadge className='mb-8'>
+                {formatTemplate(t('pages.venue.hero.badge'), { district: venue.district })}
+              </EyebrowBadge>
+              <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
+                {t('pages.venue.hero.titlePrefix')} <br className='hidden sm:block' />
+                <span className='text-white/90'>{venue.shortName}</span>
+              </h1>
+              <p className='mx-auto mb-8 max-w-2xl text-xl text-(--color-text-on-dark-secondary)'>
+                {venue.description}
+              </p>
+              <Link to={`/anfrage?source=${venue.slug}`}>
+                <Button
+                  size='lg'
+                  className='text-on-light border-none bg-white transition duration-200 ease-out hover:bg-white/90'
                 >
-                  {type}
-                </span>
-              ))}
+                  {t('pages.venue.hero.cta')}
+                </Button>
+              </Link>
             </div>
-          </section>
+          </Section>
 
-          {/* Challenges & Solutions */}
-          <section className='mb-16'>
-            <h2 className='text-on-light mb-8 text-3xl font-bold'>{t('pages.venue.sections.challenges.title')}</h2>
-
-            <div className='grid gap-8 md:grid-cols-2'>
-              <div className='flex h-full flex-col rounded-xl border border-red-100 bg-red-50 p-8'>
-                <h3 className='mb-8 font-bold text-red-900'>{t('pages.venue.sections.challenges.challengesTitle')}</h3>
-                <ul className='space-y-0 text-sm text-red-800'>
-                  {venue.challenges.map((challenge, i) => (
-                    <li
-                      key={i}
-                      className='font-body text-text-body before:text-color-coral flex items-center justify-center gap-2 text-sm before:text-lg before:content-["•"]'
-                    >
-                      <span>{challenge}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className='flex h-full flex-col rounded-xl border border-emerald-100 bg-emerald-50 p-8'>
-                <h3 className='mb-8 font-bold text-emerald-900'>{t('pages.venue.sections.challenges.solutionsTitle')}</h3>
-                <ul className='space-y-0 text-sm text-emerald-800'>
-                  {venue.solutions.map((solution, i) => (
-                    <li
-                      key={i}
-                      className='font-body text-text-body before:text-color-coral flex items-center justify-center gap-2 text-sm before:text-lg before:content-["•"]'
-                    >
-                      <span>{solution}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Why Us for This Venue */}
-          <section className='mb-16'>
-            <div className='from-navy to-navy-dark rounded-2xl bg-linear-to-br p-8 text-white'>
-              <h2 className='mb-8 text-2xl font-bold'>
-                {formatTemplate(t('pages.venue.sections.why.title'), { venue: venue.shortName })}
+          <Section container='narrow' spacing='xl'>
+            {/* Venue Highlights */}
+            <section className='mb-16'>
+              <h2 className='text-on-light mb-8 text-3xl font-bold'>
+                {formatTemplate(t('pages.venue.sections.about.title'), { venue: venue.name })}
               </h2>
-
-              <div className='grid gap-8 md:grid-cols-3'>
-                <div className='text-center'>
-                  <div className='mb-0 text-4xl'>🔌</div>
-                  <h3 className='mb-0 font-bold'>{t('pages.venue.sections.why.cards.autark.title')}</h3>
-                  <p className='text-sm text-(--color-text-on-dark-secondary)'>
-                    {t('pages.venue.sections.why.cards.autark.description')}
-                  </p>
+              <div className='grid gap-8 md:grid-cols-2'>
+                <div className='bg-surface-tinted flex h-full flex-col rounded-xl p-8'>
+                  <h3 className='text-on-light mb-8 font-bold'>
+                    {t('pages.venue.sections.details.title')}
+                  </h3>
+                  <ul className='space-y-0 text-sm text-(--color-text-on-light-secondary)'>
+                    <li>
+                      <strong>{t('pages.venue.sections.details.addressLabel')}</strong>{' '}
+                      {venue.address}
+                    </li>
+                    <li>
+                      <strong>{t('pages.venue.sections.details.capacityLabel')}</strong>{' '}
+                      {venue.capacity}
+                    </li>
+                    <li>
+                      <strong>{t('pages.venue.sections.details.districtLabel')}</strong>{' '}
+                      {venue.district}
+                    </li>
+                  </ul>
                 </div>
-                <div className='text-center'>
-                  <div className='mb-0 text-4xl'>⚡</div>
-                  <h3 className='mb-0 font-bold'>{t('pages.venue.sections.why.cards.setup.title')}</h3>
-                  <p className='text-sm text-(--color-text-on-dark-secondary)'>
-                    {t('pages.venue.sections.why.cards.setup.description')}
-                  </p>
+                <div className='bg-surface-tinted flex h-full flex-col rounded-xl p-8'>
+                  <h3 className='text-on-light mb-8 font-bold'>
+                    {t('pages.venue.sections.highlights.title')}
+                  </h3>
+                  <ul className='space-y-0 text-sm text-(--color-text-on-light-secondary)'>
+                    {venue.highlights.slice(0, 4).map((highlight, i) => (
+                      <li
+                        key={i}
+                        className='font-body text-text-body before:text-color-coral flex items-center justify-center gap-2 text-sm before:text-lg before:content-["•"]'
+                      >
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className='text-center'>
-                  <div className='mb-0 text-4xl'>💰</div>
-                  <h3 className='mb-0 font-bold'>{t('pages.venue.sections.why.cards.allInclusive.title')}</h3>
-                  <p className='text-sm text-(--color-text-on-dark-secondary)'>
-                    {t('pages.venue.sections.why.cards.allInclusive.description')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Success Stories */}
-          <SuccessStories variant='compact' className='mb-16' />
-
-          {/* CTA Section */}
-          <section className='from-accent-primary to-accent-primary-hover rounded-2xl bg-linear-to-br p-8 text-center text-white md:p-16'>
-            <h2 className='mb-8 text-3xl font-bold'>
-              {formatTemplate(t('pages.venue.sections.cta.title'), { venue: venue.shortName })}
-            </h2>
-            <p className='mx-auto mb-8 max-w-2xl text-lg opacity-90'>
-              {t('pages.venue.sections.cta.description')}
-            </p>
-            <div className='flex flex-col justify-center gap-8 sm:flex-row'>
-              <Link to={`/anfrage?source=${venue.slug}&eventType=firmenfeier`}>
-                <Button
-                  size='lg'
-                  variant='secondary'
-                  className='text-accent-primary border-none transition duration-200 ease-out'
-                >
-                  {t('pages.venue.sections.cta.primary')}
-                </Button>
-              </Link>
-              <Link to='/preise'>
-                <Button
-                  size='lg'
-                  variant='outline'
-                  className='border-white text-white transition duration-200 ease-out hover:bg-white/10'
-                >
-                  {t('pages.venue.sections.cta.secondary')}
-                </Button>
-              </Link>
-            </div>
-          </section>
-
-          {/* Related Venues */}
-          {venue.relatedVenues.length > 0 && (
-            <section className='mt-16'>
-              <h2 className='text-on-light mb-8 text-2xl font-bold'>{t('pages.venue.sections.related.title')}</h2>
-              <div className='grid gap-8 md:grid-cols-3'>
-                {venue.relatedVenues.map((relatedSlug) => {
-                  const related = getVenueBySlug(relatedSlug, language);
-                  if (!related) return null;
-                  return (
-                    <Link
-                      key={relatedSlug}
-                      to={`/locations/${relatedSlug}`}
-                      className='bg-surface-tinted hover:border-accent-primary flex h-full flex-col rounded-lg border border-black/10 p-8 transition-shadow duration-200 ease-out hover:shadow-md'
-                    >
-                      <h3 className='text-on-light text-sm font-bold'>{related.shortName}</h3>
-                      <p className='mt-0 text-xs text-(--color-text-on-light-secondary)'>
-                        {related.district}
-                      </p>
-                    </Link>
-                  );
-                })}
               </div>
             </section>
-          )}
-        </Section>
+
+            {/* Event Types */}
+            <section className='mb-16'>
+              <h2 className='text-on-light mb-8 text-3xl font-bold'>
+                {formatTemplate(t('pages.venue.sections.eventTypes.title'), {
+                  venue: venue.shortName,
+                })}
+              </h2>
+              <div className='flex flex-wrap gap-0'>
+                {venue.eventTypes.map((type, i) => (
+                  <span
+                    key={i}
+                    className='bg-surface-tinted rounded-full px-8 py-0 text-sm font-medium text-black/80'
+                  >
+                    {type}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            {/* Challenges & Solutions */}
+            <section className='mb-16'>
+              <h2 className='text-on-light mb-8 text-3xl font-bold'>
+                {t('pages.venue.sections.challenges.title')}
+              </h2>
+
+              <div className='grid gap-8 md:grid-cols-2'>
+                <div className='flex h-full flex-col rounded-xl border border-red-100 bg-red-50 p-8'>
+                  <h3 className='mb-8 font-bold text-red-900'>
+                    {t('pages.venue.sections.challenges.challengesTitle')}
+                  </h3>
+                  <ul className='space-y-0 text-sm text-red-800'>
+                    {venue.challenges.map((challenge, i) => (
+                      <li
+                        key={i}
+                        className='font-body text-text-body before:text-color-coral flex items-center justify-center gap-2 text-sm before:text-lg before:content-["•"]'
+                      >
+                        <span>{challenge}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className='flex h-full flex-col rounded-xl border border-emerald-100 bg-emerald-50 p-8'>
+                  <h3 className='mb-8 font-bold text-emerald-900'>
+                    {t('pages.venue.sections.challenges.solutionsTitle')}
+                  </h3>
+                  <ul className='space-y-0 text-sm text-emerald-800'>
+                    {venue.solutions.map((solution, i) => (
+                      <li
+                        key={i}
+                        className='font-body text-text-body before:text-color-coral flex items-center justify-center gap-2 text-sm before:text-lg before:content-["•"]'
+                      >
+                        <span>{solution}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Why Us for This Venue */}
+            <section className='mb-16'>
+              <div className='from-navy to-navy-dark rounded-2xl bg-linear-to-br p-8 text-white'>
+                <h2 className='mb-8 text-2xl font-bold'>
+                  {formatTemplate(t('pages.venue.sections.why.title'), { venue: venue.shortName })}
+                </h2>
+
+                <div className='grid gap-8 md:grid-cols-3'>
+                  <div className='text-center'>
+                    <div className='mb-0 text-4xl'>🔌</div>
+                    <h3 className='mb-0 font-bold'>
+                      {t('pages.venue.sections.why.cards.autark.title')}
+                    </h3>
+                    <p className='text-sm text-(--color-text-on-dark-secondary)'>
+                      {t('pages.venue.sections.why.cards.autark.description')}
+                    </p>
+                  </div>
+                  <div className='text-center'>
+                    <div className='mb-0 text-4xl'>⚡</div>
+                    <h3 className='mb-0 font-bold'>
+                      {t('pages.venue.sections.why.cards.setup.title')}
+                    </h3>
+                    <p className='text-sm text-(--color-text-on-dark-secondary)'>
+                      {t('pages.venue.sections.why.cards.setup.description')}
+                    </p>
+                  </div>
+                  <div className='text-center'>
+                    <div className='mb-0 text-4xl'>💰</div>
+                    <h3 className='mb-0 font-bold'>
+                      {t('pages.venue.sections.why.cards.allInclusive.title')}
+                    </h3>
+                    <p className='text-sm text-(--color-text-on-dark-secondary)'>
+                      {t('pages.venue.sections.why.cards.allInclusive.description')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Success Stories */}
+            <SuccessStories variant='compact' className='mb-16' />
+
+            {/* CTA Section */}
+            <section className='from-accent-primary to-accent-primary-hover rounded-2xl bg-linear-to-br p-8 text-center text-white md:p-16'>
+              <h2 className='mb-8 text-3xl font-bold'>
+                {formatTemplate(t('pages.venue.sections.cta.title'), { venue: venue.shortName })}
+              </h2>
+              <p className='mx-auto mb-8 max-w-2xl text-lg opacity-90'>
+                {t('pages.venue.sections.cta.description')}
+              </p>
+              <div className='flex flex-col justify-center gap-8 sm:flex-row'>
+                <Link to={`/anfrage?source=${venue.slug}&eventType=firmenfeier`}>
+                  <Button
+                    size='lg'
+                    variant='secondary'
+                    className='text-accent-primary border-none transition duration-200 ease-out'
+                  >
+                    {t('pages.venue.sections.cta.primary')}
+                  </Button>
+                </Link>
+                <Link to='/preise'>
+                  <Button
+                    size='lg'
+                    variant='outline'
+                    className='border-white text-white transition duration-200 ease-out hover:bg-white/10'
+                  >
+                    {t('pages.venue.sections.cta.secondary')}
+                  </Button>
+                </Link>
+              </div>
+            </section>
+
+            {/* Related Venues */}
+            {venue.relatedVenues.length > 0 && (
+              <section className='mt-16'>
+                <h2 className='text-on-light mb-8 text-2xl font-bold'>
+                  {t('pages.venue.sections.related.title')}
+                </h2>
+                <div className='grid gap-8 md:grid-cols-3'>
+                  {venue.relatedVenues.map((relatedSlug) => {
+                    const related = getVenueBySlug(relatedSlug, language);
+                    if (!related) return null;
+                    return (
+                      <Link
+                        key={relatedSlug}
+                        to={`/locations/${relatedSlug}`}
+                        className='bg-surface-tinted hover:border-accent-primary flex h-full flex-col rounded-lg border border-black/10 p-8 transition-shadow duration-200 ease-out hover:shadow-md'
+                      >
+                        <h3 className='text-on-light text-sm font-bold'>{related.shortName}</h3>
+                        <p className='mt-0 text-xs text-(--color-text-on-light-secondary)'>
+                          {related.district}
+                        </p>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+          </Section>
         </main>
       </PageTemplate>
     </SiteBackground>

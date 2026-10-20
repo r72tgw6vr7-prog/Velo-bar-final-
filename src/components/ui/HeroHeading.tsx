@@ -30,14 +30,12 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({
       <div className='mx-auto flex max-w-4xl px-4 text-center sm:px-6 lg:px-8'>
         <div className='flex w-full flex-col items-center gap-4'>
           {/* Eyebrow badge */}
-          {eyebrow && (
-            <EyebrowBadge>{eyebrow}</EyebrowBadge>
-          )}
+          {eyebrow && <EyebrowBadge>{eyebrow}</EyebrowBadge>}
 
           {/* Main title */}
           <h1
             className={cn(
-              'text-3xl font-bold text-accent-primary md:text-5xl lg:text-6xl',
+              'text-accent-primary text-3xl font-bold md:text-5xl lg:text-6xl',
               titleClassName,
             )}
           >

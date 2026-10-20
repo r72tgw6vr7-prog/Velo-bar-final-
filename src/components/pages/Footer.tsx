@@ -67,8 +67,8 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
               />
             </Link>
             {/* SEO: LocalBusiness microdata in footer */}
-            <div className='mt-6 text-xs md:text-sm space-y-2 text-center md:text-center'>
-              <div itemProp='name' className='font-semibold hidden'>
+            <div className='mt-6 space-y-2 text-center text-xs md:text-center md:text-sm'>
+              <div itemProp='name' className='hidden font-semibold'>
                 {t('footer.businessName')}
               </div>
               <div itemProp='address' itemScope itemType='https://schema.org/PostalAddress'>
@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 <a
                   href='tel:+4916094623196'
                   itemProp='telephone'
-                  className='hover:text-(--orange-primary) transition-colors'
+                  className='transition-colors hover:text-(--orange-primary)'
                 >
                   {t('footer.phone')}
                 </a>
@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 <a
                   href='mailto:hallo@velo-bar.com'
                   itemProp='email'
-                  className='hover:text-(--orange-primary) transition-colors'
+                  className='transition-colors hover:text-(--orange-primary)'
                 >
                   {t('footer.email')}
                 </a>
@@ -174,7 +174,7 @@ const Footer: React.FC<FooterProps> = ({ className = '' }) => {
       </div>
 
       {/* Bottom Bar */}
-      <div className='md:border-opacity-20 mx-auto max-w-6xl flex flex-col items-center justify-between gap-8 border-t border-(--navy-light) px-4 pb-8 pt-8 text-center md:flex-row md:border-(--orange-primary) md:px-8 md:text-left'>
+      <div className='md:border-opacity-20 mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 border-t border-(--navy-light) px-4 pt-8 pb-8 text-center md:flex-row md:border-(--orange-primary) md:px-8 md:text-left'>
         <p className='text-sm text-(--color-text-on-dark) md:text-(--navy-primary)'>
           © {new Date().getFullYear()} Velo.Bar. {t('footer.rightsReserved')}
         </p>

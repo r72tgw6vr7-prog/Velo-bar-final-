@@ -36,8 +36,10 @@ const RESPONSIVE_WIDTHS = [256, 320, 640, 1024] as const;
  * ResponsiveImage props
  * @interface ResponsiveImageProps
  */
-export interface ResponsiveImageProps
-  extends Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'srcSet'> {
+export interface ResponsiveImageProps extends Omit<
+  React.ImgHTMLAttributes<HTMLImageElement>,
+  'src' | 'srcSet'
+> {
   /**
    * Image source path without extension
    * Will automatically append -320w.webp, -640w.webp, etc.

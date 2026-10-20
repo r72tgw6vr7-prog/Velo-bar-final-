@@ -22,9 +22,10 @@ export const GalleryPage: React.FC = () => {
     const yyyymmdd = match[1];
     const isoDate = `${yyyymmdd.slice(0, 4)}-${yyyymmdd.slice(4, 6)}-${yyyymmdd.slice(6, 8)}`;
     const alt = img.alt || 'Event Impression';
-    const name = alt.toLowerCase().includes('event') || alt.toLowerCase().includes('messe')
-      ? alt
-      : `Velo.Bar Event – ${alt}`;
+    const name =
+      alt.toLowerCase().includes('event') || alt.toLowerCase().includes('messe')
+        ? alt
+        : `Velo.Bar Event – ${alt}`;
 
     return getEventSchema({
       name,
@@ -36,7 +37,8 @@ export const GalleryPage: React.FC = () => {
     });
   }).filter(Boolean) as Record<string, unknown>[];
 
-  const galleryStructuredData = eventSchemas.length > 0 ? combineSchemas(...eventSchemas) : undefined;
+  const galleryStructuredData =
+    eventSchemas.length > 0 ? combineSchemas(...eventSchemas) : undefined;
 
   return (
     <SiteBackground>

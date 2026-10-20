@@ -15,44 +15,49 @@ const MenuPage: React.FC = () => {
   const { t, language } = useLanguage();
 
   // SEO: ItemList schema for cocktail menu + breadcrumbs
-  const menuSchema = useMemo(() => combineSchemas(
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'Velo.Bar Cocktail Menu',
-      description: language === 'de' 
-        ? 'Cocktail-Auswahl für Events: Klassiker, Longdrinks und alkoholfreie Optionen'
-        : 'Cocktail selection for events: classics, longdrinks and non-alcoholic options',
-      itemListElement: [
+  const menuSchema = useMemo(
+    () =>
+      combineSchemas(
         {
-          '@type': 'ListItem',
-          position: 1,
-          name: language === 'de' ? 'Klassische Cocktails' : 'Classic Cocktails',
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Velo.Bar Cocktail Menu',
+          description:
+            language === 'de'
+              ? 'Cocktail-Auswahl für Events: Klassiker, Longdrinks und alkoholfreie Optionen'
+              : 'Cocktail selection for events: classics, longdrinks and non-alcoholic options',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: language === 'de' ? 'Klassische Cocktails' : 'Classic Cocktails',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: language === 'de' ? 'Longdrinks' : 'Longdrinks',
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: language === 'de' ? 'Alkoholfreie Cocktails' : 'Non-Alcoholic Cocktails',
+            },
+          ],
         },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: language === 'de' ? 'Longdrinks' : 'Longdrinks',
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: language === 'de' ? 'Alkoholfreie Cocktails' : 'Non-Alcoholic Cocktails',
-        },
-      ],
-    },
-    getBreadcrumbSchema([
-      { name: 'Home', url: 'https://www.velo-bar.com' },
-      { name: language === 'de' ? 'Drinks' : 'Drinks', url: 'https://www.velo-bar.com/menu' },
-    ]),
-  ), [language]);
+        getBreadcrumbSchema([
+          { name: 'Home', url: 'https://www.velo-bar.com' },
+          { name: language === 'de' ? 'Drinks' : 'Drinks', url: 'https://www.velo-bar.com/menu' },
+        ]),
+      ),
+    [language],
+  );
 
   return (
     <SiteBackground>
-      <PageTemplate 
+      <PageTemplate
         title={t('menu.seoTitle')}
         description={t('menu.seoDescription')}
-        withContainer={false} 
+        withContainer={false}
         background='transparent'
       >
         <Helmet>

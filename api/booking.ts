@@ -1,43 +1,238 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { z } from 'zod';
 import nodemailer from 'nodemailer';
+import crypto from 'node:crypto';
 
-// Simple in-memory rate limiter for serverless (resets on cold start)
-const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_MAX = parseInt(process.env.RATE_LIMIT_MAX || '30', 10);
-const RATE_LIMIT_WINDOW = parseInt(process.env.RATE_LIMIT_WINDOW || '600', 10) * 1000; // ms
+// ═════════════════════════════════════════════════════════════════════════════
+// Self-contained booking handler — inlined helpers to avoid Vercel bundling
+// issues with cross-directory TypeScript imports.
+// ═════════════════════════════════════════════════════════════════════════════
 
-function checkRateLimit(key: string): boolean {
+// ── Logger ──────────────────────────────────────────────────────────────────
+function serializeError(error: unknown): Record<string, unknown> {
+  if (error instanceof Error) {
+    return {
+      name: error.name,
+      message: error.message,
+      stack: process.env.NODE_ENV === 'production' ? undefined : error.stack,
+    };
+  }
+  return { value: error };
+}
+
+function log(level: string, message: string, context: Record<string, unknown> = {}): void {
+  const entry = {
+    level,
+    message,
+    timestamp: new Date().toISOString(),
+    service: 'velo-bar',
+    env: process.env.NODE_ENV || 'development',
+    ...context,
+  };
+
+  if (process.env.NODE_ENV === 'production' || process.env.VERCEL === '1') {
+    // eslint-disable-next-line no-console
+    console.log(JSON.stringify(entry));
+  } else {
+    // eslint-disable-next-line no-console
+    console.log(`[${entry.level}] ${entry.message}`, context);
+  }
+}
+
+const logger = {
+  info: (message: string, context?: Record<string, unknown>) => log('info', message, context),
+  warn: (message: string, context?: Record<string, unknown>) => log('warn', message, context),
+  error: (message: string, error?: unknown, context?: Record<string, unknown>) =>
+    log('error', message, { ...context, error: error ? serializeError(error) : undefined }),
+  security: (message: string, context?: Record<string, unknown>) => log('security', message, context),
+};
+
+// ── CSRF ────────────────────────────────────────────────────────────────────
+const CSRF_COOKIE_NAME = 'XSRF-TOKEN';
+const CSRF_HEADER_NAME = 'x-csrf-token';
+
+function getCsrfSecret(): string {
+  const secret = process.env.CSRF_SECRET;
+  if (!secret) {
+    throw new Error('CSRF_SECRET environment variable is not configured');
+  }
+  return secret;
+}
+
+function verifyCsrfToken(signedToken: string): boolean {
+  try {
+    const [encodedPayload, signature] = signedToken.split('.');
+    if (!encodedPayload || !signature) return false;
+
+    const data = Buffer.from(encodedPayload, 'base64url').toString('utf-8');
+    const expectedSignature = crypto
+      .createHmac('sha256', getCsrfSecret())
+      .update(data)
+      .digest('base64url');
+
+    if (!crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature))) {
+      return false;
+    }
+
+    const payload = JSON.parse(data) as { token: string; expiresAt: number };
+    if (typeof payload.token !== 'string' || typeof payload.expiresAt !== 'number') {
+      return false;
+    }
+
+    return Date.now() <= payload.expiresAt;
+  } catch {
+    return false;
+  }
+}
+
+function getCsrfTokenFromRequest(
+  getHeader: (name: string) => string | string[] | undefined,
+  getCookie: (name: string) => string | undefined,
+): string | null {
+  const headerValue = getHeader(CSRF_HEADER_NAME);
+  const header = Array.isArray(headerValue) ? headerValue[0] : headerValue;
+  return header || getCookie(CSRF_COOKIE_NAME) || null;
+}
+
+function validateCsrfToken(
+  getHeader: (name: string) => string | string[] | undefined,
+  getCookie: (name: string) => string | undefined,
+): boolean {
+  const token = getCsrfTokenFromRequest(getHeader, getCookie);
+  if (!token) return false;
+  return verifyCsrfToken(token);
+}
+
+// ── Rate limiting ───────────────────────────────────────────────────────────
+interface RateLimitEntry {
+  count: number;
+  first: number;
+  consecutiveFailures: number;
+}
+
+const store = new Map<string, RateLimitEntry>();
+const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX || 30);
+const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW || 600) * 1000;
+const RATE_LIMIT_BACKOFF_MAX_MS = 60 * 60 * 1000;
+
+function rateLimitCleanup(now: number): void {
+  for (const [key, entry] of store.entries()) {
+    if (now - entry.first > RATE_LIMIT_WINDOW_MS * 4) {
+      store.delete(key);
+    }
+  }
+}
+
+function checkRateLimit(key: string, max?: number, windowMs?: number): boolean {
   const now = Date.now();
-  const entry = rateLimitStore.get(key);
+  const limit = max ?? RATE_LIMIT_MAX;
+  const window = windowMs ?? RATE_LIMIT_WINDOW_MS;
 
-  if (!entry || now > entry.resetAt) {
-    rateLimitStore.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return true;
+  if (Math.random() < 0.01) {
+    rateLimitCleanup(now);
   }
 
-  if (entry.count >= RATE_LIMIT_MAX) {
+  const entry = store.get(key) || { count: 0, first: now, consecutiveFailures: 0 };
+
+  if (now - entry.first > window) {
+    entry.count = 0;
+    entry.first = now;
+  }
+
+  const backoffMs = Math.min(
+    RATE_LIMIT_BACKOFF_MAX_MS,
+    Math.pow(2, entry.consecutiveFailures) * 1000,
+  );
+  if (now - entry.first < backoffMs && entry.count >= limit) {
     return false;
   }
 
-  entry.count++;
+  entry.count += 1;
+
+  if (entry.count > limit) {
+    entry.consecutiveFailures += 1;
+    store.set(key, entry);
+    return false;
+  }
+
+  entry.consecutiveFailures = Math.max(0, entry.consecutiveFailures - 1);
+  store.set(key, entry);
   return true;
 }
 
-// Inline schemas to avoid import issues with Vercel
+function recordRateLimitFailure(key: string): void {
+  const entry = store.get(key);
+  if (entry) {
+    entry.consecutiveFailures += 1;
+    store.set(key, entry);
+  }
+}
+
+function checkBookingRateLimits(
+  ip: string,
+  email: string,
+): { allowed: true } | { allowed: false; key: string } {
+  const ipKey = `ip:${ip}`;
+  const emailKey = `email:${email.toLowerCase()}`;
+
+  if (!checkRateLimit(ipKey)) {
+    return { allowed: false, key: ipKey };
+  }
+
+  if (!checkRateLimit(emailKey, 10, RATE_LIMIT_WINDOW_MS)) {
+    return { allowed: false, key: emailKey };
+  }
+
+  return { allowed: true };
+}
+
+// ── Booking handler ─────────────────────────────────────────────────────────
+function escapeHtml(value: string | undefined | null): string {
+  if (value == null) return '';
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getClientIp(req: VercelRequest): string {
+  const vercelIp = req.headers['x-vercel-forwarded-for'];
+  if (typeof vercelIp === 'string' && vercelIp.trim()) {
+    return vercelIp.split(',')[0].trim();
+  }
+
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.trim()) {
+    const parts = forwarded.split(',');
+    return parts[parts.length - 1].trim();
+  }
+
+  if (Array.isArray(forwarded) && forwarded.length > 0) {
+    const last = forwarded[forwarded.length - 1];
+    return last.split(',').pop()?.trim() || last;
+  }
+
+  return (req.socket && (req.socket.remoteAddress || 'unknown')) || 'unknown';
+}
+
+const STRING_MAX = 5000;
+
 const bookingPayloadSchema = z.object({
   location: z.enum(['munich', 'coburg']),
   eventType: z.enum(['corporate', 'wedding', 'birthday', 'christmas', 'other']),
-  guestCount: z.string().min(1), // Guest range string like "50-100"
-  eventDate: z.string().min(1),
-  company: z.string().min(1),
-  customerName: z.string().min(1),
-  customerEmail: z.string().email(),
-  phone: z.string().optional(),
-  vatId: z.string().optional(),
-  costCenter: z.string().optional(),
-  message: z.string().optional(),
-  source: z.string().optional(),
+  guestCount: z.string().min(1).max(50),
+  eventDate: z.string().min(1).max(100),
+  company: z.string().min(1).max(200),
+  customerName: z.string().min(1).max(200),
+  customerEmail: z.string().email().max(200),
+  phone: z.string().max(50).optional(),
+  vatId: z.string().max(50).optional(),
+  costCenter: z.string().max(100).optional(),
+  message: z.string().max(STRING_MAX).optional(),
+  source: z.string().max(500).optional(),
+  website: z.string().max(100).optional(),
 });
 
 type BookingPayload = z.infer<typeof bookingPayloadSchema>;
@@ -56,8 +251,18 @@ const EVENT_TYPE_LABELS: Record<string, string> = {
 };
 
 function generateInternalHtml(data: BookingPayload): string {
-  const locationLabel = LOCATION_LABELS[data.location] || data.location;
-  const eventTypeLabel = EVENT_TYPE_LABELS[data.eventType] || data.eventType;
+  const locationLabel = escapeHtml(LOCATION_LABELS[data.location] || data.location);
+  const eventTypeLabel = escapeHtml(EVENT_TYPE_LABELS[data.eventType] || data.eventType);
+  const company = escapeHtml(data.company);
+  const customerName = escapeHtml(data.customerName);
+  const customerEmail = escapeHtml(data.customerEmail);
+  const phone = escapeHtml(data.phone);
+  const guestCount = escapeHtml(data.guestCount);
+  const eventDate = escapeHtml(data.eventDate);
+  const vatId = escapeHtml(data.vatId);
+  const costCenter = escapeHtml(data.costCenter);
+  const source = escapeHtml(data.source);
+  const message = data.message ? escapeHtml(data.message).replace(/\n/g, '<br>') : '';
 
   return `
 <!DOCTYPE html>
@@ -88,58 +293,33 @@ function generateInternalHtml(data: BookingPayload): string {
     <div class="content">
       <div class="field">
         <div class="label">Unternehmen</div>
-        <div class="value">${data.company}</div>
+        <div class="value">${company}</div>
       </div>
       <div class="field">
         <div class="label">Kontaktperson</div>
-        <div class="value">${data.customerName}</div>
+        <div class="value">${customerName}</div>
       </div>
       <div class="field">
         <div class="label">E-Mail</div>
-        <div class="value"><a href="mailto:${data.customerEmail}">${data.customerEmail}</a></div>
+        <div class="value"><a href="mailto:${customerEmail}">${customerEmail}</a></div>
       </div>
-      ${data.phone ? `
-      <div class="field">
-        <div class="label">Telefon</div>
-        <div class="value"><a href="tel:${data.phone}">${data.phone}</a></div>
-      </div>
-      ` : ''}
+      ${phone ? `<div class="field"><div class="label">Telefon</div><div class="value"><a href="tel:${phone}">${phone}</a></div></div>` : ''}
       <div class="field">
         <div class="label">Event-Typ</div>
         <div class="value">${eventTypeLabel}</div>
       </div>
       <div class="field">
         <div class="label">Gästeanzahl</div>
-        <div class="value">${data.guestCount} Gäste</div>
+        <div class="value">${guestCount} Gäste</div>
       </div>
       <div class="field">
         <div class="label">Wunschtermin</div>
-        <div class="value">${data.eventDate}</div>
+        <div class="value">${eventDate}</div>
       </div>
-      ${data.vatId ? `
-      <div class="field">
-        <div class="label">USt-ID</div>
-        <div class="value">${data.vatId}</div>
-      </div>
-      ` : ''}
-      ${data.costCenter ? `
-      <div class="field">
-        <div class="label">Kostenstelle</div>
-        <div class="value">${data.costCenter}</div>
-      </div>
-      ` : ''}
-      ${data.message ? `
-      <div class="field">
-        <div class="label">Nachricht</div>
-        <div class="message-box">${data.message.replace(/\n/g, '<br>')}</div>
-      </div>
-      ` : ''}
-      ${data.source ? `
-      <div class="field">
-        <div class="label">Quelle</div>
-        <div class="value" style="font-size: 12px; color: #666;">${data.source}</div>
-      </div>
-      ` : ''}
+      ${vatId ? `<div class="field"><div class="label">USt-ID</div><div class="value">${vatId}</div></div>` : ''}
+      ${costCenter ? `<div class="field"><div class="label">Kostenstelle</div><div class="value">${costCenter}</div></div>` : ''}
+      ${message ? `<div class="field"><div class="label">Nachricht</div><div class="message-box">${message}</div></div>` : ''}
+      ${source ? `<div class="field"><div class="label">Quelle</div><div class="value" style="font-size: 12px; color: #666;">${source}</div></div>` : ''}
     </div>
   </div>
 </body>
@@ -148,8 +328,11 @@ function generateInternalHtml(data: BookingPayload): string {
 }
 
 function generateCustomerHtml(data: BookingPayload): string {
-  const locationLabel = LOCATION_LABELS[data.location] || data.location;
-  const eventTypeLabel = EVENT_TYPE_LABELS[data.eventType] || data.eventType;
+  const locationLabel = escapeHtml(LOCATION_LABELS[data.location] || data.location);
+  const eventTypeLabel = escapeHtml(EVENT_TYPE_LABELS[data.eventType] || data.eventType);
+  const customerName = escapeHtml(data.customerName);
+  const guestCount = escapeHtml(data.guestCount);
+  const eventDate = escapeHtml(data.eventDate);
 
   return `
 <!DOCTYPE html>
@@ -179,32 +362,16 @@ function generateCustomerHtml(data: BookingPayload): string {
       <h1>Vielen Dank für Ihre Anfrage!</h1>
     </div>
     <div class="content">
-      <p>Sehr geehrte/r ${data.customerName},</p>
+      <p>Sehr geehrte/r ${customerName},</p>
       <p>wir haben Ihre Buchungsanfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
-      
       <div class="summary">
-        <div class="summary-item">
-          <span class="summary-label">Standort</span>
-          <span class="summary-value">${locationLabel}</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Event-Typ</span>
-          <span class="summary-value">${eventTypeLabel}</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Gästeanzahl</span>
-          <span class="summary-value">${data.guestCount}</span>
-        </div>
-        <div class="summary-item">
-          <span class="summary-label">Wunschtermin</span>
-          <span class="summary-value">${data.eventDate}</span>
-        </div>
+        <div class="summary-item"><span class="summary-label">Standort</span><span class="summary-value">${locationLabel}</span></div>
+        <div class="summary-item"><span class="summary-label">Event-Typ</span><span class="summary-value">${eventTypeLabel}</span></div>
+        <div class="summary-item"><span class="summary-label">Gästeanzahl</span><span class="summary-value">${guestCount}</span></div>
+        <div class="summary-item"><span class="summary-label">Wunschtermin</span><span class="summary-value">${eventDate}</span></div>
       </div>
-
       <p>Bei dringenden Fragen erreichen Sie uns telefonisch unter:</p>
-      <div class="cta">
-        <a href="tel:+4916094623196">+49 160 9462 3196</a>
-      </div>
+      <div class="cta"><a href="tel:+4916094623196">+49 160 9462 3196</a></div>
     </div>
     <div class="footer">
       <p>Velo Bar – Mobile Cocktailbar & Event Catering</p>
@@ -235,9 +402,10 @@ async function sendBookingEmail(data: BookingPayload): Promise<void> {
     },
   });
 
-  const internalEmail = data.location === 'munich' 
-    ? process.env.BOOKING_TO_MUNICH || 'Muenchen@velo-bar.com'
-    : process.env.BOOKING_TO_COBURG || 'coburg@velo-bar.com';
+  const internalEmail =
+    data.location === 'munich'
+      ? process.env.BOOKING_TO_MUNICH || 'Muenchen@velo-bar.com'
+      : process.env.BOOKING_TO_COBURG || 'coburg@velo-bar.com';
 
   const fromEmail = process.env.BOOKING_FROM_EMAIL || 'Velo Bar Booking <booking@velo-bar.com>';
   const replyTo = process.env.BOOKING_REPLY_TO_EMAIL || 'booking@velo-bar.com';
@@ -261,43 +429,71 @@ async function sendBookingEmail(data: BookingPayload): Promise<void> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS handling (allowlist-driven). Populate ALLOWED_ORIGINS or VITE_ALLOWED_ORIGINS in env.
   const allowedEnv = process.env.ALLOWED_ORIGINS || process.env.VITE_ALLOWED_ORIGINS || '';
-  const allowedOrigins = allowedEnv ? allowedEnv.split(',').map((s) => s.trim()) : [];
+  const allowedOrigins = allowedEnv
+    ? allowedEnv
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : [];
   const origin = req.headers.origin as string | undefined;
   if (origin && allowedOrigins.length && allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
     res.setHeader('Vary', 'Origin');
-  } else if (allowedOrigins.length === 1) {
-    // Single allowed origin fallback
-    res.setHeader('Access-Control-Allow-Origin', allowedOrigins[0]);
   }
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-CSRF-Token');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
 
-  // Preflight
   if (req.method === 'OPTIONS') {
     return res.status(204).end();
-  }
-
-  // Gentle rate limiting by IP to stop automated abuse while not impacting normal users
-  const ip = (req.headers['x-forwarded-for'] as string) || (req.socket && (req.socket.remoteAddress || 'unknown')) || 'unknown';
-  const key = `booking:${ip}`;
-  if (!checkRateLimit(key)) {
-    return res.status(429).json({ ok: false, error: 'Too many requests. Please try again later.' });
   }
 
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
   }
 
+  const ip = getClientIp(req);
+
+  const bodyCsrf =
+    req.body && typeof req.body === 'object' && 'csrfToken' in req.body
+      ? String((req.body as Record<string, unknown>).csrfToken)
+      : undefined;
+  const csrfValid = validateCsrfToken(
+    (name) => req.headers[name.toLowerCase()] || bodyCsrf,
+    (name) => {
+      const value = req.cookies?.[name];
+      return typeof value === 'string' ? value : undefined;
+    },
+  );
+  if (!csrfValid) {
+    logger.security('CSRF validation failed', { ip, path: req.url });
+    return res.status(403).json({ ok: false, error: 'CSRF_VALIDATION_FAILED' });
+  }
+
   const parsed = bookingPayloadSchema.safeParse(req.body);
   if (!parsed.success) {
+    logger.security('Booking validation failed', {
+      ip,
+      errors: parsed.error.issues.map((i) => i.path.join('.')),
+    });
     return res.status(400).json({
       ok: false,
       error: 'Validation failed',
       details: formatZodErrors(parsed.error),
     });
+  }
+
+  const limitCheck = checkBookingRateLimits(ip, parsed.data.customerEmail);
+  if (!limitCheck.allowed) {
+    logger.security('Rate limit exceeded', { ip, key: limitCheck.key, path: req.url });
+    recordRateLimitFailure(limitCheck.key);
+    return res.status(429).json({ ok: false, error: 'Too many requests. Please try again later.' });
+  }
+
+  if (parsed.data.website) {
+    logger.security('Honeypot triggered', { ip, email: parsed.data.customerEmail });
+    return res.status(400).json({ ok: false, error: 'Validation failed' });
   }
 
   try {
@@ -307,10 +503,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: 'Booking request submitted successfully',
     });
   } catch (error) {
-    console.error('Email sending error:', error);
+    logger.error('Email sending error', error, { ip, path: req.url });
     return res.status(500).json({
       ok: false,
-      error: error instanceof Error ? error.message : 'Email service error',
+      error: 'Email service error',
     });
   }
 }

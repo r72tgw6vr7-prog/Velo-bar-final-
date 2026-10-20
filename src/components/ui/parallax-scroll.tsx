@@ -112,7 +112,7 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
   const column1Ref = useRef<HTMLDivElement | null>(null);
   const column2Ref = useRef<HTMLDivElement | null>(null);
   const column3Ref = useRef<HTMLDivElement | null>(null);
-  
+
   const isMobile = useMediaQuery('(max-width: 767px)');
   const columnCount = isMobile ? 2 : BASE_COLUMNS;
   const [visibleRows, setVisibleRows] = useState(ROWS_PER_BATCH);
@@ -199,7 +199,7 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
     setIsExpanding(true);
 
     const accordion = accordionRef.current;
-    
+
     // Update visible rows first
     setVisibleRows((current) => Math.min(current + ROWS_PER_BATCH, maxRows));
 
@@ -218,13 +218,13 @@ export const ParallaxScroll = ({ images, className }: ParallaxScrollProps) => {
     const resetExpandState = () => {
       // Force remove the class
       accordion.classList.remove('is-expanding');
-      
+
       // Double check and force remove again
       setTimeout(() => {
         accordion.classList.remove('is-expanding');
         setIsExpanding(false);
       }, 50);
-      
+
       // Refresh ScrollTrigger after DOM updates
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();

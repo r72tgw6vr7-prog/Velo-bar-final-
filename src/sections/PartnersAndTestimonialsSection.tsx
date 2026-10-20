@@ -41,9 +41,9 @@ export const PartnersAndTestimonialsSection: React.FC<PartnersAndTestimonialsSec
   const { t } = useLanguage();
 
   const resolvedTitlePartners = titlePartners ?? t('partnersTestimonials.partners.title');
-  const resolvedSubtitlePartners =
-    subtitlePartners ?? t('partnersTestimonials.partners.subtitle');
-  const resolvedTitleTestimonials = titleTestimonials ?? t('partnersTestimonials.testimonials.title');
+  const resolvedSubtitlePartners = subtitlePartners ?? t('partnersTestimonials.partners.subtitle');
+  const resolvedTitleTestimonials =
+    titleTestimonials ?? t('partnersTestimonials.testimonials.title');
 
   // REFINEMENT #4: Duplicate array × 3 for seamless loop
   const scrollItems = [...partnerLogos, ...partnerLogos, ...partnerLogos];
@@ -60,10 +60,7 @@ export const PartnersAndTestimonialsSection: React.FC<PartnersAndTestimonialsSec
   }, [data, t]);
 
   return (
-    <section
-      className='relative z-10 w-full'
-      aria-label={t('partnersTestimonials.aria.section')}
-    >
+    <section className='relative z-10 w-full' aria-label={t('partnersTestimonials.aria.section')}>
       <div className='mx-auto max-w-[1200px] px-8 py-16 sm:px-8 md:py-24 lg:px-16 lg:py-24'>
         {/* PARTNERS */}
         <div className='mb-8 text-center'>
@@ -104,11 +101,16 @@ export const PartnersAndTestimonialsSection: React.FC<PartnersAndTestimonialsSec
       {/* TESTIMONIALS */}
       {isLoading && (
         <div className='flex items-center justify-center py-16'>
-          <div className='u-spinner' aria-label={t('partnersTestimonials.aria.loadingTestimonials')} />
+          <div
+            className='u-spinner'
+            aria-label={t('partnersTestimonials.aria.loadingTestimonials')}
+          />
         </div>
       )}
       {isError && (
-        <p className='text-center text-red-400'>{t('partnersTestimonials.testimonials.loadError')}</p>
+        <p className='text-center text-red-400'>
+          {t('partnersTestimonials.testimonials.loadError')}
+        </p>
       )}
       {!isLoading && !isError && (
         <TestimonialsCarousel title={resolvedTitleTestimonials} testimonialsList={carouselData} />

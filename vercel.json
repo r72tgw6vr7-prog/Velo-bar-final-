@@ -11,20 +11,62 @@
     }
   ],
   "redirects": [
-    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velobar.de"}]},
-    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.de"}]},
-    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velobar.com"}]},
-    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.de"}]},
-    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "velo-bar.com"}]},
-    {"source": "/:splat*", "destination": "https://www.velo-bar.com/:splat*", "statusCode": 301, "has": [{"type": "host", "value": "www.velobar.com"}]},
+    {
+      "source": "/:splat*",
+      "destination": "https://www.velo-bar.com/:splat*",
+      "statusCode": 301,
+      "has": [{ "type": "host", "value": "velobar.de" }]
+    },
+    {
+      "source": "/:splat*",
+      "destination": "https://www.velo-bar.com/:splat*",
+      "statusCode": 301,
+      "has": [{ "type": "host", "value": "www.velobar.de" }]
+    },
+    {
+      "source": "/:splat*",
+      "destination": "https://www.velo-bar.com/:splat*",
+      "statusCode": 301,
+      "has": [{ "type": "host", "value": "velobar.com" }]
+    },
+    {
+      "source": "/:splat*",
+      "destination": "https://www.velo-bar.com/:splat*",
+      "statusCode": 301,
+      "has": [{ "type": "host", "value": "velo-bar.de" }]
+    },
+    {
+      "source": "/:splat*",
+      "destination": "https://www.velo-bar.com/:splat*",
+      "statusCode": 301,
+      "has": [{ "type": "host", "value": "velo-bar.com" }]
+    },
+    {
+      "source": "/:splat*",
+      "destination": "https://www.velo-bar.com/:splat*",
+      "statusCode": 301,
+      "has": [{ "type": "host", "value": "www.velobar.com" }]
+    },
 
-    {"source": "/messen", "destination": "/messe-catering", "statusCode": 301},
-    {"source": "/team-events", "destination": "/leistungen#team-events-workshops", "statusCode": 301},
-    {"source": "/teamevents", "destination": "/leistungen#team-events-workshops", "statusCode": 301},
-    {"source": "/buchung", "destination": "/anfrage", "statusCode": 301},
-    {"source": "/booking", "destination": "/anfrage", "statusCode": 301},
-    {"source": "/buchungmuc", "destination": "/anfrage?region=muenchen", "statusCode": 301},
-    {"source": "/velobar/buchungmuc", "destination": "/anfrage?region=muenchen", "statusCode": 301}
+    { "source": "/messen", "destination": "/messe-catering", "statusCode": 301 },
+    {
+      "source": "/team-events",
+      "destination": "/leistungen#team-events-workshops",
+      "statusCode": 301
+    },
+    {
+      "source": "/teamevents",
+      "destination": "/leistungen#team-events-workshops",
+      "statusCode": 301
+    },
+    { "source": "/buchung", "destination": "/anfrage", "statusCode": 301 },
+    { "source": "/booking", "destination": "/anfrage", "statusCode": 301 },
+    { "source": "/buchungmuc", "destination": "/anfrage?region=muenchen", "statusCode": 301 },
+    {
+      "source": "/velobar/buchungmuc",
+      "destination": "/anfrage?region=muenchen",
+      "statusCode": 301
+    }
   ],
   "headers": [
     {
@@ -84,7 +126,23 @@
         },
         {
           "key": "Strict-Transport-Security",
-          "value": "max-age=31536000; includeSubDomains"
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "credentialless"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
         }
       ]
     }

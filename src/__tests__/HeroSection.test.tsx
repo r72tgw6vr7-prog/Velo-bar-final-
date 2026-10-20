@@ -40,7 +40,9 @@ describe('HeroSection Component', () => {
     });
 
     it('accepts custom background image prop', () => {
-      expect(() => render(<HeroSection backgroundImage='/test-assets/test-image.jpg' />)).not.toThrow();
+      expect(() =>
+        render(<HeroSection backgroundImage='/test-assets/test-image.jpg' />),
+      ).not.toThrow();
     });
 
     it('renders children when provided', () => {

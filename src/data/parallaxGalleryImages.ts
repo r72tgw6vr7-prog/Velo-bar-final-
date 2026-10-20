@@ -159,7 +159,10 @@ export const PARALLAX_GALLERY_IMAGES = [
   { basePath: '/Velo%20Gallery/gin-tasting', alt: 'Gin tasting' },
   { basePath: '/Velo%20Gallery/event-1', alt: 'Event impression' },
   { basePath: '/Velo%20Gallery/gallery-carousel/drinks-selection', alt: 'Drinks selection' },
-  { basePath: '/Velo%20Gallery/gallery-carousel/himbeer-hibiskus-fizz', alt: 'Himbeer Hibiskus Fizz Cocktail' },
+  {
+    basePath: '/Velo%20Gallery/gallery-carousel/himbeer-hibiskus-fizz',
+    alt: 'Himbeer Hibiskus Fizz Cocktail',
+  },
   { basePath: '/Velo%20Gallery/gallery-carousel/mango-rosmarin', alt: 'Mango Rosmarin Cocktail' },
   { basePath: '/Velo%20Gallery/gallery-carousel/minz-maracuja', alt: 'Minz Maracuja Cocktail' },
   { basePath: '/Velo%20Gallery/gallery-carousel/basil-smash', alt: 'Basil Smash Cocktail' },

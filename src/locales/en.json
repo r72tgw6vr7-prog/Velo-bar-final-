@@ -821,7 +821,7 @@
   "pages": {
     "home": {
       "seo": {
-        "title": "Mobile cocktail bar in Munich | Premium bar from €890",
+        "title": "Mobile cocktail bar in Munich | Premium bar from €899",
         "description": "Premium mobile cocktail bar for corporate events, weddings & parties in Munich. Professional bartending for 50–500+ guests. Request now!"
       },
       "locations": {
@@ -1742,9 +1742,18 @@
       "learn": {
         "title": "What you will learn in our workshops",
         "items": {
-          "0": { "strong": "Cocktail basics:", "text": "shaking, stirring, muddling – the core techniques" },
-          "1": { "strong": "Spirits know-how:", "text": "how to use gin, rum, vodka and tequila properly" },
-          "2": { "strong": "Classic cocktails:", "text": "mix mojito, margarita and negroni perfectly" },
+          "0": {
+            "strong": "Cocktail basics:",
+            "text": "shaking, stirring, muddling – the core techniques"
+          },
+          "1": {
+            "strong": "Spirits know-how:",
+            "text": "how to use gin, rum, vodka and tequila properly"
+          },
+          "2": {
+            "strong": "Classic cocktails:",
+            "text": "mix mojito, margarita and negroni perfectly"
+          },
           "3": { "strong": "Creative garnishes:", "text": "the perfect presentation" },
           "4": { "strong": "Team challenges:", "text": "create your own signature drinks together" }
         }

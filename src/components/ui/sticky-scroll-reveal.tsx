@@ -67,7 +67,7 @@ export function StickyScroll({ content, contentClassName }: StickyScrollProps) {
   return (
     <motion.div
       ref={containerRef}
-      className='services-parallax parallax-content services-parallax-track bg-section-dark relative flex h-[85vh] justify-center space-x-16 overflow-y-auto rounded-3xl px-16 py-16 snap-y snap-mandatory scroll-smooth'
+      className='services-parallax parallax-content services-parallax-track bg-section-dark relative flex h-[85vh] snap-y snap-mandatory justify-center space-x-16 overflow-y-auto scroll-smooth rounded-3xl px-16 py-16'
     >
       {/* Left column with text */}
       <div className='relative flex items-start'>
@@ -79,10 +79,8 @@ export function StickyScroll({ content, contentClassName }: StickyScrollProps) {
                 cardRefs.current[index] = el;
               }}
               className={cn(
-                'relative space-y-6 rounded-xl p-6 transition-all duration-300 snap-center',
-                activeCard === index 
-                  ? 'service-scroll-card' 
-                  : 'service-scroll-card-inactive'
+                'relative snap-center space-y-6 rounded-xl p-6 transition-all duration-300',
+                activeCard === index ? 'service-scroll-card' : 'service-scroll-card-inactive',
               )}
               animate={{
                 scale: activeCard === index ? 1 : 0.97,

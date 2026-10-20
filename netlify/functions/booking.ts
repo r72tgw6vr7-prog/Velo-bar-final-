@@ -2,25 +2,21 @@ import type { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 import { z } from 'zod';
 import { sendBookingEmail } from '../../src/lib/api/sendBookingEmail';
 import { bookingPayloadSchema, type BookingPayload } from '../../src/lib/api/types';
-
-// Basic in-memory rate limiter for Netlify function
-const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX || process.env.VITE_RATE_LIMIT_MAX || 30);
-const RATE_LIMIT_WINDOW = Number(process.env.RATE_LIMIT_WINDOW || process.env.VITE_RATE_LIMIT_WINDOW || 600); // seconds
-const rateLimitStore = new Map<string, { count: number; first: number }>();
-function checkRateLimit(key: string) {
-  const now = Date.now();
-  const entry = rateLimitStore.get(key) || { count: 0, first: now };
-  if (now - entry.first > RATE_LIMIT_WINDOW * 1000) {
-    entry.count = 0;
-    entry.first = now;
-  }
-  entry.count += 1;
-  rateLimitStore.set(key, entry);
-  return entry.count <= RATE_LIMIT_MAX;
-}
+import { validateCsrfToken } from '../../src/lib/api/csrf';
+import { logger } from '../../src/lib/logger';
+import { checkBookingRateLimits, recordRateLimitFailure } from '../../src/lib/api/rateLimiter';
 
 function formatZodErrors(error: z.ZodError): string {
   return error.issues.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
+}
+
+function getClientIp(event: HandlerEvent): string {
+  const forwarded = event.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.trim()) {
+    const parts = forwarded.split(',');
+    return parts[parts.length - 1].trim();
+  }
+  return event.headers['client-ip'] || 'unknown';
 }
 
 export const handler: Handler = async (event: HandlerEvent, _context: HandlerContext) => {
@@ -30,7 +26,7 @@ export const handler: Handler = async (event: HandlerEvent, _context: HandlerCon
   const origin = event.headers?.origin;
 
   const headers: Record<string, string> = {
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, X-CSRF-Token',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Content-Type': 'application/json',
   };
@@ -38,24 +34,10 @@ export const handler: Handler = async (event: HandlerEvent, _context: HandlerCon
   if (origin && allowedOrigins.length && allowedOrigins.includes(origin)) {
     headers['Access-Control-Allow-Origin'] = origin;
     headers['Vary'] = 'Origin';
-  } else if (allowedOrigins.length === 1) {
-    headers['Access-Control-Allow-Origin'] = allowedOrigins[0];
   }
-
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
-  }
-
-  // Gentle rate limiting to protect endpoints from abuse
-  const ip = event.headers['x-forwarded-for'] || event.headers['client-ip'] || 'unknown';
-  const key = `booking:${ip}`;
-  if (!checkRateLimit(key)) {
-    return {
-      statusCode: 429,
-      headers,
-      body: JSON.stringify({ ok: false, error: 'Too many requests. Please try again later.' }),
-    };
   }
 
   if (event.httpMethod !== 'POST') {
@@ -63,6 +45,35 @@ export const handler: Handler = async (event: HandlerEvent, _context: HandlerCon
       statusCode: 405,
       headers,
       body: JSON.stringify({ ok: false, error: 'Method not allowed' }),
+    };
+  }
+
+  const ip = getClientIp(event);
+
+  // Validate CSRF token from header, body, or cookie
+  const headerCsrf = event.headers['x-csrf-token'];
+  const cookieHeader = event.headers['cookie'] || '';
+  const cookies = Object.fromEntries(
+    cookieHeader.split(';').map((c) => {
+      const [k, ...v] = c.trim().split('=');
+      return [k, v.join('=')];
+    }),
+  );
+  const bodyCsrf =
+    event.body && typeof event.body === 'object' && 'csrfToken' in event.body
+      ? String((event.body as Record<string, unknown>).csrfToken)
+      : undefined;
+
+  const csrfValid = validateCsrfToken(
+    () => headerCsrf || bodyCsrf,
+    (name) => cookies[name],
+  );
+  if (!csrfValid) {
+    logger.security('CSRF validation failed', { ip, path: event.path });
+    return {
+      statusCode: 403,
+      headers,
+      body: JSON.stringify({ ok: false, error: 'CSRF_VALIDATION_FAILED' }),
     };
   }
 
@@ -79,6 +90,10 @@ export const handler: Handler = async (event: HandlerEvent, _context: HandlerCon
 
   const parsed = bookingPayloadSchema.safeParse(body);
   if (!parsed.success) {
+    logger.security('Booking validation failed', {
+      ip,
+      errors: parsed.error.issues.map((i) => i.path.join('.')),
+    });
     return {
       statusCode: 400,
       headers,
@@ -87,6 +102,27 @@ export const handler: Handler = async (event: HandlerEvent, _context: HandlerCon
         error: 'Validation failed',
         details: formatZodErrors(parsed.error),
       }),
+    };
+  }
+
+  // Rate limiting by IP and email to stop automated abuse
+  const limitCheck = checkBookingRateLimits(ip, parsed.data.customerEmail);
+  if (!limitCheck.allowed) {
+    logger.security('Rate limit exceeded', { ip, key: limitCheck.key, path: event.path });
+    recordRateLimitFailure(limitCheck.key);
+    return {
+      statusCode: 429,
+      headers,
+      body: JSON.stringify({ ok: false, error: 'Too many requests. Please try again later.' }),
+    };
+  }
+
+  if (parsed.data.website) {
+    logger.security('Honeypot triggered', { ip, email: parsed.data.customerEmail });
+    return {
+      statusCode: 400,
+      headers,
+      body: JSON.stringify({ ok: false, error: 'Validation failed' }),
     };
   }
 
@@ -104,13 +140,13 @@ export const handler: Handler = async (event: HandlerEvent, _context: HandlerCon
       }),
     };
   } catch (error) {
-    console.error('Email sending error:', error);
+    logger.error('Email sending error', error, { ip, path: event.path });
     return {
       statusCode: 500,
       headers,
       body: JSON.stringify({
         ok: false,
-        error: error instanceof Error ? error.message : 'Email service error',
+        error: 'Email service error',
       }),
     };
   }

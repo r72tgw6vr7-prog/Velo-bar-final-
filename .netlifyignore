@@ -23,3 +23,6 @@ docs/
 
 # misc
 *.log
+
+# large image archives (keep originals out of deploys)
+**/originals-archive/**

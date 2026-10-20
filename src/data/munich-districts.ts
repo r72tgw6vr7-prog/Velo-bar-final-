@@ -49,8 +49,7 @@ type DistrictOverride = {
 const DISTRICT_OVERRIDES: Record<string, { en: DistrictOverride }> = {
   schwabing: {
     en: {
-      description:
-        'Elegant artists’ district with a bohemian vibe and premium venues',
+      description: 'Elegant artists’ district with a bohemian vibe and premium venues',
       characteristics: [
         'Art & culture scene',
         'Gourmet restaurants',
@@ -158,8 +157,7 @@ const DISTRICT_OVERRIDES: Record<string, { en: DistrictOverride }> = {
   },
   garching: {
     en: {
-      description:
-        'High-tech science hub with research institutions and innovative companies',
+      description: 'High-tech science hub with research institutions and innovative companies',
       characteristics: [
         'Research campus',
         'Technology cluster',
@@ -186,8 +184,7 @@ const DISTRICT_OVERRIDES: Record<string, { en: DistrictOverride }> = {
   },
   'neuhausen-nymphenburg': {
     en: {
-      description:
-        'Green residential district with Nymphenburg Palace and a family-friendly vibe',
+      description: 'Green residential district with Nymphenburg Palace and a family-friendly vibe',
       characteristics: [
         'Nymphenburg Palace',
         'Botanical Garden',
@@ -214,8 +211,7 @@ const DISTRICT_OVERRIDES: Record<string, { en: DistrictOverride }> = {
   },
   'berg-am-laim': {
     en: {
-      description:
-        'Growing business area with modern infrastructure and great accessibility',
+      description: 'Growing business area with modern infrastructure and great accessibility',
       characteristics: [
         'Business parks',
         'Modern office complexes',
@@ -242,8 +238,7 @@ const DISTRICT_OVERRIDES: Record<string, { en: DistrictOverride }> = {
   },
   'trudering-riem': {
     en: {
-      description:
-        'Modern district with Messe München and excellent infrastructure',
+      description: 'Modern district with Messe München and excellent infrastructure',
       characteristics: [
         'Messe München (trade fair)',
         'Close to the airport',
@@ -611,7 +606,10 @@ export const munichDistricts: MunichDistrict[] = [
 ];
 
 // Helper functions for programmatic SEO
-export const getDistrictBySlug = (slug: string, language: 'de' | 'en' = 'de'): MunichDistrict | undefined => {
+export const getDistrictBySlug = (
+  slug: string,
+  language: 'de' | 'en' = 'de',
+): MunichDistrict | undefined => {
   const district = munichDistricts.find((d) => d.slug === slug);
   if (!district) return undefined;
 
@@ -650,7 +648,10 @@ export const getDistrictsByBusinessFocus = (focus: string): MunichDistrict[] => 
   );
 };
 
-export const generateDistrictKeywords = (district: MunichDistrict, language: 'de' | 'en' = 'de'): string[] => {
+export const generateDistrictKeywords = (
+  district: MunichDistrict,
+  language: 'de' | 'en' = 'de',
+): string[] => {
   if (language === 'en') {
     return [
       district.seo.primaryKeyword,
@@ -724,7 +725,9 @@ export const generateDistrictSchema = (district: MunichDistrict, language: 'de' 
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: isEnglish ? 'Mobile cocktail bar for corporate events' : 'Mobile Cocktailbar für Firmenfeiern',
+            name: isEnglish
+              ? 'Mobile cocktail bar for corporate events'
+              : 'Mobile Cocktailbar für Firmenfeiern',
           },
         },
       ],

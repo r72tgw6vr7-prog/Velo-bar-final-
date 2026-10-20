@@ -29,7 +29,6 @@ const LocationsIndexPage: React.FC = () => {
       name: venue.name,
       url: `${SITE_URL}/locations/${venue.slug}`,
     })),
-
   };
 
   const VenueCard: React.FC<{ venue: (typeof venues)[0] }> = ({ venue }) => (
@@ -58,102 +57,112 @@ const LocationsIndexPage: React.FC = () => {
       >
         <main className='w-full'>
           {/* Hero Section */}
-        <div className='to-accent-primary/80 relative overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 py-24 text-white lg:py-32'>
-          <div className='absolute inset-0 z-0 opacity-20'>
-            <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(var(--orange-rgb),0.4),transparent_50%)]' />
+          <div className='to-accent-primary/80 relative overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 py-24 text-white lg:py-32'>
+            <div className='absolute inset-0 z-0 opacity-20'>
+              <div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(var(--orange-rgb),0.4),transparent_50%)]' />
+            </div>
+            <div className='relative z-10 mx-auto max-w-4xl px-8 text-center sm:px-8 lg:px-8'>
+              <EyebrowBadge className='mb-8'>{t('pages.locationsIndex.hero.badge')}</EyebrowBadge>
+              <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
+                {t('pages.locationsIndex.hero.titlePrefix')} <br className='hidden sm:block' />
+                <span className='text-accent-primary'>
+                  {t('pages.locationsIndex.hero.titleAccent')}
+                </span>
+              </h1>
+              <p className='mx-auto max-w-2xl text-xl text-white/80'>
+                {t('pages.locationsIndex.hero.subtitle')}
+              </p>
+            </div>
           </div>
-          <div className='relative z-10 mx-auto max-w-4xl px-8 text-center sm:px-8 lg:px-8'>
-            <EyebrowBadge className='mb-8'>{t('pages.locationsIndex.hero.badge')}</EyebrowBadge>
-            <h1 className='mb-8 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
-              {t('pages.locationsIndex.hero.titlePrefix')} <br className='hidden sm:block' />
-              <span className='text-accent-primary'>{t('pages.locationsIndex.hero.titleAccent')}</span>
-            </h1>
-            <p className='mx-auto max-w-2xl text-xl text-white/80'>
-              {t('pages.locationsIndex.hero.subtitle')}
-            </p>
+
+          <div className='mx-auto max-w-6xl px-8 py-16 sm:px-8 lg:px-8'>
+            {/* Messe Venues */}
+            {messeVenues.length > 0 && (
+              <section className='mb-16'>
+                <div className='mb-8 flex items-center gap-0'>
+                  <span className='text-3xl'>🏛️</span>
+                  <h2 className='text-2xl font-bold text-gray-900'>
+                    {t('pages.locationsIndex.sections.messe')}
+                  </h2>
+                </div>
+                <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+                  {messeVenues.map((venue) => (
+                    <VenueCard key={venue.slug} venue={venue} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Event Locations */}
+            {locationVenues.length > 0 && (
+              <section className='mb-16'>
+                <div className='mb-8 flex items-center gap-0'>
+                  <span className='text-3xl'>🎪</span>
+                  <h2 className='text-2xl font-bold text-gray-900'>
+                    {t('pages.locationsIndex.sections.locations')}
+                  </h2>
+                </div>
+                <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+                  {locationVenues.map((venue) => (
+                    <VenueCard key={venue.slug} venue={venue} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Historic Venues */}
+            {historicVenues.length > 0 && (
+              <section className='mb-16'>
+                <div className='mb-8 flex items-center gap-0'>
+                  <span className='text-3xl'>🏰</span>
+                  <h2 className='text-2xl font-bold text-gray-900'>
+                    {t('pages.locationsIndex.sections.historic')}
+                  </h2>
+                </div>
+                <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+                  {historicVenues.map((venue) => (
+                    <VenueCard key={venue.slug} venue={venue} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Corporate/Startup Venues */}
+            {corporateVenues.length > 0 && (
+              <section className='mb-16'>
+                <div className='mb-8 flex items-center gap-0'>
+                  <span className='text-3xl'>🚀</span>
+                  <h2 className='text-2xl font-bold text-gray-900'>
+                    {t('pages.locationsIndex.sections.corporate')}
+                  </h2>
+                </div>
+                <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+                  {corporateVenues.map((venue) => (
+                    <VenueCard key={venue.slug} venue={venue} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* CTA Section */}
+            <section className='rounded-2xl bg-gray-50 p-8 text-center md:p-16'>
+              <h2 className='text-accent-primary mb-8 text-2xl font-bold'>
+                {t('pages.locationsIndex.cta.title')}
+              </h2>
+              <p className='text-body-light mx-auto mb-8 max-w-2xl'>
+                {t('pages.locationsIndex.cta.description')}
+              </p>
+              <Link to='/anfrage'>
+                <Button
+                  variant='primary'
+                  size='lg'
+                  className='bg-accent-primary hover:bg-accent-primary-hover text-white transition-colors duration-200'
+                >
+                  {t('pages.locationsIndex.cta.button')}
+                </Button>
+              </Link>
+            </section>
           </div>
-        </div>
-
-        <div className='mx-auto max-w-6xl px-8 py-16 sm:px-8 lg:px-8'>
-          {/* Messe Venues */}
-          {messeVenues.length > 0 && (
-            <section className='mb-16'>
-              <div className='mb-8 flex items-center gap-0'>
-                <span className='text-3xl'>🏛️</span>
-                <h2 className='text-2xl font-bold text-gray-900'>{t('pages.locationsIndex.sections.messe')}</h2>
-              </div>
-              <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-                {messeVenues.map((venue) => (
-                  <VenueCard key={venue.slug} venue={venue} />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* Event Locations */}
-          {locationVenues.length > 0 && (
-            <section className='mb-16'>
-              <div className='mb-8 flex items-center gap-0'>
-                <span className='text-3xl'>🎪</span>
-                <h2 className='text-2xl font-bold text-gray-900'>{t('pages.locationsIndex.sections.locations')}</h2>
-              </div>
-              <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-                {locationVenues.map((venue) => (
-                  <VenueCard key={venue.slug} venue={venue} />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* Historic Venues */}
-          {historicVenues.length > 0 && (
-            <section className='mb-16'>
-              <div className='mb-8 flex items-center gap-0'>
-                <span className='text-3xl'>🏰</span>
-                <h2 className='text-2xl font-bold text-gray-900'>{t('pages.locationsIndex.sections.historic')}</h2>
-              </div>
-              <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-                {historicVenues.map((venue) => (
-                  <VenueCard key={venue.slug} venue={venue} />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* Corporate/Startup Venues */}
-          {corporateVenues.length > 0 && (
-            <section className='mb-16'>
-              <div className='mb-8 flex items-center gap-0'>
-                <span className='text-3xl'>🚀</span>
-                <h2 className='text-2xl font-bold text-gray-900'>{t('pages.locationsIndex.sections.corporate')}</h2>
-              </div>
-              <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
-                {corporateVenues.map((venue) => (
-                  <VenueCard key={venue.slug} venue={venue} />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* CTA Section */}
-          <section className='rounded-2xl bg-gray-50 p-8 text-center md:p-16'>
-            <h2 className='mb-8 text-2xl font-bold text-accent-primary'>
-              {t('pages.locationsIndex.cta.title')}
-            </h2>
-            <p className='mx-auto mb-8 max-w-2xl text-body-light'>
-              {t('pages.locationsIndex.cta.description')}
-            </p>
-            <Link to='/anfrage'>
-              <Button
-                variant='primary'
-                size='lg'
-                className='bg-accent-primary text-white transition-colors duration-200 hover:bg-accent-primary-hover'
-              >
-                {t('pages.locationsIndex.cta.button')}
-              </Button>
-            </Link>
-          </section>
-        </div>
         </main>
       </PageTemplate>
     </SiteBackground>

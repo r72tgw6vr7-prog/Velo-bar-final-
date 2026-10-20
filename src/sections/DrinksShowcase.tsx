@@ -71,9 +71,9 @@ export const DrinksShowcase: FC = () => {
 
                 {/* Text Column */}
                 <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className='space-y-6 rounded-2xl border border-(--color-coral)/10 bg-(--color-bg-surface)/90 p-6 backdrop-blur-sm overflow-hidden md:space-y-7 md:bg-(--offwhite-primary)/70 md:p-8'>
+                  <div className='space-y-6 overflow-hidden rounded-2xl border border-(--color-coral)/10 bg-(--color-bg-surface)/90 p-6 backdrop-blur-sm md:space-y-7 md:bg-(--offwhite-primary)/70 md:p-8'>
                     <div className='space-y-3'>
-                      <EyebrowBadge>{t('drinksShowcase.signatureBadge')}</EyebrowBadge> 
+                      <EyebrowBadge>{t('drinksShowcase.signatureBadge')}</EyebrowBadge>
 
                       <h3 className='text-3xl font-bold tracking-tight text-(--color-teal) md:text-4xl'>
                         {t(`drinksShowcase.cocktails.${cocktail.key}.name`)}
@@ -98,7 +98,10 @@ export const DrinksShowcase: FC = () => {
                       </h4>
                       <div className='flex flex-wrap gap-2'>
                         {cocktail.ingredients.map((ingredient) => (
-                          <span key={ingredient} className='badge-chip border-(--color-coral)/25 text-(--text-dark-tea)'>
+                          <span
+                            key={ingredient}
+                            className='badge-chip border-(--color-coral)/25 text-(--text-dark-tea)'
+                          >
                             {ingredient}
                           </span>
                         ))}
@@ -115,8 +118,8 @@ export const DrinksShowcase: FC = () => {
       {/* Classic Highballs - Pricing Card Style Grid */}
       <Section container='wide' spacing='xl' background='light'>
         <div className='mb-12 text-center'>
-            <EyebrowBadge>{t('drinksShowcase.classicHighballsBadge')}</EyebrowBadge>
-          </div>
+          <EyebrowBadge>{t('drinksShowcase.classicHighballsBadge')}</EyebrowBadge>
+        </div>
         <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {classicHighballs.map((name) => (
             <div

@@ -174,13 +174,13 @@ export const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
         {/* Hero Section - Clean minimal design */}
         <header className='w-full py-8 md:py-16'>
           <div className='mx-auto flex max-w-4xl flex-col items-center px-8 text-center sm:px-8 lg:px-8'>
-            <span className='mb-0 text-sm font-semibold text-accent-primary'>
+            <span className='text-accent-primary mb-0 text-sm font-semibold'>
               {t('servicePageLayout.hero.eyebrow')}
             </span>
-            <h1 className='mb-8 text-3xl font-bold tracking-tight text-accent-primary md:text-5xl lg:text-6xl'>
+            <h1 className='text-accent-primary mb-8 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl'>
               {heroTitle}
             </h1>
-            <p className='mb-8 max-w-2xl text-base font-bold leading-relaxed text-white/90 md:text-lg'>
+            <p className='mb-8 max-w-2xl text-base leading-relaxed font-bold text-white/90 md:text-lg'>
               {heroSubtitle}
             </p>
             <Button variant='primary' size='lg' asChild>

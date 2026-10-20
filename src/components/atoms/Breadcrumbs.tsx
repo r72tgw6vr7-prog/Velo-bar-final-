@@ -128,7 +128,10 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: jsonLdString }} />
 
       {/* Visual Breadcrumbs */}
-      <nav aria-label={t('common.breadcrumbAria')} className={`px-4 py-4 sm:px-6 lg:px-8 ${className}`}>
+      <nav
+        aria-label={t('common.breadcrumbAria')}
+        className={`px-4 py-4 sm:px-6 lg:px-8 ${className}`}
+      >
         <ol className='flex flex-wrap items-center gap-0 text-sm text-gray-500'>
           {breadcrumbs.map((item, index) => {
             const isLast = index === breadcrumbs.length - 1;

@@ -37,7 +37,9 @@ const DesignSystemPreviewPage = lazy(() => import('./pages/DesignSystemPreviewPa
 // Venue-specific landing pages (Programmatic SEO)
 const MesseMuenchenPage = lazy(() => import('./pages/locations/messe-muenchen.tsx'));
 const MOCMuenchenPage = lazy(() => import('./pages/locations/moc-muenchen.tsx'));
-const BallhausforumInfinityPage = lazy(() => import('./pages/locations/ballhausforum-infinity.tsx'));
+const BallhausforumInfinityPage = lazy(
+  () => import('./pages/locations/ballhausforum-infinity.tsx'),
+);
 const Werk1MuenchenPage = lazy(() => import('./pages/locations/werk1-muenchen.tsx'));
 const SchlossSchleissheimPage = lazy(() => import('./pages/locations/schloss-schleissheim.tsx'));
 const ZenithMuenchenPage = lazy(() => import('./pages/locations/zenith-muenchen.tsx'));
@@ -188,12 +190,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           />
 
           {/* Services (single consolidated page) */}
-          <Route
-            path={ROUTE_CONFIG[ROUTES.SERVICES].path}
-            element={
-              <ServicesPage />
-            }
-          />
+          <Route path={ROUTE_CONFIG[ROUTES.SERVICES].path} element={<ServicesPage />} />
 
           {/* Pricing */}
           <Route path={ROUTE_CONFIG[ROUTES.PREISE].path} element={<PricingPage />} />
@@ -245,12 +242,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           />
 
           {/* Menu Route */}
-          <Route
-            path={ROUTE_CONFIG[ROUTES.MENU].path}
-            element={
-              <MenuPage />
-            }
-          />
+          <Route path={ROUTE_CONFIG[ROUTES.MENU].path} element={<MenuPage />} />
 
           {/* FAQ Route */}
           <Route path={ROUTE_CONFIG[ROUTES.FAQ].path} element={<FAQPage />} />
@@ -264,12 +256,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
               </ErrorBoundary>
             }
           />
-          <Route
-            path={ROUTE_CONFIG[ROUTES.VELOBARCO].path}
-            element={
-              <VelobarcoPage />
-            }
-          />
+          <Route path={ROUTE_CONFIG[ROUTES.VELOBARCO].path} element={<VelobarcoPage />} />
 
           {/* About Route */}
           <Route path={ROUTE_CONFIG[ROUTES.ABOUT].path} element={<AboutPage />} />
@@ -314,10 +301,7 @@ const AppRouterContent: React.FC<AppRouterContentProps> = ({
           />
 
           {/* Programmatic SEO - Munich Districts */}
-          <Route
-            path='/firmenfeieren/:district'
-            element={<LegacyDistrictRedirect />}
-          />
+          <Route path='/firmenfeieren/:district' element={<LegacyDistrictRedirect />} />
           <Route path='/firmenfeiern/:district' element={<DistrictPage />} />
 
           {/* Programmatic SEO - Venue-Specific Landing Pages */}

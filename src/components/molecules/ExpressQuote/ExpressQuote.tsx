@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Send from 'lucide-react/dist/esm/icons/send';
 import Loader2 from 'lucide-react/dist/esm/icons/loader-2';
-import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';;
+import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
 import { csrfFetch } from '@/lib/csrfHelper.ts';
 import { useLanguage } from '@/contexts/LanguageContext';
 

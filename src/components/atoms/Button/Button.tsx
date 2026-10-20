@@ -83,8 +83,7 @@ const buttonVariants = cva(
 );
 
 interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   /** Support Radix-style `asChild` used throughout the codebase (typed here, stripped before DOM spread) */
   asChild?: boolean;
   isLoading?: boolean;

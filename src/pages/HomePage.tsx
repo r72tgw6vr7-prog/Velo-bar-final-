@@ -12,11 +12,18 @@ import { SiteBackground } from '@/components/layout/SiteBackground';
 import { Section, Container } from '@/components/atoms/index.ts';
 import { GridClean } from '@/components/atoms/Grid.clean.tsx';
 import { HeroLocked } from '@/sections/HeroLocked.tsx';
-import { getLocalBusinessSchema, getWebSiteSchema, getReviewSchema, combineSchemas } from '@/seo/schema.ts';
+import {
+  getLocalBusinessSchema,
+  getWebSiteSchema,
+  getReviewSchema,
+  combineSchemas,
+} from '@/seo/schema.ts';
 import { ClientLogos } from '@/sections/ClientLogos.tsx';
 import { TestimonialsSection } from '@/sections/TestimonialsSection.tsx';
 const WhyVeloBarSection = lazy(() =>
-  import('@/sections/WhyVeloBarSection/WhyVeloBarSection.tsx').then((m) => ({ default: m.WhyVeloBarSection })),
+  import('@/sections/WhyVeloBarSection/WhyVeloBarSection.tsx').then((m) => ({
+    default: m.WhyVeloBarSection,
+  })),
 );
 import { ResponsiveImageWithMetadata as ResponsiveImage } from '@/components/atoms/ResponsiveImage/ResponsiveImageWithMetadata.tsx';
 import { FinalCTA } from '@/components/FinalCTA.tsx';
@@ -71,7 +78,7 @@ const reviewsData = [
 const homePageSchema = combineSchemas(
   getLocalBusinessSchema(),
   getWebSiteSchema(),
-  getReviewSchema(reviewsData)
+  getReviewSchema(reviewsData),
 );
 
 export const HomePage = () => {
@@ -334,19 +341,27 @@ export const HomePage = () => {
             <div className='home-new-card p-6'>
               <GridClean cols={4} gap='lg'>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.0')}</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>
+                    {t('pages.home.stats.values.0')}
+                  </div>
                   <div className='text-on-light text-sm'>{t('pages.home.stats.items.0')}</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.1')}</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>
+                    {t('pages.home.stats.values.1')}
+                  </div>
                   <div className='text-on-light text-sm'>{t('pages.home.stats.items.1')}</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.2')}</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>
+                    {t('pages.home.stats.values.2')}
+                  </div>
                   <div className='text-on-light text-sm'>{t('pages.home.stats.items.2')}</div>
                 </div>
                 <div className='text-center'>
-                  <div className='text-accent mb-0 text-4xl font-bold'>{t('pages.home.stats.values.3')}</div>
+                  <div className='text-accent mb-0 text-4xl font-bold'>
+                    {t('pages.home.stats.values.3')}
+                  </div>
                   <div className='text-on-light text-sm'>{t('pages.home.stats.items.3')}</div>
                 </div>
               </GridClean>

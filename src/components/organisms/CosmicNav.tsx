@@ -147,7 +147,12 @@ export const CosmicNav: React.FC = () => {
             className='col-start-2 flex shrink-0 items-center justify-center justify-self-center'
             aria-label={t('nav.homeAria')}
           >
-            <img src='/velo.svg' alt={t('common.logoAlt')} className={logoClassName} loading='lazy' />
+            <img
+              src='/velo.svg'
+              alt={t('common.logoAlt')}
+              className={logoClassName}
+              loading='lazy'
+            />
           </Link>
 
           {/* Right Side: Navigation Items + Calendar (symmetric) */}
@@ -198,8 +203,7 @@ export const CosmicNav: React.FC = () => {
             >
               {menuOpen ? <path d='M6 18L18 6M6 6l12 12' /> : <path d='M3 12h18M3 6h18M3 18h18' />}
             </svg>
-            <span className='sr-only'>{menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
-            </span>
+            <span className='sr-only'>{menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}</span>
           </button>
         </div>
       </Container>

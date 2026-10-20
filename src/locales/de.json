@@ -815,7 +815,7 @@
   "pages": {
     "home": {
       "seo": {
-        "title": "Mobile Cocktailbar München | Premium Bar ab 890€",
+        "title": "Mobile Cocktailbar München | Premium Bar ab 899€",
         "description": "Premium mobile Cocktailbar für Firmenfeier, Hochzeiten & Partys in München. Professioneller Barkeeper-Service für 50–500+ Gäste. Jetzt anfragen!"
       },
       "locations": {
@@ -1206,7 +1206,7 @@
         },
         "7": {
           "question": "Was kostet eine mobile Bar für 50 Gäste?",
-          "answer": "Eine mobile Bar für 50 Gäste kostet ab 890€ für 4 Stunden. Dieses Paket beinhaltet professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren, Equipment und Gläser. Alle Preise sind transparent ohne versteckte Kosten."
+          "answer": "Eine mobile Bar für 50 Gäste kostet ab 899€ für 4 Stunden. Dieses Paket beinhaltet professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren, Equipment und Gläser. Alle Preise sind transparent ohne versteckte Kosten."
         },
         "8": {
           "question": "Können Sie auch Last-Minute-Anfragen bedienen?",
@@ -1227,7 +1227,7 @@
             },
             "1": {
               "question": "Was kostet eine mobile Bar für 50 Gäste?",
-              "answer": "Eine mobile Bar für 50 Gäste kostet ab 890€ für 4 Stunden. Dieses Paket beinhaltet professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren, Equipment und Gläser. Alle Preise sind transparent ohne versteckte Kosten."
+              "answer": "Eine mobile Bar für 50 Gäste kostet ab 899€ für 4 Stunden. Dieses Paket beinhaltet professionelle Barkeeper, alle Spirituosen, Mixer, Eis, Garnituren, Equipment und Gläser. Alle Preise sind transparent ohne versteckte Kosten."
             },
             "2": {
               "question": "Kann ich Last-Minute Catering in München buchen?",
@@ -1736,11 +1736,23 @@
       "learn": {
         "title": "Was Sie in unseren Workshops lernen",
         "items": {
-          "0": { "strong": "Cocktail-Basics:", "text": "Shaken, Rühren, Muddeln – die Grundtechniken" },
-          "1": { "strong": "Spirituosen-Kunde:", "text": "Gin, Rum, Vodka, Tequila richtig einsetzen" },
-          "2": { "strong": "Klassische Cocktails:", "text": "Mojito, Margarita, Negroni perfekt mixen" },
+          "0": {
+            "strong": "Cocktail-Basics:",
+            "text": "Shaken, Rühren, Muddeln – die Grundtechniken"
+          },
+          "1": {
+            "strong": "Spirituosen-Kunde:",
+            "text": "Gin, Rum, Vodka, Tequila richtig einsetzen"
+          },
+          "2": {
+            "strong": "Klassische Cocktails:",
+            "text": "Mojito, Margarita, Negroni perfekt mixen"
+          },
           "3": { "strong": "Kreative Garnierungen:", "text": "Die perfekte Präsentation" },
-          "4": { "strong": "Team-Challenges:", "text": "Gemeinsam eigene Signature-Drinks entwickeln" }
+          "4": {
+            "strong": "Team-Challenges:",
+            "text": "Gemeinsam eigene Signature-Drinks entwickeln"
+          }
         }
       },
       "occasions": {

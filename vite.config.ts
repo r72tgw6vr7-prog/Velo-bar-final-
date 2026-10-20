@@ -3,6 +3,7 @@ import type { ViteDevServer } from 'vite';
 import react from '@vitejs/plugin-react';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 import path from 'node:path';
+import fs from 'node:fs/promises';
 import viteCompression from 'vite-plugin-compression';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import sitemap from 'vite-plugin-sitemap';
@@ -35,6 +36,17 @@ export default defineConfig({
       threshold: 10240,
       deleteOriginFile: false,
     }),
+    {
+      name: 'exclude-originals-archive',
+      async writeBundle() {
+        const archivePath = path.resolve(__dirname, 'dist', 'Velo Gallery', 'originals-archive');
+        try {
+          await fs.rm(archivePath, { recursive: true, force: true });
+        } catch (error) {
+          console.warn('Could not remove originals-archive from dist:', error);
+        }
+      },
+    },
     {
       name: 'image-optimization-handler',
       configureServer(server) {
@@ -155,13 +167,9 @@ export default defineConfig({
             }
           });
         };
-        attachNodeHandler('/api/booking', path.resolve(__dirname, './api/booking.js'));
-        attachNodeHandler('/api/contact', path.resolve(__dirname, './api/contact.js'));
-        attachNodeHandler('/api/health', path.resolve(__dirname, './api/health.js'));
-        attachNodeHandler(
-          '/api/email/sendgrid',
-          path.resolve(__dirname, './api/email/sendgrid.js'),
-        );
+        attachNodeHandler('/api/booking', path.resolve(__dirname, './api/booking.ts'));
+        attachNodeHandler('/api/csrf-token', path.resolve(__dirname, './api/csrf-token.ts'));
+        attachNodeHandler('/api/csp-report', path.resolve(__dirname, './api/csp-report.ts'));
       },
     },
   ],
@@ -192,6 +200,10 @@ export default defineConfig({
         "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://apps.rokt.com; connect-src 'self' ws: wss: https://apps.rokt.com https://apps-demo.rokt.com https://res.cloudinary.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://apps.rokt.com; img-src 'self' data: blob: https://*; frame-src 'self'; base-uri 'self'; form-action 'self'",
       'X-Content-Type-Options': 'nosniff',
       'X-XSS-Protection': '1; mode=block',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'credentialless',
+      'Cross-Origin-Resource-Policy': 'same-origin',
+      'Origin-Agent-Cluster': '?1',
     },
   },
   preview: {
@@ -203,6 +215,10 @@ export default defineConfig({
         "default-src 'self' https: http: data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' https: http: blob:; style-src 'self' 'unsafe-inline' https: http:; img-src 'self' data: https: http: blob:; font-src 'self' data: https: http:; frame-src 'self' https: http:; connect-src 'self' https: http: ws: wss:; worker-src 'self' blob:; child-src 'self' blob: https: http:;",
       'X-Content-Type-Options': 'nosniff',
       'X-XSS-Protection': '1; mode=block',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'credentialless',
+      'Cross-Origin-Resource-Policy': 'same-origin',
+      'Origin-Agent-Cluster': '?1',
     },
   },
   build: {

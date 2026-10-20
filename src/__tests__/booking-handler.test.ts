@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { generateCsrfToken, signCsrfToken } from '../lib/api/csrf.ts';
 
 // Use a dynamic import so the module under test sees the mocked nodemailer
 vi.mock('nodemailer', () => {
@@ -14,10 +15,12 @@ vi.mock('nodemailer', () => {
 import handler from '../../api/booking';
 
 function makeReq(body: unknown, extra: Partial<Request> = {}) {
+  const payload = generateCsrfToken();
+  const csrfToken = signCsrfToken(payload);
   return Object.assign(
     {
       method: 'POST',
-      headers: {},
+      headers: { 'x-csrf-token': csrfToken },
       body,
       socket: { remoteAddress: '127.0.0.1' },
     },
@@ -29,7 +32,9 @@ function makeRes() {
   const headers: Record<string, string> = {};
   const res: any = {
     setHeader: (k: string, v: string) => (headers[k] = v),
-    status: vi.fn().mockImplementation((s: number) => ({ json: (payload: any) => ({ status: s, payload }) })),
+    status: vi
+      .fn()
+      .mockImplementation((s: number) => ({ json: (payload: any) => ({ status: s, payload }) })),
     json: vi.fn(),
     end: vi.fn(),
   };
@@ -39,6 +44,7 @@ function makeRes() {
 describe('API /api/booking handler', () => {
   beforeEach(() => {
     // Set required env vars
+    process.env.CSRF_SECRET = 'test-secret-for-csrf-token-signing-32bytes';
     process.env.GMAIL_USER = 'test@example.com';
     process.env.GMAIL_PASS = 'app-password-1234';
     process.env.BOOKING_TO_MUNICH = 'muenchen@example.com';
@@ -49,6 +55,7 @@ describe('API /api/booking handler', () => {
 
   afterEach(() => {
     vi.resetAllMocks();
+    delete process.env.CSRF_SECRET;
     delete process.env.GMAIL_USER;
     delete process.env.GMAIL_PASS;
     delete process.env.BOOKING_TO_MUNICH;

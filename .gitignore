@@ -52,6 +52,9 @@ tests/**/artifacts/
 tests/**/report/
 tests/**/*-snapshots/
 
+# Foglamp scan (edit token is a secret)
+.foglamp/
+
 # System files
 .DS_Store
 node_modules/

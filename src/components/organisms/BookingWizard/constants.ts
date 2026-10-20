@@ -4,13 +4,8 @@ import Building2 from 'lucide-react/dist/esm/icons/building-2';
 import Heart from 'lucide-react/dist/esm/icons/heart';
 import PartyPopper from 'lucide-react/dist/esm/icons/party-popper';
 import Sparkles from 'lucide-react/dist/esm/icons/sparkles';
-import MapPin from 'lucide-react/dist/esm/icons/map-pin';;
-import type {
-  EventType,
-  GuestRange,
-  StepTitle,
-  Location,
-} from './types.ts';
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';
+import type { EventType, GuestRange, StepTitle, Location } from './types.ts';
 
 export const eventTypes: EventType[] = [
   {

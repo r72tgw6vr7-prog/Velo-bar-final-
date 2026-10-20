@@ -167,7 +167,7 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
     // Also kill any remaining ScrollTriggers to prevent memory leaks
     return () => {
       mm.revert();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -177,9 +177,7 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
       <section className='about-hero' ref={heroRef}>
         <div className='about-hero__content' ref={heroContentRef}>
           <h1 className='about-hero__title'>{t('pages.about.parallax.hero.title')}</h1>
-          <p className='about-hero__subtitle'>
-            {t('pages.about.parallax.hero.subtitle')}
-          </p>
+          <p className='about-hero__subtitle'>{t('pages.about.parallax.hero.subtitle')}</p>
         </div>
 
         <div className='about-hero__images'>
@@ -220,12 +218,8 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
       <section className='about-story about-story--text-left'>
         <div className='about-story__text'>
           <h2 className='about-story__heading'>{t('pages.about.parallax.story1.heading')}</h2>
-          <p className='about-story__paragraph'>
-            {t('pages.about.parallax.story1.p1')}
-          </p>
-          <p className='about-story__paragraph'>
-            {t('pages.about.parallax.story1.p2')}
-          </p>
+          <p className='about-story__paragraph'>{t('pages.about.parallax.story1.p1')}</p>
+          <p className='about-story__paragraph'>{t('pages.about.parallax.story1.p2')}</p>
         </div>
 
         <div className='about-story__image'>
@@ -278,12 +272,8 @@ export const ParallaxAbout: React.FC<ParallaxAboutProps> = ({ className = '' }) 
           <p className='about-story__paragraph'>
             <strong>{t('pages.about.parallax.team.p1Strong')}</strong>
           </p>
-          <p className='about-story__paragraph'>
-            {t('pages.about.parallax.team.p2')}
-          </p>
-          <p className='about-story__paragraph'>
-            {t('pages.about.parallax.team.p3')}
-          </p>
+          <p className='about-story__paragraph'>{t('pages.about.parallax.team.p2')}</p>
+          <p className='about-story__paragraph'>{t('pages.about.parallax.team.p3')}</p>
           <p className='about-story__paragraph'>
             <Link
               to='/firmenfeiern'

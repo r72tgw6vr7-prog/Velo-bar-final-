@@ -22,7 +22,7 @@ import Check from 'lucide-react/dist/esm/icons/check';
 import Bike from 'lucide-react/dist/esm/icons/bike';
 import Leaf from 'lucide-react/dist/esm/icons/leaf';
 import Zap from 'lucide-react/dist/esm/icons/zap';
-import Shield from 'lucide-react/dist/esm/icons/shield';;
+import Shield from 'lucide-react/dist/esm/icons/shield';
 import { getDistrictBySlug, generateDistrictSchema } from '@/data/munich-districts.ts';
 import { Section } from '@/components/atoms/index.ts';
 import { useLanguage } from '@/contexts/LanguageContext.tsx';
@@ -53,7 +53,10 @@ const DistrictPage: React.FC = () => {
     return districtData ? generateDistrictSchema(districtData, language) : null;
   }, [district, language]);
 
-  const districtData = useMemo(() => getDistrictBySlug(district || '', language), [district, language]);
+  const districtData = useMemo(
+    () => getDistrictBySlug(district || '', language),
+    [district, language],
+  );
 
   const customContent = useMemo(() => {
     if (!districtData) return null;
@@ -71,12 +74,23 @@ const DistrictPage: React.FC = () => {
       },
       stats: [
         { value: districtData.population, label: t('pages.district.stats.population') },
-        { value: String(districtData.venues.hotels.length), label: t('pages.district.stats.partnerHotels') },
-        { value: t('pages.district.stats.travelTimeValue'), label: t('pages.district.stats.travelTime') },
-        { value: t('pages.district.stats.eventsDoneValue'), label: t('pages.district.stats.eventsDone') },
+        {
+          value: String(districtData.venues.hotels.length),
+          label: t('pages.district.stats.partnerHotels'),
+        },
+        {
+          value: t('pages.district.stats.travelTimeValue'),
+          label: t('pages.district.stats.travelTime'),
+        },
+        {
+          value: t('pages.district.stats.eventsDoneValue'),
+          label: t('pages.district.stats.eventsDone'),
+        },
       ],
       localVenues: {
-        title: formatTemplate(t('pages.district.sections.localVenues.title'), { district: districtName }),
+        title: formatTemplate(t('pages.district.sections.localVenues.title'), {
+          district: districtName,
+        }),
         subtitle: t('pages.district.sections.localVenues.subtitle'),
         venues: [
           ...districtData.venues.hotels.map((hotel) => ({
@@ -96,7 +110,9 @@ const DistrictPage: React.FC = () => {
         ],
       },
       transportInfo: {
-        title: formatTemplate(t('pages.district.sections.transport.title'), { district: districtName }),
+        title: formatTemplate(t('pages.district.sections.transport.title'), {
+          district: districtName,
+        }),
         subtitle: t('pages.district.sections.transport.subtitle'),
         subway: districtData.transport.subway,
         bus: districtData.transport.bus,
@@ -110,7 +126,9 @@ const DistrictPage: React.FC = () => {
     return (
       <div className='flex min-h-screen items-center justify-center'>
         <div className='text-center'>
-          <h1 className='text-on-light mb-8 text-4xl font-bold'>{t('pages.district.notFound.title')}</h1>
+          <h1 className='text-on-light mb-8 text-4xl font-bold'>
+            {t('pages.district.notFound.title')}
+          </h1>
           <p className='mb-16 text-(--color-text-on-light-secondary)'>
             {t('pages.district.notFound.description')}
           </p>
@@ -151,9 +169,7 @@ const DistrictPage: React.FC = () => {
       >
         <div className='text-center'>
           <EyebrowBadge className='mb-8'>{customContent.hero.eyebrow}</EyebrowBadge>
-          <h1 className='mb-8 text-4xl font-bold lg:text-5xl'>
-            {customContent.hero.title}
-          </h1>
+          <h1 className='mb-8 text-4xl font-bold lg:text-5xl'>{customContent.hero.title}</h1>
           <p className='mx-auto mb-16 max-w-3xl text-xl text-(--color-text-on-dark-secondary)'>
             {customContent.hero.description}
           </p>
@@ -164,7 +180,9 @@ const DistrictPage: React.FC = () => {
                 size='lg'
                 className='bg-white text-(--brand-primary) transition-colors duration-200 hover:bg-white/90'
               >
-                {formatTemplate(t('pages.district.hero.primaryCta'), { district: districtData.name })}
+                {formatTemplate(t('pages.district.hero.primaryCta'), {
+                  district: districtData.name,
+                })}
               </Button>
             </Link>
             <Link to='/preise'>
@@ -270,7 +288,9 @@ const DistrictPage: React.FC = () => {
             <div className='bg-navy-light flex h-full flex-col rounded-lg p-8'>
               <div className='mb-8 flex items-center'>
                 <Train className='mr-0 h-6 w-6 text-(--brand-primary)' />
-                <h3 className='text-on-light text-lg font-semibold'>{t('pages.district.transport.subwayTitle')}</h3>
+                <h3 className='text-on-light text-lg font-semibold'>
+                  {t('pages.district.transport.subwayTitle')}
+                </h3>
               </div>
               <div className='space-y-0'>
                 {customContent.transportInfo.subway.map((line, index) => (
@@ -283,7 +303,9 @@ const DistrictPage: React.FC = () => {
             <div className='bg-navy-light flex h-full flex-col rounded-lg p-8'>
               <div className='mb-8 flex items-center'>
                 <Users className='mr-0 h-6 w-6 text-(--brand-primary)' />
-                <h3 className='text-on-light text-lg font-semibold'>{t('pages.district.transport.busTitle')}</h3>
+                <h3 className='text-on-light text-lg font-semibold'>
+                  {t('pages.district.transport.busTitle')}
+                </h3>
               </div>
               <div className='space-y-0'>
                 {customContent.transportInfo.bus.slice(0, 5).map((line, index) => (
@@ -296,7 +318,9 @@ const DistrictPage: React.FC = () => {
             <div className='bg-navy-light flex h-full flex-col rounded-lg p-8'>
               <div className='mb-8 flex items-center'>
                 <Car className='mr-0 h-6 w-6 text-(--brand-primary)' />
-                <h3 className='text-on-light text-lg font-semibold'>{t('pages.district.transport.parkingTitle')}</h3>
+                <h3 className='text-on-light text-lg font-semibold'>
+                  {t('pages.district.transport.parkingTitle')}
+                </h3>
               </div>
               <p className='text-(--color-text-on-dark-secondary)'>
                 {customContent.transportInfo.parking}
@@ -311,7 +335,9 @@ const DistrictPage: React.FC = () => {
         <div className='mx-auto max-w-7xl px-8 sm:px-8 lg:px-8'>
           <div className='mb-16 text-center'>
             <h2 className='text-on-light mb-8 text-3xl font-bold'>
-              {formatTemplate(t('pages.district.sections.businessFocus.title'), { district: districtData.name })}
+              {formatTemplate(t('pages.district.sections.businessFocus.title'), {
+                district: districtData.name,
+              })}
             </h2>
             <p className='mx-auto max-w-3xl text-xl text-(--color-text-on-dark-secondary)'>
               {t('pages.district.sections.businessFocus.subtitle')}
@@ -332,7 +358,9 @@ const DistrictPage: React.FC = () => {
       <section className='bg-(--brand-primary) py-16 text-(--color-text-on-dark-secondary)'>
         <div className='mx-auto max-w-7xl px-8 text-center sm:px-8 lg:px-8'>
           <h2 className='mb-8 text-3xl font-bold'>
-            {formatTemplate(t('pages.district.sections.cta.title'), { district: districtData.name })}
+            {formatTemplate(t('pages.district.sections.cta.title'), {
+              district: districtData.name,
+            })}
           </h2>
           <p className='mx-auto mb-16 max-w-3xl text-xl opacity-90'>
             {t('pages.district.sections.cta.description')}

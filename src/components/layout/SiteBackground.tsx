@@ -11,7 +11,7 @@ interface SiteBackgroundProps {
  * =======================
  * Wraps page content to apply the standard "Home New" theme and background styles.
  * Ensures consistent design tokens (colors, cards, typography) across all pages.
- * 
+ *
  * Usage:
  * ```tsx
  * <SiteBackground>
@@ -22,9 +22,5 @@ interface SiteBackgroundProps {
  * ```
  */
 export const SiteBackground: React.FC<SiteBackgroundProps> = ({ children }) => {
-  return (
-    <div className='home-new w-full min-h-screen'>
-      {children}
-    </div>
-  );
+  return <div className='home-new min-h-screen w-full'>{children}</div>;
 };
